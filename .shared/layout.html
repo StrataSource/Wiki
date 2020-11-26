@@ -1,0 +1,82 @@
+﻿<!-- 
+=========================================
+Comments regarding the templating engine:
+-----------------------------------------
+This file specifies the layout that is used by every page. The pages are converted from markdown to html and then
+inserted into here. While you can't program here, this file is getting pre-processed. 
+The following keys will be replaced by the specified content:
+
+|  Key                 | Value
+-------------------------------------------------------------
+ #Title                 The first level 1 heading in the markdown file ("# My Title" => "My Title")
+ #Content               The entire wiki page in html
+ #Navigation            The navigation sidebar that lists all pages and highlights the current page (Page names are the same as #Title)
+ 
+ 
+-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="Wiki - #Title">
+    <title>Wiki #Title</title>
+
+    <!-- Irons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boosted@4.5.2/dist/css/orangeIcons.min.css" integrity="sha384-R6GN9ea/4pryAfJqIKDPT52rqJuxaMkZndUr7tl6YQmESyczsGyDgIbpuXvebpF5" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/3c465cbf36.js" crossorigin="anonymous"></script>
+
+    <!-- Our own compiled boosted version -->
+    <link rel="stylesheet" href="/css/boosted_chaos.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+    <!-- Our styles -->
+    <link rel="stylesheet" href="/css/chaos.css">
+    <link rel="stylesheet" href="/css/wiki.css">
+    <link rel="shortcut icon" href="/img/chaos_logo_square.png" type="image/x-icon">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js" integrity="sha384-QnFIXbEfAgO7z63b/aNzTSdSNLoNiNX/mk/Ok+NpUNMnvriWLo5cOtB0OUCAdKNu" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.2/js/swiper.min.js" integrity="sha384-fOtis9P3S4B2asdoye1/YBpXMaRmuXu925gZhfQA/gnU3dLnftD8zvpk/lhP0YSG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/boosted@4.5.2/dist/js/boosted.min.js" integrity="sha384-Ochdn7tEptQMWvKZ+UJHlK48cRq+lpQfD+cvNHas5cOG62XdpPFzZDjO303+fISm" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+<div class="p-2">
+<div class="row">
+    
+    <div class="col col-sm-12 col-md-3">
+        <div class="card">
+            <div class="card-header">
+                <p>Pages</p>
+            </div>
+            
+            <div class="card-body">
+                <ul>
+                    #Navigation
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col col-sm-12 col-md">
+        <section class="card">
+            <div class="card-body">
+                #Content
+            </div>
+            <div class="card-footer">
+                Chaos initiative Wiki
+            </div>
+        </section>
+    </div>
+    
+</div>
+</div>
+
+</body>
+</html>
