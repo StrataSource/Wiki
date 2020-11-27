@@ -31,7 +31,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
 
 </head>
-<body class="bg-gray">
+<body class="bg-gray" id="body">
 
 <div class="p-2 bg-dark bg-gray">
 <div class="row">
@@ -40,20 +40,30 @@
         
         <div class="card bg-dark bg-gray">
             <div class="card-header pt-4 pb-4">
-                <h3>Headings</h3>
-            </div>
-
-            <div class="card-body">
-                #HeadingNavigation
-            </div>
-        </div>
-        <div class="card bg-dark bg-gray mt-2">
-            <div class="card-header pt-4 pb-4">
                 <h3>Pages</h3>
             </div>
             
             <div class="card-body">
                 #Navigation
+            </div>
+        </div>
+            
+        <div class="sticky-top pt-2">
+            <div class="card bg-dark bg-gray">
+                <div class="card-header pt-4 pb-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>Headings</h3>
+                        </div>
+                        <div class="col-6 text-right">
+                            <a href="#body" class="btn btn-secondary">Back to Top</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card-body">
+                    #HeadingNavigation
+                </div>
             </div>
         </div>
         
@@ -106,6 +116,23 @@
         }
         
         hljs.initHighlightingOnLoad();
+
+        
+        // This code is to add a smooth scroll when clicking on the faq links
+        $(document).ready(function() {
+
+            $("a[href*='#']").click(function(event){
+                let offset = $(this.hash).offset()
+                if(offset === null || offset === undefined) {
+                    return;
+                }
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: offset.top
+                }, 500);
+            });
+
+        });
     </script>
 
 </body>
