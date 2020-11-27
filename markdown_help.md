@@ -145,9 +145,10 @@ Tables are rather complex and only a simple example will be shown here.
 | Source 2 | ❌ | ❌ |
 
 # Non standard features
+This wiki uses extended markdown syntax. Sites like GitHub won't be able to display it properly, but the wiki can display it. These are the available extensions:
 
 ## Footnotes
-Footnotes are not a standard markdown feature, but are available on this wiki
+Footnotes can be used to add references in text that link to the bottom of the page for further clarification. Useful for citations.
 ```
 Here is a footnote reference,[^1] and another.[^longnote]
 
