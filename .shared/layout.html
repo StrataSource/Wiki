@@ -7,7 +7,7 @@
     <meta name="title" content="Wiki - #Title">
     <title>Wiki #Title</title>
 
-    <!-- Irons -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boosted@4.5.2/dist/css/orangeIcons.min.css" integrity="sha384-R6GN9ea/4pryAfJqIKDPT52rqJuxaMkZndUr7tl6YQmESyczsGyDgIbpuXvebpF5" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/3c465cbf36.js" crossorigin="anonymous"></script>
 
@@ -27,32 +27,32 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@4.5.0/dist/js/swiper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/boosted@4.5.2/dist/js/boosted.min.js" integrity="sha384-Ochdn7tEptQMWvKZ+UJHlK48cRq+lpQfD+cvNHas5cOG62XdpPFzZDjO303+fISm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/a11y-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
 
 </head>
-<body>
+<body class="bg-gray">
 
-<div class="p-2">
+<div class="p-2 bg-dark bg-gray">
 <div class="row">
     
     <div class="col col-sm-12 col-md-3">
-        <div class="card">
-            <div class="card-header">
-                <h4>Pages</h4>
+        <div class="card bg-dark bg-gray">
+            <div class="card-header pt-4 pb-4">
+                <h3>Pages</h3>
             </div>
             
             <div class="card-body">
-                <ul>
-                    #Navigation
-                </ul>
+                #Navigation
             </div>
         </div>
     </div>
     <div class="col col-sm-12 col-md">
-        <section class="card">
+        <section class="card bg-dark bg-gray">
             <div class="card-body">
                 #Content
             </div>
-            <div class="card-footer">
+            <div class="card-footer bg-dark bg-gray">
                 <hr>
                 <div class="row pt-4">
                     <div class="col">
@@ -79,9 +79,22 @@
 </div>
 
     <script>
+        
+        // heading anchors
         const anchors = new AnchorJS();
         anchors.add('h1');
         anchors.add(); // h2 - h6
+        
+        // code block highlighting
+        // this is to tell highlight.js to not highlight codeblocks without a language. For some reason it would otherwise highlight them with pytohn...
+        let codeblocks = $("pre > code");
+        for (const codeblock of codeblocks) {
+            if(codeblock.classList.length === 0) {
+                codeblock.classList.add("plaintext", "nohighlight");
+            }
+        }
+        
+        hljs.initHighlightingOnLoad();
     </script>
 
 </body>
