@@ -148,6 +148,8 @@
                 if(offset === null || offset === undefined) {
                     return;
                 }
+
+                window.history.pushState(null, "", `${window.location.pathname}#${this.hash}`)
                 event.preventDefault();
                 $('html,body').animate({
                     scrollTop: offset.top
