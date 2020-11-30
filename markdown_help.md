@@ -214,22 +214,32 @@ This text is in a custom container
 :::
 ```
 
+```
+This text is ::inline::
+```
+
 This isn't useful on its own, however, it is possible to add style classes to these containers. This can be used to create alerts for bug notices or the like.
+
+This can be used for badges ::Like this::{.badge .badge-primary}
+
+```
+This can be used for badges ::Like this::{.badge .badge-primary}
+```
 
 :::{.alert .alert-success}
 I'm making a note here: Huge success!
 :::
 
 :::{.alert .alert-info}
-**Note** This is very awesome!
+This is very awesome!
 :::
 
 :::{.alert .alert-warning}
-**Warning** Might be unpredictable
+Be warned, I'm yellow
 :::
 
 :::{.alert .alert-danger}
-**Bug** Something is wrong here
+Something is wrong here
 :::
 
 ```
@@ -238,14 +248,35 @@ I'm making a note here: Huge success!
 :::
 
 :::{.alert .alert-info}
-**Note** This is very awesome!
+This is very awesome!
 :::
 
 :::{.alert .alert-warning}
-**Warning** Might be unpredictable
+Be warned, I'm yellow
 :::
 
 :::{.alert .alert-danger}
-**Bug** Something is wrong here
+Something is wrong here
 :::
+```
+
+## Extra Emphasis
+In addition to the normal emphasis, this wiki allows for some additional styles.
+
+H~2~O is a liquid. 2^10^ is 1024
+
+```
+H~2~O is a liquid. 2^10^ is 1024
+```
+
+This paragraph contains ++Inserted text++ right here
+
+```
+This paragraph contains ++Inserted text++ right here
+```
+
+To make an important part of a sentence really stand out ==text can be marked== like this
+
+```
+To make an important part of a sentence really stand out ==text can be marked== like this
 ```
