@@ -23,5 +23,3 @@ A `gameinfo.txt` template called `example_gameinfo.txt` will be generated in the
 You will find a `launch.bat` script in the root directory of the mod. This launches `modwrapper.exe` with the proper command line parameters. Steam mods should directly reference the `modwrapper.exe` with those parameters in the Steamworks launch configuration
 
 Other than that, modding works exactly like with any other source engine game.
-
-To set up assetbuilder for the mod, reference this wiki page: [[Assetbuilder setup]]
