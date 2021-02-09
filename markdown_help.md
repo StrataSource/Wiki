@@ -82,6 +82,7 @@ This is a normal codeblock without any syntax highlighting
 Code can also be syntax-highlighted
 ```
 a```javascript
+// This is a comment
 function hello(b) {
     let a = b * 2;
     console.log("This is some javascript");
@@ -89,6 +90,7 @@ function hello(b) {
 a```
 ```
 ```js
+// This is a comment
 function hello(b) {
     let a = b * 2;
     console.log("This is some javascript");
