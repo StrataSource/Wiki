@@ -21,3 +21,9 @@ The following options are only available on Linux currently.
 |-gl_dump_strings|(ToGL only) Spew additional OpenGL info for debugging (Deprecated)|
 |-exclusivefs|Run game with non-desktop friendly fullscreen. This will resize your display resolution (Deprecated)|
 |-noexclusivefs|Run game with desktop friendly fullscreen, which is the default regardless (Deprecated)| 
+
+## Hammer Options
+
+|Option|Description|
+|---|---|
+|-winecompat|Runs hammer with some workarounds for wine bugs/differences|
