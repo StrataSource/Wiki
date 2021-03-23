@@ -5,7 +5,7 @@ for a full list of launch options, please see [the Valve Developer Wiki page](ht
 
 |Option|Description|
 |---|---|
-|-mountmod \<path\>|Specifies the mod to launch the game with|
+|-mountmod <path>|Specifies the mod to launch the game with|
 |-legacyui|Launches the game with the old VGUI GameUI|
 |-dev|Developer mode|
 

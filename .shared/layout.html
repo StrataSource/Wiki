@@ -83,24 +83,22 @@
         <div class="sticky-top pt-2">
             <div class="card bg-dark bg-gray">
                 <div class="card-header pt-4 pb-4">
-                    <div class="row">
-                        <div class="col-6 col-lg-12 col-xl-6 no-gutters">
-                            <h3>Headings</h3>
-                        </div>
-                        <div class="col-6 col-lg-12 col-xl-6 text-right text-lg-center pt-lg-2 no-gutters">
-                            <a href="#body" class="btn btn-secondary">Back to Top</a>
-                        </div>
-                    </div>
+                    <h3>Headings</h3>
                 </div>
     
                 <div class="card-body">
                     #HeadingNavigation
                 </div>
+                
+                <div class="card-footer pb-3">
+                    <hr/>
+                    <a href="#body" class="btn btn-block btn-secondary">Back to Top</a>
+                </div>
             </div>
         </div>
         
     </div>
-    <div class="col col-sm-12 col-md">
+    <div class="col col-sm-12 col-lg-9">
         <div class="card bg-dark">
             <div class="card-body">
                 #Content
@@ -136,7 +134,7 @@
         <div class="container-md">
             <div class="row">
                 <div class="col col-md text-center">
-                    <a href="@Constants.LINK_DISCORD_CHAOS"><i class="fab fa-discord"></i>Discord</a>
+                    <a href="https://discord.gg/AhkqPBb"><i class="fab fa-discord"></i>Discord</a>
                 </div>
                 <div class="col col-md text-center">
 
@@ -159,7 +157,8 @@
         anchors.add(); // h2 - h6
         
         // code block highlighting
-        // this is to tell highlight.js to not highlight codeblocks without a language. For some reason it would otherwise highlight them with pytohn...
+        // this is to tell highlight.js to not highlight codeblocks without a language. 
+        // For some reason it would otherwise highlight them with python...
         let codeblocks = $("pre > code");
         for (const codeblock of codeblocks) {
             if(codeblock.classList.length === 0) {
