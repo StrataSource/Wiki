@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Control: Label"
+parent: Panorama
+---
+
 # Control: Label
 
 The Label control is a simple text display.
@@ -10,9 +16,10 @@ The Label control is a simple text display.
 <Label text="#PORTAL2_NewGame"/>
 ```
 ## Properties
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| text | string | The text to display
+| text | string | The text to display |
 | html | bool | Whether or not the text should be parsed as html |
 
 ## Methods

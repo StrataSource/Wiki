@@ -1,3 +1,9 @@
+---
+layout: default
+title: Configuring Mounts
+parent: Modding
+---
+
 # Configuring Mounts
 
 Mounting configuration is now done via `<game>/cfg/mounts.kv` instead of through the GameInfo.txt. 

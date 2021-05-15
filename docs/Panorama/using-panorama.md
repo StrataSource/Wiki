@@ -1,3 +1,10 @@
+---
+layout: default
+title: Using Panorama
+parent: Panorama
+nav_order: 1
+---
+
 # Using Panorama
 
 As of Momentum Mod 0.8.8 and Portal 2: Community Edition 0.5.6, both games ship with Panorama installed. 

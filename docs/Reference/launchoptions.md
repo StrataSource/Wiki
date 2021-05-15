@@ -1,3 +1,9 @@
+---
+layout: default
+title: Launch Options
+parent: Reference
+---
+
 # Launch Options
 
 This document only lists Chaos Source-specific launch options, 
