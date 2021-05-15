@@ -1,3 +1,8 @@
+---
+layout: default
+title: Markdown Help
+parent: Reference
+---
 # Markdown Help
 
 This page may only be interesting to people that wish to [contribute](https://github.com/ChaosInitiative/Wiki) to the wiki.

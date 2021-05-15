@@ -1,4 +1,9 @@
-﻿# Modwrapper
+﻿---
+layout: default
+title: Modwrapper
+parent: Modding
+---
+# Modwrapper
 
 Making a mod for P2CE works a bit differently to normal sourcemods. Every P2CE mod includes a .exe file that loads up the installed Steam copy of P2CE and mounts your mod on top of it.
 
