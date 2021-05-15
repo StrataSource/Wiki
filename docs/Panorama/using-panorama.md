@@ -14,16 +14,24 @@ so steam should ask you when you're trying to launch the game.
 
 ## Tinkering with Panorama
 
-To modify Panorama UI files, you must first extract the `<game>/panorama/code.pbin` file into `<game/panorama/`, but make sure to 
-*not* remove code.pbin, as panorama will not load without it. `code.pbin` itself is just a signed ZIP file, so you can just open it 
-with a program like WinRAR or use a command line utility, such as `unzip`, to extract it.
+To modify Panorama UI files, you must first extract `<game>/panorama/code.pbin` into `<game>/panorama`. 
+`code.pbin` is just a signed zip file, so you should be able to open it with a utility such as WinRAR or Ark. 
+For Panorama to load the extracted files off the disk instead of from `code.pbin`, the game needs to be 
+run with `-dev`. 
 
-By default, Panorama will not load loose files on the filesystem unless it's launched with `-dev`, so if you're trying to modify
-Panorama files, make sure to launch with `-dev`. 
+Keep in mind that `code.pbin` is signed and must exist for the game to start with Panorama.
 
-Panorama layouts are just XML files and they're combined with Javascript and CSS scripts. 
-Currently we support ES6 Javascript in panorama.
 
-### Reloading the UI 
+### Reloading Your Changes
 
-Layouts and scripts can be reloaded by pressing `F8`
+Layouts and scripts can be reloaded by pressing `F8` while on a panel.
+
+Panels that use the global v8 context need special care taken when writing scripts.
+Defining named types, such as classes or functions, should be completely avoided since in global contexts,
+scripts aren't reloaded, but rather re-executed in the same environment. The main menu's script is a 
+good example of a "global context safe" script.
+
+## Panorama Debugger
+
+The panorama debugger can be enabled by entering `panorama_debugger_toggle` in console. The debugger is only 
+supported on Windows, and a Linux port is unlikely for now. 
