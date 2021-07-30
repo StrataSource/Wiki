@@ -25,6 +25,7 @@ Example of the format is below:
 
 		"portal2" // mod_folder, folder inside of the given AppID (Portal 2)'s folder. In this case, <portal 2 install>\portal2\
 		{
+			"mountmoddir" "0"
 			"vpk"	"pak01_dir" // mounts VPK: <Portal 2 install>\portal2\pak01_dir.vpk
 			"dir"	"custom" // mounts folder: <Portal 2 install>\portal2\custom\
 		}
@@ -83,3 +84,11 @@ It is ideal to mount each of the `<filename>_dir.vpk` (VPK directory) files here
 This string value is a subfolder inside of `mod_folder` that is mounted.
 
 For older games such as TF2 and CS:S, you may want to mount the `download` or `custom` folders here alongside the VPKs.  
+
+#### `mountmoddir` property
+
+This is an integer, 0 or 1, that determines if the `mod_folder` gets added as search path.
+
+The default is 1 if omitted, which causes all maps/textures/sounds/etc. shipped as loose files with the mod to be mounted and appear in-game. It will only be considered for searches after the VPKs and subfolders specified in this block.
+
+Setting it to 0 instead will still mount all contained `vpk` and `dir` blocks but **not** the `mod_folder`.
