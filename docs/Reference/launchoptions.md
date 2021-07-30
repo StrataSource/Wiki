@@ -12,6 +12,8 @@ for a full list of launch options, please see [the Valve Developer Wiki page](ht
 |Option|Description|
 |---|---|
 |-mountmod <path>|Specifies the mod to launch the game with. Must be an absolute path|
+|-nogamemount|Do not mount any games/mods specified in the gameinfo mounts block or mounts.kv|
+|-nocustommount|Do not mount any folders specified in gameinfo which contain wildcards (* or ?), usually "custom" folders|
 |-legacyui|Launches the game with the old VGUI GameUI|
 |-dev|Developer mode|
 |-dx11|Launch game with DirectX 11 shaderapi (On Linux, this will launch dx11 with dxvk)|
