@@ -1,3 +1,8 @@
+---
+layout: default
+title: SOS Operator List
+parent: Reference
+---
 # Sound Operator Stack System (SOS) Operator List
 
 This document contains a list of available sound stack operators in Chaos.
