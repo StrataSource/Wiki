@@ -7,7 +7,8 @@ nav_order: 1
 
 # Using Panorama
 
-As of Momentum Mod 0.8.8 and Portal 2: Community Edition 0.5.6, both games ship with Panorama installed. 
+As of Momentum Mod 0.8.8 and Portal 2: Community Edition 0.5.6, both games ship
+with Panorama installed.
 
 To use Panorama, you must launch the game *without* the `-legacyui` option. P2CE has launch options specifically
 for Panorama, so Steam should ask you when you're trying to launch the game. Momentum Mod launches with Panorama

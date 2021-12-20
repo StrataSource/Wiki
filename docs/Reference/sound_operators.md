@@ -3,6 +3,7 @@ layout: default
 title: SOS Operator List
 parent: Reference
 ---
+
 # Sound Operator Stack System (SOS) Operator List
 
 This document contains a list of available sound stack operators in Chaos.
@@ -15,7 +16,6 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_duration`
 - `input_active`
 
-
 ## Operator `set_convar`
 
 ### Inputs
@@ -23,17 +23,15 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input`
 
-
 ## Operator `get_convar`
 
 ### Inputs
 
 - `input_execute`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `get_dashboard`
 
@@ -41,10 +39,9 @@ This document contains a list of available sound stack operators in Chaos.
 
 - `input_execute`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_delta`
 
@@ -53,10 +50,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `calc_distant_dsp`
 
@@ -66,10 +62,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_distance`
 - `input_level`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `get_entry_time`
 
@@ -77,13 +72,12 @@ This document contains a list of available sound stack operators in Chaos.
 
 - `input_execute`
 
-###  Outputs
+### Outputs
 
 - `output_entry_elapsed`
 - `output_sound_elapsed`
 - `output_stop_elapsed`
 - `output_sound_duration`
-
 
 ## Operator `game_entity_info`
 
@@ -92,7 +86,7 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input_entity_index`
 
-###  Outputs
+### Outputs
 
 - `output_position`
 - `output_position_x`
@@ -106,7 +100,6 @@ This document contains a list of available sound stack operators in Chaos.
 - `output_velocity`
 - `output_velocity_xy`
 
-
 ## Operator `calc_falloff`
 
 ### Inputs
@@ -115,10 +108,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_distance`
 - `input_level`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `calc_falloff_curve`
 
@@ -132,10 +124,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_atten`
 - `input_volume_min`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_float_filter`
 
@@ -145,10 +136,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input`
 - `input_max_velocity`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `iterate_merge_speakers`
 
@@ -158,11 +148,10 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_max_iterations`
 - `input`
 
-###  Outputs
+### Outputs
 
 - `output_index`
 - `output`
-
 
 ## Operator `get_map_name`
 
@@ -170,10 +159,9 @@ This document contains a list of available sound stack operators in Chaos.
 
 - `input_execute`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_func1`
 
@@ -182,10 +170,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input1`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_float`
 
@@ -195,10 +182,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input1`
 - `input2`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_vec3`
 
@@ -208,10 +194,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input1`
 - `input2`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_speakers`
 
@@ -221,10 +206,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input1`
 - `input2`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_float_accumulate12`
 
@@ -244,10 +228,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input11`
 - `input12`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `calc_source_distance`
 
@@ -256,10 +239,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input_position`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `calc_angles_facing`
 
@@ -268,10 +250,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input_angles`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_remap_float`
 
@@ -284,10 +265,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_map_min`
 - `input_map_max`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_curve_2d_4knot`
 
@@ -304,10 +284,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_X4`
 - `input_Y4`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_random`
 
@@ -318,10 +297,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_max`
 - `input_seed`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `math_logic_switch`
 
@@ -332,10 +310,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input2`
 - `input_switch`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `get_soundmixer`
 
@@ -343,12 +320,11 @@ This document contains a list of available sound stack operators in Chaos.
 
 - `input_execute`
 
-###  Outputs
+### Outputs
 
 - `output_volume`
 - `output_level`
 - `output_dsp`
-
 
 ## Operator `sys_mixlayer`
 
@@ -356,7 +332,6 @@ This document contains a list of available sound stack operators in Chaos.
 
 - `input_execute`
 - `input`
-
 
 ## Operator `calc_occlusion`
 
@@ -367,10 +342,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_scalar`
 - `input_position`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `set_opvar_float`
 
@@ -379,18 +353,16 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input`
 
-
 ## Operator `get_opvar_float`
 
 ### Inputs
 
 - `input_execute`
 
-###  Outputs
+### Outputs
 
 - `output`
 - `output_opvar_exists`
-
 
 ## Operator `increment_opvar_float`
 
@@ -399,11 +371,10 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input`
 
-###  Outputs
+### Outputs
 
 - `output`
 - `output_opvar_exists`
-
 
 ## Operator `sys_output`
 
@@ -414,17 +385,15 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_vec3`
 - `input_float`
 
-
 ## Operator `sys_platform`
 
 ### Inputs
 
 - `input_execute`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `game_view_info`
 
@@ -433,7 +402,7 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input_source_index`
 
-###  Outputs
+### Outputs
 
 - `output_position`
 - `output_position_x`
@@ -446,7 +415,6 @@ This document contains a list of available sound stack operators in Chaos.
 - `output_velocity_vector_z`
 - `output_velocity`
 - `output_velocity_xy`
-
 
 ## Operator `util_pos_vec8`
 
@@ -464,11 +432,10 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_position_6`
 - `input_position_7`
 
-###  Outputs
+### Outputs
 
 - `output_position`
 - `output_max_index`
-
 
 ## Operator `get_source_info`
 
@@ -477,7 +444,7 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_execute`
 - `input_source_index`
 
-###  Outputs
+### Outputs
 
 - `output_entity_index`
 - `output_position`
@@ -487,7 +454,6 @@ This document contains a list of available sound stack operators in Chaos.
 - `output_level`
 - `output_pitch`
 - `output_source_count`
-
 
 ## Operator `calc_spatialize_speakers`
 
@@ -504,10 +470,9 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_distance`
 - `input_position`
 
-###  Outputs
+### Outputs
 
 - `output`
-
 
 ## Operator `sys_start_entry`
 
@@ -517,7 +482,6 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_start`
 - `input_start_delay`
 
-
 ## Operator `sys_stop_entries`
 
 ### Inputs
@@ -526,11 +490,10 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_max_entries`
 - `input_stop_delay`
 
-###  Outputs
+### Outputs
 
 - `output_entries_matching`
 - `output_this_matches_index`
-
 
 ## Operator `get_sys_time`
 
@@ -538,11 +501,10 @@ This document contains a list of available sound stack operators in Chaos.
 
 - `input_execute`
 
-###  Outputs
+### Outputs
 
 - `output_client_time`
 - `output_host_time`
-
 
 ## Operator `get_track_syncpoint`
 
@@ -552,12 +514,11 @@ This document contains a list of available sound stack operators in Chaos.
 - `input_min_time_to_next_sync`
 - `input_max_time_to_next_sync`
 
-###  Outputs
+### Outputs
 
 - `output_first_syncpoint`
 - `output_last_syncpoint`
 - `output_time_to_next_syncpoint`
-
 
 ## Operator `track_queue`
 
@@ -565,11 +526,10 @@ This document contains a list of available sound stack operators in Chaos.
 
 - `input_execute`
 
-###  Outputs
+### Outputs
 
 - `output_time_to_next_syncpoint`
 - `output_time_to_start`
-
 
 ## Operator `track_update`
 
@@ -577,13 +537,11 @@ This document contains a list of available sound stack operators in Chaos.
 
 - `input_execute`
 
-
 ## Operator `track_stop`
 
 ### Inputs
 
 - `input_execute`
-
 
 ## Operator `util_print_float`
 
@@ -591,4 +549,3 @@ This document contains a list of available sound stack operators in Chaos.
 
 - `input_execute`
 - `input`
-
