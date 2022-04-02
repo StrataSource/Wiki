@@ -15,8 +15,8 @@ intervention.
 Furthermore, it's not guaranteed that every format that is listed as supported
 works 100% since there might still be game-specific incompatiblities.
 
-Source 2 is not supported at all as its formats aren't documented and it no
-longer uses binary space partition.
+Source 2 is not supported at all as its formats aren't documented and completely
+different from what's supported in Source.
 
 For more details, see
 [the Valve Developer Wiki page](https://developer.valvesoftware.com/wiki/Source_BSP_File_Format).
