@@ -149,6 +149,12 @@ Currently the only Chaos game that ships VScript is Portal 2: Community Edition.
 | handle CPropLinkedPortalDoor::GetPartnerInstance() | Get the instance handle of the door's linked partner | 
 | string CPropLinkedPortalDoor::GetPartnername() | Returns the partnername of the door. | 
 
+## CPropWeightedCube [Portal 2: Community Edition Only]
+
+|Signature|Description|
+|---|---|
+| handle CPropWeightedCube::GetPartner() | Get the instance handle of the schrodinger's partner | 
+
 ## CSceneEntity
 
 |Signature|Description|
