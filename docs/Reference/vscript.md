@@ -149,6 +149,12 @@ Currently the only Chaos game that ships VScript is Portal 2: Community Edition.
 | handle CPropLinkedPortalDoor::GetPartnerInstance() | Get the instance handle of the door's linked partner | 
 | string CPropLinkedPortalDoor::GetPartnername() | Returns the partnername of the door. | 
 
+## CPropWeightedCube [Portal 2: Community Edition Only]
+
+|Signature|Description|
+|---|---|
+| handle CPropWeightedCube::GetPartner() | Get the instance handle of the schrodinger's partner | 
+
 ## CSceneEntity
 
 |Signature|Description|
@@ -234,6 +240,8 @@ Currently the only Chaos game that ships VScript is Portal 2: Community Edition.
 | void CBaseEntity::Destroy() |  | 
 | void CBaseEntity::DisconnectOutput(string, string) | Removes a connected script function from an I/O event. | 
 | void CBaseEntity::EmitSound(string) | Plays a sound from this entity. | 
+| Vector CBaseEntity::EyeAngles() | Get eye pitch, yaw, roll as a vector | 
+| Vector CBaseEntity::EyeLocalAngles() | Get eye local pitch, yaw, roll as a vector | 
 | Vector CBaseEntity::EyePosition() | Get vector to eye position - absolute coords | 
 | handle CBaseEntity::FirstMoveChild() |  | 
 | Vector CBaseEntity::GetAngles() | Get entity pitch, yaw, roll as a vector | 
