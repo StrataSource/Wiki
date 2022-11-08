@@ -66,7 +66,7 @@ Currently the only Chaos game that ships VScript is Portal 2: Community Edition.
 | handle TraceHull(Vector, Vector, Vector, Vector, int, handle, int)|Sweeps a hull along the specified line. Returns a CGameTrace with the trace result|
 | float TraceLine(Vector, Vector, handle)|given 2 points & ent to ignore, return fraction along line that hits world or models|
 | handle TraceLineEx(Vector, Vector, int, handle, int)|Given 2 points, ent to ignore, collision group and trace mask, returns a CGameTrace with the result|
-| handle TracePortalLine(Vector, Vector, int, handle, int)|Same as TraceLineEx, but will transform the trace based on any portals it passes through.|
+| handle TracePortalLine(Vector, Vector, int, handle, int, bool)|Same as TraceLineEx, but will transform the trace based on any portals it passes through. Additional boolean determines if the end position should be transformed or left unchanged.|
 | bool TryDLC1InstalledOrCatch()|Tests if the DLC1 is installed for Try/Catch blocks.|
 | function UniqueString(string)|Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table.|
 | void UpgradePlayerPortalgun()|Give player the portalgun.|
