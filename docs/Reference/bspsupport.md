@@ -28,6 +28,8 @@ For more details, see
 | Source  | ≤18        | Vampire: the Masquerade, very old HL2                     | Untested  | No           | Might work with manual binary editing                                    |
 | Source  | 19-20      | HL2, TF2, CSS                                             | Yes       | -            | Fully supported                                                          |
 | Source  | 20         | GMod, L4D, Black Mesa                                     | Yes       | -            | Map loads, parts might be broken due to missing shaders/scripting, etc.  |
-| Source  | 21         | Portal 2, CSGO, Alien Swarm, any Chaos VBSP compiled maps | Yes       | -            | Natively supported, preferred for any Chaos game                         |
+| Source  | 21         | Portal 2, CSGO, Alien Swarm                               | Yes       | -            | Fully supported                                                          |
 | Source  | 21         | Left 4 Dead 2                                             | No        | Probably not | Can be fixed by swapping entries in lump headers around, see link above  |
+| Source  | 22         | Infra                                                     | Yes       | -            | Fully supported                                                          |
 | Source  | ≥22        | pre-Reborn Dota 2, Contagion, any Respawn Source games    | No        | No           | Too many undocumented differences to make it worth                       |
+| Source  | 25         | Chaos native BSP format                                   | Yes       | -            | Chaos modified BSP version, our native format. Preferred for all Chaos games |
