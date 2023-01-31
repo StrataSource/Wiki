@@ -1,0 +1,8 @@
+{
+  "logo": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/chaos/full_mono_white.svg",
+  "icon": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/chaos/square_mono_white.svg",
+  "name": "Chaos Engine",
+  "color": "#db4141",
+  "categories": ["modding", "panorama", "reference"],
+  "features": ["BE_CHAOTIC"]
+}
