@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "Control: Label"
-parent: Panorama
+title: "Label"
+parent: Controls
+grand_parent: Panorama
 ---
 
-# Control: Label
+# Label
 
 The Label control is a simple text display.
 
