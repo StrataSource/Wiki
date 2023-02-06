@@ -4,6 +4,37 @@
     "name": "Portal 2 Community Edition",
     "nameShort": "P2CE",
     "color": "#ff7b02",
-    "categories": ["modding", "panorama", "reference", "vscript"],
+    "categories": [
+        {
+            "label": "General",
+            "id": "general",
+            "home": "vscript",
+            "topics": [
+                {
+                    "id": "vscript",
+                    "name": "Vscript"
+                },
+                {
+                    "id": "modding",
+                    "name": "Modding"
+                }
+            ]
+        },
+        {
+            "label": "Less general",
+            "id": "less-general",
+            "home": "reference",
+            "topics": [
+                {
+                    "id": "panorama",
+                    "name": "Pano"
+                },
+                {
+                    "id": "reference",
+                    "name": "Reference"
+                }
+            ]
+        }
+    ],
     "features": ["USE_PORTALS", "USE_VSCRIPT"]
 }
