@@ -1,11 +1,11 @@
 {
-    "logo": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/chaos/full_mono_white.svg",
-    "icon": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/chaos/square_mono_white.svg",
+    "logo": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/chaos/source_mw.svg",
+    "icon": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/chaos/square_mw.svg",
     "name": "Chaos Engine",
-    "color": "#db4141",
+    "color": "#b92f2f",
     "categories": [
         {
-            "label": "General",
+            "label": "Chaotic general",
             "id": "general",
             "home": "vscript",
             "topics": [
@@ -20,17 +20,13 @@
             ]
         },
         {
-            "label": "Less general",
+            "label": "Less chaotic general",
             "id": "less-general",
-            "home": "vscript",
+            "home": "panorama",
             "topics": [
                 {
                     "id": "panorama",
                     "name": "Pano"
-                },
-                {
-                    "id": "reference",
-                    "name": "Reference"
                 }
             ]
         }
