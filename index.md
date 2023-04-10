@@ -8,7 +8,7 @@ permalink: /
 
 # Strata Source engine wiki
 
-Welcome to the Strata Sourceengine wiki! This wiki contains documentation that is
+Welcome to the Strata Source engine wiki! This wiki contains documentation that is
 common to all Strata-based games.
 
 The markdown sources of the wiki are located here:
