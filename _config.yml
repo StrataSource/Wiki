@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Chaos Engine Docs
-description: Chaos Engine Documentation
+title: Strata Source Engine Docs
+description: Strata Source Engine Documentation
 baseurl: "/Wiki" # the subpath of your site, e.g. /blog
 url: "https://stratasource.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -30,7 +30,7 @@ exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "pac
 # include: ["docs/tests/"]
 
 # Set a path/url to a logo that will be displayed instead of the title
-logo: "/assets/images/logo-chaos.png"
+logo: "/assets/images/logo-strata.png"
 
 # Enable or disable the site search
 # Supports true (default) or false
@@ -79,7 +79,7 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "Copyright &copy; 2021 Chaos Initiative. Distributed by an MIT license."
+footer_content: "Copyright &copy; 2023 Strata Source. Distributed by an MIT license."
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
@@ -88,7 +88,7 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/ChaosInitiative/Wiki" # the github URL for your repo
+gh_edit_repository: "https://github.com/StrataSource/Wiki" # the github URL for your repo
 gh_edit_branch: "main" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
