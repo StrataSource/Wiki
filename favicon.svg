@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 45 45" width="45" height="45">
+	<style>
+		.colored { fill: #f0413c; }
+		.uncolored { fill: #000000; }
+
+		@media (prefers-color-scheme: dark) {
+			.uncolored { fill: #ffffff; }
+		}
+	</style>
+	<path class="colored" d="M12.5,0h10c7.8,7.8,12.2,12.2,20,20l0,0h-30c-3.9-3.9-6.1-6.1-10-10l0,0C6.4,6.1,8.6,3.9,12.5,0z"/>
+	<path class="uncolored" d="M32.5,45h-10c-7.8-7.8-12.2-12.2-20-20l0,0h30c3.9,3.9,6.1,6.1,10,10l0,0C38.6,38.9,36.4,41.1,32.5,45z"/>
+</svg>
+
