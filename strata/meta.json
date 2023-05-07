@@ -1,11 +1,11 @@
 {
-    "logo": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/chaos/source_mw.svg",
-    "icon": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/chaos/square_mw.svg",
-    "name": "Chaos Engine",
-    "color": "#b92f2f",
+    "logo": "https://branding.stratasource.org/i/strata-source/logo/ondark/mono.svg",
+    "icon": "https://branding.stratasource.org/i/strata-source/icon/ondark/mono.svg",
+    "name": "Strata Source",
+    "color": "#f0413c",
     "categories": [
         {
-            "label": "Chaotic general",
+            "label": "Stratagyless general",
             "id": "general",
             "home": "vscript",
             "topics": [
@@ -20,7 +20,7 @@
             ]
         },
         {
-            "label": "Less chaotic general",
+            "label": "Stratagic general",
             "id": "less-general",
             "home": "panorama",
             "topics": [
@@ -31,5 +31,5 @@
             ]
         }
     ],
-    "features": ["BE_CHAOTIC"]
+    "features": ["NO_STRATAGY"]
 }
