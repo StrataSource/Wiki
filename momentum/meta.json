@@ -1,0 +1,29 @@
+{
+    "logo": "https://branding.stratasource.org/i/strata-source/logo/ondark/mono.svg",
+    "icon": "https://cdn.discordapp.com/attachments/680970994567217174/1104850765215973537/Momentum_Logo_White_Outline.svg",
+    "name": "Momentum Mod",
+    "color": "#1896d3",
+    "categories": [
+        {
+            "label": "Guides",
+            "id": "guides",
+            "redirect": "https://docs.momentum-mod.org/guide/gamemodes/ahop/"
+        },
+        {
+            "label": "Scripting",
+            "id": "scripting",
+            "home": "vscript",
+            "topics": [
+                {
+                    "id": "vscript",
+                    "name": "VScript"
+                },
+                {
+                    "id": "panorama",
+                    "name": "Panorama"
+                }
+            ]
+        }
+    ],
+    "features": ["NO_STRATAGY"]
+}
