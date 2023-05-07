@@ -6,7 +6,7 @@ parent: Reference
 
 # Sound Operator Stack System (SOS) Operator List
 
-This document contains a list of available sound stack operators in Chaos.
+This document contains a list of available sound stack operators in Strata Source.
 
 # Operator `sys_block_entries`
 

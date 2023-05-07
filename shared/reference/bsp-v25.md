@@ -6,10 +6,10 @@ parent: Reference
 
 # BSP Version 25
 
-Bsp v25 is Chaos Engine's modified BSP format that raises many of the baked-in limits that BSP traditionally has.
+Bsp v25 is Strata Source's modified BSP format that raises many of the baked-in limits that BSP traditionally has.
 Version 25 was selected to avoid collisions with other projects that are also modifying the BSP map format.
 
-This document goes over the significant changes to the format so non-Chaos devs can parse and analyze our maps.
+This document goes over the significant changes to the format so non-Strata devs can parse and analyze our maps.
 
 BSP v25 is extremely new right now and is subject to change. Until these changes are finalized and merged into our
 primary development branch, this format may change **without** a BSP or lump version increase.
@@ -74,7 +74,7 @@ primary development branch, this format may change **without** a BSP or lump ver
 
 ## New Lump Versions
 
-The following table lists current lump versions for all lumps that are versioned in Chaos:
+The following table lists current lump versions for all lumps that are versioned in Strata Source:
 
 | Lump Name | Version |
 |---|---|

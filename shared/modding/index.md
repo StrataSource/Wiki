@@ -8,4 +8,4 @@ permalink: docs/Modding
 
 # Modding
 
-Documentation pertaining to modding Chaos.
+Documentation pertaining to modding Strata Source.

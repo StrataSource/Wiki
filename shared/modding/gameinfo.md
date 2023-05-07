@@ -6,7 +6,7 @@ parent: Modding
 
 # New GameInfo.txt Format
 
-In order to support the new filesystem changes in Chaos, modifications have been
+In order to support the new filesystem changes in Strata Source, modifications have been
 made to Source's existing GameInfo.txt format.
 
 # Mounts Block
@@ -55,7 +55,7 @@ mount
 
 # Custom Folder
 
-Chaos supports many Source 2013/TF2-style constructs in the gameinfo, such as the custom folder.
+Strata Source supports many Source 2013/TF2-style constructs in the gameinfo, such as the custom folder.
 
 To support the custom folder, simply add `game "<your mod>/custom/*"` to your `SearchPaths` block.
 Anything under the `<your mod>/custom/` folder will be mounted as if it were a game.
@@ -71,7 +71,7 @@ able to find `steam.inf` unless your mod ships it.
 
 # Example GameInfo.txt
 
-The following is an example gameinfo.txt from our template mod repo found [here](https://github.com/ChaosInitiative/p2ce-mod-template)
+The following is an example gameinfo.txt from our template mod repo found [here](https://github.com/StrataSource/p2ce-mod-template)
 
 ```
 "GameInfo"

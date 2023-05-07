@@ -6,7 +6,7 @@ parent: Reference
 
 # Launch Options
 
-This document only lists Chaos Source-specific launch options, for a full list
+This document only lists Strata Source-specific launch options, for a full list
 of launch options, please see
 [the Valve Developer Wiki page](https://developer.valvesoftware.com/wiki/Command_Line_Options).
 

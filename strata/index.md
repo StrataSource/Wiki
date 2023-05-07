@@ -1,19 +1,19 @@
-# Chaos Source Wiki
+# Strata Source Wiki
 
-Welcome to the Chaos engine wiki! This wiki contains documentation that is
-common to all Chaos-based games.
+Welcome to the Strata Source wiki! This wiki contains documentation that is
+common to all Strata Source-based games.
 
 The markdown sources of the wiki are located here:
-[https://github.com/ChaosInitiative/chaos-wiki](https://github.com/ChaosInitiative/chaos-wiki)
+[https://github.com/StrataSource/Wiki](https://github.com/StrataSource/Wiki)
 
 If you'd like to contribute, see the Contributing section of this document for
 more information.
 
 ## Features
 
-Chaos started development in the June of 2020 as a fork of CSGO's engine branch
+Strata Source started development in the June of 2020 as a fork of CSGO's engine branch
 with Portal 2 features backported. Since its inception, many features, fixes and
-other improvements have been made to Chaos, including:
+other improvements have been made to Strata Source, including:
 
 - Native DirectX 11 renderer
 - Panorama UI
@@ -33,13 +33,13 @@ other improvements have been made to Chaos, including:
 - Sentry crash report integration
 - And much much more!
 
-If your team has signed an NDA with Valve and would like to join Chaos, please
-reach out to us at team@chaosinitiative.com or on our public
+If your team has signed an NDA with Valve and would like to join Strata, please
+reach out to us at team@stratasource.org or on our public
 [Discord server](https://discord.gg/AhkqPBb)
 
-## Projects Using Chaos
+## Projects Using Strata
 
-Right now, the following games are using Chaos:
+Right now, the following games are using Strata:
 
 - [Momentum Mod](https://momentum-mod.org/)
 - [Portal 2: Community Edition](https://portal2communityedition.com/)
@@ -58,7 +58,7 @@ must adhere to these guidelines
 
 #### Pages have to
 
-- be related to Chaos Source
+- be related to Strata Source
 - not be a duplicate of an existing page
 - contain formal, passive language (No `I think` or `Next you go to`)
 

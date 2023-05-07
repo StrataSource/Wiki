@@ -11,7 +11,7 @@ permalink: docs/Panorama
 
 Panorama is Valve's own web-like UI framework used in various Source and Source 2 titles like CS:GO and
 Half-Life: Alyx. Panorama uses XML for layouts, JavaScript for scripting and a custom version of CSS
-for styling. The Chaos fork of Panorama additionally supports SASS/SCSS for stylesheets without an 
+for styling. The Strata fork of Panorama additionally supports SASS/SCSS for stylesheets without an 
 additional compile step.
 
 Portal 2: Community Edition and Momentum mod both make extensive use of Panorama for their new UI,
@@ -53,14 +53,14 @@ When developing Panorama, it is recommended to use [Visual Studio Code](https://
 # Useful References
 
 The Valve Developer Community wiki has several useful articles to assist with creating a UI in Panorama. Note that these
-articles target CSGO and do not cover any new Chaos engine features.
-- [CSGO CSS Properties](https://developer.valvesoftware.com/wiki/CSGO_Panorama_CSS_Properties) - Chaos engine currently uses
+articles target CSGO and do not cover any new Strata Source features.
+- [CSGO CSS Properties](https://developer.valvesoftware.com/wiki/CSGO_Panorama_CSS_Properties) - Strata Source currently uses
   all the CSS properties of CS:GO.
 - [CSGO Panorama Events](https://developer.valvesoftware.com/wiki/CSGO_Panorama_Events) - A majority of these events are either
-  nonfunctional or not present in the Chaos engine, however general events that do not pertain to CSGO should be present and
+  nonfunctional or not present in the Strata Source, however general events that do not pertain to CSGO should be present and
   functional.
 - [CSGO Panorama API](https://developer.valvesoftware.com/wiki/CSGO_Panorama_API) - Contains many API functions that can be ran
-  in Panorama JavaScript files. Some are specific to CSGO, and either not present or not functional in the Chaos engine.
+  in Panorama JavaScript files. Some are specific to CSGO, and either not present or not functional in the Strata Source.
 
 You can also run these console commands to access up-to-date documentation:
 - `dump_panorama_css_properties` - Prints a list of the available CSS properties to the console, along with documentation for
