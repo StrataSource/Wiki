@@ -288,7 +288,7 @@ Currently the only Chaos game that ships VScript is Portal 2: Community Edition.
 | void CBaseEntity::SetSize(Vector, Vector) |  | 
 | void CBaseEntity::SetTeam(int) |  | 
 | void CBaseEntity::SetVelocity(Vector) |  | 
-| void CBaseEntity::Spawn() | Calls the internal spawn function, so that the entity properly handles keyvalues and properly initialises into the world. Usage is simple, create the entity by using CreateByClassname() then call this function on it.| 
+| void CBaseEntity::Spawn() | Calls the internal spawn function, so that the entity properly handles keyvalues and properly initialises into the world. For usage, create the entity by using CreateByClassname() then call this function on it.| 
 | void CBaseEntity::StopSound(string) | Stops a sound on this entity. | 
 | bool CBaseEntity::ValidateScriptScope() | Ensure that an entity's script scope has been created | 
 | int CBaseEntity::entindex() |  | 
