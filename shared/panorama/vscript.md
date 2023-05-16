@@ -3,7 +3,7 @@ layout: default
 title: VScript Integration
 parent: Panorama
 features:
-  - USE_VSCRIPT
+  - VSCRIPT
 ---
 
 # VScript Integration

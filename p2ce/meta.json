@@ -6,35 +6,38 @@
     "color": "#ff7b02",
     "categories": [
         {
-            "label": "General",
-            "id": "general",
+            "label": "Mapping",
+            "id": "mapping",
+            "home": "panorama",
+            "topics": [
+            ]
+        },
+        {
+            "label": "Scripting",
+            "id": "scripting",
             "home": "vscript",
             "topics": [
                 {
                     "id": "vscript",
-                    "name": "Vscript"
-                },
-                {
-                    "id": "modding",
-                    "name": "Modding"
+                    "name": "VScript"
                 }
             ]
         },
         {
-            "label": "Less general",
-            "id": "less-general",
-            "home": "reference",
+            "label": "Panorama",
+            "id": "interface",
+            "home": "panorama",
             "topics": [
                 {
                     "id": "panorama",
-                    "name": "Pano"
+                    "name": "Overview"
                 },
                 {
-                    "id": "reference",
-                    "name": "Reference"
+                    "id": "panorama-controls",
+                    "name": "Controls"
                 }
             ]
         }
     ],
-    "features": ["USE_PORTALS", "USE_VSCRIPT"]
+    "features": ["VSCRIPT"]
 }
