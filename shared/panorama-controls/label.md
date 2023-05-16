@@ -1,7 +1,5 @@
 ---
-layout: default
-title: "Control: Label"
-parent: Panorama
+title: Label
 ---
 
 # Control: Label
@@ -32,7 +30,7 @@ The Label control is a simple text display.
 Assign a localization string to the label
 
 ```javascript
-myLabel.SetLocalizationString("PORTAL2_NewGame");
+myLabel.SetLocalizationString('PORTAL2_NewGame');
 ```
 
 ## SetProceduralTextThatIPromiseIsLocalizedAndEscaped
@@ -41,7 +39,5 @@ Yes that's an actual function name. Assigns raw text to a label. Use with
 caution.
 
 ```javascript
-myLabel.SetProceduralTextThatIPromiseIsLocalizedAndEscaped(
-  "Some text that should not be processed"
-);
+myLabel.SetProceduralTextThatIPromiseIsLocalizedAndEscaped('Some text that should not be processed');
 ```
