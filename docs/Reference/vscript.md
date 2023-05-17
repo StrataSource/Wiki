@@ -101,6 +101,7 @@ Currently the only Chaos game that ships VScript is Portal 2: Community Edition.
 | handle CEntities::FindByTarget(handle, string) | Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search | 
 | handle CEntities::FindInSphere(handle, Vector, float) | Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search | 
 | handle CEntities::First() | Begin an iteration over the list of entities | 
+| handle CEntities::GetByIndex(int) | Get an entity via its entity index. |
 | handle CEntities::Next(handle) | Continue an iteration over the list of entities, providing reference to a previously found entity | 
 
 ## CBaseFlex
@@ -288,6 +289,7 @@ Currently the only Chaos game that ships VScript is Portal 2: Community Edition.
 | void CBaseEntity::SetSize(Vector, Vector) |  | 
 | void CBaseEntity::SetTeam(int) |  | 
 | void CBaseEntity::SetVelocity(Vector) |  | 
+| void CBaseEntity::Spawn() | Calls the entity's Spawn function. This properly initializes the entity and allows it to begin simulating.| 
 | void CBaseEntity::StopSound(string) | Stops a sound on this entity. | 
 | bool CBaseEntity::ValidateScriptScope() | Ensure that an entity's script scope has been created | 
 | int CBaseEntity::entindex() |  | 
