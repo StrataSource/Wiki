@@ -1,0 +1,9 @@
+{
+    "name": "strata-wiki",
+    "version": "1.0.0",
+    "description": "The new and improved Strata Source Wiki",
+    "scripts": {
+        "cf-build": "cd generator && npm i && npm run build-ts && npm run build"
+    },
+    "author": "Strata Source"
+}
