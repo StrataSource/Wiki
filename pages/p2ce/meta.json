@@ -6,10 +6,14 @@
     "color": "#ff7b02",
     "categories": [
         {
-            "label": "Mapping",
-            "id": "mapping",
-            "home": "panorama",
+            "label": "Modding",
+            "id": "modding",
+            "home": "modding",
             "topics": [
+                {
+                    "id": "modding",
+                    "name": "Modding"
+                }
             ]
         },
         {
@@ -35,6 +39,17 @@
                 {
                     "id": "panorama-controls",
                     "name": "Controls"
+                }
+            ]
+        },
+        {
+            "label": "Reference",
+            "id": "reference",
+            "home": "reference",
+            "topics": [
+                {
+                    "id": "reference",
+                    "name": "Reference"
                 }
             ]
         }
