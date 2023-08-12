@@ -10,20 +10,20 @@
             "redirect": "https://docs.momentum-mod.org/"
         },
         {
-            "label": "Scripting",
-            "id": "scripting",
-            "home": "vscript",
+            "label": "Panorama",
+            "id": "interface",
+            "home": "panorama",
             "topics": [
                 {
-                    "id": "vscript",
-                    "name": "VScript"
+                    "id": "panorama",
+                    "name": "Overview"
                 },
                 {
-                    "id": "panorama",
-                    "name": "Panorama"
+                    "id": "panorama-controls",
+                    "name": "Controls"
                 }
             ]
         }
     ],
-    "features": ["NO_STRATAGY"]
+    "features": []
 }
