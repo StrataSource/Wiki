@@ -5,14 +5,10 @@
     "color": "#f0413c",
     "categories": [
         {
-            "label": "Stratagyless general",
-            "id": "general",
-            "home": "vscript",
+            "label": "Modding",
+            "id": "modding",
+            "home": "modding",
             "topics": [
-                {
-                    "id": "vscript",
-                    "name": "Vscript"
-                },
                 {
                     "id": "modding",
                     "name": "Modding"
@@ -20,16 +16,42 @@
             ]
         },
         {
-            "label": "Stratagic general",
-            "id": "less-general",
+            "label": "Scripting",
+            "id": "scripting",
+            "home": "vscript",
+            "topics": [
+                {
+                    "id": "vscript",
+                    "name": "VScript"
+                }
+            ]
+        },
+        {
+            "label": "Panorama",
+            "id": "interface",
             "home": "panorama",
             "topics": [
                 {
                     "id": "panorama",
-                    "name": "Pano"
+                    "name": "Overview"
+                },
+                {
+                    "id": "panorama-controls",
+                    "name": "Controls"
+                }
+            ]
+        },
+        {
+            "label": "Reference",
+            "id": "reference",
+            "home": "reference",
+            "topics": [
+                {
+                    "id": "reference",
+                    "name": "Reference"
                 }
             ]
         }
     ],
-    "features": ["NO_STRATAGY"]
+    "features": ["VSCRIPT"]
 }
