@@ -41,10 +41,6 @@ other improvements have been made to Strata Source, including:
 - Sentry crash report integration
 - And much much more!
 
-If your team has signed an NDA with Valve and would like to join Strata, please
-reach out to us at team@chaosinitiative.com or on our public
-[Discord server](https://discord.gg/AhkqPBb)
-
 ## Projects Using Strata
 
 Right now, the following games are using Strata:
