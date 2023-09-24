@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Sound System
-parent: Modding
 ---
 
 # Sound System

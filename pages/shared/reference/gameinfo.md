@@ -1,7 +1,5 @@
 ---
-layout: default
 title: GameInfo.txt Format
-parent: Modding
 ---
 
 # New GameInfo.txt Format

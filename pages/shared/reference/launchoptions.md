@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Launch Options
-parent: Reference
 ---
 
 # Launch Options
@@ -17,8 +15,6 @@ of launch options, please see
 | -nocustommount           | Do not mount any folders specified in gameinfo which contain wildcards (\* or ?), usually "custom" folders |
 | -legacyui                | Launches the game with the old VGUI GameUI                                                                 |
 | -dev                     | Developer mode                                                                                             |
-| -dx11                    | Launch game with DirectX 11 shaderapi. On Linux, this will launch dx11 with dxvk. This is now the default for the game, but not for tools like Hammer |
-| -dx9                     | Launch game with DirectX 9 shaderapi. On Linux this uses dx9vk. Default for tools, but not for the game    |
 | -multirun/-allowmultiple | Disables the creation of the source engine mutex, and allows the game to start even if one already exists  |
 
 # POSIX-specific options (Not available on Windows)

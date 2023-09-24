@@ -1,7 +1,5 @@
 ---
-layout: default
 title: BSP Support
-parent: Reference
 ---
 
 # BSP Support

@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Configuring Mounts
-parent: Modding
 ---
 
 # Configuring Mounts
