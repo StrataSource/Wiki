@@ -39,16 +39,18 @@
         },
         {
             "label": "Panorama",
-            "id": "interface",
-            "home": "panorama",
+            "id": "panorama",
+            "home": "overview",
             "topics": [
                 {
-                    "id": "panorama",
+                    "path": "panorama",
+                    "id": "overview",
                     "name": "Overview"
                 },
                 {
-                    "id": "panorama-controls",
-                    "name": "Controls"
+                    "path": "panorama/control",
+                    "id": "control",
+                    "name": "Control"
                 }
             ]
         },

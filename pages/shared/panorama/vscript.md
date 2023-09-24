@@ -1,7 +1,5 @@
 ---
-layout: default
 title: VScript Integration
-parent: Panorama
 features:
   - VSCRIPT
 ---
