@@ -4,6 +4,9 @@ title: Constants
 
 # Script Constants
 
+## Collision Groups
+
+These constants are used with the extended trace API to filter entities by their collision group.
 
 |Name|Value|
 |---|---|
@@ -33,7 +36,14 @@ title: Constants
 | COLLISION_GROUP_VEHICLE | 7 | 
 | COLLISION_GROUP_VEHICLE_CLIP | 12 | 
 | COLLISION_GROUP_WEAPON | 11 | 
-| COLLISION_GROUP_WEIGHTED_CUBE | 24 | 
+| COLLISION_GROUP_WEIGHTED_CUBE | 24 |
+
+## Trace Masks
+
+Trace masks are used with the extended trace API to filter entities by category.
+
+|Name|Value|
+|---|---|
 | MASK_ALL | -1 | 
 | MASK_BLOCKLOS | 16449 | 
 | MASK_BLOCKLOS_AND_NPCS | 33570881 | 
@@ -59,13 +69,23 @@ title: Constants
 | MASK_VISIBLE_AND_NPCS | 33579137 | 
 | MASK_WATER | 16432 | 
 | MASK_WEAPONCLIPPING | 100679683 | 
+
+## Paint Types
+
+|Name|Value|
+|---|---|
 | NO_POWER | 4 | 
-| PI | 3.14159 | 
 | PORTAL_POWER | 3 | 
-| RAND_MAX | 2147483647 | 
 | REFLECT_POWER | 1 | 
 | SPEED_POWER | 2 | 
 | STICK_POWER | 5 | 
+
+## Misc. Constants
+
+|Name|Value|
+|---|---|
+| RAND_MAX | 2147483647 | 
+| PI | 3.14159 | 
 | \_charsize\_ | 1 | 
 | \_floatsize\_ | 8 | 
 | \_intsize\_ | 8 |
