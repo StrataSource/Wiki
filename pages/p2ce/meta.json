@@ -17,13 +17,24 @@
             ]
         },
         {
-            "label": "Scripting",
-            "id": "scripting",
-            "home": "vscript",
+            "label": "VScript",
+            "id": "vscript",
+            "home": "overview",
             "topics": [
                 {
-                    "id": "vscript",
-                    "name": "VScript"
+                    "path": "vscript",
+                    "id": "overview",
+                    "name": "Overview"
+                },
+                {
+                    "path": "vscript/global",
+                    "id": "global",
+                    "name": "Globals"
+                },
+                {
+                    "path": "vscript/class",
+                    "id": "class",
+                    "name": "Classes"
                 }
             ]
         },
@@ -54,5 +65,5 @@
             ]
         }
     ],
-    "features": ["VSCRIPT"]
+    "features": ["VSCRIPT", "PORTALS", "MOD_PORTAL2"]
 }
