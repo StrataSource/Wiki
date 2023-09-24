@@ -1,1 +1,7 @@
-This file is just here so that our system doesn't freak out.
+---
+title: Modding
+---
+
+# Modding
+
+Documentation pertaining to modding Strata Source.

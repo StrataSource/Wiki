@@ -5,13 +5,13 @@
     "color": "#f0413c",
     "categories": [
         {
-            "label": "Modding",
-            "id": "modding",
-            "home": "modding",
+            "label": "Reference",
+            "id": "reference",
+            "home": "reference",
             "topics": [
                 {
-                    "id": "modding",
-                    "name": "Modding"
+                    "id": "reference",
+                    "name": "Reference"
                 }
             ]
         },
@@ -51,17 +51,6 @@
                     "path": "panorama/control",
                     "id": "control",
                     "name": "Control"
-                }
-            ]
-        },
-        {
-            "label": "Reference",
-            "id": "reference",
-            "home": "reference",
-            "topics": [
-                {
-                    "id": "reference",
-                    "name": "Reference"
                 }
             ]
         }
