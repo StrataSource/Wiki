@@ -1,6 +1,5 @@
 ---
 title: "Portal 2: Community Edition Wiki"
-example: "/src/models/idk"
 ---
 # Portal 2: Community Edition Wiki
 
@@ -11,11 +10,3 @@ on improving modding workflow and expanding the feature set of the game by
 adding new testing elements, tools and more to the game.
 
 Our Steam page can be found [here](https://store.steampowered.com/app/440000/Portal_2_Community_Edition/)!
-
-::: p2ce
-Hello there! This is some sample text to test out the exclusive block. Please excuse this exclusive uselessness.
-:::
-
-::: momentum
-This should really not be here
-:::
