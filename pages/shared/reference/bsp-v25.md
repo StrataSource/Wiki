@@ -1,7 +1,5 @@
 ---
-layout: default
 title: BSP v25 Format
-parent: Reference
 ---
 
 # BSP Version 25
@@ -211,10 +209,8 @@ struct dleaf_t
 {
 	int				contents;
 	int				cluster;
-	BEGIN_BITFIELD( bf );
 	int				area:17;
 	int				flags:15;
-	END_BITFIELD();
 	float			mins[3];
 	float			maxs[3];
 	unsigned int	firstleafface;

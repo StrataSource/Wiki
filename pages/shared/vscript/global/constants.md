@@ -1,5 +1,5 @@
 ---
-title: Global Constants
+title: Constants
 ---
 
 # Script Constants

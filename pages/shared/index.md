@@ -17,11 +17,11 @@ other improvements have been made to Strata Source, including:
 
 - Native DirectX 11 renderer
 - Panorama UI
-- DXVK support on Linux for both DirectX 9 and 11
+- DXVK support on Linux for DirectX 11
 - 64-bit support (32-bit support has been completely dropped)
 - PBR shading
 - CSM (Originally from CSGO)
-- Backwards compatibility with BSP v19-20, as well as native BSP v21 support
+- Backwards compatibility with BSP v19-21
 - Backwards compatibiltiy with TF2/HL2 branch models
 - webm video support, replacing older Bink videos
 - Many improvements to Linux support

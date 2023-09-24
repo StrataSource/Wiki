@@ -1,7 +1,5 @@
 ---
-layout: default
 title: SOS Operator List
-parent: Reference
 ---
 
 # Sound Operator Stack System (SOS) Operator List
