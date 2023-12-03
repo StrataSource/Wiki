@@ -6,6 +6,25 @@
     "color": "#ff7b02",
     "categories": [
         {
+            "label": "Workshop"
+            "id": "workshop"
+            "home": "workshop"
+            "topics": [
+                {
+                    "name": "Creating an Addon"
+                    "id": "addoncreation"
+                }, 
+                {
+                    "name": "addon.kv3"
+                    "id": "addon_kv3"
+                }, 
+                {
+                    "name": "Addon Limitations"
+                    "id": "limitations"
+                },
+            ]
+        },
+        {
             "label": "Reference",
             "id": "reference",
             "home": "reference",
