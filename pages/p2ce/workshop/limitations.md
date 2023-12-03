@@ -2,6 +2,7 @@
 title: Addon Limitations
 ---
 # Addon Limitations
+*Note: As the workshop evolves, certain features may get implelemted and some or all of these quirks could be fixed. If this is ever the case, please notify a dev so this page can be updated.*
 Addons can be very powerful, however there are some limitations to take into account when creating addons. 
 ## 1. Addons cannot include autoexec.cfg
 `autoexec.cfg` can only be run from the base mod directory, and as such any autoexecs present in addons are not run on startup, which can prove to be an issue for a few mappacks that edit portal colors or keybindings. However, some workarounds can be implemented.
@@ -17,5 +18,4 @@ There is no known fix for this, other than to tell users to remove any content p
 UI is only read from the base mod path, so there is no way to override UI files. 
 
 ## Fix for Everything
-If all else fails and you *absolutely* need all these features, the best way to fix all these issues is by telling the users to Symoblic Link their files to `SteamApps\sourcemods\addon_name_here` to get the proper effect. This is how [Black Mesa: Blue Shift](https://steamcommunity.com/sharedfiles/filedetails/2424633574) does this, as Black Mesa's workshop works similarly to Portal 2: Community Edition's. 
-***TODO: DOCUMENT THIS PROCESS***
+If all else fails and you *absolutely* need all these features, the best way to fix all these issues is by telling the users to Symoblic Link the addon's files to `SteamApps\sourcemods\addon_name_here` to get the proper effect. This is how [Black Mesa: Blue Shift](https://steamcommunity.com/sharedfiles/filedetails/2424633574) does this, as Black Mesa's workshop works similarly to Portal 2: Community Edition's. (TODO)
