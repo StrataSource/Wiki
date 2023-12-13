@@ -12,6 +12,11 @@
                 {
                     "id": "reference",
                     "name": "Reference"
+                },
+				{
+                    "path": "reference/materials",
+                    "id": "materials",
+                    "name": "Materials"
                 }
             ]
         },
