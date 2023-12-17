@@ -50,5 +50,5 @@ Create a new `.VMT` file and paste this text in:
 }
 ```
 Insert the paths to the correct materials where specified, and you are done!
-### Using PBR-2-Source
+### Method 2: PBR-2-Source
 Launch PBR-2-Source and wait for the GUI to appear. Insert your images into the correct boxes and doublecheck that the "Shader" option is set to "PBR (<intended use>)". Next, make sure the "Flip Normal Y" check is set correctly. If the program you used uses 3DS Max style normal maps, or you generated it from VTFEdit or pulled from an existing Source game, toggle the option off. If the program used to generate the map uses Maya-style normal maps, toggle the option on. If you are unsure what style of normal map your program uses, make sure to find out before going further, or the generated normal map will look, for lack of a better word, "ugly". After you do this, click export, select the folder and the output file name, then wait for PBR-2-Source to do the work for you. It will generate a fully functional material, and all that is needed is to set the material's surface type in the VMT and whether or not it is portalable (if needed), and you are done!
