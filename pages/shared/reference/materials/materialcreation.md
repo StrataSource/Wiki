@@ -13,7 +13,7 @@ As stated before, PBR textures need to be created in specialized programs. If yo
    ***IMPORTANT**: If the program you used to create these textures labels these as "Glossiness" or "Smoothness" maps, make sure you invert the colors before proceeding! Strata uses Roughness textures for PBR instead of Smoothness. They are the same type of map, just with inverted colors.*
 
 * [Ambient Occlusion](https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_00c9ca0901) map (Specifies which areas of the texture are "behind", or always shaded. You can compare this to what an [SSBump](https://developer.valvesoftware.com/wiki/$ssbump) map accomplishes but without the interaction with `env_projectedtextures`. For the sake of this article, Ambient Occlusion will be referred to as AO.)
-* [Bump](https://developer.valvesoftware.com/wiki/Bump_map) map *with optional Height map in alpha channel* (Standard bump map that is usually used with standard Source workflow, but it can optionally include a Height map in the alpha channel of the texture for [Parallax Mapping](/p2ce/PBR/parallaxmapping))
+* [Bump](https://developer.valvesoftware.com/wiki/Bump_map) map *with optional Height map in alpha channel* (Standard bump map that is usually used with standard Source workflow, but it can optionally include a Height map in the alpha channel of the texture for [Parallax Mapping](/shared/reference/parallaxmapping))
 
 For the sake of demonstration, this article will use images of the process of converting `black_wall_metal_005a` to use PBR.
 ## Creating the MRAO texture
@@ -24,14 +24,14 @@ GIMP can combine different layers into the RGBA channels of one texture, which m
 
 First, go to "Image -> Mode" and make sure "Grayscale" is selected. Even if your images are grayscale, GIMP may still treat them as color images, which prevents this method from working. Then, create a new image with the dimensions of your texture maps. Go to file and click "Import as layers...", select your Metalness, Roughness, and AO maps, and click Import. Your layers should now look similar to this (order is irrelevant):
 
-![Metalness, Roughness, and AO maps in separate layers](https://github.com/Equalizer5118/Wiki/assets/113145248/035e9064-c4f1-4a76-bf3e-8ae822680c18)
+![Metalness, Roughness, and AO maps in separate layers](/assets/PBR_images/gimplayers.png)
 
 After this, go to "Colors -> Components -> Compose...". Put your Metalness map in the Red channel, your Roughness map in the Green, and your AO map in the Blue. The dropdowns should look like this:
 
-![Metalness map in R, Roughness in G, AO in B](https://github.com/Equalizer5118/Wiki/assets/113145248/54573338-4810-4dbe-b3f0-ca74541c9aa8)
+![Metalness map in R, Roughness in G, AO in B](/assets/PBR_images/gimpcompose.png)
 
 Now, click OK and let GIMP compose the image. After it finishes, you should get an image that looks similar to this:
-![Mostly blue image](https://github.com/Equalizer5118/Wiki/assets/113145248/01d1a711-9876-4204-94b0-07cddef886ba)
+![Mostly blue image](/assets/PBR_images/bwm004a_mrao.png)
 
 The final step of making an MRAO texture is converting it to a VTF. This can be done with [VTFEdit](https://valvedev.info/tools/vtfedit/) or our [Vtex2](https://github.com/StrataSource/vtex2) tool, which supports Strata's new VTF 7.6 version. 
 #### Manual VMT creation
@@ -44,9 +44,6 @@ Create a new `.VMT` file and paste this text in:
 	$mraotexture               "<insert path to MRAO map>"
 
 	$envmap                    "env_cubemap"
-	$normalmapalphaenvmapmask  1
-
-
 }
 ```
 Insert the paths to the correct materials where specified, and you are done!
