@@ -3,7 +3,7 @@ layout: default
 title: PBR
 ---
 *(NOTE: WIP. Parameters will be reorganized to make more sense in the future.)*
-
+This page contains information about the parameters of the PBR shader. 
 # PBR
 
 ## Parameters
