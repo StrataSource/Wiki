@@ -5,7 +5,7 @@ title: Panorama
 
 # Panorama
 
-Panorama is Valve's own web-like UI framework used in various Source and Source 2 titles like CS:GO and
+Panorama is a old  Valve's own web-like UI framework used in various Source and Source 2 titles like CS:GO and
 Half-Life: Alyx. Panorama uses XML for layouts, JavaScript for scripting and a custom version of CSS
 for styling. The Strata fork of Panorama additionally supports SASS/SCSS for stylesheets without an 
 additional compile step.
