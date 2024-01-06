@@ -2,7 +2,7 @@
 title: addon.kv3
 ---
 # addon.kv3
-Addons use a special file called `addon.kv3`, which defines various parts of the addon. The [workshop tools](p2ce/reference/workshop/addoncreation#uploading-to-the-workshop) automatically generate this but it can be manually edited after initial creation.
+Addons use a special file called `addon.kv3`, which defines various parts of the addon. The [workshop tools](/p2ce/reference/workshop/addoncreation#uploading-to-the-workshop) automatically generate this but it can be manually edited after initial creation.
 
 *(NOTE: As workshop support gets updated and expanded, all these parameters should become functional. As of now, many parameters may be broken or non-functional. If you have any suggestions or feature requests, please create an issue on [the P2CE repo](https://github.com/StrataSource/Portal-2-Community-Edition/issues).)*
 ## Parameters
