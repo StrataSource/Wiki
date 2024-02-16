@@ -172,6 +172,8 @@ cvar. If desired, this key may be used to specify a distance instead of relying 
 
 The value of this key is an interval in the format `near, far`, where near and far are measured in engine units.
 
+**Warning:** You must specify `soundentry_version 2` for this parameter to work!
+
 #### Examples
 
 A sound that should start blending with far at 512 units, and transition to the far sound at 1024 units:
