@@ -1,6 +1,6 @@
 # Licenses for Strata Source Wiki content
 
-Copyright (c) 2021-2023 Strata Source Contributors
+Copyright (c) 2021-2024 Strata Source Contributors
 - All prose content is licensed under ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)).
 - All code examples and snippets are in the public domain under ([CC0](https://creativecommons.org/publicdomain/zero/1.0/)).
 
