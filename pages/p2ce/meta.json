@@ -45,6 +45,23 @@
             ]
         },
         {
+            "label": "Angelscript",
+            "id": "angelscript",
+            "home": "overview",
+            "topics": [
+                {
+                    "path": "angelscript",
+                    "id": "overview",
+                    "name": "Overview"
+                },
+                {
+                    "path": "angelscript/hammer",
+                    "id": "hammer",
+                    "name": "Hammer"
+                }
+            ]
+        },
+        {
             "label": "Panorama",
             "id": "panorama",
             "home": "overview",
