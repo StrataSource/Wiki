@@ -12,7 +12,7 @@ more information.
 ## Features
 
 Strata Source started development in the June of 2020 as a fork of CSGO's engine branch
-with Portal 2 features backported. Since its inception, many features, fixes and
+with Portal 2 features ported over. Since its inception, many features, fixes and
 other improvements have been made to Strata Source, including:
 
 - Native DirectX 11 renderer
