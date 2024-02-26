@@ -8,4 +8,4 @@ features:
 
 |Signature|Description|
 |---|---|
-| handle CPropWeightedCube::GetPartner() | Get the instance handle of the schrodinger's partner | 
+| `handle CPropWeightedCube::GetPartner()` | Get the instance handle of the schrodinger's partner | 
