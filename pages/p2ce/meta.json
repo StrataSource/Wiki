@@ -13,6 +13,16 @@
                 {
                     "id": "reference",
                     "name": "Reference"
+                },
+				{
+                    "path": "reference/materials",
+                    "id": "materials",
+                    "name": "Materials"
+                },
+                {
+                    "path": "reference/workshop",
+                    "id": "workshop",
+                    "name": "Workshop"
                 }
             ]
         },
