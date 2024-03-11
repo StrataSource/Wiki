@@ -8,11 +8,12 @@
         {
             "label": "Reference",
             "id": "reference",
-            "home": "reference",
+            "home": "general",
             "topics": [
                 {
-                    "id": "reference",
-                    "name": "Reference"
+					"path": "reference",
+                    "id": "general",
+                    "name": "General"
                 },
 				{
                     "path": "reference/util",
