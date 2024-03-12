@@ -1,6 +1,6 @@
 {
-    "logo": "https://branding.stratasource.org/i/strata-source/logo/ondark/mono.svg",
-    "icon": "https://branding.stratasource.org/i/strata-source/icon/ondark/mono.svg",
+    "logo": "/assets/logos/strata_logo_ondark_mono.svg",
+    "icon": "/assets/logos/strata_icon_ondark_mono.svg",
     "name": "Strata Source",
     "color": "#f0413c",
     "categories": [

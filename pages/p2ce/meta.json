@@ -1,6 +1,6 @@
 {
-    "logo": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/p2ce/full_mw.svg",
-    "icon": "https://baguettery-alt.chaos-branding-tool.pages.dev/media/p2ce/square_mw.svg",
+    "logo": "/assets/logos/p2ce_full_mw.svg",
+    "icon": "/assets/logos/p2ce_square_mw.svg",
     "name": "Portal 2: Community Edition",
     "nameShort": "P2CE",
     "color": "#ff7b02",
