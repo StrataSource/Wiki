@@ -4,6 +4,8 @@ title: CBaseFlex
 
 # CBaseFlex
 
+*Inherits [CBaseAnimating](CBaseAnimating)*
+
 |Signature|Description|
 |---|---|
 | `handle CBaseFlex::GetCurrentScene()` | Returns the instance of the oldest active scene entity (if any). | 

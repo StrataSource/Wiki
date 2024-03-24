@@ -6,6 +6,8 @@ features:
 
 # CPropWeightedCube [Portal 2: Community Edition Only]
 
+*Inherits [CBaseAnimating](CBaseAnimating)*
+
 |Signature|Description|
 |---|---|
 | `handle CPropWeightedCube::GetPartner()` | Get the instance handle of the schrodinger's partner | 

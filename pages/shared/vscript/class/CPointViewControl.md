@@ -4,6 +4,8 @@ title: CPointViewControl
 
 # CPointViewControl
 
+*Inherits [CBaseEntity](CBaseEntity)*
+
 |Signature|Description|
 |---|---|
 | `int CPointViewControl::GetFov()` | get camera's current fov setting as integer | 

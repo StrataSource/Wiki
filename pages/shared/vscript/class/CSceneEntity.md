@@ -4,6 +4,8 @@ title: CSceneEntity
 
 # CSceneEntity
 
+*Inherits [CBaseEntity](CBaseEntity)*
+
 |Signature|Description|
 |---|---|
 | `void CSceneEntity::AddBroadcastTeamTarget(int)` | Adds a team (by index) to the broadcast list | 
