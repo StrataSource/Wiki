@@ -2,8 +2,9 @@
 title: CBasePortal
 ---
 
-
 # CBasePortal
+
+*Inherits [CBaseAnimating](CBaseAnimating)*
 
 | Signature | Description |
 |---|---|

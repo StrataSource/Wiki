@@ -4,6 +4,8 @@ title: CBaseAnimating
 
 # CBaseAnimating
 
+*Inherits [CBaseEntity](CBaseEntity)*
+
 |Signature|Description|
 |---|---|
 | `Vector CBaseAnimating::GetAttachmentAngles(int)` | Get the attachement id's angles as a p,y,r vector | 

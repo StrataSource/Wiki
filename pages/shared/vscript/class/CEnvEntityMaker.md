@@ -4,6 +4,8 @@ title: CEnvEntityMaker
 
 # CEnvEntityMaker
 
+*Inherits [CBaseEntity](CBaseEntity)*
+
 |Signature|Description|
 |---|---|
 | `void CEnvEntityMaker::SpawnEntity()` | Create an entity at the location of the maker | 

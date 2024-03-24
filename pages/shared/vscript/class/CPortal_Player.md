@@ -6,6 +6,8 @@ features:
 
 # CPortal\_Player [Portal 2: Community Edition Only]
 
+*Inherits [CBasePlayer](CBasePlayer)*
+
 |Signature|Description|
 |---|---|
 | `int CPortal_Player::GetWheatleyMonitorDestructionCount()` | Get number of wheatley monitors destroyed by the player. | 
