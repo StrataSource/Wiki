@@ -19,16 +19,18 @@ other improvements have been made to Strata Source, including:
 - Panorama UI
 - DXVK support on Linux for DirectX 11
 - 64-bit support (32-bit support has been completely dropped)
+- Expanded map limits (128k x 128k x 128k) and increased entity cap via BSPv25
 - PBR shading
 - CSM (Originally from CSGO)
 - Backwards compatibility with BSP v19-21
-- Backwards compatibiltiy with TF2/HL2 branch models
+- Backwards compatibiltiy with TF2/HL2/L4D1/ASW branch models
 - webm video support, replacing older Bink videos
 - Many improvements to Linux support
 - Fully cross platform engine tools and utils
 - Steam Audio for HRTF and basic occlusion
 - MP3, OGG and FLAC support
 - Support for Portals and paint even in non-Portal based mods
+- VTF v7.6 with lossless DEFLATE compression support
 - Many improvements to the Hammer level editor
 - Many code quality improvements (Refactors, cleanup and C++23)
 - Sentry crash report integration
