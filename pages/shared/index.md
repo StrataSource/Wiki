@@ -11,7 +11,7 @@ more information.
 
 ## Features
 
-Strata Source started development in the June of 2020 as a fork of CSGO's engine branch
+Strata Source started development in mid-2020 as a fork of CSGO's engine branch
 with Portal 2 features ported over. Since its inception, many features, fixes and
 other improvements have been made to Strata Source, including:
 
@@ -26,11 +26,13 @@ other improvements have been made to Strata Source, including:
 - webm video support, replacing older Bink videos
 - Many improvements to Linux support
 - Fully cross platform engine tools and utils
-- Steam Audio
+- Steam Audio for HRTF and basic occlusion
+- MP3, OGG and FLAC support
 - Support for Portals and paint even in non-Portal based mods
 - Many improvements to the Hammer level editor
-- Many code quality improvements (Refactors, cleanup and C++20)
+- Many code quality improvements (Refactors, cleanup and C++23)
 - Sentry crash report integration
+- ImGui support in-game for tools (vprof, fogui, etc.)
 - And much much more!
 
 ## Projects Using Strata
