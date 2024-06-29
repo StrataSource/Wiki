@@ -43,7 +43,7 @@ Right now, the following games are using Strata:
 
 - [Momentum Mod](https://momentum-mod.org/)
 - [Portal 2: Community Edition](https://portal2communityedition.com/)
-- [Portal: Revolution](https://www.moddb.com/mods/portal-revolution-spyce-software)
+- [Portal: Revolution](https://www.portalrevolution.com/)
 
 ## Contributing
 
