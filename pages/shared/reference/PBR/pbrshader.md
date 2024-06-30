@@ -2,11 +2,10 @@
 layout: default
 title: PBR
 ---
+# PBR
 This page contains information about the parameters of the PBR shader. 
 
 ***Tip:** Use "Ctrl+F" to find a specific parameter you are looking for*
-# PBR
-
 ## Parameters
 ### Basics
 #### `$basetexture` \<texture\>
@@ -276,5 +275,3 @@ This page contains information about the parameters of the PBR shader.
 &ensp;Default: `paint/paint_envmap_hdr`
 
 &ensp;Description: Envmap that is consistent across all surfaces
-
-----
