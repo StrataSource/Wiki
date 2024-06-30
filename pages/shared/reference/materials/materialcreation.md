@@ -12,8 +12,12 @@ As stated before, PBR textures need to be created in specialized programs. If yo
  
    ***IMPORTANT**: If the program you used to create these textures labels these as "Glossiness" or "Smoothness" maps, make sure you invert the colors before proceeding! Strata uses Roughness textures for PBR instead of Smoothness. They are the same type of map, just with inverted colors.*
 
-* [Ambient Occlusion](https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_00c9ca0901) map (Specifies which areas of the texture are "behind", or always shaded. You can compare this to what an [SSBump](https://developer.valvesoftware.com/wiki/$ssbump) map accomplishes, however with no additional bumpmapping. For the sake of this article, Ambient Occlusion will be referred to as AO.)
-* [Bump](https://developer.valvesoftware.com/wiki/Bump_map) map *with optional Height map in alpha channel* (Standard bump map that is usually used with standard Source workflow, but it can optionally include a Height map in the alpha channel of the texture for [Parallax Mapping](/shared/reference/materials/parallaxmapping))
+* [Ambient Occlusion](https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_00c9ca0901) map (Specifies which areas of the texture are "behind", or always shaded. You can compare this to what an [SSBump](https://developer.valvesoftware.com/wiki/$ssbump) map accomplishes, however with no additional bumpmapping. For the sake of this article, Ambient Occlusion will be referred to as AO.) 
+
+	***Note:** AO maps are not required for PBR to work properly.*
+* [Bump](https://developer.valvesoftware.com/wiki/Bump_map) (Normal) map *with optional Height map in alpha channel* (Standard bump map that is usually used with standard Source workflow, but it can optionally include a Height map in the alpha channel of the texture for [Parallax Mapping](/shared/reference/materials/parallaxmapping))
+
+	***REMINDER:** SSBump maps are **NOT** supported! To get a similar effect, use an AO map.*
 
 For the sake of demonstration, this article will use images of the process of converting `black_wall_metal_005a` to use PBR.
 ## Creating the MRAO texture
@@ -33,7 +37,7 @@ After this, go to "Colors -> Components -> Compose...". Put your Metalness map i
 Now, click OK and let GIMP compose the image. After it finishes, you should get an image that looks similar to this:
 ![Mostly blue image](/assets/PBR_images/bwm004a_mrao.png)
 
-The final step of making an MRAO texture is converting it to a VTF. This can be done with [VTFEdit](https://valvedev.info/tools/vtfedit/), or our [Vtex2](/pages/shared/reference/util/vtex2) tool, which supports Strata's new VTF 7.6 version. 
+The final step of making an MRAO texture is converting it to a VTF. This can be done with [VTFEdit](https://valvedev.info/tools/vtfedit/), or our [Vtex2](/shared/reference/util/vtex2) tool, which supports Strata's new VTF 7.6 version. 
 #### Manual VMT creation
 Create a new `.VMT` file and paste this text in:
 ```
