@@ -1,7 +1,6 @@
 ---
 title: Creating PBR materials
 ---
-(Note: WIP)
 # Creating PBR materials
 ## Overview
 The PBR workflow is much more complicated than the standard Source workflow. While most Source textures can be created with a simple image editing program like GIMP, PBR textures need many more textures, some of which cannot be made with a simple paintbrush or pattern tool (well, they can, but it's not recommended). These textures need specialized programs to create them, of which there are a couple of options. This page will not cover the creation of these textures, as many tutorials already exist on this topic. This page will however go over the creation of MRAO textures and the creation of the material file.
@@ -17,7 +16,7 @@ As stated before, PBR textures need to be created in specialized programs. If yo
 	***Note:** AO maps are not required for PBR to work properly.*
 * [Bump](https://developer.valvesoftware.com/wiki/Bump_map) (Normal) map *with optional Height map in alpha channel* (Standard bump map that is usually used with standard Source workflow, but it can optionally include a Height map in the alpha channel of the texture for [Parallax Mapping](/shared/reference/PBR/parallaxmapping))
 
-	***REMINDER:** SSBump maps are **NOT** supported! To get a similar effect, use an AO map.*
+	***Reminder:** SSBump maps are **NOT** supported! To get a similar effect, use an AO map.*
 
 For the sake of demonstration, this article will use images of the process of converting `black_wall_metal_005a` to use PBR.
 ## Creating the MRAO texture
@@ -37,7 +36,7 @@ After this, go to "Colors -> Components -> Compose...". Put your Metalness map i
 Now, click OK and let GIMP compose the image. After it finishes, you should get an image that looks similar to this:
 
 ![Mostly blue image](/assets/PBR_images/bwm004a_mrao.png)
-
+***Note:** Your image could have a different balance of colors depending on the intensity of each map*
 The final step of making an MRAO texture is converting it to a VTF. This can be done with [VTFEdit](https://valvedev.info/tools/vtfedit/), or our [Vtex2](/shared/reference/util/vtex2) tool, which supports Strata's new VTF 7.6 version. 
 #### Manual VMT creation
 Create a new `.VMT` file and paste this text in:
