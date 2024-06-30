@@ -15,6 +15,11 @@
                     "id": "general",
                     "name": "General"
                 },
+                {
+					"path": "reference/PBR",
+                    "id": "PBR",
+                    "name": "PBR Shader"
+                },
 				{
                     "path": "reference/util",
                     "id": "util",

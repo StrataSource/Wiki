@@ -38,7 +38,7 @@ Now, click OK and let GIMP compose the image. After it finishes, you should get 
 ![Mostly blue image](/assets/PBR_images/bwm004a_mrao.png)
 
 ***Note:** Your image could have a different balance of colors depending on the intensity of each map*
-The final step of making an MRAO texture is converting it to a VTF. This can be done with [VTFEdit](https://valvedev.info/tools/vtfedit/), or our [Vtex2](/shared/reference/util/vtex2) tool, which supports Strata's new VTF 7.6 version. 
+The final step of making an MRAO texture is converting it to a VTF. This can be done with [VTFEdit](https://valvedev.info/tools/vtfedit/), or our [VTex2](/shared/reference/util/vtex2) tool, which supports Strata's new VTF 7.6 version. 
 #### Manual VMT creation
 Create a new `.VMT` file and paste this text in:
 ```
@@ -53,7 +53,7 @@ Create a new `.VMT` file and paste this text in:
 ```
 Insert the paths to the correct materials where specified, and you are done!
 ### Method 2: PBR-2-Source
-Launch PBR-2-Source and wait for the GUI to appear. Insert your images into the correct boxes and doublecheck that the "Shader" option is set to "PBR (<intended use>)". Next, make sure the "Flip Normal Y" check is set correctly. If the program you used uses 3DS Max style normal maps, or you generated it from VTFEdit or pulled from an existing Source game, toggle the option off. If the program used to generate the map uses Maya-style normal maps, toggle the option on. If you are unsure what style of normal map your program uses, make sure to find out before going further, or the generated normal map could look, for lack of a better word, "ugly". After you do this, click export, select the folder and the output file name, then wait for PBR-2-Source to do the work for you. It will generate a fully functional PBR material.
+Launch PBR-2-Source and wait for the GUI to appear. Insert your images into the correct boxes and double check that the "Shader" option is set to "PBR (<intended use>)". Next, make sure the "Flip Normal Y" check is set correctly. If the program you used uses 3DS Max style normal maps, or you generated it from VTFEdit or pulled from an existing Source game, toggle the option off. If the program used to generate the map uses Maya-style normal maps, toggle the option on. If you are unsure what style of normal map your program uses, make sure to find out before going further, or the generated normal map could look, for lack of a better word, "ugly". After you do this, click export, select the folder and the output file name, then wait for PBR-2-Source to do the work for you. It will generate a fully functional PBR material.
 
 ## Finalizing
 All that is needed now is the editing and testing of your material. If your PBR material includes a Heightmap in the Alpha channel of your Bumpmap, see [This page](/shared/reference/PBR/parallaxmapping) on how to make it functional. Make any adjustments you want to your VMT, and you are done!

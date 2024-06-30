@@ -17,7 +17,7 @@
                 {
 					"path": "reference/PBR",
                     "id": "PBR",
-                    "name": "PBR shader"
+                    "name": "PBR Shader"
                 },
 				{
                     "path": "reference/util",

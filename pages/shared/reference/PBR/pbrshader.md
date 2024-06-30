@@ -90,7 +90,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: ``
 
-&ensp;Description: Specifies if the material is inteded for use on models or brushes. If set to 1, acts like VLG (phong for lights, no lightmaps). If set to 0, acts like LMG.
+&ensp;Description: Specifies if the material is intended for use on models or brushes. If set to 1, acts like VLG (phong for lights, no lightmaps). If set to 0, acts like LMG.
 
 #### `$mraotexture` \<texture\>
 
@@ -167,7 +167,7 @@ This page contains information about the parameters of the PBR shader.
 &ensp;Description: Specifies the threshold alpha channel value at which the surface should be transparent instead of opaque. A value of ".3" will create a thicker shape while a value of ".7" will create a thinner shape.
 
 ----
-### Emmissive
+### Emissive
 #### `$emissiontexture` \<texture\>
 
 &ensp;Default: ``
