@@ -15,7 +15,7 @@
                     "name": "General"
                 },
                 {
-					"path": "reference/materials",
+					"path": "reference/PBR",
                     "id": "PBR",
                     "name": "PBR shader"
                 },
