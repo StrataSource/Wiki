@@ -2,337 +2,277 @@
 layout: default
 title: PBR
 ---
-*(NOTE: WIP. Parameters will be reorganized to make more sense in the future.)*
 This page contains information about the parameters of the PBR shader. 
 # PBR
 
 ## Parameters
+### Basics
+#### `$basetexture` \<texture\>
 
-### `$flags` \<int\>
+&ensp;Default: `shadertest/BaseTexture`
 
-Default: `0`
+&ensp;Description: Base texture with lighting built in.
 
-flags
+#### `$basetexture2` \<texture\>
 
-### `$flags2` \<int\>
+&ensp;Default: `shadertest/lightmappedtexture`
 
-Default: `0`
+&ensp;Description: Blended texture for use with displacements
 
-flags2
+----
+### Appearance
+#### `$basetexturetransform` \<matrix\>
 
-### `$color` \<color\>
+&ensp;Default: `center .5 .5 scale 1 1 rotate 0 translate 0 0`
 
-Default: `[1 1 1]`
+&ensp;Description: Base Texture Texcoord Transform. Transforms the texture before use. Does not affect lightmaps.
 
-color
+#### `$color` \<color\>
 
-### `$alpha` \<float\>
+&ensp;Default: `[1 1 1]`
 
-Default: `1.0`
+&ensp;Description: Adjusts the color of $basetexture
 
-alpha
+#### `$color2` \<color\>
 
-### `$basetexture` \<texture\>
+&ensp;Default: `[1 1 1]`
 
-Default: `shadertest/BaseTexture`
+&ensp;Description: Adjusts the color of $basetexture2
 
-Base Texture with lighting built in
+#### `$frame` \<int\>
 
-### `$frame` \<int\>
+&ensp;Default: `0`
 
-Default: `0`
+&ensp;Description: Sets what static frame to use if $basetexture is animated
 
-Animation Frame
+#### `$frame2` \<int\>
 
-### `$basetexturetransform` \<matrix\>
+&ensp;Default: `0`
 
-Default: `center .5 .5 scale 1 1 rotate 0 translate 0 0`
+&ensp;Description: Sets what static frame to use if $basetexture2 is animated
 
-Base Texture Texcoord Transform
+#### `$srgbtint` \<color\>
 
-### `$flashlighttexture` \<texture\>
+&ensp;Default: `[1 1 1]`
 
-Default: `effects/flashlight001`
+&ensp;Description: Tint value to be applied when running on new-style srgb parts
 
-flashlight spotlight shape texture
+#### `$hsv` \<color\>
 
-### `$flashlighttextureframe` \<int\>
+&ensp;Default: `[1 1 1]`
 
-Default: `0`
+&ensp;Description: HSV color to transform $basetexture texture with
 
-Animation Frame for $flashlight
+#### `$hsv_blend` \<bool\>
 
-### `$color2` \<color\>
+&ensp;Default: `0`
 
-Default: `[1 1 1]`
+&ensp;Description: Blend untransformed color and HSV transformed color
 
-color2
+----
+### Flashlight
+#### `$flashlighttexture` \<texture\>
 
-### `$srgbtint` \<color\>
+&ensp;Default: `effects/flashlight001`
 
-Default: `[1 1 1]`
+&ensp;Description: Flashlight spotlight shape texture
 
-tint value to be applied when running on new-style srgb parts
+#### `$flashlighttextureframe` \<int\>
 
-### `$basetexture2` \<texture\>
+&ensp;Default: `0`
 
-Default: `shadertest/lightmappedtexture`
+&ensp;Description: Sets what static frame to use if $flashlighttexture is animated
 
-Blended texture
+----
+### Physically Based Rendering
+#### `$model` \<bool\>
 
-### `$frame2` \<int\>
+&ensp;Default: ``
 
-Default: `0`
+&ensp;Description: Specifies if the material is inteded for use on models or brushes. If set to 1, acts like VLG (phong for lights, no lightmaps). If set to 0, acts like LMG.
 
-frame number for $basetexture2
+#### `$mraotexture` \<texture\>
 
-### `$alphatestreference` \<float\>
+&ensp;Default: ``
 
-Default: `0`
+&ensp;Description: Texture with metalness in R, roughness in G, ambient occlusion in B for $basetexture
 
+#### `$mraoframe` \<int\>
 
+&ensp;Default: ``
 
-### `$envmap` \<texture\>
+&ensp;Description: Sets what static frame to use if $mraotexture is animated.
 
-Default: ``
+#### `$mraotexture2` \<texture\>
 
-Set the cubemap for this material.
+&ensp;Default: ``
 
-### `$envmapframe` \<int\>
+&ensp;Description: Texture with metalness in R, roughness in G, ambient occlusion in B for $basetexture2
 
-Default: ``
+#### `$mraoframe2` \<int\>
 
-Frame number for $envmap.
+&ensp;Default: ``
 
-### `$mraotexture` \<texture\>
+&ensp;Description: Sets what static frame to use if $mraotexture2 is animated.
 
-Default: ``
+#### `$mraoscale` \<color\>
 
-Texture with metalness in R, roughness in G, ambient occlusion in B.
+&ensp;Default: `[1 1 1]`
 
-### `$mraoframe` \<int\>
+&ensp;Description: Factors for metalness, roughness, and ambient occlusion for $mraotexture
 
-Default: ``
+#### `$mraoscale2` \<color\>
 
-Frame number for $mraotexture.
+&ensp;Default: `[1 1 1]`
 
-### `$mraotexture2` \<texture\>
+&ensp;Description: Factors for metalness, roughness, and ambient occlusion for $mraotexture2
 
-Default: ``
+#### `$parallax` \<bool\>
 
-Texture with metalness in R, roughness in G, ambient occlusion in B.
+&ensp;Default: `0`
 
-### `$mraoframe2` \<int\>
+&ensp;Description: Enables [Parallax Occlusion Mapping](/pages/shared/reference/materials/parallaxmapping).
 
-Default: ``
+#### `$parallaxdepth` \<float\>
 
-Frame number for $mraotexture2.
+&ensp;Default: `0.0030`
 
-### `$emissiontexture` \<texture\>
+&ensp;Description: Depth of the Parallax Map. Essentially the intensity of the heightmap. 
 
-Default: ``
+#### `$parallaxcenter` \<float\>
 
-Emission texture
+&ensp;Default: `0.5`
 
-### `$emissionframe` \<int\>
+&ensp;Description: Center depth of the Parallax Map. Essentially how far away from the face the center of the heightmapped material appears to be.
 
-Default: ``
+#### `$blendtintbymraoalpha` \<bool\>
 
-Frame number for $emissiontexture.
+&ensp;Default: `0`
 
-### `$emissiontexture2` \<texture\>
+&ensp;Description: Blend tint by the alpha channel in MRAO texture. Similar to $blendtintbybasealpha for [VLG](https://developer.valvesoftware.com/wiki/VertexLitGeneric)
 
-Default: ``
+----
+### Aplha
+#### `$alpha` \<float\>
 
-Emission texture
+&ensp;Default: `1.0`
 
-### `$emissionframe2` \<int\>
+&ensp;Description: Scales the transparency of the whole image
 
-Default: ``
+#### `$alphatestreference` \<float\>
 
-Frame number for $emissiontexture2.
+&ensp;Default: `0`
 
-### `$normaltexture` \<texture\>
+&ensp;Description: Specifies the threshold alpha channel value at which the surface should be transparent instead of opaque. A value of ".3" will create a thicker shape while a value of ".7" will create a thinner shape.
 
-Default: ``
+----
+### Emmissive
+#### `$emissiontexture` \<texture\>
 
-Normal texture (deprecated, use $bumpmap)
+&ensp;Default: ``
 
-### `$bumpmap` \<texture\>
+&ensp;Description: Emission texture
 
-Default: ``
+#### `$emissionframe` \<int\>
 
-Normal texture
+&ensp;Default: ``
 
-### `$bumpframe` \<int\>
+&ensp;Description: Static frame to use if $emissiontexture is animated.
 
-Default: ``
+#### `$emissiontexture2` \<texture\>
 
-Frame number for $bumpmap.
+&ensp;Default: ``
 
-### `$bumpmap2` \<texture\>
+&ensp;Description: Emission texture for $basetexture2
 
-Default: ``
+#### `$emissionframe2` \<int\>
 
-Normal texture
+&ensp;Default: ``
 
-### `$bumpframe2` \<int\>
+&ensp;Description: Static frame to use if $emissiontexture2 is animated.
 
-Default: ``
+#### `$emissionscale` \<color\>
 
-Frame number for $bumpmap2.
+&ensp;Default: `[1 1 1]`
 
-### `$parallax` \<bool\>
+&ensp;Description: Color to multiply $emissiontexture with
 
-Default: `0`
+#### `$emissionscale2` \<color\>
 
-Use Parallax Occlusion Mapping.
+&ensp;Default: `[1 1 1]`
 
-### `$parallaxdepth` \<float\>
+&ensp;Description: Color to multiply $emissiontexture2 with
 
-Default: `0.0030`
+----
+### Reflection
+#### `$envmap` \<texture\>
 
-Depth of the Parallax Map
+&ensp;Default: ``
 
-### `$parallaxcenter` \<float\>
+&ensp;Description: Set the cubemap for this material.
 
-Default: `0.5`
+#### `$envmapframe` \<int\>
 
-Center depth of the Parallax Map
+&ensp;Default: ``
 
-### `$mraoscale` \<color\>
+&ensp;Description: Static frame to use if $envmap is animated.
 
-Default: `[1 1 1]`
+----
+### Bumpmap
+#### `$normaltexture` \<texture\>
 
-Factors for metalness, roughness, and ambient occlusion
+&ensp;Default: ``
 
-### `$mraoscale2` \<color\>
+&ensp;Description: Normalmap texture (deprecated, use $bumpmap)
 
-Default: `[1 1 1]`
+#### `$bumpmap` \<texture\>
 
-Factors for metalness, roughness, and ambient occlusion
+&ensp;Default: ``
 
-### `$emissionscale` \<color\>
+&ensp;Description: Bumpmap texture for $basetexture
 
-Default: `[1 1 1]`
+#### `$bumpframe` \<int\>
 
-Color to multiply emission texture with
+&ensp;Default: ``
 
-### `$emissionscale2` \<color\>
+&ensp;Description: Static frame to use if $bumpmap is animated.
 
-Default: `[1 1 1]`
+#### `$bumpmap2` \<texture\>
 
-Color to multiply emission texture with
+&ensp;Default: ``
 
-### `$hsv` \<color\>
+&ensp;Description: Bumpmap texture for $bsaetexture2
 
-Default: `[1 1 1]`
+#### `$bumpframe2` \<int\>
 
-HSV color to transform $basetexture texture with
+&ensp;Default: ``
 
-### `$hsv_blend` \<bool\>
+&ensp;Description: Static frame to use if $bumpmap2 is animated.
 
-Default: `0`
+----
+### Paint
+#### `$paintsplatnormalmap` \<texture\>
 
-Blend untransformed color and HSV transformed color
+&ensp;Default: `paint/splatnormal_default`
 
-### `$brdf_integration` \<texture\>
+&ensp;Description: The paint splat normal map to use when paint is enabled on the surface
 
-Default: ``
+#### `$paintsplatbubblelayout` \<texture\>
 
+&ensp;Default: `paint/bubblelayout`
 
+&ensp;Description: The layout texture which defines the distribution of bubbles in the paint
 
-### `$envmapparallax` \<matrix\>
+#### `$paintsplatbubble` \<texture\>
 
-Default: `[1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]`
+&ensp;Default: `paint/bubble`
 
+&ensp;Description: The normal mapped texture of a single bubble
 
+#### `$paintenvmap` \<texture\>
 
-### `$envmaporigin` \<vec3\>
+&ensp;Default: `paint/paint_envmap_hdr`
 
-Default: `[0 0 0]`
+&ensp;Description: Envmap that is consistent across all surfaces
 
-The world space position of the env_cubemap being corrected
-
-### `$blendtintbymraoalpha` \<bool\>
-
-Default: `0`
-
-Blend tint by the alpha channel in MRAO texture. Similar to $blendtintbybasealpha for VLG
-
-### `$paintsplatnormalmap` \<texture\>
-
-Default: `paint/splatnormal_default`
-
-The paint splat normal map to use when paint is enabled on the surface
-
-### `$paintsplatbubblelayout` \<texture\>
-
-Default: `paint/bubblelayout`
-
-The layout texture which defines the distribution of bubbles in the paint
-
-### `$paintsplatbubble` \<texture\>
-
-Default: `paint/bubble`
-
-The normal mapped texture of a single bubble
-
-### `$paintenvmap` \<texture\>
-
-Default: `paint/paint_envmap_hdr`
-
-Envmap that is consistent across all surfaces
-
-## Example
-
-```
-PBR
-{
-	$color               "[1 1 1]"
-	$alpha               "1.0"
-	$basetexture         "shadertest/BaseTexture"
-	$frame               "0"
-	$basetexturetransform "center .5 .5 scale 1 1 rotate 0 translate 0 0"
-	$flashlighttexture   "effects/flashlight001"
-	$flashlighttextureframe "0"
-	$color2              "[1 1 1]"
-	$srgbtint            "[1 1 1]"
-	$basetexture2        "shadertest/lightmappedtexture"
-	$frame2              "0"
-	$alphatestreference  "0"
-	$envmap              ""
-	$envmapframe         ""
-	$mraotexture         ""
-	$mraoframe           ""
-	$mraotexture2        ""
-	$mraoframe2          ""
-	$emissiontexture     ""
-	$emissionframe       ""
-	$emissiontexture2    ""
-	$emissionframe2      ""
-	$normaltexture       ""
-	$bumpmap             ""
-	$bumpframe           ""
-	$bumpmap2            ""
-	$bumpframe2          ""
-	$parallax            "0"
-	$parallaxdepth       "0.0030"
-	$parallaxcenter      "0.5"
-	$mraoscale           "[1 1 1]"
-	$mraoscale2          "[1 1 1]"
-	$emissionscale       "[1 1 1]"
-	$emissionscale2      "[1 1 1]"
-	$hsv                 "[1 1 1]"
-	$hsv_blend           "0"
-	$brdf_integration    ""
-	$envmapparallax      "[1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]"
-	$envmaporigin        "[0 0 0]"
-	$blendtintbymraoalpha "0"
-	$paintsplatnormalmap "paint/splatnormal_default"
-	$paintsplatbubblelayout "paint/bubblelayout"
-	$paintsplatbubble    "paint/bubble"
-	$paintenvmap         "paint/paint_envmap_hdr"
-}
-```
-
+----
