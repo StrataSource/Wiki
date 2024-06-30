@@ -35,6 +35,7 @@ After this, go to "Colors -> Components -> Compose...". Put your Metalness map i
 ![Metalness map in R, Roughness in G, AO in B](/assets/PBR_images/gimpcompose.png)
 
 Now, click OK and let GIMP compose the image. After it finishes, you should get an image that looks similar to this:
+
 ![Mostly blue image](/assets/PBR_images/bwm004a_mrao.png)
 
 The final step of making an MRAO texture is converting it to a VTF. This can be done with [VTFEdit](https://valvedev.info/tools/vtfedit/), or our [Vtex2](/shared/reference/util/vtex2) tool, which supports Strata's new VTF 7.6 version. 
