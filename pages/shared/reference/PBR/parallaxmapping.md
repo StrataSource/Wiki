@@ -5,7 +5,7 @@ title: Parallax Mapping
 ## Overview
 [Parallax Mapping](https://learnopengl.com/Advanced-Lighting/Parallax-Mapping) is a shading technique used to add percieved depth to a material, which would be too complex and unrealistic to create with displacements or models. Valve experimented with Parallax Mapping during the development of Half-Life 2, however it was dropped before being shipped. Using the [PBR shader](/shared/reference/PBR/pbrshader), parallax mapping can be used again to add percieved depth to your materials.
 ## Requirements
-* A funcitoning PBR material (steps for creation can be found [here](/shared/reference/materials/materialcreation).)
+* A funcitoning PBR material (steps for creation can be found [here](/shared/reference/PBR/materialcreation).)
 * A [Bumpmap](https://developer.valvesoftware.com/wiki/Bump_map)
 * A [Heightmap](https://developer.valvesoftware.com/wiki/Heightmap)
 * [GIMP](https://www.gimp.org/)
