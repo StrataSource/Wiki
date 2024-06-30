@@ -12,11 +12,11 @@ title: Parallax Mapping
 ## Embedding the Heightmap
 Open both your Heightmap and Bumpmap seperately in GIMP. Copy your Heightmap, then navigate to the layers window of your bumpmap and click on the Layer Mask button.
 
-![Click on the hand holding a mask](https://raw.githubusercontent.com/Equalizer5118/Wiki/patch-1/assets/PBR_images/Layermaskbutton.png)
+![Click on the hand holding a mask](/assets/PBR_images/Layermaskbutton.png)
 
 A small window asking about what to fill the mask with should pop up. Select White, then click ok. Now, paste your Heightmap into the layer mask. Your layer should now look like this:
  
-![The Heightmap is in a seperate box next to the bumpmap](https://raw.githubusercontent.com/Equalizer5118/Wiki/patch-1/assets/PBR_images/Layersfinal.png)
+![The Heightmap is in a seperate box next to the bumpmap](/assets/PBR_images/Layersfinal.png)
 
 The main image should now appear transparent, as GIMP always interprets alpha masks as transparency masks. This is can be ignored, as the engine will interpret this correctly. Now, export your image and convert it to a VTF. 
 ## Adjusting the VMT

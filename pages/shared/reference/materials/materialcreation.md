@@ -24,7 +24,7 @@ GIMP can combine different layers into the RGBA channels of one texture, which m
 
 First, go to "Image -> Mode" and make sure "Grayscale" is selected. Even if your images are grayscale, GIMP may still treat them as color images, which prevents this method from working. Then, create a new image with the dimensions of your texture maps. Go to file and click "Import as layers...", select your Metalness, Roughness, and AO maps, and click Import. Your layers should now look similar to this (order is irrelevant):
 
-![Metalness, Roughness, and AO maps in separate layers](/assets/PBR_images/bwm004a_mrao.png)
+![Metalness, Roughness, and AO maps in separate layers](/assets/PBR_images/gimplayers.png)
 
 After this, go to "Colors -> Components -> Compose...". Put your Metalness map in the Red channel, your Roughness map in the Green, and your AO map in the Blue. The dropdowns should look like this:
 
