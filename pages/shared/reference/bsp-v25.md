@@ -4,7 +4,7 @@ title: BSP v25 Format
 
 # BSP Version 25
 
-Bsp v25 is Strata Source's modified BSP format that raises many of the baked-in limits that BSP traditionally has.
+BSP v25 is Strata Source's modified BSP format that raises many of the baked-in limits that BSP traditionally has.
 Version 25 was selected to avoid collisions with other projects that are also modifying the BSP map format.
 
 This document goes over the significant changes to the format so non-Strata devs can parse and analyze our maps.
