@@ -10,7 +10,6 @@ These constants are used with the extended trace API to filter entities by their
 
 |Name|Value|
 |---|---|
-| `BOUNCE_POWER` | 0 | 
 | `COLLISION_GROUP_BREAKABLE_GLASS` | 6 | 
 | `COLLISION_GROUP_CAMERA_SOLID` | 21 | 
 | `COLLISION_GROUP_DEBRIS` | 1 | 
@@ -74,10 +73,11 @@ Trace masks are used with the extended trace API to filter entities by category.
 
 |Name|Value|
 |---|---|
-| `NO_POWER` | 4 | 
-| `PORTAL_POWER` | 3 | 
+| `BOUNCE_POWER` | 0 | 
 | `REFLECT_POWER` | 1 | 
 | `SPEED_POWER` | 2 | 
+| `PORTAL_POWER` | 3 | 
+| `NO_POWER` | 4 | 
 | `STICK_POWER` | 5 | 
 
 ## Misc. Constants
