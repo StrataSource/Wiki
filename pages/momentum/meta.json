@@ -38,7 +38,7 @@
                 },
                 {
                     "path": "panorama/controls",
-                    "id": "control",
+                    "id": "controls",
                     "name": "Controls"
                 }
             ]
