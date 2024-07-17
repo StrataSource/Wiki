@@ -76,9 +76,9 @@
                     "name": "Overview"
                 },
                 {
-                    "path": "panorama/control",
-                    "id": "control",
-                    "name": "Control"
+                    "path": "panorama/controls",
+                    "id": "controls",
+                    "name": "Controls"
                 }
             ]
         }
