@@ -18,8 +18,11 @@ of launch options, please see
 | -dev                     | Developer mode                                                                                             |
 | -multirun/-allowmultiple | Disables the creation of the source engine mutex, and allows the game to start even if one already exists  |
 | -dedicated               | Launches the game as a dedicated server                                                                    |
+| -nojserrors              | Disables the Panorama JS error dialog box                                                                  |
+| -unrestrictedwebrequests | Disables the Panorama web request whitelist. NOT recommended, unless for a standalone mod                  |
 
-# POSIX-specific options (Not available on Windows)
+
+# Linux-only options
 
 The following options are only available on Linux currently.
 
