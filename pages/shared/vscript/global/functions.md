@@ -24,6 +24,7 @@ title: Functions
 | `bool DoIncludeScript(string, handle)`|Execute a script (internal, do not use)|
 | `function EntFire(handle target, string action, string value, float delay, handle activator)`|Generate and entity i/o event|
 | `void EntFireByHandle(handle target, string action, string value, float delay, handle activator, handle caller)`|Generate and entity i/o event. First parameter is an entity instance.|
+| `handle FindPortalByID(int id, int portal)` | Finds a portal by linkage ID and portal number. Portal number 1 is the primary portal, 2 is the secondary. Linkage ID should be <255 |
 | `float FrameTime()`|Get the time spent on the server in the last frame|
 | `int GetBluePlayerIndex()`|Player index of the blue player.|
 | `int GetCoopBranchLevelIndex(int branch)`|Given the 'branch' argument, returns the current chosen level.|
@@ -59,6 +60,7 @@ title: Functions
 | `handle TraceHull(Vector start, Vector end, Vector hullMin, Vector hullMax, int entityMask, handle entIgnore, int collisionGroup)`|Sweeps a hull along the specified line. Returns a CGameTrace with the trace result|
 | `float TraceLine(Vector start, Vector end, handle entIgnore)`|given 2 points & ent to ignore, return fraction along line that hits world or models|
 | `handle TraceLineEx(Vector start, Vector end, int entityMask, handle entToIgnore, int collisionGroup)`|Given 2 points, ent to ignore, collision group and trace mask, returns a CGameTrace with the result|
+| `handle TraceLinePlayersIncluded(Vector start, Vector end, HSCRIPT hEntToIgnore)` | given 2 points & ent to ignore, return fraction along line that hits world, models, players or npcs |
 | `handle TracePortalLine(Vector start, Vector end, int entityMask, handle entToIgnore, int collisionGroup, bool transformTrace)`|Same as TraceLineEx, but will transform the trace based on any portals it passes through. Additional boolean determines if the end position should be transformed or left unchanged.|
 | `bool TryDLC1InstalledOrCatch()`|Tests if the DLC1 is installed for Try/Catch blocks.|
 | `function UniqueString(string templateStr)`|Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table.|
