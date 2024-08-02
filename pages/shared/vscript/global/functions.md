@@ -10,6 +10,7 @@ title: Functions
 | `void AddCoopCreditsName(string name)`|Adds a name to the coop credit's list.|
 | `handle CreateProp(string entityName, Vector origin, string modelName, int animIndex)`|Create a physics prop|
 | `handle CreateSceneEntity(string scene)`|Create a scene entity to play the specified scene.|
+| `handle CreateEntityByName(string className, table keyValues)` | Create an entity with the specified table of entity key-values. |
 | `void DebugDrawBox(Vector origin, Vector mins, Vector maxs, int r, int g, int b, int a, float duration)`|Draw a debug overlay box|
 | `void DebugDrawBoxAngles(Vector origin, Vector mins, Vector maxs, Vector angles, int r, int g, int b, int a, float duration)`|Draw a debug overlay box with specific angles|
 | `void DebugDrawEntityText(int entIndex, int text_offset, string text, float duration, int r, int g, int b, int a)`|Draw debug overlay entity text|
