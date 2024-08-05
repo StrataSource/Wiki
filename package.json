@@ -3,8 +3,9 @@
     "version": "1.0.0",
     "description": "The new and improved Strata Source Wiki",
     "scripts": {
-        "cf-build": "cd generator && npm i && npm run build-ts && npm run build && npm run package",
-        "dev": "cd generator && npm i && npm run dev"
+        "cd-build": "npm run build",
+        "build": "cd site && npm i && npm run build",
+        "dev": "cd site && npm i && npm run dev"
     },
     "author": "Strata Source"
 }
