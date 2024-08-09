@@ -2,13 +2,13 @@
 # Basic getting started script for the Wiki generator
 
 # Ensure we have the generator
-if [ ! -f "generator/.git" ]; then
-	echo "Cloning submodule generator..."
-	git submodule init generator
-	git submodule update generator
+if [ ! -f "site/.git" ]; then
+	echo "Cloning submodule site..."
+	git submodule init site
+	git submodule update site
 fi
 
-cd generator
+cd site
 
 # Ensure we have our dependencies
 if [ ! -d "node_modules" ]; then

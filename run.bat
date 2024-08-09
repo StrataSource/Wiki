@@ -2,13 +2,13 @@
 REM Basic getting started script for the Wiki generator
 
 REM Ensure we have the generator
-IF NOT EXIST generator\.git (
-	echo Cloning submodule generator...
-	git submodule init generator
-	git submodule update generator
+IF NOT EXIST site\.git (
+	echo Cloning submodule site...
+	git submodule init site
+	git submodule update site
 )
 
-cd generator
+cd site
 
 REM Ensure we have our dependencies
 IF NOT EXIST node_modules (
