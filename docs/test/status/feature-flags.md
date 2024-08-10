@@ -7,4 +7,4 @@ features:
 
 # Maybe it's supported
 
-Only P2CE and Revo should support this feature.
+This page has a feature flag that only P2CE and Revo have
