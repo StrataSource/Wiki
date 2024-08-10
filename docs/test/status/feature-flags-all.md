@@ -5,3 +5,5 @@ features:
 ---
 
 # It should be supported
+
+This page has a feature flag that every game has
