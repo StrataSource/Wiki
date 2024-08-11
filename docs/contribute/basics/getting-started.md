@@ -35,4 +35,4 @@ must adhere to these guidelines
 -   advertise
 -   add malicious links or (any) downloads
 
-Once you've read these guidelines, you can continue to [the wiki structure](structure).
+Once you've read these guidelines, you can continue to [editing articles](editing-articles).
