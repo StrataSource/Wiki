@@ -1,1 +1,4 @@
 node_modules
+
+# Temporary output location to ensure build
+generator/public
