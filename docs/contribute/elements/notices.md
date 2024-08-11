@@ -14,7 +14,7 @@ Notices can be used to call out important or useful info.
 
 > This is the default notice
 
-## Notice
+## Note
 
 ```
 > [!NOTE]
