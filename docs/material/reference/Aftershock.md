@@ -6,4 +6,9 @@ It includes **full** _Markdown_ ~~support~~ including the ability to add extra b
 window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_self");
 ```
 
+and even images (like for example of materials)
+
+![Fox](Aftershock.jpg)
+![Another Fox](Aftershock/fox.jpg)
+
 Pretty neat if you ask me.
