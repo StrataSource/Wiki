@@ -1,1 +1,1 @@
-![HTML5](http://www.w3.org/html/logo/img/mark-word-icon.png "HTML5 logo for everyone")
+![HTML5](fox.jpg "HTML5 logo for everyone")
