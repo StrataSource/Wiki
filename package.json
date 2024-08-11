@@ -3,9 +3,12 @@
     "version": "1.0.0",
     "description": "The new and improved Strata Source Wiki",
     "scripts": {
-        "cd-build": "npm run build",
-        "build": "cd site && npm i && npm run build",
+        "cf-build": "npm run build && copyfiles -V -E -u 2 site/build/**/* generator/public/",
+        "build": "cd site && npm i && npm run build && cd ..",
         "dev": "cd site && npm i && npm run dev"
     },
-    "author": "Strata Source"
+    "author": "Strata Source",
+    "devDependencies": {
+        "copyfiles": "^2.4.1"
+    }
 }
