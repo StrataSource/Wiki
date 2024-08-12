@@ -4,7 +4,7 @@ title: vtex
 
 # vtex
 
-NOTE: This tool was replaced with [vtex2](/shared/reference/util/vtex2)!
+NOTE: This tool was replaced with [vtex2](/modding/util/vtex2)!
 
 vtex is a command line utility that builds VTF files. It is available for Windows and Linux.
 
