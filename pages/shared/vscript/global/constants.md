@@ -102,6 +102,33 @@ Trace masks are used with the extended trace API to filter entities by category.
 | `IN_COOP_PING` | 0x8000000 |
 | `IN_REMOTE_VIEW` | 0x10000000 |
 
+## MoveType
+
+|Name|Value|
+|---|---|
+| MOVETYPE_NONE | 0 |
+| MOVETYPE_ISOMETRIC | 1 |
+| MOVETYPE_WALK | 2 |
+| MOVETYPE_STEP | 3 |
+| MOVETYPE_FLY | 4 |
+| MOVETYPE_FLYGRAVITY | 5 |
+| MOVETYPE_VPHYSICS | 6 |
+| MOVETYPE_PUSH | 7 |
+| MOVETYPE_NOCLIP | 8 |
+| MOVETYPE_LADDER | 9 |
+| MOVETYPE_OBSERVER | 10 |
+| MOVETYPE_CUSTOM | 11 |
+
+## MoveCollide
+
+|Name|Value|
+|---|---|
+| MOVECOLLIDE_DEFAULT | 0 |
+| MOVECOLLIDE_FLY_BOUNCE | 1 |
+| MOVECOLLIDE_FLY_CUSTOM | 2 |
+| MOVECOLLIDE_FLY_SLIDE | 3 |
+
+
 ## Paint Types
 
 |Name|Value|
