@@ -119,6 +119,7 @@ Trace masks are used with the extended trace API to filter entities by category.
 | `MOVETYPE_OBSERVER` | 10 |
 | `MOVETYPE_CUSTOM` | 11 |
 
+
 ## MoveCollide
 
 |Name|Value|
