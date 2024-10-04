@@ -70,3 +70,5 @@ title: CBaseEntity
 | `void CBaseEntity::StopSound(string)` | Stops a sound on this entity. | 
 | `bool CBaseEntity::ValidateScriptScope()` | Ensure that an entity's script scope has been created | 
 | `int CBaseEntity::entindex()` |  | 
+| `void CBaseEntity::ApplyForce(Vector forceVector)` | Apply a centered force to an entity |
+| `void CBaseEntity::ApplyForce(Vector forceVector, Vector worldPos)` | Apply a force to an entity at a certain point in space |
