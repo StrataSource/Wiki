@@ -72,3 +72,4 @@ title: CBaseEntity
 | `int CBaseEntity::entindex()` |  | 
 | `void CBaseEntity::ApplyForce(Vector forceVector)` | Apply a centered force to an entity |
 | `void CBaseEntity::ApplyForce(Vector forceVector, Vector worldPos)` | Apply a force to an entity at a certain point in space |
+| `bool CBaseEntity::IsBSPModel()` | Returns true if this is a BSP model (i.e. func\_brush, trigger\_hurt, etc.) |
