@@ -1,4 +1,5 @@
 {
     "name": "Portal: Revolution",
-    "features": ["VSCRIPT", "PORTALS", "MOD_PORTAL2"]
+    "features": ["VSCRIPT", "PORTALS", "MOD_PORTAL2"],
+    "color": "#C31B1B"
 }
