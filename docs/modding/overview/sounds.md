@@ -29,23 +29,18 @@ Sound scripts in Strata are nearly identical to those found in other Source game
 in the format `game_sounds_xxx.txt`. The names of sound scripts to be loaded are defined in the manifest: `scripts/game_sounds_manifest.txt`,
 which contains a list of sound script files to precache.
 
-:::p2ce
-
-The game will also load any sound scripts placed in the `scripts/sounds/` directory.
-
-It's recommended to place custom sound scripts here.
-
-:::
+> [!P2CE]
+> The game will also load any sound scripts placed in the `scripts/sounds/` directory.
+> 
+> It's recommended to place custom sound scripts here.
 
 ## Manifest
 
 As previously described, `game_sounds_manifest.txt` defines which sound scripts are to be precached. This file is loaded only from the `MOD` search path.
 
-:::p2ce
-
-The manifest also supports wildcards. i.e. `"precache_file" "scripts/sounds/*"`
-
-:::
+> [!P2CE]
+>
+> The manifest also supports wildcards. i.e. `"precache_file" "scripts/sounds/*"`
 
 ## Sound Script Format
 
