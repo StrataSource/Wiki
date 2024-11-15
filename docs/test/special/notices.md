@@ -22,3 +22,12 @@ title: Notices
 > It's really complicated
 >
 > # I _probably_ didn't cause [it](/)
+
+> [!P2CE]
+> This is a P2CE specific message
+
+> [!REVOLUTION]
+> This is a Revolution specific message
+
+> [!MOMENTUM]
+> This is a Momentum specific message
