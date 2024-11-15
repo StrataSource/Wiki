@@ -1,4 +1,5 @@
 {
     "name": "Momentum Mod",
-    "features": ["PORTALS", "MOD_PORTAL2"]
+    "features": ["PORTALS", "MOD_PORTAL2"],
+    "color": "#1896D3"
 }
