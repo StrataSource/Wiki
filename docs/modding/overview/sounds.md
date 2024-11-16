@@ -39,7 +39,6 @@ which contains a list of sound script files to precache.
 As previously described, `game_sounds_manifest.txt` defines which sound scripts are to be precached. This file is loaded only from the `MOD` search path.
 
 > [!P2CE]
->
 > The manifest also supports wildcards. i.e. `"precache_file" "scripts/sounds/*"`
 
 ## Sound Script Format
