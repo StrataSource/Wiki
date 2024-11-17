@@ -14,7 +14,7 @@ As stated before, PBR textures need to be created in specialized programs. If yo
 * [Ambient Occlusion](https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_00c9ca0901) map (Specifies which areas of the texture are "behind", or always shaded. You can compare this to what an [SSBump](https://developer.valvesoftware.com/wiki/$ssbump) map accomplishes, however with no additional bumpmapping. For the sake of this article, Ambient Occlusion will be referred to as AO.) 
 
 	***Note:** AO maps are not required for PBR to work properly.*
-* [Bump](https://developer.valvesoftware.com/wiki/Bump_map) (Normal) map *with optional Height map in alpha channel* (Standard bump map that is usually used with standard Source workflow, but it can optionally include a Height map in the alpha channel of the texture for [Parallax Mapping](/modding/pbr/parallaxmapping))
+* [Bump](https://developer.valvesoftware.com/wiki/Bump_map) (Normal) map *with optional Height map in alpha channel* (Standard bump map that is usually used with standard Source workflow, but it can optionally include a Height map in the alpha channel of the texture for [Parallax Mapping](/material/pbr/parallaxmapping))
 
 	***Reminder:** SSBump maps are **NOT** supported! To get a similar effect, use an AO map.*
 
@@ -56,4 +56,4 @@ Insert the paths to the correct materials where specified, and you are done!
 Launch PBR-2-Source and wait for the GUI to appear. Insert your images into the correct boxes and double check that the "Shader" option is set to "PBR (<intended use>)". Next, make sure the "Flip Normal Y" check is set correctly. If the program you used uses 3DS Max style normal maps, or you generated it from VTFEdit or pulled from an existing Source game, toggle the option off. If the program used to generate the map uses Maya-style normal maps, toggle the option on. If you are unsure what style of normal map your program uses, make sure to find out before going further, or the generated normal map could look, for lack of a better word, "ugly". After you do this, click export, select the folder and the output file name, then wait for PBR-2-Source to do the work for you. It will generate a fully functional PBR material.
 
 ## Finalizing
-All that is needed now is the editing and testing of your material. If your PBR material includes a Heightmap in the Alpha channel of your Bumpmap, see [This page](/modding/pbr/parallaxmapping) on how to make it functional. Make any adjustments you want to your VMT, and you are done!
+All that is needed now is the editing and testing of your material. If your PBR material includes a Heightmap in the Alpha channel of your Bumpmap, see [This page](/material/pbr/parallaxmapping) on how to make it functional. Make any adjustments you want to your VMT, and you are done!

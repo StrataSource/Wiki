@@ -132,7 +132,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: `0`
 
-&ensp;Description: Enables [Parallax Occlusion Mapping](/modding/pbr/parallaxmapping).
+&ensp;Description: Enables [Parallax Occlusion Mapping](/material/pbr/parallaxmapping).
 
 #### `$parallaxdepth` \<float\>
 
