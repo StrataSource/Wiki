@@ -36244,33 +36244,6 @@
     },
     {
         "type": "POINT",
-        "classname": "prop_energy_ball",
-        "desc": "Aperture Science High Energy Pellet. Bounces off surfaces, travels through portals and kills players on contact. After a time period it will explode and be respawned.",
-        "bases": [
-            "BasePropPhysics"
-        ],
-        "keyvalues": [],
-        "inputs": [
-            {
-                "name": "Explode",
-                "type": "void",
-                "desc": "Explode the pellet, creating a shockwave and shaking the camera."
-            },
-            {
-                "name": "BallCaught",
-                "type": "void",
-                "desc": "Trigger the OnBallCaught output for the point_energy_ball_launcher that created this ball, kill the pellet and disable the launcher."
-            },
-            {
-                "name": "SetTime",
-                "type": "float",
-                "desc": "Sets the remaining lifetime of the ball."
-            }
-        ],
-        "outputs": []
-    },
-    {
-        "type": "POINT",
         "classname": "prop_floor_ball_button",
         "desc": "A floor button which is only activated by a Sphere-type prop_weighted_cube.",
         "bases": [
