@@ -18,33 +18,33 @@ Example of the format is below:
 ```
 "Mounts"
 {
-	"620" // AppID ("620" is Portal 2)
-	{
-		"required" 	"0"
-		"head"		"0"
+    "620" // AppID ("620" is Portal 2)
+    {
+        "required" "0"
+        "head" "0"
 
-		"portal2" // mod_folder, folder inside of the given AppID (Portal 2)'s folder. In this case, <portal 2 install>\portal2\
-		{
-			"mountmoddir" "0"
-			"vpk"	"pak01_dir" // mounts VPK: <Portal 2 install>\portal2\pak01_dir.vpk
-			"dir"	"custom" // mounts folder: <Portal 2 install>\portal2\custom\
-		}
+        "portal2" // mod_folder, folder inside of the given AppID (Portal 2)'s folder. In this case, <portal 2 install>\portal2\
+        {
+            "mountmoddir" "0"
+            "vpk" "pak01_dir" // mounts VPK: <Portal 2 install>\portal2\pak01_dir.vpk
+            "dir" "custom" // mounts folder: <Portal 2 install>\portal2\custom\
+        }
 
-		"update" // mod_folder, <portal 2 install>\update\
-		{
-			"vpk" "pak01_dir"
-		}
+        "update" // mod_folder, <portal 2 install>\update\
+        {
+            "vpk" "pak01_dir"
+        }
 
-		"portal2_dlc2" // mod_folder, <portal 2 install>\portal2_dlc2\
-		{
-			"vpk" "pak01_dir"
-		}
+        "portal2_dlc2" // mod_folder, <portal 2 install>\portal2_dlc2\
+        {
+            "vpk" "pak01_dir"
+        }
 
-		"portal2_dlc1" // mod_folder, <portal 2 install>\portal2_dlc1\
-		{
-			"vpk" "pak01_dir"
-		}
-	}
+        "portal2_dlc1" // mod_folder, <portal 2 install>\portal2_dlc1\
+        {
+            "vpk" "pak01_dir"
+        }
+    }
 }
 ```
 
