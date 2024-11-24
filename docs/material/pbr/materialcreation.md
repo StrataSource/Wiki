@@ -13,10 +13,13 @@ As stated before, PBR textures need to be created in specialized programs. If yo
 
 * [Ambient Occlusion](https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_00c9ca0901) map (Specifies which areas of the texture are "behind", or always shaded. You can compare this to what an [SSBump](https://developer.valvesoftware.com/wiki/$ssbump) map accomplishes, however with no additional bumpmapping. For the sake of this article, Ambient Occlusion will be referred to as AO.) 
 
-	***Note:** AO maps are not required for PBR to work properly.*
+    > [!NOTE]
+    > AO maps are not required for PBR to work properly.
+
 * [Bump](https://developer.valvesoftware.com/wiki/Bump_map) (Normal) map *with optional Height map in alpha channel* (Standard bump map that is usually used with standard Source workflow, but it can optionally include a Height map in the alpha channel of the texture for [Parallax Mapping](/material/pbr/parallaxmapping))
 
-	***Reminder:** SSBump maps are **NOT** supported! To get a similar effect, use an AO map.*
+    > [!WARNING]
+    > SSBump maps are **NOT** supported! To get a similar effect, use an AO map.
 
 For the sake of demonstration, this article will use images of the process of converting `black_wall_metal_005a` to use PBR.
 ## Creating the MRAO texture
@@ -44,11 +47,11 @@ Create a new `.VMT` file and paste this text in:
 ```
 "PBR"
 {
-	$basetexture               "<insert path to diffuse texture>"
-	$bumpmap                   "<insert path to normal map>"
-	$mraotexture               "<insert path to MRAO map>"
+    $basetexture               "<insert path to diffuse texture>"
+    $bumpmap                   "<insert path to normal map>"
+    $mraotexture               "<insert path to MRAO map>"
 
-	$envmap                    "env_cubemap"
+    $envmap                    "env_cubemap"
 }
 ```
 Insert the paths to the correct materials where specified, and you are done!
