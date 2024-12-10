@@ -1,0 +1,426 @@
+{
+    "globals": [
+     {"method": "ActivatePaint", "signature": "void ActivatePaint(int)", "doc": "Activates the specified paint power on the player." },
+     {"method": "AddBranchLevelName", "signature": "void AddBranchLevelName(int, string)", "doc": "Adds a level to the specified branche's list." },
+     {"method": "AddCoopCreditsName", "signature": "void AddCoopCreditsName(string)", "doc": "Adds a name to the coop credit's list." },
+     {"method": "CreateEntityByName", "signature": "handle CreateEntityByName(string, handle)", "doc": "(string className, table entKeyVals) - Create entity by class string with specified key values" },
+     {"method": "CreateProp", "signature": "handle CreateProp(string, Vector, string, int)", "doc": "Create a physics prop" },
+     {"method": "CreateSceneEntity", "signature": "handle CreateSceneEntity(string)", "doc": "Create a scene entity to play the specified scene." },
+     {"method": "DeactivateAllPaints", "signature": "void DeactivateAllPaints()", "doc": "Deactivates all the paints on the player." },
+     {"method": "DeactivatePaint", "signature": "void DeactivatePaint(int)", "doc": "Deactivates the specified paint power on the player." },
+     {"method": "DebugDrawBox", "signature": "void DebugDrawBox(Vector, Vector, Vector, int, int, int, int, float)", "doc": "Draw a debug overlay box" },
+     {"method": "DebugDrawBoxAngles", "signature": "void DebugDrawBoxAngles(Vector, Vector, Vector, Vector, int, int, int, int, float)", "doc": "Draw a debug overlay box with angles" },
+     {"method": "DebugDrawEntityText", "signature": "void DebugDrawEntityText(int, int, string, float, int, int, int, int)", "doc": "Draw debug overlay entity text" },
+     {"method": "DebugDrawEntityTextAtPosition", "signature": "void DebugDrawEntityTextAtPosition(Vector, int, string, float, int, int, int, int)", "doc": "Draw a debug overlay entity text at position" },
+     {"method": "DebugDrawGrid", "signature": "void DebugDrawGrid(Vector)", "doc": "Draw debug overlay grid" },
+     {"method": "DebugDrawLine", "signature": "void DebugDrawLine(Vector, Vector, int, int, int, bool, float)", "doc": "Draw a debug overlay box" },
+     {"method": "DebugDrawScreenText", "signature": "void DebugDrawScreenText(float, float, string, int, int, int, int, float)", "doc": "Draw debug overlay screen text" },
+     {"method": "DebugDrawText", "signature": "void DebugDrawText(Vector, string, bool, float)", "doc": "Draw debug overlay text" },
+     {"method": "DebugDrawTri", "signature": "void DebugDrawTri(Vector, Vector, Vector, int, int, int, int, bool, float)", "doc": "Draw a debug overlay triangle" },
+     {"method": "DispatchParticleEffect", "signature": "void DispatchParticleEffect(string, Vector, Vector)", "doc": "Dispatches a one-off particle system" },
+     {"method": "DoIncludeScript", "signature": "bool DoIncludeScript(string, handle)", "doc": "Execute a script (internal)" },
+     {"method": "EntFire", "signature": "function EntFire(target, action, value, delay, activator)", "doc": "Generate and entity i/o event" },
+     {"method": "EntFireByHandle", "signature": "void EntFireByHandle(handle, string, string, float, handle, handle)", "doc": "Generate and entity i/o event. First parameter is an entity instance." },
+     {"method": "FindPortalByID", "signature": "handle FindPortalByID(int, int)", "doc": "Finds a portal by linkage ID and portal number. Portal number 1 is the primary portal, 2 is the secondary. Linkage ID should be <255" },
+     {"method": "FrameTime", "signature": "float FrameTime()", "doc": "Get the time spent on the server in the last frame" },
+     {"method": "GetBluePlayerIndex", "signature": "int GetBluePlayerIndex()", "doc": "Player index of the blue player." },
+     {"method": "GetCoopBranchLevelIndex", "signature": "int GetCoopBranchLevelIndex(int)", "doc": "Given the 'branch' argument, returns the current chosen level." },
+     {"method": "GetCoopSectionIndex", "signature": "int GetCoopSectionIndex()", "doc": "Section that the coop players have selected to load." },
+     {"method": "GetDeveloperLevel", "signature": "int GetDeveloperLevel()", "doc": "Gets the level of 'developer'" },
+     {"method": "GetHighestActiveBranch", "signature": "int GetHighestActiveBranch()", "doc": "Returns which branches should be available in the hub." },
+     {"method": "GetMapIndexInPlayOrder", "signature": "int GetMapIndexInPlayOrder()", "doc": "Determines which index (by order played) this map is. Returns -1 if entry is not found. -2 if this is not a known community map." },
+     {"method": "GetMapName", "signature": "string GetMapName()", "doc": "Get the name of the map." },
+     {"method": "GetNumMapsPlayed", "signature": "int GetNumMapsPlayed()", "doc": "Returns how many maps the player has played through." },
+     {"method": "GetOrangePlayerIndex", "signature": "int GetOrangePlayerIndex()", "doc": "Player index of the orange player." },
+     {"method": "GetPlayer", "signature": "handle GetPlayer()", "doc": "Returns the player (SP Only)." },
+     {"method": "GetPlayerSilenceDuration", "signature": "float GetPlayerSilenceDuration(int)", "doc": "Time that the specified player has been silent on the mic." },
+     {"method": "GivePlayerPaintgun", "signature": "void GivePlayerPaintgun()", "doc": "Give player the paintgun with no paints active." },
+     {"method": "GivePlayerPortalgun", "signature": "void GivePlayerPortalgun()", "doc": "Give player the portalgun." },
+     {"method": "IsCoOp", "signature": "bool IsCoOp()", "doc": "Is this a co-op game?" },
+     {"method": "IsLevelComplete", "signature": "bool IsLevelComplete(int, int)", "doc": "Returns true if the level in the specified branch is completed by either player." },
+     {"method": "IsMultiplayer", "signature": "bool IsMultiplayer()", "doc": "Is this a multiplayer game?" },
+     {"method": "IsPlayerLevelComplete", "signature": "bool IsPlayerLevelComplete(int, int, int)", "doc": "Returns true if the level in the specified branch is completed by a specific player." },
+     {"method": "LoopSinglePlayerMaps", "signature": "bool LoopSinglePlayerMaps()", "doc": "Run the single player maps in a continuous loop." },
+     {"method": "MarkMapComplete", "signature": "void MarkMapComplete(string)", "doc": "Marks a maps a complete for both players." },
+     {"method": "PrecacheMovie", "signature": "void PrecacheMovie(string)", "doc": "Precaches a named movie. Only valid to call within the entity's 'Precache' function called on mapspawn." },
+     {"method": "RandomFloat", "signature": "float RandomFloat(float, float)", "doc": "Generate a random floating point number within a range, inclusive" },
+     {"method": "RandomInt", "signature": "int RandomInt(int, int)", "doc": "Generate a random integer within a range, inclusive" },
+     {"method": "RecordAchievementEvent", "signature": "void RecordAchievementEvent(string, int)", "doc": "Records achievement event or progress" },
+     {"method": "RequestMapRating", "signature": "void RequestMapRating()", "doc": "Pops up the map rating dialog for user input" },
+     {"method": "ScriptIsLocalPlayerUsingController", "signature": "bool ScriptIsLocalPlayerUsingController()", "doc": "Is the local player using a controller?" },
+     {"method": "ScriptPrintMessageCenterAll", "signature": "void ScriptPrintMessageCenterAll(string)", "doc": "Prints an alert message in the center print method to all players." },
+     {"method": "ScriptPrintMessageCenterAllWithParams", "signature": "void ScriptPrintMessageCenterAllWithParams(string, string, string, string)", "doc": "Prints an alert message in the center print method to all players. Needs to pass token/message. param1, param2, param3. Can pass null if you need less than 3." },
+     {"method": "ScriptPrintMessageCenterTeam", "signature": "void ScriptPrintMessageCenterTeam(int, string)", "doc": "Prints an alert message in the center print method to the specified team." },
+     {"method": "ScriptPrintMessageChatAll", "signature": "void ScriptPrintMessageChatAll(string)", "doc": "Prints a message in chat to all players." },
+     {"method": "ScriptPrintMessageChatTeam", "signature": "void ScriptPrintMessageChatTeam(int, string)", "doc": "Prints a message in chat to the specified team." },
+     {"method": "ScriptShowHudMessageAll", "signature": "void ScriptShowHudMessageAll(string, float)", "doc": "Show center print text message." },
+     {"method": "ScriptSteamShowURL", "signature": "bool ScriptSteamShowURL(string)", "doc": "Bring up the steam overlay and shows the specified URL.  (Full address with protocol type is required, e.g. http://www.steamgames.com/)" },
+     {"method": "SendToConsole", "signature": "void SendToConsole(string)", "doc": "Send a string to the console as a command" },
+     {"method": "SendToConsoleServer", "signature": "void SendToConsoleServer(string)", "doc": "Send a string that gets executed on the server as a ServerCommand" },
+     {"method": "SendToPanorama", "signature": "void SendToPanorama(string, string)", "doc": "Send an event to Panorama" },
+     {"method": "SetDucking", "signature": "void SetDucking(string, string, float)", "doc": "Set the level of an audio ducking channel" },
+     {"method": "SetMapAsPlayed", "signature": "int SetMapAsPlayed()", "doc": "Adds the current map to the play order and returns the new index therein. Returns -2 if this is not a known community map." },
+     {"method": "ShowMessage", "signature": "void ShowMessage(string)", "doc": "Print a hud message on all clients" },
+     {"method": "Time", "signature": "float Time()", "doc": "Get the current server time" },
+     {"method": "TraceHull", "signature": "handle TraceHull(Vector, Vector, Vector, Vector, int, handle, int)", "doc": "Sweeps a hull along the specified line. Returns a CGameTrace with the trace result" },
+     {"method": "TraceLine", "signature": "float TraceLine(Vector, Vector, handle)", "doc": "given 2 points & ent to ignore, return fraction along line that hits world or models" },
+     {"method": "TraceLineEx", "signature": "handle TraceLineEx(Vector, Vector, int, handle, int)", "doc": "Given 2 points, ent to ignore, collision group and trace mask, returns a CGameTrace with the result" },
+     {"method": "TraceLinePlayersIncluded", "signature": "float TraceLinePlayersIncluded(Vector, Vector, handle)", "doc": "given 2 points & ent to ignore, return fraction along line that hits world, models, players or npcs" },
+     {"method": "TracePortalLine", "signature": "handle TracePortalLine(Vector, Vector, int, handle, int, bool)", "doc": "Same as TraceLineEx, but will transform the trace based on any portals it passes through. If the last bool is true, it will transform based on the first portal it went though." },
+     {"method": "TryDLC1InstalledOrCatch", "signature": "bool TryDLC1InstalledOrCatch()", "doc": "Tests if the DLC1 is installed for Try/Catch blocks." },
+     {"method": "UniqueString", "signature": "function UniqueString(string)", "doc": "Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table." },
+     {"method": "UpgradePlayerPaintgun", "signature": "void UpgradePlayerPaintgun()", "doc": "Upgrades the players paintgun, if they are not holding one it will give them one." },
+     {"method": "UpgradePlayerPortalgun", "signature": "void UpgradePlayerPortalgun()", "doc": "Give player the portalgun." },
+     {"method": "UpgradePlayerPotatogun", "signature": "void UpgradePlayerPotatogun()", "doc": "Give player the portalgun." }
+    ],
+    "classes": [
+     {
+      "class": "CLinkedPortalDoor",
+      "extends": "CBaseAnimating",
+      "methods": [
+       { "method": "CLinkedPortalDoor::GetPartnerInstance", "signature": "handle CLinkedPortalDoor::GetPartnerInstance()", "doc": "Get the instance handle of the door's linked partner" },
+       { "method": "CLinkedPortalDoor::GetPartnername", "signature": "string CLinkedPortalDoor::GetPartnername()", "doc": "Returns the partnername of the door." }
+      ]
+     },
+     {
+      "class": "CPortal_Player",
+      "extends": "CBaseMultiplayerPlayer",
+      "methods": [
+       { "method": "CPortal_Player::GetWheatleyMonitorDestructionCount", "signature": "int CPortal_Player::GetWheatleyMonitorDestructionCount()", "doc": "Get number of wheatley monitors destroyed by the player." },
+       { "method": "CPortal_Player::IncWheatleyMonitorDestructionCount", "signature": "void CPortal_Player::IncWheatleyMonitorDestructionCount()", "doc": "Set number of wheatley monitors destroyed by the player." },
+       { "method": "CPortal_Player::TurnOffPotatos", "signature": "void CPortal_Player::TurnOffPotatos()", "doc": "Turns Off the Potatos material light" },
+       { "method": "CPortal_Player::TurnOnPotatos", "signature": "void CPortal_Player::TurnOnPotatos()", "doc": "Turns On the Potatos material light" }
+      ]
+     },
+     {
+      "class": "CEntities",
+      "extends": "",
+      "methods": [
+       { "method": "CEntities::CreateByClassname", "signature": "handle CEntities::CreateByClassname(string)", "doc": "Creates an entity by classname" },
+       { "method": "CEntities::DispatchSpawn", "signature": "void CEntities::DispatchSpawn(handle)", "doc": "Calls the Spawn function for the specified entity" },
+       { "method": "CEntities::FindByClassname", "signature": "handle CEntities::FindByClassname(handle, string)", "doc": "Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+       { "method": "CEntities::FindByClassnameNearest", "signature": "handle CEntities::FindByClassnameNearest(string, Vector, float)", "doc": "Find entities by class name nearest to a point." },
+       { "method": "CEntities::FindByClassnameWithin", "signature": "handle CEntities::FindByClassnameWithin(handle, string, Vector, float)", "doc": "Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+       { "method": "CEntities::FindByModel", "signature": "handle CEntities::FindByModel(handle, string)", "doc": "Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+       { "method": "CEntities::FindByName", "signature": "handle CEntities::FindByName(handle, string)", "doc": "Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+       { "method": "CEntities::FindByNameNearest", "signature": "handle CEntities::FindByNameNearest(string, Vector, float)", "doc": "Find entities by name nearest to a point." },
+       { "method": "CEntities::FindByNameWithin", "signature": "handle CEntities::FindByNameWithin(handle, string, Vector, float)", "doc": "Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+       { "method": "CEntities::FindByTarget", "signature": "handle CEntities::FindByTarget(handle, string)", "doc": "Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+       { "method": "CEntities::FindInSphere", "signature": "handle CEntities::FindInSphere(handle, Vector, float)", "doc": "Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+       { "method": "CEntities::First", "signature": "handle CEntities::First()", "doc": "Begin an iteration over the list of entities" },
+       { "method": "CEntities::GetByIndex", "signature": "handle CEntities::GetByIndex(int)", "doc": "Returns handle to entity based on its ent index. The index is 1-based" },
+       { "method": "CEntities::Next", "signature": "handle CEntities::Next(handle)", "doc": "Continue an iteration over the list of entities, providing reference to a previously found entity" }
+      ]
+     },
+     {
+      "class": "CBaseFlex",
+      "extends": "CBaseAnimating",
+      "methods": [
+       { "method": "CBaseFlex::GetCurrentScene", "signature": "handle CBaseFlex::GetCurrentScene()", "doc": "Returns the instance of the oldest active scene entity (if any)." },
+       { "method": "CBaseFlex::GetSceneByIndex", "signature": "handle CBaseFlex::GetSceneByIndex(int)", "doc": "Returns the instance of the scene entity at the specified index." }
+      ]
+     },
+     {
+      "class": "CBasePlayer",
+      "extends": "CBaseAnimating",
+      "methods": [
+       { "method": "CBasePlayer::GetButtons", "signature": "int CBasePlayer::GetButtons()", "doc": "Returns the buttons for the player" },
+       { "method": "CBasePlayer::GetPlayerName", "signature": "string CBasePlayer::GetPlayerName()", "doc": "Returns the player's name." },
+       { "method": "CBasePlayer::IsNoclipping", "signature": "bool CBasePlayer::IsNoclipping()", "doc": "Returns true if the player is in noclip mode." }
+      ]
+     },
+     {
+      "class": "CEnvEntityMaker",
+      "extends": "CBaseEntity",
+      "methods": [
+       { "method": "CEnvEntityMaker::SpawnEntity", "signature": "void CEnvEntityMaker::SpawnEntity()", "doc": "Create an entity at the location of the maker" },
+       { "method": "CEnvEntityMaker::SpawnEntityAtEntityOrigin", "signature": "void CEnvEntityMaker::SpawnEntityAtEntityOrigin(handle)", "doc": "Create an entity at the location of a specified entity instance" },
+       { "method": "CEnvEntityMaker::SpawnEntityAtLocation", "signature": "void CEnvEntityMaker::SpawnEntityAtLocation(Vector, Vector)", "doc": "Create an entity at a specified location and orientaton, orientation is Euler angle in degrees (pitch, yaw, roll)" },
+       { "method": "CEnvEntityMaker::SpawnEntityAtNamedEntityOrigin", "signature": "void CEnvEntityMaker::SpawnEntityAtNamedEntityOrigin(string)", "doc": "Create an entity at the location of a named entity" }
+      ]
+     },
+     {
+      "class": "CFuncTrackTrain",
+      "extends": "CBaseEntity",
+      "methods": [
+       { "method": "CFuncTrackTrain::GetFuturePosition", "signature": "Vector CFuncTrackTrain::GetFuturePosition(float, float)", "doc": "Get a position on the track x seconds in the future" }
+      ]
+     },
+     {
+      "class": "CBaseAnimating",
+      "extends": "CBaseEntity",
+      "methods": [
+       { "method": "CBaseAnimating::GetAttachmentAngles", "signature": "Vector CBaseAnimating::GetAttachmentAngles(int)", "doc": "Get the attachement id's angles as a p,y,r vector" },
+       { "method": "CBaseAnimating::GetAttachmentOrigin", "signature": "Vector CBaseAnimating::GetAttachmentOrigin(int)", "doc": "Get the attachement id's origin vector" },
+       { "method": "CBaseAnimating::GetBodygroup", "signature": "int CBaseAnimating::GetBodygroup(int)", "doc": "Gets a bodygroup" },
+       { "method": "CBaseAnimating::GetBodygroupCount", "signature": "int CBaseAnimating::GetBodygroupCount(int)", "doc": "Gets the number of bodygroups in a group" },
+       { "method": "CBaseAnimating::GetBodygroupName", "signature": "string CBaseAnimating::GetBodygroupName(int)", "doc": "Returns the name of the bodygroup" },
+       { "method": "CBaseAnimating::GetBodygroupPartName", "signature": "string CBaseAnimating::GetBodygroupPartName(int, int)", "doc": "Returns the bodygroup part name" },
+       { "method": "CBaseAnimating::GetBoneCount", "signature": "int CBaseAnimating::GetBoneCount()", "doc": "Returns the number of bones" },
+       { "method": "CBaseAnimating::GetBonePosition", "signature": "Vector CBaseAnimating::GetBonePosition(int)", "doc": "Returns the world origin of the bone" },
+       { "method": "CBaseAnimating::GetBoneRotation", "signature": "Vector CBaseAnimating::GetBoneRotation(int)", "doc": "Returns the rotation of the bone" },
+       { "method": "CBaseAnimating::GetNumBodyGroups", "signature": "int CBaseAnimating::GetNumBodyGroups()", "doc": "Returns the number of bodygroup groups" },
+       { "method": "CBaseAnimating::GetObjectScaleLevel", "signature": "int CBaseAnimating::GetObjectScaleLevel()", "doc": "The scale size of the entity" },
+       { "method": "CBaseAnimating::GetPlaybackRate", "signature": "float CBaseAnimating::GetPlaybackRate()", "doc": "Returns the current playback rate" },
+       { "method": "CBaseAnimating::GetPoseParameter", "signature": "float CBaseAnimating::GetPoseParameter(int)", "doc": "Returns pose parameter value based on index" },
+       { "method": "CBaseAnimating::GetPoseParameterMax", "signature": "float CBaseAnimating::GetPoseParameterMax(int)", "doc": "Returns the max value of the pose parameter" },
+       { "method": "CBaseAnimating::GetPoseParameterMin", "signature": "float CBaseAnimating::GetPoseParameterMin(int)", "doc": "Returns the min value of the pose parameter" },
+       { "method": "CBaseAnimating::GetSequence", "signature": "int CBaseAnimating::GetSequence()", "doc": "Returns the current sequence" },
+       { "method": "CBaseAnimating::GetSequenceActivityName", "signature": "string CBaseAnimating::GetSequenceActivityName(int)", "doc": "Returns the name of the sequence's activity" },
+       { "method": "CBaseAnimating::GetSequenceCount", "signature": "int CBaseAnimating::GetSequenceCount()", "doc": "Returns the number of available sequences" },
+       { "method": "CBaseAnimating::GetSequenceCycleRate", "signature": "float CBaseAnimating::GetSequenceCycleRate(int)", "doc": "Gets the sequence cycle rate for the specified sequence" },
+       { "method": "CBaseAnimating::GetSequenceDuration", "signature": "float CBaseAnimating::GetSequenceDuration(int)", "doc": "Gets the sequence duration for the specified sequence" },
+       { "method": "CBaseAnimating::GetSequenceName", "signature": "string CBaseAnimating::GetSequenceName(int)", "doc": "Returns the name of the sequence, if it's valid" },
+       { "method": "CBaseAnimating::IsActivityFinished", "signature": "bool CBaseAnimating::IsActivityFinished()", "doc": "Is the current activity finished?" },
+       { "method": "CBaseAnimating::IsSequenceFinished", "signature": "bool CBaseAnimating::IsSequenceFinished()", "doc": "Is the current sequence finished?" },
+       { "method": "CBaseAnimating::IsSequenceLooped", "signature": "bool CBaseAnimating::IsSequenceLooped(int)", "doc": "Returns if the specified sequence is looped or not" },
+       { "method": "CBaseAnimating::IsValidSequence", "signature": "bool CBaseAnimating::IsValidSequence(int)", "doc": "Checks if the specified sequence is valid" },
+       { "method": "CBaseAnimating::LookupActivity", "signature": "int CBaseAnimating::LookupActivity(string)", "doc": "Looks up an activity based on name" },
+       { "method": "CBaseAnimating::LookupAttachment", "signature": "int CBaseAnimating::LookupAttachment(string)", "doc": "Get the named attachement id" },
+       { "method": "CBaseAnimating::LookupPoseParameter", "signature": "int CBaseAnimating::LookupPoseParameter(string)", "doc": "Lookup a pose parameter based on its name. Returns -1 if not found" },
+       { "method": "CBaseAnimating::LookupSequence", "signature": "int CBaseAnimating::LookupSequence(string)", "doc": "Looks up a sequence based on name" },
+       { "method": "CBaseAnimating::SetBodygroup", "signature": "void CBaseAnimating::SetBodygroup(int, int)", "doc": "Sets a bodygroup" },
+       { "method": "CBaseAnimating::SetPlaybackRate", "signature": "void CBaseAnimating::SetPlaybackRate(float)", "doc": "Sets the current playback rate" },
+       { "method": "CBaseAnimating::SetPoseParameter", "signature": "float CBaseAnimating::SetPoseParameter(int, float)", "doc": "Set pose parameter value based on index" },
+       { "method": "CBaseAnimating::SetSequence", "signature": "void CBaseAnimating::SetSequence(int)", "doc": "Sets the current sequence" }
+      ]
+     },
+     {
+      "class": "CPropLinkedPortalDoor",
+      "extends": "CBaseAnimating",
+      "methods": [
+       { "method": "CPropLinkedPortalDoor::GetPartnerInstance", "signature": "handle CPropLinkedPortalDoor::GetPartnerInstance()", "doc": "Get the instance handle of the door's linked partner" },
+       { "method": "CPropLinkedPortalDoor::GetPartnername", "signature": "string CPropLinkedPortalDoor::GetPartnername()", "doc": "Returns the partnername of the door." }
+      ]
+     },
+     {
+      "class": "CPropWeightedCube",
+      "extends": "CBaseEntity",
+      "methods": [
+       { "method": "CPropWeightedCube::GetPartner", "signature": "handle CPropWeightedCube::GetPartner()", "doc": "Get the instance handle of the schrodinger's partner" }
+      ]
+     },
+     {
+      "class": "CBaseEntity",
+      "extends": "",
+      "methods": [
+       { "method": "CBaseEntity::ConnectOutput", "signature": "void CBaseEntity::ConnectOutput(string, string)", "doc": "Adds an I/O connection that will call the named function when the specified output fires" },
+       { "method": "CBaseEntity::Destroy", "signature": "void CBaseEntity::Destroy()", "doc": "" },
+       { "method": "CBaseEntity::DisconnectOutput", "signature": "void CBaseEntity::DisconnectOutput(string, string)", "doc": "Removes a connected script function from an I/O event." },
+       { "method": "CBaseEntity::EmitSound", "signature": "void CBaseEntity::EmitSound(string)", "doc": "Plays a sound from this entity." },
+       { "method": "CBaseEntity::EyeAngles", "signature": "Vector CBaseEntity::EyeAngles()", "doc": "Get eye pitch, yaw, roll as a vector" },
+       { "method": "CBaseEntity::EyeLocalAngles", "signature": "Vector CBaseEntity::EyeLocalAngles()", "doc": "Get eye local pitch, yaw, roll as a vector" },
+       { "method": "CBaseEntity::EyePosition", "signature": "Vector CBaseEntity::EyePosition()", "doc": "Get vector to eye position - absolute coords" },
+       { "method": "CBaseEntity::FirstMoveChild", "signature": "handle CBaseEntity::FirstMoveChild()", "doc": "" },
+       { "method": "CBaseEntity::GetAngles", "signature": "Vector CBaseEntity::GetAngles()", "doc": "Get entity pitch, yaw, roll as a vector" },
+       { "method": "CBaseEntity::GetAngularVelocity", "signature": "Vector CBaseEntity::GetAngularVelocity()", "doc": "Get the local angular velocity - returns a vector of pitch,yaw,roll" },
+       { "method": "CBaseEntity::GetBoundingMaxs", "signature": "Vector CBaseEntity::GetBoundingMaxs()", "doc": "Get a vector containing max bounds, centered on object" },
+       { "method": "CBaseEntity::GetBoundingMaxsOriented", "signature": "Vector CBaseEntity::GetBoundingMaxsOriented()", "doc": "Get a vector containing max bounds, centered on object, taking the object's orientation into account" },
+       { "method": "CBaseEntity::GetBoundingMins", "signature": "Vector CBaseEntity::GetBoundingMins()", "doc": "Get a vector containing min bounds, centered on object" },
+       { "method": "CBaseEntity::GetBoundingMinsOriented", "signature": "Vector CBaseEntity::GetBoundingMinsOriented()", "doc": "Get a vector containing min bounds, centered on object, taking the object's orientation into account" },
+       { "method": "CBaseEntity::GetCenter", "signature": "Vector CBaseEntity::GetCenter()", "doc": "Get vector to center of object - absolute coords" },
+       { "method": "CBaseEntity::GetClassname", "signature": "string CBaseEntity::GetClassname()", "doc": "" },
+       { "method": "CBaseEntity::GetCollisionGroup", "signature": "int CBaseEntity::GetCollisionGroup()", "doc": "Get the collision group" },
+       { "method": "CBaseEntity::GetForwardVector", "signature": "Vector CBaseEntity::GetForwardVector()", "doc": "Get the forward vector of the entity" },
+       { "method": "CBaseEntity::GetFriction", "signature": "float CBaseEntity::GetFriction()", "doc": "" },
+       { "method": "CBaseEntity::GetGravity", "signature": "float CBaseEntity::GetGravity()", "doc": "" },
+       { "method": "CBaseEntity::GetHealth", "signature": "int CBaseEntity::GetHealth()", "doc": "" },
+       { "method": "CBaseEntity::GetLeftVector", "signature": "Vector CBaseEntity::GetLeftVector()", "doc": "Get the left vector of the entity" },
+       { "method": "CBaseEntity::GetMaxHealth", "signature": "int CBaseEntity::GetMaxHealth()", "doc": "" },
+       { "method": "CBaseEntity::GetModelKeyValues", "signature": "handle CBaseEntity::GetModelKeyValues()", "doc": "Get a KeyValue class instance on this entity's model" },
+       { "method": "CBaseEntity::GetModelName", "signature": "string CBaseEntity::GetModelName()", "doc": "Returns the name of the model" },
+       { "method": "CBaseEntity::GetMoveCollide", "signature": "int CBaseEntity::GetMoveCollide()", "doc": "Returns the current move collide" },
+       { "method": "CBaseEntity::GetMoveParent", "signature": "handle CBaseEntity::GetMoveParent()", "doc": "If in hierarchy, retrieves the entity's parent" },
+       { "method": "CBaseEntity::GetMoveType", "signature": "int CBaseEntity::GetMoveType()", "doc": "Returns the current move type" },
+       { "method": "CBaseEntity::GetName", "signature": "string CBaseEntity::GetName()", "doc": "" },
+       { "method": "CBaseEntity::GetNamespace", "signature": "string CBaseEntity::GetNamespace()", "doc": "" },
+       { "method": "CBaseEntity::GetOrigin", "signature": "Vector CBaseEntity::GetOrigin()", "doc": "" },
+       { "method": "CBaseEntity::GetOwner", "signature": "handle CBaseEntity::GetOwner()", "doc": "Gets this entity's owner" },
+       { "method": "CBaseEntity::GetPreTemplateName", "signature": "string CBaseEntity::GetPreTemplateName()", "doc": "Get the entity name stripped of template unique decoration" },
+       { "method": "CBaseEntity::GetRootMoveParent", "signature": "handle CBaseEntity::GetRootMoveParent()", "doc": "If in hierarchy, walks up the hierarchy to find the root parent" },
+       { "method": "CBaseEntity::GetScriptId", "signature": "string CBaseEntity::GetScriptId()", "doc": "Retrieve the unique identifier used to refer to the entity within the scripting system" },
+       { "method": "CBaseEntity::GetScriptScope", "signature": "handle CBaseEntity::GetScriptScope()", "doc": "Retrieve the script-side data associated with an entity" },
+       { "method": "CBaseEntity::GetSoundDuration", "signature": "float CBaseEntity::GetSoundDuration(string, string)", "doc": "Returns float duration of the sound. Takes soundname and optional actormodelname." },
+       { "method": "CBaseEntity::GetTeam", "signature": "int CBaseEntity::GetTeam()", "doc": "" },
+       { "method": "CBaseEntity::GetUpVector", "signature": "Vector CBaseEntity::GetUpVector()", "doc": "Get the up vector of the entity" },
+       { "method": "CBaseEntity::GetVelocity", "signature": "Vector CBaseEntity::GetVelocity()", "doc": "" },
+       { "method": "CBaseEntity::IsBSPModel", "signature": "bool CBaseEntity::IsBSPModel()", "doc": "Returns if this entity is a BSP model or not (i.e. func_brush)" },
+       { "method": "CBaseEntity::NextMovePeer", "signature": "handle CBaseEntity::NextMovePeer()", "doc": "" },
+       { "method": "CBaseEntity::PrecacheModel", "signature": "void CBaseEntity::PrecacheModel(string)", "doc": "" },
+       { "method": "CBaseEntity::PrecacheScriptSound", "signature": "void CBaseEntity::PrecacheScriptSound(string)", "doc": "" },
+       { "method": "CBaseEntity::PrecacheSoundScript", "signature": "void CBaseEntity::PrecacheSoundScript(string)", "doc": "Precache a sound for later playing." },
+       { "method": "CBaseEntity::SetAbsOrigin", "signature": "void CBaseEntity::SetAbsOrigin(Vector)", "doc": "SetAbsOrigin" },
+       { "method": "CBaseEntity::SetAngles", "signature": "void CBaseEntity::SetAngles(float, float, float)", "doc": "Set entity pitch, yaw, roll" },
+       { "method": "CBaseEntity::SetAngularVelocity", "signature": "void CBaseEntity::SetAngularVelocity(float, float, float)", "doc": "Set the local angular velocity - takes float pitch,yaw,roll velocities" },
+       { "method": "CBaseEntity::SetCollisionGroup", "signature": "void CBaseEntity::SetCollisionGroup(int)", "doc": "Sets the collision group" },
+       { "method": "CBaseEntity::SetForwardVector", "signature": "void CBaseEntity::SetForwardVector(Vector)", "doc": "Set the orientation of the entity to have this forward vector" },
+       { "method": "CBaseEntity::SetFriction", "signature": "void CBaseEntity::SetFriction(float)", "doc": "" },
+       { "method": "CBaseEntity::SetGravity", "signature": "void CBaseEntity::SetGravity(float)", "doc": "Sets gravity on this entity. Only affects gravity along Z axis" },
+       { "method": "CBaseEntity::SetHealth", "signature": "void CBaseEntity::SetHealth(int)", "doc": "" },
+       { "method": "CBaseEntity::SetMaxHealth", "signature": "void CBaseEntity::SetMaxHealth(int)", "doc": "" },
+       { "method": "CBaseEntity::SetModel", "signature": "void CBaseEntity::SetModel(string)", "doc": "" },
+       { "method": "CBaseEntity::SetMoveCollide", "signature": "void CBaseEntity::SetMoveCollide(int)", "doc": "Set the move collide" },
+       { "method": "CBaseEntity::SetMoveType", "signature": "void CBaseEntity::SetMoveType(int)", "doc": "Set the move type" },
+       { "method": "CBaseEntity::SetOrigin", "signature": "void CBaseEntity::SetOrigin(Vector)", "doc": "" },
+       { "method": "CBaseEntity::SetOwner", "signature": "void CBaseEntity::SetOwner(handle)", "doc": "Sets this entity's owner" },
+       { "method": "CBaseEntity::SetParent", "signature": "void CBaseEntity::SetParent(handle)", "doc": "Sets the parent entity" },
+       { "method": "CBaseEntity::SetParentWithAttachment", "signature": "void CBaseEntity::SetParentWithAttachment(handle, int)", "doc": "Sets the parent entity with an attachment index" },
+       { "method": "CBaseEntity::SetSize", "signature": "void CBaseEntity::SetSize(Vector, Vector)", "doc": "" },
+       { "method": "CBaseEntity::SetTeam", "signature": "void CBaseEntity::SetTeam(int)", "doc": "" },
+       { "method": "CBaseEntity::SetVelocity", "signature": "void CBaseEntity::SetVelocity(Vector)", "doc": "" },
+       { "method": "CBaseEntity::Spawn", "signature": "void CBaseEntity::Spawn()", "doc": "Spawns the entity" },
+       { "method": "CBaseEntity::StopSound", "signature": "void CBaseEntity::StopSound(string)", "doc": "Stops a sound on this entity." },
+       { "method": "CBaseEntity::ValidateScriptScope", "signature": "bool CBaseEntity::ValidateScriptScope()", "doc": "Ensure that an entity's script scope has been created" },
+       { "method": "CBaseEntity::entindex", "signature": "int CBaseEntity::entindex()", "doc": "" }
+      ]
+     },
+     {
+      "class": "CSceneEntity",
+      "extends": "CBaseEntity",
+      "methods": [
+       { "method": "CSceneEntity::AddBroadcastTeamTarget", "signature": "void CSceneEntity::AddBroadcastTeamTarget(int)", "doc": "Adds a team (by index) to the broadcast list" },
+       { "method": "CSceneEntity::EstimateLength", "signature": "float CSceneEntity::EstimateLength()", "doc": "Returns length of this scene in seconds." },
+       { "method": "CSceneEntity::FindNamedEntity", "signature": "handle CSceneEntity::FindNamedEntity(string)", "doc": "given an entity reference, such as !target, get actual entity from scene object" },
+       { "method": "CSceneEntity::IsPaused", "signature": "bool CSceneEntity::IsPaused()", "doc": "If this scene is currently paused." },
+       { "method": "CSceneEntity::IsPlayingBack", "signature": "bool CSceneEntity::IsPlayingBack()", "doc": "If this scene is currently playing." },
+       { "method": "CSceneEntity::LoadSceneFromString", "signature": "bool CSceneEntity::LoadSceneFromString(string, string)", "doc": "given a dummy scene name and a vcd string, load the scene" },
+       { "method": "CSceneEntity::RemoveBroadcastTeamTarget", "signature": "void CSceneEntity::RemoveBroadcastTeamTarget(int)", "doc": "Removes a team (by index) from the broadcast list" }
+      ]
+     },
+     {
+      "class": "CScriptKeyValues",
+      "extends": "",
+      "methods": [
+       { "method": "CScriptKeyValues::Clear", "signature": "void CScriptKeyValues::Clear()", "doc": "Clears this KeyValues object." },
+       { "method": "CScriptKeyValues::Dump", "signature": "void CScriptKeyValues::Dump()", "doc": "Dump the object to console" },
+       { "method": "CScriptKeyValues::FindKey", "signature": "handle CScriptKeyValues::FindKey(string, bool)", "doc": "Given a KeyValues object and a key name, find a KeyValues object associated with the key name" },
+       { "method": "CScriptKeyValues::GetFirstSubKey", "signature": "handle CScriptKeyValues::GetFirstSubKey()", "doc": "Given a KeyValues object, return the first sub key object" },
+       { "method": "CScriptKeyValues::GetKeyBool", "signature": "bool CScriptKeyValues::GetKeyBool(string)", "doc": "Given a KeyValues object and a key name, return associated bool value" },
+       { "method": "CScriptKeyValues::GetKeyFloat", "signature": "float CScriptKeyValues::GetKeyFloat(string)", "doc": "Given a KeyValues object and a key name, return associated float value" },
+       { "method": "CScriptKeyValues::GetKeyInt", "signature": "int CScriptKeyValues::GetKeyInt(string)", "doc": "Given a KeyValues object and a key name, return associated integer value" },
+       { "method": "CScriptKeyValues::GetKeyString", "signature": "string CScriptKeyValues::GetKeyString(string)", "doc": "Given a KeyValues object and a key name, return associated string value" },
+       { "method": "CScriptKeyValues::GetNextKey", "signature": "handle CScriptKeyValues::GetNextKey()", "doc": "Given a KeyValues object, return the next key object in a sub key group" },
+       { "method": "CScriptKeyValues::IsKeyEmpty", "signature": "bool CScriptKeyValues::IsKeyEmpty(string)", "doc": "Given a KeyValues object and a key name, return true if key name has no value" },
+       { "method": "CScriptKeyValues::ReleaseKeyValues", "signature": "void CScriptKeyValues::ReleaseKeyValues()", "doc": "Given a root KeyValues object, release its contents" },
+       { "method": "CScriptKeyValues::SetKeyBool", "signature": "void CScriptKeyValues::SetKeyBool(string, bool)", "doc": "Given a KeyValues object and a key name, sets the associated bool value" },
+       { "method": "CScriptKeyValues::SetKeyFloat", "signature": "void CScriptKeyValues::SetKeyFloat(string, float)", "doc": "Given a KeyValues object and a key name, sets the associated float value" },
+       { "method": "CScriptKeyValues::SetKeyInt", "signature": "void CScriptKeyValues::SetKeyInt(string, int)", "doc": "Given a KeyValues object and a key name, sets the associated integer value" },
+       { "method": "CScriptKeyValues::SetKeyString", "signature": "void CScriptKeyValues::SetKeyString(string, string)", "doc": "Given a KeyValues object and a key name, sets the associated string value" }
+      ]
+     },
+     {
+      "class": "CTakeDamageInfo",
+      "extends": "",
+      "methods": [
+       { "method": "CTakeDamageInfo::AddDamage", "signature": "void CTakeDamageInfo::AddDamage(float)", "doc": "Adds to the damage." },
+       { "method": "CTakeDamageInfo::AddDamageType", "signature": "void CTakeDamageInfo::AddDamageType(int)", "doc": "Adds to the damage type." },
+       { "method": "CTakeDamageInfo::BaseDamageIsValid", "signature": "bool CTakeDamageInfo::BaseDamageIsValid()", "doc": "Checks if the base damage is valid." },
+       { "method": "CTakeDamageInfo::GetAmmoName", "signature": "string CTakeDamageInfo::GetAmmoName()", "doc": "Gets the ammo type name." },
+       { "method": "CTakeDamageInfo::GetAmmoType", "signature": "int CTakeDamageInfo::GetAmmoType()", "doc": "Gets the ammo type." },
+       { "method": "CTakeDamageInfo::GetAttacker", "signature": "handle CTakeDamageInfo::GetAttacker()", "doc": "Gets the attacker." },
+       { "method": "CTakeDamageInfo::GetBaseDamage", "signature": "float CTakeDamageInfo::GetBaseDamage()", "doc": "Gets the base damage." },
+       { "method": "CTakeDamageInfo::GetDamage", "signature": "float CTakeDamageInfo::GetDamage()", "doc": "Gets the damage." },
+       { "method": "CTakeDamageInfo::GetDamageCustom", "signature": "int CTakeDamageInfo::GetDamageCustom()", "doc": "Gets the damage custom." },
+       { "method": "CTakeDamageInfo::GetDamageForce", "signature": "Vector CTakeDamageInfo::GetDamageForce()", "doc": "Gets the damage force." },
+       { "method": "CTakeDamageInfo::GetDamagePosition", "signature": "Vector CTakeDamageInfo::GetDamagePosition()", "doc": "Gets the damage position." },
+       { "method": "CTakeDamageInfo::GetDamageStats", "signature": "int CTakeDamageInfo::GetDamageStats()", "doc": "Gets the damage stats." },
+       { "method": "CTakeDamageInfo::GetDamageType", "signature": "int CTakeDamageInfo::GetDamageType()", "doc": "Gets the damage type." },
+       { "method": "CTakeDamageInfo::GetDamagedOtherPlayers", "signature": "int CTakeDamageInfo::GetDamagedOtherPlayers()", "doc": "Gets whether other players have been damaged." },
+       { "method": "CTakeDamageInfo::GetInflictor", "signature": "handle CTakeDamageInfo::GetInflictor()", "doc": "Gets the inflictor." },
+       { "method": "CTakeDamageInfo::GetMaxDamage", "signature": "float CTakeDamageInfo::GetMaxDamage()", "doc": "Gets the max damage." },
+       { "method": "CTakeDamageInfo::GetReportedPosition", "signature": "Vector CTakeDamageInfo::GetReportedPosition()", "doc": "Gets the reported damage position." },
+       { "method": "CTakeDamageInfo::GetWeapon", "signature": "handle CTakeDamageInfo::GetWeapon()", "doc": "Gets the weapon." },
+       { "method": "CTakeDamageInfo::ScaleDamage", "signature": "void CTakeDamageInfo::ScaleDamage(float)", "doc": "Scales the damage." },
+       { "method": "CTakeDamageInfo::ScaleDamageForce", "signature": "void CTakeDamageInfo::ScaleDamageForce(float)", "doc": "Scales the damage force." },
+       { "method": "CTakeDamageInfo::SetAmmoType", "signature": "void CTakeDamageInfo::SetAmmoType(int)", "doc": "Sets the ammo type." },
+       { "method": "CTakeDamageInfo::SetAttacker", "signature": "void CTakeDamageInfo::SetAttacker(handle)", "doc": "Sets the attacker." },
+       { "method": "CTakeDamageInfo::SetDamage", "signature": "void CTakeDamageInfo::SetDamage(float)", "doc": "Sets the damage." },
+       { "method": "CTakeDamageInfo::SetDamageCustom", "signature": "void CTakeDamageInfo::SetDamageCustom(int)", "doc": "Sets the damage custom." },
+       { "method": "CTakeDamageInfo::SetDamageForce", "signature": "void CTakeDamageInfo::SetDamageForce(Vector)", "doc": "Sets the damage force." },
+       { "method": "CTakeDamageInfo::SetDamagePosition", "signature": "void CTakeDamageInfo::SetDamagePosition(Vector)", "doc": "Sets the damage position." },
+       { "method": "CTakeDamageInfo::SetDamageStats", "signature": "void CTakeDamageInfo::SetDamageStats(int)", "doc": "Sets the damage stats." },
+       { "method": "CTakeDamageInfo::SetDamageType", "signature": "void CTakeDamageInfo::SetDamageType(int)", "doc": "Sets the damage type." },
+       { "method": "CTakeDamageInfo::SetDamagedOtherPlayers", "signature": "void CTakeDamageInfo::SetDamagedOtherPlayers(int)", "doc": "Sets whether other players have been damaged." },
+       { "method": "CTakeDamageInfo::SetInflictor", "signature": "void CTakeDamageInfo::SetInflictor(handle)", "doc": "Sets the inflictor." },
+       { "method": "CTakeDamageInfo::SetMaxDamage", "signature": "void CTakeDamageInfo::SetMaxDamage(float)", "doc": "Sets the max damage." },
+       { "method": "CTakeDamageInfo::SetReportedPosition", "signature": "void CTakeDamageInfo::SetReportedPosition(Vector)", "doc": "Sets the reported damage position." },
+       { "method": "CTakeDamageInfo::SetWeapon", "signature": "void CTakeDamageInfo::SetWeapon(handle)", "doc": "Sets the weapon." },
+       { "method": "CTakeDamageInfo::SubtractDamage", "signature": "void CTakeDamageInfo::SubtractDamage(float)", "doc": "Removes from the damage." }
+      ]
+     },
+     {
+      "class": "CPlayerVoiceListener",
+      "extends": "",
+      "methods": [
+       { "method": "CPlayerVoiceListener::GetPlayerSpeechDuration", "signature": "float CPlayerVoiceListener::GetPlayerSpeechDuration(int)", "doc": "Returns the number of seconds the player has been continuously speaking." },
+       { "method": "CPlayerVoiceListener::IsPlayerSpeaking", "signature": "bool CPlayerVoiceListener::IsPlayerSpeaking(int)", "doc": "Returns whether the player specified is speaking." }
+      ]
+     },
+     {
+      "class": "CPropPortal",
+      "extends": "CBasePortal",
+      "methods": [
+       { "method": "CPropPortal::Fizzle", "signature": "void CPropPortal::Fizzle()", "doc": "Fizzle the portal" },
+       { "method": "CPropPortal::GetFiredByPlayer", "signature": "handle CPropPortal::GetFiredByPlayer()", "doc": "Returns the handle to the player who fired the portal, or null if none" },
+       { "method": "CPropPortal::GetLinkageGroupID", "signature": "int CPropPortal::GetLinkageGroupID()", "doc": "Gets the portal's linkage ID" },
+       { "method": "CPropPortal::NewLocation", "signature": "void CPropPortal::NewLocation(Vector, Vector)", "doc": "Place the portal at a new location" },
+       { "method": "CPropPortal::Resize", "signature": "void CPropPortal::Resize(float, float)", "doc": "Resize the portal. Parameters are half width and half height, respectively" },
+       { "method": "CPropPortal::SetActivatedState", "signature": "void CPropPortal::SetActivatedState(bool)", "doc": "Activates or deactivates a portal" },
+       { "method": "CPropPortal::SetLinkageGroupID", "signature": "void CPropPortal::SetLinkageGroupID(int)", "doc": "Sets the portal's linkage ID" }
+      ]
+     },
+     {
+      "class": "CBaseFilter",
+      "extends": "CBaseEntity",
+      "methods": [
+       { "method": "CBaseFilter::PassesDamageFilter", "signature": "bool CBaseFilter::PassesDamageFilter(handle, handle)", "doc": "Check if the given caller and damage info pass the damage filter, with the second parameter being a CTakeDamageInfo instance. The caller is the one who requests the filter result; For example, the entity being damaged when using this as a damage filter." },
+       { "method": "CBaseFilter::PassesFilter", "signature": "bool CBaseFilter::PassesFilter(handle, handle)", "doc": "Check if the given caller and entity pass the filter. The caller is the one who requests the filter result; For example, the entity being damaged when using this as a damage filter." }
+      ]
+     },
+     {
+      "class": "CGameTrace",
+      "extends": "",
+      "methods": [
+       { "method": "CGameTrace::DidHit", "signature": "bool CGameTrace::DidHit()", "doc": "Returns true if the trace hit anything" },
+       { "method": "CGameTrace::DidHitNonWorldEntity", "signature": "bool CGameTrace::DidHitNonWorldEntity()", "doc": "Returns true if the trace hit non-world entity" },
+       { "method": "CGameTrace::DidHitWorld", "signature": "bool CGameTrace::DidHitWorld()", "doc": "Returns true if trace hit world" },
+       { "method": "CGameTrace::GetContents", "signature": "int CGameTrace::GetContents()", "doc": "Returns the contents flags of the hit entity or surface" },
+       { "method": "CGameTrace::GetEndPos", "signature": "Vector CGameTrace::GetEndPos()", "doc": "Returns the end position of the trace" },
+       { "method": "CGameTrace::GetEntity", "signature": "handle CGameTrace::GetEntity()", "doc": "Returns a handle to the entity this trace hit" },
+       { "method": "CGameTrace::GetEntityIndex", "signature": "int CGameTrace::GetEntityIndex()", "doc": "Returns the index of the entity hit, or -1 if it did not hit an entity" },
+       { "method": "CGameTrace::GetFraction", "signature": "float CGameTrace::GetFraction()", "doc": "Time completed, 1.0 means no hit" },
+       { "method": "CGameTrace::GetImpactNormal", "signature": "Vector CGameTrace::GetImpactNormal()", "doc": "Returns the normal of the plane where the trace hit" },
+       { "method": "CGameTrace::GetStartPos", "signature": "Vector CGameTrace::GetStartPos()", "doc": "Returns the start position of the trace" }
+      ]
+     },
+     {
+      "class": "CPlaytestManager",
+      "extends": "",
+      "methods": [
+       { "method": "CPlaytestManager::BeginPlaytest", "signature": "void CPlaytestManager::BeginPlaytest()", "doc": "Begins recording of playtest info" },
+       { "method": "CPlaytestManager::EndPlaytest", "signature": "void CPlaytestManager::EndPlaytest()", "doc": "Ends recording of playtest info" }
+      ]
+     },
+     {
+      "class": "CPointViewControl",
+      "extends": "CBaseEntity",
+      "methods": [
+       { "method": "CPointViewControl::GetFov", "signature": "int CPointViewControl::GetFov()", "doc": "get camera's current fov setting as integer" },
+       { "method": "CPointViewControl::SetFov", "signature": "void CPointViewControl::SetFov(int, float)", "doc": "set camera's current fov in integer degrees and fov change rate as float" }
+      ]
+     },
+     {
+      "class": "CBasePortal",
+      "extends": "CBaseAnimating",
+      "methods": [
+       { "method": "CBasePortal::GetHalfHeight", "signature": "float CBasePortal::GetHalfHeight()", "doc": "Gets the half height of the portal" },
+       { "method": "CBasePortal::GetHalfWidth", "signature": "float CBasePortal::GetHalfWidth()", "doc": "Gets the half width of the portal" },
+       { "method": "CBasePortal::GetPartner", "signature": "handle CBasePortal::GetPartner()", "doc": "Get the handle to the partner portal" },
+       { "method": "CBasePortal::GetPortalNumber", "signature": "int CBasePortal::GetPortalNumber()", "doc": "Gets the portal number. 1 for primary portal, 2 for secondary" },
+       { "method": "CBasePortal::IsMobile", "signature": "bool CBasePortal::IsMobile()", "doc": "Returns true if this is a movable portal" },
+       { "method": "CBasePortal::IsOpen", "signature": "bool CBasePortal::IsOpen()", "doc": "Returns true if the portal is open and passable" }
+      ]
+     }
+    ]
+   }
+   
