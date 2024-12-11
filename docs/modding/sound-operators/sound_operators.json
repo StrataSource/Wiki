@@ -1,0 +1,1222 @@
+{
+    "calc_angles_facing": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_angles",
+                "type": "vec3"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "calc_distant_dsp": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_distance",
+                "type": "float"
+            },
+            {
+                "name": "input_level",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "calc_falloff": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_distance",
+                "type": "float"
+            },
+            {
+                "name": "input_level",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "calc_falloff_curve": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_distance",
+                "type": "float"
+            },
+            {
+                "name": "input_curve_amount",
+                "type": "float"
+            },
+            {
+                "name": "input_min",
+                "type": "float"
+            },
+            {
+                "name": "input_max",
+                "type": "float"
+            },
+            {
+                "name": "input_atten",
+                "type": "float"
+            },
+            {
+                "name": "input_volume_min",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "calc_occlusion": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_trace_interval",
+                "type": "float"
+            },
+            {
+                "name": "input_scalar",
+                "type": "float"
+            },
+            {
+                "name": "input_position",
+                "type": "vec3"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "calc_source_distance": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_position",
+                "type": "vec3"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "calc_spatialize_speakers": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_radius",
+                "type": "float"
+            },
+            {
+                "name": "input_radius_max",
+                "type": "float"
+            },
+            {
+                "name": "input_radius_min",
+                "type": "float"
+            },
+            {
+                "name": "input_time_start_stereo_spread",
+                "type": "float"
+            },
+            {
+                "name": "input_time_finish_stereo_spread",
+                "type": "float"
+            },
+            {
+                "name": "input_final_stereo_spread",
+                "type": "float"
+            },
+            {
+                "name": "input_rear_stereo_scale",
+                "type": "float"
+            },
+            {
+                "name": "input_distance",
+                "type": "float"
+            },
+            {
+                "name": "input_position",
+                "type": "vec3"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "speakers"
+            }
+        ]
+    },
+    "game_entity_info": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_entity_index",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_position",
+                "type": "vec3"
+            },
+            {
+                "name": "output_position_x",
+                "type": "float"
+            },
+            {
+                "name": "output_position_y",
+                "type": "float"
+            },
+            {
+                "name": "output_position_z",
+                "type": "float"
+            },
+            {
+                "name": "output_angles",
+                "type": "vec3"
+            },
+            {
+                "name": "output_velocity_vector",
+                "type": "vec3"
+            },
+            {
+                "name": "output_velocity_vector_x",
+                "type": "float"
+            },
+            {
+                "name": "output_velocity_vector_y",
+                "type": "float"
+            },
+            {
+                "name": "output_velocity_vector_z",
+                "type": "float"
+            },
+            {
+                "name": "output_velocity",
+                "type": "float"
+            },
+            {
+                "name": "output_velocity_xy",
+                "type": "float"
+            }
+        ]
+    },
+    "game_view_info": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_source_index",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_position",
+                "type": "vec3"
+            },
+            {
+                "name": "output_position_x",
+                "type": "float"
+            },
+            {
+                "name": "output_position_y",
+                "type": "float"
+            },
+            {
+                "name": "output_position_z",
+                "type": "float"
+            },
+            {
+                "name": "output_angles",
+                "type": "vec3"
+            },
+            {
+                "name": "output_velocity_vector",
+                "type": "vec3"
+            },
+            {
+                "name": "output_velocity_vector_x",
+                "type": "float"
+            },
+            {
+                "name": "output_velocity_vector_y",
+                "type": "float"
+            },
+            {
+                "name": "output_velocity_vector_z",
+                "type": "float"
+            },
+            {
+                "name": "output_velocity",
+                "type": "float"
+            },
+            {
+                "name": "output_velocity_xy",
+                "type": "float"
+            }
+        ]
+    },
+    "get_convar": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "get_dashboard": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "get_entry_time": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_entry_elapsed",
+                "type": "float"
+            },
+            {
+                "name": "output_sound_elapsed",
+                "type": "float"
+            },
+            {
+                "name": "output_stop_elapsed",
+                "type": "float"
+            },
+            {
+                "name": "output_sound_duration",
+                "type": "float"
+            }
+        ]
+    },
+    "get_map_name": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "get_opvar_float": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            },
+            {
+                "name": "output_opvar_exists",
+                "type": "float"
+            }
+        ]
+    },
+    "get_soundmixer": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_volume",
+                "type": "float"
+            },
+            {
+                "name": "output_level",
+                "type": "float"
+            },
+            {
+                "name": "output_dsp",
+                "type": "float"
+            }
+        ]
+    },
+    "get_source_info": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_source_index",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_entity_index",
+                "type": "float"
+            },
+            {
+                "name": "output_position",
+                "type": "vec3"
+            },
+            {
+                "name": "output_angles",
+                "type": "vec3"
+            },
+            {
+                "name": "output_radius",
+                "type": "float"
+            },
+            {
+                "name": "output_volume",
+                "type": "float"
+            },
+            {
+                "name": "output_level",
+                "type": "float"
+            },
+            {
+                "name": "output_pitch",
+                "type": "float"
+            },
+            {
+                "name": "output_source_count",
+                "type": "float"
+            }
+        ]
+    },
+    "get_sys_time": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_client_time",
+                "type": "float"
+            },
+            {
+                "name": "output_host_time",
+                "type": "float"
+            }
+        ]
+    },
+    "get_track_syncpoint": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_min_time_to_next_sync",
+                "type": "float"
+            },
+            {
+                "name": "input_max_time_to_next_sync",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_first_syncpoint",
+                "type": "float"
+            },
+            {
+                "name": "output_last_syncpoint",
+                "type": "float"
+            },
+            {
+                "name": "output_time_to_next_syncpoint",
+                "type": "float"
+            }
+        ]
+    },
+    "increment_opvar_float": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            },
+            {
+                "name": "output_opvar_exists",
+                "type": "float"
+            }
+        ]
+    },
+    "iterate_merge_speakers": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_max_iterations",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "speakers"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_index",
+                "type": "float"
+            },
+            {
+                "name": "output",
+                "type": "speakers"
+            }
+        ]
+    },
+    "math_curve_2d_4knot": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "float"
+            },
+            {
+                "name": "input_X1",
+                "type": "float"
+            },
+            {
+                "name": "input_Y1",
+                "type": "float"
+            },
+            {
+                "name": "input_X2",
+                "type": "float"
+            },
+            {
+                "name": "input_Y2",
+                "type": "float"
+            },
+            {
+                "name": "input_X3",
+                "type": "float"
+            },
+            {
+                "name": "input_Y3",
+                "type": "float"
+            },
+            {
+                "name": "input_X4",
+                "type": "float"
+            },
+            {
+                "name": "input_Y4",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "math_delta": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "math_float": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input1",
+                "type": "float"
+            },
+            {
+                "name": "input2",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "math_float_accumulate12": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input1",
+                "type": "float"
+            },
+            {
+                "name": "input2",
+                "type": "float"
+            },
+            {
+                "name": "input3",
+                "type": "float"
+            },
+            {
+                "name": "input4",
+                "type": "float"
+            },
+            {
+                "name": "input5",
+                "type": "float"
+            },
+            {
+                "name": "input6",
+                "type": "float"
+            },
+            {
+                "name": "input7",
+                "type": "float"
+            },
+            {
+                "name": "input8",
+                "type": "float"
+            },
+            {
+                "name": "input9",
+                "type": "float"
+            },
+            {
+                "name": "input10",
+                "type": "float"
+            },
+            {
+                "name": "input11",
+                "type": "float"
+            },
+            {
+                "name": "input12",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "math_float_filter": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "float"
+            },
+            {
+                "name": "input_max_velocity",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "math_func1": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input1",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "math_logic_switch": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input1",
+                "type": "float"
+            },
+            {
+                "name": "input2",
+                "type": "float"
+            },
+            {
+                "name": "input_switch",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "math_random": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_min",
+                "type": "float"
+            },
+            {
+                "name": "input_max",
+                "type": "float"
+            },
+            {
+                "name": "input_seed",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "math_remap_float": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "float"
+            },
+            {
+                "name": "input_min",
+                "type": "float"
+            },
+            {
+                "name": "input_max",
+                "type": "float"
+            },
+            {
+                "name": "input_map_min",
+                "type": "float"
+            },
+            {
+                "name": "input_map_max",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "math_speakers": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input1",
+                "type": "speakers"
+            },
+            {
+                "name": "input2",
+                "type": "speakers"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "speakers"
+            }
+        ]
+    },
+    "math_vec3": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input1",
+                "type": "vec3"
+            },
+            {
+                "name": "input2",
+                "type": "vec3"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "vec3"
+            }
+        ]
+    },
+    "set_convar": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+        ]
+    },
+    "set_opvar_float": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+        ]
+    },
+    "sys_block_entries": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_duration",
+                "type": "float"
+            },
+            {
+                "name": "input_active",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+        ]
+    },
+    "sys_mixlayer": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+        ]
+    },
+    "sys_output": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_speakers",
+                "type": "speakers"
+            },
+            {
+                "name": "input_vec3",
+                "type": "vec3"
+            },
+            {
+                "name": "input_float",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+        ]
+    },
+    "sys_platform": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "type": "float"
+            }
+        ]
+    },
+    "sys_start_entry": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_start",
+                "type": "float"
+            },
+            {
+                "name": "input_start_delay",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+        ]
+    },
+    "sys_stop_entries": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_max_entries",
+                "type": "float"
+            },
+            {
+                "name": "input_stop_delay",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_entries_matching",
+                "type": "float"
+            },
+            {
+                "name": "output_this_matches_index",
+                "type": "float"
+            }
+        ]
+    },
+    "track_queue": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_time_to_next_syncpoint",
+                "type": "float"
+            },
+            {
+                "name": "output_time_to_start",
+                "type": "float"
+            }
+        ]
+    },
+    "track_stop": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+        ]
+    },
+    "track_update": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+        ]
+    },
+    "util_pos_vec8": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input_index",
+                "type": "float"
+            },
+            {
+                "name": "input_entry_count",
+                "type": "float"
+            },
+            {
+                "name": "input_position_0",
+                "type": "vec3"
+            },
+            {
+                "name": "input_position_1",
+                "type": "vec3"
+            },
+            {
+                "name": "input_position_2",
+                "type": "vec3"
+            },
+            {
+                "name": "input_position_3",
+                "type": "vec3"
+            },
+            {
+                "name": "input_position_4",
+                "type": "vec3"
+            },
+            {
+                "name": "input_position_5",
+                "type": "vec3"
+            },
+            {
+                "name": "input_position_6",
+                "type": "vec3"
+            },
+            {
+                "name": "input_position_7",
+                "type": "vec3"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+            {
+                "name": "output_position",
+                "type": "vec3"
+            },
+            {
+                "name": "output_max_index",
+                "type": "float"
+            }
+        ]
+    },
+    "util_print_float": {
+        "inputs": [
+            {
+                "name": "input_execute",
+                "type": "float"
+            },
+            {
+                "name": "input",
+                "type": "float"
+            }
+        ],
+        "keyvalues": [
+        ],
+        "outputs": [
+        ]
+    }
+}
