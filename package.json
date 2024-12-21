@@ -5,7 +5,8 @@
     "scripts": {
         "cf-build": "npm run build && copyfiles -V -E -u 2 site/build/**/* generator/public/",
         "build": "cd site && npm i && npm run build && cd ..",
-        "dev": "cd site && npm i && npm run dev"
+        "dev": "cd site && npm i && npm run dev",
+        "postinstall": "cd site && npm i"
     },
     "author": "Strata Source",
     "devDependencies": {
