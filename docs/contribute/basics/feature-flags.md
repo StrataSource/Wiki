@@ -15,7 +15,7 @@ Features required for an article are set in its [Meta Block](editing-articles#me
 
 ```yaml
 features:
-    - USE_WORKSHOP
+    - USE_UGC
     - USE_VSCRIPT
 ```
 
