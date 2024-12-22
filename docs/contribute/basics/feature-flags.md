@@ -15,8 +15,8 @@ Features required for an article are set in its [Meta Block](editing-articles#me
 
 ```yaml
 features:
-    - PANORAMA
-    - VSCRIPT
+    - USE_WORKSHOP
+    - USE_VSCRIPT
 ```
 
 In this example, the article will only be considered supported for games that have both the `PANORAMA` and the `VSCRIPT` features.

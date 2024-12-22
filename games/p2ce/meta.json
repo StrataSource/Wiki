@@ -1,6 +1,34 @@
 {
     "name": "Portal 2: Community Edition",
-    "features": ["VSCRIPT", "PORTALS", "MOD_PORTAL2"],
+    "features": [
+        "USE_VSCRIPT",
+        "USE_MATCHMAKING",
+        "USE_SPLITSCREEN",
+        "USE_CONTROLLERS",
+        "USE_EXTERNAL_SURFACEPROPS",
+        "USE_ALTERNATE_TICKS",
+        "USE_PORTALS",
+        "USE_PORTAL_GUN",
+        "USE_PAINT",
+        "USE_HL2_ENTITIES",
+        "USE_PAUSE",
+        "USE_SCRIPTSYSTEM",
+        "USE_LEGACY_UPDATE_RATE",
+        "USE_SLOWTIME",
+        "USE_CHAOS_RICH_PRESENCE",
+        "USE_SAVE_RESTORE",
+        "USE_SOUNDEMITTER_GLOBAL_MOUNT",
+        "USE_VEHICLES",
+        "USE_FLEX_PRECACHE",
+        "USE_BLOBULATOR",
+        "USE_GAMESCRIPTING",
+        "USE_UGC",
+        "NO_ECON",
+        "USE_ACHIEVEMENTS",
+        "USE_JOLT",
+        "USE_AI",
+        "ALLOW_SINGLEPLAYER_CHEAT_VARS",
+        "MOD_PORTAL2"
+    ],
     "color": "#EC6726"
 }
-

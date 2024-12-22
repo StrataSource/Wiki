@@ -1,7 +1,7 @@
 ---
 title: Feature flags
 features:
-    - VSCRIPT
+    - USE_VSCRIPT
     - MOD_PORTAL2
 ---
 

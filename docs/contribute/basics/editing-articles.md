@@ -14,7 +14,7 @@ Every article starts with a meta block like this:
 title: VScript Introduction
 weight: 5
 features:
-    - VSCRIPT
+    - USE_VSCRIPT
 ---
 ```
 
