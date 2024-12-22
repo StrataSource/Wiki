@@ -1,5 +1,7 @@
 ---
 title: Workshop Uploader GUI
+features:
+    - USE_UGC
 ---
 
 # Workshop Uploader
