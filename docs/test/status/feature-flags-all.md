@@ -1,7 +1,7 @@
 ---
 title: Feature flags every game has
 features:
-    - MOD_PORTAL2
+    - NO_ECON
 ---
 
 # It should be supported
