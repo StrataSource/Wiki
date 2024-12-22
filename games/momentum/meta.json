@@ -1,5 +1,14 @@
 {
     "name": "Momentum Mod",
-    "features": ["PORTALS", "MOD_PORTAL2"],
+    "features": [
+        "USE_MOMENTUM_ENGINE",
+        "USE_LEGACY_UPDATE_RATE",
+        "NO_ENTITY_PREDICTION",
+        "USE_TICK_BASED_OUTPUTS",
+        "ENABLE_CREATE_TIME",
+        "USE_PORTALS",
+        "USE_BLOBULATOR",
+        "NO_ECON"
+    ],
     "color": "#1896D3"
 }

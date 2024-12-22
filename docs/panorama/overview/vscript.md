@@ -1,7 +1,7 @@
 ---
 title: VScript Integration
 features:
-  - VSCRIPT
+  - USE_VSCRIPT
 ---
 
 # VScript Integration

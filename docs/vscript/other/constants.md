@@ -1,7 +1,7 @@
 ---
 title: Constants
 features:
-    - VSCRIPT
+    - USE_VSCRIPT
 ---
 
 # Script Constants
