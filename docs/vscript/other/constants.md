@@ -142,6 +142,17 @@ Trace masks are used with the extended trace API to filter entities by category.
 | `NO_POWER`      | 4     |
 | `STICK_POWER`   | 5     |
 
+## Cube Types
+
+| Name               | Value |
+| ------------------ | ----- |
+| `CUBE_STANDARD`    | 0     |
+| `CUBE_COMPANION`   | 1     |
+| `CUBE_REFLECTIVE`  | 2     |
+| `CUBE_SPHERE`      | 3     |
+| `CUBE_ANTIQUE`     | 4     |
+| `CUBE_SCHRODINGER` | 5     |
+
 ## Misc. Constants
 
 | Name          | Value      |

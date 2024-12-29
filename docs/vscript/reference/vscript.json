@@ -172,18 +172,19 @@
     { "method": "StorageScope::ClearAll", "signature": "void StorageScope::ClearAll()", "doc": "Clear all values in this scope" },
     { "method": "StorageScope::GetFloat", "signature": "float StorageScope::GetFloat(string)", "doc": "Gets the specified value as a float" },
     { "method": "StorageScope::GetInt", "signature": "int StorageScope::GetInt(string)", "doc": "Gets the specified value as an integer" },
-    { "method": "StorageScope::GetValue", "signature": "string StorageScope::GetValue(string)", "doc": "Gets the specified value" },
+    { "method": "StorageScope::GetString", "signature": "string StorageScope::GetString(string)", "doc": "Gets the specified value" },
     { "method": "StorageScope::GetVector", "signature": "Vector StorageScope::GetVector(string)", "doc": "Gets the specified value as a vector" },
     { "method": "StorageScope::SetFloat", "signature": "void StorageScope::SetFloat(string, float)", "doc": "Sets the specified value" },
     { "method": "StorageScope::SetInt", "signature": "void StorageScope::SetInt(string, int)", "doc": "Sets the specified value" },
-    { "method": "StorageScope::SetValue", "signature": "void StorageScope::SetValue(string, string)", "doc": "Sets the specified value" },
+    { "method": "StorageScope::SetString", "signature": "void StorageScope::SetString(string, string)", "doc": "Sets the specified value" },
     { "method": "StorageScope::SetVector", "signature": "void StorageScope::SetVector(string, Vector)", "doc": "Sets the specified value" }
    ]
   },
   {
    "class": "CBaseAnimating",
    "extends": "CBaseEntity",
-   "methods": [    { "method": "CBaseAnimating::GetAttachmentAngles", "signature": "Vector CBaseAnimating::GetAttachmentAngles(int)", "doc": "Get the attachement id's angles as a p,y,r vector" },
+   "methods": [    { "method": "CBaseAnimating::FindBodygroupByName", "signature": "int CBaseAnimating::FindBodygroupByName(string)", "doc": "Find a bodygroup given its name, -1 if the bodygroup does not exist" },
+    { "method": "CBaseAnimating::GetAttachmentAngles", "signature": "Vector CBaseAnimating::GetAttachmentAngles(int)", "doc": "Get the attachement id's angles as a p,y,r vector" },
     { "method": "CBaseAnimating::GetAttachmentOrigin", "signature": "Vector CBaseAnimating::GetAttachmentOrigin(int)", "doc": "Get the attachement id's origin vector" },
     { "method": "CBaseAnimating::GetBodygroup", "signature": "int CBaseAnimating::GetBodygroup(int)", "doc": "Gets a bodygroup" },
     { "method": "CBaseAnimating::GetBodygroupCount", "signature": "int CBaseAnimating::GetBodygroupCount(int)", "doc": "Gets the number of bodygroups in a group" },
@@ -204,6 +205,7 @@
     { "method": "CBaseAnimating::GetSequenceCycleRate", "signature": "float CBaseAnimating::GetSequenceCycleRate(int)", "doc": "Gets the sequence cycle rate for the specified sequence" },
     { "method": "CBaseAnimating::GetSequenceDuration", "signature": "float CBaseAnimating::GetSequenceDuration(int)", "doc": "Gets the sequence duration for the specified sequence" },
     { "method": "CBaseAnimating::GetSequenceName", "signature": "string CBaseAnimating::GetSequenceName(int)", "doc": "Returns the name of the sequence, if it's valid" },
+    { "method": "CBaseAnimating::GetSkin", "signature": "int CBaseAnimating::GetSkin()", "doc": "Gets the current model skin ID" },
     { "method": "CBaseAnimating::IsActivityFinished", "signature": "bool CBaseAnimating::IsActivityFinished()", "doc": "Is the current activity finished?" },
     { "method": "CBaseAnimating::IsSequenceFinished", "signature": "bool CBaseAnimating::IsSequenceFinished()", "doc": "Is the current sequence finished?" },
     { "method": "CBaseAnimating::IsSequenceLooped", "signature": "bool CBaseAnimating::IsSequenceLooped(int)", "doc": "Returns if the specified sequence is looped or not" },
@@ -215,7 +217,8 @@
     { "method": "CBaseAnimating::SetBodygroup", "signature": "void CBaseAnimating::SetBodygroup(int, int)", "doc": "Sets a bodygroup" },
     { "method": "CBaseAnimating::SetPlaybackRate", "signature": "void CBaseAnimating::SetPlaybackRate(float)", "doc": "Sets the current playback rate" },
     { "method": "CBaseAnimating::SetPoseParameter", "signature": "float CBaseAnimating::SetPoseParameter(int, float)", "doc": "Set pose parameter value based on index" },
-    { "method": "CBaseAnimating::SetSequence", "signature": "void CBaseAnimating::SetSequence(int)", "doc": "Sets the current sequence" }
+    { "method": "CBaseAnimating::SetSequence", "signature": "void CBaseAnimating::SetSequence(int)", "doc": "Sets the current sequence" },
+    { "method": "CBaseAnimating::SetSkin", "signature": "void CBaseAnimating::SetSkin(int)", "doc": "Sets the current model skin ID" }
    ]
   },
   {
@@ -228,7 +231,8 @@
   {
    "class": "CPropWeightedCube",
    "extends": "CBaseAnimating",
-   "methods": [    { "method": "CPropWeightedCube::GetPartner", "signature": "handle CPropWeightedCube::GetPartner()", "doc": "Get the instance handle of the schrodinger's partner" }
+   "methods": [    { "method": "CPropWeightedCube::GetCubeType", "signature": "int CPropWeightedCube::GetCubeType()", "doc": "Get the type of the cube. Returns a value from the CUBE_* enum" },
+    { "method": "CPropWeightedCube::GetPartner", "signature": "handle CPropWeightedCube::GetPartner()", "doc": "Get the instance handle of the schrodinger's partner" }
    ]
   },
   {
