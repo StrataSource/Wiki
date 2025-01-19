@@ -10,6 +10,7 @@
     },
     "author": "Strata Source",
     "devDependencies": {
-        "copyfiles": "^2.4.1"
+        "copyfiles": "^2.4.1",
+        "cross-env": "^7.0.3"
     }
 }
