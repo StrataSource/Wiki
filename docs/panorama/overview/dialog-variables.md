@@ -18,9 +18,10 @@ The following methods may be used to set a dialog variable on a `Panel`:
 
 # Formatting
 
-Dialog variables are specified in layout files in the format `{xy:myname}`, where `xy` is a one or two character long format string, and `myname` is the name of your dialog variable.
+Dialog variables are supplied in layout files in the format `{x:y:myname}`, where `x:` is the format, `y:` is the optional modifier, and `myname` is the name of your dialog variable.
 
-There are two parts to the format string: the format and the modifier. The _format_ character comes first and is **required**. The _modifier_ character comes second and is optional, if supported.
+There are two parts to the format string: the format and the modifier. The _format_ comes first and is **required**. The _modifier_ comes second and is optional, if supported.
+When a format is provided without a modifer, it's in the format `{x:myname}`.
 
 ## String: `s`, `S`
 
@@ -41,9 +42,9 @@ Use a dialog variable `mytest` in a `Label`:
 <Label text="{s:mytest}"/>
 ```
 
-Upper-case formatted string:
-```
-{su:myupperstring}
+Use a dialog variable `mytest` in a `Label`, and make it upper-case:
+```xml
+<Label text="{s:u:myupperstring}"/>
 ```
 
 ## Time: `t`, `T`
@@ -69,12 +70,12 @@ Use with `Panel.SetDialogVariableTime`.
 
 Time duration:
 ```
-{td:myvar}
+{t:d:myvar}
 ```
 
 Long date:
 ```
-{tl:mylongdate}
+{t:l:mylongdate}
 ```
 
 ## Currency: `m`, `M`
@@ -112,7 +113,7 @@ Simple integer format:
 
 Raw integer format:
 ```
-{ir:myvar}
+{i:r:myvar}
 ```
 
 ## Floating Point Numbers: `f`, `F`
@@ -164,8 +165,8 @@ The following example code demonstrates the usage of many different types of dia
         <Panel class="full flow-down">
             <Label text="This is a float: {f:myfloat}"/>
             <Label text="This is a string: {s:mystring}"/>
-            <Label text="This is an UPPER STRING: {su:myupperstring}"/>
-            <Label text="This is a long date: {tl:mytime}" />
+            <Label text="This is an UPPER STRING: {s:u:myupperstring}"/>
+            <Label text="This is a long date: {t:l:mytime}" />
             <Label text="This is an integer: {d:myint}" />
         </Panel>
     </snippet>
