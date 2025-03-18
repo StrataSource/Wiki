@@ -6,7 +6,7 @@ title: vtex2
 
 vtex2 is a Valve Texture Format conversion and creation tool. It has a CLI and a GUI component for viewing, packing and otherwise converting the files.
 
-The source code is availible [here on GitHub](https://github.com/StrataSource/vtex2).
+The source code is available [here on GitHub](https://github.com/StrataSource/vtex2).
 
 ## Usage
 
