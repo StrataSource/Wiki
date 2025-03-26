@@ -149,8 +149,8 @@
     { "method": "CBaseCombatWeapon::GetSecondaryAmmoType", "signature": "int CBaseCombatWeapon::GetSecondaryAmmoType()", "doc": "Get the secondary ammo type" },
     { "method": "CBaseCombatWeapon::Lower", "signature": "bool CBaseCombatWeapon::Lower()", "doc": "Lowers the weapon" },
     { "method": "CBaseCombatWeapon::Ready", "signature": "bool CBaseCombatWeapon::Ready()", "doc": "Readies the weapon" },
-    { "method": "CBaseCombatWeapon::UsesClipsForAmmo1", "signature": "bool CBaseCombatWeapon::UsesClipsForAmmo1()", "doc": "Returns if this weapon uss clips for ammo 1" },
-    { "method": "CBaseCombatWeapon::UsesClipsForAmmo2", "signature": "bool CBaseCombatWeapon::UsesClipsForAmmo2()", "doc": "Returns if this weapon uss clips for ammo 2" }
+    { "method": "CBaseCombatWeapon::UsesClipsForAmmo1", "signature": "bool CBaseCombatWeapon::UsesClipsForAmmo1()", "doc": "Returns if this weapon uses clips for ammo 1" },
+    { "method": "CBaseCombatWeapon::UsesClipsForAmmo2", "signature": "bool CBaseCombatWeapon::UsesClipsForAmmo2()", "doc": "Returns if this weapon uses clips for ammo 2" }
    ]
   },
   {
