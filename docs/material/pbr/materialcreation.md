@@ -6,12 +6,12 @@ title: Creating PBR materials
 The PBR workflow is much more complicated than the standard Source workflow. While most Source textures can be created with a simple image editing program like GIMP, PBR textures need many more textures, some of which cannot be made with a simple paintbrush or pattern tool (well, they can, but it's not recommended). These textures need specialized programs to create them, of which there are a couple of options. This page will not cover the creation of these textures, as many tutorials already exist on this topic. This page will however go over the creation of MRAO textures and the creation of the material file.
 ## Obtaining PBR textures
 As stated before, PBR textures need to be created in specialized programs. If you do not possess a license to paid programs like Adobe or a computer powerful enough to run programs like Blender, some free and relatively easy-to-run programs exist like [Materialize](https://boundingboxsoftware.com/materialize/). Here is a list of textures needed to create a fully functional PBR material:
-* [Metalness](https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_758312b1b2) map (Defines what parts of your material are metal)
-* [Roughness](https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_e0063ea358) map (Defines the Roughness/Non-Reflectivity of parts of your material)
+* [Metalness](https://web.archive.org/web/20240416083441/https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_758312b1b2) map (Defines what parts of your material are metal)
+* [Roughness](https://web.archive.org/web/20240416083441/https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_e0063ea358) map (Defines the Roughness/Non-Reflectivity of parts of your material)
  
    ***IMPORTANT**: If the program you used to create these textures labels these as "Glossiness" or "Smoothness" maps, make sure you invert the colors before proceeding! Strata uses Roughness textures for PBR instead of Smoothness. They are the same type of map, just with inverted colors.*
 
-* [Ambient Occlusion](https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_00c9ca0901) map (Specifies which areas of the texture are "behind", or always shaded. You can compare this to what an [SSBump](https://developer.valvesoftware.com/wiki/$ssbump) map accomplishes, however with no additional bumpmapping. For the sake of this article, Ambient Occlusion will be referred to as AO.) 
+* [Ambient Occlusion](https://web.archive.org/web/20240416083441/https://help.poliigon.com/en/articles/1712652-texture-maps-explained#h_00c9ca0901) map (Specifies which areas of the texture are "behind", or always shaded. You can compare this to what an [SSBump](https://developer.valvesoftware.com/wiki/$ssbump) map accomplishes, however with no additional bumpmapping. For the sake of this article, Ambient Occlusion will be referred to as AO.) 
 
     > [!NOTE]
     > AO maps are not required for PBR to work properly.
