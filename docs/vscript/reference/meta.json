@@ -1,4 +1,5 @@
 {
     "title": "Reference",
-    "weight": 0
+    "type": "vscript",
+	"weight": 0
 }
