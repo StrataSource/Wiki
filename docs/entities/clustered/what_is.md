@@ -101,9 +101,9 @@ You can control the size of the shadow map by changing the "Initial Shadow Size"
 
 ![Initial Shadow Size is 3](images/shadow_size3.jpg) 
 
-![Initial Shadow Size is 5](images/shadow_size7.jpg) 
+![Initial Shadow Size is 5](images/shadow_size5.jpg) 
 
-![Initial Shadow Size is 7](images/shadow_size5.jpg)
+![Initial Shadow Size is 7](images/shadow_size7.jpg)
 
 ## Other Clustered Changes
 A few things are also affected by the new clustered renderer:
