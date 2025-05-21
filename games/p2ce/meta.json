@@ -28,7 +28,8 @@
         "USE_JOLT",
         "USE_AI",
         "ALLOW_SINGLEPLAYER_CHEAT_VARS",
-        "MOD_PORTAL2"
+        "MOD_PORTAL2",
+        "USE_CLUSTERED"
     ],
     "color": "#EC6726"
 }
