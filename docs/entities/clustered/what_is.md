@@ -4,14 +4,19 @@ features:
     - USE_CLUSTERED
 ---
 
+## What is "Clustered Shading"?
+
 Clustered lighting adds a new dynamic lighting system to Strata, with the following major improvements:
 * Specular lighting now works on all surfaces, brush or prop, indoors or outdoors.
-* Light entities can now cast light and shadows dynamically.
+* light_rt entities can now cast light and shadows dynamically.
     * Lights can move and their light and shadows will move with them.
     * Entities can move under lights and have their lighting updated. This includes brush entities.
 * Hammer can now preview lighting and shadows in real time.
 
-[!NOTE] Clustered currently works for the PBR, LMG, VLG, Water, Paint, Gel Blobs, and Eyes shaders
+Currently, only Portal 2: Community Edition and Momentum Mod support Clustered Shading. There are currently no plans to add Clusterd Shading to Portal: Revolution.
+
+> [!NOTE] 
+> Clustered currently works for the PBR, LMG, VLG, Water, Paint, Gel Blobs, and Eyes shaders
 
 ## How Does it Work?
 
@@ -75,13 +80,13 @@ The addition of specular lighting also make metallic PBR textures look correct. 
 ![Specular lighting enabled](images/specular_metal2.jpg)
 
 ## Real Time Shadows
-With real time light and shadows, normal light and light_spot entities can be parented to other entities and move, updating their surroundings in real time.
+With real time light and shadows, normal light_rt and light_rt_spot entities can be parented to other entities and move, updating their surroundings in real time.
 
-* A swinging point light, casting shadows in all 6 directions, and a stationary directional light_spot, casting shadows in one direction.
+* A swinging point light_rt, casting shadows in all 6 directions, and a stationary directional light_rt_spot, casting shadows in one direction.
 
 ![lights in a scene](images/shadows1.jpg)
 
-[!Warning] Point lights have 6 times the cost of `light_spot` entities, as they are casting shadows in 6 different directions. Use these sparingly, and disable shadows if not needed!
+[!Warning] Point light_rts have 6 times the cost of `light_rt_spot` entities, as they are casting shadows in 6 different directions. Use these sparingly, and disable shadows if not needed!
 
 ## Shadow Map Size
 To generate the shadows, the lights render to an internal texture called a "shadow map." You can control the resolution of this shadow map. Higher values create sharper, more accurate shadows, but cost much more to render. Sharp shadows may not be appropriate for all situations either, sometimes soft shadows look more accurate.
