@@ -3,6 +3,8 @@ title: Quick Start Guide
 features:
     - USE_CLUSTERED
 ---
+# Quick Start Guide
+
 "I want an unmoving normal Source engine light, but better, and not slow"
 
 1. Add a light or light_spot entity

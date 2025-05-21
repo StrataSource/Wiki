@@ -3,9 +3,11 @@ title: "Light Type Reference"
 features:
     - USE_CLUSTERED
 ---
+# Light Type Reference
+
 This is a reference page for the 4 light types.
 
-# Static
+## Static
 
 This light type is mainly used for lights that cast baked direct and indirect light, with no need for dynamic shadows or any specular lighting. The Shadowed spawnflag is non-functional with this light type.
 
@@ -14,7 +16,6 @@ This light type is mainly used for lights that cast baked direct and indirect li
 | baked  | baked    | *disabled* |
 
 * Top: 3 Static-type lights, shadowed flag unchecked
-
 * Bottom: 3 Static-type lights, shadowed flag checked. Note the lack of shadows on the walls.
 
 ![static unshadowed](images\unshadowed_static.jpg)
@@ -23,33 +24,34 @@ This light type is mainly used for lights that cast baked direct and indirect li
 
 For most use cases, Specular lights should be used, as the specular reflections properly use the metallic channel of PBR materials.
 
-# Specular
+## Specular
 
-This light type is identical to that of Static, however it includes dynamic Specular lighting. The Shadowed spawnflag is functional with this light type, however the shadows will be fainter than those of Static Bounce or Fully Dynamic. Specular highlights will travel through walls when the spawnflag is unchecked!
+This light type is identical to that of Static, however it includes dynamic Specular lighting. The Shadowed spawnflag is functional with this light type, however the shadows will be fainter than those of Static Bounce or Fully Dynamic. 
 
-| Direct | Indirect | Specular     |
-| ------ | -------- | ------------ |
+> [!WARNING]
+> Specular highlights will travel through walls if the Shadowed spawnflag is not checked. If this will cause issues with your map, use the Static light type instead.
+
+| Direct | Indirect | Specular          |
+| ------ | -------- | ----------------- |
 | baked  | baked    | **dynamic** |
 
 * Top: 3 Specular-type lights, shadowed flag unchecked
-
-* Bottom: 3 Specular-type lights, shadowed flag checked. 
+* Bottom: 3 Specular-type lights, shadowed flag checked.
 
 ![specular unshadowed](images\unshadowed_specular.jpg)
 
 ![specular shadowed](images\shadowed_specular.jpg)
 
-# Static Bounce
+## Static Bounce
 
 This light type casts static bounced lighting and dynamic direct lighting. Unlike the previous light types, direct lighting is dynamically generated, and therefore will shine through walls if the Shadowed spawnflag is unchecked.
 
-| Direct | Indirect | Specular     |
-| ------ | -------- | ------------ |
-| **dynamic**  | baked    | **dynamic** |
+| Direct            | Indirect | Specular          |
+| ----------------- | -------- | ----------------- |
+| **dynamic** | baked    | **dynamic** |
 
 * Top: 3 Static Boucne-type lights, shadowed flag unchecked
-
-* Bottom: 3 Static Bounce-type lights, shadowed flag checked. 
+* Bottom: 3 Static Bounce-type lights, shadowed flag checked.
 
 ![Static Bounce unshadowed](images\unshadowed_staticb.jpg)
 
@@ -57,17 +59,16 @@ This light type casts static bounced lighting and dynamic direct lighting. Unlik
 
 This light is best used for static sources of light that need to cast dynamic shadows, such as observation rooms in Portal 2.
 
-# Fully Dynamic
+## Fully Dynamic
 
-This light type casts dynamic direct lighting and specular highlights, without any indirect lighting generated
+This light type casts dynamic direct lighting and specular highlights, without any indirect lighting generated.
 
-| Direct | Indirect | Specular     |
-| ------ | -------- | ------------ |
-| **dynamic**  | *disabled*    | **dynamic** |
+| Direct            | Indirect     | Specular          |
+| ----------------- | ------------ | ----------------- |
+| **dynamic** | *disabled* | **dynamic** |
 
-* Top: 3 Dynamic-type lights, shadowed flag unchecked
-
-* Bottom: 3 Dynamic-type lights, shadowed flag checked. 
+* Top: 3 Dynamic-type lights, shadowed flag unchecked. Note how the light bleeds through the window frame on to the floor outside the room.
+* Bottom: 3 Dynamic-type lights, shadowed flag checked.
 
 ![specular unshadowed](images\unshadowed_dynamic.jpg)
 

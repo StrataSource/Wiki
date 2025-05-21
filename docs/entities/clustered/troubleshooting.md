@@ -3,6 +3,8 @@ title: "Troubleshooting and Known Issues"
 features:
     - USE_CLUSTERED
 ---
+# Troubleshooting and Known Issues
+
 This is a list of currently known issues and some troubleshooting tips for any issues with clustered lighting.
 
 **"Everything is completely broken/corrupted"**
@@ -33,3 +35,5 @@ This is a list of currently known issues and some troubleshooting tips for any i
 **"I see light coming from light sources that aren't in the current PVS"**
 
 * This is a known issue without a current workaround. Let us know if you find one!
+
+If you have any issues that are not addressed in this article, make sure to report it to us on the [Strata issue tracker](https://github.com/StrataSource/Engine/issues).
