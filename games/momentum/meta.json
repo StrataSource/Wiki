@@ -8,7 +8,8 @@
         "ENABLE_CREATE_TIME",
         "USE_PORTALS",
         "USE_BLOBULATOR",
-        "NO_ECON"
+        "NO_ECON",
+        "USE_CLUSTERED"
     ],
     "color": "#1896D3"
 }
