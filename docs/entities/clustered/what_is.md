@@ -1,5 +1,5 @@
 ---
-title: Clustered Shading: How Does It Work?
+title: "Clustered Shading: How Does It Work?"
 features:
     - USE_CLUSTERED
 ---
