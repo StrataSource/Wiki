@@ -37,9 +37,9 @@ Two major limitations of this system are that it cannot easily support dynamic s
 Specular lighting is the light that's reflected off of smooth, shiny surfaces, usually forming a bright highlight. Specular lighting is dependent on the player's view position relative to the surface and the light, so it can't easily be recorded into the lightmap. Both direct and indirect lighting are diffuse, which means they don't depend on the player's view position and don't produce highlights.
 
 Clustered lighting improves these limitations by adding dynamic lighting that is calculated at runtime, not baked into the lightmap. Now, we can change the following three properties:
-Direct lighting can be statically baked or dynamic
-Indirect lighting can be statically baked or disabled
-Specular lighting can be disabled or dynamic
+* Direct lighting can be statically baked or dynamic
+* Indirect lighting can be statically baked or disabled
+* Specular lighting can be disabled or dynamic
 
 Which technique is used is controlled by the light's "Light mode":
 
