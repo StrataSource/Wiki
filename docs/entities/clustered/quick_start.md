@@ -19,7 +19,7 @@ features:
 
 "I want an expensive light that has fancy shadows or moves around"
 
-1. Add a light or light_spot entity
+1. Add a light_rt or light_rt_spot entity
 2. Set "Light mode" to "Static Bounce" (for mostly stationary) or "Fully Dynamic" (frequently moves)
 3. Set "Initial Shadow Size" to somewhere around 5 to 7
 4. Make sure the "Shadowed" spawnflag is CHECKED
