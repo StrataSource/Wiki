@@ -9,7 +9,7 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 **"Everything is completely broken/corrupted"**
 
-* Some GPU models seem to have major issues with the clustered renderer. Let us know what GPU brand/model you are using.
+* Certain GPU models may have trouble running the clustered renderer. **If you experience this, let us know what GPU brand/model, operating system and other hardware specs you're using.** Usually this issue has been observed when running the game on Linux under DXVK on AMD platforms. However, the circumstances in which this has been observed should not be possible in production.
 
 **"My lights don't have shadows" / "My lights are shining through walls"**
 
