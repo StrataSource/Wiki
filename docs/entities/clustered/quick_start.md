@@ -7,7 +7,7 @@ features:
 
 "I want an unmoving normal Source engine light, but better, and not slow"
 
-1. Add a light or light_spot entity
+1. Add a light_rt or light_rt_spot entity
 2. Set "Light mode" to "Specular"
 3. Make sure the "Shadowed" spawnflag is UNCHECKED
 4. Used Raidus and 50 percent scale KeyValues
