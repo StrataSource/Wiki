@@ -48,7 +48,7 @@ Shadows can be enabled on this light type using the "Shadowed" spawnflag, howeve
 
 ## Static Bounce
 
-This light type casts static bounced lighting and dynamic direct lighting. Unlike the previous light types, direct lighting is dynamically generated, and therefore will shine through walls if the Shadowed spawnflag is unchecked.
+This light type casts static bounced lighting and dynamic direct lighting. Unlike the "Static" and "Specular" light types, direct lighting is dynamic and will shine through walls if the light is not shadowed.
 
 | Direct            | Indirect | Specular          |
 | ----------------- | -------- | ----------------- |
