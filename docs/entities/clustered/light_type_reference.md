@@ -65,7 +65,7 @@ This light is best used for static sources of light that need to cast dynamic sh
 
 ## Fully Dynamic
 
-This light type casts dynamic direct lighting and specular highlights, without any indirect lighting generated.
+This light type casts dynamic direct lighting and specular highlights, without any indirect lighting.
 
 | Direct            | Indirect     | Specular          |
 | ----------------- | ------------ | ----------------- |
