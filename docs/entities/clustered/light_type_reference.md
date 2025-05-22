@@ -9,7 +9,9 @@ This is a reference page for the 4 light types.
 
 ## Static
 
-This light type is mainly used for lights that cast baked direct and indirect light, with no need for dynamic shadows or any specular lighting. The Shadowed spawnflag is non-functional with this light type.
+This light type is mainly used for lights that cast baked direct and indirect light, with no need for dynamic shadows nor any specular lighting. The Shadowed spawnflag is non-functional with this light type.
+
+These lights are the same as standard Source Engine lights.
 
 | Direct | Indirect | Specular     |
 | ------ | -------- | ------------ |
