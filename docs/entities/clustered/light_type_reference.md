@@ -28,7 +28,9 @@ For most use cases, Specular lights should be used, as the specular reflections 
 
 ## Specular
 
-This light type is identical to that of Static, however it includes dynamic Specular lighting. The Shadowed spawnflag is functional with this light type, however the shadows will be fainter than those of Static Bounce or Fully Dynamic. 
+This light type has baked direct and indirect lighting like the Static light type, except that it also includes dynamic Specular lighting.
+
+Shadows can be enabled on this light type using the "Shadowed" spawnflag, however the shadows will be fainter than those of Static Bounce or Fully Dynamic. 
 
 > [!WARNING]
 > Specular highlights will travel through walls if the Shadowed spawnflag is not checked. If this will cause issues with your map, use the Static light type instead.
