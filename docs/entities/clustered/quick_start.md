@@ -10,7 +10,7 @@ features:
 1. Add a light_rt or light_rt_spot entity
 2. Set "Light mode" to "Specular"
 3. Make sure the "Shadowed" spawnflag is UNCHECKED
-4. Used Raidus and 50 percent scale KeyValues
+4. Set "Radius" and "50 percent scale" KeyValues to adjust the look and feel
 5. For best results, use PBR textures with appropriate MRAOs and normal maps
 
 ![Keyvalues](images/basic_light1.png)
