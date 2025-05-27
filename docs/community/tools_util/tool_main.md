@@ -18,7 +18,7 @@ In addition, this is akin to a "guide", specifying when you would want to use th
 ---
 
 ## vtex2
-[vtex2](modding/util/vtex2) - an open-source successor to Valve's vtex tool made by the Strata team, it comes packed with a Qt-based GUI named vtfview.
+[vtex2](/modding/util/vtex2) - an open-source successor to Valve's vtex tool made by the Strata team, it comes packed with a Qt-based GUI named vtfview.
 
 **Use Cases:** 
 * Quick VTF conversion alternative to VTFEdit
