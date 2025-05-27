@@ -16,8 +16,7 @@ Just as non-module code is treated, script modules are reimported with a fresh i
 
 To expose a function or variable, the `export` syntax can be used.
 
-```js
-// scripts/utils/math.js
+```js :: scripts/utils/math.js
 export function square(x) {
 	return x ** 2;
 }
@@ -25,8 +24,7 @@ export function square(x) {
 
 To use these exported properties, an import can be declared with the `import` syntax. Absolute paths will be resolved relative to the `scripts/` directory, and relative import paths will be resolved relative to the current file.
 
-```js
-// scripts/utils/saysquare.js
+```js :: scripts/utils/saysquare.js
 import { square } from './math.js';
 
 export function saySquare(x) {
@@ -50,8 +48,7 @@ When declaring scripts as modules, variables are no longer implicitly exposed to
 
 The context object is used as the script context when evaluating code that is embedded in panel tags in the xml, and is accessible through the `$.GetContextObject()` method.
 
-```js
-// scripts/components/mypanel.js
+```js :: scripts/components/mypanel.js
 import { saySquare } from 'utils/saysquare.js';
 
 const context = $.GetContextObject();
@@ -62,8 +59,7 @@ context.sayHelloAndSquare = function() {
 }
 ```
 
-```xml
-<!-- layout/components/mypanel.xml -->
+```xml :: layout/components/mypanel.xml
 <root>
 	<scripts>
 		<include type="module" src="file://{scripts}/components/mypanel.js" />
@@ -76,8 +72,7 @@ context.sayHelloAndSquare = function() {
 
 While exposing each variable by hand works for basic cases, it can become tedious and messy when dealing with more, larger scripts. For this reason, it is recommended to expose either a class instance or a static class to avoid the repitition of individually exporting every method.
 
-```js
-// scripts/components/mypanel.js
+```js :: scripts/components/mypanel.js
 import { saySquare } from 'utils/saysquare.js';
 
 class MyPanelHandler {
@@ -103,8 +98,7 @@ class MyPanelHandler {
 $.GetContextObject()['MyPanelHandler'] = new MyPanelHandler();
 ```
 
-```xml
-<!-- layout/components/mypanel.xml -->
+```xml :: layout/components/mypanel.xml
 <!-- ... -->
 	<TextButton text="Square of 5" onactivate="MyPanelHandler.saySquare(5)" />
 	<TextButton text="Hello" onactivate="MyPanelHandler.sayHello()" />
@@ -113,10 +107,9 @@ $.GetContextObject()['MyPanelHandler'] = new MyPanelHandler();
 
 ## Advanced Panel Interactivity
 
-If you are Typescript-savvy, class decorators can also be used to automate this process, slimming down the required code for every panel even more. See Momentum Mod's `module-helpers.ts` for an implementation of this method.
+For those who are Typescript-savvy, class decorators can also be used to automate this process, slimming down the required code for each panel even more. See Momentum Mod's `module-helpers.ts` for an implementation of this method.
 
-```ts
-// scripts/components/mypanel.ts
+```ts :: scripts/components/mypanel.ts
 import { saySquare } from 'utils/saysquare.ts';
 
 @PanelHandler()
