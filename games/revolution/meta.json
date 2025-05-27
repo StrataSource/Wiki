@@ -10,7 +10,6 @@
         "USE_PORTAL_GUN",
         "USE_PAINT",
         "USE_PAUSE",
-        "USE_SCRIPTSYSTEM",
         "USE_LEGACY_UPDATE_RATE",
         "USE_SLOWTIME",
         "USE_CHAOS_RICH_PRESENCE",
