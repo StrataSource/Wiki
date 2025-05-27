@@ -10,6 +10,9 @@ Strata Source Panorama supports a subset of the ECMAScript modules specification
 Just as non-module code is treated, script modules are reimported with a fresh instance for each panel. If a single module is used between multiple panels, each panel will get its own instance. If multiple scripts in a single panel reuse the same import, they will share the same instance.
 
 > [!NOTE]
+> Dynamic imports, import.meta, and top-level awaits are unsupported.
+
+> [!NOTE]
 > It should be noted that all of the below works with Typescript, and substituting the `.js` extensions with `.ts` will cause the code to be transpiled and cached by the engine prior to execution.
 
 ## Example
@@ -55,7 +58,7 @@ const context = $.GetContextObject();
 
 context.sayHelloAndSquare = function() {
 	$.Msg('Hello!');
-	saySquare();
+	saySquare(5);
 }
 ```
 
@@ -70,7 +73,7 @@ context.sayHelloAndSquare = function() {
 </root>
 ```
 
-While exposing each variable by hand works for basic cases, it can become tedious and messy when dealing with more, larger scripts. For this reason, it is recommended to expose either a class instance or a static class to avoid the repitition of individually exporting every method.
+While exposing each variable by hand works for basic cases, it can become tedious and messy when dealing with more, larger scripts. For this reason, it is recommended to expose either a class instance or a static class to avoid the repetition of individually exporting every method.
 
 ```js :: scripts/components/mypanel.js
 import { saySquare } from 'utils/saysquare.js';
