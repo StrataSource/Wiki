@@ -87,7 +87,7 @@ class MyPanelHandler {
 		$.Msg('Panel loaded!');
 	}
 
-	saySquare(x: number) {
+	saySquare(x) {
 		return saySquare(x);
 	}
 

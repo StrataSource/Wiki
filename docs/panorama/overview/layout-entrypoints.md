@@ -29,7 +29,7 @@ The game loads many XML files by hard-coded paths. The following is a collection
 > The game console.
 
 > [!WARNING]
-> Be careful when overriding this, as bad code can render the console unusable!
+> Be careful when overriding the console, as bad code can render it completely unusable!
 
 ## pages/loading-screen.xml
 
