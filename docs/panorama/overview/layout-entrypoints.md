@@ -8,7 +8,7 @@ The game loads many XML files by hard-coded paths. The following is a collection
 
 ## pages/intro-movie.xml
 
-> Loaded on game startup to display the intro movie.
+> The intro movie player, initialized on game startup.
 
 ## pages/main-menu.xml
 
@@ -26,7 +26,7 @@ The game loads many XML files by hard-coded paths. The following is a collection
 
 ## pages/console.xml
 
-> The game console.
+> The game console, initialized on game startup.
 
 > [!WARNING]
 > Be careful when overriding the console, as bad code can render it completely unusable!
@@ -43,4 +43,4 @@ The game loads many XML files by hard-coded paths. The following is a collection
 
 ## hud/hud.xml
 
-> The HUD elements visible in-game. This contains elements such as the `showpos` position overlay, console messages overlay, and the weapons HUD.
+> The HUD elements visible in-game, initialized on map load. This contains elements such as the `showpos` position overlay, console messages overlay, and the weapons HUD.

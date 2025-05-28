@@ -13,7 +13,7 @@ Just as non-module code is treated, script modules are reimported with a fresh i
 > Dynamic imports, import.meta, and top-level awaits are unsupported.
 
 > [!NOTE]
-> It should be noted that all of the below works with Typescript, and substituting the `.js` extensions with `.ts` will cause the code to be transpiled and cached by the engine prior to execution.
+> All of the below works as expected with Typescript. Substituting the `.js` extensions with `.ts` will cause the code to be transpiled and cached by the engine prior to execution.
 
 ## Example
 
