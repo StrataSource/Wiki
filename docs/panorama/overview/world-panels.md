@@ -19,6 +19,8 @@ The following convars can be enabled to output debug information:
 
 - `void SetInactive()`
 
+- `void RunJSScript(string code)`
+
 - `void AddCSSClass(string cssClass)`
 
 - `void RemoveCSSClass(string cssClass)`
