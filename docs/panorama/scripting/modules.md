@@ -1,9 +1,9 @@
 ---
-title: Javascript Modules
+title: Using Modules
 weight: 0
 ---
 
-# Javascript Modules
+# Using Modules
 
 Strata Source Panorama supports a subset of the ECMAScript modules specification. This can be used to create cleaner and more modular code by reusing script exports without introducing clutter into the panel scope.
 
@@ -133,5 +133,5 @@ class MyPanelHandler {
 
 ## Further Reading
 
-- [Javascript Modules on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+- [JavaScript Modules on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [Momentum's module-helper.ts](https://github.com/momentum-mod/panorama/blob/274c5782eaca5bcd3d57ff6fd1c0e7ac4639cf58/scripts/util/module-helpers.ts#L98-L135)
