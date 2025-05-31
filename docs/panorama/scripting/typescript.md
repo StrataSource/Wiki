@@ -8,7 +8,7 @@ This article assumes that readers will have a basic understanding of how TypeScr
 
 ## Linting
 
-Code linting for Panorama scripting is typically done with ESLint and the ESLint Visual Studio Code extension, which allows code linting errors to be reported in real time instead of having to re-run the linter. This requires no special setup, however its accuracy can be greatly improved by installing the types module.
+Code linting for Panorama scripting is typically done with [ESLint](https://eslint.org/) and the [ESLint Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), which allows code linting errors to be reported in real time instead of having to re-run the linter. This requires no special setup, however its accuracy can be greatly improved by installing the types module.
 
 ## Types Module
 
