@@ -95,6 +95,7 @@ The following table lists current lump versions for all lumps that are versioned
 | `LUMP_OVERLAYS_VERSION`           | 1       |
 | `LUMP_WATEROVERLAYS_VERSION`      | 1       |
 | `LUMP_LEAFWATERDATA_VERSION`      | 1       |
+| `LUMP_WORLDLIGHTS_VERSION`        | 2       |
 
 ## Structures
 
@@ -276,5 +277,39 @@ struct dwateroverlay_t
     Vector            vecUVPoints[4];
     Vector            vecOrigin;
     Vector            vecBasisNormal;
+};
+
+enum lightmode_t : uint8_t
+{
+    lightmode_static = 0,   // Lightmap-only light, fully static
+    lightmode_specular,     // Specular-only light with static lightmaps
+    lightmode_bounce,       // Direct and specular with static bounced lightmaps
+    lightmode_dynamic,      // Fully dynamic with no lightmaps
+
+    num_lightmodes,
+};
+
+// Version 0 and 1 can be found in the AlienSwarm or 2013 SDK
+struct dworldlight_version2_t
+{
+    Vector          origin;
+    Vector          intensity;
+    Vector          normal;
+    Vector          shadow_cast_offset;
+    int             cluster;
+    emittype_t      type;
+    lightmode_t     mode;
+    uint16_t        _padding;
+    int             style;
+    float           stopdot;
+    float           stopdot2;
+    float           exponent;
+    float           radius;
+    float           constant_attn;
+    float           linear_attn;
+    float           quadratic_attn;
+    int             flags;
+    int             texinfo;
+    int             owner;
 };
 ```
