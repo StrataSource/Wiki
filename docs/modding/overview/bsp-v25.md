@@ -92,14 +92,26 @@ The following table lists current lump versions for all lumps that are versioned
 | `LUMP_LEAFBRUSHES_VERSION`        | 1       |
 | `LUMP_PRIMINDICES_VERSION`        | 1       |
 | `LUMP_VERTNORMALINDICES_VERSION`  | 1       |
-| `LUMP_OVERLAYS_VERSION`           | 1       |
+| `LUMP_OVERLAYS_VERSION`           | 2       |
 | `LUMP_WATEROVERLAYS_VERSION`      | 1       |
 | `LUMP_LEAFWATERDATA_VERSION`      | 1       |
+| `LUMP_WORLDLIGHTS_VERSION`        | 2       |
 
-## Structures
+## Format
 
 In the BSP v25 update, all lumps listed in the lump version table have been modified. 
 This section lists the new structure format for each of those lumps.
+
+### Types
+
+The below composite types may be used in the structure definitions.
+
+| Type Name | Components | Size (Bytes) | Alignment (Bytes) | 
+|---|---|---|---|
+| Vector | float xyz[3]          | 12 | 4 |
+| Color  | unsigned char rgba[4] | 4  | 1 |
+
+### Structures
 
 ```cpp
 struct dphysdisp_t
@@ -251,17 +263,32 @@ struct dleafwaterdata_t
 };
 
 #define OVERLAY_BSP_FACE_COUNT    64
-struct doverlay_t
+
+struct doverlay_version1_t
 {
-    int            nId;
-    int            nTexInfo;
-    unsigned short m_nFaceCountAndRenderOrder;
-    int            aFaces[OVERLAY_BSP_FACE_COUNT];
-    float          flU[2];
-    float          flV[2];
-    Vector         vecUVPoints[4];
-    Vector         vecOrigin;
-    Vector         vecBasisNormal;
+	int			    nId;
+	int			    nTexInfo;
+	unsigned short	m_nFaceCountAndRenderOrder;
+	int			    aFaces[OVERLAY_BSP_FACE_COUNT];
+	float		    flU[2];
+	float		    flV[2];
+	Vector		    vecUVPoints[4];
+	Vector		    vecOrigin;
+	Vector		    vecBasisNormal;
+};
+
+struct doverlay_version2_t
+{
+    int             nId;
+    int             nTexInfo;
+    unsigned short  m_nFaceCountAndRenderOrder;
+    int             aFaces[OVERLAY_BSP_FACE_COUNT];
+    float           flU[2];
+    float           flV[2];
+    Vector          vecUVPoints[4];
+    Vector          vecOrigin;
+    Vector          vecBasisNormal;
+    Color           clrTint;
 };
 
 #define WATEROVERLAY_BSP_FACE_COUNT                256
@@ -276,5 +303,39 @@ struct dwateroverlay_t
     Vector            vecUVPoints[4];
     Vector            vecOrigin;
     Vector            vecBasisNormal;
+};
+
+enum lightmode_t : uint8_t
+{
+    lightmode_static = 0,   // Lightmap-only light, fully static
+    lightmode_specular,     // Specular-only light with static lightmaps
+    lightmode_bounce,       // Direct and specular with static bounced lightmaps
+    lightmode_dynamic,      // Fully dynamic with no lightmaps
+
+    num_lightmodes,
+};
+
+// Version 0 and 1 can be found in the AlienSwarm or 2013 SDK
+struct dworldlight_version2_t
+{
+    Vector          origin;
+    Vector          intensity;
+    Vector          normal;
+    Vector          shadow_cast_offset;
+    int             cluster;
+    emittype_t      type;
+    lightmode_t     mode;
+    uint16_t        _padding;
+    int             style;
+    float           stopdot;
+    float           stopdot2;
+    float           exponent;
+    float           radius;
+    float           constant_attn;
+    float           linear_attn;
+    float           quadratic_attn;
+    int             flags;
+    int             texinfo;
+    int             owner;
 };
 ```
