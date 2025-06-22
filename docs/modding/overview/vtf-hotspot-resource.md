@@ -10,7 +10,7 @@ The following specification introduces a standardized way of writing and reading
 
 ## Hotspot Resource Specification
 
-This specification describes the HotSpot "HOT" resource for embedding in VTFs greater than version 7.2.
+This specification describes the HotSpot "HOT" resource for embedding in VTFs greater than version 7.2. All structs in this resource should be assumed to be byte-aligned without padding.
 
 This resource does not include world texel-scaling information, and assumes that implementations will attempt to match rects with the default texture scale as defined in the user configuration.
 
