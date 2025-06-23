@@ -46,11 +46,14 @@ struct HotspotRect_t {
 };
 ```
 
-Orientation is defined within the flags of each rect. Although these are defined per-rect, it is recommended that editors implement batch editing for ease of use.
+Orientation randomization is defined within the flags of each rect. Although these are defined per-rect, it is recommended that editors implement batch editing for ease of use.
+
+Regions can also be defined as belonging to the alternate group via the `alt_group` flag. Regions with this flag will not be selected unless an implementation-defined keyboard modifier key is pressed, and vice-versa.
 
 ```cpp
 enum class HotspotRectFlags_t : unsigned char {
 	enable_rotation   = 0x1, // Can this region be randomly rotated?
 	enable_reflection = 0x2, // Can this region be randomly horizontally flipped?
+	alt_group         = 0x4, // If true, this region belongs to the alternate group.
 };
 ```
