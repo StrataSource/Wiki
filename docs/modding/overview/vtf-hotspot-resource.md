@@ -48,7 +48,7 @@ struct HotspotRect_t {
 
 Orientation randomization is defined within the flags of each rect. Although these are defined per-rect, it is recommended that editors implement batch editing for ease of use.
 
-Regions can also be defined as belonging to the alternate group via the `alt_group` flag. Regions with this flag will not be selected unless an implementation-defined keyboard modifier key is pressed, and vice-versa.
+Regions with the `alt_group` flag should be excluded from random selection by default, and be exclusively randomly selected when an implementation-specific modifier key is active. For consistency, the left-hand Alt key is recommended for this purpose.
 
 ```cpp
 enum class HotspotRectFlags_t : unsigned char {
