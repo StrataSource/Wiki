@@ -9,6 +9,11 @@ This page covers Strata implementation of Parallax-Corrected Cubemaps, created w
 
 ## Overview
 https://docs.momentum-mod.org/shaders/parallax_corrected_cubemaps/ it's came from momentum mod
+
+> [!NOTE]
+> Thanks to Brian Charles for his work on this feature.
+> More technical information can be found on the [Valve Developer Wiki Page.](https://developer.valvesoftware.com/wiki/Parallax_Corrected_Cubemaps)
+
 ## Prerequisites 
 * Be proficient in using the Hammer Editor
 * Have the momentum/p2ce/revolution.fgd in your Hammer configuration
