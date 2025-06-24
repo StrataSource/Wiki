@@ -30,16 +30,11 @@ In Hammer, Parallax-Corrected Cubemaps need two entities to function correctly:
 Any regular LightmappedGeneric materials will still be able to use the cubemap as normal, this feature simply adds functionality on top of the existing env_cubemap in conjunction with an extra entity and shader to use inside .VMT files.
 
 > [!TIP]
-> This is a tip
-
-There are some important things to take note of:
-
-The parallax_obb entity must be a single box brush.
-The Parallax-Corrected cubemap is still built the same way regular cubemaps are.
-This means that you may have distortion in the reflections depending on where you place the env_cubemap and the shape of the parallax_obb brush.
-
-This example has a wide room with a low ceiling as well as the cubemap entity not quite in the centre:
-
+> There are some important things to take note of:
+> The parallax_obb entity must be a single box brush
+> The Parallax-Corrected cubemap is still built the same way regular cubemaps are.
+> This means that you may have distortion in the reflections depending on where you place the env_cubemap and the shape of the parallax_obb brush.
+> This example has a wide room with a low ceiling as well as the cubemap entity not quite in the centre:
 
 ![Click on the hand holding a mask](images/cube_4.jpg)
 
