@@ -16,6 +16,7 @@ other improvements have been made to Strata Source, including:
 - 64-bit support (32-bit support has been completely dropped)
 - Expanded map limits (128k x 128k x 128k) and increased entity cap via BSPv25
 - PBR shading
+- Parallax-corrected cubemaps
 - CSM (Originally from CSGO)
 - Backwards compatibility with BSP v19-21
 - Backwards compatibiltiy with TF2/HL2/L4D1/ASW branch models
