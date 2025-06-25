@@ -51,7 +51,7 @@ The first thing you should do is to create the “bounding box” of the cubemap
 
 Once you’ve made the trigger brush, tie it to a parallax_obb entity and give it a name:
 
-![Click on the hand holding a mask](images/cube_3.jpg)
+![Click on the hand holding a mask](images/cube_3.png)
 
 That’s all that is needed for the brush, onto the cubemap entity itself.
 
