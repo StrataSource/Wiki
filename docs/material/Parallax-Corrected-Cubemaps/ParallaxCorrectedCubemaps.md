@@ -57,7 +57,7 @@ That’s all that is needed for the brush, onto the cubemap entity itself.
 
 When creating an env_cubemap you should see an extra option called “Cubemap Bounds”. Set it to the name of the parallax_obb you just created.
 
-![Click on the hand holding a mask](images/cube_1.jpg)
+![Click on the hand holding a mask](images/cube_1.png)
 
 This should be all the setup that is required in Hammer.
 
