@@ -1,12 +1,12 @@
 {
- "globals": [  {"method": "ActivatePaint", "signature": "void ActivatePaint(int)", "doc": "Activates the specified paint power on the player." },
+ "globals": [  {"method": "ActivatePaint", "signature": "void ActivatePaint(int)", "doc": "Activates the specified paint power on all players." },
   {"method": "AddBranchLevelName", "signature": "void AddBranchLevelName(int, string)", "doc": "Adds a level to the specified branche's list." },
   {"method": "AddCoopCreditsName", "signature": "void AddCoopCreditsName(string)", "doc": "Adds a name to the coop credit's list." },
   {"method": "CreateEntityByName", "signature": "handle CreateEntityByName(string, handle)", "doc": "(string className, table entKeyVals) - Create entity by class string with specified key values" },
   {"method": "CreateProp", "signature": "handle CreateProp(string, Vector, string, int)", "doc": "Create a physics prop" },
   {"method": "CreateSceneEntity", "signature": "handle CreateSceneEntity(string)", "doc": "Create a scene entity to play the specified scene." },
-  {"method": "DeactivateAllPaints", "signature": "void DeactivateAllPaints()", "doc": "Deactivates all the paints on the player." },
-  {"method": "DeactivatePaint", "signature": "void DeactivatePaint(int)", "doc": "Deactivates the specified paint power on the player." },
+  {"method": "DeactivateAllPaints", "signature": "void DeactivateAllPaints()", "doc": "Deactivates all the paints on all players." },
+  {"method": "DeactivatePaint", "signature": "void DeactivatePaint(int)", "doc": "Deactivates the specified paint power on all players." },
   {"method": "DebugDrawBox", "signature": "void DebugDrawBox(Vector, Vector, Vector, int, int, int, int, float)", "doc": "Draw a debug overlay box" },
   {"method": "DebugDrawBoxAngles", "signature": "void DebugDrawBoxAngles(Vector, Vector, Vector, Vector, int, int, int, int, float)", "doc": "Draw a debug overlay box with angles" },
   {"method": "DebugDrawEntityText", "signature": "void DebugDrawEntityText(int, int, string, float, int, int, int, int)", "doc": "Draw debug overlay entity text" },
@@ -35,7 +35,7 @@
   {"method": "GetPlayerByIndex", "signature": "handle GetPlayerByIndex(int)", "doc": "Gets the player by their index. This is a one-based index and must be in the range (1 <= index <= GetPlayerCount())" },
   {"method": "GetPlayerCount", "signature": "int GetPlayerCount()", "doc": "Returns the number of connected clients, this will always be 1 for listen servers" },
   {"method": "GetPlayerSilenceDuration", "signature": "float GetPlayerSilenceDuration(int)", "doc": "Time that the specified player has been silent on the mic." },
-  {"method": "GivePlayerPaintgun", "signature": "void GivePlayerPaintgun()", "doc": "Give player the paintgun with no paints active." },
+  {"method": "GivePlayerPaintgun", "signature": "void GivePlayerPaintgun()", "doc": "Gives all portal players the paint gun with not active paints." },
   {"method": "GivePlayerPortalgun", "signature": "void GivePlayerPortalgun()", "doc": "Give player the portalgun." },
   {"method": "IsCoOp", "signature": "bool IsCoOp()", "doc": "Is this a co-op game?" },
   {"method": "IsLevelComplete", "signature": "bool IsLevelComplete(int, int)", "doc": "Returns true if the level in the specified branch is completed by either player." },
@@ -70,7 +70,7 @@
   {"method": "TracePortalLine", "signature": "handle TracePortalLine(Vector, Vector, int, handle, int, bool)", "doc": "Same as TraceLineEx, but will transform the trace based on any portals it passes through. If the last bool is true, it will transform based on the first portal it went though." },
   {"method": "TryDLC1InstalledOrCatch", "signature": "bool TryDLC1InstalledOrCatch()", "doc": "Tests if the DLC1 is installed for Try/Catch blocks." },
   {"method": "UniqueString", "signature": "function UniqueString(string)", "doc": "Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table." },
-  {"method": "UpgradePlayerPaintgun", "signature": "void UpgradePlayerPaintgun()", "doc": "Upgrades the players paintgun, if they are not holding one it will give them one." },
+  {"method": "UpgradePlayerPaintgun", "signature": "void UpgradePlayerPaintgun()", "doc": "Upgrades the paint gun of all players, if they are not holding one it will give them one." },
   {"method": "UpgradePlayerPortalgun", "signature": "void UpgradePlayerPortalgun()", "doc": "Give player the portalgun." },
   {"method": "UpgradePlayerPotatogun", "signature": "void UpgradePlayerPotatogun()", "doc": "Give player the portalgun." }
  ],
@@ -82,19 +82,29 @@
    ]
   },
   {
-   "class": "CPortal_Player",
-   "extends": "CBaseMultiplayerPlayer",
-   "methods": [    { "method": "CPortal_Player::GetWheatleyMonitorDestructionCount", "signature": "int CPortal_Player::GetWheatleyMonitorDestructionCount()", "doc": "Get number of wheatley monitors destroyed by the player." },
-    { "method": "CPortal_Player::IncWheatleyMonitorDestructionCount", "signature": "void CPortal_Player::IncWheatleyMonitorDestructionCount()", "doc": "Set number of wheatley monitors destroyed by the player." },
-    { "method": "CPortal_Player::TurnOffPotatos", "signature": "void CPortal_Player::TurnOffPotatos()", "doc": "Turns Off the Potatos material light" },
-    { "method": "CPortal_Player::TurnOnPotatos", "signature": "void CPortal_Player::TurnOnPotatos()", "doc": "Turns On the Potatos material light" }
+   "class": "CPlaytestManager",
+   "extends": "",
+   "methods": [    { "method": "CPlaytestManager::BeginPlaytest", "signature": "void CPlaytestManager::BeginPlaytest()", "doc": "Begins recording of playtest info" },
+    { "method": "CPlaytestManager::EndPlaytest", "signature": "void CPlaytestManager::EndPlaytest()", "doc": "Ends recording of playtest info" }
    ]
   },
   {
-   "class": "CPointViewControl",
-   "extends": "CBaseEntity",
-   "methods": [    { "method": "CPointViewControl::GetFov", "signature": "int CPointViewControl::GetFov()", "doc": "get camera's current fov setting as integer" },
-    { "method": "CPointViewControl::SetFov", "signature": "void CPointViewControl::SetFov(int, float)", "doc": "set camera's current fov in integer degrees and fov change rate as float" }
+   "class": "CEntities",
+   "extends": "",
+   "methods": [    { "method": "CEntities::CreateByClassname", "signature": "handle CEntities::CreateByClassname(string)", "doc": "Creates an entity by classname" },
+    { "method": "CEntities::DispatchSpawn", "signature": "void CEntities::DispatchSpawn(handle)", "doc": "Calls the Spawn function for the specified entity" },
+    { "method": "CEntities::FindByClassname", "signature": "handle CEntities::FindByClassname(handle, string)", "doc": "Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+    { "method": "CEntities::FindByClassnameNearest", "signature": "handle CEntities::FindByClassnameNearest(string, Vector, float)", "doc": "Find entities by class name nearest to a point." },
+    { "method": "CEntities::FindByClassnameWithin", "signature": "handle CEntities::FindByClassnameWithin(handle, string, Vector, float)", "doc": "Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+    { "method": "CEntities::FindByModel", "signature": "handle CEntities::FindByModel(handle, string)", "doc": "Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+    { "method": "CEntities::FindByName", "signature": "handle CEntities::FindByName(handle, string)", "doc": "Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+    { "method": "CEntities::FindByNameNearest", "signature": "handle CEntities::FindByNameNearest(string, Vector, float)", "doc": "Find entities by name nearest to a point." },
+    { "method": "CEntities::FindByNameWithin", "signature": "handle CEntities::FindByNameWithin(handle, string, Vector, float)", "doc": "Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+    { "method": "CEntities::FindByTarget", "signature": "handle CEntities::FindByTarget(handle, string)", "doc": "Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+    { "method": "CEntities::FindInSphere", "signature": "handle CEntities::FindInSphere(handle, Vector, float)", "doc": "Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
+    { "method": "CEntities::First", "signature": "handle CEntities::First()", "doc": "Begin an iteration over the list of entities" },
+    { "method": "CEntities::GetByIndex", "signature": "handle CEntities::GetByIndex(int)", "doc": "Returns handle to entity based on its ent index. The index is 1-based" },
+    { "method": "CEntities::Next", "signature": "handle CEntities::Next(handle)", "doc": "Continue an iteration over the list of entities, providing reference to a previously found entity" }
    ]
   },
   {
@@ -160,12 +170,6 @@
    ]
   },
   {
-   "class": "ScriptStorageMgr",
-   "extends": "",
-   "methods": [    { "method": "ScriptStorageMgr::CreateScope", "signature": "handle ScriptStorageMgr::CreateScope(string)", "doc": "Creates a new named storage scope" }
-   ]
-  },
-  {
    "class": "StorageScope",
    "extends": "",
    "methods": [    { "method": "StorageScope::Clear", "signature": "void StorageScope::Clear(string)", "doc": "Clear the specified key" },
@@ -178,6 +182,53 @@
     { "method": "StorageScope::SetInt", "signature": "void StorageScope::SetInt(string, int)", "doc": "Sets the specified value" },
     { "method": "StorageScope::SetString", "signature": "void StorageScope::SetString(string, string)", "doc": "Sets the specified value" },
     { "method": "StorageScope::SetVector", "signature": "void StorageScope::SetVector(string, Vector)", "doc": "Sets the specified value" }
+   ]
+  },
+  {
+   "class": "ScriptStorageMgr",
+   "extends": "",
+   "methods": [    { "method": "ScriptStorageMgr::CreateScope", "signature": "handle ScriptStorageMgr::CreateScope(string)", "doc": "Creates a new named storage scope" }
+   ]
+  },
+  {
+   "class": "CWeaponPaintGun",
+   "extends": "CBaseCombatWeapon",
+   "methods": [    { "method": "CWeaponPaintGun::ActivatePaint", "signature": "void CWeaponPaintGun::ActivatePaint(int)", "doc": "Activates the specified paint power on the gun." },
+    { "method": "CWeaponPaintGun::CyclePaintPower", "signature": "void CWeaponPaintGun::CyclePaintPower(bool)", "doc": "Cycles to the next or previous paint power. Arg1: Whether to cycle forwards or backwards. " },
+    { "method": "CWeaponPaintGun::DeactivateAllPaints", "signature": "void CWeaponPaintGun::DeactivateAllPaints()", "doc": "Deactivates all paint powers on the gun." },
+    { "method": "CWeaponPaintGun::DeactivatePaint", "signature": "void CWeaponPaintGun::DeactivatePaint(int)", "doc": "Deactivates the specified paint power." },
+    { "method": "CWeaponPaintGun::GetCurrentPaint", "signature": "int CWeaponPaintGun::GetCurrentPaint()", "doc": "Returns the current active paint power." },
+    { "method": "CWeaponPaintGun::GetPaintCount", "signature": "int CWeaponPaintGun::GetPaintCount()", "doc": "Returns the number of paint powers the gun has access to." },
+    { "method": "CWeaponPaintGun::HasAnyPaintPower", "signature": "bool CWeaponPaintGun::HasAnyPaintPower()", "doc": "Whether or not the gun has any paint powers at all, excluding NO_POWER" },
+    { "method": "CWeaponPaintGun::HasPaintPower", "signature": "bool CWeaponPaintGun::HasPaintPower(int)", "doc": "Whether or not the gun has the specified paint power." },
+    { "method": "CWeaponPaintGun::SetCurrentPaint", "signature": "void CWeaponPaintGun::SetCurrentPaint(int)", "doc": "Sets the gun's current power to the specified paint power." }
+   ]
+  },
+  {
+   "class": "CPortal_Player",
+   "extends": "CBaseMultiplayerPlayer",
+   "methods": [    { "method": "CPortal_Player::GetWheatleyMonitorDestructionCount", "signature": "int CPortal_Player::GetWheatleyMonitorDestructionCount()", "doc": "Get number of wheatley monitors destroyed by the player." },
+    { "method": "CPortal_Player::IncWheatleyMonitorDestructionCount", "signature": "void CPortal_Player::IncWheatleyMonitorDestructionCount()", "doc": "Set number of wheatley monitors destroyed by the player." },
+    { "method": "CPortal_Player::TurnOffPotatos", "signature": "void CPortal_Player::TurnOffPotatos()", "doc": "Turns Off the Potatos material light" },
+    { "method": "CPortal_Player::TurnOnPotatos", "signature": "void CPortal_Player::TurnOnPotatos()", "doc": "Turns On the Potatos material light" }
+   ]
+  },
+  {
+   "class": "CPropPortal",
+   "extends": "CBasePortal",
+   "methods": [    { "method": "CPropPortal::Fizzle", "signature": "void CPropPortal::Fizzle()", "doc": "Fizzle the portal" },
+    { "method": "CPropPortal::GetFiredByPlayer", "signature": "handle CPropPortal::GetFiredByPlayer()", "doc": "Returns the handle to the player who fired the portal, or null if none" },
+    { "method": "CPropPortal::GetLinkageGroupID", "signature": "int CPropPortal::GetLinkageGroupID()", "doc": "Gets the portal's linkage ID" },
+    { "method": "CPropPortal::NewLocation", "signature": "void CPropPortal::NewLocation(Vector, Vector)", "doc": "Place the portal at a new location" },
+    { "method": "CPropPortal::Resize", "signature": "void CPropPortal::Resize(float, float)", "doc": "Resize the portal. Parameters are half width and half height, respectively" },
+    { "method": "CPropPortal::SetActivatedState", "signature": "void CPropPortal::SetActivatedState(bool)", "doc": "Activates or deactivates a portal" },
+    { "method": "CPropPortal::SetLinkageGroupID", "signature": "void CPropPortal::SetLinkageGroupID(int)", "doc": "Sets the portal's linkage ID" }
+   ]
+  },
+  {
+   "class": "CSceneManager",
+   "extends": "CBaseEntity",
+   "methods": [    { "method": "CSceneManager::IsSceneRunning", "signature": "bool CSceneManager::IsSceneRunning(handle)", "doc": "Returns whether a scripted scene is currently playing" }
    ]
   },
   {
@@ -229,10 +280,15 @@
    ]
   },
   {
-   "class": "CPropWeightedCube",
-   "extends": "CBaseAnimating",
-   "methods": [    { "method": "CPropWeightedCube::GetCubeType", "signature": "int CPropWeightedCube::GetCubeType()", "doc": "Get the type of the cube. Returns a value from the CUBE_* enum" },
-    { "method": "CPropWeightedCube::GetPartner", "signature": "handle CPropWeightedCube::GetPartner()", "doc": "Get the instance handle of the schrodinger's partner" }
+   "class": "CSceneEntity",
+   "extends": "CBaseEntity",
+   "methods": [    { "method": "CSceneEntity::AddBroadcastTeamTarget", "signature": "void CSceneEntity::AddBroadcastTeamTarget(int)", "doc": "Adds a team (by index) to the broadcast list" },
+    { "method": "CSceneEntity::EstimateLength", "signature": "float CSceneEntity::EstimateLength()", "doc": "Returns length of this scene in seconds." },
+    { "method": "CSceneEntity::FindNamedEntity", "signature": "handle CSceneEntity::FindNamedEntity(string)", "doc": "given an entity reference, such as !target, get actual entity from scene object" },
+    { "method": "CSceneEntity::IsPaused", "signature": "bool CSceneEntity::IsPaused()", "doc": "If this scene is currently paused." },
+    { "method": "CSceneEntity::IsPlayingBack", "signature": "bool CSceneEntity::IsPlayingBack()", "doc": "If this scene is currently playing." },
+    { "method": "CSceneEntity::LoadSceneFromString", "signature": "bool CSceneEntity::LoadSceneFromString(string, string)", "doc": "given a dummy scene name and a vcd string, load the scene" },
+    { "method": "CSceneEntity::RemoveBroadcastTeamTarget", "signature": "void CSceneEntity::RemoveBroadcastTeamTarget(int)", "doc": "Removes a team (by index) from the broadcast list" }
    ]
   },
   {
@@ -304,20 +360,16 @@
     { "method": "CBaseEntity::SetVelocity", "signature": "void CBaseEntity::SetVelocity(Vector)", "doc": "" },
     { "method": "CBaseEntity::Spawn", "signature": "void CBaseEntity::Spawn()", "doc": "Spawns the entity" },
     { "method": "CBaseEntity::StopSound", "signature": "void CBaseEntity::StopSound(string)", "doc": "Stops a sound on this entity." },
+    { "method": "CBaseEntity::Teleport", "signature": "void CBaseEntity::Teleport(Vector, Vector)", "doc": "Teleport the entity to a new position with angles" },
     { "method": "CBaseEntity::ValidateScriptScope", "signature": "bool CBaseEntity::ValidateScriptScope()", "doc": "Ensure that an entity's script scope has been created" },
     { "method": "CBaseEntity::entindex", "signature": "int CBaseEntity::entindex()", "doc": "" }
    ]
   },
   {
-   "class": "CSceneEntity",
-   "extends": "CBaseEntity",
-   "methods": [    { "method": "CSceneEntity::AddBroadcastTeamTarget", "signature": "void CSceneEntity::AddBroadcastTeamTarget(int)", "doc": "Adds a team (by index) to the broadcast list" },
-    { "method": "CSceneEntity::EstimateLength", "signature": "float CSceneEntity::EstimateLength()", "doc": "Returns length of this scene in seconds." },
-    { "method": "CSceneEntity::FindNamedEntity", "signature": "handle CSceneEntity::FindNamedEntity(string)", "doc": "given an entity reference, such as !target, get actual entity from scene object" },
-    { "method": "CSceneEntity::IsPaused", "signature": "bool CSceneEntity::IsPaused()", "doc": "If this scene is currently paused." },
-    { "method": "CSceneEntity::IsPlayingBack", "signature": "bool CSceneEntity::IsPlayingBack()", "doc": "If this scene is currently playing." },
-    { "method": "CSceneEntity::LoadSceneFromString", "signature": "bool CSceneEntity::LoadSceneFromString(string, string)", "doc": "given a dummy scene name and a vcd string, load the scene" },
-    { "method": "CSceneEntity::RemoveBroadcastTeamTarget", "signature": "void CSceneEntity::RemoveBroadcastTeamTarget(int)", "doc": "Removes a team (by index) from the broadcast list" }
+   "class": "CPropWeightedCube",
+   "extends": "CBaseAnimating",
+   "methods": [    { "method": "CPropWeightedCube::GetCubeType", "signature": "int CPropWeightedCube::GetCubeType()", "doc": "Get the type of the cube. Returns a value from the CUBE_* enum" },
+    { "method": "CPropWeightedCube::GetPartner", "signature": "handle CPropWeightedCube::GetPartner()", "doc": "Get the instance handle of the schrodinger's partner" }
    ]
   },
   {
@@ -387,15 +439,10 @@
    ]
   },
   {
-   "class": "CPropPortal",
-   "extends": "CBasePortal",
-   "methods": [    { "method": "CPropPortal::Fizzle", "signature": "void CPropPortal::Fizzle()", "doc": "Fizzle the portal" },
-    { "method": "CPropPortal::GetFiredByPlayer", "signature": "handle CPropPortal::GetFiredByPlayer()", "doc": "Returns the handle to the player who fired the portal, or null if none" },
-    { "method": "CPropPortal::GetLinkageGroupID", "signature": "int CPropPortal::GetLinkageGroupID()", "doc": "Gets the portal's linkage ID" },
-    { "method": "CPropPortal::NewLocation", "signature": "void CPropPortal::NewLocation(Vector, Vector)", "doc": "Place the portal at a new location" },
-    { "method": "CPropPortal::Resize", "signature": "void CPropPortal::Resize(float, float)", "doc": "Resize the portal. Parameters are half width and half height, respectively" },
-    { "method": "CPropPortal::SetActivatedState", "signature": "void CPropPortal::SetActivatedState(bool)", "doc": "Activates or deactivates a portal" },
-    { "method": "CPropPortal::SetLinkageGroupID", "signature": "void CPropPortal::SetLinkageGroupID(int)", "doc": "Sets the portal's linkage ID" }
+   "class": "CPointViewControl",
+   "extends": "CBaseEntity",
+   "methods": [    { "method": "CPointViewControl::GetFov", "signature": "int CPointViewControl::GetFov()", "doc": "get camera's current fov setting as integer" },
+    { "method": "CPointViewControl::SetFov", "signature": "void CPointViewControl::SetFov(int, float)", "doc": "set camera's current fov in integer degrees and fov change rate as float" }
    ]
   },
   {
@@ -421,29 +468,33 @@
    ]
   },
   {
-   "class": "CPlaytestManager",
-   "extends": "",
-   "methods": [    { "method": "CPlaytestManager::BeginPlaytest", "signature": "void CPlaytestManager::BeginPlaytest()", "doc": "Begins recording of playtest info" },
-    { "method": "CPlaytestManager::EndPlaytest", "signature": "void CPlaytestManager::EndPlaytest()", "doc": "Ends recording of playtest info" }
+   "class": "CLight",
+   "extends": "CBaseEntity",
+   "methods": [    { "method": "CLight::GetInnerAngle", "signature": "float CLight::GetInnerAngle()", "doc": "Returns the inner angle for spotlights" },
+    { "method": "CLight::GetOuterAngle", "signature": "float CLight::GetOuterAngle()", "doc": "Returns the outer angle for spotlights" },
+    { "method": "CLight::GetRadiusOverride", "signature": "float CLight::GetRadiusOverride()", "doc": "Gets the radius override" },
+    { "method": "CLight::GetShadowSize", "signature": "int CLight::GetShadowSize()", "doc": "Gets the shadow size" },
+    { "method": "CLight::GetState", "signature": "bool CLight::GetState()", "doc": "Returns true if the light is enabled" },
+    { "method": "CLight::SetInnerAngle", "signature": "void CLight::SetInnerAngle(float)", "doc": "Sets the inner angle for spotlights" },
+    { "method": "CLight::SetLightColor", "signature": "void CLight::SetLightColor(Vector, float)", "doc": "Set the light color" },
+    { "method": "CLight::SetLightFalloffCLQ", "signature": "void CLight::SetLightFalloffCLQ(float, float, float)", "doc": "Sets the Constant/Linear/Quadratic (CLQ) falloff for the light" },
+    { "method": "CLight::SetLightFalloffD50D0", "signature": "void CLight::SetLightFalloffD50D0(float, float)", "doc": "Sets the d50/d0 light fallfoff" },
+    { "method": "CLight::SetOuterAngle", "signature": "void CLight::SetOuterAngle(float)", "doc": "Sets the outer angle for spotlights" },
+    { "method": "CLight::SetPattern", "signature": "void CLight::SetPattern(string)", "doc": "Sets the light pattern" },
+    { "method": "CLight::SetRadiusOverride", "signature": "void CLight::SetRadiusOverride(float)", "doc": "Sets the radius override, instead of computing it based on CQL or D0/D50" },
+    { "method": "CLight::SetShadowSize", "signature": "void CLight::SetShadowSize(int)", "doc": "Sets the shadow size" },
+    { "method": "CLight::Toggle", "signature": "void CLight::Toggle()", "doc": "Toggle the light" },
+    { "method": "CLight::TurnOff", "signature": "void CLight::TurnOff()", "doc": "Turn off the light" },
+    { "method": "CLight::TurnOn", "signature": "void CLight::TurnOn()", "doc": "Turn on the light" }
    ]
   },
   {
-   "class": "CEntities",
-   "extends": "",
-   "methods": [    { "method": "CEntities::CreateByClassname", "signature": "handle CEntities::CreateByClassname(string)", "doc": "Creates an entity by classname" },
-    { "method": "CEntities::DispatchSpawn", "signature": "void CEntities::DispatchSpawn(handle)", "doc": "Calls the Spawn function for the specified entity" },
-    { "method": "CEntities::FindByClassname", "signature": "handle CEntities::FindByClassname(handle, string)", "doc": "Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
-    { "method": "CEntities::FindByClassnameNearest", "signature": "handle CEntities::FindByClassnameNearest(string, Vector, float)", "doc": "Find entities by class name nearest to a point." },
-    { "method": "CEntities::FindByClassnameWithin", "signature": "handle CEntities::FindByClassnameWithin(handle, string, Vector, float)", "doc": "Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
-    { "method": "CEntities::FindByModel", "signature": "handle CEntities::FindByModel(handle, string)", "doc": "Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
-    { "method": "CEntities::FindByName", "signature": "handle CEntities::FindByName(handle, string)", "doc": "Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
-    { "method": "CEntities::FindByNameNearest", "signature": "handle CEntities::FindByNameNearest(string, Vector, float)", "doc": "Find entities by name nearest to a point." },
-    { "method": "CEntities::FindByNameWithin", "signature": "handle CEntities::FindByNameWithin(handle, string, Vector, float)", "doc": "Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
-    { "method": "CEntities::FindByTarget", "signature": "handle CEntities::FindByTarget(handle, string)", "doc": "Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
-    { "method": "CEntities::FindInSphere", "signature": "handle CEntities::FindInSphere(handle, Vector, float)", "doc": "Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search" },
-    { "method": "CEntities::First", "signature": "handle CEntities::First()", "doc": "Begin an iteration over the list of entities" },
-    { "method": "CEntities::GetByIndex", "signature": "handle CEntities::GetByIndex(int)", "doc": "Returns handle to entity based on its ent index. The index is 1-based" },
-    { "method": "CEntities::Next", "signature": "handle CEntities::Next(handle)", "doc": "Continue an iteration over the list of entities, providing reference to a previously found entity" }
+   "class": "CPanoramaScreen",
+   "extends": "CBaseEntity",
+   "methods": [    { "method": "CPanoramaScreen::AddCSSClass", "signature": "void CPanoramaScreen::AddCSSClass(string)", "doc": "Adds the CSS class" },
+    { "method": "CPanoramaScreen::RemoveCSSClass", "signature": "void CPanoramaScreen::RemoveCSSClass(string)", "doc": "Removes the CSS class" },
+    { "method": "CPanoramaScreen::RunJSScript", "signature": "void CPanoramaScreen::RunJSScript(string)", "doc": "Calls a script function. Example: Test2.TestFunction()" },
+    { "method": "CPanoramaScreen::SetActive", "signature": "void CPanoramaScreen::SetActive(bool)", "doc": "Sets the screen to be active or inactive." }
    ]
   },
   {
