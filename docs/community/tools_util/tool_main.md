@@ -17,20 +17,18 @@ In addition, this is akin to a "guide", specifying when you would want to use th
 # TEXTURES 
 ---
 
-## vtex2
-[vtex2](/modding/util/vtex2) - an open-source successor to Valve's vtex tool made by the Strata team, it comes packed with a Qt-based GUI named vtfview.
+## MareTF
 
-**Use Cases:** 
-* Quick VTF conversion alternative to VTFEdit
-* As a replacement for the original vtex.
-* Native Linux alternative to VTFEdit/VTFCmd
+[MareTF](https://github.com/craftablescience/MareTF) - An open source utility to create, edit and display VTF files.
+
+**Use Cases:**
+* VTF texture creation, conversion and manipulation.
+* Drop-in replacement for vtex2.
+* Replacement for Valve's original vtex tool.
+* Native Linux alternative to VTFEdit/VTFCmd.
 
 **Authors:**
-* Strata Source Team & Contributors
-
-ㅤ    
-ㅤ  
-ㅤ  
+* craftablescience & koerismo
 
 ## VTFEdit Reloaded
 [VTFEdit Reloaded](https://developer.valvesoftware.com/wiki/VTFEdit_Reloaded) - a fork of the original VTFEdit, with some QoL and fixes (Dark Mode VMT editor, fixed cubemap previews, etc.)
@@ -43,9 +41,19 @@ In addition, this is akin to a "guide", specifying when you would want to use th
 * Ryan "Nemesis" Gregg
 * Fork by Skyrym and Joshua Ashton
 
-ㅤ    
-ㅤ  
-ㅤ  
+## vtex2 (Deprecated)
+[vtex2](/modding/util/vtex2) - an open-source successor to Valve's vtex tool made by the Strata team, it comes packed with a Qt-based GUI named vtfview.
+
+Deprecated in favor of MareTF.
+
+**Use Cases:**
+* Quick VTF conversion alternative to VTFEdit
+* As a replacement for the original vtex.
+* Native Linux alternative to VTFEdit/VTFCmd
+
+**Authors:**
+* Strata Source Team & Contributors
+
 
 ---
 # FILES
