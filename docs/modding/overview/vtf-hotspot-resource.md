@@ -10,7 +10,7 @@ The following specification introduces a standardized way of writing and reading
 
 ## Hotspot Resource Specification
 
-This specification describes the HotSpot resource for embedding in VTFs greater than version 7.2. All structs in this resource should be assumed to be byte-aligned without padding.
+This specification describes the Hotspot resource for embedding in VTFs greater than version 7.2. All structs in this resource should be assumed to be byte-aligned without padding.
 
 This resource does not include world texel-scaling information, and assumes that implementations will attempt to match rects with the default texture scale as defined in the user configuration.
 
@@ -18,7 +18,7 @@ Due to the need for compatibility across many games, this resource cannot rely o
 
 ## Header
 
-This resource uses the UTF-8 tag "`+\0\0`" (`2B 00 00` in hexadecimal) for identification.
+This resource uses the UTF-8 tag "`+\0\0`" (`2B 00 00` in hexadecimal) for identification. This non-trivial name is due to several limitations - the resource must be inserted prior to the high-res data resource to avoid buffering issues, and resources are expected to be sorted in ascending order by their tags as little-endian integers. These force us to use an ID with a total value less than `0x000030`.
 
 No additional flags are defined in the resource header flags field.
 
