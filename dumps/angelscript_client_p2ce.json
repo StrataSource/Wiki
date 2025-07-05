@@ -5902,7 +5902,7 @@
                 },
                 {
                     "name": "SetModel",
-                    "declaration": "void SetModel(const string&in)",
+                    "declaration": "bool SetModel(const string&in)",
                     "documentation": null
                 },
                 {
@@ -5986,16 +5986,6 @@
                     "documentation": null
                 },
                 {
-                    "name": "SetParentAttachmentMaintainOffset",
-                    "declaration": "void SetParentAttachmentMaintainOffset(const string&in)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetParentAttachment",
-                    "declaration": "void SetParentAttachment(const string&in)",
-                    "documentation": null
-                },
-                {
                     "name": "GetTeamNumber",
                     "declaration": "int GetTeamNumber() const",
                     "documentation": null
@@ -6067,7 +6057,7 @@
                 },
                 {
                     "name": "GetMoveParent",
-                    "declaration": "CBaseEntity@ GetMoveParent()",
+                    "declaration": "CBaseEntity@ GetMoveParent() const",
                     "documentation": null
                 },
                 {
@@ -6083,16 +6073,6 @@
                 {
                     "name": "SetCollisionBounds",
                     "declaration": "void SetCollisionBounds(const Vector&in, const Vector&in)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetThink",
-                    "declaration": "void SetThink(ThinkFunc_t@ thinkFunc, float nextThinkTime = 0.0, const string&in context = \"\")",
-                    "documentation": null
-                },
-                {
-                    "name": "SetNextThink",
-                    "declaration": "void SetNextThink(float thinkTime, const string&in context = \"\")",
                     "documentation": null
                 },
                 {
@@ -6121,136 +6101,9 @@
                     "documentation": null
                 },
                 {
-                    "name": "SetMaxHealth",
-                    "declaration": "void SetMaxHealth(int)",
-                    "documentation": null
-                },
-                {
                     "name": "FireBullets",
                     "declaration": "void FireBullets(const FireBulletsInfo_t&in)",
                     "documentation": null
-                }
-            ]
-        },
-        {
-            "namespace": null,
-            "name": "Variant",
-            "method": [
-                {
-                    "name": "FieldType",
-                    "declaration": "EFieldType FieldType() const",
-                    "documentation": null
-                },
-                {
-                    "name": "Bool",
-                    "declaration": "bool Bool() const",
-                    "documentation": null
-                },
-                {
-                    "name": "String",
-                    "declaration": "string String() const",
-                    "documentation": null
-                },
-                {
-                    "name": "Int",
-                    "declaration": "int Int() const",
-                    "documentation": null
-                },
-                {
-                    "name": "Float",
-                    "declaration": "float Float() const",
-                    "documentation": null
-                },
-                {
-                    "name": "Vector3D",
-                    "declaration": "void Vector3D(Vector&out) const",
-                    "documentation": null
-                },
-                {
-                    "name": "Angle3D",
-                    "declaration": "void Angle3D(QAngle&out) const",
-                    "documentation": null
-                },
-                {
-                    "name": "Color32",
-                    "declaration": "Color Color32() const",
-                    "documentation": null
-                },
-                {
-                    "name": "SetBool",
-                    "declaration": "void SetBool(bool)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetInt",
-                    "declaration": "void SetInt(int)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetFloat",
-                    "declaration": "void SetFloat(float)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetEntity",
-                    "declaration": "void SetEntity(CBaseEntity@)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetVector3D",
-                    "declaration": "void SetVector3D(const Vector&in)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetPositionVector3D",
-                    "declaration": "void SetPositionVector3D(const Vector&in)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetAngle3D",
-                    "declaration": "void SetAngle3D(const QAngle&in)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetColor32",
-                    "declaration": "void SetColor32(Color clr)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetColor32",
-                    "declaration": "void SetColor32(int, int, int, int)",
-                    "documentation": null
-                },
-                {
-                    "name": "SetString",
-                    "declaration": "void SetString(const string&in)",
-                    "documentation": null
-                }
-            ]
-        },
-        {
-            "namespace": null,
-            "name": "InputData",
-            "property": [
-                {
-                    "name": "activator",
-                    "type": "CBaseEntity@",
-                    "is_const": false
-                },
-                {
-                    "name": "caller",
-                    "type": "CBaseEntity@",
-                    "is_const": false
-                },
-                {
-                    "name": "value",
-                    "type": "Variant",
-                    "is_const": false
-                },
-                {
-                    "name": "nOutputID",
-                    "type": "int",
-                    "is_const": false
                 }
             ]
         },
@@ -6269,11 +6122,6 @@
                 },
                 {
                     "name": "GetAttachment",
-                    "declaration": "bool GetAttachment(const string&in, Vector&out, QAngle&out)",
-                    "documentation": null
-                },
-                {
-                    "name": "GetAttachment",
                     "declaration": "bool GetAttachment(int, Vector&out, QAngle&out)",
                     "documentation": null
                 }
@@ -6284,7 +6132,7 @@
             "name": "CBaseCombatWeapon",
             "base_type": {
                 "namespace": null,
-                "name": "CBaseEntity"
+                "name": "CBaseAnimating"
             },
             "method": [
                 {
