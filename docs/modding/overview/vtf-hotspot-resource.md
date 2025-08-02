@@ -1,12 +1,12 @@
 ---
-title: VTF Hotspot Resource
+title: Hotspot Embedded Format
 ---
 
-# VTF Hotspot Resource
+# Hotspot Embedded Format
 
-Strata Hammer supports [Hotspot texturing](https://www.defaultinteractive.co.uk/post/hotspot-texturing), a technique which allows a single texture to contain many smaller rectangular regions which can then be automatically assigned to the faces of brushes. This allows for the rapid and detailed texturing of complex geometry.
+The following specification introduces a standardized way of reading and writing hotspot information directly into textures, so that hotspot editing tools may be created that work seamlessly without any additional material configuration.
 
-The following specification introduces a standardized way of writing and reading hotspot textures, so that hotspot editing tools may be created that work seamlessly between Strata and other Source-based games.
+For the external text-based format, see the [Hotspot Text Format](./vtf-hotspot-text-format).
 
 ## Hotspot Resource Specification
 
@@ -52,8 +52,8 @@ Regions with the `alt_group` flag should be excluded from random selection by de
 
 ```cpp
 enum class HotspotRectFlags_t : unsigned char {
-	enable_rotation   = 0x1, // Can this region be randomly rotated?
-	enable_reflection = 0x2, // Can this region be randomly horizontally flipped?
+	enable_rotation   = 0x1, // Should this region be randomly rotated?
+	enable_reflection = 0x2, // Should this region be randomly horizontally flipped?
 	alt_group         = 0x4, // If true, this region belongs to the alternate group.
 };
 ```
