@@ -4,7 +4,7 @@ title: Hotspot Text Format
 
 # Hotspot Text Format
 
-Strata Hammer supports [Hotspot texturing](https://www.defaultinteractive.co.uk/post/hotspot-texturing), a technique which allows a single texture to contain many smaller rectangular regions which can then be automatically assigned to the faces of brushes. This allows for the rapid and detailed texturing of complex geometry.
+Alongside the embedded format, Strata Source supports the Hammer++ rect format, which is derived from Source 2's rect format. This format makes it possible to quickly manually create and edit hotspot information, as well as reuse them between multiple materials.
 
 ```kv :: example_rectmap.rect
 Rectangles
