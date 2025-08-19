@@ -88,7 +88,7 @@ Deprecated in favor of MareTF.
 * A swiss-army knife powerhouse of parsers.
 
 **Authors:**
-* Strata Source Team & Contributors
+* craftablescience & contributors
 
 ㅤ    
 ㅤ  
