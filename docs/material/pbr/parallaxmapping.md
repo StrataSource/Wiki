@@ -18,7 +18,7 @@ A small window asking about what to fill the mask with should pop up. Select Whi
  
 ![The Heightmap is in a separate box next to the bumpmap](images/Layersfinal.png)
 
-The main image should now appear transparent, as GIMP always interprets alpha masks as transparency masks. This is can be ignored, as the engine will interpret this correctly. Now, export your image and convert it to a VTF. 
+The main image should now appear transparent, as GIMP always interprets alpha masks as transparency masks. This can be ignored, as the engine will interpret this correctly. Now, export your image and convert it to a VTF. 
 ## Adjusting the VMT
 Change the `$bumpmap` parameter in your VMT to the new Bumpmap, then put the following into your VMT:
 ```
