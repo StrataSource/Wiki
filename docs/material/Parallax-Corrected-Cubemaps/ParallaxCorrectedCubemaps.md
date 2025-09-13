@@ -29,7 +29,7 @@ In Hammer, Parallax-Corrected Cubemaps need two entities to function correctly:
 ![Click on the hand holding a mask](images/cube_0.jpg)
 
 > [!NOTE]
-> If you are using Momentum Mod, you may notice a box appear in the centre of the brush when you tie it to a parallax_obb entity like shown above.
+> In older versions of Momentum Mod, you may notice a box appear in the centre of the brush when you tie it to a parallax_obb entity like shown above.
 > This is normal and allows you to more easily select the brush if you have made it match the shape of the room.
 
 Any regular LightmappedGeneric materials will still be able to use the cubemap as normal, this feature simply adds functionality on top of the existing env_cubemap in conjunction with an extra entity and shader to use inside .VMT files.
