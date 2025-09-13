@@ -4,3 +4,4 @@ node_modules
 generator/public
 
 .wrangler
+.DS_Store
