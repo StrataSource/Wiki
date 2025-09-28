@@ -3,7 +3,7 @@ For Portal 2: Community Edition, you can download a [free template for sourcemod
 
 To make a content-based mod, simply download the template and extract its contents to `<your Steam installation>/steamapps/sourcemods`.
 
-Note that even if your Steam library is in a different location, you **must** place your mod in your Steam installation or else it will not show up. You also must restart Steam for your mod to show up.
+Note that even if your Steam library is in a different location, you **must** place your mod in your Steam installation or else it will not show up. You also must restart Steam for your mod to show up once everything's copied over.
 
 ## Launching
 If your mod's files are placed within your `sourcemods` folder, you can simply launch your mod from Steam itself.
@@ -11,8 +11,9 @@ If your mod's files are placed within your `sourcemods` folder, you can simply l
 Alternatively, your mod can be launched from the command line.
 To launch on Windows: 
 ```sh
-"..\..\common\Portal 2 Community Edition\bin\win64\chaos.exe" -legacyui -game "%cd%"
+"..\..\common\Portal 2 Community Edition\bin\win64\p2ce.exe" -legacyui -game "%cd%"
 ```
+###### Note: on some older versions of P2:CE, you may need to replace `p2ce.exe` with `chaos.exe`.
 
 To launch on Linux:
 ```sh
@@ -20,7 +21,7 @@ To launch on Linux:
 ```
 
 ## Contents
-The template includes a few files and folders that you can use for easy customization of P2:CE. This section will go over the most important ones.
+The template includes a few files and folders that you can use for easy customization of P2:CE. This section will go over the most important ones, or ones that are different from a typical sourcemod.
 
 ### `cfg`
 `cfg` contains important configuration files for your mod, like `mounts.kv`.
@@ -37,4 +38,5 @@ This folder contains resource files, configurations, and notably, your mod's ico
 `resource` also contains closed caption and localization files.
 
 ### `scripts`
+
 The `scripts` folder contains some useful configurations for UI elements as well as VScripts.
