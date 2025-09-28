@@ -51,5 +51,3 @@ This folder contains resource files, configurations, and notably, your mod's ico
 
 ### `scripts` folder
 The `scripts` folder contains some useful configurations for UI elements as well as VScripts.
-
-
