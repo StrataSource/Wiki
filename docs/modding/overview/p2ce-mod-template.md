@@ -32,21 +32,24 @@ To launch on Linux:
 ## Contents
 The template includes a few files and folders that you can use for easy customization of P2:CE. This section will go over the most important ones, or ones that are different from a typical sourcemod.
 
-### `cfg`
+### `gameinfo.txt`
+This file contains information about your mod and tells Steam which game it's based off of. The only thing you need to edit is the `game` property that sets the name. If you need to mount content from other games, `cfg/mounts.kv` should be used instead. 
+
+### `cfg` folder
 `cfg` contains important configuration files for your mod, like `mounts.kv`.
 
-### `maps`
+### `maps` folder
 This folder is where all your maps should be placed. P2:CE will look inside of this directory for map files.
 
-### `panorama`
+### `panorama` folder
 The `panorama` folder contains assets and XML files for customization of Panorama, P2:CE's UI framework.
 
-### `resource`
+### `resource` folder
 This folder contains resource files, configurations, and notably, your mod's icon (`game.ico` and `game-icon.bmp`).
 
 `resource` also contains closed caption and localization files.
 
-### `scripts`
-
+### `scripts` folder
 The `scripts` folder contains some useful configurations for UI elements as well as VScripts.
+
 
