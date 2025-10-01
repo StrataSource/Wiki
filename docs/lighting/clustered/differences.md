@@ -1,5 +1,5 @@
 ---
-title: _rt light entities
+title: Real-time Light Entities
 features:
     - USE_CLUSTERED
 ---
