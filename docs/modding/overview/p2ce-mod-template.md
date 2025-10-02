@@ -7,7 +7,7 @@ For Portal 2: Community Edition, you can download a free template for sourcemods
 
 ### Using the SDK Launcher
 The easiest way to make a mod for P2:CE is to use the SDK Launcher.
-Simply open the launcher, choose Utilites, and then New Mod. Through the dialog, you can choose the install location, the name, and also whether or not to create a shortcut on your desktop.
+Simply open the launcher, choose Utilities, and then New Mod. Through the dialog, you can choose the install location, the name, and also whether or not to create a shortcut on your desktop.
 
 ### Manually
 Another way to make a content-based mod, simply download the template [here](https://github.com/StrataSource/p2ce-mod-template) and extract its contents to `<your Steam installation>/steamapps/sourcemods`.
@@ -33,10 +33,10 @@ To launch on Linux:
 The template includes a few files and folders that you can use for easy customization of P2:CE. This section will go over the most important ones, or ones that are different from a typical sourcemod.
 
 ### `gameinfo.txt`
-This file contains information about your mod and tells Steam which game it's based off of. The only thing you need to edit is the `game` property that sets the name. If you need to mount content from other games, `cfg/mounts.kv` should be used instead. 
+This file contains information about your mod and tells Steam which game it's based off of. The only thing you need to edit is the `game` property that sets the name. If you need to mount content from other games, you can specify this in the `mounts` block. 
 
 ### `cfg` folder
-`cfg` contains important configuration files for your mod, like `mounts.kv`.
+`cfg` contains important configuration files for your mod.
 
 ### `maps` folder
 This folder is where all your maps should be placed. P2:CE will look inside of this directory for map files.
@@ -51,3 +51,4 @@ This folder contains resource files, configurations, and notably, your mod's ico
 
 ### `scripts` folder
 The `scripts` folder contains some useful configurations for UI elements as well as VScripts.
+
