@@ -1,7 +1,16 @@
-# P2:CE Mod Template
-For Portal 2: Community Edition, you can download a [free template for sourcemods](https://github.com/StrataSource/p2ce-mod-template).
+---
+title: P2:CE Mod Template
+---
 
-To make a content-based mod, simply download the template and extract its contents to `<your Steam installation>/steamapps/sourcemods`.
+# P2:CE Mod Template
+For Portal 2: Community Edition, you can download a free template for sourcemods that includes a basic structure for your mod.
+
+### Using the SDK Launcher
+The easiest way to make a mod for P2:CE is to use the SDK Launcher.
+Simply open the launcher, choose Utilities, and then New Mod. Through the dialog, you can choose the install location, the name, and also whether or not to create a shortcut on your desktop.
+
+### Manually
+Another way to make a content-based mod, simply download the template [here](https://github.com/StrataSource/p2ce-mod-template) and extract its contents to `<your Steam installation>/steamapps/sourcemods`.
 
 Note that even if your Steam library is in a different location, you **must** place your mod in your Steam installation or else it will not show up. You also must restart Steam for your mod to show up once everything's copied over.
 
@@ -23,20 +32,23 @@ To launch on Linux:
 ## Contents
 The template includes a few files and folders that you can use for easy customization of P2:CE. This section will go over the most important ones, or ones that are different from a typical sourcemod.
 
-### `cfg`
-`cfg` contains important configuration files for your mod, like `mounts.kv`.
+### `gameinfo.txt`
+This file contains information about your mod and tells Steam which game it's based off of. The only thing you need to edit is the `game` property that sets the name. If you need to mount content from other games, you can specify this in the `mounts` block. 
 
-### `maps`
+### `cfg` folder
+`cfg` contains important configuration files for your mod.
+
+### `maps` folder
 This folder is where all your maps should be placed. P2:CE will look inside of this directory for map files.
 
-### `panorama`
+### `panorama` folder
 The `panorama` folder contains assets and XML files for customization of Panorama, P2:CE's UI framework.
 
-### `resource`
+### `resource` folder
 This folder contains resource files, configurations, and notably, your mod's icon (`game.ico` and `game-icon.bmp`).
 
 `resource` also contains closed caption and localization files.
 
-### `scripts`
-
+### `scripts` folder
 The `scripts` folder contains some useful configurations for UI elements as well as VScripts.
+
