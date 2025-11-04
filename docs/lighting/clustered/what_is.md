@@ -1,11 +1,11 @@
 ---
-title: "Clustered Shading: How Does It Work?"
+title: "Clustered Lighting: How Does It Work?"
 features:
     - USE_CLUSTERED
 ---
-# Clustered Shading: How Does It Work?
+# Clustered Lighting: How Does It Work?
 
-Clustered Shading adds a new dynamic lighting system to Strata, with the following major improvements:
+Clustered Lighting adds a new dynamic lighting system to Strata, with the following major improvements:
 
 * Specular lighting now works on all surfaces, brush or prop, indoors or outdoors.
 * light_rt entities can now cast light and shadows dynamically.
@@ -13,14 +13,14 @@ Clustered Shading adds a new dynamic lighting system to Strata, with the followi
   * Entities can move under lights and have their lighting updated. This includes brush entities.
 * Hammer can now preview lighting and shadows in real time.
 
-Currently, only Portal 2: Community Edition and Momentum Mod support Clustered Shading. There are currently no plans to add Clusterd Shading to Portal: Revolution.
+Currently, only Portal 2: Community Edition and Momentum Mod support Clustered Lighting. There are currently no plans to add Clustered Lighting to Portal: Revolution.
 
 > [!NOTE]
 > Clustered currently works for the PBR, LMG, VLG, Water, Paint, Gel Blobs, and Eyes shaders
 
 ## How Does it Work?
 
-Traditionally in Source, light sources light up the map in two ways: by directly shining light onto a surface, and by indirectly bouncing light onto other surfaces. Both direct and indirect lighting are calculated by VRAD when the map is compiled, and "baked" into the map's lightmap.
+Traditionally in Source, light sources light up the map in two ways: by directly shining light onto a surface, and indirectly, by having their light bounce onto other surfaces. Both direct and indirect lighting are calculated by VRAD when the map is compiled, and "baked" into the map's lightmap, which can generally be thought of as an unmoving texture that is painted onto all the "lit" surfaces of the map.
 
 * Top: Normal lighting.
 * Middle: Direct lighting only. Notice how the backs of the cubes are now completely black, since no light is directly hitting them.
@@ -32,13 +32,13 @@ Traditionally in Source, light sources light up the map in two ways: by directly
 
 ![Indirect lighting only](images\only_indirect.jpg)
 
-Two major limitations of this system are that it cannot easily support dynamic shadows, since shadows are also baked into the lightmap (shadows are just the areas where light isn't), and it cannot support specular lighting.
+Two major limitations of this system are that it cannot easily support dynamic light and shadows, since both are baked into the lightmap which can only change in very limited ways at runtime, and that it does not support specular lighting.
 
-Specular lighting is the light that's reflected off of smooth, shiny surfaces, usually forming a bright highlight. Specular lighting is dependent on the player's view position relative to the surface and the light, so it can't easily be recorded into the lightmap. Both direct and indirect lighting are diffuse, which means they don't depend on the player's view position and don't produce highlights.
+Specular lighting is the light that's reflected off of smooth, shiny surfaces, usually forming a bright highlight. Specular lighting is unique in that it can change drastically depending on the player's view position relative to the surface and the light, so it can't easily be recorded into the lightmap. This is not true for direct and indirect lighting, as these are diffuse types of lighting, which means they don't depend on the player's view position.
 
-Clustered lighting improves these limitations by adding dynamic lighting that is calculated at runtime, not baked into the lightmap. Now, we can change the following three properties:
-* Direct lighting can be statically baked or dynamic
-* Indirect lighting can be statically baked or disabled
+Clustered lighting improves these limitations by adding dynamic lighting that is calculated at runtime, and not exclusively baked into the lightmap. Now, we can change the following three properties:
+* Direct lighting can be statically baked into the lightmap or dynamic
+* Indirect lighting can be statically baked into the lightmap or disabled
 * Specular lighting can be disabled or dynamic
 
 Which technique is used is controlled by the light's "Light mode":
@@ -54,10 +54,10 @@ The "Static" light mode is identical to pre-clustered lighting, with no dynamic 
 
 ## Specular Lighting
 
-All the new light modes except "Static" enable specular lighting, which can massively improve how textures look. PBR textures are especially improved.
+All the new light modes except "Static" enable specular lighting, which can massively improve how materials look, especially PBR materials.
 
 * Top: No specular.
-* Middle: Specular lighting enabled. Notice the highlight on the blue texture, and the bright spots on the back wall.
+* Middle: Specular lighting enabled. Notice the highlight on the blue material, and the bright spots on the back wall.
 * Bottom: Specular lighting only. By removing the baked direct and indirect light, you can see exactly what specular lighting adds to the scene.
 
 ![No Specular](images/specular1.jpg)
@@ -66,10 +66,10 @@ All the new light modes except "Static" enable specular lighting, which can mass
 
 ![Specular lighting only](images/specular3.jpg)
 
-The addition of specular lighting also make metallic PBR textures look correct. Previously, without another specular-enabled source like outdoors CSM, metallic textures would simply appear black. This is because metals can only reflect specular lighting.
+The addition of specular lighting also make metallic PBR materials look much more correct. Previously, without another specular-enabled source like outdoors CSM, metallic materials would simply appear black. This is because metals really only reflect specular lighting, and have little to no diffuse lighting.
 
-* Top: No specular. The metal parts of the texture are completely black.
-* Bottom: Specular lighting enabled. The metal now reflects light correctly (mostly, some parts of the metal are still black because they aren't being lit by a dynamic light source.)
+* Top: No specular. The metal parts of the material are completely black.
+* Bottom: Specular lighting enabled. The metal now reacts to the nearby light source correctly (some parts of the metal are still black because they aren't being lit by a dynamic light source.)
 
 ![No specular](images/specular_metal1.jpg)
 
@@ -77,18 +77,18 @@ The addition of specular lighting also make metallic PBR textures look correct. 
 
 ## Real Time Shadows
 
-With real time light and shadows, normal light_rt and light_rt_spot entities can be parented to other entities and move, updating their surroundings in real time.
+With real time light and shadows, normal `light_rt` and `light_rt_spot` entities move, updating the light of their surroundings in real time. They can also be parented to other entities.
 
-* A swinging point light_rt, casting shadows in all 6 directions, and a stationary directional light_rt_spot, casting shadows in one direction.
+* A swinging point `light_rt`, casting shadows in all 6 directions, and a stationary directional `light_rt_spot`, casting shadows in one direction.
 
 ![lights in a scene](images/shadows1.jpg)
 
 > [!WARNING]
-> Point light_rts have 6 times the cost of `light_rt_spot` entities, as they are casting shadows in 6 different directions. Use these sparingly, and disable shadows if not needed!
+> Shadowed point `light_rt`s take up 6 times the shadow memory that shadowed `light_rt_spot` entities take, as they are casting in 6 different directions. Use these sparingly, and disable shadows if not needed!
 
 ## Shadow Map Size
 
-To generate the shadows, the lights render to an internal texture called a "shadow map." You can control the resolution of this shadow map. Higher values create sharper, more accurate shadows, but cost much more to render. Sharp shadows may not be appropriate for all situations either, sometimes soft shadows look more accurate.
+To store the shadows without generating them every frame, the lights render to an internal texture called a "shadow map." You can control the resolution of this shadow map. Higher values create sharper, more accurate shadows, but cost more to render. Sharp shadows may not be appropriate for all situations either, sometimes soft shadows look more accurate.
 
 You can control the size of the shadow map by changing the "Initial Shadow Size" property.
 
@@ -101,6 +101,9 @@ You can control the size of the shadow map by changing the "Initial Shadow Size"
 ![Initial Shadow Size is 5](images/shadow_size5.jpg)
 
 ![Initial Shadow Size is 7](images/shadow_size7.jpg)
+
+> [!NOTE]
+> In the clustered renderer, shadowmaps for all lights are stored in a single, larger texture, called the 'shadow atlas', which has space for a limited amount of shadow data. Each time you increase the 'size' of a shadow by 1, you increase its shadow size by a factor of 4. For example, a shadow of size 2 takes up only a quarter of the space that a shadow of size 3 takes up. If shadows in your map stop appearing suddenly, consider reducing the shadow size of a few less important shadows.
 
 ## Other Clustered Changes
 
