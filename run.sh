@@ -18,6 +18,7 @@ fi
 
 # Ready to rock and roll!
 echo "Starting up..."
+npm run build
 npm run dev
 
 cd ..

@@ -18,7 +18,7 @@ IF NOT EXIST node_modules (
 
 REM Ready to rock and roll!
 echo Starting up...
+call npm run build
 call npm run dev
 
 cd ..
-
