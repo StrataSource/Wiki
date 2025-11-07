@@ -64,7 +64,7 @@ Notices can be used to call out important or useful info.
 > [!BUG]
 > This is a bug.
 
-## Game Specific
+## Portal 2: Community Edition Specific
 
 ```markdown
 > [!P2CE]
@@ -74,6 +74,8 @@ Notices can be used to call out important or useful info.
 > [!P2CE]
 > This is a P2:CE specific message.
 
+## Portal: Revolution Specific
+
 ```markdown
 > [!REVOLUTION]
 > This is a Portal: Revolution specific message.
@@ -82,10 +84,12 @@ Notices can be used to call out important or useful info.
 > [!REVOLUTION]
 > This is a Portal: Revolution specific message.
 
+## Momentum Mod Specific
+
 ```markdown
 > [!MOMENTUM]
-> This is a Momentum specific message.
+> This is a Momentum Mod specific message.
 ```
 
 > [!MOMENTUM]
-> This is a Momentum specific message.
+> This is a Momentum Mod specific message.
