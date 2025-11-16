@@ -1,8 +1,23 @@
 {
     "namespace": [
-        "Utility"
+        "util"
     ],
     "enum": [
+        {
+            "namespace": null,
+            "name": "EConVarFlag",
+            "value": {
+                "FCVAR_NONE": 0,
+                "FCVAR_UNREGISTERED": 1,
+                "FCVAR_DEVELOPMENTONLY": 2,
+                "FCVAR_SERVERDLL": 4,
+                "FCVAR_CLIENTDLL": 8,
+                "FCVAR_HIDDEN": 16,
+                "FCVAR_PROTECTED": 32,
+                "FCVAR_SPONLY": 64,
+                "FCVAR_ARCHIVE": 128
+            }
+        },
         {
             "namespace": null,
             "name": "EMaterialVarType",
@@ -985,18 +1000,6 @@
             "namespace": null,
             "name": "Q_log2",
             "declaration": "int Q_log2(uint val)",
-            "documentation": null
-        },
-        {
-            "namespace": null,
-            "name": "TableCos",
-            "declaration": "float TableCos(float theta)",
-            "documentation": null
-        },
-        {
-            "namespace": null,
-            "name": "TableSin",
-            "declaration": "float TableSin(float theta)",
             "documentation": null
         },
         {
@@ -2885,32 +2888,74 @@
         },
         {
             "namespace": null,
-            "name": "CreateEntityByName",
-            "declaration": "CBaseEntity@ CreateEntityByName(const string&in)",
+            "name": "GameEventManager",
+            "declaration": "IGameEventManager@ GameEventManager()",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
+            "name": "GetCurrentTime",
+            "declaration": "float util::GetCurrentTime()",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
+            "name": "GetFrameTime",
+            "declaration": "float util::GetFrameTime()",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
+            "name": "GetTickCount",
+            "declaration": "int util::GetTickCount()",
             "documentation": null
         },
         {
             "namespace": null,
-            "name": "UTIL_TraceLine",
-            "declaration": "void UTIL_TraceLine(const Vector&in vecAbsStart, const Vector&in vecAbsEnd, uint mask, const CBaseEntity@ ignore, int collisionGroup, trace_t&out ptr)",
+            "name": "EntityList",
+            "declaration": "CGlobalEntityList@ EntityList()",
             "documentation": null
         },
         {
-            "namespace": "Utility",
-            "name": "GetCurrentTime",
-            "declaration": "float Utility::GetCurrentTime()",
+            "namespace": "util",
+            "name": "CreateEntityByName",
+            "declaration": "CBaseEntity@ util::CreateEntityByName(const string&in)",
             "documentation": null
         },
         {
-            "namespace": "Utility",
-            "name": "GetFrameTime",
-            "declaration": "float Utility::GetFrameTime()",
+            "namespace": "util",
+            "name": "TraceLine",
+            "declaration": "void util::TraceLine(const Vector&in, const Vector&in, uint, CBaseEntity@, int, trace_t&out)",
             "documentation": null
         },
         {
-            "namespace": "Utility",
-            "name": "GetTickCount",
-            "declaration": "int Utility::GetTickCount()",
+            "namespace": "util",
+            "name": "TraceHull",
+            "declaration": "void util::TraceHull(const Vector&in, const Vector&in, const Vector&in, const Vector&in, uint, CBaseEntity@, int, trace_t&out)",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
+            "name": "TracePortalLine",
+            "declaration": "void util::TracePortalLine(const Vector&in, const Vector&in, uint, CBaseEntity@, int, trace_t&out, bool)",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
+            "name": "GetEntityByIndex",
+            "declaration": "CBaseEntity@ util::GetEntityByIndex(int)",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
+            "name": "GetMaxEntities",
+            "declaration": "int util::GetMaxEntities()",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
+            "name": "Remove",
+            "declaration": "void util::Remove(CBaseEntity@ pEntity)",
             "documentation": null
         }
     ],
@@ -3798,18 +3843,6 @@
                     "declaration": "Vector2D Max(const Vector2D&in vOther) const",
                     "documentation": null
                 }
-            ],
-            "property": [
-                {
-                    "name": "x",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "y",
-                    "type": "float",
-                    "is_const": false
-                }
             ]
         },
         {
@@ -4086,23 +4119,6 @@
                     "declaration": "Vector Max(const Vector&in vOther) const",
                     "documentation": null
                 }
-            ],
-            "property": [
-                {
-                    "name": "x",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "y",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "z",
-                    "type": "float",
-                    "is_const": false
-                }
             ]
         },
         {
@@ -4208,28 +4224,6 @@
                     "name": "opNeg",
                     "declaration": "Quaternion operator-() const",
                     "documentation": null
-                }
-            ],
-            "property": [
-                {
-                    "name": "x",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "y",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "z",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "w",
-                    "type": "float",
-                    "is_const": false
                 }
             ]
         },
@@ -4356,23 +4350,6 @@
                     "name": "opDiv",
                     "declaration": "QAngle operator/(float fl) const",
                     "documentation": null
-                }
-            ],
-            "property": [
-                {
-                    "name": "x",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "y",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "z",
-                    "type": "float",
-                    "is_const": false
                 }
             ]
         },
@@ -4601,18 +4578,6 @@
                     "declaration": "Vector ProjectPointOntoPlane(const Vector&in vPoint) const",
                     "documentation": null
                 }
-            ],
-            "property": [
-                {
-                    "name": "m_Normal",
-                    "type": "Vector",
-                    "is_const": false
-                },
-                {
-                    "name": "m_Dist",
-                    "type": "float",
-                    "is_const": false
-                }
             ]
         },
         {
@@ -4778,28 +4743,6 @@
                     "name": "opAssign",
                     "declaration": "Vector4D& operator=(const Vector4D&in)",
                     "documentation": null
-                }
-            ],
-            "property": [
-                {
-                    "name": "x",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "y",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "z",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "w",
-                    "type": "float",
-                    "is_const": false
                 }
             ]
         },
@@ -5103,33 +5046,6 @@
                     "declaration": "uint8& operator[](int) const",
                     "documentation": null
                 }
-            ],
-            "property": [
-                {
-                    "name": "r",
-                    "type": "uint8",
-                    "is_const": false
-                },
-                {
-                    "name": "g",
-                    "type": "uint8",
-                    "is_const": false
-                },
-                {
-                    "name": "b",
-                    "type": "uint8",
-                    "is_const": false
-                },
-                {
-                    "name": "a",
-                    "type": "uint8",
-                    "is_const": false
-                },
-                {
-                    "name": "raw",
-                    "type": "uint",
-                    "is_const": false
-                }
             ]
         },
         {
@@ -5200,29 +5116,113 @@
         },
         {
             "namespace": null,
-            "name": "Rect",
-            "property": [
+            "name": "ConVarRef",
+            "method": [
                 {
-                    "name": "x",
-                    "type": "int",
-                    "is_const": false
+                    "name": "IsValid",
+                    "declaration": "bool IsValid() const",
+                    "documentation": null
                 },
                 {
-                    "name": "y",
-                    "type": "int",
-                    "is_const": false
+                    "name": "GetFloat",
+                    "declaration": "float GetFloat() const",
+                    "documentation": null
                 },
                 {
-                    "name": "width",
-                    "type": "int",
-                    "is_const": false
+                    "name": "GetInt",
+                    "declaration": "int GetInt() const",
+                    "documentation": null
                 },
                 {
-                    "name": "height",
-                    "type": "int",
-                    "is_const": false
+                    "name": "GetBool",
+                    "declaration": "bool GetBool() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetColor",
+                    "declaration": "Color GetColor() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetString",
+                    "declaration": "string GetString() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetVector",
+                    "declaration": "Vector GetVector() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetVector4D",
+                    "declaration": "Vector4D GetVector4D() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetValue",
+                    "declaration": "bool SetValue(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetValue",
+                    "declaration": "bool SetValue(float)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetValue",
+                    "declaration": "bool SetValue(bool)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetValue",
+                    "declaration": "bool SetValue(const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetValue",
+                    "declaration": "bool SetValue(Color)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetValue",
+                    "declaration": "bool SetValue(Vector)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetValue",
+                    "declaration": "bool SetValue(Vector4D)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetFlags",
+                    "declaration": "EConVarFlag GetFlags() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetDefault",
+                    "declaration": "string GetDefault() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetMin",
+                    "declaration": "float GetMin() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetMax",
+                    "declaration": "float GetMax() const",
+                    "documentation": null
+                },
+                {
+                    "name": "Revert",
+                    "declaration": "void Revert()",
+                    "documentation": null
                 }
             ]
+        },
+        {
+            "namespace": null,
+            "name": "Rect"
         },
         {
             "namespace": null,
@@ -5578,6 +5578,26 @@
             "name": "GameEvent",
             "method": [
                 {
+                    "name": "GetName",
+                    "declaration": "string GetName() const",
+                    "documentation": null
+                },
+                {
+                    "name": "IsReliable",
+                    "declaration": "bool IsReliable() const",
+                    "documentation": null
+                },
+                {
+                    "name": "IsLocal",
+                    "declaration": "bool IsLocal() const",
+                    "documentation": null
+                },
+                {
+                    "name": "IsEmpty",
+                    "declaration": "bool IsEmpty(const string&in) const",
+                    "documentation": null
+                },
+                {
                     "name": "GetBool",
                     "declaration": "bool GetBool(const string&in name, bool def = false) const",
                     "documentation": null
@@ -5598,8 +5618,54 @@
                     "documentation": null
                 },
                 {
-                    "name": "GetName",
-                    "declaration": "string GetName() const",
+                    "name": "GetString",
+                    "declaration": "string GetString(const string&in name, string def = \"\") const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetBool",
+                    "declaration": "void SetBool(const string&in, bool)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetInt",
+                    "declaration": "void SetInt(const string&in, int)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetUint64",
+                    "declaration": "void SetUint64(const string&in, uint64)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetFloat",
+                    "declaration": "void SetFloat(const string&in, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetString",
+                    "declaration": "void SetString(const string&in, const string&in)",
+                    "documentation": null
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "IGameEventManager",
+            "method": [
+                {
+                    "name": "CreateEvent",
+                    "declaration": "GameEvent@ CreateEvent(const string&in name, bool force = false)",
+                    "documentation": null
+                },
+                {
+                    "name": "FireEvent",
+                    "declaration": "bool FireEvent(GameEvent@ event, bool dontBoradast = false)",
+                    "documentation": null
+                },
+                {
+                    "name": "FireEventClientSide",
+                    "declaration": "bool FireEventClientSide(GameEvent@)",
                     "documentation": null
                 }
             ]
@@ -5632,29 +5698,7 @@
                 "namespace": null,
                 "name": "VPlane"
             },
-            "method": [],
-            "property": [
-                {
-                    "name": "m_Normal",
-                    "type": "Vector",
-                    "is_const": false
-                },
-                {
-                    "name": "m_Dist",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "type",
-                    "type": "uint8",
-                    "is_const": false
-                },
-                {
-                    "name": "signbits",
-                    "type": "uint8",
-                    "is_const": false
-                }
-            ]
+            "method": []
         },
         {
             "namespace": null,
@@ -5741,148 +5785,275 @@
                     "declaration": "bool DidHit() const",
                     "documentation": null
                 }
-            ],
-            "property": [
-                {
-                    "name": "startpos",
-                    "type": "Vector",
-                    "is_const": false
-                },
-                {
-                    "name": "endpos",
-                    "type": "Vector",
-                    "is_const": false
-                },
-                {
-                    "name": "plane",
-                    "type": "cplane_t",
-                    "is_const": false
-                },
-                {
-                    "name": "fraction",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "contents",
-                    "type": "int",
-                    "is_const": false
-                },
-                {
-                    "name": "allsolid",
-                    "type": "bool",
-                    "is_const": false
-                },
-                {
-                    "name": "startsolid",
-                    "type": "bool",
-                    "is_const": false
-                },
-                {
-                    "name": "fractionleftsolid",
-                    "type": "float",
-                    "is_const": false
-                },
-                {
-                    "name": "hitgroup",
-                    "type": "int",
-                    "is_const": false
-                },
-                {
-                    "name": "physicsbone",
-                    "type": "int16",
-                    "is_const": false
-                },
-                {
-                    "name": "worldSurfaceIndex",
-                    "type": "uint",
-                    "is_const": false
-                },
-                {
-                    "name": "hitbox",
-                    "type": "int",
-                    "is_const": false
-                },
-                {
-                    "name": "ent",
-                    "type": "CBaseEntity@",
-                    "is_const": false
-                }
             ]
         },
         {
             "namespace": null,
-            "name": "FireBulletsInfo_t",
-            "property": [
+            "name": "FireBulletsInfo_t"
+        },
+        {
+            "namespace": null,
+            "name": "IPhysicsObject",
+            "method": [
                 {
-                    "name": "iShots",
-                    "type": "int",
-                    "is_const": false
+                    "name": "IsStatic",
+                    "declaration": "bool IsStatic() const",
+                    "documentation": null
                 },
                 {
-                    "name": "vecSrc",
-                    "type": "Vector",
-                    "is_const": false
+                    "name": "IsAsleep",
+                    "declaration": "bool IsAsleep() const",
+                    "documentation": null
                 },
                 {
-                    "name": "vecDirShooting",
-                    "type": "Vector",
-                    "is_const": false
+                    "name": "IsTrigger",
+                    "declaration": "bool IsTrigger() const",
+                    "documentation": null
                 },
                 {
-                    "name": "vecSpread",
-                    "type": "Vector",
-                    "is_const": false
+                    "name": "IsFluid",
+                    "declaration": "bool IsFluid() const",
+                    "documentation": null
                 },
                 {
-                    "name": "flDistance",
-                    "type": "float",
-                    "is_const": false
+                    "name": "IsHinged",
+                    "declaration": "bool IsHinged() const",
+                    "documentation": null
                 },
                 {
-                    "name": "iAmmoType",
-                    "type": "int",
-                    "is_const": false
+                    "name": "IsCollisionEnabled",
+                    "declaration": "bool IsCollisionEnabled() const",
+                    "documentation": null
                 },
                 {
-                    "name": "iTracerFreq",
-                    "type": "int",
-                    "is_const": false
+                    "name": "IsGravityEnabled",
+                    "declaration": "bool IsGravityEnabled() const",
+                    "documentation": null
                 },
                 {
-                    "name": "flDamage",
-                    "type": "float",
-                    "is_const": false
+                    "name": "IsDragEnabled",
+                    "declaration": "bool IsDragEnabled() const",
+                    "documentation": null
                 },
                 {
-                    "name": "flPlayerDamage",
-                    "type": "float",
-                    "is_const": false
+                    "name": "IsMotionEnabled",
+                    "declaration": "bool IsMotionEnabled() const",
+                    "documentation": null
                 },
                 {
-                    "name": "nFlags",
-                    "type": "int",
-                    "is_const": false
+                    "name": "IsMoveable",
+                    "declaration": "bool IsMoveable() const",
+                    "documentation": null
                 },
                 {
-                    "name": "flDamageForceScale",
-                    "type": "float",
-                    "is_const": false
+                    "name": "IsAttachedToConstraint",
+                    "declaration": "bool IsAttachedToConstraint(bool&out) const",
+                    "documentation": null
                 },
                 {
-                    "name": "bPrimaryAttack",
-                    "type": "bool",
-                    "is_const": false
+                    "name": "EnableCollisions",
+                    "declaration": "void EnableCollisions(bool&out)",
+                    "documentation": null
                 },
                 {
-                    "name": "pAttacker",
-                    "type": "CBaseEntity@",
-                    "is_const": false
+                    "name": "EnableGravity",
+                    "declaration": "void EnableGravity(bool&out)",
+                    "documentation": null
                 },
                 {
-                    "name": "pAdditionalIgnoreEnt",
-                    "type": "CBaseEntity@",
-                    "is_const": false
+                    "name": "EnableDrag",
+                    "declaration": "void EnableDrag(bool&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "EnableMotion",
+                    "declaration": "void EnableMotion(bool&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "Wake",
+                    "declaration": "void Wake()",
+                    "documentation": null
+                },
+                {
+                    "name": "Sleep",
+                    "declaration": "void Sleep()",
+                    "documentation": null
+                },
+                {
+                    "name": "SetMass",
+                    "declaration": "void SetMass(float&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetMass",
+                    "declaration": "float GetMass() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetInvMass",
+                    "declaration": "float GetInvMass() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetInertia",
+                    "declaration": "Vector GetInertia() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetInvInertia",
+                    "declaration": "Vector GetInvInertia() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetInertia",
+                    "declaration": "void SetInertia(const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetBuoyancyRatio",
+                    "declaration": "void SetBuoyancyRatio(float&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetMaterialIndex",
+                    "declaration": "int GetMaterialIndex() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetMaterialIndex",
+                    "declaration": "void SetMaterialIndex(int&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetContents",
+                    "declaration": "uint GetContents() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetContents",
+                    "declaration": "void SetContents(uint&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetSphereRadius",
+                    "declaration": "float GetSphereRadius() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetSphereRadius",
+                    "declaration": "void SetSphereRadius(float&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetEnergy",
+                    "declaration": "float GetEnergy() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetMassCenterLocalSpace",
+                    "declaration": "Vector GetMassCenterLocalSpace() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetPosition",
+                    "declaration": "void SetPosition(const Vector&in, const QAngle&in, bool&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetPositionMatrix",
+                    "declaration": "void SetPositionMatrix(const matrix3x4_t&in, bool&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "ApplyForceCenter",
+                    "declaration": "void ApplyForceCenter(const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "ApplyForceOffset",
+                    "declaration": "void ApplyForceOffset(const Vector&in, const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "ApplyTorqueCenter",
+                    "declaration": "void ApplyTorqueCenter(const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "CalculateLinearDrag",
+                    "declaration": "float CalculateLinearDrag(const Vector&in) const",
+                    "documentation": null
+                },
+                {
+                    "name": "CalculateAngularDrag",
+                    "declaration": "float CalculateAngularDrag(const Vector&in) const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetDamping",
+                    "declaration": "void SetDamping(float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetDamping",
+                    "declaration": "void GetDamping(float&out, float&out) const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetDragCoefficient",
+                    "declaration": "void SetDragCoefficient(float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetPosition",
+                    "declaration": "void GetPosition(Vector&out, QAngle&out) const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetPositionMatrix",
+                    "declaration": "void GetPositionMatrix(matrix3x4_t&out) const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetVelocity",
+                    "declaration": "void SetVelocity(const Vector&in, const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetVelocityInstantaneous",
+                    "declaration": "void SetVelocityInstantaneous(const Vector&in, const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetVelocity",
+                    "declaration": "void GetVelocity(Vector&out, Vector&out) const",
+                    "documentation": null
+                },
+                {
+                    "name": "AddVelocity",
+                    "declaration": "void AddVelocity(const Vector&in, const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetVelocityAtPoint",
+                    "declaration": "Vector GetVelocityAtPoint(const Vector&in) const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetImplicitVelocity",
+                    "declaration": "void GetImplicitVelocity(Vector&out, Vector&out) const",
+                    "documentation": null
+                },
+                {
+                    "name": "CalculateForceOffset",
+                    "declaration": "void CalculateForceOffset(const Vector&in, const Vector&in, Vector&out, Vector&out) const",
+                    "documentation": null
+                },
+                {
+                    "name": "CalculateVelocityOffset",
+                    "declaration": "void CalculateVelocityOffset(const Vector&in, const Vector&in, Vector&out, Vector&out) const",
+                    "documentation": null
                 }
             ]
         },
@@ -5902,7 +6073,7 @@
                 },
                 {
                     "name": "SetModel",
-                    "declaration": "bool SetModel(const string&in)",
+                    "declaration": "void SetModel(const string&in)",
                     "documentation": null
                 },
                 {
@@ -5986,6 +6157,16 @@
                     "documentation": null
                 },
                 {
+                    "name": "SetParentAttachmentMaintainOffset",
+                    "declaration": "void SetParentAttachmentMaintainOffset(const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetParentAttachment",
+                    "declaration": "void SetParentAttachment(const string&in)",
+                    "documentation": null
+                },
+                {
                     "name": "GetTeamNumber",
                     "declaration": "int GetTeamNumber() const",
                     "documentation": null
@@ -6057,7 +6238,7 @@
                 },
                 {
                     "name": "GetMoveParent",
-                    "declaration": "CBaseEntity@ GetMoveParent() const",
+                    "declaration": "CBaseEntity@ GetMoveParent()",
                     "documentation": null
                 },
                 {
@@ -6073,6 +6254,16 @@
                 {
                     "name": "SetCollisionBounds",
                     "declaration": "void SetCollisionBounds(const Vector&in, const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetThink",
+                    "declaration": "void SetThink(ThinkFunc_t@ thinkFunc, float nextThinkTime = 0.0, const string&in context = \"\")",
+                    "documentation": null
+                },
+                {
+                    "name": "SetNextThink",
+                    "declaration": "void SetNextThink(float thinkTime, const string&in context = \"\")",
                     "documentation": null
                 },
                 {
@@ -6101,11 +6292,206 @@
                     "documentation": null
                 },
                 {
+                    "name": "SetMaxHealth",
+                    "declaration": "void SetMaxHealth(int)",
+                    "documentation": null
+                },
+                {
                     "name": "FireBullets",
                     "declaration": "void FireBullets(const FireBulletsInfo_t&in)",
                     "documentation": null
+                },
+                {
+                    "name": "Remove",
+                    "declaration": "void Remove()",
+                    "documentation": null
+                },
+                {
+                    "name": "GetEntityName",
+                    "declaration": "string GetEntityName()",
+                    "documentation": null
+                },
+                {
+                    "name": "GetClassname",
+                    "declaration": "string GetClassname() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetDebugName",
+                    "declaration": "string GetDebugName()",
+                    "documentation": null
+                },
+                {
+                    "name": "GetEntityIndex",
+                    "declaration": "int GetEntityIndex() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetKeyValue",
+                    "declaration": "bool GetKeyValue(const string&in, uint8&out, int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetModelName",
+                    "declaration": "string GetModelName() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetElasticity",
+                    "declaration": "float GetElasticity() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetElasticity",
+                    "declaration": "void SetElasticity(float)",
+                    "documentation": null
+                },
+                {
+                    "name": "IsFloating",
+                    "declaration": "bool IsFloating()",
+                    "documentation": null
+                },
+                {
+                    "name": "IsBSPModel",
+                    "declaration": "bool IsBSPModel() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetFriction",
+                    "declaration": "float GetFriction() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetFriction",
+                    "declaration": "void SetFriction(float)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetGravity",
+                    "declaration": "void SetGravity(float)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetGravity",
+                    "declaration": "float GetGravity() const",
+                    "documentation": null
+                },
+                {
+                    "name": "HasVPhysicsObject",
+                    "declaration": "bool HasVPhysicsObject() const",
+                    "documentation": null
+                },
+                {
+                    "name": "PrecacheScriptSound",
+                    "declaration": "void PrecacheScriptSound(const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetPhysicsObject",
+                    "declaration": "IPhysicsObject@ GetPhysicsObject() const",
+                    "documentation": null
                 }
             ]
+        },
+        {
+            "namespace": null,
+            "name": "Variant",
+            "method": [
+                {
+                    "name": "FieldType",
+                    "declaration": "EFieldType FieldType() const",
+                    "documentation": null
+                },
+                {
+                    "name": "Bool",
+                    "declaration": "bool Bool() const",
+                    "documentation": null
+                },
+                {
+                    "name": "String",
+                    "declaration": "string String() const",
+                    "documentation": null
+                },
+                {
+                    "name": "Int",
+                    "declaration": "int Int() const",
+                    "documentation": null
+                },
+                {
+                    "name": "Float",
+                    "declaration": "float Float() const",
+                    "documentation": null
+                },
+                {
+                    "name": "Vector3D",
+                    "declaration": "void Vector3D(Vector&out) const",
+                    "documentation": null
+                },
+                {
+                    "name": "Angle3D",
+                    "declaration": "void Angle3D(QAngle&out) const",
+                    "documentation": null
+                },
+                {
+                    "name": "Color32",
+                    "declaration": "Color Color32() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetBool",
+                    "declaration": "void SetBool(bool)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetInt",
+                    "declaration": "void SetInt(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetFloat",
+                    "declaration": "void SetFloat(float)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetEntity",
+                    "declaration": "void SetEntity(CBaseEntity@)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetVector3D",
+                    "declaration": "void SetVector3D(const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetPositionVector3D",
+                    "declaration": "void SetPositionVector3D(const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetAngle3D",
+                    "declaration": "void SetAngle3D(const QAngle&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetColor32",
+                    "declaration": "void SetColor32(Color clr)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetColor32",
+                    "declaration": "void SetColor32(int, int, int, int)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetString",
+                    "declaration": "void SetString(const string&in)",
+                    "documentation": null
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "InputData"
         },
         {
             "namespace": null,
@@ -6122,7 +6508,157 @@
                 },
                 {
                     "name": "GetAttachment",
+                    "declaration": "bool GetAttachment(const string&in, Vector&out, QAngle&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetAttachment",
                     "declaration": "bool GetAttachment(int, Vector&out, QAngle&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetBodygroup",
+                    "declaration": "int GetBodygroup(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetBodygroupCount",
+                    "declaration": "int GetBodygroupCount(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetBodygroupName",
+                    "declaration": "string GetBodygroupName(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetBodygroupPartName",
+                    "declaration": "string GetBodygroupPartName(int, int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetBoneCount",
+                    "declaration": "int GetBoneCount()",
+                    "documentation": null
+                },
+                {
+                    "name": "GetBonePosition",
+                    "declaration": "void GetBonePosition(int, Vector&out, QAngle&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetBodygroupCount",
+                    "declaration": "int GetBodygroupCount()",
+                    "documentation": null
+                },
+                {
+                    "name": "GetObjectScaleLevel",
+                    "declaration": "int GetObjectScaleLevel()",
+                    "documentation": null
+                },
+                {
+                    "name": "GetPoseParameter",
+                    "declaration": "float GetPoseParameter(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetPoseParameterRange",
+                    "declaration": "bool GetPoseParameterRange(int, float&out, float&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetSequence",
+                    "declaration": "int GetSequence()",
+                    "documentation": null
+                },
+                {
+                    "name": "GetSequenceActivityName",
+                    "declaration": "string GetSequenceActivityName(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetSequenceCount",
+                    "declaration": "int GetSequenceCount()",
+                    "documentation": null
+                },
+                {
+                    "name": "GetSequenceCycleRate",
+                    "declaration": "float GetSequenceCycleRate(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetSequenceDuration",
+                    "declaration": "float GetSequenceDuration(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetSequenceName",
+                    "declaration": "string GetSequenceName(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetSkin",
+                    "declaration": "int GetSkin()",
+                    "documentation": null
+                },
+                {
+                    "name": "IsActivityFinished",
+                    "declaration": "bool IsActivityFinished()",
+                    "documentation": null
+                },
+                {
+                    "name": "IsSequenceFinished",
+                    "declaration": "bool IsSequenceFinished()",
+                    "documentation": null
+                },
+                {
+                    "name": "IsSequenceLooping",
+                    "declaration": "bool IsSequenceLooping(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "IsValidSequence",
+                    "declaration": "bool IsValidSequence(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "LookupActivity",
+                    "declaration": "int LookupActivity(const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "LookupPoseParameter",
+                    "declaration": "int LookupPoseParameter(const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "LookupSequence",
+                    "declaration": "int LookupSequence(const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetBodygroup",
+                    "declaration": "void SetBodygroup(int, int)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetPlaybackRate",
+                    "declaration": "void SetPlaybackRate(float)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetPoseParameter",
+                    "declaration": "float SetPoseParameter(int, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetSequence",
+                    "declaration": "void SetSequence(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetSkin",
+                    "declaration": "void SetSkin(int)",
                     "documentation": null
                 }
             ]
@@ -6132,7 +6668,7 @@
             "name": "CBaseCombatWeapon",
             "base_type": {
                 "namespace": null,
-                "name": "CBaseAnimating"
+                "name": "CBaseEntity"
             },
             "method": [
                 {
@@ -6146,8 +6682,234 @@
                     "documentation": null
                 },
                 {
+                    "name": "Reload",
+                    "declaration": "bool Reload()",
+                    "documentation": null
+                },
+                {
+                    "name": "ItemPreFrame",
+                    "declaration": "void ItemPreFrame()",
+                    "documentation": null
+                },
+                {
+                    "name": "ItemPostFrame",
+                    "declaration": "void ItemPostFrame()",
+                    "documentation": null
+                },
+                {
+                    "name": "ItemBusyFrame",
+                    "declaration": "void ItemBusyFrame()",
+                    "documentation": null
+                },
+                {
+                    "name": "Holster",
+                    "declaration": "bool Holster(CBaseCombatWeapon@ switchingTo = null)",
+                    "documentation": null
+                },
+                {
                     "name": "GetOwner",
                     "declaration": "CBaseEntity@ GetOwner() const",
+                    "documentation": null
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "CLight",
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntity"
+            },
+            "method": [
+                {
+                    "name": "GetInnerAngle",
+                    "declaration": "float GetInnerAngle() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetOuterAngle",
+                    "declaration": "float GetOuterAngle() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetColorHDR",
+                    "declaration": "Color GetColorHDR() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetColor",
+                    "declaration": "Color GetColor() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetClusteredRadius",
+                    "declaration": "float GetClusteredRadius() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetColorScale",
+                    "declaration": "int GetColorScale() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetColorScaleHDR",
+                    "declaration": "int GetColorScaleHDR() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetColor",
+                    "declaration": "void SetColor(const Color&in, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetColorHDR",
+                    "declaration": "void SetColorHDR(const Color&in, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetRadiusOverride",
+                    "declaration": "float GetRadiusOverride() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetRadiusOverride",
+                    "declaration": "void SetRadiusOverride(float)",
+                    "documentation": null
+                },
+                {
+                    "name": "Toggle",
+                    "declaration": "void Toggle()",
+                    "documentation": null
+                },
+                {
+                    "name": "TurnOff",
+                    "declaration": "void TurnOff()",
+                    "documentation": null
+                },
+                {
+                    "name": "TurnOn",
+                    "declaration": "void TurnOn()",
+                    "documentation": null
+                },
+                {
+                    "name": "SetShadowSize",
+                    "declaration": "void SetShadowSize(int)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetShadowSize",
+                    "declaration": "int GetShadowSize() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetPattern",
+                    "declaration": "void SetPattern(const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetPattern",
+                    "declaration": "string GetPattern() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetOuterAngle",
+                    "declaration": "void SetOuterAngle(float)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetInnerAngle",
+                    "declaration": "void SetInnerAngle(float)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetState",
+                    "declaration": "bool GetState() const",
+                    "documentation": null
+                },
+                {
+                    "name": "SetLightFalloffCLQ",
+                    "declaration": "void SetLightFalloffCLQ(float, float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "SetLightFalloffD50D0",
+                    "declaration": "void SetLightFalloffD50D0(float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetLightFalloffCLQ",
+                    "declaration": "void GetLightFalloffCLQ(float&out, float&out, float&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "GetLightFalloffD50D0",
+                    "declaration": "void GetLightFalloffD50D0(float&out, float&out)",
+                    "documentation": null
+                },
+                {
+                    "name": "IsHDR",
+                    "declaration": "bool IsHDR() const",
+                    "documentation": null
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "CGlobalEntityList",
+            "method": [
+                {
+                    "name": "FindByClassname",
+                    "declaration": "CBaseEntity@ FindByClassname(CBaseEntity@, const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "FindByName",
+                    "declaration": "CBaseEntity@ FindByName(CBaseEntity@, const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "FindInSphere",
+                    "declaration": "CBaseEntity@ FindInSphere(CBaseEntity@, const Vector&in, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "Next",
+                    "declaration": "CBaseEntity@ Next(CBaseEntity@)",
+                    "documentation": null
+                },
+                {
+                    "name": "First",
+                    "declaration": "CBaseEntity@ First()",
+                    "documentation": null
+                },
+                {
+                    "name": "FindByTarget",
+                    "declaration": "CBaseEntity@ FindByTarget(CBaseEntity@, const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "FindByModel",
+                    "declaration": "CBaseEntity@ FindByModel(CBaseEntity@, const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "FindByNameNearest",
+                    "declaration": "CBaseEntity@ FindByNameNearest(const string&in, const Vector&in, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "FindByNameWithin",
+                    "declaration": "CBaseEntity@ FindByNameWithin(CBaseEntity@, const string&in, const Vector&in, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "FindByClassnameNearest",
+                    "declaration": "CBaseEntity@ FindByClassnameNearest(const string&in, const Vector&in, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "FindByClassnameWithin",
+                    "declaration": "CBaseEntity@ FindByClassnameWithin(CBaseEntity@, const string&in, const Vector&in, float)",
                     "documentation": null
                 }
             ]
