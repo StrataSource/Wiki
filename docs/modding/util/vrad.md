@@ -111,5 +111,7 @@ Other options:
   -staticpropsamplescale <float> : Extra sampling factor for indirect light for static props
   -ambientfromleafcenters : Samples ambient lighting from the center of the leaf
   -LeafAmbientSampleReduction <float> : Reduction factor for ambient samples. Defaults to 1.0
-  -unlitdetail      : Disables lighting for detail props 
+  -unlitdetail      : Disables lighting for detail props
+  -IndirectOnly     : Only compute radiosity lighting, and disable direct lighting  
+  -culllights         : Cull light during BuildFacelights
 ```
