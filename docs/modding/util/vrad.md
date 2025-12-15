@@ -113,5 +113,5 @@ Other options:
   -LeafAmbientSampleReduction <float> : Reduction factor for ambient samples. Defaults to 1.0
   -unlitdetail      : Disables lighting for detail props
   -IndirectOnly     : Only compute radiosity lighting, and disable direct lighting  
-  -culllights         : Cull light during BuildFacelights
+  -culllights       : Cull light during BuildFacelights
 ```
