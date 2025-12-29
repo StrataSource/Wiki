@@ -7,7 +7,7 @@ weight: 0
 
 Welcome to the Strata Wiki! We appreciate your interest in contributing.
 
-This guide will teach everything to know about writing articles.
+This guide will teach you everything you need to know about writing articles.
 
 ## Guidelines
 
