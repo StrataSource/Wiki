@@ -7,7 +7,7 @@ if [ ! -f "site/.git" ]; then
 	git submodule update --init site
 else
 	# Pull new strata-wiki changes if the repository gets updated.
-	echo Pulling any new wiki source submodule changes...
+	echo "Pulling any new wiki source submodule changes..."
 	git submodule update --remote
 fi
 
