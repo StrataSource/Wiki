@@ -39,7 +39,9 @@ must adhere to these guidelines
 
 In order to add/edit articles and test how they will appear in the Strata Wiki, the Wiki's documentation source repository should be locally cloned.
 
-This is recommend before making a Pull Request in the documentation repository to make sure changes work and appear correctly. The source can be clone here in the [StrataSource/Wiki](https://github.com/StrataSource/Wiki) repository.
+Before opening a pull request, it's suggested that you clone and build the wiki locally to ensure your changes work correctly.
+
+The source can be cloned from [StrataSource/Wiki](https://github.com/StrataSource/Wiki).
 
 > [!WARNING]
 > Please make sure to not get mixed up with the [StrataSource/strata-wiki](https://github.com/StrataSource/strata-wiki) repository.
