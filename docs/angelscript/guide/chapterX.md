@@ -1,9 +1,9 @@
 ---
-title: Chapter X - Object Handles & Reference Types
+title: Chapter X - Object Handles
 weight: 5
 ---
 
-# Chapter X - Object Handles & Reference Types
+# Chapter X - Object Handles
 
 ## What will you learn in this chapter
 In this chapter you will learn:
