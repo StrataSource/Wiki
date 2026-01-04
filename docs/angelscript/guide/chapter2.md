@@ -1,21 +1,22 @@
 ---
-title: Chapter 2 - Value Types
+title: Chapter 2 - Value Types, Declaration & Assignment
 weight: 1
 ---
 
-# Chapter 2 - Value Types
+# Chapter 2 - Value Types, Declaration & Assignment
 
 ## What will you learn in this chapter
-In this chapter you will learn:
-- What are Value Types, how to declare and initialize them,
-- About the auto keyword,
-- What are constants.
+In this chapter you will learn about:
+- [Value Types](#value-types),
+- [Declaration and assignment of value types](#value-types),
+- [Auto keyword](#auto-keyword),
+- [Constants and the const keyword](#constants),
+- [Integer size reference table](#integer-size-reference-table).
 
-
-Unfortunately, in this chapter you won't learn anything really interesting, but this knowledge is crucial to continue further. Data types in general are a very extensive subject, but you don't need to know everything. This chapter is supposed to teach you how to handle value types in your script.
+> Unfortunately, in this chapter you won't learn anything really interesting, but this knowledge is crucial to continue further. Data types in general are a very extensive subject, but you don't need to know everything. This chapter is supposed to teach you how to handle value types in your script.
 
 > [!NOTE]
-> This guide won't cover every detail about any of data types, it is recommended you visit the [Data Types Section](../game/type) of the wiki for more information.
+> This chapter won't cover every detail about any of data types, it is recommended you visit the [Data Types Section](../game/type) of the wiki for more information.
 > Alternatively, you can find references on the [AS Official Documentation](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes.html), however please note that Strata's wiki will be the most representative, some functionality might have been changed!
 
 ---
@@ -44,8 +45,12 @@ int myInt1, myInt2, myInt3;
 Once declared, variables cannot change their type without redeclaration. This is not allowed:
 ```cpp
 int myInt;
-myInt = 3.2 // myInt is of type int, not float/double!
+myInt = 3.2; // myInt is of type int, not float/double!
 ```
+
+> ### TASK 1:
+> 1. Create a program that will declare and assign variables of types `string`, `int`, `bool`, `double`, and then print them out to the console.
+> 2. Do the same but use variable initialization.
 
 ### Auto keyword
 Although not recommended, the `auto` keyword will make the compiler automatically determine the data type of the variable:
@@ -70,29 +75,30 @@ const int size = 31;
 const auto st = "string"; // const also works with the auto keyword
 ```
 
-Constants can be useful as a sort of configuration of the script itself. If you reuse a staticly defined value you can instead define a global constant and then changing one value will change everything at once:
+Constants can be useful as a sort of configuration of the script itself. If you reuse a statically defined value you can instead define a global constant and then changing one value will change everything at once:
 ```cpp
 const int MAX_SIZE = 16;
 
-void main() {
-    string mystring = "lorem ipsum";
-    my_func1(mystring, MAX_SIZE); // A function that does something with mystring, but also needs to have additional information
-    my_func2(mystring, MAX_SIZE) // Another function that does something else with mystring, but it also needs the same additional information
-}
+string mystring = "lorem ipsum";
+my_func1(mystring, MAX_SIZE); // A function that does something with mystring, but also needs to have additional information
+my_func2(mystring, MAX_SIZE) // Another function that does something else with mystring, but it also needs the same additional information
 ```
 
-Constants are also a way to optimize your code. If you know that a variable won't change (or shouldn't change), always make it a constant.
+Constants are also a way to optimize your code. If you know that a variable won't change (or shouldn't change) after it's initialization, always make it a constant.
 ```cpp
 bool function(string s, float i) {
     const float value = s.length() - i;
     return i > value;
 }
-
 ```
+
+> ### TASK 2:
+> Write a program that initializes a constant variable with the `auto` keyword, and then tries to change it after. Observe the compilation error in the console.
+
 ---
 
 ### Integer size reference table
-The table below shows the minimum and maximum values for each integer subtype (don't worry as pretty much no programmers remember this table, just remember that it exists):
+The table below shows the minimum and maximum values for each integer subtype (don't worry about remembering this, just remember that it exists here):
 |Type|Short description|Minimum Value|Maximum Value|
 |---|---|---|---|
 |int8| Signed, 8 bits |-128 | 127 |
