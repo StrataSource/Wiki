@@ -69,7 +69,7 @@ do {
 
 ## For
 A `for` loop is an advanced version of the `while` loop. It takes 3 arguments in its statement - `for (statement1; statement2; statement3) {...}`:
-- Statement 1 - gets executed before the loop runs (but in the loop's variable scope (variable scopes will be talked about in a bit)), often used to intialiaze a local indexing variable, such as `int i = 0;`.
+- Statement 1 - gets executed before the loop runs (but in the loop's variable scope), often used to intialiaze a local indexing variable, such as `int i = 0;`.
 - Statement 2 - is a condition for the execution of the loop, checked before the loop executes the code inside.
 - Statement 3 - is executed after a successful code execution inside the loop (every time).
 
@@ -88,7 +88,7 @@ for (int i = 0; i < numbers.length(); i++) { // For every i until i is greater o
 > ### TASK 2:
 > Given an array of integers, write a program that will add all of these integers and print out the result.
 > > [!NOTE]
-> > Because of the [Variable Scope](#variable-scope), you will need to define a variable to store the sum outside of the loop.
+> > Because of the [Variable Scope](chapter3/#variable-scope), you will need to define a variable to store the sum outside of the loop.
 
 
 
