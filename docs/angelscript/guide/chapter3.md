@@ -66,17 +66,19 @@ bool result = a == b; // Result now stores the information if a and b were equal
 
 ### Logic operators
 Logic operators are a way to combine comparison expressions in order to achieve one result:
-- NOT - denoted as `!` or the keyword `not`, evaluates to ftrue, if value is false and vice versa,
-- AND - denoted as `&&` or the keyword `and`, evaluates to true, if both values are true,
-- OR - denoted as `||` or the keyword `or`, evaluates to true, if even one of the values is true, else false if both are false,
-- XOR - denoted as `^^` or the keyword `xor`, evaluates to true, if and only if **one** of the values is true.
+- NOT - denoted as `!`, evaluates to true, if value is false and vice versa,
+- AND - denoted as `&&`, evaluates to true, if both values are true,
+- OR - denoted as `||`, evaluates to true, if even one of the values is true, else false if both are false,
+- XOR - denoted as `^^`, evaluates to true, if and only if **one** of the values is true.
 
 ```cpp
 a && b; // AND
-a and b; // AND
-a and b || c; // A combination of AND and OR, a and b is going to get evaluated first
-a and (b || c); // You can use parenthesis to specify which operator should get evaluated first, here OR will get evaluated first
+a && b || c; // A combination of AND and OR, a AND b is going to get evaluated first
+a && (b || c); // You can use parenthesis to specify which operator should get evaluated first, here OR will get evaluated first
 ```
+> [!NOTE]
+> Although AngelScript supports Python-like logic operator notation (and, or, ...) it is recommended to stick to the C-like notation. This is mainly because AS is much more similar to C in it's syntax, and also not every extension adding AS support for your IDE has support for the Python-like notation.
+
 
 ---
 
