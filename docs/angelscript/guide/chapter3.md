@@ -87,7 +87,7 @@ Conditions are a way to tell the engine to execute specific code only if a speci
 They should contain an expression that evalues to true or false, and they can be any sort of valid combination of comparison operators and logic operators, etc.
 
 ### If/else block
-The `if`/`if else`/`else` block is used to run specific code only on certain conditions. The `if else` and `else` are not required, but the block must start with an `if` statement.
+The `if`/`else if`/`else` block is used to run specific code only on certain conditions. The `else if` and `else` are not required, but the block must start with an `if` statement.
 ```cpp
 if ( a > 10 ) { // Condition 1
     // Run the code in here
