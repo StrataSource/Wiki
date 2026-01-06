@@ -26,10 +26,13 @@ An array is an ordered group of elements, of which there is a starting element a
 
 Code-wise it's a template object, as you need to specify of which data type its values will be. To create an array you can use the **{element, element2, ...}** assignment:
 ```cpp
-array<int> a = {0, 1, 2, 3, 4};
-array<bool> b = {true, false, false, true, false};
-array<float> c = {.1, .3, .5};
+array<int>@ a = {0, 1, 2, 3, 4};
+array<bool>@ b = {true, false, false, true, false};
+array<float>@ c = {.1, .3, .5};
 ```
+
+> [!NOTE]
+> Since `array` and `dictionary` are reference types, you initialize them as an object handles (the @ symbol). For now, just remember that you add that symbol after the type name, it will get explained later on.
 
 To access elements in an array you use the index operator **[]**, where `[i]` will access the i'th element of the array (counting from 0):
 ```cpp
@@ -75,7 +78,7 @@ A `for` loop is an advanced version of the `while` loop. It takes 3 arguments in
 
 An example of a `for` loop can be a loop that cycles through every character in a string:
 ```cpp
-array<int> numbers = {1, 1, 2, 3, 5, 8, 13};
+array<int>@ numbers = {1, 1, 2, 3, 5, 8, 13};
 for (int i = 0; i < numbers.length(); i++) { // For every i until i is greater or equal to the array length (this will ensure i won't go out of bounds)
     numbers[i] // Represents the i'th number in the array 
     // After executing code do i++ (add one to i), so we can access the next element
@@ -98,12 +101,12 @@ for (int i = 0; i < numbers.length(); i++) { // For every i until i is greater o
 A `foreach` loop can be used to perform code for each item in a container objects. Container objects are objects that store values of other data types, such as the `array<T>` object or the `dictionary` object. Its structure `foreach (vars : container_object)` consists of two parts: where vars contains declarations of the variable names, such as `int val`, and the container object is the, well, container object. Some objects unpack more than one variable, such as the `dictionary` objects that unpacks the key and the appropriate value.
 
 ```cpp
-array<int> integers = {1, 2, 3, 4};
+array<int>@ integers = {1, 2, 3, 4};
 foreach (int i : integers) {
     // Code here, where i will cycle through every value in integers
 }
 
-dictionary mydict = {
+dictionary@ mydict = {
     {"key1", value1},
     {"key2", value2},
     {"key3", value3}
