@@ -14,7 +14,7 @@ AngelScript is under the same umbrela as [VScript](https://developer.valvesoftwa
 > [!NOTE]
 > If you are new to using AngelScript, it is recommended for you to follow the Beginner's Guide.
 
-## [Beginner's Guide](./guide)
+## Beginner's Guide(./guide) FIX ONCE `index.md` IS SUPPORTED AND NEW BEGINNER'S GUIDE IS ADDED
 
 ## [Game Examples](./game/examples.md)
 
