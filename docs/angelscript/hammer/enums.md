@@ -1,5 +1,6 @@
 ---
 title: Enums
+weight: 30
 ---
 
 # Enums

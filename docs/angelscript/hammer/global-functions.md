@@ -1,60 +1,61 @@
 ---
 title: Global Functions
+weight: 40
 ---
 
 # Global Functions
 
 This page outlines the various Strata Hammer AngelScript global functions.
 
-### `FindMaterial`
+## `FindMaterial`
 
 ```as
 Material@ FindMaterial(const string&in name)
 ```
 
-### `GetDefaultTextureName`
+## `GetDefaultTextureName`
 
 ```as
 string GetDefaultTextureName()
 ```
 
-### `abs`
+## `abs`
 
 ```as
 float abs(float)
 ```
 
-### `acos`
+## `acos`
 
 ```as
 float acos(float)
 ```
 
-### `asin`
+## `asin`
 
 ```as
 float asin(float)
 ```
 
-### `atan`
+## `atan`
 
 ```as
 float atan(float)
 ```
 
-### `atan2`
+## `atan2`
 
 ```as
 float atan2(float, float)
 ```
 
-### `ceil`
+## `ceil`
 
 ```as
 float ceil(float)
 ```
 
-### `closeTo`
+## `closeTo`
 
 ```as
 bool closeTo(float, float, float = 0.00001f)
@@ -62,25 +63,25 @@ bool closeTo(float, float, float = 0.00001f)
 bool closeTo(double, double, double = 0.0000000001)
 ```
 
-### `cos`
+## `cos`
 
 ```as
 float cos(float)
 ```
 
-### `cosh`
+## `cosh`
 
 ```as
 float cosh(float)
 ```
 
-### `floor`
+## `floor`
 
 ```as
 float floor(float)
 ```
 
-### `fpFromIEEE`
+## `fpFromIEEE`
 
 ```as
 float fpFromIEEE(uint)
@@ -88,7 +89,7 @@ float fpFromIEEE(uint)
 double fpFromIEEE(uint64)
 ```
 
-### `fpToIEEE`
+## `fpToIEEE`
 
 ```as
 uint fpToIEEE(float)
@@ -96,85 +97,85 @@ uint fpToIEEE(float)
 uint64 fpToIEEE(double)
 ```
 
-### `fraction`
+## `fraction`
 
 ```as
 float fraction(float)
 ```
 
-### `getExceptionInfo`
+## `getExceptionInfo`
 
 ```as
 string getExceptionInfo()
 ```
 
-### `join`
+## `join`
 
 ```as
 string join(const string[]&in, const string&in)
 ```
 
-### `log`
+## `log`
 
 ```as
 float log(float)
 ```
 
-### `log10`
+## `log10`
 
 ```as
 float log10(float)
 ```
 
-### `pow`
+## `pow`
 
 ```as
 float pow(float, float)
 ```
 
-### `print`
+## `print`
 
 ```as
 void print(const string&in)
 ```
 
-### `rint`
+## `rint`
 
 ```as
 float rint(float)
 ```
 
-### `sin`
+## `sin`
 
 ```as
 float sin(float)
 ```
 
-### `sinh`
+## `sinh`
 
 ```as
 float sinh(float)
 ```
 
-### `sqrt`
+## `sqrt`
 
 ```as
 float sqrt(float)
 ```
 
-### `tan`
+## `tan`
 
 ```as
 float tan(float)
 ```
 
-### `tanh`
+## `tanh`
 
 ```as
 float tanh(float)
 ```
 
-### `throw`
+## `throw`
 
 ```as
 void throw(const string&in)

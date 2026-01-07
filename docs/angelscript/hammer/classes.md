@@ -1,5 +1,6 @@
 ---
 title: Classes
+weight: 20
 ---
 
 # Classes
