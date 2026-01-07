@@ -1,6 +1,6 @@
 ---
 title: Feature Flags
-weigth: 20
+weigth: 30
 ---
 
 # Feature Flags
@@ -11,7 +11,7 @@ This further supports the user when they select a game, as the wiki can automati
 
 ## Setting Feature Flags
 
-Features required for an article are set in its [Meta Block](editing-articles#meta-block). If more than one feature is specified, the game needs to have all of them in order for the wiki to consider it supported.
+Features required for an article are set in its [Meta Block](creating-editing-articles#meta-block). If more than one feature is specified, the game needs to have all of them in order for the wiki to consider it supported.
 
 ```yaml
 features:
