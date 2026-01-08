@@ -24,7 +24,7 @@ Categories are located inside the [`docs` folder](https://github.com/StrataSourc
 ```
 
 > [!NOTE]
-> Adding a new category on the Wiki is not as simple as making the folder as it is controlled by the Wiki's software. If you wish to edit or create a new Wiki category please read the [Making Category](../advanced/making-category.md) article.
+> Adding a new category on the Wiki is not as simple as making the folder as it is controlled by the Wiki's software. If you wish to edit or create a new Wiki category please read the [Making Category](../advanced/creating-category.md) article.
 
 ## Topics
 
