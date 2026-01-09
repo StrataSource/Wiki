@@ -7,7 +7,7 @@ weight: 0
 
 This Wiki topic assumes that you understand how to work with TypeScript, SCSS, HTML, Svelte, as well as Git submodules. The Wiki software is a submodule separate from the documentation.
 
-If you followed the instructions from [Getting Started](../basics/getting-started.md), then the Wiki software should already be setup correctly. However, if you wish to contribute to the Wiki software, you will need to make a fork of the repository so an Pull Request can be created. If you remove the current `site` folder in the `Wiki` repository and replace it with your own fork under the same name, then the Wiki will use your version of the software.
+If you followed the instructions from [Getting Started](../basics/getting-started), then the Wiki software should already be setup correctly. However, if you wish to contribute to the Wiki software, you will need to make a fork of the repository so an Pull Request can be created. If you remove the current `site` folder in the `Wiki` repository and replace it with your own fork under the same name, then the Wiki will use your version of the software.
 
 ## Editors & Extensions
 
