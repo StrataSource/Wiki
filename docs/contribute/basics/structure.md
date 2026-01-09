@@ -41,6 +41,23 @@ Topics are folders inside categories and also have their own `meta.json` file:
 
 The `weight` property is optional and tells the wiki how to sort the topics: Bigger weight means a topic will move further down. If no weight is specified, the wiki will default to infinite weight, making the topic appear at the bottom of the list.
 
+An additional property, `type`, is used to tell the Wiki software where certain game reference dumps should be generated and placed, like the classes, enums, and other types. These technically can be used for any topic, but they should only be used in the section the reference is associated with, the Panorama reference shouldn't go into the Material category.
+
+> [!NOTE]
+> If `type` is anything other than `markdown`, which is also the default if it's not defined, then no other articles will appear in the topic.
+
+All currently available `type` properties:
+
+- `angelscript`: The AngelScript reference.
+- `concommand`: All available ConCommands. Marked if they're Server/Client and/or Strata game specific.
+- `convar`: All available ConVars. Marked if they're Server/Client and/or Strata game specific.
+- `entity`: All entities in the engine. Marked if they're Strata game specific.
+- `markdown`: The default, the topic will contain Markdown articles.
+- `material`: All available material shaders for VMTs.
+- `sound_operators`: All available sound operators for sound scripts.
+- `typedoc`: The Panorama TypeDoc reference.
+- `vscript`: The VScript Squirrel reference.
+
 ## Articles
 
 Articles are the pages that make up the content of the wiki. Most articles are written by hand, but some are automatically generated from engine dumps and enhanced by manually written content.
