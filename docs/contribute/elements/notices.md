@@ -59,10 +59,16 @@ Notices can be used to call out important or useful info.
 ```markdown
 > [!BUG]
 > This is a bug.
+> It's really complicated.
+>
+> ### I _probably_ didn't cause [it](/)
 ```
 
 > [!BUG]
 > This is a bug.
+> It's really complicated.
+>
+> ### I _probably_ didn't cause [it](/)
 
 ## Portal 2: Community Edition Specific
 
