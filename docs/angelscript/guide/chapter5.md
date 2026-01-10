@@ -155,13 +155,13 @@ void func(int c) {...}
 int a = 1; 
 func(a);
 ```
-In this example, before `c` gets assigned a value from `a`, the value of `a` gets copied first, and only after the assignment occurs. This happens, so that doing any operations on `c` in `func` will not cause `a` outside the function to change in any way.
+In this example, before `c` gets assigned a value from `a`, the value of `a` gets copied first, and only after that the assignment occurs. This happens, so that doing any operations on `c` in `func` will not cause `a` outside the function to change in any way.
 
 However, passing by reference changes that mechanism. Since now, the thing that gets copied is the memory address, not the actual variable value. Meaning that if we were to pass by reference in `func` above, doing any operation such as `c = 5;` would cause `a` to change accordingly (a = 5).
 
 Telling the compiler that you want to pass by reference gets done in the function parameters declaration, like so:
 ```cpp
-void func(int c&) // This is a pass by reference
+void func(int& c) // This is a pass by reference
 ```
 
 No special syntax for calling is needed:
