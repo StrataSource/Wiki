@@ -43,6 +43,8 @@ b[0] // = .1
 
 More on the arrays will be talked about in later parts of this guide.
 
+--- 
+
 ## While, do while
 The `while (expression)` loop will execute code until the expression evaluates to false:
 ```cpp
