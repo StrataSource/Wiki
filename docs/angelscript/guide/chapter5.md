@@ -185,10 +185,6 @@ This option specifies that this parameter is an output of a function. This is es
 
 Example usage of passing by reference of all 3 options:
 ```cpp
-
-int myFunc(string& a) {...} // Is the same as
-int myFunc(string&inout a) {...}
-
 // Example of &in usage
 void PrintMessage(const string&in msg) { // This will make the compiler try to not copy the argument when calling the function, as we are not modifying it in any way.
     Msg(msg + "\n"); // Convenience function that prints the message with \n appended
