@@ -47,7 +47,7 @@ The source can be cloned from [StrataSource/Wiki](https://github.com/StrataSourc
 > Please make sure to not get mixed up with the [StrataSource/strata-wiki](https://github.com/StrataSource/strata-wiki) repository.
 > This repository is not the documentation repository but instead the source code for the Strata Source Wiki itself.
 >
-> While this does get cloned with the documentation repository on first run, it should not need to be edited in order to create/edit articles on the Wiki. If you are interested in working with the Wiki software, please read [Getting Started With The Wiki Software](../advanced/adv-getting-started).
+> While this does get cloned with the documentation repository on first run, it should not need to be edited in order to create/edit articles on the Wiki. If you are interested in working with the Wiki software, please read [Getting Started With The Wiki Software](../advanced/getting-started).
 
 Please follow the README instructions in the `StrataSource/Wiki` repository to finish setting up the Wiki once it has been cloned.
 
