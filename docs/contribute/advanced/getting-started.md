@@ -7,13 +7,11 @@ weight: 0
 
 This Wiki topic assumes that you understand how to work with TypeScript, SCSS, HTML, Svelte, as well as Git submodules. The Wiki software is a submodule separate from the documentation.
 
-If you followed the instructions from [Getting Started](../basics/getting-started), then the Wiki software should already be setup correctly. However, if you wish to contribute to the Wiki software, you will need to make a fork of the repository so an Pull Request can be created. If you remove the current `site` folder in the `Wiki` repository and replace it with your own fork under the same name, then the Wiki will use your version of the software.
+If you followed the instructions from [Getting Started](../basics/getting-started), then the Wiki software should already be setup correctly. However, if you wish to contribute to the Wiki software, you will need to make a fork of the repository so an Pull Request can be created. From there, you must redirect the remote URL for the Wiki software submodule to use your fork so you can use your software changes with the Wiki documentation.
 
 ## Editors & Extensions
 
-The recommended editor for editing both the Wiki documentation or working with the Wiki software is [Visual Studio Code](https://code.visualstudio.com/).
-
-Below are a few extensions you can install to help with working the repository:
+The recommended editor for editing both the Wiki documentation and/or the Wiki software is [Visual Studio Code](https://code.visualstudio.com/). Below are a few extensions you can install to help with working the repository:
 
 [`markdownlint`](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) By David Anson: A extension for Markdown linting and style checking.
 
@@ -29,7 +27,7 @@ The Wiki software file structure is much more complex than the Wiki documentatio
 
 `lib`: Where some site assets belong, where various components like buttons, Markdown notices, and more are structure, as well as where the dump parsers live.
 
-`routes`: Contains the TypeScript and Svelte files used to structure and make the Wiki function for each page and piece of the Wiki. Ex. page footers, categories, CSS formatting, HTML structure, etc.
+`routes`: Contains the TypeScript and Svelte files used to structure and make the Wiki function. Ex. page footers, categories, CSS formatting, HTML structure, etc.
 
 ## What's Next
 
