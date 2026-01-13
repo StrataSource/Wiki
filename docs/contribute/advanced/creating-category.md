@@ -5,7 +5,13 @@ weight: 10
 
 # Making A New Category
 
-Making a category requires that the Markdown documentation files for the category are provided. At minimum, a Markdown file and a `meta.json` file is needed to make an category work. Check out the [Category section](../basics/structure#categories) of the `Wiki Structure` article to know how to set up the `meta.json` file.
+Categories are the top level groups you can see on the home page of the Strata Source Wiki. Ex. Panorama, Materials, Entities. These categories contain topics relating to the category and from there articles for each topic.
+
+![Wiki Home Categories](../imgs/home-page.png)
+
+Currently as of writing (1/12/26), Wiki categories are unfortunately controlled by the Wiki software, rather than simply making a folder, a `meta.json` file, and the Markdown articles, this is planned to hopefully change in the future.
+
+Before making a new category, a Markdown file and a `meta.json` file is needed to make an category work. Check out the [Category section](../basics/structure#categories) of the `Wiki Structure` article to know how the Wiki is fully structured and how to set up the `meta.json` file.
 
 Once the files and folders setup in the `docs` folder, head to the `site/src/routes/+page.svelte` file. This file is the page file for the `Home` page of the Wiki.
 
@@ -25,7 +31,7 @@ The easy thing to do is copy and paste a preexisting category or header separato
         title: string; // Title displayed for the category.
         description: string; // Description of the category.
         icon: string; // Icon to use for the category displayed before the "title". Recommended to use a icon imported from the material icons package.
-        separation: false; // This should be left false for categories.
+        separation: false; // This needs to be false for categories.
     }
 ```
 
