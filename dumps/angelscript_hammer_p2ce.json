@@ -248,7 +248,7 @@
         {
             "namespace": null,
             "name": "join",
-            "declaration": "string join(const string[]&in, const string&in)",
+            "declaration": "string join(const array<string>&in, const string&in)",
             "documentation": null
         },
         {
@@ -2658,6 +2658,7 @@
         {
             "namespace": null,
             "name": "array",
+            "type": "ref",
             "template_parameter": [
                 {
                     "type": "class",
@@ -2665,6 +2666,26 @@
                 }
             ],
             "method": [
+                {
+                    "name": "array",
+                    "declaration": "array(int&in type, int&in list) { repeat T }",
+                    "documentation": null
+                },
+                {
+                    "name": "array",
+                    "declaration": "array(int&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "array",
+                    "declaration": "array(int&in, uint length)",
+                    "documentation": null
+                },
+                {
+                    "name": "array",
+                    "declaration": "array(int&in, uint length, const T&in value)",
+                    "documentation": null
+                },
                 {
                     "name": "opIndex",
                     "declaration": "T& opIndex(uint index)",
@@ -2702,7 +2723,7 @@
                 },
                 {
                     "name": "opAssign",
-                    "declaration": "T[]& opAssign(const T[]&in)",
+                    "declaration": "array<T>& opAssign(const array<T>&in)",
                     "documentation": null
                 },
                 {
@@ -2712,7 +2733,7 @@
                 },
                 {
                     "name": "insertAt",
-                    "declaration": "void insertAt(uint index, const T[]&inout arr)",
+                    "declaration": "void insertAt(uint index, const array<T>&inout arr)",
                     "documentation": null
                 },
                 {
@@ -2797,7 +2818,7 @@
                 },
                 {
                     "name": "opEquals",
-                    "declaration": "bool opEquals(const T[]&in) const",
+                    "declaration": "bool opEquals(const array<T>&in) const",
                     "documentation": null
                 },
                 {
@@ -2807,7 +2828,7 @@
                 },
                 {
                     "name": "sort",
-                    "declaration": "void sort(T[]::less&in, uint startAt = 0, uint count = uint(-1))",
+                    "declaration": "void sort(array<T>::less&in, uint startAt = 0, uint count = uint(-1))",
                     "documentation": null
                 }
             ]
@@ -2815,7 +2836,58 @@
         {
             "namespace": null,
             "name": "string",
+            "type": "value",
             "method": [
+                {
+                    "name": "~string",
+                    "declaration": "~string()",
+                    "documentation": null
+                },
+                {
+                    "name": "string",
+                    "declaration": "string()",
+                    "documentation": null
+                },
+                {
+                    "name": "string",
+                    "declaration": "string(const string&in other)",
+                    "documentation": null
+                },
+                {
+                    "name": "string",
+                    "declaration": "string(bool num)",
+                    "documentation": null
+                },
+                {
+                    "name": "string",
+                    "declaration": "string(int num)",
+                    "documentation": null
+                },
+                {
+                    "name": "string",
+                    "declaration": "string(uint num)",
+                    "documentation": null
+                },
+                {
+                    "name": "string",
+                    "declaration": "string(int64 num)",
+                    "documentation": null
+                },
+                {
+                    "name": "string",
+                    "declaration": "string(uint64 num)",
+                    "documentation": null
+                },
+                {
+                    "name": "string",
+                    "declaration": "string(float num)",
+                    "documentation": null
+                },
+                {
+                    "name": "string",
+                    "declaration": "string(double num)",
+                    "documentation": null
+                },
                 {
                     "name": "opAssign",
                     "declaration": "string& opAssign(const string&in str)",
@@ -2963,7 +3035,12 @@
                 },
                 {
                     "name": "toInt",
-                    "declaration": "int64 toInt() const",
+                    "declaration": "int64 toInt(int base = 10) const",
+                    "documentation": null
+                },
+                {
+                    "name": "toUInt",
+                    "declaration": "uint64 toUInt(int base = 10) const",
                     "documentation": null
                 },
                 {
@@ -3023,7 +3100,7 @@
                 },
                 {
                     "name": "split",
-                    "declaration": "string[]@ split(const string&in) const",
+                    "declaration": "array<string>@ split(const string&in) const",
                     "documentation": null
                 }
             ]
@@ -3031,7 +3108,18 @@
         {
             "namespace": null,
             "name": "dictionaryValue",
+            "type": "value",
             "method": [
+                {
+                    "name": "~dictionaryValue",
+                    "declaration": "~dictionaryValue()",
+                    "documentation": null
+                },
+                {
+                    "name": "dictionaryValue",
+                    "declaration": "dictionaryValue()",
+                    "documentation": null
+                },
                 {
                     "name": "opAssign",
                     "declaration": "dictionaryValue& opAssign(const dictionaryValue&in)",
@@ -3087,7 +3175,18 @@
         {
             "namespace": null,
             "name": "dictionary",
+            "type": "ref",
             "method": [
+                {
+                    "name": "dictionary",
+                    "declaration": "dictionary(int&in) { repeat { string, ? } }",
+                    "documentation": null
+                },
+                {
+                    "name": "dictionary",
+                    "declaration": "dictionary()",
+                    "documentation": null
+                },
                 {
                     "name": "opAssign",
                     "declaration": "dictionary& opAssign(const dictionary&in)",
@@ -3150,7 +3249,7 @@
                 },
                 {
                     "name": "getKeys",
-                    "declaration": "string[]@ getKeys() const",
+                    "declaration": "array<string>@ getKeys() const",
                     "documentation": null
                 },
                 {
@@ -3192,11 +3291,14 @@
         },
         {
             "namespace": null,
-            "name": "dictionaryIter"
+            "name": "dictionaryIter",
+            "type": "ref",
+            "method": []
         },
         {
             "namespace": null,
             "name": "grid",
+            "type": "ref",
             "template_parameter": [
                 {
                     "type": "class",
@@ -3204,6 +3306,26 @@
                 }
             ],
             "method": [
+                {
+                    "name": "grid",
+                    "declaration": "grid(int&in type, int&in list) { repeat { repeat_same T } }",
+                    "documentation": null
+                },
+                {
+                    "name": "grid",
+                    "declaration": "grid(int&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "grid",
+                    "declaration": "grid(int&in, uint, uint)",
+                    "documentation": null
+                },
+                {
+                    "name": "grid",
+                    "declaration": "grid(int&in, uint, uint, const T&in)",
+                    "documentation": null
+                },
                 {
                     "name": "opIndex",
                     "declaration": "T& opIndex(uint, uint)",
@@ -3234,7 +3356,28 @@
         {
             "namespace": null,
             "name": "any",
+            "type": "ref",
             "method": [
+                {
+                    "name": "any",
+                    "declaration": "any()",
+                    "documentation": null
+                },
+                {
+                    "name": "any",
+                    "declaration": "any(?&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "any",
+                    "declaration": "any(const int64&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "any",
+                    "declaration": "any(const double&in)",
+                    "documentation": null
+                },
                 {
                     "name": "opAssign",
                     "declaration": "any& opAssign(any&in)",
@@ -3275,7 +3418,28 @@
         {
             "namespace": null,
             "name": "ref",
+            "type": "value",
             "method": [
+                {
+                    "name": "~ref",
+                    "declaration": "~ref()",
+                    "documentation": null
+                },
+                {
+                    "name": "ref",
+                    "declaration": "ref()",
+                    "documentation": null
+                },
+                {
+                    "name": "ref",
+                    "declaration": "ref(const ref&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "ref",
+                    "declaration": "ref(const ?&in)",
+                    "documentation": null
+                },
                 {
                     "name": "opCast",
                     "declaration": "void opCast(?&out)",
@@ -3306,7 +3470,23 @@
         {
             "namespace": null,
             "name": "Vector2D",
+            "type": "value",
             "method": [
+                {
+                    "name": "Vector2D",
+                    "declaration": "Vector2D()",
+                    "documentation": null
+                },
+                {
+                    "name": "Vector2D",
+                    "declaration": "Vector2D(float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "Vector2D",
+                    "declaration": "Vector2D(const Vector2D&in)",
+                    "documentation": null
+                },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy)",
@@ -3487,7 +3667,23 @@
         {
             "namespace": null,
             "name": "Vector",
+            "type": "value",
             "method": [
+                {
+                    "name": "Vector",
+                    "declaration": "Vector()",
+                    "documentation": null
+                },
+                {
+                    "name": "Vector",
+                    "declaration": "Vector(float, float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "Vector",
+                    "declaration": "Vector(const Vector&in)",
+                    "documentation": null
+                },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy, float iz)",
@@ -3763,7 +3959,23 @@
         {
             "namespace": null,
             "name": "Quaternion",
+            "type": "value",
             "method": [
+                {
+                    "name": "Quaternion",
+                    "declaration": "Quaternion()",
+                    "documentation": null
+                },
+                {
+                    "name": "Quaternion",
+                    "declaration": "Quaternion(float, float, float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "Quaternion",
+                    "declaration": "Quaternion(const Quaternion&in)",
+                    "documentation": null
+                },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy, float iz, float iw)",
@@ -3869,7 +4081,23 @@
         {
             "namespace": null,
             "name": "QAngle",
+            "type": "value",
             "method": [
+                {
+                    "name": "QAngle",
+                    "declaration": "QAngle()",
+                    "documentation": null
+                },
+                {
+                    "name": "QAngle",
+                    "declaration": "QAngle(float, float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "QAngle",
+                    "declaration": "QAngle(const QAngle&in)",
+                    "documentation": null
+                },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy, float iz)",
@@ -3995,7 +4223,23 @@
         {
             "namespace": null,
             "name": "matrix3x4_t",
+            "type": "value",
             "method": [
+                {
+                    "name": "matrix3x4_t",
+                    "declaration": "matrix3x4_t()",
+                    "documentation": null
+                },
+                {
+                    "name": "matrix3x4_t",
+                    "declaration": "matrix3x4_t(float, float, float, float, float, float, float, float, float, float, float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "matrix3x4_t",
+                    "declaration": "matrix3x4_t(const Vector&in, const Vector&in, const Vector&in, const Vector&in)",
+                    "documentation": null
+                },
                 {
                     "name": "InitXYZ",
                     "declaration": "void InitXYZ(const Vector&in xAxis, const Vector&in yAxis, const Vector&in zAxis, const Vector&in vecOrigin)",
@@ -4181,7 +4425,18 @@
         {
             "namespace": null,
             "name": "VPlane",
+            "type": "value",
             "method": [
+                {
+                    "name": "VPlane",
+                    "declaration": "VPlane()",
+                    "documentation": null
+                },
+                {
+                    "name": "VPlane",
+                    "declaration": "VPlane(const Vector&in, float)",
+                    "documentation": null
+                },
                 {
                     "name": "Init",
                     "declaration": "void Init(const Vector&in vNormal, float dist)",
@@ -4222,7 +4477,23 @@
         {
             "namespace": null,
             "name": "Vector4D",
+            "type": "value",
             "method": [
+                {
+                    "name": "Vector4D",
+                    "declaration": "Vector4D()",
+                    "documentation": null
+                },
+                {
+                    "name": "Vector4D",
+                    "declaration": "Vector4D(float, float, float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "Vector4D",
+                    "declaration": "Vector4D(const Vector4D&in)",
+                    "documentation": null
+                },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy, float iz, float iw)",
@@ -4388,7 +4659,28 @@
         {
             "namespace": null,
             "name": "VMatrix",
+            "type": "value",
             "method": [
+                {
+                    "name": "VMatrix",
+                    "declaration": "VMatrix()",
+                    "documentation": null
+                },
+                {
+                    "name": "VMatrix",
+                    "declaration": "VMatrix(float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float)",
+                    "documentation": null
+                },
+                {
+                    "name": "VMatrix",
+                    "declaration": "VMatrix(const Vector&in, const Vector&in, const Vector&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "VMatrix",
+                    "declaration": "VMatrix(const matrix3x4_t&in)",
+                    "documentation": null
+                },
                 {
                     "name": "Init",
                     "declaration": "void Init(float m00, float m01, float m02, float m03, float m10, float m11, float m12, float m13, float m20, float m21, float m22, float m23, float m30, float m31, float m32, float m33)",
@@ -4664,7 +4956,23 @@
         {
             "namespace": null,
             "name": "Color",
+            "type": "value",
             "method": [
+                {
+                    "name": "Color",
+                    "declaration": "Color()",
+                    "documentation": null
+                },
+                {
+                    "name": "Color",
+                    "declaration": "Color(uint8, uint8, uint8)",
+                    "documentation": null
+                },
+                {
+                    "name": "Color",
+                    "declaration": "Color(uint8, uint8, uint8, uint8)",
+                    "documentation": null
+                },
                 {
                     "name": "SetColor",
                     "declaration": "void SetColor(uint8, uint8, uint8, uint8)",
@@ -4690,7 +4998,28 @@
         {
             "namespace": null,
             "name": "ConVar",
+            "type": "value",
             "method": [
+                {
+                    "name": "~ConVar",
+                    "declaration": "~ConVar()",
+                    "documentation": null
+                },
+                {
+                    "name": "ConVar",
+                    "declaration": "ConVar(const string&in, const string&in, EConVarFlag)",
+                    "documentation": null
+                },
+                {
+                    "name": "ConVar",
+                    "declaration": "ConVar(const ConVar&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "ConVar",
+                    "declaration": "ConVar(const string&in name, const string&in defValue, EConVarFlag flags, ConVar::ChangeCallback&in changeCallback)",
+                    "documentation": null
+                },
                 {
                     "name": "GetInt",
                     "declaration": "int GetInt() const",
@@ -4756,7 +5085,18 @@
         {
             "namespace": null,
             "name": "ConVarRef",
+            "type": "value",
             "method": [
+                {
+                    "name": "~ConVarRef",
+                    "declaration": "~ConVarRef()",
+                    "documentation": null
+                },
+                {
+                    "name": "ConVarRef",
+                    "declaration": "ConVarRef(const string&in)",
+                    "documentation": null
+                },
                 {
                     "name": "IsValid",
                     "declaration": "bool IsValid() const",
@@ -4862,6 +5202,7 @@
         {
             "namespace": null,
             "name": "BoundBox",
+            "type": "ref",
             "method": [
                 {
                     "name": "GetBoundsCenter",
@@ -4883,7 +5224,18 @@
         {
             "namespace": null,
             "name": "MeshBuilder",
+            "type": "value",
             "method": [
+                {
+                    "name": "~MeshBuilder",
+                    "declaration": "~MeshBuilder()",
+                    "documentation": null
+                },
+                {
+                    "name": "MeshBuilder",
+                    "declaration": "MeshBuilder()",
+                    "documentation": null
+                },
                 {
                     "name": "Position",
                     "declaration": "void Position(const Vector&in)",
@@ -4948,11 +5300,55 @@
         },
         {
             "namespace": null,
-            "name": "Material"
+            "name": "Material",
+            "type": "ref",
+            "method": [
+                {
+                    "name": "GetName",
+                    "declaration": "string GetName() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetKeywords",
+                    "declaration": "string GetKeywords() const",
+                    "documentation": null
+                },
+                {
+                    "name": "IsDummy",
+                    "declaration": "bool IsDummy() const",
+                    "documentation": null
+                },
+                {
+                    "name": "IsWater",
+                    "declaration": "bool IsWater() const",
+                    "documentation": null
+                },
+                {
+                    "name": "IsNodraw",
+                    "declaration": "bool IsNodraw() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetWidth",
+                    "declaration": "int GetWidth() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetHeight",
+                    "declaration": "int GetHeight() const",
+                    "documentation": null
+                },
+                {
+                    "name": "GetDecalScale",
+                    "declaration": "float GetDecalScale() const",
+                    "documentation": null
+                }
+            ]
         },
         {
             "namespace": null,
             "name": "Render",
+            "type": "ref",
             "method": [
                 {
                     "name": "get_gridDistance",
@@ -5069,26 +5465,44 @@
         {
             "namespace": null,
             "name": "CMapFace",
+            "type": "value",
             "method": [
                 {
+                    "name": "~CMapFace",
+                    "declaration": "~CMapFace()",
+                    "documentation": null
+                },
+                {
+                    "name": "CMapFace",
+                    "declaration": "CMapFace()",
+                    "documentation": null
+                },
+                {
                     "name": "CreateFace",
-                    "declaration": "void CreateFace(Vector[]@, int)",
+                    "declaration": "void CreateFace(array<Vector>@, int)",
                     "documentation": null
                 }
             ]
         },
         {
             "namespace": null,
-            "name": "CMapClass"
+            "name": "CMapClass",
+            "type": "ref"
         },
         {
             "namespace": null,
             "name": "CMapGroup",
+            "type": "ref",
             "base_type": {
                 "namespace": null,
                 "name": "CMapClass"
             },
             "method": [
+                {
+                    "name": "CMapGroup",
+                    "declaration": "CMapGroup()",
+                    "documentation": null
+                },
                 {
                     "name": "AddChild",
                     "declaration": "void AddChild(CMapClass@)",
@@ -5124,11 +5538,17 @@
         {
             "namespace": null,
             "name": "CMapSolid",
+            "type": "ref",
             "base_type": {
                 "namespace": null,
                 "name": "CMapClass"
             },
             "method": [
+                {
+                    "name": "CMapSolid",
+                    "declaration": "CMapSolid()",
+                    "documentation": null
+                },
                 {
                     "name": "AddFace",
                     "declaration": "void AddFace(const CMapFace&in)",
@@ -5168,15 +5588,39 @@
         },
         {
             "namespace": null,
-            "name": "GUIData"
+            "name": "GUIData",
+            "type": "value",
+            "method": [
+                {
+                    "name": "GUIData",
+                    "declaration": "GUIData(GuiElement, const string&in, int64)",
+                    "documentation": null
+                },
+                {
+                    "name": "GUIData",
+                    "declaration": "GUIData(GuiElement, const string&in, double)",
+                    "documentation": null
+                },
+                {
+                    "name": "GUIData",
+                    "declaration": "GUIData(GuiElement, const string&in)",
+                    "documentation": null
+                },
+                {
+                    "name": "GUIData",
+                    "declaration": "GUIData(GuiElement)",
+                    "documentation": null
+                }
+            ]
         },
         {
             "namespace": null,
             "name": "ScriptSolid",
+            "type": "ref",
             "method": [
                 {
                     "name": "GetGuiData",
-                    "declaration": "GUIData[]@ GetGuiData() const",
+                    "declaration": "array<GUIData>@ GetGuiData() const",
                     "documentation": null
                 },
                 {
