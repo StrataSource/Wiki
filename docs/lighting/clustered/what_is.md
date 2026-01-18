@@ -37,8 +37,8 @@ Two major limitations of this system are that it cannot easily support dynamic l
 
 ##
 #### Clustered lighting improves these limitations,
-by adding dynamic lighting that is calculated at runtime and not baked into the lightmap. 
-The way it works is similar to raytracing, but instead of drawing rays, **it draws shadows onto the global shadow atlas**. Shadow atlas consists of shadowmaps, but unlike lightmaps and luxels that contain the color value, **shadowmaps have a part of the shadow itself.**
+by adding efficient dynamic lighting for all light types, instead of just projected textures.
+Clustered uses traditional shadow-mapping techniques and renders to a single shadow atlas instead of a separate depth texture like projected textures do. The shadow atlas contains the depth values for all lights in the scene.
 Shadowmaps update only in certain scenarios: when the light source moves and when an object moves inside the light. 
 
 Now, there are three properties of a clustered light entity:
@@ -78,7 +78,7 @@ Specular lighting is not an actual lighting, but rather a reflection off of smoo
 The addition of specular lighting also make metallic PBR materials look much more correct. Previously, without another specular-enabled source like outdoors CSM, metallic materials would simply appear black. This is because metals really only reflect specular lighting, and have little to no diffuse lighting.
 
 * Top: No specular. The metal parts of the material are completely black.
-* Bottom: Specular lighting enabled. The metal now reacts to the nearby light source correctly (some parts of the metal are still black because they aren't being lit by a dynamic light source.
+* Bottom: Specular lighting enabled. The metal now reacts to the nearby light source correctly (some parts of the metal are still black because they aren't being lit by a dynamic light source).
 
 ![No specular](images/specular_off.png)
 
