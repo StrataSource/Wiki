@@ -6,7 +6,7 @@ features:
 ---
 # Developer UI
 
-In P2CE, you can enable the developer UI    using the `devui_toggle_menu` console command (with `developer 1` enabled as well). Currently, it consists of 8 menus: Windows, Graphics, Profiler, Map, Scripting, Entity, Settings and Debug.
+In P2CE, you can enable the developer UI using the `devui_toggle_menu` console command (with `developer 1` enabled as well). Currently, it consists of 8 menus: Windows, Graphics, Profiler, Map, Scripting, Entity, Settings and Debug.
 
 Graphics menu is the one needed. Upon pressing, four more buttons appear: Fog Config, Clustered Light Inspector, CSM Config and Post Processing. You need to choose the **Clustered Light Inspector**.
 
