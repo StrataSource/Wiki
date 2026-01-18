@@ -1,31 +1,73 @@
 ---
 title: Quick Start Guide
+weight: 20
 features:
     - USE_CLUSTERED
 ---
 # Quick Start Guide
 
-"I want an unmoving normal Source engine light, but better, and not slow"
+#### "I want an expensive light that has fancy shadows and isn't supposed to move"
 
 1. Add a light_rt or light_rt_spot entity
-2. Set "Light mode" to "Specular"
-3. Make sure the "Shadowed" spawnflag is UNCHECKED
-4. Set "Radius" and "50 percent scale" KeyValues to adjust the look and feel
-5. For best results, use PBR textures with appropriate MRAOs and normal maps
+2. Set "Specular Light Mode" to "Dynamic Only"
+3. Set "Direct Light Mode" to "Dynamic Only"
+4. Set "Indirect Light Mode" to "Static Only
+5. Set "Initial Shadow Size" to 6 or 7
+6. Make sure the "Shadowed" flag is **checked**
+7. Set "50 percent falloff distance" and "0 percent falloff distance" KeyValues to adjust the look and feel
+8. For best results, use PBR textures with appropriate MRAOs and normal maps
 
-![Keyvalues](images/basic_light1.png)
+![Keyvalues](images/properties_dynamic.png)
 
-![Spawnflags](images/basic_light2.png)
+![Spawnflags](images/flags_dynamic.png)
 
-"I want an expensive light that has fancy shadows or moves around"
+#### "I want a fully dynamic light that is supposed to move and interact with other dynamic lights"
 
 1. Add a light_rt or light_rt_spot entity
-2. Set "Light mode" to "Static Bounce" (for mostly stationary) or "Fully Dynamic" (frequently moves)
-3. Set "Initial Shadow Size" to somewhere around 5 to 7
-4. Make sure the "Shadowed" spawnflag is CHECKED
-5. Set "Radius" and "50 percent scale" KeyValues to adjust the look and feel
+2. Set "Specular Light Mode" to "Dynamic Only"
+3. Set "Direct Light Mode" to "Dynamic Only"
+4. Set "Indirect Light Mode" to "None"
+5. Set "Initial Shadow Size" to something around 5
+6. Make sure the "Shadowed" flag is **checked**
+7. Set "50 percent falloff distance" and "0 percent falloff distance" KeyValues to adjust the look and feel
+8. For best results, use PBR textures with appropriate MRAOs and normal maps
+
+![Keyvalues](images/properties_dynamic2.png)
+
+![Spawnflags](images/flags_dynamic.png)
+
+#### "I want a regular, cheap static light"
+
+1. Add a light_rt or light_rt_spot entity
+2. Set "Specular Light Mode" to "None"
+3. Set "Direct Light Mode" to "Static Only"
+4. Set "Indirect Light Mode" to "Static Only"
+5. Set "50 percent falloff distance" and "0 percent falloff distance" KeyValues to adjust the look and feel
 6. For best results, use PBR textures with appropriate MRAOs and normal maps
 
-![Keyvalues](images/fancy_light2.png)
+![Keyvalues](images/properties_static.png)
 
-![Spawnflags](images/fancy_light1.png)
+#### "I only want indirect lighting"
+
+1. Add a light_rt or light_rt_spot entity
+2. Set "Specular Light Mode" to "None"
+3. Set "Direct Light Mode" to "None"
+4. Set "Indirect Light Mode" to "Static Only"
+5. Set "50 percent falloff distance" and "0 percent falloff distance" KeyValues to adjust the look and feel
+6. For best results, use PBR textures with appropriate MRAOs and normal maps
+
+![Keyvalues](image-1.png)
+
+#### "I only want a specular reflection"
+
+1. Add a light_rt or light_rt_spot entity
+2. Set "Specular Light Mode" to "None"
+3. Set "Direct Light Mode" to "None"
+4. Set "Indirect Light Mode" to "Static Only"
+5. Make sure the "Shadowed" flag is **checked**
+6. Set "50 percent falloff distance" and "0 percent falloff distance" KeyValues to adjust the look and feel
+7. For best results, use PBR textures with appropriate MRAOs and normal maps
+
+![Keyvalues](images/properties_specular.png)
+
+![Spawnflags](images/flags_dynamic.png)
