@@ -9,10 +9,10 @@ features:
 Clustered Lighting adds a new dynamic lighting system to Strata, with the following major improvements:
 
 * Specular lighting now works on all surfaces, brush or prop, indoors or outdoors.
-* light_rt entities can now cast light and shadows dynamically.
+* `light_rt` entities can now cast light and shadows dynamically.
   * Lights can move and their light and shadows will move with them.
   * Entities can move under lights and have their lighting updated. This includes brush entities.
-* light_rt can be configured to use static shadows or no shadows at all, making the regular light entity obsolete.
+* `light_rt` can be configured to use static shadows or no shadows at all, making the regular light entity obsolete.
 
 Currently, only Portal 2: Community Edition and Momentum Mod support Clustered Lighting. There are currently no plans to add Clustered Lighting to Portal: Revolution.
 
@@ -134,14 +134,14 @@ You can control the size of the shadow map by changing the "Initial Shadow Size"
 
 There are some clustered-related console commands that give a more precise control over clustered shadows.
 
-| Command                                 | Purpose           |
-|-----------------------------------------|-------------------|
-|r_clustered_lighting_enable              | Toggles clustered lights. Default is 1 |
-|r_clustered_shadowframebudget            | Determines how many shadow faces can be rendered per frame. Default is 6. High values (like 50) may impact perfomance.|
-|r_clustered_shadow_depthbias             | Controls shadow ance and peter panning. High values (like 0.1) break shadows completely, lower values make shadows appear on edges of shadowmaps. Default is 0.00005 |
-|r_clustered_shadow_slopescale            | Similar to depthbias, but applied depending on how glancing the angle to the surface being rendered in the shadowmap, since more glancing angles will need higher depth bias. High values make shadows leak through world. Default is 5 |
-|r_clustered_static_lightcull             | Experimental. Allows more lights to be rendered on AMD GPUs, but makes it way slower to render on NVidia GPUs. It is recommended not to touch if you don't use AMD GPU. |
-|r_clustered_static_shadow_exponent_scale | Scales the atlas size of shadows so they take up more space, doesn't seem to be useful since increasing the atlas's size itself is almost always a better solution. Default is 1, higher values make some shadows appear sharper |
+| Command                                   | Purpose           |
+|-------------------------------------------|-------------------|
+|`r_clustered_lighting_enable`              | Toggles clustered lights. Default is 1 |
+|`r_clustered_shadowframebudget`            | Determines how many shadow faces can be rendered per frame. Default is 6. High values (like 50) may impact perfomance.|
+|`r_clustered_shadow_depthbias`             | Controls shadow ance and peter panning. High values (like 0.1) break shadows completely, lower values make shadows appear on edges of shadowmaps. Default is 0.00005 |
+|`r_clustered_shadow_slopescale`            | Similar to depthbias, but applied depending on how glancing the angle to the surface being rendered in the shadowmap, since more glancing angles will need higher depth bias. High values make shadows leak through world. Default is 5 |
+|`r_clustered_static_lightcull`             | Experimental. Allows more lights to be rendered on AMD GPUs, but makes it way slower to render on NVidia GPUs. It is recommended not to touch if you don't use AMD GPU. |
+|`r_clustered_static_shadow_exponent_scale` | Scales the atlas size of shadows so they take up more space, doesn't seem to be useful since increasing the atlas's size itself is almost always a better solution. Default is 1, higher values make some shadows appear sharper |
 
 
 ## Other Clustered Changes
