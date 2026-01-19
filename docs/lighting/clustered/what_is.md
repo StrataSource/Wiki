@@ -25,11 +25,11 @@ Traditionally in Source, light sources light up the map in two ways: by directly
 
 * Top: Normal lighting.
 * Middle: Direct lighting only. Notice how the room became darker.
-* Bottom: Indirect lighting only. The room is now dimly lit, with only NPC and cubes neing bright.
+* Bottom: Indirect lighting only. The room is now dimly lit, with only NPC and cubes being bright.
 
-![Normal Lighting](images\light_static+.png)
+![Normal Lighting](images\normal_lighting.png)
 
-![Direct lighting only](images\light_static.png)
+![Direct lighting only](images\direct_lighting.png)
 
 ![Indirect lighting only](images\light_indirect.png)
 
