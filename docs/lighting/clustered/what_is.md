@@ -1,5 +1,5 @@
 ---
-title: "Clustered Lighting: How Does It Work?"
+title: "Introduction"
 weight: 10
 features:
     - USE_CLUSTERED
