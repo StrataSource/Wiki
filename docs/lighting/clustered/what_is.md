@@ -1,9 +1,10 @@
 ---
-title: "Introduction"
+title: "Clustered Lighting: How Does It Work?"
 weight: 10
 features:
     - USE_CLUSTERED
 ---
+
 # Clustered Lighting: How Does It Work?
 
 Clustered Lighting adds a new dynamic lighting system to Strata, with the following major improvements:
@@ -35,26 +36,23 @@ Traditionally in Source, light sources light up the map in two ways: by directly
 
 Two major limitations of this system are that it cannot easily support dynamic light and shadows, since both are baked into the lightmap which can only change in very limited ways at runtime, and that it does not support specular lighting.
 
-##
-#### Clustered lighting improves these limitations,
-by adding efficient dynamic lighting for all light types, instead of just projected textures.
+Clustered lighting improves these limitations, by adding efficient dynamic lighting for all light types, instead of just projected textures.
 Clustered uses traditional shadow-mapping techniques and renders to a single shadow atlas instead of a separate depth texture like projected textures do. The shadow atlas contains the depth values for all lights in the scene.
-Shadowmaps update only in certain scenarios: when the light source moves and when an object moves inside the light. 
+Shadowmaps update only in certain scenarios: when the light source moves and when an object moves inside the light.
 
 Now, there are three properties of a clustered light entity:
+
 * Direct lighting, that can be statically baked into the lightmap or dynamically use the clustered lighting
 * Indirect lighting, that can be baked or disabled
 * Specular lighting, which is a realistic reflection of the light, can be disabled as well
 
 There are three keyvalues that control these properties: **Direct light mode**, **Indirect light mode.** and **Specular light mode**.
 
-
-|                 |  Direct           |  Indirect    |    Specular       |
-| --------------- | ----------------- | ------------ | ----------------- |
-| None            | "None"            | "Static Only"| "Dynamic Only"    |
-| Static          | "None"            | "Static Only"| -                 |
-| Dynamic         | "None"            | -            | "Dynamic Only"    |
-
+|                 |     Direct        |    Indirect   |    Specular     |
+| --------------- | ----------------- | ------------  | --------------- |
+| None            |     "None"        |    "None"     |     "None"      |
+| Static          |  "Static Only"    | "Static Only" |       -         |
+| Dynamic         |  "Dynamic Only"   |      -        |  "Dynamic Only" |
 
 ## Specular Lighting
 
@@ -91,13 +89,12 @@ The addition of specular lighting also make metallic PBR materials look much mor
 
 ![Specular](images/specular_shadon.png)
 
-
 ## Real Time Shadows
 
 With real time light and shadows, normal `light_rt` and `light_rt_spot` entities move, updating the light of their surroundings in real time. They can also be parented to other entities.
 
 > [!NOTE]
-> Clustered lights don't update their shadows when the object isn't moving (eg. when animation is played) unless a physics object updates its shadow around that object or if `Always Update` flag is set. 
+> Clustered lights don't update their shadows when the object isn't moving (eg. when animation is played) unless a physics object updates its shadow around that object or if `Always Update` flag is set.
 
 There are 2 entities that can produce real time shadows.
 
@@ -125,24 +122,24 @@ You can control the size of the shadow map by changing the "Initial Shadow Size"
 ![Initial Shadow Size is 7](images/shadowsize7.png)
 
 > [!NOTE]
-> In the clustered renderer, shadowmaps for all lights are stored in a single, larger texture, called the 'Shadow Atlas', which has space for a limited amount of shadow data. Each time you increase the size of a shadow by 1, you increase the atlas' shadow size by a factor of 4. For example, a shadow of size 2 takes up only a quarter of the space that a shadow of size 3 takes up. If shadows in your map stop appearing suddenly, consider reducing the shadow size of a few less important shadows.
+> In the clustered renderer, shadowmaps for all lights are stored in a single, larger texture, called the 'Shadow Atlas', which has space for a limited amount of shadow data. Each time you increase the size of a shadow by 1, you increase the atlas' shadow size by a factor of 4. For example, a shadow of size 2 takes up only a quarter of the space that a shadow of size 3 takes up.
+> If shadows in your map stop appearing suddenly, consider reducing the shadow size of a few less important shadows.
 
 > [!WARNING]
-> When increasing the outer angle of `light_rt_spot`, note that the edges of the spot will have sharper shadows than the center. This is importams since setting up a `light_rt_spot` with a high shadow size and a high outer angle will produce low-quality shadows in the center while still taking up a huge piece of shadow atlas. Consder using `env_projectedtexture` or `env_cascade_light` (when imitating sunlight) in scenarios like these.
+> When increasing the outer angle of `light_rt_spot`, note that the edges of the spot will have sharper shadows than the center. This is important since setting up a `light_rt_spot` with a high shadow size and a high outer angle will produce low-quality shadows in the center while still taking up a huge piece of shadow atlas. Consider using `env_projectedtexture` or `env_cascade_light` (when imitating sunlight) in scenarios like these.
 
 ## Console commands
 
 There are some clustered-related console commands that give a more precise control over clustered shadows.
 
-| Command                                   | Purpose           |
-|-------------------------------------------|-------------------|
-|`r_clustered_lighting_enable`              | Toggles clustered lights. Default is 1 |
-|`r_clustered_shadowframebudget`            | Determines how many shadow faces can be rendered per frame. Default is 6. High values (like 50) may impact perfomance.|
-|`r_clustered_shadow_depthbias`             | Controls shadow ance and peter panning. High values (like 0.1) break shadows completely, lower values make shadows appear on edges of shadowmaps. Default is 0.00005 |
-|`r_clustered_shadow_slopescale`            | Similar to depthbias, but applied depending on how glancing the angle to the surface being rendered in the shadowmap, since more glancing angles will need higher depth bias. High values make shadows leak through world. Default is 5 |
+| Command                                   | Purpose                                                                                                                                                                 |
+|-------------------------------------------|-------------------                                                                                                                                                      |
+|`r_clustered_lighting_enable`              | Toggles clustered lights. Default is 1.                                                                                                                                 |
+|`r_clustered_shadowframebudget`            | Determines how many shadow faces can be rendered per frame. Default is 6. High values (like 50) may impact performance.                                                 |
+|`r_clustered_shadow_depthbias`             | Controls shadow once and peter panning. High values (like 0.1) break shadows completely, lower values make shadows appear on edges of shadowmaps. Default is 0.00005.   |
+|`r_clustered_shadow_slopescale`            | Similar to `r_clustered_shadow_depthbias`, but applied depending on how glancing the angle to the surface being rendered in the shadowmap, since more glancing angles will need higher depth bias. High values make shadows leak through world. Default is 5.                                                                                                                                                                                                                    |
 |`r_clustered_static_lightcull`             | Experimental. Allows more lights to be rendered on AMD GPUs, but makes it way slower to render on NVidia GPUs. It is recommended not to touch if you don't use AMD GPU. |
-|`r_clustered_static_shadow_exponent_scale` | Scales the atlas size of shadows so they take up more space, doesn't seem to be useful since increasing the atlas's size itself is almost always a better solution. Default is 1, higher values make some shadows appear sharper |
-
+|`r_clustered_static_shadow_exponent_scale` | Scales the atlas size of shadows so they take up more space, doesn't seem to be useful since increasing the atlas's size itself is almost always a better solution. Default is 1, higher values make some shadows appear sharper.                                                                                                                                                                                                              |
 
 ## Other Clustered Changes
 
