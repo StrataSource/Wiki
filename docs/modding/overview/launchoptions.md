@@ -20,7 +20,11 @@ of launch options, please see
 | -dedicated               | Launches the game as a dedicated server                                                                    |
 | -nojserrors              | Disables the Panorama JS error dialog box                                                                  |
 | -unrestrictedwebrequests | Disables the Panorama web request whitelist. NOT recommended, unless for a standalone mod                  |
-
+| -debug_dynamic_mounts    | Enables verbose debug printing for debugging dynamic mounts                                                |
+| -safemode                | Runs the game in safe mode, disabling additional configured mounts                                         |
+| -jolt                    | Runs the game with vphysics_jolt (EXPERIMENTAL!)                                                           |
+| -dedicated               | Launch the dedicated server                                                                                |
+| -tools                   | Launch the game in engine tools mode                                                                       |
 
 # Linux-only options
 
@@ -36,4 +40,4 @@ The following options are only available on Linux currently.
 
 | Option      | Description                                                 |
 | ----------- | ----------------------------------------------------------- |
-| -winecompat | Runs hammer with some workarounds for wine bugs/differences & enables the Qt file browser. |
+| -winecompat | Enables the Qt file dialog in Hammer (on Linux)             |
