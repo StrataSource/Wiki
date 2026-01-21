@@ -338,4 +338,14 @@ struct dworldlight_version2_t
     int             texinfo;
     int             owner;
 };
+
+// For use with dflagslump_t
+#define LVLFLAGS_DISABLE_BAKED_AO 0x40000000 // VRad baked AO was disabled, allowing for the use of SSAO
+
+// Same as the SDK
+struct dflagslump_t
+{
+	uint32          levelFlags;
+};
+
 ```
