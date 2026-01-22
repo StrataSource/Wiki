@@ -6,7 +6,7 @@ Full native Linux support, for both games and modding tools, is a major goal of 
 
 | Tool         | Compatibility            | Notes                                                                                       |
 | ------------ | ------------------------ | ------------------------------------------------------------------------------------------- |
-| Hammer       | *Combatible thru Wine*   | Needs to be run with `-winecompat`                                                          |
+| Hammer       | *Combatible thru Wine*   | Needs to be run with `-winecompat`, see [Running Hammer on Linux](hammer_linux.md)                                                          |
 | HLMV         | *Combatible thru Wine*   | None                                                          |
 | vbsp/vvis/vrad | Native                 | None                                                                                        |
 | vtex(2)      | Native                   | None                                                                                        |

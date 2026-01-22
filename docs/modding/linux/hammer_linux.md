@@ -7,6 +7,8 @@ This article will cover the process of running Hammer on Linux-based operating s
 ## Prerequisites
 This process uses a program named [Wine](https://www.winehq.org/), which is a translation layer that converts calls meant for Windows into native Linux calls, without the need for emulation. Wine can be installed using your distro's appropriate package manager or from the [WineHQ](https://www.winehq.org/) website. 
 
+If using a Virtual Machine or emulator such as WinBoat, Hammer should work as-is, minus any configuration file changes.
+
 ## Running Hammer
 First, run a Terminal window and navigate to `<game>/bin/win64` using `cd`. Now, copy this command into the terminal: 
 ```
