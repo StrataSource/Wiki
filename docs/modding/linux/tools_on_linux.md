@@ -5,7 +5,7 @@ title: "Running Windows Tools on Linux"
 This article will cover the process of running Hammer on Linux-based operating systems and address many common questions or issues that may arise.
 
 ## Prerequisites
-This process uses a program named [Wine](https://www.winehq.org/), which is a translation layer that converts calls for Windows into native Linux calls, without the need for emulation. Wine can be installed using your distro's appropriate package manager, typically under the package name `wine`, or from Wine's website. 
+This process uses [Wine](https://www.winehq.org/), a program which acts as a translation layer that converts Windows calls into Linux calls, without the need for emulation. Wine can be installed using your distro's appropriate package manager, typically under the package name `wine`, or from Wine's website. 
 
 >[!CAUTION]
 >Since Wine 11, both the 32 and 64 bit packages of wine have been combined into one, so you only need to install the `wine` package for the tools to run properly. Installing the seperate outdated 32 and 64 bit packages is not recommended and will likely cause issues.
