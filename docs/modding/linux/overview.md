@@ -6,12 +6,9 @@ Full native Linux support, for both games and modding tools, is a major goal of 
 
 | Tool         | Compatibility            | Notes |
 | ------------ | ------------------------ | ----- |
-| Hammer       | *Combatible thru Wine*   | Needs to be run with `-winecompat`, see [Running Hammer on Linux](hammer_linux.md)|
-| HLMV         | *Combatible thru Wine*   | None |
-| vbsp/vvis/vrad | Native                 | None |
+| Hammer       | *Combatible thru Wine*   | Needs to be run with `-winecompat`, see [Running Windows Tools on Linux](./tools_on_linux) |
+| HLMV         | *Combatible thru Wine*   | Same with Hammer |
+| Faceposer    | *Compatible thru Wine*         | Requires minimum Wine 11. Same process as Hammar. |
+| vbsp/vvis/vrad | Native                 | When running Hammer under Wine, make sure to point to the Win64 versions for Compatibility |
 | vtex(2)      | Native                   | None |
-| Faceposer    | **Incompatible**         | Frequent crashes or instabilities. |
 | SDK launcher | Native                   | Must use version in `Portal 2 Community Edition/bin/linux64`, launching from Steam does not work |
-
-
-TODO: Page for getting hammer/hlmv to work thru Wine. Add more tools to this table.
