@@ -10,7 +10,7 @@ Full native Linux support, for both games and modding tools, is a major goal of 
 | ------------ | ------------------------ | ----- |
 | Hammer       | *Combatible thru Wine*   | Needs to be run with `-winecompat`, see [Running Windows Tools on Linux](./tools_on_linux) |
 | HLMV         | *Combatible thru Wine*   | Same with Hammer |
-| Faceposer    | *Compatible thru Wine*         | Requires minimum Wine 11. Same process as Hammar. |
+| Faceposer    | *Compatible thru Wine*         | Requires minimum Wine 11. Same process as Hammer. |
 | Postcompiler (TeamSpens HA) | *Compatible thru Wine* | While no Linux-native version is released, the program can be compiled for Linux by following instructions on the [Github Page](https://github.com/TeamSpen210/HammerAddons?tab=readme-ov-file#building-from-source) |
 | vbsp/vvis/vrad | Native                 | Only for use in shell scripts/wrappers. When running Hammer under Wine, make sure to point to the Win64 versions for compatibility |
 | SDK launcher | Native                   | Must use version in `Portal 2 Community Edition/bin/linux64`, launching from Steam does not work |
