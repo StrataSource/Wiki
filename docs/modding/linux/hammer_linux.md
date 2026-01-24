@@ -32,7 +32,7 @@ When you create the file for the first time, you may need to give it permission 
 sudo chmod +x "./hammer.sh"
 ```
 
-## Common Issues / Fixes
+## Common Issues and Fixes
 This section should cover most of the issues most users have when setting up Hammer. If this guide does not solve your issue, as for help in your game's Discord server. Make sure to list what steps you have taken to attempt to solve the issue, and follow [Dont Ask to Ask](https://dontasktoask.com/)!
 
 ### "Setup file 'gameinfo.txt' doesn't exist in subdirectory" when launching
