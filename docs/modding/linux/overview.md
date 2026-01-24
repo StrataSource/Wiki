@@ -8,10 +8,11 @@ Full native Linux support, for both games and modding tools, is a major goal of 
 
 | Tool         | Compatibility            | Notes |
 | ------------ | ------------------------ | ----- |
-| Hammer       | *Combatible thru Wine*   | Needs to be run with `-winecompat`, see [Running Windows Tools on Linux](./tools_on_linux) |
-| HLMV         | *Combatible thru Wine*   | Same with Hammer |
-| Faceposer    | *Compatible thru Wine*         | Requires minimum Wine 11. Same process as Hammer. |
-| Postcompiler (TeamSpens HA) | *Compatible thru Wine* | While no Linux-native version is released, the program can be compiled for Linux by following instructions on the [Github Page](https://github.com/TeamSpen210/HammerAddons?tab=readme-ov-file#building-from-source) |
-| vbsp/vvis/vrad | Native                 | Only for use in shell scripts/wrappers. When running Hammer under Wine, make sure to point to the Win64 versions for compatibility |
+| Hammer       | *Combatible thru Wine*   | Needs to be run with `-winecompat`, see [Running Windows Tools on Linux](./tools_on_linux). |
+| HLMV         | *Combatible thru Wine* | Same with Hammer. |
+| Faceposer    | *Compatible thru Wine* | Requires minimum Wine 11. Same process as Hammer. |
+| Postcompiler (TeamSpens HA) | *Compatible thru Wine* | While no Linux-native version is released, the program can be compiled for Linux by following instructions on the [Github Page](https://github.com/TeamSpen210/HammerAddons?tab=readme-ov-file#building-from-source). |
+| vbsp/vvis/vrad | Native | Only for use in shell scripts/wrappers. When running Hammer under Wine, make sure to point to the Win64 versions for compatibility. |
+| `.ps1` scripts | Native | Requires [Powershell](https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-linux?view=powershell-7.5) to be installed. |
 | All engine tools (particle editor, material editor, etc)| Native | None |
-| SDK launcher | Native                   | Must use version in `Portal 2 Community Edition/bin/linux64`, launching from Steam does not work |
+| SDK launcher | Native | Must use version in `Portal 2 Community Edition/bin/linux64`, launching from Steam will launch the .exe version. |

@@ -19,11 +19,11 @@ First, run a Terminal window and navigate to `<game>/bin/win64` using `cd`. Now,
 ```
 wine hammer.exe -winecompat -game "./../../YOUR_MOD_HERE"
 ```
+If you are running Wine for the first time, you may get a popup notifying you that Wine is configuring itself. This will dissappear on its own in a couple seconds. After this, Hammer should start up normally.
 >[!NOTE]
->`-winecompat` is only necessary for Hammer, as it enables the Qt file dialog instead of the native wine dialog, which is not present in either HLMV or Faceposer.
->If you are starting Hammer for the first time on your system, `-game` should not be necessary, as the default config file will usually generate a correct path.
-Once you run this option, Hammer should launch and provide you with the normal configuration prompt.
->For HLMV/Faceposer, `-game` is *required* and the program will fail to launch or throw frequent errors if it is missing.
+>* `-winecompat` is only necessary for Hammer, as it enables the Qt file dialog instead of the native wine dialog. Qt is currently not present in either HLMV or Faceposer, so this command will have no effect.
+>* If you are starting Hammer for the first time on your system, `-game` should not be necessary, as the default config file will usually generate a correct path.
+>* For HLMV/Faceposer, `-game` is *required* and the program will fail to launch or throw frequent errors if it is missing.
 
 If you are running Hammer after previously using the program on Windows, you will have to edit your configurations to the correct filepaths. Make sure to point to the Windows executables, even for tools that have Linux-native versions, as Wine is not able to run Linux applications.
 
