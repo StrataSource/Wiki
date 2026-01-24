@@ -8,18 +8,18 @@ This article will cover the process of running Hammer on Linux-based operating s
 This process uses [Wine](https://www.winehq.org/), a program which acts as a translation layer that converts Windows calls into Linux calls, without the need for emulation. Wine can be installed using your distro's appropriate package manager, typically under the package name `wine`, or from Wine's website. 
 
 >[!CAUTION]
->Since Wine 11, both the 32 and 64 bit packages of wine have been combined into one, so you only need to install the `wine` package for the tools to run properly. Installing the seperate outdated 32 and 64 bit packages is not recommended and will likely cause issues.
+>Since Wine 11, both the 32 and 64 bit packages of wine have been combined into one, so you only need to install the `wine` package for the tools to run properly. Installing the separate outdated 32 and 64 bit packages is not recommended and will likely cause issues.
 
 If using a Virtual Machine or emulator such as WinBoat, the tools should work as-is, apart from any configuration file changes.
 
 ## Running Windows Tools
-This section uses Hammer as an example, but applies also to HLMV and Faceposer. Just replace all instaces of `hammer.exe` with the appropriate executable.
+This section uses Hammer as an example, but applies also to HLMV and Faceposer. Just replace all instances of `hammer.exe` with the appropriate executable.
 
 First, run a Terminal window and navigate to `<game>/bin/win64` using `cd`. Now, copy this command into the terminal: 
 ```
 wine hammer.exe -winecompat -game "./../../YOUR_MOD_HERE"
 ```
-If you are running Wine for the first time, you may get a popup notifying you that Wine is configuring itself. This will dissappear on its own in a couple seconds. After this, Hammer should start up normally.
+If you are running Wine for the first time, you may get a popup notifying you that Wine is configuring itself. This will disappear on its own in a couple seconds. After this, Hammer should start up normally.
 >[!NOTE]
 >* `-winecompat` is only necessary for Hammer, as it enables the Qt file dialog instead of the native wine dialog. Qt is currently not present in either HLMV or Faceposer, so this command will have no effect.
 >* If you are starting Hammer for the first time on your system, `-game` should not be necessary, as the default config file will usually generate a correct path.
@@ -30,6 +30,7 @@ If you are running Hammer after previously using the program on Windows, you wil
 ### Creating a Shell script
 For ease of use, you may find it useful to create a Shell (`.sh`) script that automatically runs Hammer under Wine. Here is an example of a script for Portal 2: Community Edition named `hammer.sh` located in `/bin/linux64/`:
 ```
+#!/usr/bin/env sh
 echo "Launching Hammer under Wine"
 cd "./../win64"
 wine "./hammer.exe" -winecompat -game "./../../YOUR_MOD_HERE"
@@ -49,9 +50,9 @@ Typically, this occurs when a path in your configuration file is incorrect, espe
 
 For Hammer, if you see the Select Config dialog when you start the program, edit the config to use the correct path.
 
-For HLMV/Faceposer or if you only have one config for Hammer, first try making sure that the path specified in your `-game` option exists and that a `gameinfo.txt` file exsits. If it does exist but `gameinfo.txt` still cannot be found, try using an absolute path. This should fix most cases of broken paths. If this does not fix your issue, navigate to `<game>/hammer/cfg` and either delete or rename `gameconfig.txt`. This will recreate your game configuration file next time you start Hammer, and will likely fix all issues with broken paths. Alternatively, you can manually edit the file to alter the paths to their correct location.
+For HLMV/Faceposer or if you only have one config for Hammer, first try making sure that the path specified in your `-game` option exists and that a `gameinfo.txt` file exists. If it does exist but `gameinfo.txt` still cannot be found, try using an absolute path. This should fix most cases of broken paths. If this does not fix your issue, navigate to `<game>/hammer/cfg` and either delete or rename `gameconfig.txt`. This will recreate your game configuration file next time you start Hammer, and will likely fix all issues with broken paths. Alternatively, you can manually edit the file to alter the paths to their correct location.
 >[!NOTE]
->Wine prefixes all paths with a fake drive letter, `Z:` by default, to maintiain compatibility with Windows filesystems. Make sure to add this to the beginning of all your paths for them to work correctly.
+>Wine prefixes all paths with a fake drive letter, `Z:` for the root with each loaded partition having its own drive letter, to maintain compatibility with Windows filesystems. Make sure to add this to the beginning of all your paths for them to work correctly.
 
 ### My game looks washed out when ran from Hammer!
 In some distros or Desktop Environments, when launching the game through the compilation can appear washed out or overbrightened when ran through Wine. This appears to be an issue with how some Desktop Environments, like Hyprland, interact with Wine applications, so the best way to remedy this issue is by running the game through Steam and manually running the map through the console.
