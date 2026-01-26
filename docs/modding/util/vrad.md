@@ -4,9 +4,9 @@ title: vrad
 
 # vrad
 
-VRad or Valve Radiosity Simulator is the BSP compile tool responsible for generating lighting for your map. It is available for Windows and Linux.
+VRad, or Valve Radiosity Simulator, is the compile tool responsible for generating lighting data for your map. It's available for both Windows and Linux.
 
-## Strata Source Features
+## Strata Source Additions
 
 Changes over CSGO/Portal2 VRad:
 * Lighting that passes through world portals (See `-PortalTraversalLighting`)
@@ -16,14 +16,42 @@ Changes over CSGO/Portal2 VRad:
 * Expanded/removed limits
 * Much more!
 
-The following options have been added:
-* `-PortalTraversalLighting`
-* `-PortalTraversalAO`
-* `-aoscale`
-* `-aoradius`
-* `-aosamples`
-* `-noao`
-* `-StaticPropLightingFast`
+## Portal Traversal Lighting
+
+If enabled by `-PortalTraversalLighting`, light rays can be traced through static world portals. This can help avoid jarring lighting transitions that are often
+seen through world portals.
+
+'static' world portals must have their `isstatic` key set to 1, and a valid partner with the same configuration.
+
+## Ambient Occlusion
+
+>[!NOTE]
+> Baked ambient occlusion disables the use of runtime XeGTAO on brush geometry. XeGTAO provides a much higher quality form of AO with a higher runtime cost.
+> In most cases you should prefer XeGTAO over this feature.
+
+Baked ambient occlusion is a cheap alternative to more computationally expensive runtime SSAO algorithms. 
+VRad's implementation of AO is from CSGO, with some additional performance optimizations made to reduce map compile times.
+
+Baked AO is only rendered onto lightmaps and generally looks best on lower lightmap scales. While static props are treated as occluders, they cannot receive
+any of the AO themselves.
+
+>[!NOTE]
+> VRad AO significantly impacts map compile times, sometimes even doubling them. It's recommended to only enable it while doing a final lighting pass,
+> or to use XeGTAO instead.
+
+The following VRad parameters can be used to tweak the look of AO:
+* `-aoscale <number>`: Sets the ambient occlusion scale. Higher values yield stronger effects. Can't be used with `-aoradius`.
+* `-aosamples <number>`: Number of samples to take (Default: 32) 
+* `-aoradius <number>`: Sets the AO radius, in units. Higher values yield stronger effects. Can't be used with `-aoscale`
+* `-noao`: Disables baked ambient occlusion entirely.
+* `-PortalTraversalAO`: Allows baked ambient occlusion to traverse static world portals.
+
+## Light Culling
+
+Experimental light culling can be enabled with `-culllights`. This option will attempt to cull lights that are contributing an insignificant amount
+of light to a given texel, leading to a performance boost.
+
+Some artifacting or other bugs may occur, use with caution!
 
 ## Help Text
 
@@ -51,6 +79,7 @@ Common options:
 
   -vproject <directory> : Override the VPROJECT environment variable.
   -game <directory>     : Same as -vproject.
+  -report         : Write compile report next to vmf.
 
 Other options:
   -dump           : Write debugging .txt files.
@@ -101,17 +130,14 @@ Other options:
   -aoscale <float>  : Sets the ambient occlusion scale. Can't be used with -aoradius
   -aoradius <float> : Sets the ambient occlusion radius
   -aosamples <int>  : Sets the number ambient occlusion samples. Default is 32
-  -ambient <vector> : Sets the ambient term. Can be used to tweak lightmap color
+  -noao                  : Disable baked ambient occlusion  -ambient <vector> : Sets the ambient term. Can be used to tweak lightmap color
   -reflectivityscale <float> : Sets the reflectivity scale for all surfaces. Defaults to 1.0
   -disppatchradius <float> : Sets the maximum radius allowed for displacement patches
   -dispchop <float> : Number of luxel widths for a patch. Default is 8
-  -ldr              : Enables generation of LDR lightmaps
-  -hdr              : Enables generation of HDR lightmaps
-  -both             : Enables generation of both LDR and HDR lightmaps
   -staticpropsamplescale <float> : Extra sampling factor for indirect light for static props
   -ambientfromleafcenters : Samples ambient lighting from the center of the leaf
   -LeafAmbientSampleReduction <float> : Reduction factor for ambient samples. Defaults to 1.0
   -unlitdetail      : Disables lighting for detail props
-  -IndirectOnly     : Only compute radiosity lighting, and disable direct lighting  
-  -culllights       : Cull light during BuildFacelights
+  -IndirectOnly     : Only compute radiosity lighting, and disable direct lighting
+  -culllights       : Cull lights during BuildFacelights
 ```
