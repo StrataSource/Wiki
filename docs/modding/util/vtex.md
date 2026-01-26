@@ -4,6 +4,9 @@ title: vtex
 
 # vtex
 
+>[!CAUTION]
+> [MareTF](https://github.com/craftablescience/MareTF) should be used instead of VTex
+
 NOTE: This tool was replaced with [vtex2](/modding/util/vtex2)!
 
 vtex is a command line utility that builds VTF files. It is available for Windows and Linux.
