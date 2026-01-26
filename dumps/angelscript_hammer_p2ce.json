@@ -94,6 +94,7 @@
             }
         }
     ],
+    "funcdef": [],
     "function": [
         {
             "namespace": null,
@@ -2659,6 +2660,7 @@
             "namespace": null,
             "name": "array",
             "type": "ref",
+            "script_can_inherit": false,
             "template_parameter": [
                 {
                     "type": "class",
@@ -2669,166 +2671,235 @@
                 {
                     "name": "array",
                     "declaration": "array(int&in type, int&in list) { repeat T }",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "array",
                     "declaration": "array(int&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "array",
                     "declaration": "array(int&in, uint length)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "array",
                     "declaration": "array(int&in, uint length, const T&in value)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "T& opIndex(uint index)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "const T& opIndex(uint index) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForBegin",
                     "declaration": "uint opForBegin() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForEnd",
                     "declaration": "bool opForEnd(uint) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForNext",
                     "declaration": "uint opForNext(uint) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForValue0",
                     "declaration": "const T& opForValue0(uint index) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForValue1",
                     "declaration": "uint opForValue1(uint index) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "array<T>& opAssign(const array<T>&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "insertAt",
                     "declaration": "void insertAt(uint index, const T&in value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "insertAt",
                     "declaration": "void insertAt(uint index, const array<T>&inout arr)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "insertLast",
                     "declaration": "void insertLast(const T&in value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "removeAt",
                     "declaration": "void removeAt(uint index)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "removeLast",
                     "declaration": "void removeLast()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "removeRange",
                     "declaration": "void removeRange(uint start, uint count)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "length",
                     "declaration": "uint length() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "reserve",
                     "declaration": "void reserve(uint length)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "resize",
                     "declaration": "void resize(uint length)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "sortAsc",
                     "declaration": "void sortAsc()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "sortAsc",
                     "declaration": "void sortAsc(uint startAt, uint count)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "sortDesc",
                     "declaration": "void sortDesc()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "sortDesc",
                     "declaration": "void sortDesc(uint startAt, uint count)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "reverse",
                     "declaration": "void reverse()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "find",
                     "declaration": "int find(const T&in value) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "find",
                     "declaration": "int find(uint startAt, const T&in value) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "findByRef",
                     "declaration": "int findByRef(const T&in value) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "findByRef",
                     "declaration": "int findByRef(uint startAt, const T&in value) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const array<T>&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "isEmpty",
                     "declaration": "bool isEmpty() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "sort",
                     "declaration": "void sort(array<T>::less&in, uint startAt = 0, uint count = uint(-1))",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "funcdef": [
+                {
+                    "name": "less",
+                    "declaration": "bool less(const T&in a, const T&in b)",
                     "documentation": null
                 }
             ]
@@ -2837,271 +2908,375 @@
             "namespace": null,
             "name": "string",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "~string",
                     "declaration": "~string()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "string",
                     "declaration": "string()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "string",
                     "declaration": "string(const string&in other)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "string",
                     "declaration": "string(bool num)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "string",
                     "declaration": "string(int num)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "string",
                     "declaration": "string(uint num)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "string",
                     "declaration": "string(int64 num)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "string",
                     "declaration": "string(uint64 num)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "string",
                     "declaration": "string(float num)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "string",
                     "declaration": "string(double num)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "string& opAssign(const string&in str)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "string& opAssign(int64 num)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "string& opAssign(uint64 num)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "string& opAssign(double num)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "string& opAssign(float num)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "uint8& opIndex(uint idx)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "const uint8& opIndex(uint idx) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "string& opAddAssign(const string&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "string& opAddAssign(int64)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "string& opAddAssign(uint64)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "string& opAddAssign(double)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "string& opAddAssign(float)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "string opAdd(const string&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "string opAdd(int64) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "string opAdd(uint64) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd_r",
                     "declaration": "string opAdd_r(int64) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd_r",
                     "declaration": "string opAdd_r(uint64) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "string opAdd(double) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd_r",
                     "declaration": "string opAdd_r(double) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "string opAdd(float) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd_r",
                     "declaration": "string opAdd_r(float) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const string&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "len",
                     "declaration": "uint len() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "length",
                     "declaration": "uint length() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "resize",
                     "declaration": "uint resize() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "empty",
                     "declaration": "bool empty() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "tolower",
                     "declaration": "string tolower() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "toupper",
                     "declaration": "string toupper() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "trim",
                     "declaration": "string trim() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "toInt",
                     "declaration": "int64 toInt(int base = 10) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "toUInt",
                     "declaration": "uint64 toUInt(int base = 10) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "toFloat",
                     "declaration": "float toFloat() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "locate",
                     "declaration": "uint locate(const string&in, const uint = 0) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "substr",
                     "declaration": "string substr(const int start, const int length) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "subString",
                     "declaration": "string subString(const int start, const int length) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "substr",
                     "declaration": "string substr(const int start) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "subString",
                     "declaration": "string subString(const int start) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "replace",
                     "declaration": "string replace(const string&in search, const string&in replace) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "isAlpha",
                     "declaration": "bool isAlpha() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "isNumerical",
                     "declaration": "bool isNumerical() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "isNumeric",
                     "declaration": "bool isNumeric() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "isAlphaNumerical",
                     "declaration": "bool isAlphaNumerical() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "split",
                     "declaration": "array<string>@ split(const string&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "format",
+                    "declaration": "string format(const ?&in...) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -3109,66 +3284,89 @@
             "namespace": null,
             "name": "dictionaryValue",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "~dictionaryValue",
                     "declaration": "~dictionaryValue()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "dictionaryValue",
                     "declaration": "dictionaryValue()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "dictionaryValue& opAssign(const dictionaryValue&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opHndlAssign",
                     "declaration": "dictionaryValue& opHndlAssign(const ?&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opHndlAssign",
                     "declaration": "dictionaryValue& opHndlAssign(const dictionaryValue&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "dictionaryValue& opAssign(const ?&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "dictionaryValue& opAssign(double)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "dictionaryValue& opAssign(int64)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opCast",
                     "declaration": "void opCast(?&out)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opConv",
                     "declaration": "void opConv(?&out)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opConv",
                     "declaration": "int64 opConv()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opConv",
                     "declaration": "double opConv()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -3176,116 +3374,159 @@
             "namespace": null,
             "name": "dictionary",
             "type": "ref",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "dictionary",
                     "declaration": "dictionary(int&in) { repeat { string, ? } }",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "dictionary",
                     "declaration": "dictionary()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "dictionary& opAssign(const dictionary&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "set",
                     "declaration": "void set(const string&in, const ?&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "get",
                     "declaration": "bool get(const string&in, ?&out) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "set",
                     "declaration": "void set(const string&in, const int64&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "get",
                     "declaration": "bool get(const string&in, int64&out) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "set",
                     "declaration": "void set(const string&in, const double&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "get",
                     "declaration": "bool get(const string&in, double&out) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "exists",
                     "declaration": "bool exists(const string&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "isEmpty",
                     "declaration": "bool isEmpty() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "getSize",
                     "declaration": "uint getSize() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "delete",
                     "declaration": "bool delete(const string&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "deleteAll",
                     "declaration": "void deleteAll()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "getKeys",
                     "declaration": "array<string>@ getKeys() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "dictionaryValue& opIndex(const string&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "const dictionaryValue& opIndex(const string&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForBegin",
                     "declaration": "dictionaryIter@ opForBegin() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForEnd",
                     "declaration": "bool opForEnd(dictionaryIter@) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForNext",
                     "declaration": "dictionaryIter@ opForNext(dictionaryIter@) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForValue0",
                     "declaration": "const dictionaryValue& opForValue0(dictionaryIter@) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opForValue1",
                     "declaration": "const string& opForValue1(dictionaryIter@) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -3293,12 +3534,14 @@
             "namespace": null,
             "name": "dictionaryIter",
             "type": "ref",
+            "script_can_inherit": false,
             "method": []
         },
         {
             "namespace": null,
             "name": "grid",
             "type": "ref",
+            "script_can_inherit": false,
             "template_parameter": [
                 {
                     "type": "class",
@@ -3309,47 +3552,61 @@
                 {
                     "name": "grid",
                     "declaration": "grid(int&in type, int&in list) { repeat { repeat_same T } }",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "grid",
                     "declaration": "grid(int&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "grid",
                     "declaration": "grid(int&in, uint, uint)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "grid",
                     "declaration": "grid(int&in, uint, uint, const T&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "T& opIndex(uint, uint)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "const T& opIndex(uint, uint) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "resize",
                     "declaration": "void resize(uint width, uint height)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "width",
                     "declaration": "uint width() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "height",
                     "declaration": "uint height() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -3357,61 +3614,80 @@
             "namespace": null,
             "name": "any",
             "type": "ref",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "any",
                     "declaration": "any()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "any",
                     "declaration": "any(?&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "any",
                     "declaration": "any(const int64&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "any",
                     "declaration": "any(const double&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "any& opAssign(any&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "store",
                     "declaration": "void store(?&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "store",
                     "declaration": "void store(const int64&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "store",
                     "declaration": "void store(const double&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "retrieve",
                     "declaration": "bool retrieve(?&out) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "retrieve",
                     "declaration": "bool retrieve(int64&out) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "retrieve",
                     "declaration": "bool retrieve(double&out) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -3419,51 +3695,66 @@
             "namespace": null,
             "name": "ref",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "~ref",
                     "declaration": "~ref()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "ref",
                     "declaration": "ref()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "ref",
                     "declaration": "ref(const ref&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "ref",
                     "declaration": "ref(const ?&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "opCast",
                     "declaration": "void opCast(?&out)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opHndlAssign",
                     "declaration": "ref& opHndlAssign(const ref&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opHndlAssign",
                     "declaration": "ref& opHndlAssign(const ?&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const ref&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const ?&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -3471,196 +3762,282 @@
             "namespace": null,
             "name": "Vector2D",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "Vector2D",
                     "declaration": "Vector2D()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Vector2D",
                     "declaration": "Vector2D(float, float)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Vector2D",
                     "declaration": "Vector2D(const Vector2D&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsValid",
                     "declaration": "bool IsValid() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Invalidate",
                     "declaration": "void Invalidate()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float opIndex(int i) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float& opIndex(int i)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Random",
                     "declaration": "void Random(float minVal, float maxVal)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const Vector2D&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "Vector2D& opAddAssign(const Vector2D&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSubAssign",
                     "declaration": "Vector2D& opSubAssign(const Vector2D&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMulAssign",
                     "declaration": "Vector2D& opMulAssign(const Vector2D&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMulAssign",
                     "declaration": "Vector2D& opMulAssign(float s)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDivAssign",
                     "declaration": "Vector2D& opDivAssign(const Vector2D&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDivAssign",
                     "declaration": "Vector2D& opDivAssign(float s)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Negate",
                     "declaration": "void Negate()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Length",
                     "declaration": "float Length() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "LengthSqr",
                     "declaration": "float LengthSqr() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsZero",
                     "declaration": "bool IsZero(float tolerance = 0.009999999776482582) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "NormalizeInPlace",
                     "declaration": "float NormalizeInPlace()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsLengthGreaterThan",
                     "declaration": "bool IsLengthGreaterThan(float val) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsLengthLessThan",
                     "declaration": "bool IsLengthLessThan(float val) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DistTo",
                     "declaration": "float DistTo(const Vector2D&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DistToSqr",
                     "declaration": "float DistToSqr(const Vector2D&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "MulAdd",
                     "declaration": "void MulAdd(const Vector2D&in a, const Vector2D&in b, float scalar)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Dot",
                     "declaration": "float Dot(const Vector2D&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "Vector2D& opAssign(const Vector2D&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opNeg",
                     "declaration": "Vector2D opNeg() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "Vector2D opAdd(const Vector2D&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSub",
                     "declaration": "Vector2D opSub(const Vector2D&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "Vector2D opMul(const Vector2D&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDiv",
                     "declaration": "Vector2D opDiv(const Vector2D&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "Vector2D opMul(float fl) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDiv",
                     "declaration": "Vector2D opDiv(float fl) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Cross",
                     "declaration": "float Cross(const Vector2D&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Min",
                     "declaration": "Vector2D Min(const Vector2D&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Max",
                     "declaration": "Vector2D Max(const Vector2D&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "property": [
+                {
+                    "name": "x",
+                    "visibility": "public",
+                    "declaration": "float x"
+                },
+                {
+                    "name": "y",
+                    "visibility": "public",
+                    "declaration": "float y"
                 }
             ]
         },
@@ -3668,291 +4045,420 @@
             "namespace": null,
             "name": "Vector",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "Vector",
                     "declaration": "Vector()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Vector",
                     "declaration": "Vector(float, float, float)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Vector",
                     "declaration": "Vector(const Vector&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy, float iz)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsValid",
                     "declaration": "bool IsValid() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsReasonable",
                     "declaration": "bool IsReasonable(float range = 1000000.0) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Invalidate",
                     "declaration": "void Invalidate()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float opIndex(int i) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float& opIndex(int i)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "AsVector2D",
                     "declaration": "Vector2D& AsVector2D()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "AsVector2D",
                     "declaration": "const Vector2D& AsVector2D() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Random",
                     "declaration": "void Random(float minVal, float maxVal)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Zero",
                     "declaration": "void Zero()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const Vector&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "Vector& opAddAssign(const Vector&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSubAssign",
                     "declaration": "Vector& opSubAssign(const Vector&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMulAssign",
                     "declaration": "Vector& opMulAssign(const Vector&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMulAssign",
                     "declaration": "Vector& opMulAssign(float s)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDivAssign",
                     "declaration": "Vector& opDivAssign(const Vector&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDivAssign",
                     "declaration": "Vector& opDivAssign(float s)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "Vector& opAddAssign(float fl)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSubAssign",
                     "declaration": "Vector& opSubAssign(float fl)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Negate",
                     "declaration": "void Negate()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Length",
                     "declaration": "float Length() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "LengthSqr",
                     "declaration": "float LengthSqr() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "LengthRecipFast",
                     "declaration": "float LengthRecipFast() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsZero",
                     "declaration": "bool IsZero(float tolerance = 0.009999999776482582) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsZeroFast",
                     "declaration": "bool IsZeroFast() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "NormalizeInPlace",
                     "declaration": "float NormalizeInPlace()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "NormalizeInPlaceSafe",
                     "declaration": "float NormalizeInPlaceSafe(const Vector&in vFallback)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Normalized",
                     "declaration": "Vector Normalized() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "NormalizedSafe",
                     "declaration": "Vector NormalizedSafe(const Vector&in vFallback) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsLengthGreaterThan",
                     "declaration": "bool IsLengthGreaterThan(float val) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsLengthLessThan",
                     "declaration": "bool IsLengthLessThan(float val) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "WithinAABox",
                     "declaration": "bool WithinAABox(const Vector&in boxmin, const Vector&in boxmax)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DistTo",
                     "declaration": "float DistTo(const Vector&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DistToSqr",
                     "declaration": "float DistToSqr(const Vector&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "MulAdd",
                     "declaration": "void MulAdd(const Vector&in a, const Vector&in b, float scalar)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Dot",
                     "declaration": "float Dot(const Vector&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "Vector& opAssign(const Vector&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "LargestComponent",
                     "declaration": "int LargestComponent() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "LargestComponentValue",
                     "declaration": "float LargestComponentValue() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SmallestComponent",
                     "declaration": "int SmallestComponent() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SmallestComponentValue",
                     "declaration": "float SmallestComponentValue() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Length2D",
                     "declaration": "float Length2D() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Length2DSqr",
                     "declaration": "float Length2DSqr() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ProjectOnto",
                     "declaration": "Vector ProjectOnto(const Vector&in onto)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opNeg",
                     "declaration": "Vector opNeg() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "Vector opAdd(const Vector&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSub",
                     "declaration": "Vector opSub(const Vector&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "Vector opMul(const Vector&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDiv",
                     "declaration": "Vector opDiv(const Vector&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "Vector opMul(float fl) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDiv",
                     "declaration": "Vector opDiv(float fl) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Cross",
                     "declaration": "Vector Cross(const Vector&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Min",
                     "declaration": "Vector Min(const Vector&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Max",
                     "declaration": "Vector Max(const Vector&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "property": [
+                {
+                    "name": "x",
+                    "visibility": "public",
+                    "declaration": "float x"
+                },
+                {
+                    "name": "y",
+                    "visibility": "public",
+                    "declaration": "float y"
+                },
+                {
+                    "name": "z",
+                    "visibility": "public",
+                    "declaration": "float z"
                 }
             ]
         },
@@ -3960,121 +4466,187 @@
             "namespace": null,
             "name": "Quaternion",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "Quaternion",
                     "declaration": "Quaternion()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Quaternion",
                     "declaration": "Quaternion(float, float, float, float)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Quaternion",
                     "declaration": "Quaternion(const Quaternion&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy, float iz, float iw)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(const Vector&in vImaginaryPart, float flRealPart)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsValid",
                     "declaration": "bool IsValid() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Invalidate",
                     "declaration": "void Invalidate()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const Quaternion&in src) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "Quaternion& opAssign(const Quaternion&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Conjugate",
                     "declaration": "Quaternion Conjugate() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetForward",
                     "declaration": "Vector GetForward() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetLeft",
                     "declaration": "Vector GetLeft() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetUp",
                     "declaration": "Vector GetUp() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Print",
                     "declaration": "void Print() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ImaginaryPart",
                     "declaration": "Vector& ImaginaryPart()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ImaginaryPart",
                     "declaration": "const Vector& ImaginaryPart() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RealPart",
                     "declaration": "float& RealPart()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RealPart",
                     "declaration": "float RealPart() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ToQAngle",
                     "declaration": "QAngle ToQAngle() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float opIndex(int i) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float& opIndex(int i)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "Quaternion opAdd() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opNeg",
                     "declaration": "Quaternion opNeg() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "property": [
+                {
+                    "name": "x",
+                    "visibility": "public",
+                    "declaration": "float x"
+                },
+                {
+                    "name": "y",
+                    "visibility": "public",
+                    "declaration": "float y"
+                },
+                {
+                    "name": "z",
+                    "visibility": "public",
+                    "declaration": "float z"
+                },
+                {
+                    "name": "w",
+                    "visibility": "public",
+                    "declaration": "float w"
                 }
             ]
         },
@@ -4082,141 +4654,210 @@
             "namespace": null,
             "name": "QAngle",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "QAngle",
                     "declaration": "QAngle()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "QAngle",
                     "declaration": "QAngle(float, float, float)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "QAngle",
                     "declaration": "QAngle(const QAngle&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy, float iz)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Random",
                     "declaration": "void Random(float minVal, float maxVal)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsValid",
                     "declaration": "bool IsValid() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Invalidate",
                     "declaration": "void Invalidate()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float opIndex(int i) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float& opIndex(int i)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const QAngle&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "QAngle& opAddAssign(const QAngle&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSubAssign",
                     "declaration": "QAngle& opSubAssign(const QAngle&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMulAssign",
                     "declaration": "QAngle& opMulAssign(float s)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDivAssign",
                     "declaration": "QAngle& opDivAssign(float s)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Length",
                     "declaration": "float Length() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "LengthSqr",
                     "declaration": "float LengthSqr() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "QAngle& opAssign(const QAngle&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "NormalizeInPlace",
                     "declaration": "void NormalizeInPlace()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "NormalizePositiveInPlace",
                     "declaration": "void NormalizePositiveInPlace()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Normalized",
                     "declaration": "QAngle Normalized() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "NormalizedPositive",
                     "declaration": "QAngle NormalizedPositive() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ToQuaternion",
                     "declaration": "Quaternion ToQuaternion() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opNeg",
                     "declaration": "QAngle opNeg() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "QAngle opAdd(const QAngle&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSub",
                     "declaration": "QAngle opSub(const QAngle&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "QAngle opMul(float fl) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDiv",
                     "declaration": "QAngle opDiv(float fl) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "property": [
+                {
+                    "name": "x",
+                    "visibility": "public",
+                    "declaration": "float x"
+                },
+                {
+                    "name": "y",
+                    "visibility": "public",
+                    "declaration": "float y"
+                },
+                {
+                    "name": "z",
+                    "visibility": "public",
+                    "declaration": "float z"
                 }
             ]
         },
@@ -4224,201 +4865,277 @@
             "namespace": null,
             "name": "matrix3x4_t",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "matrix3x4_t",
                     "declaration": "matrix3x4_t()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "matrix3x4_t",
                     "declaration": "matrix3x4_t(float, float, float, float, float, float, float, float, float, float, float, float)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "matrix3x4_t",
                     "declaration": "matrix3x4_t(const Vector&in, const Vector&in, const Vector&in, const Vector&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "InitXYZ",
                     "declaration": "void InitXYZ(const Vector&in xAxis, const Vector&in yAxis, const Vector&in zAxis, const Vector&in vecOrigin)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(const Vector&in xAxis, const Vector&in yAxis, const Vector&in zAxis, const Vector&in vecOrigin)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InitFromQAngles",
                     "declaration": "void InitFromQAngles(const QAngle&in angles, const Vector&in vPosition)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InitFromQAngles",
                     "declaration": "void InitFromQAngles(const QAngle&in angles)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InitFromQuaternion",
                     "declaration": "void InitFromQuaternion(const Quaternion&in orientation, const Vector&in vPosition)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InitFromQuaternion",
                     "declaration": "void InitFromQuaternion(const Quaternion&in orientation)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InitFromDiagonal",
                     "declaration": "void InitFromDiagonal(const Vector&in vDiagonal)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ToQuaternion",
                     "declaration": "Quaternion ToQuaternion() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ToQAngle",
                     "declaration": "QAngle ToQAngle() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetToIdentity",
                     "declaration": "void SetToIdentity()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ScaleUpper3x3Matrix",
                     "declaration": "void ScaleUpper3x3Matrix(float flScale)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetOrigin",
                     "declaration": "void SetOrigin(const Vector&in p)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetOrigin",
                     "declaration": "Vector GetOrigin() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Invalidate",
                     "declaration": "void Invalidate()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsValid",
                     "declaration": "bool IsValid() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const matrix3x4_t&in other) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsEqualTo",
                     "declaration": "bool IsEqualTo(const matrix3x4_t&in other, float flTolerance = 9.999999747378752e-06) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransformVector",
                     "declaration": "Vector TransformVector(const Vector&in v0) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RotateVector",
                     "declaration": "Vector RotateVector(const Vector&in v0) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransformVectorByInverse",
                     "declaration": "Vector TransformVectorByInverse(const Vector&in v0) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RotateVectorByInverse",
                     "declaration": "Vector RotateVectorByInverse(const Vector&in v0) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RotateExtents",
                     "declaration": "Vector RotateExtents(const Vector&in vBoxExtents) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransformAABB",
                     "declaration": "void TransformAABB(const Vector&in vecMinsIn, const Vector&in vecMaxsIn, Vector&out vecMinsOut, Vector&out vecMaxsOut) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransformAABBByInverse",
                     "declaration": "void TransformAABBByInverse(const Vector&in vecMinsIn, const Vector&in vecMaxsIn, Vector&out vecMinsOut, Vector&out vecMaxsOut) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RotateAABB",
                     "declaration": "void RotateAABB(const Vector&in vecMinsIn, const Vector&in vecMaxsIn, Vector&out vecMinsOut, Vector&out vecMaxsOut) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RotateAABBByInverse",
                     "declaration": "void RotateAABBByInverse(const Vector&in vecMinsIn, const Vector&in vecMaxsIn, Vector&out vecMinsOut, Vector&out vecMaxsOut) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetOrthogonalityError",
                     "declaration": "float GetOrthogonalityError() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetDeterminant",
                     "declaration": "float GetDeterminant() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetSylvestersCriterion",
                     "declaration": "float GetSylvestersCriterion() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetForward",
                     "declaration": "Vector GetForward() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetLeft",
                     "declaration": "Vector GetLeft() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetUp",
                     "declaration": "Vector GetUp() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetRow",
                     "declaration": "Vector GetRow(int nRow) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetRow",
                     "declaration": "void SetRow(int nRow, const Vector&in vRow)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InverseTR",
                     "declaration": "void InverseTR(matrix3x4_t&out Out) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InverseTR",
                     "declaration": "matrix3x4_t InverseTR() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -4426,51 +5143,80 @@
             "namespace": null,
             "name": "VPlane",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "VPlane",
                     "declaration": "VPlane()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "VPlane",
                     "declaration": "VPlane(const Vector&in, float)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(const Vector&in vNormal, float dist)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(const Vector&in vNormal, const Vector&in vPointOnPlane)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DistTo",
                     "declaration": "float DistTo(const Vector&in vVec) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "VPlane& opAssign(const VPlane&in thePlane)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Flip",
                     "declaration": "VPlane Flip() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetPointOnPlane",
                     "declaration": "Vector GetPointOnPlane() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ProjectPointOntoPlane",
                     "declaration": "Vector ProjectPointOntoPlane(const Vector&in vPoint) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "property": [
+                {
+                    "name": "m_Normal",
+                    "visibility": "public",
+                    "declaration": "Vector m_Normal"
+                },
+                {
+                    "name": "m_Dist",
+                    "visibility": "public",
+                    "declaration": "float m_Dist"
                 }
             ]
         },
@@ -4478,181 +5224,271 @@
             "namespace": null,
             "name": "Vector4D",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "Vector4D",
                     "declaration": "Vector4D()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Vector4D",
                     "declaration": "Vector4D(float, float, float, float)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Vector4D",
                     "declaration": "Vector4D(const Vector4D&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(float ix, float iy, float iz, float iw)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(const Vector&in src, float iw)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsValid",
                     "declaration": "bool IsValid() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float opIndex(int i) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float& opIndex(int i)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "AsVector3D",
                     "declaration": "Vector& AsVector3D()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "AsVector3D",
                     "declaration": "const Vector& AsVector3D() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "AsVector2D",
                     "declaration": "Vector2D& AsVector2D()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "AsVector2D",
                     "declaration": "const Vector2D& AsVector2D() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Random",
                     "declaration": "void Random(float minVal, float maxVal)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const Vector4D&in) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "Vector4D& opAddAssign(const Vector4D&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSubAssign",
                     "declaration": "Vector4D& opSubAssign(const Vector4D&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMulAssign",
                     "declaration": "Vector4D& opMulAssign(const Vector4D&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMulAssign",
                     "declaration": "Vector4D& opMulAssign(float s)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDivAssign",
                     "declaration": "Vector4D& opDivAssign(const Vector4D&in v)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDivAssign",
                     "declaration": "Vector4D& opDivAssign(float s)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opNeg",
                     "declaration": "Vector4D opNeg() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "Vector4D opMul(float fl) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opDiv",
                     "declaration": "Vector4D opDiv(float fl) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "Vector4D opMul(const Vector4D&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "Vector4D opAdd(const Vector4D&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSub",
                     "declaration": "Vector4D opSub(const Vector4D&in v) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Negate",
                     "declaration": "void Negate()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Length",
                     "declaration": "float Length() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "LengthSqr",
                     "declaration": "float LengthSqr() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsZero",
                     "declaration": "bool IsZero(float tolerance = 0.009999999776482582) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DistTo",
                     "declaration": "float DistTo(const Vector4D&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DistToSqr",
                     "declaration": "float DistToSqr(const Vector4D&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "MulAdd",
                     "declaration": "void MulAdd(const Vector4D&in a, const Vector4D&in b, float scalar)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Dot",
                     "declaration": "float Dot(const Vector4D&in vOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "Vector4D& opAssign(const Vector4D&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "property": [
+                {
+                    "name": "x",
+                    "visibility": "public",
+                    "declaration": "float x"
+                },
+                {
+                    "name": "y",
+                    "visibility": "public",
+                    "declaration": "float y"
+                },
+                {
+                    "name": "z",
+                    "visibility": "public",
+                    "declaration": "float z"
+                },
+                {
+                    "name": "w",
+                    "visibility": "public",
+                    "declaration": "float w"
                 }
             ]
         },
@@ -4660,296 +5496,409 @@
             "namespace": null,
             "name": "VMatrix",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "VMatrix",
                     "declaration": "VMatrix()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "VMatrix",
                     "declaration": "VMatrix(float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "VMatrix",
                     "declaration": "VMatrix(const Vector&in, const Vector&in, const Vector&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "VMatrix",
                     "declaration": "VMatrix(const matrix3x4_t&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(float m00, float m01, float m02, float m03, float m10, float m11, float m12, float m13, float m20, float m21, float m22, float m23, float m30, float m31, float m32, float m33)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "float& opIndex(uint, uint)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "const float& opIndex(uint, uint) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Init",
                     "declaration": "void Init(const matrix3x4_t&in matrix3x4)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetLeft",
                     "declaration": "void SetLeft(const Vector&in vLeft)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetUp",
                     "declaration": "void SetUp(const Vector&in vUp)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetForward",
                     "declaration": "void SetForward(const Vector&in vForward)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetBasisVectors",
                     "declaration": "void GetBasisVectors(Vector&out vForward, Vector&out vLeft, Vector&out vUp) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetBasisVectors",
                     "declaration": "void SetBasisVectors(const Vector&in vForward, const Vector&in vLeft, const Vector&in vUp)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetTranslation",
                     "declaration": "Vector& GetTranslation(Vector&out vTrans) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetTranslation",
                     "declaration": "void SetTranslation(const Vector&in vTrans)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "PreTranslate",
                     "declaration": "void PreTranslate(const Vector&in vTrans)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "PostTranslate",
                     "declaration": "void PostTranslate(const Vector&in vTrans)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "As3x4",
                     "declaration": "matrix3x4_t& As3x4()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "As3x4",
                     "declaration": "const matrix3x4_t& As3x4() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "CopyFrom3x4",
                     "declaration": "void CopyFrom3x4(const matrix3x4_t&in m3x4)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Set3x4",
                     "declaration": "void Set3x4(matrix3x4_t&out matrix3x4) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opEquals",
                     "declaration": "bool opEquals(const VMatrix&in src) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetLeft",
                     "declaration": "Vector GetLeft() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetUp",
                     "declaration": "Vector GetUp() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetForward",
                     "declaration": "Vector GetForward() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetTranslation",
                     "declaration": "Vector GetTranslation() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "V3Mul",
                     "declaration": "void V3Mul(const Vector&in vIn, Vector&out vOut) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "V4Mul",
                     "declaration": "void V4Mul(const Vector4D&in vIn, Vector4D&out vOut) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ApplyRotation",
                     "declaration": "Vector ApplyRotation(const Vector&in vVec) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "Vector opMul(const Vector&in vVec) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "VMul3x3",
                     "declaration": "Vector VMul3x3(const Vector&in vVec) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "VMul3x3Transpose",
                     "declaration": "Vector VMul3x3Transpose(const Vector&in vVec) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "VMul4x3",
                     "declaration": "Vector VMul4x3(const Vector&in vVec) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "VMul4x3Transpose",
                     "declaration": "Vector VMul4x3Transpose(const Vector&in vVec) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransformPlane",
                     "declaration": "void TransformPlane(const VPlane&in inPlane, VPlane&out outPlane) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "VPlane opMul(const VPlane&in thePlane) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAssign",
                     "declaration": "VMatrix& opAssign(const VMatrix&in mOther)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "MatrixMul",
                     "declaration": "void MatrixMul(const VMatrix&in vm, VMatrix&out Out) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAddAssign",
                     "declaration": "const VMatrix& opAddAssign(const VMatrix&in other)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opMul",
                     "declaration": "VMatrix opMul(const VMatrix&in mOther) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opAdd",
                     "declaration": "VMatrix opAdd(const VMatrix&in other) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opSub",
                     "declaration": "VMatrix opSub(const VMatrix&in other) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opNeg",
                     "declaration": "VMatrix opNeg() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opCom",
                     "declaration": "VMatrix opCom() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Identity",
                     "declaration": "void Identity()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsIdentity",
                     "declaration": "bool IsIdentity() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetupMatrixOrgAngles",
                     "declaration": "void SetupMatrixOrgAngles(const Vector&in origin, const QAngle&in vAngles)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InverseGeneral",
                     "declaration": "bool InverseGeneral(VMatrix&out vInverse) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InverseTR",
                     "declaration": "void InverseTR(VMatrix&out mRet) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsRotationMatrix",
                     "declaration": "bool IsRotationMatrix() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Element",
                     "declaration": "float Element(int i, int j) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetElement",
                     "declaration": "void SetElement(int i, int j, float flValue)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InverseTR",
                     "declaration": "VMatrix InverseTR() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetScale",
                     "declaration": "Vector GetScale() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Scale",
                     "declaration": "VMatrix Scale(const Vector&in vScale)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "NormalizeBasisVectors",
                     "declaration": "VMatrix NormalizeBasisVectors() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Transpose",
                     "declaration": "VMatrix Transpose() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Transpose3x3",
                     "declaration": "VMatrix Transpose3x3() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -4957,41 +5906,80 @@
             "namespace": null,
             "name": "Color",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "Color",
                     "declaration": "Color()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Color",
                     "declaration": "Color(uint8, uint8, uint8)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Color",
                     "declaration": "Color(uint8, uint8, uint8, uint8)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "SetColor",
                     "declaration": "void SetColor(uint8, uint8, uint8, uint8)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetColor",
                     "declaration": "void GetColor(uint8&out, uint8&out, uint8&out, uint8&out) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "uint8& opIndex(int)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "opIndex",
                     "declaration": "uint8& opIndex(int) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "property": [
+                {
+                    "name": "r",
+                    "visibility": "public",
+                    "declaration": "uint8 r"
+                },
+                {
+                    "name": "g",
+                    "visibility": "public",
+                    "declaration": "uint8 g"
+                },
+                {
+                    "name": "b",
+                    "visibility": "public",
+                    "declaration": "uint8 b"
+                },
+                {
+                    "name": "a",
+                    "visibility": "public",
+                    "declaration": "uint8 a"
+                },
+                {
+                    "name": "raw",
+                    "visibility": "public",
+                    "declaration": "uint raw"
                 }
             ]
         },
@@ -4999,85 +5987,121 @@
             "namespace": null,
             "name": "ConVar",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "~ConVar",
                     "declaration": "~ConVar()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "ConVar",
                     "declaration": "ConVar(const string&in name, const string&in value, EConVarFlag flags = FCVAR_NONE)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "ConVar",
                     "declaration": "ConVar(const ConVar&in other)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "ConVar",
                     "declaration": "ConVar(const string&in name, const string&in defValue, EConVarFlag flags, ConVar::ChangeCallback&in changeCallback)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "GetInt",
                     "declaration": "int GetInt() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetFloat",
                     "declaration": "float GetFloat() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetBool",
                     "declaration": "bool GetBool() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetColor",
                     "declaration": "Color GetColor() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetString",
                     "declaration": "string GetString() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetStringFast",
                     "declaration": "string GetStringFast() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetDefault",
                     "declaration": "string GetDefault() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "void SetValue(int value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "void SetValue(float value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "void SetValue(const string&in value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "void SetValue(Color value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Reset",
                     "declaration": "void Reset()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "funcdef": [
+                {
+                    "name": "ChangeCallback",
+                    "declaration": "void ChangeCallback(ConVar&in, const string&in prevStr, float prevVal)",
                     "documentation": null
                 }
             ]
@@ -5086,116 +6110,159 @@
             "namespace": null,
             "name": "ConVarRef",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "~ConVarRef",
                     "declaration": "~ConVarRef()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "ConVarRef",
                     "declaration": "ConVarRef(const string&in name)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "IsValid",
                     "declaration": "bool IsValid() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetFloat",
                     "declaration": "float GetFloat() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetInt",
                     "declaration": "int GetInt() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetBool",
                     "declaration": "bool GetBool() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetColor",
                     "declaration": "Color GetColor() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetString",
                     "declaration": "string GetString() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetVector",
                     "declaration": "Vector GetVector() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetVector4D",
                     "declaration": "Vector4D GetVector4D() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "bool SetValue(int value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "bool SetValue(float value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "bool SetValue(bool value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "bool SetValue(const string&in value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "bool SetValue(Color value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "bool SetValue(Vector value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetValue",
                     "declaration": "bool SetValue(Vector4D value)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetFlags",
                     "declaration": "EConVarFlag GetFlags() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetDefault",
                     "declaration": "string GetDefault() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetMin",
                     "declaration": "float GetMin() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetMax",
                     "declaration": "float GetMax() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Revert",
                     "declaration": "void Revert()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -5203,36 +6270,61 @@
             "namespace": null,
             "name": "BoundBox",
             "type": "ref",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "GetBoundsCenter",
                     "declaration": "void GetBoundsCenter(Vector&out center) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetBounds",
                     "declaration": "void GetBounds(Vector&out mins, Vector&out maxs) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsIntersectingBox",
                     "declaration": "bool IsIntersectingBox(const Vector&in mins, const Vector&in maxs) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsInsideBox",
                     "declaration": "bool IsInsideBox(const Vector&in mins, const Vector&in maxs) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "ContainsPoint",
                     "declaration": "bool ContainsPoint(const Vector&in point) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetBoundsSize",
                     "declaration": "void GetBoundsSize(Vector&out size) const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "property": [
+                {
+                    "name": "maxs",
+                    "visibility": "public",
+                    "declaration": "Vector maxs"
+                },
+                {
+                    "name": "mins",
+                    "visibility": "public",
+                    "declaration": "Vector mins"
                 }
             ]
         },
@@ -5240,76 +6332,103 @@
             "namespace": null,
             "name": "MeshBuilder",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "~MeshBuilder",
                     "declaration": "~MeshBuilder()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "MeshBuilder",
                     "declaration": "MeshBuilder()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "Position",
                     "declaration": "void Position(const Vector&in pos)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Normal",
                     "declaration": "void Normal(const Vector&in normal)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Color",
                     "declaration": "void Color(uint8 r, uint8 g, uint8 b, uint8 a)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TexCoord",
                     "declaration": "void TexCoord(int stage, float s, float t)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TexCoord",
                     "declaration": "void TexCoord(int stage, const Vector2D&in uv)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "AdvanceVertex",
                     "declaration": "void AdvanceVertex()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Index",
                     "declaration": "void Index(uint index)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "FastIndex2",
                     "declaration": "void FastIndex2(uint index1, uint index2)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "AdvanceIndex",
                     "declaration": "void AdvanceIndex()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Start",
                     "declaration": "void Start(const string&in matName, PrimitiveType primitiveType, int primitiveCount)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Start",
                     "declaration": "void Start(const string&in matName, PrimitiveType primitiveType, int vertexCount, int indexCount)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "Draw",
                     "declaration": "void Draw()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -5317,46 +6436,63 @@
             "namespace": null,
             "name": "Material",
             "type": "ref",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "GetName",
                     "declaration": "string GetName() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetKeywords",
                     "declaration": "string GetKeywords() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsDummy",
                     "declaration": "bool IsDummy() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsWater",
                     "declaration": "bool IsWater() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "IsNodraw",
                     "declaration": "bool IsNodraw() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetWidth",
                     "declaration": "int GetWidth() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetHeight",
                     "declaration": "int GetHeight() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetDecalScale",
                     "declaration": "float GetDecalScale() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -5364,116 +6500,161 @@
             "namespace": null,
             "name": "Render",
             "type": "ref",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "get_gridDistance",
                     "declaration": "float get_gridDistance() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "get_gridSize",
                     "declaration": "float get_gridSize() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "BeginLocalTransfrom",
                     "declaration": "void BeginLocalTransfrom(const VMatrix&in matrix, bool multiplyCurrent = false)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "EndLocalTransfrom",
                     "declaration": "void EndLocalTransfrom()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "get_inLocalTransformMode",
                     "declaration": "bool get_inLocalTransformMode() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetTextColor",
                     "declaration": "void SetTextColor(uint8 r, uint8 g, uint8 b, uint8 a = 255)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetTextColor",
                     "declaration": "void SetTextColor(Color color)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetDrawColor",
                     "declaration": "void SetDrawColor(uint8 r, uint8 g, uint8 b)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "SetDrawColor",
                     "declaration": "void SetDrawColor(Color color)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetDrawColor",
                     "declaration": "void GetDrawColor(Color&out color)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "BindMaterial",
                     "declaration": "void BindMaterial(Material@ material)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "PushRenderMode",
                     "declaration": "void PushRenderMode(RenderMode mode)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "PopRenderMode",
                     "declaration": "void PopRenderMode()",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DrawLine",
                     "declaration": "void DrawLine(const Vector&in start, const Vector&in end)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DrawBoxExt",
                     "declaration": "void DrawBoxExt(const Vector&in center, float extend, bool fill = false)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DrawPlane",
                     "declaration": "void DrawPlane(const Vector&in p0, const Vector&in p1, const Vector&in p2, const Vector&in p3, bool fill = false)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RenderWireframeBox",
                     "declaration": "void RenderWireframeBox(const Vector&in mins, const Vector&in maxs, uint8 r, uint8 g, uint8 b)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RenderBox",
                     "declaration": "void RenderBox(const Vector&in mins, const Vector&in maxs, uint8 r, uint8 g, uint8 b)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RenderArrow",
                     "declaration": "void RenderArrow(const Vector&in start, const Vector&in end, uint8 r, uint8 g, uint8 b)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RenderCone",
                     "declaration": "void RenderCone(const Vector&in base, const Vector&in tip, float radius, int slices, uint8 r, uint8 g, uint8 b)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RenderSphere",
                     "declaration": "void RenderSphere(const Vector&in center, float radius, int theta, int phi, uint8 r, uint8 g, uint8 b)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "RenderWireframeSphere",
                     "declaration": "void RenderWireframeSphere(const Vector&in center, float radius, int theta, int phi, uint8 r, uint8 g, uint8 b)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -5481,33 +6662,40 @@
             "namespace": null,
             "name": "CMapFace",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "~CMapFace",
                     "declaration": "~CMapFace()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "CMapFace",
                     "declaration": "CMapFace()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "CreateFace",
                     "declaration": "void CreateFace(array<Vector>@ points, int count)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
         {
             "namespace": null,
             "name": "CMapClass",
-            "type": "ref"
+            "type": "ref",
+            "script_can_inherit": false
         },
         {
             "namespace": null,
             "name": "CMapGroup",
             "type": "ref",
+            "script_can_inherit": false,
             "base_type": {
                 "namespace": null,
                 "name": "CMapClass"
@@ -5516,37 +6704,50 @@
                 {
                     "name": "CMapGroup",
                     "declaration": "CMapGroup()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "AddChild",
                     "declaration": "void AddChild(CMapClass@ child)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "CalcBounds",
                     "declaration": "void CalcBounds(bool full = false)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetBoundsSize",
                     "declaration": "void GetBoundsSize(Vector&out size)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransMove",
                     "declaration": "void TransMove(const Vector&in delta)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransRotate",
                     "declaration": "void TransRotate(const Vector&in point, const QAngle&in angle)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransScale",
                     "declaration": "void TransScale(const Vector&in point, const Vector&in scale)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -5554,6 +6755,7 @@
             "namespace": null,
             "name": "CMapSolid",
             "type": "ref",
+            "script_can_inherit": false,
             "base_type": {
                 "namespace": null,
                 "name": "CMapClass"
@@ -5562,42 +6764,57 @@
                 {
                     "name": "CMapSolid",
                     "declaration": "CMapSolid()",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "AddFace",
                     "declaration": "void AddFace(const CMapFace&in face)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "InitializeTextureAxes",
                     "declaration": "void InitializeTextureAxes(TextureAlignment alignment, uint initFlags)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "CalcBounds",
                     "declaration": "void CalcBounds(bool full = false)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GetBoundsSize",
                     "declaration": "void GetBoundsSize(Vector&out size)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransMove",
                     "declaration": "void TransMove(const Vector&in delta)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransRotate",
                     "declaration": "void TransRotate(const Vector&in point, const QAngle&in angle)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "TransScale",
                     "declaration": "void TransScale(const Vector&in point, const Vector&in scale)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -5605,26 +6822,31 @@
             "namespace": null,
             "name": "GUIData",
             "type": "value",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "GUIData",
                     "declaration": "GUIData(GuiElement, const string&in, int64)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "GUIData",
                     "declaration": "GUIData(GuiElement, const string&in, double)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "GUIData",
                     "declaration": "GUIData(GuiElement, const string&in)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 },
                 {
                     "name": "GUIData",
                     "declaration": "GUIData(GuiElement)",
-                    "documentation": null
+                    "documentation": null,
+                    "virtual": false
                 }
             ]
         },
@@ -5632,26 +6854,35 @@
             "namespace": null,
             "name": "ScriptSolid",
             "type": "ref",
+            "script_can_inherit": false,
             "method": [
                 {
                     "name": "GetGuiData",
                     "declaration": "array<GUIData>@ GetGuiData() const",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "GuiUpdated",
                     "declaration": "void GuiUpdated(const dictionary@ data)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "CreateMapSolid",
                     "declaration": "CMapClass@ CreateMapSolid(const BoundBox@ box, TextureAlignment align)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 },
                 {
                     "name": "DrawPreview",
                     "declaration": "void DrawPreview(Render@ render, const BoundBox@ box)",
-                    "documentation": null
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         }
