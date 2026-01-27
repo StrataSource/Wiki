@@ -3666,8 +3666,20 @@
         },
         {
             "namespace": "util",
+            "name": "TraceRay",
+            "declaration": "void util::TraceRay(const Ray_t&in ray, uint mask, CBaseEntity@ ignore, int group, trace_t&out trace)",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
             "name": "TracePortalLine",
-            "declaration": "void util::TracePortalLine(const Vector&in start, const Vector&in end, uint mask, CBaseEntity@ ignore, int group, trace_t&out trace, bool transform = true)",
+            "declaration": "CBaseEntity@ util::TracePortalLine(const Vector&in start, const Vector&in end, uint mask, CBaseEntity@ ignore, int group, trace_t&out trace, bool bullet = false, bool transform = true)",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
+            "name": "TracePortalRay",
+            "declaration": "CBaseEntity@ util::TracePortalRay(const Ray_t&in ray, uint mask, CBaseEntity@ ignore, int group, trace_t&out trace, bool bullet = false, bool transform = true)",
             "documentation": null
         },
         {
@@ -3686,6 +3698,12 @@
             "namespace": "util",
             "name": "Remove",
             "declaration": "void util::Remove(CBaseEntity@ entity)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "debugbreak",
+            "declaration": "void debugbreak()",
             "documentation": null
         }
     ],
@@ -7873,6 +7891,41 @@
         },
         {
             "namespace": null,
+            "name": "Ray_t",
+            "type": "value",
+            "script_can_inherit": false,
+            "method": [
+                {
+                    "name": "Ray_t",
+                    "declaration": "Ray_t()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(const Vector&in start, const Vector&in end)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(const Vector&in start, const Vector&in end, const Vector&in mins, const Vector&in maxs)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "InvDelta",
+                    "declaration": "Vector InvDelta() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
             "name": "FireBulletsInfo_t",
             "type": "value",
             "script_can_inherit": false,
@@ -8323,6 +8376,159 @@
         },
         {
             "namespace": null,
+            "name": "Variant",
+            "type": "value",
+            "script_can_inherit": false,
+            "method": [
+                {
+                    "name": "~Variant",
+                    "declaration": "~Variant()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Variant",
+                    "declaration": "Variant()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "FieldType",
+                    "declaration": "EFieldType FieldType() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Bool",
+                    "declaration": "bool Bool() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "String",
+                    "declaration": "string String() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Int",
+                    "declaration": "int Int() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Float",
+                    "declaration": "float Float() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Vector3D",
+                    "declaration": "void Vector3D(Vector&out) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Angle3D",
+                    "declaration": "void Angle3D(QAngle&out) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Color32",
+                    "declaration": "Color Color32() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetBool",
+                    "declaration": "void SetBool(bool b)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetInt",
+                    "declaration": "void SetInt(int i)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetFloat",
+                    "declaration": "void SetFloat(float f)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetVector3D",
+                    "declaration": "void SetVector3D(const Vector&in vec)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetPositionVector3D",
+                    "declaration": "void SetPositionVector3D(const Vector&in pos)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetAngle3D",
+                    "declaration": "void SetAngle3D(const QAngle&in ang)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetColor32",
+                    "declaration": "void SetColor32(Color clr)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetColor32",
+                    "declaration": "void SetColor32(int r, int g, int b, int a)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetString",
+                    "declaration": "void SetString(const string&in s)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetEntity",
+                    "declaration": "void SetEntity(CBaseEntity@ ent)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Entity",
+                    "declaration": "CBaseEntity@ Entity() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
             "name": "CBaseEntity",
             "type": "ref",
             "script_can_inherit": true,
@@ -8351,6 +8557,13 @@
                 {
                     "name": "SetModel",
                     "declaration": "void SetModel(const string&in)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "FireOutput",
+                    "declaration": "void FireOutput(const string&in output, Variant variant, CBaseEntity@ activator, CBaseEntity@ caller, float delay = 0)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -8461,8 +8674,8 @@
                     "virtual": false
                 },
                 {
-                    "name": "SetOwnerEntity",
-                    "declaration": "void SetOwnerEntity(CBaseEntity@ parent, int attachment = -1)",
+                    "name": "SetParent",
+                    "declaration": "void SetParent(CBaseEntity@ parent, int attachment = -1)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": true
@@ -8603,6 +8816,48 @@
                 {
                     "name": "SetCollisionBounds",
                     "declaration": "void SetCollisionBounds(const Vector&in mins, const Vector&in maxs)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "WorldAlignMins",
+                    "declaration": "const Vector& WorldAlignMins() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "WorldAlignMaxs",
+                    "declaration": "const Vector& WorldAlignMaxs() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "WorldSpaceCenter",
+                    "declaration": "const Vector& WorldSpaceCenter() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "WorldAlignSize",
+                    "declaration": "const Vector& WorldAlignSize() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "BoundingRadius",
+                    "declaration": "float BoundingRadius() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsPointSized",
+                    "declaration": "bool IsPointSized() const",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -8844,152 +9099,27 @@
                     "documentation": null,
                     "visibility": "public",
                     "virtual": true
-                }
-            ]
-        },
-        {
-            "namespace": null,
-            "name": "Variant",
-            "type": "value",
-            "script_can_inherit": false,
-            "method": [
-                {
-                    "name": "~Variant",
-                    "declaration": "~Variant()",
-                    "documentation": null,
-                    "virtual": false
                 },
                 {
-                    "name": "Variant",
-                    "declaration": "Variant()",
-                    "documentation": null,
-                    "virtual": false
-                },
-                {
-                    "name": "FieldType",
-                    "declaration": "EFieldType FieldType() const",
+                    "name": "TestCollision",
+                    "declaration": "bool TestCollision(const Ray_t&in ray, uint mask, trace_t&out trace)",
                     "documentation": null,
                     "visibility": "public",
-                    "virtual": false
+                    "virtual": true
                 },
                 {
-                    "name": "Bool",
-                    "declaration": "bool Bool() const",
+                    "name": "TestHitboxes",
+                    "declaration": "bool TestHitboxes(const Ray_t&in ray, uint mask, trace_t&out trace)",
                     "documentation": null,
                     "visibility": "public",
-                    "virtual": false
+                    "virtual": true
                 },
                 {
-                    "name": "String",
-                    "declaration": "string String() const",
+                    "name": "ComputeWorldSpaceSurroundingBox",
+                    "declaration": "void ComputeWorldSpaceSurroundingBox(Vector&out mins, Vector&out maxs)",
                     "documentation": null,
                     "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "Int",
-                    "declaration": "int Int() const",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "Float",
-                    "declaration": "float Float() const",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "Vector3D",
-                    "declaration": "void Vector3D(Vector&out) const",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "Angle3D",
-                    "declaration": "void Angle3D(QAngle&out) const",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "Color32",
-                    "declaration": "Color Color32() const",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetBool",
-                    "declaration": "void SetBool(bool b)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetInt",
-                    "declaration": "void SetInt(int i)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetFloat",
-                    "declaration": "void SetFloat(float f)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetEntity",
-                    "declaration": "void SetEntity(CBaseEntity@ ent)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetVector3D",
-                    "declaration": "void SetVector3D(const Vector&in vec)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetPositionVector3D",
-                    "declaration": "void SetPositionVector3D(const Vector&in pos)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetAngle3D",
-                    "declaration": "void SetAngle3D(const QAngle&in ang)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetColor32",
-                    "declaration": "void SetColor32(Color clr)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetColor32",
-                    "declaration": "void SetColor32(int r, int g, int b, int a)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
-                },
-                {
-                    "name": "SetString",
-                    "declaration": "void SetString(const string&in s)",
-                    "documentation": null,
-                    "visibility": "public",
-                    "virtual": false
+                    "virtual": true
                 }
             ]
         },
@@ -9314,6 +9444,13 @@
                 "name": "CBaseToggle"
             },
             "method": [
+                {
+                    "name": "InitTrigger",
+                    "declaration": "void InitTrigger()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
                 {
                     "name": "PassesTriggerFilters",
                     "declaration": "bool PassesTriggerFilters(CBaseEntity@ other) const",
@@ -10703,14 +10840,14 @@
                 },
                 {
                     "name": "FindByNameNearest",
-                    "declaration": "CBaseEntity@ FindByNameNearest(const string&in name, const Vector&in pos, float radius)",
+                    "declaration": "CBaseEntity@ FindByNameNearest(const string&in name, const Vector&in pos, float radius, CBaseEntity@ searcher = null, CBaseEntity@ activator = null, CBaseEntity@ caller = null)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
                 },
                 {
                     "name": "FindByNameWithin",
-                    "declaration": "CBaseEntity@ FindByNameWithin(CBaseEntity@ start, const string&in name, const Vector&in center, float radius)",
+                    "declaration": "CBaseEntity@ FindByNameWithin(CBaseEntity@ start, const string&in name, const Vector&in center, float radius, CBaseEntity@ searcher = null, CBaseEntity@ activator = null, CBaseEntity@ caller = null)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -10725,6 +10862,13 @@
                 {
                     "name": "FindByClassnameWithin",
                     "declaration": "CBaseEntity@ FindByClassnameWithin(CBaseEntity@ start, const string&in name, const Vector&in center, float radius)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetByIndex",
+                    "declaration": "CBaseEntity@ GetByIndex(int index)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
