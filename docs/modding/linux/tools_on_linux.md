@@ -5,14 +5,44 @@ title: "Running Windows Tools on Linux"
 
 This article will cover the process of running Hammer on Linux-based operating systems and address many common questions or issues that may arise.
 
-## Prerequisites
+## Installing Dependencies
 
-This process uses [Wine](https://www.winehq.org/), a program which acts as a translation layer that converts Windows calls into Linux calls, without the need for emulation. Wine can be installed using your distro's appropriate package manager, typically under the package name `wine`, or from Wine's website. 
+Running Windows applications on Linux is done through [Wine](https://www.winehq.org/). Valve has a modified version of Wine called Proton, but we do not recommend using it with Hammer for
+ease of use reasons, and due to some issues with dynamic mounting.
+
+### Step 1: Installing Wine and Winetricks
 
 >[!CAUTION]
->Since Wine 11, both the 32 and 64 bit packages of wine have been combined into one, so you only need to install the `wine` package for the tools to run properly. Installing the separate outdated 32 and 64 bit packages is not recommended and will likely cause issues.
+> Since Wine 11, both the 32 and 64 bit packages of wine have been combined into one, so you only need to install the `wine` package for the tools to run properly. Installing the separate outdated 32 and 64 bit packages is not recommended and will likely cause issues.
 
-If using a Virtual Machine or emulator such as WinBoat, the tools should work as-is, apart from any configuration file changes.
+>[!CAUTION]
+> Some versions of Wine 10 are known to cause severe flickering in the 2D and 3D viewports. **We recommend using Wine 11+**, if possible.
+>
+> Wine 11 causes a minor regression with the face edit dialog causing it to open when Hammer is launched.
+
+To install via APT (Debian, Ubuntu, etc.):
+```sh
+sudo apt-get install wine winetricks
+```
+
+To install via DNF (Fedora, Rocky Linux, Alma Linux, etc.):
+```sh
+sudo dnf install wine winetricks
+```
+
+To install via pacman (Arch, Manjaro, etc.):
+```sh
+sudo pacman -S wine winetricks
+```
+
+### Step 2: Installing DXVK with Winetricks
+
+For the best possible Hammer experience on Linux, we recommend using DXVK instead of the native WineD3D compatibility layer. DXVK fixes a number of issues caused by WineD3D.
+
+This can be done trivially using winetricks:
+```sh
+winetricks dlls dxvk
+```
 
 ## Running Windows Tools
 
@@ -52,8 +82,22 @@ For HLMV/Faceposer or if you only have one config for Hammer, first try making s
 
 ### My game looks washed out when ran from Hammer!
 
-In some distros or Desktop Environments, when launching the game through the compilation can appear washed out or overbrightened when ran through Wine. This appears to be an issue with how some Desktop Environments, like Hyprland, interact with Wine applications, so the best way to remedy this issue is by running the game through Steam and manually running the map through the console.
+Installing DXVK should fix this. The default DirectX 11 compatibility layer in wine called wined3d tends to cause this.
+
+You can also try to disable anti-aliasing in the Hammer settings, though this should be unnecessary with DXVK.
 
 ### "Portal 2 is not installed" (Portal 2: Community Edition)
 
-This error can occur for a variety of reasons, but usually it is because Portal 2 cannot be found by Steam. Make sure that Portal 2 is in fact installed and visible in your Steam library, then try verifying the game files of both Portal 2 and Portal 2: CE. Next, try restarting Steam to reload your library. If this does not fix your issue, try moving your Portal 2 install to the same drive as your Portal 2: Community Edition install. If all else fails, contact a programmer with your issue.
+This may happen if there's an issue with Steam's generated libraryfolders.vdf.
+1. Make sure that Portal 2 is actually installed in Steam
+2. Restart Steam to ensure the libraryfolders.vdf is updated on disk.
+
+Launching Hammer with `-debug_dynamic_mounts` will trace through the dynamic mounts loading code and can give hints as to why the mounting has failed.
+
+If you're still having issues, verify that `~/.steam/steam/steamapps/libraryfolders.vdf` exists and contains an entry for appid 620.
+
+### Hammer looks tiny on my 4k screen!
+
+You can adjust the default DPI of the applications using `winecfg`.
+
+Run `winecfg` in a terminal, navigate to "Graphics" and adjust the DPI as desired under the "Screen resolution" section.
