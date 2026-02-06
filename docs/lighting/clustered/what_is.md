@@ -128,6 +128,11 @@ You can control the size of the shadow map by changing the "Initial Shadow Size"
 > [!WARNING]
 > When increasing the outer angle of `light_rt_spot`, note that the edges of the spot will have sharper shadows than the center. This is important since setting up a `light_rt_spot` with a high shadow size and a high outer angle will produce low-quality shadows in the center while still taking up a huge piece of shadow atlas. Consider using `env_projectedtexture` or `env_cascade_light` (when imitating sunlight) in scenarios like these.
 
+## Light Cookies
+Light cookies, also known as cookie textures, are supported by clustered lights (`light_rt` and `light_rt_spot`). They can be used to apply a pattern to a light, controlling its shape and brightness. If you're not familiar with the concept of light cookies, imagine them like putting a piece of paper over a flashlight. If you were to cut out a shape from the paper, it would allow light to pass through, projecting a specific shape. Light cookies also have a similar effect to projected textures (`env_projectedtexture`).
+
+In Hammer, light cookies can be added to a light using the "Cookie Texture Name" and "Cookie Texture Frame" properties. When looking at lights through the Light Inspector, the texture can be set under "Pattern".
+
 ## Console commands
 
 There are some clustered-related console commands that give a more precise control over clustered shadows.
