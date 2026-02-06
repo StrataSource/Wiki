@@ -1115,7 +1115,7 @@
                 "key": "style",
                 "type": "choices",
                 "default": "Normal (0)",
-                "desc": "",
+                "desc": "Controls how light appears.",
                 "choices": {
                     "Normal": "0",
                     "Fluorescent flicker": "10",
@@ -1415,7 +1415,7 @@
                 "key": "startdisabled",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be disabled on spawn."
             }
         ],
         "inputs": [
@@ -2633,7 +2633,7 @@
                 "key": "color",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "A color used for this entity"
             },
             {
                 "name": "White Related Entity",
@@ -2858,7 +2858,7 @@
                 "key": "rendercolor",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "An RGB color value used for this entity."
             },
             {
                 "name": "HDR color scale.",
@@ -2996,14 +2996,14 @@
                 "key": "startdisabled",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be disabled on spawn."
             },
             {
                 "name": "Particle Color (R G B)",
                 "key": "color",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "A color used for this entity"
             },
             {
                 "name": "Particle Per Second",
@@ -3679,14 +3679,14 @@
                 "key": "startdisabled",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be disabled on spawn."
             },
             {
                 "name": "spawnflags",
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[16] Fade Corpse": {
                         "default": false,
@@ -3817,7 +3817,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Active": {
                         "default": false,
@@ -4277,7 +4277,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[16] Break on Touch": {
                         "default": false,
@@ -4589,7 +4589,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[4096] Start inactive": {
                         "default": true,
@@ -4707,7 +4707,7 @@
                 "key": "actor",
                 "type": "target_name_or_class",
                 "default": "",
-                "desc": ""
+                "desc": "NPC that this entity will affect"
             },
             {
                 "name": "Target Entity",
@@ -4732,7 +4732,7 @@
                 "key": "startactive",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be active on spawn."
             },
             {
                 "name": "Maximum state",
@@ -4797,7 +4797,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": false,
@@ -4868,7 +4868,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[65536] Allow jump up": {
                         "default": false,
@@ -5033,14 +5033,14 @@
                 "key": "actor",
                 "type": "target_name_or_class",
                 "default": "",
-                "desc": ""
+                "desc": "NPC that this entity will affect"
             },
             {
                 "name": "Target Entity",
                 "key": "goal",
                 "type": "string",
                 "default": "",
-                "desc": ""
+                "desc": "A goal fo the targeted NPCs"
             },
             {
                 "name": "Point to wait at if the target's not visible",
@@ -5082,7 +5082,8 @@
                 "key": "run",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should the NPC run instead of walk?"
+
             },
             {
                 "name": "Retrieve player?",
@@ -5211,7 +5212,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No def success": {
                         "default": false,
@@ -5291,7 +5292,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Auto Resize": {
                         "default": false,
@@ -5466,7 +5467,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Clients/Players": {
                         "default": true,
@@ -5504,10 +5505,10 @@
             },
             {
                 "name": "Start Disabled?",
-                "key": "startdisabled",
+                "key": "StartDisabled",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be disabled on spawn?"
             },
             {
                 "name": "Filter Name",
@@ -5580,7 +5581,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No Collision until break": {
                         "default": false,
@@ -5689,7 +5690,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start constrained": {
                         "default": false,
@@ -5739,7 +5740,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Use parent's orientation": {
                         "default": false,
@@ -5773,12 +5774,12 @@
             {
                 "name": "Activate",
                 "type": "void",
-                "desc": ""
+                "desc": "Activates the goal entity."
             },
             {
                 "name": "Deactivate",
                 "type": "void",
-                "desc": ""
+                "desc": "Deactivates the goal entity."
             }
         ],
         "outputs": []
@@ -5808,14 +5809,14 @@
                 "key": "searchname",
                 "type": "string",
                 "default": "",
-                "desc": ""
+                "desc": "A targetname, classname, or name of a hint group."
             },
             {
                 "name": "New Hint Group",
                 "key": "newhintgroup",
                 "type": "string",
                 "default": "",
-                "desc": ""
+                "desc": "New hint group to add to the entities meeting search criteria."
             },
             {
                 "name": "Search Radius",
@@ -5921,7 +5922,7 @@
                 "key": "startactive",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be active on spawn."
             },
             {
                 "name": "Assault Cue",
@@ -6048,19 +6049,19 @@
                 "key": "startactive",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be active on spawn."
             }
         ],
         "inputs": [
             {
                 "name": "Activate",
                 "type": "void",
-                "desc": ""
+                "desc": "Activates the goal entity."
             },
             {
                 "name": "Deactivate",
                 "type": "void",
-                "desc": ""
+                "desc": "Deactivates the goal entity."
             },
             {
                 "name": "SetDirectionalMarker",
@@ -6083,7 +6084,7 @@
                 "key": "actor",
                 "type": "target_name_or_class",
                 "default": "",
-                "desc": ""
+                "desc": "NPC that this entity will affect"
             },
             {
                 "name": "Search Type",
@@ -6101,7 +6102,7 @@
                 "key": "startactive",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be active on spawn."
             },
             {
                 "name": "Reaction to tactical change",
@@ -6299,7 +6300,7 @@
                 "key": "startactive",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be active on spawn."
             },
             {
                 "name": "Reciprocal",
@@ -6313,7 +6314,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Notify subject of target's location": {
                         "default": false,
@@ -6365,7 +6366,7 @@
                 "key": "startdisabled",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be disabled on spawn."
             },
             {
                 "name": "Minimum state",
@@ -6565,7 +6566,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Fire outputs with the Actor as Activator": {
                         "default": false,
@@ -6762,7 +6763,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[4] Repeatable": {
                         "default": true,
@@ -6854,7 +6855,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Infinite Range": {
                         "default": false,
@@ -7166,7 +7167,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Clear this point upon arrival, UNCONDITIONALLY": {
                         "default": false,
@@ -7313,7 +7314,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": true,
@@ -7367,7 +7368,7 @@
                 "key": "rendercolor",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "An RGB color value used for this entity."
             },
             {
                 "name": "HDR color scale.",
@@ -7560,7 +7561,7 @@
                 "key": "color",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "An RGB color value of the ambient light."
             },
             {
                 "name": "Lookup Falloff Start Distance",
@@ -7655,7 +7656,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Random Direction": {
                         "default": false,
@@ -7719,7 +7720,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Off": {
                         "default": false,
@@ -8099,14 +8100,14 @@
                 "key": "rendercolor",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "An RGB color value used for this entity."
             },
             {
                 "name": "spawnflags",
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": false,
@@ -8213,7 +8214,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Enable AutoSpawn (will spawn whenever there's room)": {
                         "default": false,
@@ -8344,7 +8345,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No Damage": {
                         "default": false,
@@ -8473,7 +8474,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Fade From": {
                         "default": false,
@@ -8591,7 +8592,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Infinite Duration": {
                         "default": false,
@@ -8685,7 +8686,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": true,
@@ -8753,7 +8754,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": false,
@@ -8881,7 +8882,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Master (Has priority if multiple env_fog_controllers exist)": {
                         "default": false,
@@ -9006,7 +9007,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Reverse (repel particles instead of suck in)": {
                         "default": false,
@@ -9038,7 +9039,7 @@
                 "key": "initialstate",
                 "type": "choices",
                 "default": "Off (0)",
-                "desc": "",
+                "desc": "Determines should this entity be either turned on or off on map spawn.",
                 "choices": {
                     "Off": "0",
                     "On": "1",
@@ -9057,7 +9058,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Set Initial State": {
                         "default": false,
@@ -9233,7 +9234,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {}
             },
             {
@@ -9538,7 +9539,7 @@
                 "key": "rendercolor",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "An RGB color value used for this entity."
             },
             {
                 "name": "Vertical Size",
@@ -9594,7 +9595,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Visible only from front": {
                         "default": false,
@@ -9625,7 +9626,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On (w/ Small FX)": {
                         "default": false,
@@ -9692,7 +9693,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Play Once": {
                         "default": false,
@@ -9798,7 +9799,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Hears combat sounds": {
                         "default": true,
@@ -10051,7 +10052,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No Damage - Only Force": {
                         "default": true,
@@ -10144,7 +10145,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No fall-off": {
                         "default": false,
@@ -10335,7 +10336,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Enabled": {
                         "default": true,
@@ -10489,7 +10490,7 @@
                 "key": "style",
                 "type": "choices",
                 "default": "Normal (0)",
-                "desc": "",
+                "desc": "Controls how light appears.",
                 "choices": {
                     "Normal": "0",
                     "Fluorescent flicker": "10",
@@ -10854,7 +10855,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] GlobalShake": {
                         "default": false,
@@ -10948,7 +10949,7 @@
                 "key": "initialstate",
                 "type": "choices",
                 "default": "Off (0)",
-                "desc": "",
+                "desc": "Determines should this entity be either turned on or off on map spawn.",
                 "choices": {
                     "Off": "0",
                     "On": "1"
@@ -11043,14 +11044,14 @@
                 "key": "rendercolor",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "An RGB color value used for this entity."
             },
             {
                 "name": "Translucency",
                 "key": "renderamt",
                 "type": "integer",
                 "default": "255",
-                "desc": ""
+                "desc": "A translucency value for this entity. 0 is invisible, 255 is fully opaque."
             }
         ],
         "inputs": [
@@ -11414,7 +11415,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[64] Start ON": {
                         "default": false,
@@ -11493,7 +11494,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Silent": {
                         "default": false,
@@ -11559,7 +11560,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Automatically find water surface (place entity above water)": {
                         "default": false,
@@ -11637,7 +11638,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start on": {
                         "default": false,
@@ -11838,7 +11839,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Emissive": {
                         "default": false,
@@ -11918,7 +11919,7 @@
                 "key": "renderamt",
                 "type": "integer",
                 "default": "255",
-                "desc": ""
+                "desc": "A translucency value for this entity. 0 is invisible, 255 is fully opaque."
             },
             {
                 "name": "Spin Speed",
@@ -12206,7 +12207,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] GlobalTilt": {
                         "default": false,
@@ -12267,7 +12268,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Master (Has priority if multiple env_tonemap_controllers exist)": {
                         "default": false,
@@ -12363,7 +12364,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Punch all players (ignore radius)": {
                         "default": false,
@@ -12412,7 +12413,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start disabled": {
                         "default": false,
@@ -12534,7 +12535,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Allow Suit Zoom": {
                         "default": false,
@@ -12783,10 +12784,10 @@
             },
             {
                 "name": "Start Disabled?",
-                "key": "startdisabled",
+                "key": "StartDisabled",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be disabled on spawn?"
             }
         ],
         "inputs": [
@@ -13084,7 +13085,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start inactive": {
                         "default": false,
@@ -13165,7 +13166,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start inactive": {
                         "default": false,
@@ -13207,7 +13208,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start inactive": {
                         "default": false,
@@ -13439,7 +13440,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Emissive": {
                         "default": false,
@@ -13550,7 +13551,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Fake Ladder": {
                         "default": false,
@@ -13577,7 +13578,7 @@
                 "key": "startdisabled",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be disabled on spawn."
             },
             {
                 "name": "Surface properties (optional)",
@@ -13733,7 +13734,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Use Only": {
                         "default": false,
@@ -13791,7 +13792,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {}
             },
             {
@@ -13932,7 +13933,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[32] Freeze Player": {
                         "default": true,
@@ -14235,7 +14236,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Repeatable": {
                         "default": false,
@@ -14531,7 +14532,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Automatically detect visibility": {
                         "default": true,
@@ -15696,7 +15697,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Master (Has priority if multiple info_player_starts exist)": {
                         "default": false,
@@ -15847,7 +15848,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Transmit to client (respect PVS)": {
                         "default": false,
@@ -15976,7 +15977,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Initially dark": {
                         "default": false,
@@ -16008,7 +16009,7 @@
                 "key": "_light",
                 "type": "color255",
                 "default": "255 255 255 200",
-                "desc": ""
+                "desc": "Color of the light"
             },
             {
                 "name": "BrightnessHDR",
@@ -16055,7 +16056,7 @@
                 "key": "_light",
                 "type": "color255",
                 "default": "255 255 255 200",
-                "desc": ""
+                "desc": "Color of the light"
             },
             {
                 "name": "Light brightness",
@@ -16104,7 +16105,7 @@
                 "key": "style",
                 "type": "choices",
                 "default": "Normal (0)",
-                "desc": "",
+                "desc": "Controls how light appears.",
                 "choices": {
                     "Normal": "0",
                     "Fluorescent flicker": "10",
@@ -16125,7 +16126,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Do not light world (better perf)": {
                         "default": false,
@@ -16221,7 +16222,7 @@
                 "key": "_light",
                 "type": "color255",
                 "default": "255 255 255 200",
-                "desc": ""
+                "desc": "Color of the light"
             },
             {
                 "name": "Ambient light",
@@ -16270,7 +16271,7 @@
                 "key": "style",
                 "type": "choices",
                 "default": "Normal (0)",
-                "desc": "",
+                "desc": "Controls how light appears.",
                 "choices": {
                     "Normal": "0",
                     "Fluorescent flicker": "10",
@@ -16380,7 +16381,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Initially dark": {
                         "default": false,
@@ -16558,7 +16559,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Remove on fire": {
                         "default": true,
@@ -18250,7 +18251,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Spawn A enabled": {
                         "default": false,
@@ -18490,7 +18491,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Ignore X": {
                         "default": false,
@@ -18754,7 +18755,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": true,
@@ -18999,7 +19000,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Only trigger once": {
                         "default": false,
@@ -19211,7 +19212,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Only trigger once": {
                         "default": false,
@@ -19292,7 +19293,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Only trigger once": {
                         "default": false,
@@ -19825,7 +19826,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Oscillator (alternates between OnTimerHigh and OnTimerLow outputs)": {
                         "default": false,
@@ -20115,7 +20116,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[4] Output on every input (even if result doesn't change)": {
                         "default": false,
@@ -20255,7 +20256,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Ignore out of range input values": {
                         "default": true,
@@ -20442,7 +20443,7 @@
                 "key": "startdisabled",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be disabled on spawn."
             },
             {
                 "name": "Generation Type",
@@ -20769,7 +20770,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Ignore out of range input values": {
                         "default": true,
@@ -20846,7 +20847,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Disable X": {
                         "default": false,
@@ -21151,7 +21152,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Wait for retrigger": {
                         "default": false,
@@ -21239,7 +21240,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Disabled": {
                         "default": false,
@@ -21362,7 +21363,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {}
             },
             {
@@ -21452,7 +21453,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Convert Asleep": {
                         "default": false,
@@ -21514,7 +21515,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start inactive": {
                         "default": false,
@@ -21592,7 +21593,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": true,
@@ -21677,7 +21678,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[2] Bar Magnet (use axis helper)": {
                         "default": false,
@@ -21702,7 +21703,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Force only on stretch": {
                         "default": false,
@@ -21852,7 +21853,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Suppress weapons": {
                         "default": false,
@@ -21988,7 +21989,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Use target entity's angles (NOT position)": {
                         "default": false,
@@ -22181,7 +22182,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Off": {
                         "default": false,
@@ -22532,7 +22533,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Active": {
                         "default": false,
@@ -22616,7 +22617,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Disabled": {
                         "default": false,
@@ -22918,7 +22919,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Test the distance as measured along the axis specified by our direction.": {
                         "default": false,
@@ -22955,7 +22956,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Test LOS before pushing": {
                         "default": false,
@@ -23060,7 +23061,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": true,
@@ -23091,7 +23092,7 @@
                 "key": "rendercolor",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "An RGB color value used for this entity."
             },
             {
                 "name": "HDR color scale.",
@@ -23213,7 +23214,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Teleport Home": {
                         "default": false,
@@ -23258,7 +23259,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Don't remove template entities": {
                         "default": false,
@@ -23622,7 +23623,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start At Player": {
                         "default": true,
@@ -23799,7 +23800,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[4] Freeze Player": {
                         "default": false,
@@ -23905,7 +23906,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Disabled": {
                         "default": false,
@@ -23932,7 +23933,7 @@
                 "key": "color",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "A color used for this entity"
             },
             {
                 "name": "Font Material",
@@ -24078,7 +24079,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Master (Has priority if multiple postprocess_controllers exist)": {
                         "default": false,
@@ -24537,7 +24538,7 @@
                 "key": "rendercolor",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "An RGB color value used for this entity."
             },
             {
                 "name": "Uniform Scale Override",
@@ -24723,7 +24724,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Icon 0 active": {
                         "default": false,
@@ -25260,7 +25261,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Fire Once": {
                         "default": true,
@@ -25498,7 +25499,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[4] Repeatable": {
                         "default": false,
@@ -25640,7 +25641,7 @@
                 "key": "startdisabled",
                 "type": "boolean",
                 "default": "No",
-                "desc": ""
+                "desc": "Should this entity be disabled on spawn."
             },
             {
                 "name": "Target NPC",
@@ -25808,7 +25809,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Master (takes priority if multiple sky_cameras exist)": {
                         "default": false,
@@ -26286,7 +26287,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Ignore Players": {
                         "default": true,
@@ -27191,7 +27192,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Wait Till Seen": {
                         "default": false,
@@ -27741,7 +27742,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Asleep": {
                         "default": false,
@@ -27989,7 +27990,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No Pitch (X-rot)": {
                         "default": false,
@@ -28234,7 +28235,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Only Break on Trigger": {
                         "default": false,
@@ -28540,7 +28541,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Starts Open - OBSOLETE, use 'Spawn Position' key instead": {
                         "default": false,
@@ -28722,7 +28723,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Constrained": {
                         "default": false,
@@ -28758,7 +28759,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Clients/Players": {
                         "default": true,
@@ -28922,7 +28923,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Not Solid": {
                         "default": false,
@@ -29020,7 +29021,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": false,
@@ -29203,7 +29204,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start On": {
                         "default": false,
@@ -29456,7 +29457,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[2] On fire": {
                         "default": false,
@@ -29524,7 +29525,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[2] On fire": {
                         "default": false,
@@ -29919,7 +29920,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Do not lose target if already aquired but filter failed.": {
                         "default": false,
@@ -30179,7 +30180,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[2] Ignore player +USE": {
                         "default": true,
@@ -30293,7 +30294,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Don't move": {
                         "default": false,
@@ -30367,7 +30368,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No Push": {
                         "default": false,
@@ -30591,7 +30592,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[8] Not Solid": {
                         "default": false,
@@ -30701,7 +30702,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Toggle": {
                         "default": true,
@@ -30859,7 +30860,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Not solid": {
                         "default": false,
@@ -30950,7 +30951,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start ON": {
                         "default": false,
@@ -31100,7 +31101,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[8192] Ignore range when making viewcone checks": {
                         "default": false,
@@ -31330,7 +31331,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Auto Activate Train - see description": {
                         "default": false,
@@ -31381,7 +31382,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[8] Non-solid": {
                         "default": false,
@@ -31483,7 +31484,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Starts Invisible": {
                         "default": false,
@@ -32037,7 +32038,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Not Solid": {
                         "default": true,
@@ -32190,7 +32191,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[16] Fade Corpse": {
                         "default": false,
@@ -32253,7 +32254,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[256] Always use radius spawn": {
                         "default": false,
@@ -32512,7 +32513,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No Collision until break": {
                         "default": true,
@@ -32542,7 +32543,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Asleep": {
                         "default": false,
@@ -32666,7 +32667,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No Collision until break": {
                         "default": true,
@@ -32695,7 +32696,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No Collision until break": {
                         "default": true,
@@ -32787,7 +32788,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] No Collision until break": {
                         "default": true,
@@ -32914,7 +32915,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[32] Ignore Pos": {
                         "default": false,
@@ -32979,7 +32980,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Asleep": {
                         "default": false,
@@ -33031,7 +33032,7 @@
                 "key": "rendercolor",
                 "type": "color255",
                 "default": "255 255 255",
-                "desc": ""
+                "desc": "An RGB color value used for this entity."
             },
             {
                 "name": "Smoke Alpha (0 - 255)",
@@ -33199,7 +33200,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Override ball material": {
                         "default": false,
@@ -33509,7 +33510,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[2048] Starts locked": {
                         "default": false,
@@ -33706,7 +33707,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[64] Use Hitboxes for Renderbox": {
                         "default": false,
@@ -34391,7 +34392,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[4] Debris - Don't collide with the player or other debris": {
                         "default": true,
@@ -34802,7 +34803,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[8] Disable pickup sounds": {
                         "default": false,
@@ -34998,7 +34999,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[32] Preserve angles even when a local landmark is not specified": {
                         "default": false,
@@ -35162,7 +35163,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Physics damage decals": {
                         "default": false,
@@ -35289,7 +35290,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[2] Reverse Dir": {
                         "default": false,
@@ -35337,7 +35338,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[8192] LookDoor Threshold": {
                         "default": false,
@@ -35442,7 +35443,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[4096] Start Asleep": {
                         "default": false,
@@ -35948,7 +35949,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[65536] Not Solid": {
                         "default": false,
@@ -36021,7 +36022,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[65536] Check Visibility": {
                         "default": true,
@@ -37091,7 +37092,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[2] Disable Touch": {
                         "default": false,
@@ -37273,7 +37274,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[128] Fire Once": {
                         "default": true,
@@ -37366,7 +37367,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {}
             },
             {
@@ -37415,7 +37416,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Clients/Players": {
                         "default": true,
@@ -37506,7 +37507,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Clients/Players": {
                         "default": true,
@@ -37636,7 +37637,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[128] Once Only": {
                         "default": false,
@@ -38045,7 +38046,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[4096] Can move (through hierarchical attachment)": {
                         "default": false,
@@ -38348,7 +38349,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Only Break on Trigger": {
                         "default": false,
@@ -38468,7 +38469,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[65536] Not solid": {
                         "default": false,
@@ -38612,7 +38613,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[32] Start Active": {
                         "default": false,
@@ -38886,7 +38887,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[1] Start Retracted": {
                         "default": false,
@@ -39001,7 +39002,7 @@
                 "key": "spawnflags",
                 "type": "flags",
                 "default": "",
-                "desc": "",
+                "desc": "Flags that can be set on spawn (i.e. in Hammer Editor)",
                 "flags": {
                     "[32] Start Active": {
                         "default": true,
