@@ -3,7 +3,7 @@ title: Strata Source
 weight: 0
 ---
 
-# Strata Source
+# [Strata Source](https://stratasource.org/)
 
 Strata Source started development in mid-2020 as a fork of CSGO's engine branch
 with Portal 2 features ported over. Since its inception, many features, fixes and
