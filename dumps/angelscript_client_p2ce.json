@@ -3699,12 +3699,6 @@
             "name": "Remove",
             "declaration": "void util::Remove(CBaseEntity@ entity)",
             "documentation": null
-        },
-        {
-            "namespace": null,
-            "name": "debugbreak",
-            "declaration": "void debugbreak()",
-            "documentation": null
         }
     ],
     "property": [
