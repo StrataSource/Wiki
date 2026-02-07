@@ -5,7 +5,7 @@ weight: 0
 
 # Getting Started
 
-Welcome to the Strata Wiki! We appreciate your interest in contributing.
+Welcome to the Strata Source Wiki! We appreciate your interest in contributing.
 
 This guide will teach you everything you need to know about writing articles.
 
@@ -37,7 +37,7 @@ must adhere to these guidelines
 
 ## Setting Up The Wiki For Local Edits
 
-In order to add/edit articles and test how they will appear in the Strata Wiki, the Wiki's documentation source repository should be locally cloned.
+In order to add/edit articles and test how they will appear in the Strata Source Wiki, the Wiki's documentation source repository should be locally cloned.
 
 Before opening a pull request, it's suggested that you clone and build the wiki locally to ensure your changes work correctly.
 
@@ -45,10 +45,12 @@ The source can be cloned from [StrataSource/Wiki](https://github.com/StrataSourc
 
 > [!WARNING]
 > Please make sure to not get mixed up with the [StrataSource/strata-wiki](https://github.com/StrataSource/strata-wiki) repository.
-> This repository is not the documentation repository but instead the source code for the Strata Wiki itself.
+> This repository is not the documentation repository but instead the source code for the Strata Source Wiki itself.
 >
-> While this does get cloned with the documentation repository on first run, it should not need to be edited in order to add/edit articles to the wiki.
+> While this does get cloned with the documentation repository on first run, it should not need to be edited in order to create/edit articles on the Wiki. If you are interested in working with the Wiki software, please read [Getting Started With The Wiki Software](../advanced/getting-started).
 
-Please follow the README instructions in the `StrataSouce/Wiki` repository to finish setting up the Wiki once it has been cloned.
+Please follow the README instructions in the `StrataSource/Wiki` repository to finish setting up the Wiki once it has been cloned.
 
-After reading the guidelines and setting up the local instance of the Strata Wiki, continue to [editing articles](editing-articles).
+## What's Next
+
+After reading the guidelines and setting up the local instance of the Strata Source Wiki, continue to [Creating & Editing Articles](creating-editing-articles).
