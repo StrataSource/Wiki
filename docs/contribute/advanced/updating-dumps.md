@@ -45,9 +45,11 @@ Like AngelScript, VScript also comes with a server-client model for its dumps. H
 
 ### Particles
 
+Currently as of 02/07/26, not being parsed by the Wiki software, will be added in the future.
+
 `cl_particles_dump_json`: Dumps a `particle_docs` JSON file containing particle operators.
 
-(WIKI) Using `docdump`: Run `docdump` with the parameters `particle_ops materials` and the program will output all available material shaders to a JSON file for the Wiki to parse.
+Using `docdump`: Run `docdump` with the parameters `particle_ops particle_operators` and the program will output all available particle operators to a JSON file.
 
 ## ConCommands & ConVars
 
