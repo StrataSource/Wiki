@@ -1,21 +1,21 @@
 ---
 title: Feature Flags
-weigth: 20
+weight: 30
 ---
 
 # Feature Flags
 
-To make following the wiki easier, each article that requires features is tagged appropriately. As soon as this feature isn't available in one of the games, the wiki will automatically show a warning indicating limited support.
+To make following the Wiki easier, each article that requires features is tagged appropriately. As soon as this feature isn't available in one of the games, the Wiki will automatically show a warning indicating limited support.
 
-This further supports the user when they select a game, as the wiki can automatically determine if an article is relevant or even possible in the selected game.
+This further supports the user when they select a game, as the Wiki can automatically determine if an article is relevant or even possible in the selected game.
 
 ## Setting Feature Flags
 
-Features required for an article are set in its [Meta Block](editing-articles#meta-block). If more than one feature is specified, the game needs to have all of them in order for the wiki to consider it supported.
+Features required for an article are set in its [Meta Block](creating-editing-articles#meta-block). If more than one feature is specified, the game needs to have all of them in order for the Wiki to consider it supported.
 
 ```yaml
 features:
-    - USE_UGC
+    - USE_PANORAMA
     - USE_VSCRIPT
 ```
 
