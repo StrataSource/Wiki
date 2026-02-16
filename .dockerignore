@@ -1,4 +1,5 @@
 node_modules
+docker-compose.yml
 
 .wrangler
 .DS_Store
