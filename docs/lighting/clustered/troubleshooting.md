@@ -14,13 +14,13 @@ This is a list of currently known issues and some troubleshooting tips for any i
 * For cheap static shadows, make sure "Direct light mode" is set to "Static Only" for your light entity. With this option, specular lighting will still travel through walls. If that's an issue for your map, you may need to use dynamic shadows or turn off specular.
 * For dynamic shadows, make sure the "Shadowed" spawn flag is enabled on the light that should be casting shadows.
 
-### "I set the Shadowed spawn flag, but there are still no shadows/light leaks through walls"
+### "I set the Shadowed spawn flag, but there are still no shadows / light leaks through walls"
 
 * You have too many dynamic shadows updating at once. Remember that **each shadow size level increases the shadow atlas size by a factor of 4**, and **the shadow atlas cannot have exceed a value of 7**, so if there are for example 2 `light_rt`s with shadow size of 6 close to each other, they will overlap and therefore will not produce any shadows. However, there is an unstable workaround, where by enabling `light_rt`s one by one they have a chance to keep their shadows.
 
 ### "My dynamic shadows are blurry"
 
-* Set the "Initial Shadow Size" keyvalue of your light to something around 6.
+* Set the "Initial Shadow Size" keyvalue of your light to something around 6. Remember that the higher the shadow size, the bigger piece of shadow atlas it will take.
 
 ### "My dynamic shadows are 'frozen' or don't update" / "Some entities like rockets don't cast shadows"
 
