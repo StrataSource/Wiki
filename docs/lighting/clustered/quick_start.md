@@ -13,7 +13,7 @@ features:
 2. Set "Specular Light Mode" to "Dynamic Only"
 3. Set "Direct Light Mode" to "Dynamic Only"
 4. Set "Indirect Light Mode" to "Static Only"
-5. Set "Initial Shadow Size" to 6 or 7
+5. Set "Initial Shadow Size" to 2 or 3
 6. Make sure the "Shadowed" flag is **checked**
 7. Set "50 percent falloff distance" and "0 percent falloff distance" KeyValues to adjust the look and feel
 8. For best results, use PBR textures with appropriate MRAOs and normal maps
@@ -26,7 +26,7 @@ features:
 2. Set "Specular Light Mode" to "Dynamic Only"
 3. Set "Direct Light Mode" to "Dynamic Only"
 4. Set "Indirect Light Mode" to "None"
-5. Set "Initial Shadow Size" to something around 5
+5. Set "Initial Shadow Size" to something around 1
 6. Make sure the "Shadowed" flag is **checked**
 7. Set "50 percent falloff distance" and "0 percent falloff distance" KeyValues to adjust the look and feel
 8. For best results, use PBR textures with appropriate MRAOs and normal maps
