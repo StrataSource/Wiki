@@ -34,10 +34,3 @@ For reference, the default sizes are as follows. All are square, and start at z=
 | `prop_floor_cube_button`  | 20 | 14 |
 | `prop_floor_ball_button`  |  5 | 14 |
 | `prop_under_floor_button` | 30 | 17 |
-
-<!-- 
-[fbut]: ../reference/prop_floor_button
-[cbut]: ../reference/prop_floor_cube_button
-[bbut]: ../reference/prop_floor_ball_button
-[ubut]: ../reference/prop_under_floor_button
- -->
