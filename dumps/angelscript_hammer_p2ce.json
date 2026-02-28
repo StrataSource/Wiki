@@ -1358,6 +1358,18 @@
         },
         {
             "namespace": null,
+            "name": "AngleVectors",
+            "declaration": "void AngleVectors(const QAngle&in angle, Vector&out forward, Vector&out right, Vector&out up)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "AngleVectors",
+            "declaration": "void AngleVectors(const QAngle&in angle, Vector&out forward)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
             "name": "SetIdentityMatrix",
             "declaration": "void SetIdentityMatrix(matrix3x4_t&out mat)",
             "documentation": null

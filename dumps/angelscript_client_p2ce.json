@@ -7775,6 +7775,108 @@
         },
         {
             "namespace": null,
+            "name": "EHandle",
+            "type": "value",
+            "script_can_inherit": false,
+            "template_parameter": [
+                {
+                    "type": "class",
+                    "name": "T"
+                }
+            ],
+            "method": [
+                {
+                    "name": "~EHandle",
+                    "declaration": "~EHandle()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "EHandle",
+                    "declaration": "EHandle(int&in)",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "EHandle",
+                    "declaration": "EHandle(int&in, const T@ entity)",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "opAssign",
+                    "declaration": "void opAssign(const EHandle<T>&in other)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opHndlAssign",
+                    "declaration": "void opHndlAssign(const EHandle<T>&in other)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opHndlAssign",
+                    "declaration": "void opHndlAssign(const T@ entity)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Set",
+                    "declaration": "void Set(const T@ entity)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "T@ Get() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opImplCast",
+                    "declaration": "T@ opImplCast() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opEquals",
+                    "declaration": "bool opEquals(const EHandle<T>&in other) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opEquals",
+                    "declaration": "bool opEquals(const T@ entity) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ChangedFrom",
+                    "declaration": "bool ChangedFrom(const T@ entity) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsValid",
+                    "declaration": "bool IsValid() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
             "name": "trace_t",
             "type": "value",
             "script_can_inherit": false,
@@ -9041,6 +9143,34 @@
                     "virtual": false
                 },
                 {
+                    "name": "KeyValue",
+                    "declaration": "bool KeyValue(const string&in key, const string&in value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": true
+                },
+                {
+                    "name": "KeyValue",
+                    "declaration": "bool KeyValue(const string&in key, float value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "KeyValue",
+                    "declaration": "bool KeyValue(const string&in key, int value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "KeyValue",
+                    "declaration": "bool KeyValue(const string&in key, const Vector&in value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
                     "name": "GetModelName",
                     "declaration": "string GetModelName() const",
                     "documentation": null,
@@ -9193,6 +9323,62 @@
                     "documentation": null,
                     "visibility": "public",
                     "virtual": true
+                },
+                {
+                    "name": "GetSpawnFlags",
+                    "declaration": "int GetSpawnFlags() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "AddSpawnFlags",
+                    "declaration": "void AddSpawnFlags(int flags)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "RemoveSpawnFlags",
+                    "declaration": "void RemoveSpawnFlags(int flags)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ClearSpawnFlags",
+                    "declaration": "void ClearSpawnFlags()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "HasSpawnFlags",
+                    "declaration": "bool HasSpawnFlags(int flags) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsTrigger",
+                    "declaration": "bool IsTrigger() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsPlayer",
+                    "declaration": "bool IsPlayer() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsBaseCombatWeapon",
+                    "declaration": "bool IsBaseCombatWeapon() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
