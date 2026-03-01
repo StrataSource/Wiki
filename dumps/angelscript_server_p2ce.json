@@ -2388,6 +2388,18 @@
         },
         {
             "namespace": null,
+            "name": "AngleVectors",
+            "declaration": "void AngleVectors(const QAngle&in angle, Vector&out forward, Vector&out right, Vector&out up)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "AngleVectors",
+            "declaration": "void AngleVectors(const QAngle&in angle, Vector&out forward)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
             "name": "SetIdentityMatrix",
             "declaration": "void SetIdentityMatrix(matrix3x4_t&out mat)",
             "documentation": null
@@ -7769,6 +7781,108 @@
         },
         {
             "namespace": null,
+            "name": "EHandle",
+            "type": "value",
+            "script_can_inherit": false,
+            "template_parameter": [
+                {
+                    "type": "class",
+                    "name": "T"
+                }
+            ],
+            "method": [
+                {
+                    "name": "~EHandle",
+                    "declaration": "~EHandle()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "EHandle",
+                    "declaration": "EHandle(int&in)",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "EHandle",
+                    "declaration": "EHandle(int&in, const T@ entity)",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "opAssign",
+                    "declaration": "void opAssign(const EHandle<T>&in other)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opHndlAssign",
+                    "declaration": "void opHndlAssign(const EHandle<T>&in other)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opHndlAssign",
+                    "declaration": "void opHndlAssign(const T@ entity)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Set",
+                    "declaration": "void Set(const T@ entity)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "T@ Get() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opImplCast",
+                    "declaration": "T@ opImplCast() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opEquals",
+                    "declaration": "bool opEquals(const EHandle<T>&in other) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "opEquals",
+                    "declaration": "bool opEquals(const T@ entity) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ChangedFrom",
+                    "declaration": "bool ChangedFrom(const T@ entity) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsValid",
+                    "declaration": "bool IsValid() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
             "name": "trace_t",
             "type": "value",
             "script_can_inherit": false,
@@ -7922,6 +8036,38 @@
                     "visibility": "public",
                     "virtual": false
                 }
+            ],
+            "property": [
+                {
+                    "name": "start",
+                    "visibility": "public",
+                    "declaration": "Vector start"
+                },
+                {
+                    "name": "delta",
+                    "visibility": "public",
+                    "declaration": "Vector delta"
+                },
+                {
+                    "name": "startOffset",
+                    "visibility": "public",
+                    "declaration": "Vector startOffset"
+                },
+                {
+                    "name": "extents",
+                    "visibility": "public",
+                    "declaration": "Vector extents"
+                },
+                {
+                    "name": "isRay",
+                    "visibility": "public",
+                    "declaration": "bool isRay"
+                },
+                {
+                    "name": "isSwept",
+                    "visibility": "public",
+                    "declaration": "bool isSwept"
+                }
             ]
         },
         {
@@ -7929,6 +8075,20 @@
             "name": "FireBulletsInfo_t",
             "type": "value",
             "script_can_inherit": false,
+            "method": [
+                {
+                    "name": "FireBulletsInfo_t",
+                    "declaration": "FireBulletsInfo_t()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "FireBulletsInfo_t",
+                    "declaration": "FireBulletsInfo_t(int shots, const Vector&in src, const Vector&in dir, const Vector&in spread, float distance, int ammoType, bool primary = true)",
+                    "documentation": null,
+                    "virtual": false
+                }
+            ],
             "property": [
                 {
                     "name": "iShots",
@@ -8562,8 +8722,15 @@
                     "virtual": false
                 },
                 {
+                    "name": "FireInput",
+                    "declaration": "void FireInput(const string&in fgdInputName, const Variant&in value, float delay, CBaseEntity@ activator, CBaseEntity@ caller, int id = 0)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
                     "name": "FireOutput",
-                    "declaration": "void FireOutput(const string&in output, Variant variant, CBaseEntity@ activator, CBaseEntity@ caller, float delay = 0)",
+                    "declaration": "void FireOutput(const string&in fgdOutput, Variant variant, CBaseEntity@ activator, CBaseEntity@ caller, float delay = 0)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -8863,6 +9030,20 @@
                     "virtual": false
                 },
                 {
+                    "name": "IsOnGround",
+                    "declaration": "bool IsOnGround() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetGroundEntity",
+                    "declaration": "CBaseEntity@ GetGroundEntity() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
                     "name": "SetThink",
                     "declaration": "void SetThink(ThinkFunc_t@ thinkFunc, float nextThinkTime = 0.0, const string&in context = \"\")",
                     "documentation": null,
@@ -8963,6 +9144,34 @@
                 {
                     "name": "GetKeyValue",
                     "declaration": "bool GetKeyValue(const string&in key, string&out value) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "KeyValue",
+                    "declaration": "bool KeyValue(const string&in key, const string&in value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": true
+                },
+                {
+                    "name": "KeyValue",
+                    "declaration": "bool KeyValue(const string&in key, float value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "KeyValue",
+                    "declaration": "bool KeyValue(const string&in key, int value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "KeyValue",
+                    "declaration": "bool KeyValue(const string&in key, const Vector&in value)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -9120,6 +9329,62 @@
                     "documentation": null,
                     "visibility": "public",
                     "virtual": true
+                },
+                {
+                    "name": "GetSpawnFlags",
+                    "declaration": "int GetSpawnFlags() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "AddSpawnFlags",
+                    "declaration": "void AddSpawnFlags(int flags)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "RemoveSpawnFlags",
+                    "declaration": "void RemoveSpawnFlags(int flags)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ClearSpawnFlags",
+                    "declaration": "void ClearSpawnFlags()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "HasSpawnFlags",
+                    "declaration": "bool HasSpawnFlags(int flags) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsTrigger",
+                    "declaration": "bool IsTrigger() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsPlayer",
+                    "declaration": "bool IsPlayer() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsBaseCombatWeapon",
+                    "declaration": "bool IsBaseCombatWeapon() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -9162,6 +9427,386 @@
                     "name": "nOutputID",
                     "visibility": "public",
                     "declaration": "int nOutputID"
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "CBaseEntityOutput",
+            "type": "value",
+            "script_can_inherit": false,
+            "method": [
+                {
+                    "name": "GetType",
+                    "declaration": "EFieldType GetType() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetMaxDelay",
+                    "declaration": "float GetMaxDelay() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "COutputVariant",
+            "type": "value",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntityOutput"
+            },
+            "method": [
+                {
+                    "name": "COutputVariant",
+                    "declaration": "COutputVariant()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(const Variant&in value, CBaseEntity@ activator, CBaseEntity@ caller)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(const Variant&in value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "Variant Get() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "COutputInt",
+            "type": "value",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntityOutput"
+            },
+            "method": [
+                {
+                    "name": "COutputInt",
+                    "declaration": "COutputInt()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(int value, CBaseEntity@ activator, CBaseEntity@ caller)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(int value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "int Get() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "COutputFloat",
+            "type": "value",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntityOutput"
+            },
+            "method": [
+                {
+                    "name": "COutputFloat",
+                    "declaration": "COutputFloat()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(float value, CBaseEntity@ activator, CBaseEntity@ caller)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(float value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "float Get() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "COutputString",
+            "type": "value",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntityOutput"
+            },
+            "method": [
+                {
+                    "name": "COutputString",
+                    "declaration": "COutputString()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(const string&in value, CBaseEntity@ activator, CBaseEntity@ caller)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(const string&in value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "string Get() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "COutputEntity",
+            "type": "value",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntityOutput"
+            },
+            "method": [
+                {
+                    "name": "COutputEntity",
+                    "declaration": "COutputEntity()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(CBaseEntity@ value, CBaseEntity@ activator, CBaseEntity@ caller)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(CBaseEntity@ value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "CBaseEntity@ Get() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "COutputVector",
+            "type": "value",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntityOutput"
+            },
+            "method": [
+                {
+                    "name": "COutputVector",
+                    "declaration": "COutputVector()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(const Vector&in value, CBaseEntity@ activator, CBaseEntity@ caller)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(const QAngle&in value, CBaseEntity@ activator, CBaseEntity@ caller)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(const QAngle&in value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(const Vector&in value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "void Get(QAngle&out value) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "void Get(Vector&out value) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "COutputPosVector",
+            "type": "value",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntityOutput"
+            },
+            "method": [
+                {
+                    "name": "COutputPosVector",
+                    "declaration": "COutputPosVector()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(const Vector&in value, CBaseEntity@ activator, CBaseEntity@ caller)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(const Vector&in value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "void Get(Vector&out value) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "COutputColor",
+            "type": "value",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntityOutput"
+            },
+            "method": [
+                {
+                    "name": "COutputColor",
+                    "declaration": "COutputColor()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(Color value, CBaseEntity@ activator, CBaseEntity@ caller)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Init",
+                    "declaration": "void Init(Color value)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Get",
+                    "declaration": "Color Get() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "COutputEvent",
+            "type": "value",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseEntityOutput"
+            },
+            "method": [
+                {
+                    "name": "COutputEvent",
+                    "declaration": "COutputEvent()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Fire",
+                    "declaration": "void Fire(CBaseEntity@ activator, CBaseEntity@ caller, float delay = 0)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -9395,6 +10040,13 @@
                 {
                     "name": "SetSkin",
                     "declaration": "void SetSkin(int skin)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsOnFire",
+                    "declaration": "bool IsOnFire() const",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
