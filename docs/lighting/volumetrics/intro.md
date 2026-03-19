@@ -15,7 +15,7 @@ features:
 
 -> player model interacts with volumetrics
 
-(images/player_vol_occlusion.png)
+(images/vol_playershadow.png)
 
 One thing, I don't know why,
 It doesn't even matter how hard you try.
