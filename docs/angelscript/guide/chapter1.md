@@ -12,7 +12,7 @@ In this chapter you will learn about:
 - [Client-Server model of the engine](#client---server-model)
 - [How to load code in the game](#loading-code)
 - [Writing your own Hello World program](#your-first-script)
-- [Testing out your own code](#how-to-test-out-your-code-the-simple-way)
+- [Testing out your own code](#how-to-test-out-your-code-in-a-basic-way)
 - [Additional tips that might help you](#additional-tips)
 
 > [!TIP]
@@ -42,7 +42,7 @@ AngelScript's official documentation can be found here: [AS Official Docs](https
 ## What Can You Do With AngelScript
 This question is not asked properly; AngelScript will allow you to do most anything you would like it to. However, its main purpose in Strata Source is to allow users to create custom entities, custom commands, bind to in-game events, and more.
 
-While VScript (mainly) sits between entities and handles the interactions between them, AngelScripts sits in a level above, where AS can be treated as entities *themselves*.
+While VScript (mainly) sits between entities and handles the interactions between them, AngelScripts sits in a level above, being able to *create* entities and define their behavior.
 
 ---
 
@@ -81,7 +81,7 @@ Now, the only thing left to do now is launch the game, open the console, and exe
 > ### TASK 1: 
 > Run the HelloWorld program mentioned above.
 
-## How To Test Your Code the Simple Way
+## How To Test Out Your Code in a Basic Way
 For now, you will need to know how to run your code so that you can complete the tasks given to you within this guide.
 In `sv_init.as` include:
 ```cpp
