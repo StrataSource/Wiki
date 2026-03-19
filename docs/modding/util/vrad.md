@@ -115,7 +115,7 @@ Other options:
                           it will gather light across a wider area.
   -StaticPropLighting   : generate baked static prop vertex lighting
   -StaticPropLightingFinal   : this option is obsolete. it's function is merged with -final.
-  -StaticPropPolys   : Perform shadow tests of static props at polygon precision
+  -StaticPropPolys   : Calculate lighting on static props using the visual mesh instead of the collision mesh.
   -OnlyStaticProps   : Only perform direct static prop lighting (vrad debug option)
   -StaticPropNormals : when lighting static props, just show their normal vector
   -StaticPropBounce  : Enable static props to bounce light. Experimental option, doesn't work with VMPI right now.
