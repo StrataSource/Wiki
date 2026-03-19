@@ -40,7 +40,6 @@ features:
 3. Set "Direct Light Mode" to "Static Only"
 4. Set "Indirect Light Mode" to "Static Only"
 5. Set "50 percent falloff distance" and "0 percent falloff distance" KeyValues to adjust the look and feel
-6. For best results, use PBR textures with appropriate MRAOs and normal maps
 
 ![Keyvalues](images/properties_static.png)
 
@@ -51,7 +50,6 @@ features:
 3. Set "Direct Light Mode" to "None"
 4. Set "Indirect Light Mode" to "Static Only"
 5. Set "50 percent falloff distance" and "0 percent falloff distance" KeyValues to adjust the look and feel
-6. For best results, use PBR textures with appropriate MRAOs and normal maps
 
 ![Keyvalues](images/properties_indirect.png)
 
