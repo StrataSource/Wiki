@@ -116,6 +116,7 @@ Other options:
                           it will gather light across a wider area.
   -StaticPropLighting   : generate baked static prop vertex lighting
   -StaticPropLightingFinal   : generate baked static prop vertex lighting (uses higher/final quality processing)
+  -StaticPropLightingOld : Will use the old lighting algorithm on props, light affects them much more.
   -StaticPropPolys   : Perform shadow tests of static props at polygon precision
   -OnlyStaticProps   : Only perform direct static prop lighting (vrad debug option)
   -StaticPropNormals : when lighting static props, just show their normal vector
