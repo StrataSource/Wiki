@@ -9,7 +9,18 @@ features:
 
 ## How do I make it work for Clustered entities?
 
-Explanation.
+For Setup Volumetric 
+
+light_rt and light_rt_spot
+
+you need to enable the KV Volumetric density by default it's on "0" change it and make it to the values you need it.
+By default volumetric light scale are on the value "1" and by default volumetric light mode are on dynamic Only
+After you change Volumetric density, Volumetric should work but you will probably don't have the occlusion effets, you need to enable "Shadowed" in the flags
+
+Env_projectextures
+
+[!NOTE]
+The KV on env_projectextures are based on the old volumetric implementation based on the SFM, this one will change to fit the light_rt and light_rt_spot KV
 
 Photo showing how it's done.
 
@@ -18,6 +29,8 @@ Photo showing how it's done.
 Explanation (there is no way except for the devui menu lmao, link it)
 
 A pic showing how it's done
+
+## How do I make it work for Cascade Shadow Mapping?
 
 # Troubleshooting
 
