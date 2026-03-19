@@ -32,6 +32,10 @@ A pic showing how it's done
 
 ## How do I make it work for Cascade Shadow Mapping?
 
+it's plan  density contribution to the csm light, but at the time being there is a 
+
+workaround : obb_volumefog interact with CSM 
+
 # Troubleshooting
 
 ## The volumetrics don't show up!

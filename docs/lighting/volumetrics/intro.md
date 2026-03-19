@@ -9,6 +9,14 @@ features:
 > This page is work in progress. Please be patient!
 > TODO fill me.
 
+[speak about occlusion effect]
+
+(images/basic_volumetric.gif)
+
+-> player model interacts with volumetrics
+
+(images/player_vol_occlusion.png)
+
 One thing, I don't know why,
 It doesn't even matter how hard you try.
 Keep that in mind, I designed this rhyme
@@ -21,6 +29,15 @@ Didn't look out below
 Watch the time go right out the window
 Tryin' to hold on, d-didn't even know
 I wasted it all just to watch you go
+
+
+configure directly with light insepector
+
+(images/fog_inspector.png)
+
+Volumetrics support light_cookie and webm video support
+
+
 
 I kept everything inside
 And even though I tried, it all fell apart
