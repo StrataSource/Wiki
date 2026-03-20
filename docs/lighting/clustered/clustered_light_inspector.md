@@ -22,7 +22,7 @@ In P2:CE, you can enable the Clustered Lighting Inspector UI using the `devui_sh
 * Bottom: Clustered Light Inspector with the selected light's position edited using XYZ bars
 
 > [!TIP]
-> Position bars are scrollable!
+> Position and angle bars are scrollable!
 
 ![Clustered Light Inspector](images/clustered_ui1.png)
 

@@ -26,7 +26,7 @@ There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Li
 
 * `Volumetric Light Mode` toggles the volumetric lighting for this entity, can be set to either *None* or *Dynamic Only*.
 * `Volumetric density` is a floating number between 0 and 1, where 1 is fully opaque and 0 is completely invisible.
-* `Volumetric Light Scale` is a floating number that scales the color of the volumetric lighting casted by this entity, it is not recommended to set higher than 1, even though the number can go up infinitely.
+* `Volumetric Light Scale` is a floating number that scales the color of the volumetric lighting casted by this entity, it is not recommended to set higher than 1.
 
 `env_projectexture`, except for `Enable Volumetrics`, have only volumetric-related KeyValue - `Volumetric Intensity`, which is identical to `Volumetric Density`. But unlike all the other entities that produce volumetrics, projected texture volumetrics work with WebM videos.
 
@@ -40,9 +40,11 @@ Volumetrics support light cookies from `light_rt` and `light_rt_spot`, as well a
 
 ## Volumetrical Fog
 
-Obb_fogvolume allow you to place manually fog in your maps, you change the width, the height and the Depth.
+In addition to individual volumetrics for the Clustered lights, there is a fog entity called `obb_fogvolume`. It allows you to place a volumetric fog in your map. It can have a different shape, color and density, but most importantly, **it projects volumetrical rays of the lights that intercept it**. Simply put, this 
 
-Obb_volumefog is cubic by default. But you have the ability to enable spherical the volumetric fog Through the KeyValues "Spheroid"
+You change the width, the height and the depth of the fog.
+
+`obb_volumefog` is cubic by default. There is a `Spheroid` KeyValue to make the fog spherical.
 
 ![OBB_VolumeFog Cube](images/obb_volumefog_cube.jpg)
 
@@ -60,7 +62,7 @@ You change the color of the "emissive" and "scaterring" of the volumetric fog
 
 ## Setup for Global Volumetrical Fog
 
-To set up change settings of the volumetric for the whole map, you can use 'Clustered Volumetrics Inspector' in the Developer UI menu.
+To set up the volumetric fog for the whole map, you can use the 'Clustered Volumetrics Inspector' in the Developer UI menu.
 
 Clustered Volumetrics Inspector allows setting the volumetrical value for all clustered lights globally, allowing to preview the new volumetric lighting on the maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the whole map, values of which are controlled by this menu.
 
