@@ -106,8 +106,7 @@ Other options:
   -loghash        : Log the sample hash table to samplehash.txt.
   -onlydetail     : Only light detail props and per-leaf lighting.
   -maxdispsamplesize #: Set max displacement sample size (default: 512).
-  -softsun <n>    : Treat the sun as an area light source of size <n> degrees.                    Produces soft shadows.
-                    Recommended values are between 0 and 5. Default is 0.
+  -softsun <n>    : Treats the sun as a soft area light, spreading it's shadows based on the float. This option is now obsolete, you should use SunSpreadAngle on light_enviroment instead.
   -FullMinidumps  : Write large minidumps on crash.
   -chop           : Smallest number of luxel widths for a bounce patch, used on edges
   -maxchop      : Coarsest allowed number of luxel widths for a patch, used in face interiors
@@ -115,12 +114,12 @@ Other options:
                           light on terrain. The compile will take longer, but
                           it will gather light across a wider area.
   -StaticPropLighting   : generate baked static prop vertex lighting
-  -StaticPropLightingFinal   : generate baked static prop vertex lighting (uses higher/final quality processing)
-  -StaticPropPolys   : Perform shadow tests of static props at polygon precision
+  -StaticPropLightingFinal   : this option is obsolete. it's function is merged with -final.
+  -StaticPropPolys   : Calculate lighting on static props using the visual mesh instead of the collision mesh.
   -OnlyStaticProps   : Only perform direct static prop lighting (vrad debug option)
   -StaticPropNormals : when lighting static props, just show their normal vector
   -StaticPropBounce  : Enable static props to bounce light. Experimental option, doesn't work with VMPI right now.
-  -textureshadows : Allows texture alpha channels to block light - rays intersecting alpha surfaces will sample the texture
+  -textureshadows : Allows models to cast shadows based on the alpha channel of their texture. Does not work with brushes, and in the case of skins, will use the first one.
   -noskyboxrecurse : Turn off recursion into 3d skybox (skybox shadows on world)
   -nossprops      : Globally disable self-shadowing on static props
 
