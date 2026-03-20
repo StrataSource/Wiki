@@ -15,17 +15,17 @@ It consists of six menus - **Fog Config**, **[Clustered Light Inspector](/lighti
 
 ## Fog Config
 
-Fog Config allows to override the fog (if enabled) and set the custom fog values. Each value is presented as a slider, so changing, for example, fog radius is easy and visually convinient. Both general and skybox fogs can be overriden and changed. This menu is perfect for setting up fog, as you can tweak it in realtime in-game using sliders.
+Fog Config allows to override the fog (if enabled) and set the custom fog values. Each value is presented as a slider, so changing, for example, fog radius is easy and visually convinient. Both general and skybox fogs can be overriden and changed. This menu is great for setting up fogs, as you can tweak it in realtime in-game easily.
 
 ![Fog Config](images/graphics_fog2.png)
 
 **Fog Config has the following list of values:**
 
-* `Fog Override` overrides the existing fog. Without this enabled, you will not be able to change the fog through the Fog Config.
-* `Enable Fog` enables the fog. Unchecking this will turn off the fog, even if there is an active `env_fog_controller` on the map.
+* `Fog Override` overrides the existing fog. Without this enabled, you will not be able to change the fog using the Fog Config.
+* `Enable Fog` enables the overriden fog. Unchecking this will turn off the fog, even if there is an active `env_fog_controller` in the map.
 * `Enable Skybox` enables the skybox fog.
-* `Max Density` is the density of the fog, from 0.0 to 100.0 (not 0.0 to 1.0 like in Hammer!)
-* `Far Z` changes the distance after which the visibility cuts (player will not see anything further). It is recommended not to touch this slider.
+* `Max Density` is the density of the fog, from 0.0 to 100.0 (not 0.0 to 1.0 like in Hammer Editor!)
+* `Far Z` changes the distance after which nothing will be rendered (player will not see anything further). It is recommended not to touch this slider.
 
 There are 3 values that are duplicated for the regular fog and the skybox fog:
 * `Start` is a slider which sets the distance where the fog starts.
@@ -36,7 +36,7 @@ There are 3 values that are duplicated for the regular fog and the skybox fog:
 
 ## Clustered Volumetrics Inspector
 
-Clustered Volumetrics Inspector allows setting the volumetrical value globally. It allows previewing the new volumetric lighting on the maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the whole map, values of which are controlled by this menu.
+Clustered Volumetrics Inspector allows setting the volumetrical value for all clustered lights globally, allowing to preview the new volumetric lighting on the maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the whole map, values of which are controlled by this menu.
 
 ![CVI](images/graphics_vol.png)
 
@@ -72,37 +72,42 @@ CSM Config allows toggling and changing the rotation of the light casted by `env
 The menu has the following values:
 * `CSM Enabled` toggles the CSM, if present;
 * `Max Shadow Dist` changes the shadow distance, higher values are blurier;
-* `Capture State` / `Clear State` capture and clear the state of each shadow produced;
+* `Capture State` / `Clear State` captures and clears the state of each shadow produced;
 * `Rotation Override` toggles the ability to change the `env_cascade_light` entity's angles by using the `X`, `Y` and `Z` bars below.
 
 ![CSM Config Menu](images/graphics_csm.png)
 
 ## Post Processing
 
-This menu is bla bla bla.
+This menu controls post-processing options, similarly to `env_tonemap_controller`, but without needing to spawn and give inputs to one. All the values are present as sliders, allowing a precuse and convenient change of all the post-processing options.
+
+**There are 3 submenus present:**
 
 ### Depth of Field
 
-Bla bla bla.
+Depth of Field menu allows setting the DoF effect - blurring the view after a certain distance, or before a certain distance. This cinematic effect recreates how the human eye focuses - focusing on objects that are far away makes the objects that are close to the eye blur, and counterwise.
+
+![Post Processing DOF](images/graphics_pp_dof.png)
 
 The menu has the following values:
 * Values.
 
-![Post Processing DOF](images/graphics_pp_dof.png)
 ![Post Processing DOF](images/graphics_pp_dof-menu.png)
 
 ### Motion Blur
 
-Bla bla bla.
+Motion Blur menu allows controlling the motion blur effect, which blurs the view when it rotates. Only applied to the player view.
 
 The menu has the following values:
 * Values.
+
+High values create unrealistic blur.
 
 ![Post Processing DOF](images/graphics_pp_mb-menu.png)
 
 ### Bloom
 
-Bla bla bla.
+Bloom menu allows controlling the bloom effect, which brightens the edges of bright pixels, creating a cinematic effect.
 
 The menu has the following values:
 * Values.
