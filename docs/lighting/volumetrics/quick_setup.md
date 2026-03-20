@@ -28,11 +28,11 @@ Obb_fogvolume allow you to place manually fog in your maps, you change the width
 
 Obb_volumefog is cubic by default. But you have the ability to enable spherical the volumetric fog Through the KeyValues "Spheroid"
 
-(images/obb_volumefog_cube.jpg)
+![OBB_VolumeFog Cube](images/obb_volumefog_cube.jpg)
 
-(images/obb_volumefog_sphere.jpg)
+![OBB_VolumeFog Sphere](images/obb_volumefog_sphere.jpg)
 
-obb_fogvolume allows to change the shape of the volumetric fog by  the KeyValues "Texture Name"
+Obb_fogvolume allows to change the shape of the volumetric fog by  the KeyValues "Texture Name"
 
 You can change the X and Y axes of the custom texture slices
 
@@ -46,18 +46,15 @@ You change the color of the "emissive" and "scaterring" of the volumetric fog
 
 To debug and change settings of the volumetric, you can use 'Clustered Volumetrics Inspector' in the Developer UI menu
 
-(images/fog_inspector.png)
-
-
-PHOTO
+![Clustered Volumetric Inspector](images/fog_inspector.png)
 
 ## How to make it work for Cascade Shadow Mapping
 
 Currently, there are not KeyValues to enable volumetrics in `env_cascade_light` entity. However, there are two ways to make them appear - by using `obb_fogvolume` entity, or through the [Clustered Volumetric Inspector](/misc/devui/graphics).
 
-PHOTO
+The time being that there isn't native ways to have volumetric lighting through env_cascade_light, you can use as a workaround obb_volumefog, in fact you can have occlusion effect if a props is through a obb_volumefog and env_cascade_light interact with it.
 
-****
+![occlusion effect with obb_fogvolume from env_cascade_light](images/obb_volumefog_csm_interact_workaround.jpg)
 
 # Troubleshooting
 
