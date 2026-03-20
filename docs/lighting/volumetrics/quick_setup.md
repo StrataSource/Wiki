@@ -24,13 +24,30 @@ PHOTO
 
 ### Using `obb_fogvolume`
 
-**StudioMDL, you need to literally tell how to do that. [As example, use this.](/lighting/clustered/quick_start)**
+Obb_fogvolume allow you to place manually fog in your maps, you change the width, the height and the Depth.
 
-PHOTO
+Obb_volumefog is cubic by default. But you have the ability to enable spherical the volumetric fog Through the KeyValues "Spheroid"
+
+(images/obb_volumefog_cube.jpg)
+
+(images/obb_volumefog_sphere.jpg)
+
+obb_fogvolume allows to change the shape of the volumetric fog by  the KeyValues "Texture Name"
+
+You can change the X and Y axes of the custom texture slices
+
+(images/obb_volume_changetexture.jpg)
+
+You change the color of the "emissive" and "scaterring" of the volumetric fog
 
 ### Using Clustered Volumetric Inspector
 
 [Clustered Volumetric Inspector](/misc/devui/graphics).
+
+To debug and change settings of the volumetric, you can use 'Clustered Volumetrics Inspector' in the Developer UI menu
+
+(images/fog_inspector.png)
+
 
 PHOTO
 
