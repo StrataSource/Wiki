@@ -112,7 +112,7 @@ The menu has the following values:
 
 ## SoftBody Debug
 
-I actually don't have a SoftBody... thing. Not even a screenshot, I forgot it.
+I actually don't have anything related to SoftBody... thing. Not even a screenshot of the menu, I forgot to make one.
 
 Might ask someone.
 

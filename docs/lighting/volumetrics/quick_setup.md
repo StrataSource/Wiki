@@ -7,34 +7,40 @@ features:
 
 # Quick Setup
 
-## How do I make it work for Clustered entities?
+## How to make it work for Clustered entities
 
-For Setup Volumetric 
+You can set up volumetrics in 3 different ways: 
+1. By using the corresponding KeyValues in `light_rt`, `light_rt_spot` and `env_projectedtexture`;
+2. By using `obb_fogvolume` that defines volumetric rays specifically for the fog volume it produces;
+3. Through the [Clustered Volumetric Inspector](/misc/devui/graphics) in the Developer UI menu.
 
-light_rt and light_rt_spot
+### Using KeyValues
 
-you need to enable the KV Volumetric density by default it's on "0" change it and make it to the values you need it.
-By default volumetric light scale are on the value "1" and by default volumetric light mode are on dynamic Only
-After you change Volumetric density, Volumetric should work but you will probably don't have the occlusion effets, you need to enable "Shadowed" in the flags
+There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Light Mode` **`Volumetric Density`** and **`Volumetric Light Scale`**. `Volumetric Light Mode` toggles the volumetric lighting for this entity, can be set to either *None* or *Dynamic Only*. `Volumetric density` is a floating number between 0 and 1, where 1 is fully opaque and 0 is completely invisible. `Volumetric Light Scale` is a floating number that scales the color of the volumetric lighting casted by this entity, it is not recommended to set higher than 1, even though the number can go up infinitely.
 
-Env_projectextures
+`env_projectexture`, except for `Enable Volumetrics`, have only volumetric-related KeyValue - `Volumetric Intensity`, which is identical to `Volumetric Density`. But unlike all the other entities that produce volumetrics, projected texture volumetrics work with WebM videos.
 
-[!NOTE]
-The KV on env_projectextures are based on the old volumetric implementation based on the SFM, this one will change to fit the light_rt and light_rt_spot KV
+PHOTO
 
-Photo showing how it's done.
+### Using `obb_fogvolume`
 
-## How do I make it work for Cascade Shadow Mapping?
+**StudioMDL, you need to literally tell how to do that. [As example, use this.](/lighting/clustered/quick_start)**
 
-Explanation (there is no way except for the devui menu lmao, link it)
+PHOTO
 
-A pic showing how it's done
+### Using Clustered Volumetric Inspector
 
-## How do I make it work for Cascade Shadow Mapping?
+[Clustered Volumetric Inspector](/misc/devui/graphics).
 
-it's plan  density contribution to the csm light, but at the time being there is a 
+PHOTO
 
-workaround : obb_volumefog interact with CSM 
+## How to make it work for Cascade Shadow Mapping
+
+Currently, there are not KeyValues to enable volumetrics in `env_cascade_light` entity. However, there are two ways to make them appear - by using `obb_fogvolume` entity, or through the [Clustered Volumetric Inspector](/misc/devui/graphics).
+
+PHOTO
+
+****
 
 # Troubleshooting
 
@@ -44,8 +50,8 @@ Skill issue.
 
 ## The volumetrics are too intense!
 
-Same issue, lower the values.
+Same issue.
 
 ## How do I get to use it? I don't have P2CE
 
-Dude... ugh. Just shut up. Open beta is in 2 months.
+Dude... ugh. Just shut up. Open beta in 2 months.

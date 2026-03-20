@@ -9,43 +9,33 @@ features:
 > This page is work in progress. Please be patient!
 > TODO fill me.
 
-[speak about occlusion effect]
+# Volumetric Lighting
 
-(images/basic_volumetric.gif)
+Volumetric Lighting is ... 
+It allows light to ...
 
--> player model interacts with volumetrics
+![Volumetrics](images/basic_volumetric.gif)
 
-(images/vol_playershadow.png)
+Player model also interacts with volumetric lighting, even in the firstperson.
 
-One thing, I don't know why,
-It doesn't even matter how hard you try.
-Keep that in mind, I designed this rhyme
-To explain in due time, all I know
-Time is a valuable thing
-Watch it fly by as the pendulum swings
-Watch it count down to the end of the day
-The clock ticks life away, it's so unreal
-Didn't look out below
-Watch the time go right out the window
-Tryin' to hold on, d-didn't even know
-I wasted it all just to watch you go
+![Volumetrical Player Shadow](images/vol_playershadow.png)
 
+## Light Cookies and WebM support
 
-configure directly with light insepector
+Volumetrics support light cookies from `light_rt` and `light_rt_spot`, as well as WebM videos from `env_projectedtexture` entity. The volumetrics casted by the lights that use light cookies and WebM videos will update and show up correctly.
 
-(images/fog_inspector.png)
+![WebM Volumetrics](images/ptex_vol.gif)
 
-Volumetrics support light_cookie and webm video support
+****
 
+## Volumetrical Fog
 
+Explanation about `obb_fogvolume` entity.
 
-I kept everything inside
-And even though I tried, it all fell apart
-What it meant to me will eventually be
-A memory of a time when I tried so hard
+PHOTO
 
+## Setup for Global Volumetrical Fog
 
-I tried so hard and got so far,
-But in the end, it doesn't even matter.
-I had to fall to lose it all,
-But in the end, it doesn't even matter.
+You can configure the global volumetrical fog in the Clustered Volumetric Inspector.
+
+![Clustered Volumetric Inspector](images/fog_inspector.png)
