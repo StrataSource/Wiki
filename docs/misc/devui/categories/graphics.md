@@ -34,6 +34,8 @@ There are 3 values that are duplicated for the regular fog and the skybox fog:
 
 ![Fog Config Menu](images/graphics_fog.png)
 
+****
+
 ## Clustered Volumetrics Inspector
 
 Clustered Volumetrics Inspector allows setting the volumetrical value for all clustered lights globally, allowing to preview the new volumetric lighting on the maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the whole map, values of which are controlled by this menu.
@@ -63,9 +65,17 @@ If you specify an `obb_fogvolume` entity in the fogvolume list, the following pr
 
 ![CVI Fog Editor](images/graphics_vol_fog.png)
 
+****
+
 ## Cascade Shadow Mapping Config
 
 CSM Config allows toggling and changing the rotation of the light casted by `env_cascade_light`, as well as capturing the current "sharpness" of all the shadows produced by this entity *(the way CSM works is that, the closer the shadows are to the player, the sharper they get)* and changing the shadow distance.
+
+> [!BUG]
+>
+> DEVS PLEASE NOTICE!
+>
+> .gif images cannot be previewed. They hold the first frame.
 
 ![CSM Config](images/graphics_csm.gif)
 
@@ -76,6 +86,8 @@ The menu has the following values:
 * `Rotation Override` toggles the ability to change the `env_cascade_light` entity's angles by using the `X`, `Y` and `Z` bars below.
 
 ![CSM Config Menu](images/graphics_csm.png)
+
+****
 
 ## Post Processing
 
@@ -90,38 +102,94 @@ Depth of Field menu allows setting the DoF effect - blurring the view after a ce
 ![Post Processing DOF](images/graphics_pp_dof.png)
 
 The menu has the following values:
-* Values.
+* `DoF Override` overrides the current DoF values, if those were set
+* `Slider Range` changes the maximum range for the sliders below;
+* `Near Blur Depth` changes the minimum distance of the near blur effect *(blur will be applied to objects if they are this close to the player)*
+* `Near Focus Depth` changes the maximum distance of the near blur effect
+* `Far Focus Depth` changes the maximum distance of the far blur effect *(blur will be applied to objects if they are this far from the player)*
+* `Far Blur Depth` changes the minimum distance of the far blur effect
+* `Near Blur Radius` changes the intensity of the near blur effect
+* `Far Blur Radius` changes the intensity of the far blur effect
+* `DoF Quality` changes the method used for DoF effect. 0 means no DoF, 1 is default, 2 is pretty much identical.
+* `Copy Settings` copies all the DoF settings to the clipboard as console commands.
+
+> [!NOTE]
+> Example of the output of the `Copy Settings` button:
+> 
+> `mat_dof_override 0;mat_dof_near_blur_depth 168.099;mat_dof_near_focus_depth 277.157;mat_dof_far_focus_depth 271.157;mat_dof_far_blur_depth 1000.0;mat_dof_near_blur_radius 10.0;mat_dof_far_blur_radius 5.0;mat_dof_quality 1;`
+
+* `Copy All Settings` copies all the settings related to Motion Blur effect.
+
+> [!NOTE]
+> Example of the output of the `Copy All Settings` button:
+> 
+> `mat_motion_blur_enabled 1;mat_motion_blur_forward_enabled 1;mat_motion_blur_falling_min 8;mat_motion_blur_falling_max 20.0;mat_motion_blur_falling_intensity 1.0;mat_motion_blur_roll_intensity 1.0;mat_motion_blur_rotation_intensity 1.0;mat_motion_blur_strength 1.0;`
 
 ![Post Processing DOF](images/graphics_pp_dof-menu.png)
 
 ### Motion Blur
 
-Motion Blur menu allows controlling the motion blur effect, which blurs the view when it rotates. Only applied to the player view.
+Motion Blur menu allows controlling the motion blur effect. There are two types of Motion Blurs. The first one is applied upon camera movement, smoothing the image. The second one is applied upon player movement, blurring the edges of the screen when the player moves fast.
 
 The menu has the following values:
-* Values.
+* `Blur Enabled` enables and overrides the Motion Blur effect that is applied on camera movement.
+* `Blur Forward Enabled` enables and overrides the Motion Blur effect that on player movement.
+* `Blur Falling Min` sets the minimum value at which the player movement Motion Blur will start to appear.
+* `Blur Falling Min` sets the maximum value at which the player movement Motion Blur will be fully visible.
+* `Blur Falling Intensity` sets the intensity of the effect. High values make the edges appear extremely blurry.
+* `Blur Roll Intensity` sets the intensity of the roll effect for the Motion Effect used for camera movement.
+* `Blur Rotation Intensity` changes the intensity of the effect.
+* `Blur Strenght` sets the strenght (lenght) of the blur.
+* `Copy Settings` copies all the Motion Blur settings to the clipboard as console commands.
+
+> [!NOTE]
+> Example of the output of the `Copy Settings` button:
+> 
+> `mat_motion_blur_enabled 1;mat_motion_blur_forward_enabled 1;mat_motion_blur_falling_min 0;mat_motion_blur_falling_max 0.529;mat_motion_blur_falling_intensity 0;mat_motion_blur_roll_intensity 1.058;mat_motion_blur_rotation_intensity 1.587;mat_motion_blur_strength 1.851;`
+
+* `Copy All Settings` is identical to the `Copy Settings` button.
 
 High values create unrealistic blur.
 
-![Post Processing DOF](images/graphics_pp_mb-menu.png)
+![Post Processing Motion Blur](images/graphics_pp_mb-menu.png)
 
 ### Bloom
 
-Bloom menu allows controlling the bloom effect, which brightens the edges of bright pixels, creating a cinematic effect.
+Bloom menu allows to control the bloom effect, which brightens the edges of bright pixels, creating a cinematic shine effect. Additionaly, this menu allows to control the Autoexposure effect, which brightens / darkens the overall image based on where the player is looking (also know as the HDR effect).
 
 The menu has the following values:
-* Values.
+* `Force Bloom` overrides the bloom effect.
+* `Disable Bloom` disables the bloom completely.
+* `Bloom Scale` scales the bloom effect.
+* `Bloom Scalefactor Scalar` scales the scale of the bloom effect.
+* `Bloom Rate` sets the time it takes for the bloom changes to occur. Values are accepted from 0 to 1, where 1 is exactly a second.
+* `Autoexposure Max` sets the maximum brightness for the autoexposure effect.
+* `Autoexposure Max Multiplier` scales the maximum brightness value for the autoexposure effect.
+* `Autoexposure Min` sets the minimum brightness for the autoexposure effect.
+* `Uncap Autoexposure` uncaps autoexposure, making everything appear bright.
+* `Accelerate Exposure Down` sets the acceleration percentage for the autoexposure to darken. Higher values make the autoexposure effect disappear faster.
+* `Copy Settings` copies all the Bloom & Autoexposure settings to the clipboard as console commands.
 
-![Post Processing DOF](images/graphics_pp_bloom.png)
-![Post Processing DOF](images/graphics_pp_bloom-menu.png)
+> [!NOTE]
+> Example of the output of the `Copy Settings` button:
+> 
+> `mat_bloomscale 0.827;mat_bloomamount_rate 1;mat_dynamic_tonemapping 1;mat_autoexposure_max 0.837;mat_autoexposure_max_multiplier 0.899;mat_autoexposure_min 0.196;mat_show_histogram 0;mat_hdr_uncapexposure 0;mat_force_bloom 0;mat_accelerate_adjust_exposure_down 6.719;mat_non_hdr_bloom_scalefactor .3;mat_bloom_scalefactor_scalar 0.826;`
+
+* `Copy All Settings` copies all the settings related to Motion Blur effect.
+
+![Post Processing Bloom](images/graphics_pp_bloom.png)
+![Post Processing Bloom Menu](images/graphics_pp_bloom-menu.png)
+
+****
 
 ## SoftBody Debug
 
-I actually don't have anything related to SoftBody... thing. Not even a screenshot of the menu, I forgot to make one.
+SoftBody Debug helps with debugging models that use the new cloth system.
 
-Might ask someone.
+SoftBody is a system that allows models to have cloth-like parts. It simulates cloth physics and softbody physics on the model. To make a model compile as a cloth / softbody object, add `$cloth` to the model's .qc file before compiling it.
 
+![SoftBody Debug on cloth model](images/graphics_soft2.png)
 
+![SoftBody Debug Menu](images/graphics_soft.png)
 
-
-
+****

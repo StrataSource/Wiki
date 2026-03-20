@@ -3,6 +3,10 @@ title: Windows
 weight: 10
 ---
 
+> Redo `images/windows.png`
+
+> Add texts showing what is enabled on the screenshot
+
 # Windows
 
 The Windows tab is the first tab in the Developer UI menu. It contains various options that control different parts of the engine, from material properties to NPC behaviours. Being very useful for debugging entities and rendering, it has proven to be a great replacement for the basic console commands, making debugging faster and easier.
@@ -29,11 +33,11 @@ The debug menu is made to improve the debugging by reducing the amount of consol
 
 The debug menu consists of 5 tabs: Perfomance, MatSys, Renderer, Entities and AI.
 
-![Debug Menu](images/windows_dm.png)
-
 ### Perfomance
 
 The first tab has basic buttons - show host speed, FPS counter and player's position with angles.
+
+![Debug Menu](images/windows_dm.png)
 
 ### MatSys
 
@@ -149,16 +153,21 @@ The last, fifth menu utilizes control over the NPC entity the player is looking 
 ![AI menu](images/windows_dm_ai1.png)
 
 > [!WARNING]
-> HALF OF THE BUTTONS DO NOTHING! EITHER REMOVE THEM OR FIX!
+>
+> DEVELOPERS, PLEASE NOTICE!
+>
+> Most of the buttons that have descriptions don't work. I filled the descriptions based on the command names. Some commands don't have descriptions on the wiki, some are not documented at all.
 > 
-> Some of the buttons that have descriptions don't work as well. I filled the descriptions based on the command's name. `showinfo` is broken in P2CE so I can't check the descriptions.
+> I'm afraid of only one thing - "wiki says this, but it doesn't work" situations will massively appear. And who is to blame?
+> 
+> Things should not be done like this. This is bullshit.
 
 
-* `ai_disable` disables AI for the NPC.
+* `ai_disable` bypasses all AI logic routines and puts all NPCs into their idle animations.
 
-* `ai_resume` enables back AI for the NPC.
+* `ai_resume` resumes normal processing if the NPC is stepping through tasks.
 
-* `ai_stop` is similar to `ai_disable`.
+* `ai_stop` completely disables AI for the NPC.
 
 * `noclip` enables noclip for the player.
 
@@ -168,27 +177,25 @@ The last, fifth menu utilizes control over the NPC entity the player is looking 
 
 #### `NPC Commands` dropdown contains the following:
 
-* `Enemies` ..?
+* `Enemies` outputs this NPC's current entities.
 
 * `Go` tells the NPC to continue following its path.
 
 * `Go Random` tells the NPC to go in a random direction.
 
-* `Route` ..?
+* `Route` outputs this NPC's current route to their goal.
 
 * `Select` "selects" the NPC by drawing a dark red box around its bounding box.
-
-* `Bipass` ..?
 
 * `Destroy` removes the NPC.
 
 * `Visibility` tries to call a missing command called `npc_visibility`.
 
-* `Tasks` ..?
+* `Tasks` outputs this NPC's current tasks (rush, cover, heal player, etc.)
 
-* `Combat` ..?
+* `Combat` sets this NPC to its combat mode.
 
-* `Focus` ..?
+* `Focus` tells this NPC to focus on the target.
 
 #### `Node Graph` dropdown contains the following:
 
@@ -198,11 +205,11 @@ The last, fifth menu utilizes control over the NPC entity the player is looking 
 
 * `Show Hull` shows this NPC's current cover position.
 
-* `Show Connect` ..?
+* `Show Connect` shows connection of this NPC.
 
-* `Show Visibility` ..?
+* `Show Visibility` shows visibility of this NPC.
 
-* `Show Graph Connect` ..?
+* `Show Graph Connect` shows graph connections of this NPC.
 
 ![AI](images/windows_dm_ai2.png)
 
