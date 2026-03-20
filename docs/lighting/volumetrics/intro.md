@@ -34,7 +34,7 @@ There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Li
 
 ## Light Cookies and WebM support
 
-Volumetrics support light cookies from `light_rt` and `light_rt_spot`, as well as WebM videos from `env_projectedtexture` entity. The volumetrics casted by the lights that use light cookies and WebM videos will update and show up correctly.
+Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_projectedtexture`, as well as WebM videos from `env_projectedtexture` entity. The volumetrics casted by the lights that use light cookies and WebM videos will update and show up correctly.
 
 ![WebM Volumetrics](images/ptex_vol.gif)
 
