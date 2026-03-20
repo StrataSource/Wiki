@@ -11,12 +11,14 @@ features:
 
 # Volumetric Lighting
 
-Volumetric Lighting is ... 
-It allows light to ...
+Volumetric Lighting is a rendering effect that simulates light scattering in the air.
+It allows light to having a occlusion effect, meaning objects can block the light, creating realistic shadows inside the volumetric effect.
 
 ![Volumetrics](images/basic_volumetric.gif)
 
 Player model also interacts with volumetric lighting, even in the firstperson.
+> [!NOTE]
+> Only if the player has the cvar enable "cl_player_render_in_shadows_view"
 
 ![Volumetrical Player Shadow](images/vol_playershadow.png)
 
@@ -32,11 +34,11 @@ There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Li
 
 ## Light Cookies and WebM support
 
-Volumetrics support light cookies from `light_rt` and `light_rt_spot`, as well as WebM videos from `env_projectedtexture` entity. The volumetrics casted by the lights that use light cookies and WebM videos will update and show up correctly.
+Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_projectedtexture`, as well as WebM videos from `env_projectedtexture` entity. The volumetrics casted by the lights that use light cookies and WebM videos will update and show up correctly.
 
 ![WebM Volumetrics](images/ptex_vol.gif)
 
-****
+Light cookies 
 
 ## Volumetrical Fog
 
