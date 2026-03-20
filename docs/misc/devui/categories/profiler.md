@@ -3,13 +3,19 @@ title: Profiler
 weight: 30
 ---
 
+> There are 2 screenshots - one showing texture budget with the whole map visible, and the second showing the corner. TOTAL GRAPH MUST BE SHOWN BIGGER. The difference is huge.
+
+> In the budgets, show that the values are map-specific. Also don't forget to describe each of them.
+
+> In VProf Budget, scaling up the window with histogram enabled crashes the game.
+
 # Profiler
 
 The Profiler tab is the third tab in the Developer UI menu. Its main purpose is dynamically debugging different aspects of the map and the engine, showing the exact budget and usage. Additionally, a `.txt` report can be generated, containing every event that happened in a specified period of time. The menus of this tab are useful for optimising maps, materials and game events.
 
 ![All the menus of the Profiler tab](images/prof_all.png)
 
-It consists of 8 menus - **Texture Budget Per-Frame**, **Texture Budget Global**, **Misc Graphics Stats**, **VProf Budget**, **VProf Report Generator**, **VProf Counters**, **c** and **VProf UI**.
+It consists of 8 menus - **Texture Budget Per-Frame**, **Texture Budget Global**, **Misc Graphics Stats**, **VProf Budget**, **VProf Report Generator**, **VProf Counters**, **VProf Tree** and **VProf UI**.
 
 ****
 
@@ -47,10 +53,10 @@ Values:
 
 Explanation
 
-![Misc Graphics Tab](images/prof_misc.png)
-
 Values:
 * Values
+
+![Misc Graphics Tab](images/prof_misc.png)
 
 ****
 
@@ -58,13 +64,13 @@ Values:
 
 Explanation
 
-![VProf Budget](images/prof_vbudget.png)
-
 > [!CAUTION]
 > When having `Historgam` enabled, do not oversize the window! Developer UI can only have a certain amount of graphs drawn at the same time, drawing too many overflows the buffer and crashes the game!
 
 Values:
 * Values
+
+![VProf Budget](images/prof_vbudget.png)
 
 ****
 
@@ -72,19 +78,19 @@ Values:
 
 Explanation
 
-![VProf Report Generator](images/prof_vreport.png)
-
 Values:
 * Values
+
+![VProf Report Generator](images/prof_vreport.png)
 
 ### VProf Generated Report
 
 It also has an after-report window called **VProf Generated Report** that contains the reported file.
 
-![VProf Generated Report](images/prof_vreport_gen.png)
-
 Values:
 * Values
+
+![VProf Generated Report](images/prof_vreport_gen.png)
 
 ****
 
@@ -121,11 +127,3 @@ Explanation
 ![VProf Tree](images/prof_vui.png)
 
 ****
-
-# Ignore (TODO NOTES)
-
-> There are 2 screenshots - one showing texture budget with the whole map visible, and the second showing the corner. TOTAL GRAPH MUST BE SHOWN BIGGER. The difference is huge.
-
-> In the budgets, show that the values are map-specific. Also don't forget to describe each of them.
-
-> In VProf Budget, scaling up the window with histogram enabled crashes the game.

@@ -99,8 +99,6 @@ This menu controls post-processing options, similarly to `env_tonemap_controller
 
 Depth of Field menu allows setting the DoF effect - blurring the view after a certain distance, or before a certain distance. This cinematic effect recreates how the human eye focuses - focusing on objects that are far away makes the objects that are close to the eye blur, and counterwise.
 
-![Post Processing DOF](images/graphics_pp_dof.png)
-
 The menu has the following values:
 * `DoF Override` overrides the current DoF values, if those were set
 * `Slider Range` changes the maximum range for the sliders below;
@@ -125,6 +123,7 @@ The menu has the following values:
 > 
 > `mat_motion_blur_enabled 1;mat_motion_blur_forward_enabled 1;mat_motion_blur_falling_min 8;mat_motion_blur_falling_max 20.0;mat_motion_blur_falling_intensity 1.0;mat_motion_blur_roll_intensity 1.0;mat_motion_blur_rotation_intensity 1.0;mat_motion_blur_strength 1.0;`
 
+![Post Processing DOF](images/graphics_pp_dof.png)
 ![Post Processing DOF](images/graphics_pp_dof-menu.png)
 
 ### Motion Blur
