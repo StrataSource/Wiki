@@ -9,7 +9,7 @@ weight: 10
 
 The Windows tab is the first tab in the Developer UI menu. It contains various options that control different parts of the engine, from material properties to NPC behaviours. Being very useful for debugging entities and rendering, it has proven to be a great replacement for the basic console commands, making debugging faster and easier.
 
-It consists of two menus - **Addon List** and **Debug Menu**.
+It consists of two windows - **Addon List** and **Debug Menu**.
 
 ![Volumetrics & light cookies](images/windows.png)
 
@@ -17,7 +17,7 @@ It consists of two menus - **Addon List** and **Debug Menu**.
 
 ## Addon List
 
-The Addon List menu shows all the addons that are installed, with their name, workshop ID and absolute local path. It also shows which addons are currently mounted and which are not.
+The Addon List window shows all the addons that are installed, with their name, workshop ID and absolute local path. It also shows which addons are currently mounted and which are not.
 
 Additionally, you can mount and unmount addons by checking / unchecking addons, and then applying changes using the button at the bottom of the menu.
 
@@ -27,7 +27,7 @@ Additionally, you can mount and unmount addons by checking / unchecking addons, 
 
 ## Debug Menu
 
-The debug menu is made to improve the debugging by reducing the amount of console usage. The menu intends to replaces commands with buttons and checkmarks that are easier and more convinient to use than console ConVars.
+The Debug Menu is made to improve the debugging by reducing the amount of console usage. The menu intends to replaces commands with buttons and checkmarks that are easier and more convinient to use than console ConVars.
 
 The debug menu consists of 5 tabs: Perfomance, MatSys, Renderer, Entities and AI.
 
@@ -158,7 +158,7 @@ The last, fifth menu utilizes control over the NPC entity the player is looking 
 > 
 > I'm afraid of only one thing - "wiki says this, but it doesn't work" situations will massively appear. And who is to blame?
 > 
-> Things should not be done like this. This is bullshit.
+> Things should not be done like this.
 
 
 * `ai_disable` bypasses all AI logic routines and puts all NPCs into their idle animations.

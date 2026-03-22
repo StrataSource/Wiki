@@ -5,19 +5,11 @@ weight: 70
 
 # Settings
 
-* One thing, I don't know why, it doesn't even matter how hard you try. Keep that in mind, I designed this rhyme to explain in due time all I know.
-* Time is a valuable thing. Watch it fly by as the pendulum swings. Watch it count down to the end of the day, the clock ticks life away, it's so unreal.
-* Didn't look out below, watch the time go right out the window. Tryin' to hold on, I didn't even know - I wasted it all just to watch you go.
-* I kept everything inside, and even though I tried, it all fell apart. What it meant to me will eventually be a memory of a time when
-* 
-* I tried so hard and got so far,
-* But in the end, it doesn't even matter.
-* I had to fall to lose it all,
-* But in the end, it doesn't even matter.
+The Settings tab is the seventh tab in the Developer UI menu. It has settings related to the Developer UI itself, such as custom themes and utilities.
 
 ![Settings](images/sets.png)
 
-It consists of one menu and two buttons - **Themes**, **Right Click Toggles Cursor** and **Reload Theme**.
+It consists of one window and two buttons - **Themes**, **Right Click Toggles Cursor** and **Reload Theme**.
 
 ****
 

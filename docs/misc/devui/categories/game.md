@@ -9,11 +9,15 @@ The Game tab is the fifth tab in the Developer UI menu. It contains different me
 
 ![The Game tab](images/game.png)
 
-It consists of 5 menus - **Game Events Debugger**, **Server Anim Debug**, **Stick Cam Debug UI**, **Client Anim Debug** and **Sound Emitter System Debug**.
+It consists of 5 window - **Game Events Debugger**, **Server Anim Debug**, **Stick Cam Debug UI**, **Client Anim Debug** and **Sound Emitter System Debug**.
 
 ****
 
 ## Game Events Debugger
+
+Explanation
+
+### Event Definitions
 
 Explanation
 
@@ -22,14 +26,14 @@ Values:
 
 ![Game Events Debugger](images/game_event.png)
 
-There is also a log.
+### Event Log
 
-> You forgot to take a screenshot of the Event Log submenu in Game Events Debugger!
+Explanation
 
 Values:
 * Value
 
-![Game Events Log](images/game_event_log.png)
+![Game Event Log](images/game_event_log.png)
 
 ****
 

@@ -15,7 +15,7 @@ This tab consists of only one menu - **Material Inspector.**
 
 ## Material Inspector
 
-This menu is actualy sick ngl. It allows setting material parameters in realtime in-game. I mean, what? Why I never used it before???
+This menu is actualy sick ngl. It allows setting material parameters in realtime in-game. I mean, what? Why I've never seen it before???
 
 ![Material Inspector](images/matinsp_properties.png)
 

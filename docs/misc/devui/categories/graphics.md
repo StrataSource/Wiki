@@ -9,7 +9,7 @@ The graphics tab is the most popular among all the other tab in the Developer UI
 
 ![Graphics tab](images/graphics.png)
 
-It consists of six menus - **Fog Config**, **[Clustered Light Inspector](/lighting/clustered/clustered_light_inspector)**, **Clustered Volumetrics Inspector**, **CSM Config**, **Post Processing** and **SoftBody Debug**.
+It consists of six windows - **Fog Config**, **[Clustered Light Inspector](/lighting/clustered/clustered_light_inspector)**, **Clustered Volumetrics Inspector**, **CSM Config**, **Post Processing** and **SoftBody Debug**.
 
 ****
 

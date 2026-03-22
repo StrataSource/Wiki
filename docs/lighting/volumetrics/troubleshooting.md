@@ -17,7 +17,7 @@ Same issue.
 
 ## My Volumetrics are broken and corrupt!
 
-We FUCKED all the AMD GPUs in the ASS! Go buy an nvidia, we don't care.
+We fucked all the AMD GPUs in the ASS! Go buy an nvidia, we don't care.
 
 ## How do I get to use it? I don't have P2CE
 
