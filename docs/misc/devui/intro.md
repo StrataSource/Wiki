@@ -5,7 +5,7 @@ weight: 0
 
 # Developer UI
 
-### What is iut and why it is so peak?
+### What is it and why it is so peak?
 
 Well first off, this page is not finished.  yet
 
@@ -15,4 +15,3 @@ Well first off, this page is not finished.  yet
 
 > Mention that the map is Gentle Hum.
 
-> There are some inconsistencies between normal pics and menu pics. Move pics that don't have their normal variant below the values.
