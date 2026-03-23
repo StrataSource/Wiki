@@ -10,7 +10,7 @@ features:
 You can set up volumetrics in 3 different ways: 
 1. By using the corresponding KeyValues in `light_rt`, `light_rt_spot` and `env_projectedtexture`;
 2. By using `obb_fogvolume` that defines volumetric rays specifically for the fog volume it produces;
-3. Through the [Clustered Volumetric Inspector](/misc/devui/graphics) in the Developer UI menu.
+3. Through the [Clustered Volumetric Inspector](/misc/devui/categories/graphics#clustered-volumetrics-inspector) in the Developer UI menu.
 
 ### Using KeyValues:
 

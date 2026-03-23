@@ -53,7 +53,7 @@ Clustered Volumetrics Inspector allows setting the volumetrical value for all cl
 
 ![CVI Menu](images/graphics_vol-menu.png)
 
-If you specify an `obb_fogvolume` entity in the fogvolume list, the following properties will be able to be changed:
+If an `obb_fogvolume` entity is specified in the fogvolume list, the following properties will be able to be changed:
 * `Position` of the fog entity, with the value being the center of the fog;
 * `Angles` of the fog entity;
 * `Half Size` of the fog, which is split into width, length and height;
