@@ -13,6 +13,8 @@ It consists of... quite a lot of things. I'd say, *too many* things to cover for
 
 ![Debug menu](images/debug_menu.png)
 
+> There is also a metrics menu that wasn't there before. I made a screenshot but it's on you to document it.
+
 So there are 8 dropdown menus: **Help**, **Configuration**, **Window options**, and other dropdowns that are related to ImGUI debugging.
 
 ****
