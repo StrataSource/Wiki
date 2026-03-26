@@ -3,42 +3,46 @@ title: Scripting
 weight: 60
 ---
 
-After a deep research, it turned out this whole category is related to Angelscript.
+# Scripting
 
-You cannot do anything vscript-ish with it.
+The Scripting tab is the sixth tab in the Developer UI menu. It contains windows related to the Angelscript programming language, having abilities such as additional consoles, module viewer and much more. Users that are not familiar with this language should not need this window.
 
-ㅤ
+![The Scripting tab](images/script.png)
 
-ㅤ
+It consists of 6 windows - **Server Script Output**, **Server Script Console**, **Client Script Output**, **Client Script Console**, **Script System Output** and **Script Modules**
 
-ㅤ
+****
 
-ㅤ
+## Server / Client Script Console
 
-ㅤ
+Explanation
 
-ㅤ
+![Script Consoles](images/script_consoles.png)
 
-ㅤ
+****
 
-ㅤ
+## Script System Output
 
-ㅤ
+Explanation
 
-ㅤ
+![Script Consoles](images/script_output.png)
 
-ㅤ
+****
 
-ㅤ
+## Script Modules
 
-ㅤ
+Explanation
 
-ㅤ
+### Script Engine Stats
 
-ㅤ
+Explanation
 
-ㅤ
+![Script Consoles](images/script_modules.png)
 
-ㅤ
+### Modules
 
-Well too bad.
+Explanation
+
+![Script Consoles](images/script_modules2.png)
+
+****

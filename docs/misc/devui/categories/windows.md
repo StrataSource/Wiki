@@ -3,11 +3,11 @@ title: Windows
 weight: 10
 ---
 
-> Redo `images/windows.png`
+> Redo windows.png and windows_dm_ai2.png
 
 # Windows
 
-The Windows tab is the first tab in the Developer UI menu. It contains various options that control different parts of the engine, from material properties to NPC behaviours. Being very useful for debugging entities and rendering, it has proven to be a great replacement for the basic console commands, making debugging faster and easier.
+The Windows tab is the first tab in the Developer UI menu. It contains various options that control different parts of the engine, from material properties to NPC behaviors. Being very useful for debugging entities and rendering, it has proven to be a great replacement for the basic console commands, making debugging faster and easier.
 
 It consists of two windows - **Addon List** and **Debug Menu**.
 
@@ -27,11 +27,11 @@ Additionally, you can mount and unmount addons by checking / unchecking addons, 
 
 ## Debug Menu
 
-The Debug Menu is made to improve the debugging by reducing the amount of console usage. The menu intends to replaces commands with buttons and checkmarks that are easier and more convinient to use than console ConVars.
+The Debug Menu is made to improve the debugging by reducing the amount of console usage. The menu intends to replaces commands with buttons and checkmarks that are easier and more convenient to use than console ConVars.
 
-The debug menu consists of 5 tabs: Perfomance, MatSys, Renderer, Entities and AI.
+The debug menu consists of 5 tabs: Performance, MatSys, Renderer, Entities and AI.
 
-### Perfomance
+### Performance
 
 The first tab has basic buttons - show host speed, FPS counter and player's position with angles.
 
@@ -47,7 +47,7 @@ In P2CE, you can set `mat_fullbright` to 2. This draws all texture white, allowi
 
 * `mat_bufferprimitives` enables world geometry buffering. Does not draw anything on-screen, barely affects anything.
 
-* `mat_wireframe` draws light-blue lines on edges of each model visible and pink lines on edhes of each brush with additional diagonal lines indicating faces. Use this caution, as it may cause lag when used in huge areas with lots of entities / brushes visible.
+* `mat_wireframe` draws light-blue lines on edges of each model visible and pink lines on edges of each brush with additional diagonal lines indicating faces. Use this caution, as it may cause lag when used in huge areas with lots of entities / brushes visible.
 
 * `mat_luxels` shows lightmaps of each lightmapped face. Each square is a light pixel. Only relevant to bakes lighting, where bigger lightmaps creates sharper shadows. Non-lightmapped faces (i.e. fizzlers) are drawn completely blue.
 
@@ -149,17 +149,6 @@ The fourth menu contains buttons that draw information about the entity the play
 The last, fifth menu utilizes control over the NPC entity the player is looking at.
 
 ![AI menu](images/windows_dm_ai1.png)
-
-> [!WARNING]
->
-> DEVELOPERS, PLEASE NOTICE!
->
-> Most of the buttons that have descriptions don't work. I filled the descriptions based on the command names. Some commands don't have descriptions on the wiki, some are not documented at all.
-> 
-> I'm afraid of only one thing - "wiki says this, but it doesn't work" situations will massively appear. And who is to blame?
-> 
-> Things should not be done like this.
-
 
 * `ai_disable` bypasses all AI logic routines and puts all NPCs into their idle animations.
 

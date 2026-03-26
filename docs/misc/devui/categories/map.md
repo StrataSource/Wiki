@@ -3,25 +3,28 @@ title: Map
 weight: 40
 ---
 
-# Why this tab only has one menu? This thing could've had so much potential!
-# Entity list, amount of this and that, time spent on server, ent_fire simplifier, etc, etc!
-# Just add that!
+# Map
 
-So, this tab is... uhh... hmm... welp... so useful!
+The fourth tab is currently the smallest tab in the Developer UI, but its functionality is unmatched with any other tabs because of the window it contains.
 
 ![Map Tab](images/map.png)
 
 This tab consists of only one menu - **Material Inspector.**
 
+****
+
 ## Material Inspector
 
-This menu is actualy sick ngl. It allows setting material parameters in realtime in-game. I mean, what? Why I've never seen it before???
+### Material List
 
-![Material Inspector](images/matinsp_properties.png)
-
-Values:
-* Value
+This menu allows users to see the list of all the materials used in the map.
 
 ![Material Inspector Menu](images/matinsp_menu.png)
 
+### Material Properties
 
+This menu allows users to change the properties of the material the user is looking at. All the properties will appear as the material is selected. Properties will be applied automatically as soon as any change is detected. Additionally, the Material Inspector will check if the textures used in the material are valid.
+
+![Material Inspector](images/matinsp_properties.png)
+
+****

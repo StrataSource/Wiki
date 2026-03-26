@@ -3,39 +3,47 @@ title: Debug
 weight: 80
 ---
 
-# \*deep breath\*
+# Debug
 
-The last, eighth tab, is the default ImGUI debugging window. TBF I shouldn't be covering it, it's a default debugging menu after all. But hey, someone's gotta do it, otherwise there will be a whole undocumented tab and some random kid is gonna complain about that.
+The last, eighth tab, is the default ImGUI debugging window. General users shouldn't need this window, since it is meant for internal use with styling and debug with ImGui. However, people would be interested in this when developing DevUI themes. If they are interested in what ImGui is itself, this menu would be useful too.
 
 ![Debug](images/debug.png)
 
-It consists of... quite a lot of things. I'd say, *too many* things to cover for an unpaid volunteer like me.
-
-![Debug menu](images/debug_menu.png)
-
-> There is also a metrics menu that wasn't there before. I made a screenshot but it's on you to document it.
-
-So there are 8 dropdown menus: **Help**, **Configuration**, **Window options**, and other dropdowns that are related to ImGUI debugging.
+It consists of two windows: **Demo Window** and **Metrics Window**
 
 ****
 
-# Help
+## Metrics Window
+
+Explanation
+
+![Metrics window](images/debug_metr.png)
+
+****
+
+## Demo Window
+
+This window is a default ImGUI debugging menu.
+
+![Debug menu](images/debug_menu.png)
+
+> Is stuff below even necessary?
+
+This window has 8 dropdowns and 3 menus, each leading to various debugging options.
+
+### Help
 
 This dropdown menu is a README about the debugging window. It explains what it contains, where each stuff is and how to work with it.
 
 ![Debug Help menu](images/debug_menu_help.png)
 
-****
-
-# Configuration
+### Configuration
 
 Flags that can be toggled, manually or when setting up ImGUI.
 
 ![Debug Config menu](images/debug_menu_cfg.png)
 
-****
-
-# Window options
+### Window options
 
 Window options. They do not extend to other windows and are not saved when closing the menu. Most of them are purely visual.
 

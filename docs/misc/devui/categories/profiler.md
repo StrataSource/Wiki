@@ -3,13 +3,11 @@ title: Profiler
 weight: 30
 ---
 
-> There are 2 screenshots - one showing texture budget with the whole map visible, and the second showing the corner. TOTAL GRAPH MUST BE SHOWN BIGGER. The difference is huge.
-
-> In the budgets, show that the values are map-specific. Also don't forget to describe each of them.
+> Redo prof_all.png
 
 # Profiler
 
-The Profiler tab is the third tab in the Developer UI menu. Its main purpose is dynamically debugging different aspects of the map and the engine, showing the exact budget and usage. Additionally, a `.txt` report can be generated, containing every event that happened in a specified period of time. The menus of this tab are useful for optimising maps, materials and game events.
+The Profiler tab is the third tab in the Developer UI menu. Its main purpose is dynamically debugging different aspects of the map and the engine, showing the exact budget and usage. Additionally, a `.txt` report can be generated, containing every event that happened in a specified period of time. The menus of this tab are useful for optimizing maps, materials and game events.
 
 ![All the menus of the Profiler tab](images/prof_all.png)
 
@@ -19,7 +17,7 @@ It consists of 8 windows - **Texture Budget Per-Frame**, **Texture Budget Global
 
 ## Texture Budget Per-Frame
 
-Texture Bugdet Per-Frame shows how much of the GPU memory is used by the textures right now in-game. There are many different graphs, each of which showing precise information about the buffer usage of various renderables. This menu is useful for searching for frame drops and various optimisations.
+Texture Budget Per-Frame shows how much of the GPU memory is used by the textures right now in-game. There are many different graphs, each of which showing precise information about the buffer usage of various renderables. This menu is useful for searching for frame drops and various optimizations.
 
 The graphs automatically update each frame, so it is easy to check for differences in various parts of the map, for frame holes as example.
 
@@ -28,7 +26,7 @@ The graphs automatically update each frame, so it is easy to check for differenc
 ![Texture Budget Per-Frame when looking at a wall](images/prof_tbudget2.png)
 
 There is a total of 27 graphs:
-* `Total` shows the total amount of GPU usage as a histograph
+* `Total` shows the total amount of GPU usage as a histogram
 * `RenderTargets` shows ...
 * `DepthBuffer` shows ...
 * `Constant Buffers` shows ...
@@ -62,14 +60,11 @@ There is a total of 27 graphs:
 
 ## Texture Budget Global
 
-Texture Bugdet Global shows how much of the GPU memory is precached overall when loading a map. There are many different graphs, and each shows precise information about the memory usage of various renderables. This menu is useful when optimising texture usage, and when writing minimal requirements.
+Texture Budget Global shows how much of the GPU memory is precached overall when loading a map. There are many different graphs, and each shows precise information about the memory usage of various renderables. This menu is useful when optimizing texture usage, and when writing minimal requirements.
 
 ![Texture Budget Global](images/prof_tbudgetglob.png)
 
 There is a total of 27 graphs. Their names, functionality and positions in the menu are identical to the `Texture Budget Per-Frame` menu.
-
-<!--    ![Texture Budget Global menu](images/prof_tbudgetglob-menu.png)     -->
-<!--    ^^^ Takes to much space for a cheap copy of another window ^^^      -->
 
 ****
 
@@ -95,12 +90,12 @@ There are 10 values in the menu:
 
 ## VProf Budget
 
-VProf Budget shows how much time the GPU takes to render different parts of the game, in milliseconds. The engine freezes each time it needs to redraw something, so this menu basically tells what exactly causes the game to lag. If something takes longer than 5 milliseconds, consider optimising that!
+VProf Budget shows how much time the GPU takes to render different parts of the game, in milliseconds. The engine freezes each time it needs to redraw something, so this menu basically tells what exactly causes the game to lag. If something takes longer than 5 milliseconds, consider optimizing that!
 
 > [!CAUTION]
 > When having `Historgam` enabled, do not oversize the window! Developer UI can only have a certain amount of graphs drawn at the same time, drawing too many of them overflows the buffer and crashes the game!
 
-There is a total of- HOW MANY??? HOLY SHIT
+There are 54 graphs total:
 * `Unaccounted` shows the amount of time it takes to draw unaccounted textures.
 * `Sleep` shows ... 
 * `World Rendering` shows the amount of time it takes to draw world geometry.
@@ -143,7 +138,7 @@ There is a total of- HOW MANY??? HOLY SHIT
 * `DrawPortalsUsingStencils` shows the amount of time it takes to ... 
 * `Flashlight Shadows` shows the amount of time it takes to render player's flashlight (impulse 103)
 * `Fast Path Brush Rendering` shows the amount of time it takes to ... *(ABSURDLY HEAVY!!! >15 MS)*
-* `DrawEarlyZPortals` shows the amount of time it takes to calculate the relative view posisiton between the player and the portal.
+* `DrawEarlyZPortals` shows the amount of time it takes to calculate the relative view position between the player and the portal.
 * `PortalGhosts` shows the amount of time it takes to draw the portal ghosts.
 * `DrawSimplePortalMesh` shows the amount of time it takes to draw the simple mesh in the portal view.
 * `XeGTAO` shows the amount of time it takes to draw the new XeGT Ambient Occlusion.
@@ -151,7 +146,7 @@ There is a total of- HOW MANY??? HOLY SHIT
 * `Cvar Find` shows the amount of time it takes to ... 
 * `ChromeHTML` shows the amount of time it takes to draw the HTML web-page, if any is visible.
 * `Paintblob` shows the amount of time it takes to draw a paint blob.
-* `GameInstructor` shows the amount of time it takes to draw ... *(i genuenly forgor, are those hints or smth else)*
+* `GameInstructor` shows the amount of time it takes to draw ... *(are those hints)*
 * `Input` shows the amount of time it takes to ...
 * `Steam` shows the amount of time it takes to render the Steam overlay.
 * `paint` shows the amount of time it takes to draw paint.
@@ -200,8 +195,6 @@ Generate Report button opens an after-report window called **VProf Generated Rep
 
 VProf Counters window contains values that represent various details about rendering and GPU usage. Average Developer UI user shouldn't need this information, it is more for internal usage of the engine and how it handles various stuff.
 
-![VProf Counters](images/prof_vcount.png)
-
 ![VProf Counters Menu](images/prof_vcount-menu.png)
 
 ****
@@ -213,9 +206,7 @@ VProf Tree allows developers to record specific engine events for a specified pe
 > [!BUG]
 > Pressing `Stop Recording` button without pressing `Start Recording` beforehand starts recording with no way to stop it. Eventually the numbers overfill the RAM!
 
-![VProf Tree](images/prof_vtree.png)
-
-This window contains the list of all the events, and the following buttons:
+This window contains the list of all the events that exist in the engine, and the following buttons:
 * `Start Recording` begins recording engine events.
 * `Stop Recording` stops recording engine events.
 

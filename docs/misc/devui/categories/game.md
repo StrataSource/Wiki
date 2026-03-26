@@ -5,11 +5,11 @@ weight: 50
 
 # Game
 
-The Game tab is the fifth tab in the Developer UI menu. It contains different menus, covering game events, animations, player camera and sounds.
+The Game tab is the fifth tab in the Developer UI menu. It contains windows that cover game events, animations, player camera and sounds.
 
 ![The Game tab](images/game.png)
 
-It consists of 5 window - **Game Events Debugger**, **Server Anim Debug**, **Stick Cam Debug UI**, **Client Anim Debug** and **Sound Emitter System Debug**.
+It consists of 5 windows - **Game Events Debugger**, **Server Anim Debug**, **Stick Cam Debug UI**, **Client Anim Debug** and **Sound Emitter System Debug**.
 
 ****
 

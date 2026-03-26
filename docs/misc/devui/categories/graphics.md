@@ -3,6 +3,10 @@ title: Graphics
 weight: 20
 ---
 
+> graphics_pp_dof.png IS MISSING
+
+> Redo graphics_vol_fog.png, graphics_csm.gif and graphics_pp_bloom.png
+
 # Graphics
 
 The graphics tab is the most popular among all the other tab in the Developer UI, mainly because of its functionality. It contains everything needed to debug lighting, post processing effects and graphics in general.
@@ -15,14 +19,14 @@ It consists of six windows - **Fog Config**, **[Clustered Light Inspector](/ligh
 
 ## Fog Config
 
-Fog Config allows to override the fog (if enabled) and set the custom fog values. Each value is presented as a slider, so changing, for example, fog radius is easy and visually convinient. Both general and skybox fogs can be overriden and changed. This menu is great for setting up fogs, as you can tweak it in realtime in-game easily.
+Fog Config allows to override the fog (if enabled) and set the custom fog values. Each value is presented as a slider, so changing, for example, fog radius is easy and visually convenient. Both general and skybox fogs can be overridden and changed. This menu is great for setting up fogs, as you can tweak it in realtime in-game easily.
 
 ![Fog Config](images/graphics_fog2.png)
 
 **Fog Config has the following list of values:**
 
 * `Fog Override` overrides the existing fog. Without this enabled, you will not be able to change the fog using the Fog Config.
-* `Enable Fog` enables the overriden fog. Unchecking this will turn off the fog, even if there is an active `env_fog_controller` in the map.
+* `Enable Fog` enables the overridden fog. Unchecking this will turn off the fog, even if there is an active `env_fog_controller` in the map.
 * `Enable Skybox` enables the skybox fog.
 * `Max Density` is the density of the fog, from 0.0 to 100.0 (not 0.0 to 1.0 like in Hammer Editor!)
 * `Far Z` changes the distance after which nothing will be rendered (player will not see anything further). It is recommended not to touch this slider.
@@ -69,19 +73,13 @@ If an `obb_fogvolume` entity is specified in the fogvolume list, the following p
 
 ## Cascade Shadow Mapping Config
 
-CSM Config allows toggling and changing the rotation of the light casted by `env_cascade_light`, as well as capturing the current "sharpness" of all the shadows produced by this entity *(the way CSM works is that, the closer the shadows are to the player, the sharper they get)* and changing the shadow distance.
-
-> [!BUG]
->
-> DEVS PLEASE NOTICE!
->
-> .gif images cannot be previewed. They hold the first frame.
+CSM Config allows toggling and changing the rotation of the light casted by `env_cascade_light`, as well as capturing the current "sharpness" of all the shadows produced by this entity and changing the shadow distance. *(the way CSM works is that, the closer the shadows are to the player, the sharper they get)*
 
 ![CSM Config](images/graphics_csm.gif)
 
 The menu has the following values:
 * `CSM Enabled` toggles the CSM, if present;
-* `Max Shadow Dist` changes the shadow distance, higher values are blurier;
+* `Max Shadow Dist` changes the shadow distance, higher values are blurrier;
 * `Capture State` / `Clear State` captures and clears the state of each shadow produced;
 * `Rotation Override` toggles the ability to change the `env_cascade_light` entity's angles by using the `X`, `Y` and `Z` bars below.
 
@@ -91,7 +89,7 @@ The menu has the following values:
 
 ## Post Processing
 
-This menu controls post-processing options, similarly to `env_tonemap_controller`, but without needing to spawn and give inputs to one. All the values are present as sliders, allowing a precuse and convenient change of all the post-processing options.
+This menu controls post-processing options, similarly to `env_tonemap_controller`, but without needing to spawn and give inputs to one. All the values are present as sliders, allowing a precise and convenient change of all the post-processing options.
 
 **There are 3 submenus present:**
 
@@ -138,7 +136,7 @@ The menu has the following values:
 * `Blur Falling Intensity` sets the intensity of the effect. High values make the edges appear extremely blurry.
 * `Blur Roll Intensity` sets the intensity of the roll effect for the Motion Effect used for camera movement.
 * `Blur Rotation Intensity` changes the intensity of the effect.
-* `Blur Strenght` sets the strenght (lenght) of the blur.
+* `Blur Strenght` sets the strength (length) of the blur.
 * `Copy Settings` copies all the Motion Blur settings to the clipboard as console commands.
 
 > [!NOTE]
@@ -154,7 +152,7 @@ High values create unrealistic blur.
 
 ### Bloom
 
-Bloom menu allows to control the bloom effect, which brightens the edges of bright pixels, creating a cinematic shine effect. Additionaly, this menu allows to control the Autoexposure effect, which brightens / darkens the overall image based on where the player is looking (also know as the HDR effect).
+Bloom menu allows to control the bloom effect, which brightens the edges of bright pixels, creating a cinematic shine effect. Additionally, this menu allows to control the Autoexposure effect, which brightens / darkens the overall image based on where the player is looking (also know as the HDR effect).
 
 The menu has the following values:
 * `Force Bloom` overrides the bloom effect.

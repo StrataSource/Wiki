@@ -17,8 +17,6 @@ It consists of one window and two buttons - **Themes**, **Right Click Toggles Cu
 
 There are three pre-made themes avaliable.
 
-> Add text showing which is which. Probably in the top-right corner.
-
 ![DevUI Theme 1](images/sets_theme1.png)
 ![DevUI Theme 2](images/sets_theme2.png)
 ![DevUI Theme 3](images/sets_theme3.png)

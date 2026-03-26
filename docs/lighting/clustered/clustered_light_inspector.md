@@ -13,7 +13,7 @@ There are additional debugging and finding options. "Show Light Bounds" is relev
 
 ## Enabling The Inspector
 
-In P2:CE, you can enable the Clustered Lighting Inspector UI using the `devui_show light_editor` console command, or by using the `devui_menu_toggle` command and selecting `Clustered Light Inspector` menu in the `Graphics` tab.
+In P2:CE, you can enable the Clustered Lighting Inspector UI using the `devui_show light_editor` console command, or by pressing `shift + f1`, opening the Graphics tab in the top-left corner and selecting the `Clustered Light Inspector` menu.
 
 ![Developer UI](images/devui3.png)
 
