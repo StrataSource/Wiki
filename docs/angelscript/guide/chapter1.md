@@ -32,7 +32,7 @@ In this chapter you will learn about:
 [AngelScript's home page](https://www.angelcode.com/angelscript/) describes AngelScript as:
 > The AngelCode Scripting Library, or AngelScript as it is also known, is an extremely flexible cross-platform scripting library designed to allow applications to extend their functionality through external scripts.
 
-Besides that, you may treat AngelScript as a sort of hybrid between C++ and Python. It behaves like C++ in some areas - for example, when it is statically typed. Just as in C++, when you declare a variable in AngelScript, you also must declare its types. In addition, AngelScript also implements its own version of pointers (called handles). It also aims to help users in writing its code, whether by disallowing certain operations or by assuming. More on that will be explained in later parts of the guide.
+Besides that, AngelScript commonly behaves like C++ - for example, when it is statically typed. Just as in C++, when you declare a variable in AngelScript, you also must declare its types. In addition, AngelScript also implements its own version of pointers (called handles). It also aims to help users in writing its code, whether by disallowing certain operations or by assuming. More on that will be explained in later parts of the guide.
 
 Use cases for AngelScript vary heavily. It is much closer to pure engine code than VScript, meaning that you can achieve outputs not possible in VScript, such as programming in custom entities and custom commands.
 
@@ -40,7 +40,7 @@ AngelScript's official documentation can be found here: [AS Official Docs](https
 
 
 ## What Can You Do With AngelScript
-This question is not asked properly; AngelScript will allow you to do most anything you would like it to. However, its main purpose in Strata Source is to allow users to create custom entities, custom commands, bind to in-game events, and more.
+ngelScript allows for a closer connection to the internal engine code by having the engine provide various APIs to its internal classes. This allows you to do various things, such as creating custom entities, creating your own ConCommands and ConVars, making custom weapons - all things that aren't normally easy to do with VScript.
 
 While VScript (mainly) sits between entities and handles the interactions between them, AngelScripts sits in a level above, being able to *create* entities and define their behavior.
 
@@ -54,7 +54,8 @@ Before you write your first script, there is one more thing you need to know. Mo
 
 ### Loading Code
 Where should you place the files containing your code?
-The answer is quite simple. Each file that contains your code should end with the **.as** extension and be placed in the **code/** folder of your respective `Game` searchpath. Example locations would be `p2ce/custom/my-addon/code/<files>` or just `p2ce/code/<files>` (the latter is not recommended).
+Each file that contains your code should end with the **.as** extension and be placed in the **code/** folder of your respective `Game` searchpath. Example locations would be `p2ce/custom/my-addon/code/<files>` or just `p2ce/code/<files>` (the latter is not recommended).
+Code can also be placed inside the `code` folder of an addon created with the SDK Launcher.
 
 You may name your files however you'd like. You can create custom directories or you can place your files loosely - it all depends on what you're trying to achieve. In the long run, it's not important. What *is* important is where you place the "starting points". The engine will not attempt to load any files except for these 3 files placed **directly** in the **code/** folder:
 
@@ -93,7 +94,7 @@ void CodeTest(const Command@ args) {
 
 The code in this function will run whenever you run the `CodeTest` command in game. Remember to `reload` to see the changes!
 The `Msg(string)` function will serve as a way to view your variables (like print or cout). Just type `Msg(a)` where *a* is your variable, and *a* will be printed to the console.
-Remember to add `"\n"` to the input of Msg (or just call `Msg("\n");` after your message), otherwise everything will print in one line.
+Remember to add `"\n"` to the input of Msg (or just call `Msg("\n");` after your message), otherwise everything will print in one line. To avoid having to do this, you can use the `Msgl(string)` which will automatically append an `"\n"` to the end of each message.
 
 > [!BUG]
 > Some types such as `int` cannot be directly converted to string, and as such, you won't be able to put them directly into Msg().
