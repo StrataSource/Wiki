@@ -15,7 +15,7 @@ It consists of 6 windows - **Server Script Output**, **Server Script Console**, 
 
 ## Server / Client Script Console
 
-Explanation
+The consoles and output windows used for and by Angelscript.
 
 ![Script Consoles](images/script_consoles.png)
 
@@ -23,7 +23,9 @@ Explanation
 
 ## Script System Output
 
-Explanation
+Script System Output is an output window for Angelscript.
+
+Can be cleared using the `Clear` button.
 
 ![Script Consoles](images/script_output.png)
 
@@ -31,17 +33,27 @@ Explanation
 
 ## Script Modules
 
-Explanation
+Script Modules window shows information about all Angelscript files, functions and classes registered in the engine.
 
 ### Script Engine Stats
 
-Explanation
+Script Engine Stats window shows information about registered classes, globald, and other Angelscript objects.
+
+* `Current Heap Size` is the size of all the new objects, in megabytes.
 
 ![Script Consoles](images/script_modules.png)
 
 ### Modules
 
-Explanation
+Shows the amount of files, or "modules", registered in the engine. The values are shown as a table.
+
+* `Name` is the absolute path and the name of the file.
+* `Globals` is the amount of global objects registered in the file.
+* `Object Types` is the amount of global object types registered in the file.
+* `Typedefs` is the amount of object type definitions registered in the file.
+* `Functions` is the amount of functions registered in the file.
+* `Enums` is the amount of variables registered in the file.
+* `Imported Funcs` is the amount of imported (from other modules) functions registered in the file.
 
 ![Script Consoles](images/script_modules2.png)
 

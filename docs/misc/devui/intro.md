@@ -11,15 +11,27 @@ In Strata Source, Developer UI is implemented using ImGUI. More about ImGUI in [
 
 ㅤ
 
-My secrets are burning a hole through my heart, and my bones catch a fever. When it cuts you up this deep it's hard to find a way to breathe.
+My secrets are burning a hole through my heart, 
+and my bones catch a fever. 
+When it cuts you up this deep 
+it's hard to find a way to breathe.
 
-Your eyes are swallowing me, mirrors start to whisper, shadows start to sing. My skin's smothering me - help me find a way to breathe.
+Your eyes are swallowing me, 
+mirrors start to whisper, shadows start to sing. 
+My skin's smothering me - 
+help me find a way to breathe.
 
-Time stood still the way it did before, it's like I'm sleepwalking. Fell into another hole again, it's like I'm sleepwalking.
+Time stood still the way it did before, 
+it's like I'm sleepwalking. 
+Fell into another hole again, 
+it's like I'm sleepwalking.
 
 ㅤ
 
-Wake up! Take my hand and give me a reason to start again. Wake up, pull me out and give me a reason to start again.
+Wake up! 
+Take my hand and 
+give me a reason to start again. 
+Wake up, pull me out and give me a reason to start again.
 
 ㅤ
 
