@@ -29,17 +29,17 @@ The menu is a table of events, it has the following columns:
 * `Reliable?` shows if this event is reliable to use. Should always be true.
 * `Event ID` shows the ID of the event. The events table shows events with low IDs higher up in the table.
 * `Local?` shows is the event local or global.
-* `Serialized Bits` ... *sometimes a number, but usually 0.*
+* `Serialized Bits` shows serialized bits of the event.
 
 ![Game Events Debugger](images/game_event.png)
 
 ### Event Log
 
-Shows ... *nothing, apparently.*
+Shows all the events that have been executed during the recording.
 
 This menu has the following functionality:
 * `Filter` is a text entry to filter entities by the text put in it.
-* `Recording` ...
+* `Recording` is a checkbar that toggles the recording.
 * `Clear Event Log` is a button that clears the log below.
 * Event log table is a table that contains the events that happened in a period of time. Can be sorted by `Time`, `Event Name` or `Event Data`.
 
@@ -106,10 +106,10 @@ Client Anim Debug is identical to the Server Anim Debug menu, except it hooks up
  ... *What is this even about?*
 
 There are 4 values in this menu:
-* `m_Up` is a vector showing ...
-* `m_vEyeOffset` is a vector showing ...
+* `m_Up` is the up vector.
+* `m_vEyeOffset` is a vector showing the eye offset from the view.
 * `m_vecOrigin` is a vector showing the origin of player's eyes.
-* `m_qQuaternionPunch` is a vector showing ...
+* `m_qQuaternionPunch` is a vector showing the quaternion punch of the view.
 
 ![Server Anim Debug](images/game_cam.png)
 

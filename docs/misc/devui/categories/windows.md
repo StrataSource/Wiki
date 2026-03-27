@@ -3,8 +3,6 @@ title: Windows
 weight: 10
 ---
 
-> Redo windows.png and windows_dm_ai2.png
-
 # Windows
 
 The Windows tab is the first tab in the Developer UI menu. It contains various options that control different parts of the engine, from material properties to NPC behaviors. Being very useful for debugging entities and rendering, it has proven to be a great replacement for the basic console commands, making debugging faster and easier.

@@ -3,10 +3,6 @@ title: Graphics
 weight: 20
 ---
 
-> graphics_pp_dof.png IS MISSING
-
-> Redo graphics_vol_fog.png, graphics_csm.gif and graphics_pp_bloom.png
-
 # Graphics
 
 The graphics tab is the most popular among all the other tab in the Developer UI, mainly because of its functionality. It contains everything needed to debug lighting, post processing effects and graphics in general.
@@ -57,7 +53,7 @@ Clustered Volumetrics Inspector allows setting the volumetrical value for all cl
 
 ![CVI Menu](images/graphics_vol-menu.png)
 
-If an `obb_fogvolume` entity is specified in the fogvolume list, the following properties will be able to be changed:
+If an `obb_fogvolume` entity is specified in the fogvolume list, the following properties will appear:
 * `Position` of the fog entity, with the value being the center of the fog;
 * `Angles` of the fog entity;
 * `Half Size` of the fog, which is split into width, length and height;
@@ -66,8 +62,6 @@ If an `obb_fogvolume` entity is specified in the fogvolume list, the following p
 * `Emissive Color`, which is the color of the fog itself;
 * `Scattering color`, which is the color of the volumetric rays that go through the fog's volume;
 * `Fog Phase`, which is similar to the `Default Fog Phase` except it is applied individually to this `obb_fogvolume`.
-
-![CVI Fog Editor](images/graphics_vol_fog.png)
 
 ****
 
