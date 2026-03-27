@@ -4,7 +4,7 @@ title: DevUI Custom Theme Format
 
 # DevUI Custom Theme Format
 
-DevUI is the name of the ImGui implementation in Strata. DevUI supports custom themes provided in the `GAME` path under `resource/devui/themes`.
+DevUI supports custom themes, as long as they are provided in the `GAME` path under `resource/devui/themes`.
 Themes are automatically indexed on game startup and can be changed at any time via the top menu bar, or via `devui_theme` in the console.
 
 These are KeyValues 3 files with various properties defining different ImGui style parameters. Most of these match names in the
