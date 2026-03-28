@@ -3,8 +3,6 @@ title: Profiler
 weight: 30
 ---
 
-> Redo prof_all.png
-
 # Profiler
 
 The Profiler tab is the third tab in the Developer UI menu. Its main purpose is dynamically debugging different aspects of the map and the engine, showing the exact budget and usage. Additionally, a `.txt` report can be generated, containing every event that happened in a specified period of time. The menus of this tab are useful for optimizing maps, game events and material usage.
@@ -204,7 +202,7 @@ VProf Counters window contains values that represent various details about rende
 VProf Tree allows developers to record specific engine events for a specified period of time, allowing them to see... what? what will they find there? more numbers? for what?
 
 > [!BUG]
-> Pressing `Stop Recording` button without pressing `Start Recording` beforehand starts recording with no way to stop it. Eventually the numbers overfill the RAM!
+> Pressing `Stop Recording` button without pressing `Start Recording` beforehand starts recording with no way to stop it!
 
 This window contains the list of all the events that exist in the engine, and the following buttons:
 * `Start Recording` begins recording engine events.

@@ -37,7 +37,7 @@ Script Modules window shows information about all Angelscript files, functions a
 
 ### Script Engine Stats
 
-Script Engine Stats window shows information about registered classes, globald, and other Angelscript objects.
+Script Engine Stats window shows information about registered classes, globals, and other Angelscript objects.
 
 * `Current Heap Size` is the size of all the new objects, in megabytes.
 

@@ -117,13 +117,13 @@ There are 4 values in this menu:
 
 ## Sound Emitter System Debug
 
-Sound Emitter System Debug is a window that allows users to play any sound avaliable in the engine. Sounds should be defined in soundscripts in order for them to be player, no raw sounds allowed.
+Sound Emitter System Debug is a window that allows users to play any sound available in the engine. Sounds should be defined in soundscripts in order for them to be player, no raw sounds allowed.
 
 ![Server Anim Debug](images/game_sound.png)
 
 ### Sound List
 
-The list of all the sounds avaliable.
+The list of all the sounds available.
 
 There are the following buttons:
 * `Reload Client` reloads all the sounds on the client side.
