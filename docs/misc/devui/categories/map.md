@@ -5,7 +5,7 @@ weight: 40
 
 # Map
 
-The fourth tab is currently the smallest tab in the Developer UI, but its functionality is unmatched with any other tabs because of the window it contains.
+The fourth tab contains windows related to map's properties. Currently, there is only one window.
 
 ![Map Tab](images/map.png)
 

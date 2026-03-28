@@ -15,7 +15,7 @@ It consists of 6 windows - **Server Script Output**, **Server Script Console**, 
 
 ## Server / Client Script Console
 
-The consoles and output windows used for and by Angelscript.
+The consoles and output windows for VScript.
 
 ![Script Consoles](images/script_consoles.png)
 

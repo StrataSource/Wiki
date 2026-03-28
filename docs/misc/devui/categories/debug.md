@@ -5,7 +5,7 @@ weight: 80
 
 # Debug
 
-The last, eighth tab, is the default ImGUI debugging window. General users shouldn't need this window, since it is meant for internal use with styling and debug with ImGui. However, people would be interested in this when developing DevUI themes. If they are interested in what ImGui is itself, this menu would be useful too.
+The last, eighth tab, is the default ImGUI debugging window. General users shouldn't need this window, since it is meant for internal use with styling and debug with ImGui. However, people would be interested in this menu when developing DevUI themes. If they are interested in what ImGui is itself, the [ImGui repository](https://github.com/ocornut/imgui/) would be more useful.
 
 ![Debug](images/debug.png)
 
