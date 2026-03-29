@@ -5,7 +5,7 @@ weight: 40
 
 # Map
 
-The fourth tab contains windows related to map's properties. Currently, there is only one window.
+The fourth tab contains windows related to map's properties.
 
 ![Map Tab](images/map.png)
 

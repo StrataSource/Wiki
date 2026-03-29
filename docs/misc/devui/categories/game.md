@@ -85,7 +85,7 @@ Shows this entity's bones, as a table.
 The columns are divided by `Index` of the bone, `Name` of the bone, and `Position` of the bone.
 
 ### Pose Parameters
-Shows pose parameters, if the entity uses animations made in Faceposer.
+Shows pose parameters, if the entity uses animations made in Faceposer or generally uses bones to animate.
 
 The parameters are shown as a table, columns of which contain `Index`, `Name`, `Flags` and `Value` of the parameter.
 
@@ -103,7 +103,7 @@ Client Anim Debug is identical to the Server Anim Debug menu, except it hooks up
 
 ## Stick Cam Debug UI
 
- ... *What is this even about?*
+Stick Cam Debug UI is debugging window for the adhesion gel.
 
 There are 4 values in this menu:
 * `m_Up` is the up vector.
@@ -111,7 +111,7 @@ There are 4 values in this menu:
 * `m_vecOrigin` is a vector showing the origin of player's eyes.
 * `m_qQuaternionPunch` is a vector showing the quaternion punch of the view.
 
-![Server Anim Debug](images/game_cam.png)
+![Stick Cam Debug](images/game_cam.png)
 
 ****
 
