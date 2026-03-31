@@ -7,18 +7,24 @@ features:
 
 # Troubleshooting
 
-### The volumetrics don't show up!
+This is a list of currently known issues and some troubleshooting tips for any issues with volumetric lighting.
 
-Skill issue.
+### "The volumetrics don't show up!"
 
-### The volumetrics are too intense!
+* Skill issue.
 
-Same issue.
+### "The volumetrics are too intense!"
 
-### My Volumetrics are broken and corrupt!
+* Seems like the `Volumetric Density` KeyValue is set too high. The value of 1.0 makes the volumetric ray completely opaque, so make sure it is set to something around 0.1 for more realistic results.
 
-We fucked all the AMD GPUs in the ASS! Go buy an nvidia, we don't care.
+### "The volumetrics for a light source are everywhere, even behind walls!"
 
-### How do I get to use it? I don't have P2CE
+* Volumetric lighting is shadow dependant, you need to make sure the `Shadowed` flag is checked when making shadowed volumetrics. If the flag is enabled but volumetrics are still leaking, then you might have too many dynamic shadows updating at once. See [clustered troubleshooting page](/lighting/clustered/troubleshooting) for more information related to the issue.
 
-Dude... ugh. Just shut up. Open beta in 2 months.
+### "My volumetrics are broken and corrupt!"
+
+* Certain AMD GPU models are known to have trouble running the clustered renderer, and since volumetrics are shadow dependant, this issue relates to them as well. **If you experience this, let us know what GPU brand/model, operating system and other hardware specs you're using.** Clustered lights may also act weird when running the game on Linux under DXVK, however the circumstances in which they break should not be possible in production.
+
+### "Hey, you didn't cover my seemingly common issue!"
+
+* **That's exactly why rewieving system on Github exists. If you know any issues that I haven't covered, PLEASE LET ME KNOW!** And yes I'll remove this line once it'll come to merging.

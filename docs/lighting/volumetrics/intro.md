@@ -1,23 +1,16 @@
 ---
-title: "Introducing Volumetrics"
+title: "Introduction"
 weight: 10
 features:
     - USE_CLUSTERED
 ---
 
-> [!NOTE]
-> This page is work in progress. Please be patient!
-> TODO fill me.
-
 # Volumetric Lighting
 
 Volumetric Lighting is a rendering effect that simulates light rays scattering in the air.
-It allows light to have an occlusion effect, meaning objects can block the light, creating realistic shadows inside the volume.
+It allows light to have an occlusion effect, that, when objects block the light, creates realistic shadows inside the light's volume. 
 
-![Volumetrics](images/basic_volumetric.gif)
-
-> [!NOTE]
-> Player model interacts with volumetric lighting, even in the first person view.
+Player model also interacts with volumetric lighting.
 
 ![Volumetrical Player Shadow](images/vol_playershadow.png)
 
@@ -26,10 +19,12 @@ It allows light to have an occlusion effect, meaning objects can block the light
 There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Light Mode` **`Volumetric Density`** and **`Volumetric Light Scale`**:
 
 * `Volumetric Light Mode` toggles the volumetric lighting for this entity, can be set to either *None* or *Dynamic Only*.
-* `Volumetric density` is a floating number between 0 and 1, where 1 is fully opaque and 0 is completely invisible.
+* `Volumetric Density` is a floating number between 0 and 1, where 1 is fully opaque and 0 is completely invisible.
 * `Volumetric Light Scale` is a floating number that scales the color of the volumetric lighting casted by this entity, it is not recommended to set higher than 1.
 
-`env_projectexture`, except for `Enable Volumetrics`, have only volumetric-related KeyValue - `Volumetric Intensity`, which is identical to `Volumetric Density`. But unlike all the other entities that produce volumetrics, projected texture volumetrics work with WebM videos.
+`env_projectexture`, has only two volumetric-related KeyValues - `Volumetric Intensity`, which is identical to `Volumetric Density`, and `Enable Volumetrics`. But unlike all the other entities that produce volumetrics, projected texture volumetrics work with WebM videos.
+
+More about setting up volumetrics for each entity in [Quick Start](/lighting/volumetrics/quick_setup)
 
 ## Light Cookies and WebM support
 
@@ -39,39 +34,36 @@ Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_proj
 
 ## Volumetrical Fog
 
-In addition to individual volumetrics for the Clustered lights, there is a point entity called `obb_fogvolume`. It allows you to place a volumetric fog in your map. It can have a different shape, color and density, but most importantly, **it projects volumetrical rays of the lights that intercept it**. Simply put, this ... 
+In addition to individual volumetrics for the Clustered lights, there is a point entity called `obb_fogvolume`. It allows placing a volumetric fog, that can have a different shape, color and density, but most importantly, **it projects volumetrical rays of the lights that intercept it**. Simply put - volumetric shadows from a light source, if not seen anywhere else, will appear in that fog. *I can't find right words to explain this, but the difference is that volumetrics from the light itself are for the light itself, and volumetrical fog receives shadows from all the volumetrical lights instead.*
 
 #### KeyValues:
-* The width
-* The height
-* The depth of the fog
-* the color of the "emissive"
-* the color of the "scaterring"
-* a `Spheroid` KeyValue
-* the KeyValue `Texture Name`
-* the X and Y axes of the custom texture slices.
+* `Half-Width` of the fog on the Y axis;
+* `Half-Width` of the fog on the Z axis;
+* `Half-Width` of the fog on the X axis;
+* `Emissive Color`, which is the color of the fog;
+* `Scattering Color`, which is the color of the rays passing through the fog;
+* `Phase` of the rays passing through the fog;
+* `Spheroid` checkmark, determining the general shape of the fog;
+* `Texture Name` determines a 2D-to-3D texture forming the shape of the fog;
+* `Texture Slices` determines the amount of slices of the 2D-to-3D texture (default is 16, which is 4x4 grid of textures)
 
-> TODO: replace the keyvalues above with the actual keyvalues with propper grammar.
-
-`obb_volumefog` is cubic by default. There is a `Spheroid` KeyValue to make the fog spherical.
+`obb_volumefog` is cubic by default. There are 2 ways to give it a different shape - using `Spheroid` or `Texture Name` keyvalues.
 
 ![OBB_VolumeFog Cube](images/obb_volumefog_cube.jpg)
 
 ![OBB_VolumeFog Sphere](images/obb_volumefog_sphere.jpg)
 
-The shape of `obb_fogvolume`'s volumetric fog can be changed with the "Texture Name" KeyValue. The texture should be ... This kind of texture can be made in ...
-
-The X and Y axes of the 3D-to-2D texture slices can be changed via (KEYVALUES).
+`Texture Name` only parses 2D-to-3D textures. This kind of texture can be made in ... 
 
 ![OBB_VolumeFog with a custom texture](images/obb_volume_changetexture.jpg)
 
-All the `obb_fogvolume`'s KeyValues can be changed in realtime in-game using the Clustered Volumetrics Inspector.
+All `obb_fogvolume`'s KeyValues can be changed in realtime in-game using the Clustered Volumetrics Inspector.
 
 ![Clustered Volumetric Inspector](images/fog_inspector.png)
 
 ## Global Volumetrical Fog
 
-To set up the volumetric fog for the whole map, you can use the 'Clustered Volumetrics Inspector' in the Developer UI menu. You can enable the Clustered Volumetrics Inspector UI using the  `devui_show vol_editor` console command, or by using the `devui_menu_toggle` command and selecting `Clustered Volumetrics Inspector` menu in the `Graphics` tab.
+To set up the volumetric fog for the whole map, you can use the **Clustered Volumetrics Inspector** in the Developer UI menu. You can enable the Clustered Volumetrics Inspector UI using the  `devui_show vol_editor` console command, or by using the `devui_menu_toggle` command and selecting `Clustered Volumetrics Inspector` menu in the `Graphics` tab.
 
 Clustered Volumetrics Inspector allows setting the volumetrical value for all clustered lights globally, allowing to preview the new volumetric lighting on the maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the whole map, values of which are controlled by this menu.
 
