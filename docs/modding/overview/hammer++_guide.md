@@ -1,5 +1,5 @@
 ---
-title: P2:CE Mod Template
+title: Super Real Guide btw
 ---
 
 # :p2ce_rocket_trollet:
