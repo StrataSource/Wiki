@@ -33,7 +33,7 @@ You can set up volumetrics in 3 different ways:
 3. Set the `Volumetric Intensity` KeyValue to some value between 0.1 and 1.0
 4. Compile the map. The volumetrics should appear.
 
-> PHOTO FOR env_projectedtexture
+![env_projectedtexture KV](images/ptex_kv.png)
 
 ## Using `obb_fogvolume`:
 
@@ -62,6 +62,6 @@ There are 4 volumetrics-related options:
 
 # Volumetrics for Cascade Shadow Mapping
 
-Currently, there are no KeyValues to enable volumetrics in `env_cascade_light` entity. However, there are two ways to make them appear - through the [Clustered Volumetric Inspector](/misc/devui/categories/graphics#clustered-volumetrics-inspector), or by using `obb_fogvolume` entity, since cascade shadows are marked as volumetrical.
+Currently, there are no KeyValues that enables the volumetric fog for `env_cascade_light` entity. However, there are two ways to make them appear - through the [Clustered Volumetric Inspector](/misc/devui/categories/graphics#clustered-volumetrics-inspector), or by using `obb_fogvolume` entity, since cascade shadows are marked as volumetrical.
 
 ![Volumetric effect of the Cascade Shadow Mapping](images/obb_volumefog_csm_interact_workaround.jpg)

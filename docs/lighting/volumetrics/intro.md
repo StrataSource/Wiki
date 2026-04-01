@@ -24,13 +24,13 @@ There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Li
 
 `env_projectexture`, has only two volumetric-related KeyValues - `Volumetric Intensity`, which is identical to `Volumetric Density`, and `Enable Volumetrics`. But unlike all the other entities that produce volumetrics, projected texture volumetrics work with WebM videos.
 
-More about setting up volumetrics for each entity in [Quick Start](/lighting/volumetrics/quick_setup)
+More about setting up volumetrics for each entity in [Quick Start](/lighting/volumetrics/quick_setup.md)
 
 ## Light Cookies and WebM support
 
 Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_projectedtexture`, as well as WebM videos from `env_projectedtexture` entity. The volumetrics casted by the lights that use light cookies and WebM videos will update and show up correctly.
 
-![WebM Volumetrics](images/ptex_vol.gif)
+![WebM Volumetrics](images/ptex_vol.mp4)
 
 ## Volumetrical Fog
 
@@ -41,8 +41,8 @@ In addition to individual volumetrics for the Clustered lights, there is a point
 * `Half-Width` of the fog on the Z axis;
 * `Half-Width` of the fog on the X axis;
 * `Emissive Color`, which is the color of the fog;
-* `Scattering Color`, which is the color of the rays passing through the fog;
-* `Phase` of the rays passing through the fog;
+* `Scattering Color`, which is the color multiplier for the rays that pass through the fog;
+* `Phase` is the angular distribution of scattered light, more about it [here](https://en.wikipedia.org/wiki/Henyey–Greenstein_phase_function);
 * `Spheroid` checkmark, determining the general shape of the fog;
 * `Texture Name` determines a 2D-to-3D texture forming the shape of the fog;
 * `Texture Slices` determines the amount of slices of the 2D-to-3D texture (default is 16, which is 4x4 grid of textures)
@@ -65,7 +65,7 @@ All `obb_fogvolume`'s KeyValues can be changed in realtime in-game using the Clu
 
 To set up the volumetric fog for the whole map, you can use the **Clustered Volumetrics Inspector** in the Developer UI menu. You can enable the Clustered Volumetrics Inspector UI using the  `devui_show vol_editor` console command, or by using the `devui_menu_toggle` command and selecting `Clustered Volumetrics Inspector` menu in the `Graphics` tab.
 
-Clustered Volumetrics Inspector allows setting the volumetrical value for all clustered lights globally, allowing to preview the new volumetric lighting on the maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the whole map, values of which are controlled by this menu.
+Clustered Volumetrics Inspector allows setting the volumetric values for all clustered lights globally, allowing to preview the new volumetric lighting on the maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the entire map, values of which are controlled by this menu.
 
 ![CVI](images/graphics_vol.png)
 
@@ -76,7 +76,7 @@ Clustered Volumetrics Inspector allows setting the volumetrical value for all cl
 * `Default Fog Emissive Color` sets the emissive fog color for the whole map. Appears on top of the regular fog created by `env_fog_controller`, works similarly.
 * `Default Fog Density` sets the density of the fog for the whole map, similarly to the `env_fog_controller`'s fog density.
 * `Default Fog Scattering Color` sets the color for the volumetric rays that are casted by CSM and Clustered lighting. Useful only in maps that were compiled before the update.
-* `Default Fog Phase` changes the starting / ending point of the volumetric rays. Only values from -1 to 1 are accepted. Default is 0 - no changes. Value of 0.5 cuts the volumetric rays in half, value of -0.5 makes only the ending half of the rays appear.
+* `Default Fog Phase` is the Henyey–Greenstein phase mathematical function. Simply put, it changes the starting / ending point of the volumetric rays in a specific way. Only values from -1 to 1 are accepted. Default is 0 - the whole ray is visible.
 
 ![CVI Menu](images/graphics_vol-menu.png)
 

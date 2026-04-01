@@ -11,7 +11,9 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 ### "The volumetrics don't show up!"
 
-* Skill issue.
+* Make sure you have `Volumetric Light Mode` set to `Dynamic Only` or `Enable Volumetrics` enabled.
+* Make sure `Volumetric Density` or `Volumetric Intensity`is not 0.
+* Make sure the light is actually working and/or visible.
 
 ### "The volumetrics are too intense!"
 
@@ -25,6 +27,4 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 * Certain AMD GPU models are known to have trouble running the clustered renderer, and since volumetrics are shadow dependant, this issue relates to them as well. **If you experience this, let us know what GPU brand/model, operating system and other hardware specs you're using.** Clustered lights may also act weird when running the game on Linux under DXVK, however the circumstances in which they break should not be possible in production.
 
-### "Hey, you didn't cover my seemingly common issue!"
-
-* **That's exactly why rewieving system on Github exists. If you know any issues that I haven't covered, PLEASE LET ME KNOW!** And yes I'll remove this line once it'll come to merging.
+## If you have any issues that are not addressed in this article, make sure to report it to us on the [Strata issue tracker.](https://github.com/StrataSource/Engine/issues)

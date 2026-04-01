@@ -69,7 +69,7 @@ If an `obb_fogvolume` entity is specified in the fogvolume list, the following p
 
 CSM Config allows toggling and changing the rotation of the light casted by `env_cascade_light`, as well as capturing the current "sharpness" of all the shadows produced by this entity and changing the shadow distance. *(the way CSM works is that, the closer the shadows are to the player, the sharper they get)*
 
-![CSM Config](images/graphics_csm.gif)
+![CSM Config](images/graphics_csm.mp4)
 
 The menu has the following values:
 * `CSM Enabled` toggles the CSM, if present;
