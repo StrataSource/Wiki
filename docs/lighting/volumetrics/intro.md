@@ -8,9 +8,9 @@ features:
 # Volumetric Lighting
 
 Volumetric Lighting is a rendering effect that simulates light rays scattering in the air.
-It allows light to have an occlusion effect, that, when objects block the light, creates realistic shadows inside the light's volume. 
+It allows light to produce a visual occlusion effect, meaning that any object blocking the light will cast realistic shadows and block any volumetrics from passing through.
 
-Player model also interacts with volumetric lighting.
+Shadows cast by the player model also interact with volumetric lighting.
 
 ![Volumetrical Player Shadow](images/vol_playershadow.png)
 
@@ -22,7 +22,7 @@ There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Li
 * `Volumetric Density` is a floating number between 0 and 1, where 1 is fully opaque and 0 is completely invisible.
 * `Volumetric Light Scale` is a floating number that scales the color of the volumetric lighting casted by this entity, it is not recommended to set higher than 1.
 
-`env_projectexture`, has only two volumetric-related KeyValues - `Volumetric Intensity`, which is identical to `Volumetric Density`, and `Enable Volumetrics`. But unlike all the other entities that produce volumetrics, projected texture volumetrics work with WebM videos.
+`env_projectexture`, has only two volumetric-related KeyValues - `Volumetric Intensity`, which is identical to `Volumetric Density`, and `Enable Volumetrics`. But unlike all the other entities that produce volumetrics, projected texture volumetrics also support projecting .webm videos.
 
 More about setting up volumetrics for each entity in [Quick Start](/lighting/volumetrics/quick_setup.md)
 
@@ -34,7 +34,7 @@ Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_proj
 
 ## Volumetrical Fog
 
-In addition to individual volumetrics for the Clustered lights, there is a point entity called `obb_fogvolume`. It allows placing a volumetric fog, that can have a different shape, color and density, but most importantly, **it projects volumetrical rays of the lights that intercept it**. Simply put - volumetric shadows from a light source, if not seen anywhere else, will appear in that fog. *I can't find right words to explain this, but the difference is that volumetrics from the light itself are for the light itself, and volumetrical fog receives shadows from all the volumetrical lights instead.*
+In addition to individual volumetrics for the Clustered lights, there is a point entity called `obb_fogvolume`. It allows placing a visually simulated 3 dimensional fog volume constrained to its oriented bounding box. This fog volume can be altered through both pre-defined keyvalues user-defined 3d textures, allowing custom shapes, colors, and density. Most importantly, **it displays the light sources passing through the volume, giving them a visualized depth beyond just light projected onto adjacent surfaces**. Volumetrics can also be directly emitted from light sources independently of the entity, allowing a direct 3d visualization of the light in an area.
 
 #### KeyValues:
 * `Half-Width` of the fog on the Y axis;
@@ -53,7 +53,7 @@ In addition to individual volumetrics for the Clustered lights, there is a point
 
 ![OBB_VolumeFog Sphere](images/obb_volumefog_sphere.jpg)
 
-`Texture Name` only parses 2D-to-3D textures. This kind of texture can be made in ... 
+`Texture Name` only parses 2D-to-3D textures.
 
 ![OBB_VolumeFog with a custom texture](images/obb_volume_changetexture.jpg)
 
@@ -63,9 +63,9 @@ All `obb_fogvolume`'s KeyValues can be changed in realtime in-game using the Clu
 
 ## Global Volumetrical Fog
 
-To set up the volumetric fog for the whole map, you can use the **Clustered Volumetrics Inspector** in the Developer UI menu. You can enable the Clustered Volumetrics Inspector UI using the  `devui_show vol_editor` console command, or by using the `devui_menu_toggle` command and selecting `Clustered Volumetrics Inspector` menu in the `Graphics` tab.
+To set up the volumetric fog for the whole map, you can use the **Clustered Volumetrics Inspector** in the Developer UI menu. You can enable the Clustered Volumetrics Inspector UI using the  `devui_show vol_editor` console command, or by pressing `shift + f1` and selecting `Clustered Volumetrics Inspector` menu in the `Graphics` tab on the top left.
 
-Clustered Volumetrics Inspector allows setting the volumetric values for all clustered lights globally, allowing to preview the new volumetric lighting on the maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the entire map, values of which are controlled by this menu.
+Clustered Volumetrics Inspector allows setting the volumetric values for all clustered lights globally, allowing to one to preview the volumetric lighting on maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the entire map, values of which are controlled by this menu.
 
 ![CVI](images/graphics_vol.png)
 
