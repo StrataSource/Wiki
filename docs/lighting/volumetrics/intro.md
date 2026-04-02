@@ -65,7 +65,7 @@ All `obb_fogvolume`'s KeyValues can be changed in realtime in-game using the Clu
 
 To set up the volumetric fog for the whole map, you can use the **Clustered Volumetrics Inspector** in the Developer UI menu. You can enable the Clustered Volumetrics Inspector UI using the  `devui_show vol_editor` console command, or by pressing `shift + f1` and selecting `Clustered Volumetrics Inspector` menu in the `Graphics` tab on the top left.
 
-Clustered Volumetrics Inspector allows setting the volumetric values for all clustered lights globally, allowing to one to preview the volumetric lighting on maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the entire map, values of which are controlled by this menu.
+Clustered Volumetrics Inspector allows setting the global volumetric properties (e.g. density) to be interacted with by volumetric lights, allowing to one to preview the volumetric lighting on maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the entire map, values of which are controlled by this menu.
 
 ![CVI](images/graphics_vol.png)
 
