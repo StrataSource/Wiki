@@ -27,7 +27,6 @@ In this chapter you will learn about:
 > It is recommended to try out what you learn in this guide as you go through it. This guide will include example tasks for you to attempt as practice.
 
 ---
-
 ## AngelScript
 [AngelScript's home page](https://www.angelcode.com/angelscript/) describes AngelScript as:
 > The AngelCode Scripting Library, or AngelScript as it is also known, is an extremely flexible cross-platform scripting library designed to allow applications to extend their functionality through external scripts.
@@ -40,7 +39,7 @@ AngelScript's official documentation can be found here: [AS Official Docs](https
 
 
 ## What Can You Do With AngelScript
-ngelScript allows for a closer connection to the internal engine code by having the engine provide various APIs to its internal classes. This allows you to do various things, such as creating custom entities, creating your own ConCommands and ConVars, making custom weapons - all things that aren't normally easy to do with VScript.
+AngelScript allows for a closer connection to the internal engine code by having the engine provide various APIs to its internal classes. This allows you to do various things, such as creating custom entities, creating your own ConCommands and ConVars, making custom weapons - all things that aren't normally easy to do with VScript.
 
 While VScript (mainly) sits between entities and handles the interactions between them, AngelScripts sits in a level above, being able to *create* entities and define their behavior.
 
