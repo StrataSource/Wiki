@@ -30,6 +30,7 @@
         "ALLOW_SINGLEPLAYER_CHEAT_VARS",
         "MOD_PORTAL2",
         "USE_CLUSTERED"
+        "USE_CAMPAIGNMANAGER"
     ],
     "color": "#EC6726"
 }
