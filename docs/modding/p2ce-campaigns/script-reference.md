@@ -31,6 +31,7 @@ The following is a baseline snippet of ideal meta key locations. Note that keys 
 				selector_button_background = ""
 				square_logo = ""
 				full_logo = ""
+				full_logo_size_preset = ""
 				chapter_display_mode = "list"
 				loading_square_logo_padding = "0"
 			}
@@ -50,6 +51,7 @@ The following is a baseline snippet of ideal meta key locations. Note that keys 
 						background_music = ""
 						loading_screen = ""
 						transition_screen = ""
+						locked_title = ""
 					}
 				}
 			]
@@ -204,13 +206,29 @@ Path to the image to use, including the file extension. This path is relative to
 
 Also used in main menu.
 
-This image will be sized to fit on the main menu. Any resolution/ratio can be used and should appear fine. Currently, the full logo will be constrainted to center fit inside a 540x130 pixel frame.
+This image will be sized to fit on the main menu. Any resolution/ratio can be used and should appear fine. Currently, the full logo will be constrained to center fit inside a 540x130 pixel frame.
 
 All official logos are provided in `.svg` format.
 
 ![Full Logo Example](images/campaign-full-logo.webp)
 
+### `full_logo_size_preset`
+
+**(OPTIONAL, DEFAULT: "STANDARD")**
+
+Allows for making the image specified in `full_logo` a different size than the default.
+
+Valid values are:
+- `standard` (default)
+- `large` (makes image specified larger)
+
 ## Chapter Selection
+
+### `locked_title`
+
+**(OPTIONAL, DEFAULT: "????")**
+
+Locked chapters can be assigned their own title when they are locked. By default they will appear as "????" but with `locked_title` it can be changed.
 
 ### `chapter_display_mode`
 
