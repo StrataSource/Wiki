@@ -24,7 +24,7 @@ There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Li
 
 `env_projectexture`, has only two volumetric-related KeyValues - `Volumetric Intensity`, which is identical to `Volumetric Density`, and `Enable Volumetrics`. But unlike all the other entities that produce volumetrics, projected texture volumetrics also support projecting .webm videos.
 
-More about setting up volumetrics for each entity in [Quick Start](/lighting/volumetrics/quick_setup.md)
+More about setting up volumetrics for each entity in [Quick Start](/lighting/volumetrics/quick_setup)
 
 ## Light Cookies and WebM support
 
