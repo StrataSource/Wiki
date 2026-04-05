@@ -21,7 +21,9 @@ To begin, [create a new addon](/modding/workshop/workshopgui) and include all re
 Each campaign has a subset of metadata that all dictate your how your chapters are ordered and unlocked, and what art assets are used. The campaign script is a KeyValue3 file, structured in the following way:
 
 > [!NOTE]
-> This snippet is not valid syntax and will not work in P2:CE!
+> This snippet is valid syntax, but you must replace the placeholder values with your own, or it will not work in P2:CE!
+>
+> An example of a functioning campaign script is available [here](https://github.com/StrataSource/p2ce-addons/blob/main/portal2/scripts/campaigns.kv3).
 
 ```
 {

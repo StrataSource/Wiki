@@ -115,6 +115,9 @@ Other options:
                           it will gather light across a wider area.
   -StaticPropLighting   : generate baked static prop vertex lighting
   -StaticPropLightingFinal   : this option is obsolete. it's function is merged with -final.
+  -StaticPropLightingOld   : This option uses an older algorithm for static prop lighting  
+                             in which props will be lit much brighter than they should
+                             Sometimes this is preferred to match the style of older Source games, like Portal 2 which used this algorithm
   -StaticPropPolys   : Calculate lighting on static props using the visual mesh instead of the collision mesh.
   -OnlyStaticProps   : Only perform direct static prop lighting (vrad debug option)
   -StaticPropNormals : when lighting static props, just show their normal vector
