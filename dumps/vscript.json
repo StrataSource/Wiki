@@ -56,8 +56,8 @@
   {"method": "ScriptPrintMessageChatTeam", "signature": "void ScriptPrintMessageChatTeam(int, string)", "doc": "Prints a message in chat to the specified team." },
   {"method": "ScriptShowHudMessageAll", "signature": "void ScriptShowHudMessageAll(string, float)", "doc": "Show center print text message." },
   {"method": "ScriptSteamShowURL", "signature": "bool ScriptSteamShowURL(string)", "doc": "Bring up the steam overlay and shows the specified URL.  (Full address with protocol type is required, e.g. http://www.steamgames.com/)" },
-  {"method": "SendToConsole", "signature": "void SendToConsole(string)", "doc": "Send a string that gets executed on the server as a ClientCommand." },
-  {"method": "SendToConsoleServer", "signature": "void SendToConsoleServer(string)", "doc": "Send a string that gets executed on the server as a ServerCommand." },
+  {"method": "SendToConsole", "signature": "void SendToConsole(string)", "doc": "SendToConsole" },
+  {"method": "SendToConsoleServer", "signature": "void SendToConsoleServer(string)", "doc": "Send a string that gets executed on the server as a ServerCommand" },
   {"method": "SendToPanorama", "signature": "void SendToPanorama(string, string)", "doc": "Send an event to Panorama" },
   {"method": "SetDucking", "signature": "void SetDucking(string, string, float)", "doc": "Set the level of an audio ducking channel" },
   {"method": "SetMapAsPlayed", "signature": "int SetMapAsPlayed()", "doc": "Adds the current map to the play order and returns the new index therein. Returns -2 if this is not a known community map." },
@@ -65,7 +65,7 @@
   {"method": "Time", "signature": "float Time()", "doc": "Get the current server time" },
   {"method": "TraceHull", "signature": "handle TraceHull(Vector, Vector, Vector, Vector, int, handle, int)", "doc": "Sweeps a hull along the specified line. Returns a CGameTrace with the trace result" },
   {"method": "TraceLine", "signature": "float TraceLine(Vector, Vector, handle)", "doc": "given 2 points & ent to ignore, return fraction along line that hits world or models" },
-  {"method": "TraceLineEx", "signature": "handle TraceLineEx(Vector, Vector, int, handle, int)", "doc": "Given 2 points, ent to ignore, collision group and trace mask, returns a CGameTrace with the result" },
+  {"method": "TraceLineEx", "signature": "handle TraceLineEx(Vector, Vector, int, handle, int)", "doc": "Given 2 points, ent to ignore (or array of ents to ignore), collision group and trace mask, returns a CGameTrace with the result" },
   {"method": "TraceLinePlayersIncluded", "signature": "float TraceLinePlayersIncluded(Vector, Vector, handle)", "doc": "given 2 points & ent to ignore, return fraction along line that hits world, models, players or npcs" },
   {"method": "TracePortalLine", "signature": "handle TracePortalLine(Vector, Vector, int, handle, int, bool)", "doc": "Same as TraceLineEx, but will transform the trace based on any portals it passes through. If the last bool is true, it will transform based on the first portal it went though." },
   {"method": "TryDLC1InstalledOrCatch", "signature": "bool TryDLC1InstalledOrCatch()", "doc": "Tests if the DLC1 is installed for Try/Catch blocks." },
@@ -191,6 +191,15 @@
    ]
   },
   {
+   "class": "CPortal_Player",
+   "extends": "CBaseMultiplayerPlayer",
+   "methods": [    { "method": "CPortal_Player::GetWheatleyMonitorDestructionCount", "signature": "int CPortal_Player::GetWheatleyMonitorDestructionCount()", "doc": "Get number of wheatley monitors destroyed by the player." },
+    { "method": "CPortal_Player::IncWheatleyMonitorDestructionCount", "signature": "void CPortal_Player::IncWheatleyMonitorDestructionCount()", "doc": "Set number of wheatley monitors destroyed by the player." },
+    { "method": "CPortal_Player::TurnOffPotatos", "signature": "void CPortal_Player::TurnOffPotatos()", "doc": "Turns Off the Potatos material light" },
+    { "method": "CPortal_Player::TurnOnPotatos", "signature": "void CPortal_Player::TurnOnPotatos()", "doc": "Turns On the Potatos material light" }
+   ]
+  },
+  {
    "class": "CWeaponPaintGun",
    "extends": "CBaseCombatWeapon",
    "methods": [    { "method": "CWeaponPaintGun::ActivatePaint", "signature": "void CWeaponPaintGun::ActivatePaint(int)", "doc": "Activates the specified paint power on the gun." },
@@ -205,12 +214,11 @@
    ]
   },
   {
-   "class": "CPortal_Player",
-   "extends": "CBaseMultiplayerPlayer",
-   "methods": [    { "method": "CPortal_Player::GetWheatleyMonitorDestructionCount", "signature": "int CPortal_Player::GetWheatleyMonitorDestructionCount()", "doc": "Get number of wheatley monitors destroyed by the player." },
-    { "method": "CPortal_Player::IncWheatleyMonitorDestructionCount", "signature": "void CPortal_Player::IncWheatleyMonitorDestructionCount()", "doc": "Set number of wheatley monitors destroyed by the player." },
-    { "method": "CPortal_Player::TurnOffPotatos", "signature": "void CPortal_Player::TurnOffPotatos()", "doc": "Turns Off the Potatos material light" },
-    { "method": "CPortal_Player::TurnOnPotatos", "signature": "void CPortal_Player::TurnOnPotatos()", "doc": "Turns On the Potatos material light" }
+   "class": "CPropPhysicsPaintable",
+   "extends": "CBaseAnimating",
+   "methods": [    { "method": "CPropPhysicsPaintable::GetPaint", "signature": "int CPropPhysicsPaintable::GetPaint()", "doc": "Get the current paint type applied to the prop. Returns a value from the *_POWER enum" },
+    { "method": "CPropPhysicsPaintable::GetPaintedSkin", "signature": "int CPropPhysicsPaintable::GetPaintedSkin()", "doc": "Get the skin used when the prop is painted." },
+    { "method": "CPropPhysicsPaintable::GetUnPaintedSkin", "signature": "int CPropPhysicsPaintable::GetUnPaintedSkin()", "doc": "Get the skin used when the prop is not painted." }
    ]
   },
   {
@@ -375,8 +383,13 @@
   {
    "class": "CPropWeightedCube",
    "extends": "CBaseAnimating",
-   "methods": [    { "method": "CPropWeightedCube::GetCubeType", "signature": "int CPropWeightedCube::GetCubeType()", "doc": "Get the type of the cube. Returns a value from the CUBE_* enum" },
-    { "method": "CPropWeightedCube::GetPartner", "signature": "handle CPropWeightedCube::GetPartner()", "doc": "Get the instance handle of the schrodinger's partner" }
+   "methods": [    { "method": "CPropWeightedCube::GetCubeBehavior", "signature": "int CPropWeightedCube::GetCubeBehavior()", "doc": "Get the behavior type of the cube. Returns a value from the CUBE_BEHAVIOR_* enum" },
+    { "method": "CPropWeightedCube::GetCubeShape", "signature": "int CPropWeightedCube::GetCubeShape()", "doc": "Get the shape of the cube (IE what buttons it presses). This is a number which matches the CUBE_SHAPE_* enum, or other values if a custom shape was set." },
+    { "method": "CPropWeightedCube::GetLaser", "signature": "handle CPropWeightedCube::GetLaser()", "doc": "Get the instance handle of the invisible env_portal_laser outputting from this cube, or null if not emitting" },
+    { "method": "CPropWeightedCube::GetPaint", "signature": "int CPropWeightedCube::GetPaint()", "doc": "Get the current paint type applied to the cube. Returns a value from the *_POWER enum" },
+    { "method": "CPropWeightedCube::GetPartner", "signature": "handle CPropWeightedCube::GetPartner()", "doc": "Get the instance handle of the schrodinger's partner" },
+    { "method": "CPropWeightedCube::IsEmissionLocked", "signature": "bool CPropWeightedCube::IsEmissionLocked()", "doc": "Check whether the laser output is locked on" },
+    { "method": "CPropWeightedCube::IsPressingButton", "signature": "bool CPropWeightedCube::IsPressingButton()", "doc": "Check whether the cube is 'activated', pressing a button." }
    ]
   },
   {
