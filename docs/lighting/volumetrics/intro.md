@@ -14,6 +14,8 @@ Shadows cast by the player model also interact with volumetric lighting.
 
 ![Volumetrical Player Shadow](images/vol_playershadow.png)
 
+![Basic Volumetric Demonstration](https://youtu.be/FlTBgf5pzVY)
+
 ## The Setup
 
 There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Light Mode` **`Volumetric Density`** and **`Volumetric Light Scale`**:
@@ -30,7 +32,7 @@ More about setting up volumetrics for each entity in [Quick Start](/lighting/vol
 
 Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_projectedtexture`, as well as WebM videos from `env_projectedtexture` entity. The volumetrics casted by the lights that use light cookies and WebM videos will update and show up correctly.
 
-![WebM Volumetrics](images/ptex_vol.mp4)
+![WebM Projected Texture Volumetrics](https://youtu.be/jgrTVWSZQPI)
 
 ## Volumetrical Fog
 

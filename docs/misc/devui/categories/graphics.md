@@ -69,7 +69,7 @@ If an `obb_fogvolume` entity is specified in the fogvolume list, the following p
 
 CSM Config allows toggling and changing the rotation of the light casted by `env_cascade_light`, as well as capturing the current "sharpness" of all the shadows produced by this entity and changing the shadow distance. *(the way CSM works is that, the closer the shadows are to the player, the sharper they get)*
 
-![CSM Config](images/graphics_csm.mp4)
+![Graphics CSM DevUI Demonstration](https://youtu.be/VbazioxF5RY)
 
 The menu has the following values:
 * `CSM Enabled` toggles the CSM, if present;
@@ -105,14 +105,14 @@ The menu has the following values:
 
 > [!NOTE]
 > Example of the output of the `Copy Settings` button:
-> 
+>
 > `mat_dof_override 0;mat_dof_near_blur_depth 168.099;mat_dof_near_focus_depth 277.157;mat_dof_far_focus_depth 271.157;mat_dof_far_blur_depth 1000.0;mat_dof_near_blur_radius 10.0;mat_dof_far_blur_radius 5.0;mat_dof_quality 1;`
 
 * `Copy All Settings` copies all the settings related to Motion Blur effect.
 
 > [!NOTE]
 > Example of the output of the `Copy All Settings` button:
-> 
+>
 > `mat_motion_blur_enabled 1;mat_motion_blur_forward_enabled 1;mat_motion_blur_falling_min 8;mat_motion_blur_falling_max 20.0;mat_motion_blur_falling_intensity 1.0;mat_motion_blur_roll_intensity 1.0;mat_motion_blur_rotation_intensity 1.0;mat_motion_blur_strength 1.0;`
 
 ![Post Processing DOF](images/graphics_pp_dof.png)
@@ -135,7 +135,7 @@ The menu has the following values:
 
 > [!NOTE]
 > Example of the output of the `Copy Settings` button:
-> 
+>
 > `mat_motion_blur_enabled 1;mat_motion_blur_forward_enabled 1;mat_motion_blur_falling_min 0;mat_motion_blur_falling_max 0.529;mat_motion_blur_falling_intensity 0;mat_motion_blur_roll_intensity 1.058;mat_motion_blur_rotation_intensity 1.587;mat_motion_blur_strength 1.851;`
 
 * `Copy All Settings` is identical to the `Copy Settings` button.
@@ -163,7 +163,7 @@ The menu has the following values:
 
 > [!NOTE]
 > Example of the output of the `Copy Settings` button:
-> 
+>
 > `mat_bloomscale 0.827;mat_bloomamount_rate 1;mat_dynamic_tonemapping 1;mat_autoexposure_max 0.837;mat_autoexposure_max_multiplier 0.899;mat_autoexposure_min 0.196;mat_show_histogram 0;mat_hdr_uncapexposure 0;mat_force_bloom 0;mat_accelerate_adjust_exposure_down 6.719;mat_non_hdr_bloom_scalefactor .3;mat_bloom_scalefactor_scalar 0.826;`
 
 * `Copy All Settings` copies all the settings related to Motion Blur effect.
