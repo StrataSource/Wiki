@@ -9,8 +9,8 @@ Version 25 was selected to avoid collisions with other projects that are also mo
 
 This document goes over the significant changes to the format so non-Strata devs can parse and analyze our maps.
 
-BSP v25 is extremely new right now and is subject to change. Until these changes are finalized and merged into our
-primary development branch, this format may change **without** a BSP or lump version increase.
+As Strata is in active development, BSP v25 is subject to change, but should be considered stable.
+Any backwards-incompatible changes will require a BSP or lump version increase.
 
 ## Map Bounds
 
@@ -69,6 +69,7 @@ primary development branch, this format may change **without** a BSP or lump ver
 | `MAX_MAP_PRIMITIVES`                      | 1048576                                                                            |
 | `MAX_MAP_PRIMVERTS`                       | 1048576                                                                            |
 | `MAX_MAP_PRIMINDICES`                     | 1048576                                                                            |
+| `MAX_MAP_COLORVARS`                       | `0xFFFFFE`                                                                         |
 
 ## New Lump Versions
 
@@ -92,10 +93,12 @@ The following table lists current lump versions for all lumps that are versioned
 | `LUMP_LEAFBRUSHES_VERSION`        | 1       |
 | `LUMP_PRIMINDICES_VERSION`        | 1       |
 | `LUMP_VERTNORMALINDICES_VERSION`  | 1       |
-| `LUMP_OVERLAYS_VERSION`           | 2       |
+| `LUMP_OVERLAYS_VERSION`           | 3       |
 | `LUMP_WATEROVERLAYS_VERSION`      | 1       |
 | `LUMP_LEAFWATERDATA_VERSION`      | 1       |
 | `LUMP_WORLDLIGHTS_VERSION`        | 2       |
+| `GAMELUMP_STATIC_PROPS_VERSION`   | 13      |
+| `GAMELUMP_COLOR_VARS_VERSION`     | 0       |
 
 ## Format
 
@@ -107,9 +110,10 @@ This section lists the new structure format for each of those lumps.
 The below composite types may be used in the structure definitions.
 
 | Type Name | Components | Size (Bytes) | Alignment (Bytes) | 
-|---|---|---|---|
-| Vector | float xyz[3]          | 12 | 4 |
-| Color  | unsigned char rgba[4] | 4  | 1 |
+|----------|-----------------------|----|---|
+| Vector   | float xyz[3]          | 12 | 4 |
+| Vector2D | float xy[2]           | 8  | 4 |
+| Color    | unsigned char rgba[4] | 4  | 1 |
 
 ### Structures
 
@@ -262,49 +266,6 @@ struct dleafwaterdata_t
     int      surfaceTexInfoID;
 };
 
-#define OVERLAY_BSP_FACE_COUNT    64
-
-struct doverlay_version1_t
-{
-	int			    nId;
-	int			    nTexInfo;
-	unsigned short	m_nFaceCountAndRenderOrder;
-	int			    aFaces[OVERLAY_BSP_FACE_COUNT];
-	float		    flU[2];
-	float		    flV[2];
-	Vector		    vecUVPoints[4];
-	Vector		    vecOrigin;
-	Vector		    vecBasisNormal;
-};
-
-struct doverlay_version2_t
-{
-    int             nId;
-    int             nTexInfo;
-    unsigned short  m_nFaceCountAndRenderOrder;
-    int             aFaces[OVERLAY_BSP_FACE_COUNT];
-    float           flU[2];
-    float           flV[2];
-    Vector          vecUVPoints[4];
-    Vector          vecOrigin;
-    Vector          vecBasisNormal;
-    Color           clrTint;
-};
-
-#define WATEROVERLAY_BSP_FACE_COUNT                256
-struct dwateroverlay_t
-{
-    int               nId;
-    int               nTexInfo;
-    unsigned short    m_nFaceCountAndRenderOrder;
-    int               aFaces[WATEROVERLAY_BSP_FACE_COUNT];
-    float             flU[2];
-    float             flV[2];
-    Vector            vecUVPoints[4];
-    Vector            vecOrigin;
-    Vector            vecBasisNormal;
-};
-
 enum lightmode_t : uint8_t
 {
     lightmode_static = 0,   // Lightmap-only light, fully static
@@ -348,4 +309,136 @@ struct dflagslump_t
 	uint32          levelFlags;
 };
 
+```
+
+
+### Color Variables (`clvr`)
+
+Color variables are a Strata-exclusive mechanism for overriding the tints of overlays and static props.
+The names are stored in the `clvr` game lump, defined by the `dcolorvarslump_t` stuct specified below. 
+Static props and overlays now have a bitflag to enable color vars. If set, their `rendercolor` value is repurposed to
+store an index into the vars lump - `index = r << 16 | g << 8 | b`.
+
+```c
+#define COLOR_VAR_NAME_LENGTH 64
+
+struct ColorVarDictLump_t
+{
+    char name[COLOR_VAR_NAME_LENGTH];
+};
+struct dcolorvarslump_t
+{
+    int count;
+    ColorVarDictLump_t names[count];
+}
+```
+
+
+### Overlays (v0-2, info_overlay_transition)
+
+Version 0 is Valve's original format. Versions 1 and 2 tweak that slightly as shown below,
+but version 3 changes the format drastically.
+
+```c
+#define OVERLAY_LEGACY_BSP_FACE_COUNT    64
+
+struct doverlay_version0_t
+{
+    int             nId;
+    short           nTexInfo;
+    unsigned short  m_nFaceCountAndRenderOrder;
+    int             aFaces[OVERLAY_LEGACY_BSP_FACE_COUNT];
+    float           flU[2];
+    float           flV[2];
+    Vector          vecUVPoints[4];
+    Vector          vecOrigin;
+    Vector          vecBasisNormal;
+};
+
+struct doverlay_version1_t
+{
+    int             nId;
+    int             nTexInfo;
+    unsigned short  m_nFaceCountAndRenderOrder;
+    int             aFaces[OVERLAY_LEGACY_BSP_FACE_COUNT];
+    float           flU[2];
+    float           flV[2];
+    Vector          vecUVPoints[4];
+    Vector          vecOrigin;
+    Vector          vecBasisNormal;
+};
+
+struct doverlay_version2_t
+{
+    int             nId;
+    int             nTexInfo;
+    unsigned short  m_nFaceCountAndRenderOrder;
+    int             aFaces[OVERLAY_LEGACY_BSP_FACE_COUNT];
+    float           flU[2];
+    float           flV[2];
+    Vector          vecUVPoints[4];
+    Vector          vecOrigin;
+    Vector          vecBasisNormal;
+    Color           clrTint;
+};
+
+#define WATEROVERLAY_BSP_FACE_COUNT                256
+struct dwateroverlay_t
+{
+    int               nId;
+    int               nTexInfo;
+    unsigned short    m_nFaceCountAndRenderOrder;
+    int               aFaces[WATEROVERLAY_BSP_FACE_COUNT];
+    float             flU[2];
+    float             flV[2];
+    Vector            vecUVPoints[4];
+    Vector            vecOrigin;
+    Vector            vecBasisNormal;
+};
+```
+
+### Overlays version 3+
+
+Version 3+ is variable size. It starts with counts, then a face array, then each overlay definition.
+Overlays also now have a bitflags field, which replaces the reuse of the handle Z axes.
+
+```c
+struct overlay_lump
+{
+    int32               overlayCount;
+    int32               faceCount;
+    int32               faces[faceCount];
+    doverlay_version3_t overlays[overlayCount];
+}
+
+
+// Indicates `cross( vecBasisNormal, vecBasisU )` should be inverted.
+// In version 0-2, this is indicated by (vecUVPoints[3].z == 1)
+#define OVERLAY_FLAG_BASIS_FLIPPED 1
+#define OVERLAY_FLAG_COLOR_VAR 2
+
+struct doverlay_version3_t
+{
+    int32       nId;
+    int32       nTexInfo;
+    uint16      iFlags;
+    uint16      nRenderOrder;
+    int32       nFaceOffset; // Offset into the lump faces array
+    int32       nFaceCount; // Number of faces this overlay uses
+    Vector2D    flU;
+    Vector2D    flV;
+    Vector2D    vecUVPoints[4];
+    Vector      vecBasisU; // Was stored in vecUVPoints[0-2].z
+    Vector      vecOrigin;
+    Vector      vecBasisNormal;
+    Color       clrTint; // RGBA tint
+};
+```
+
+### Static Props (`sprp`)
+
+Strata Source adds prop version v13. Instead of a single uniform scale float, this uses a vector to provide non-uniform scaling. One new bitfield is also added:
+
+```c
+#define STATIC_PROP_FLAGS_EX_COLOR_TINT 0x8
 ```
