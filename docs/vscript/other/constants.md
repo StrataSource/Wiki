@@ -147,7 +147,7 @@ Trace masks are used with the extended trace API to filter entities by category.
 Cube shape is used by the Shape/Behavior system for weighted cubes. A cube's shape indicates which buttons it can press. Note that other values are permitted for custom cubes.
 
 | Name                   | Value |
-|------------------------|-------|
+| ---------------------- | ----- |
 | `CUBE_SHAPE_CUBIC`     | 1     |
 | `CUBE_SHAPE_SPHERICAL` | 2     |
 
@@ -156,7 +156,7 @@ Cube shape is used by the Shape/Behavior system for weighted cubes. A cube's sha
 Cube behavior is used by the Shape/Behavior system for weighted cubes. A cube's behavior indicates the functionality of the cube.
 
 | Name                        | Value |
-|-----------------------------|-------|
+| --------------------------- | ----- |
 | `CUBE_BEHAVIOR_REGULAR`     | 1     |
 | `CUBE_BEHAVIOR_REFLECTIVE`  | 2     |
 | `CUBE_BEHAVIOR_SCHRODINGER` | 3     |
