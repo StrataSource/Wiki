@@ -24,11 +24,6 @@ While the Strata Source Wiki will provide basic details on how to add a FGD to S
 
 ## Specific Strata FGD Features
 
-<!-- TODO: Currently this doesn't work because of MFC, but will be available to use in the future. -->
-<!-- * Entity Flag Descriptions: Entity spawn flags and custom KV flags can now have descriptions to describe what the flag does, similar to KV descriptions themselves. This allows for not needing to cram the description into the title of the flag. -->
-
-<!-- TODO: Get image of the descriptions once implemented. -->
-
 * Custom Entity Flags: The `flags` KV type can now be used on other KVs besides `spawnflags`. This is a good alternative to `choices` if you have various choices and want multiple to be selected.
 
 ![Custom Flags FGD Implementation](../images/custom_flags_preview1.png)
@@ -57,11 +52,6 @@ FGDs are added to your Hammer game configurations, these are located in the Hamm
 From there, you can navigate using the side bar to `Game Configuration`. At the top is where used FGDs are listed under `Game data files`. To add an new FGD, simply click `Add...` on the right. To get to a existing FGD to edit, select an FGD in the list and click `Edit`. This will open the FGD file in your systems default text editor. To remove an FGD, select one in the list and click `Remove`, this will not remove the actual FGD file.
 
 ![Game Configuration](../../general_images/hammer_game_config.png)
-
-<!-- TODO: Confirm if this is true, currently some FGDs load just fine out of order. -->
-<!-- > ![WARNING]
->
-> FGDs are loaded in alphabetical order in Hammer. This means if you have a FGD file named `base_entities.fgd` and another called `apple.fgd`, if `apple.fgd` depends on a entity class entry in `base_entities.fgd`, Hammer will fail to load `apple.fgd`. This can be resolved by using `@include "base_entities.fgd"` at the top of `apple.fgd`. -->
 
 ## Additional Resources
 
