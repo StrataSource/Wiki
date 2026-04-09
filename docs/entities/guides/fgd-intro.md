@@ -36,13 +36,13 @@ While the Strata Source Wiki will provide basic details on how to add a FGD to S
 
 * `soundscape` KV type: A new KV type similar to `sound` or `studio` that will give the option to open the **Soundscape Browser** for choosing soundscapes. This is generally used with `env_soundscape`.
 
-![Soundscape Browser](/docs/general_images/soundscapebrowser.png)
+![Soundscape Browser](../../general_images/soundscapebrowser.png)
 
 * `bool` and `boolean`: KV types `bool` and `boolean` are both valid and interchangeable for FGD KVs.
 
 * Escape Sequences: Escape sequences `\n` `\t` `\"` `\\` are supported in FGD KV descriptions and don't cause issues with VMFs.
 
-* Additional FGD Helpers: Strata Source adds several FGD helpers to aid with working with entities in Hammer. [Check this article out to find out more](fgd-helpers.md).
+* Additional FGD Helpers: Strata Source adds several FGD helpers to aid with working with entities in Hammer. [Check this article out to find out more](./fgd-helpers).
 
 * Custom AngelScript Entities: Strata Source gives making custom entries in a FGD even better by allowing you to tie that entity to a custom scripted AngelScript entity.
 
@@ -52,17 +52,17 @@ While this process is very similar most other versions of Hammer, the UI has cha
 
 FGDs are added to your Hammer game configurations, these are located in the Hammer options via the menu bar near the top of the Hammer window under `Tools > Options`.
 
-![Options Button](/docs/general_images/options_button.png)
+![Options Button](../../general_images/options_button.png)
 
 From there, you can navigate using the side bar to `Game Configuration`. At the top is where used FGDs are listed under `Game data files`. To add an new FGD, simply click `Add...` on the right. To get to a existing FGD to edit, select an FGD in the list and click `Edit`. This will open the FGD file in your systems default text editor. To remove an FGD, select one in the list and click `Remove`, this will not remove the actual FGD file.
 
-![Game Configuration](/docs/general_images/hammer_game_config.png)
+![Game Configuration](../../general_images/hammer_game_config.png)
 
 <!-- TODO: Confirm if this is true, currently some FGDs load just fine out of order. -->
 <!-- > ![WARNING]
 >
 > FGDs are loaded in alphabetical order in Hammer. This means if you have a FGD file named `base_entities.fgd` and another called `apple.fgd`, if `apple.fgd` depends on a entity class entry in `base_entities.fgd`, Hammer will fail to load `apple.fgd`. This can be resolved by using `@include "base_entities.fgd"` at the top of `apple.fgd`. -->
 
-## Additional Resources:
+## Additional Resources
 
-* [FGD Helpers](fgd-helpers.md)
+* [FGD Helpers](./fgd-helpers)
