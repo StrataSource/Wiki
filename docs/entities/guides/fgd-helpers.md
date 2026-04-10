@@ -14,12 +14,12 @@ Strata Source provides new FGD helpers that can be used in FGD files to extend t
 
 ## Strata FGD Helpers
 
-* [`catapult`](./fgd-helpers#catapult)
-* [`direction`](./fgd-helpers#direction)
+* [`catapult()`](./fgd-helpers#catapult)
+* [`direction(angle/vector)`](./fgd-helpers#directionanglevector)
 * [`orientedboundingbox(width, height, depth)`](./fgd-helpers#orientedboundingboxwidth-height-depth)
 * [`orientedboundingboxhalf(width, height, depth)`](./fgd-helpers#orientedboundingboxhalfwidth-height-depth)
 * [`orientedwidthheight(width, height)`](./fgd-helpers#orientedwidthheightwidth-height)
-* [`worldtext`](./fgd-helpers#worldtext)
+* [`worldtext()`](./fgd-helpers#worldtext)
 
 ## catapult()
 
