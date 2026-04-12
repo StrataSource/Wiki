@@ -32,7 +32,7 @@ array<float>@ c = {.1, .3, .5};
 ```
 
 > [!NOTE]
-> Since `array` and `dictionary` are reference types, you initialize them as an object handles (the @ symbol). For now, just remember that you add that symbol after the type name, it will get explained later on.
+> Since `array` and `dictionary` are value types, you initialize them as an object handles (the @ symbol). For now, just remember that you add that symbol after the type name, it will get explained later on.
 
 To access elements in an array you use the index operator **[]**, where `[i]` will access the i'th element of the array (counting from 0):
 ```cpp

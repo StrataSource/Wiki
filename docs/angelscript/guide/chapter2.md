@@ -1,19 +1,19 @@
 ---
-title: Chapter 2 - Value Types, Declaration & Assignment
+title: Chapter 2 - Primitive Types, Declaration & Assignment
 weight: 1
 ---
 
-# Chapter 2 - Value Types, Declaration & Assignment
+# Chapter 2 - Primitive Types, Declaration & Assignment
 
 ## What will you learn in this chapter
 In this chapter you will learn about:
-- [Value Types](#value-types),
-- [Declaration and assignment of value types](#value-types),
+- [Primitive Types](#primitive-types),
+- [Declaration and assignment of primitive types](#primitive-types),
 - [Auto keyword](#auto-keyword),
 - [Constants and the const keyword](#constants),
 - [Integer size reference table](#integer-size-reference-table).
 
-> Unfortunately, in this chapter you won't learn anything really interesting, but this knowledge is crucial to continue further. Data types in general are a very extensive subject, but you don't need to know everything. This chapter is supposed to teach you how to handle value types in your script.
+> Unfortunately, in this chapter you won't learn anything really interesting, but this knowledge is crucial to continue further. Data types in general are a very extensive subject, but you don't need to know everything. This chapter is supposed to teach you how to handle primitive types in your script.
 
 > [!NOTE]
 > This chapter won't cover every detail about any of data types, it is recommended you visit the [Data Types Section](../game/type) of the wiki for more information.
@@ -21,20 +21,20 @@ In this chapter you will learn about:
 
 ---
 
-## Value Types
-Value types are the more "primitive" types, and are only implemented in the backend by the Strata Team inside the engine itself. These types include: `int`, `string`, `bool`, `float`, `double`, etc.
+## Primitive Types
+Primitive types are the more "simpler" types, and are only implemented in the backend by the Strata Team inside the engine itself. These types include: `int`, `bool`, `float`, `double`, etc.
 
 > [!WARNING]
 > It is assumed you already know about these data types from other languages (mainly C++). This subsection will only provide information relevant to AngelScript itself.
 
 ### Declaration and assignment
-Value types can easily get assigned and can be passed by value to functions (more on that later).
-To create a value type you usually perform a declaration and an assignment, or both at once:
+Primitive types can easily get assigned and can be passed by primitive to functions (more on that later).
+To create a primitive type you usually perform a declaration and an assignment, or both at once:
 ```cpp
 int myInt; // Declaration
 myInt = 20; // Assignment
 
-string myString = "Hey!"; // Initialization
+int myInt2 = 2; // Initialization
 ```
 
 You can declare multiple variables of the same type at once:
@@ -49,14 +49,14 @@ myInt = 3.2; // myInt is of type int, not float/double!
 ```
 
 > ### TASK 1:
-> 1. Create a program that will declare and assign variables of types `string`, `int`, `bool`, `double`, and then print them out to the console.
+> 1. Create a program that will declare and assign variables of types `int`, `bool`, `double`, and then print them out to the console.
 > 2. Do the same but use variable initialization.
 
 ### Auto keyword
 Although not recommended, the `auto` keyword will make the compiler automatically determine the data type of the variable:
 ```cpp
 auto i = 1; // Will set type of i to integer
-auto s = "My string"; // Will set type s to string
+auto s = 3.14; // Will set type s to float
 auto var = functionThatWillReturnAnObjectWithAVeryLongName();
 
 // Handles (described in later chapters) can also be declared with auto
@@ -72,22 +72,22 @@ Constant variables are variables that cannot change over the lifetime of the [va
 You can define a constant variable using the `const` keyword:
 ```cpp
 const int size = 31;
-const auto st = "string"; // const also works with the auto keyword
+const auto w = true; // const also works with the auto keyword
 ```
 
 Constants can be useful as a sort of configuration of the script itself. If you reuse a statically defined value you can instead define a global constant and then changing one value will change everything at once:
 ```cpp
 const int MAX_SIZE = 16;
 
-string mystring = "lorem ipsum";
-my_func1(mystring, MAX_SIZE); // A function that does something with mystring, but also needs to have additional information
-my_func2(mystring, MAX_SIZE) // Another function that does something else with mystring, but it also needs the same additional information
+int myint = 27;
+my_func1(myint, MAX_SIZE); // A function that does something with myint, but also needs to have additional information
+my_func2(myint, MAX_SIZE) // Another function that does something else with myint, but it also needs the same additional information
 ```
 
 Constants are also a way to optimize your code. If you know that a variable won't change (or shouldn't change) after it's initialization, always make it a constant.
 ```cpp
-bool function(string s, float i) {
-    const float value = s.length() - i;
+bool function(int s, float i) {
+    const float value = s - i;
     return i > value;
 }
 ```
