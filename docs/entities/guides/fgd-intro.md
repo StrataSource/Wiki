@@ -20,11 +20,11 @@ These plain text files are named Forge Game Data or FGD for short. Every FGD fil
 >
 > This point also applies to custom AngelScript entities. While custom AngelScript entities are not programmed in at a engine level, the engine will still try to find any registered AngelScript entities in the BSP and add them into the map.
 
-While the Strata Source Wiki will provide basic details on how to add a FGD to Strata's Hammer, it will not explain every single available FGD helper, entity class type or property, I/O type, or KV type. Only specific Strata features will be documented here. If you wish to get a full list of what is available for FGDs, the [FGD page on the Valve Developer Community site](https://developer.valvesoftware.com/wiki/FGD) can provide details on lots of other pieces that can be used. Note that not everything will work with Strata Source's Hammer.
+While the Strata Source Wiki will provide basic details on how to add a FGD to Strata's Hammer, it will not explain every single available FGD helper, entity class type or property, I/O type, or KV type. Only specific Strata features will be documented here. To get a full list of what is available for FGDs, the [FGD page on the Valve Developer Community site](https://developer.valvesoftware.com/wiki/FGD) can provide details on lots of other pieces that can be used. Note that not everything will work with Strata Source's Hammer.
 
 ## Specific Strata FGD Features
 
-* Custom Entity Flags: The `flags` KV type can now be used on other KVs besides `spawnflags`. This is a good alternative to `choices` if you have various choices and want multiple to be selected.
+* Custom Entity Flags: The `flags` KV type can now be used on other KVs besides `spawnflags`. This is a good alternative to `choices` if there are various choices but also want to have multiple to be selected.
 
 ![Custom Flags FGD Implementation](../images/custom_flags_preview1.png)
 ![Custom Flags In Object Properties](../images/custom_flags_preview2.png)
@@ -39,17 +39,17 @@ While the Strata Source Wiki will provide basic details on how to add a FGD to S
 
 * Additional FGD Helpers: Strata Source adds several FGD helpers to aid with working with entities in Hammer. [Check this article out to find out more](./fgd-helpers).
 
-* Custom AngelScript Entities: Strata Source gives making custom entries in a FGD even better by allowing you to tie that entity to a custom scripted AngelScript entity.
+* Custom AngelScript Entities: Custom FGDs allow for adding custom AngelScript entities that can be placed into Hammer. When the map is compiled, the AngelScript system will tie that entity to the scripted AngelScript entity.
 
 ## Adding An FGD to Hammer
 
 While this process is very similar most other versions of Hammer, the UI has changed so details will still be supplied.
 
-FGDs are added to your Hammer game configurations, these are located in the Hammer options via the menu bar near the top of the Hammer window under `Tools > Options`.
+FGDs are added to Hammer game configurations, these are located in the Hammer options via the menu bar near the top of the Hammer window under `Tools > Options`.
 
 ![Options Button](../../general_images/options_button.png)
 
-From there, you can navigate using the side bar to `Game Configuration`. At the top is where used FGDs are listed under `Game data files`. To add an new FGD, simply click `Add...` on the right. To get to a existing FGD to edit, select an FGD in the list and click `Edit`. This will open the FGD file in your systems default text editor. To remove an FGD, select one in the list and click `Remove`, this will not remove the actual FGD file.
+From there, navigate using the side bar to `Game Configuration`. At the top is where used FGDs are listed under `Game data files`. To add an new FGD, simply click `Add...` on the right. To get to a existing FGD to edit, select an FGD in the list and click `Edit`. This will open the FGD file in the systems default text editor. To remove an FGD, select one in the list and click `Remove`, this will not remove the actual FGD file.
 
 ![Game Configuration](../../general_images/hammer_game_config.png)
 
@@ -59,9 +59,9 @@ In a game's GameInfo file (`gameinfo.txt`), a FGD is specified as the "main" FGD
 
 > [!CAUTION]
 >
-> Any entity entries not in the "main" FGD that are placed into instances used in a map will be ignored by VBSP. Those entities will not be properly compiled into your map, and will be placed at the world origin potentially causing a leak.
+> Any entity entries not in the "main" FGD that are placed into instances used in a map will be ignored by VBSP. Those entities will not be properly compiled into the map, and will be placed at the world origin potentially causing a leak.
 >
-> If you are using custom FGDs for AngelScript entities, any custom entity entries not in the GameInfo FGD, and custom entities in instances, they will also be ignored.
+> If using custom FGDs for AngelScript entities, any custom entity entries not in the GameInfo FGD, and custom entities in instances, they will also be ignored.
 
 ## Additional Resources
 
