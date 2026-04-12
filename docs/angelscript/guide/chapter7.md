@@ -7,14 +7,20 @@ weight: 6
 
 ## What will you learn in this chapter
 In this chapter you will learn about:
-- [Value types](#value-types---short-introduction)
-- [Constructors](#constructors),
-- [Value type initialization](#initializing-a-value-type),
-- [Template value types initialization](#initializing-template-value-types)
+- [Object handles](#object-handles)
+- [Object handle declaration](#declaration),
+- [Object handle expressions](#expressions),
+- [The Initialization Problem](#the-initialization-problem),
+- [Handle reference counting](#reference-counting),
+- [Object handle usage in functions](#handles-and-functions)
 
 > Object handles are like smart pointers from C++, they don't actually hold an object themselves, rather they hold an address in memory (reference) that can be used to locate the object they point to.
 
 ---
+
+## Object handles
+These are objects that hold the address of an object, rather than the object itself. Meaning that by using object handles, you are manipulating the information about addresses of objects that are somewhere else, not ""in"" the variable itself.
+
 
 ## Declaration
 An object handle is declared by appending the **@** sign after the data type name, e.g.:
