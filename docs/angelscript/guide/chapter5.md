@@ -93,6 +93,19 @@ For a list of available methods per each type please refer to the [types section
 
 Like in any other language, a function can call itself. This is function is then called a *recursive* function. 
 
+### Calling template functions
+
+Templates are a way of generalizing code for multiple types. To use a template function, you specify the type(s) in the angle brackets, like so:
+```cpp
+function_name<type1, type2, ...>(argument1, argument2, ...);
+```
+
+These functions are not very common, but here's an example of one (`util::CreateEntityByNameT`):
+```cpp
+CBaseEntity@ script_ent = util::CreateEntityByNameT<CBaseEntity@>("logic_script");
+CBaseAnimating@ model_ent = util::CreateEntityByNameT<CBaseAnimating@>("prop_dynamic");
+```
+
 ---
 
 ## Parameters
@@ -178,7 +191,8 @@ This marks the parameter as an input to the function. This option provides littl
 > [!TIP]
 > Combining `&in` with `const` can however, yield a way more optimized code. `&in` should almost always be used whenever you are using a `const` parameter.
 
-
+> [!WARNING]
+> Primitve types should not be passed with `&in`, as the memory address still has to be copied over, resulting in the same hit of performance (or worse!) as just copying the value itself.
 
 #### &out
 This option specifies that this parameter is an output of a function. This is especially useful whenever you have functions that need to have multiple output values. At the start of a function's execution, this reference will point to an uninitialized variable. After the function returns, the value assigned to this variable will be copied over to the appropriate argument.
@@ -209,8 +223,11 @@ int myresult, myrest;
 WholeDivision(10, 3, myresult, myrest); //This will set myresult and myrest to the appropriate  (3 and 1 respecitvely).
 ```
 
+#### &inout / &
+This option specifies that this parameter will be passed by reference in both directions. Meaning, the argument will not be copied, and also any changes made to this variable will result in a modified state of the argument outside the function.
+
 > [!NOTE]
-> AngelScript also supports a 3rd mode, `&inout` or `&`, but this is only allowed for reference types (more on that later), and additionally, Strata Source is configured to only pass reference types by reference (pass by value is disabled), which means that there is no need to specify pass by reference for these types anyway.
+> `&inout` or `&` are **not** supported for primitive types.
 
 
 ---
@@ -345,4 +362,4 @@ myFunc(1, "A"); // Will work
 > > ```
 
 > [!NOTE]
-> If you completed the task above, congratulations! This was one of the harder tasks. However, please note that this way of solving that problem is only viable when your default parameters have different types, because if they don't, the overload will not work.
+> If you completed the task above, congratulations! However, please note that this way of solving that problem is only viable when your default parameters have different types, because if they don't, the overload will not work.
