@@ -53,6 +53,16 @@ From there, you can navigate using the side bar to `Game Configuration`. At the 
 
 ![Game Configuration](../../general_images/hammer_game_config.png)
 
+## Specifying FGD in a GameInfo
+
+In a game's GameInfo file (`gameinfo.txt`), a FGD is specified as the "main" FGD that will be used by the VBSP for instance fixups.
+
+> [!CAUTION]
+>
+> Any entity entries not in the "main" FGD that are placed into instances used in a map will be ignored by VBSP. Those entities will not be properly compiled into your map, and will be placed at the world origin potentially causing a leak.
+>
+> If you are using custom FGDs for AngelScript entities, any custom entity entries not in the GameInfo FGD, and custom entities in instances, they will also be ignored.
+
 ## Additional Resources
 
 * [FGD Helpers](./fgd-helpers)
