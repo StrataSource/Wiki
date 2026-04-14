@@ -1823,6 +1823,12 @@
 				"default": "0"
 			},
 			{
+				"name": "$COLOR_DEPTH_ZERO_BACKSIDE",
+				"desc": "Write zero depth on backside (if we have disabled culling)",
+				"type": "bool",
+				"default": "0"
+			},
+			{
 				"name": "$TREESWAY",
 				"desc": "",
 				"type": "int",
@@ -7619,6 +7625,12 @@
 				"desc": "compressed base texture2 for hdr compression method B",
 				"type": "texture",
 				"default": ""
+			},
+			{
+				"name": "$VOLUMETRICFOGAMOUNT",
+				"desc": "The amount of volumetric fog to apply to the sky. 0 means no fog, 1 means fully fogged",
+				"type": "float",
+				"default": "1"
 			}
 		]
 	},
@@ -7693,6 +7705,12 @@
 				"desc": "tint value to be applied when running on new-style srgb parts",
 				"type": "color",
 				"default": "[1 1 1]"
+			},
+			{
+				"name": "$VOLUMETRICFOGAMOUNT",
+				"desc": "The amount of volumetric fog to apply to the sky. 0 means no fog, 1 means fully fogged",
+				"type": "float",
+				"default": "1"
 			}
 		]
 	},
@@ -9228,6 +9246,12 @@
 				"desc": "Third gradient stop and position",
 				"type": "vec4",
 				"default": "[1 1 1 1]"
+			},
+			{
+				"name": "$FASTSPRITE",
+				"desc": "",
+				"type": "bool",
+				"default": "0"
 			}
 		]
 	},
