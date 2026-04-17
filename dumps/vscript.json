@@ -343,7 +343,7 @@
     { "method": "CBaseEntity::GetLeftVector", "signature": "Vector CBaseEntity::GetLeftVector()", "doc": "Get the left vector of the entity." },
     { "method": "CBaseEntity::GetMaxHealth", "signature": "int CBaseEntity::GetMaxHealth()", "doc": "Return the current maximum health of this entity." },
     { "method": "CBaseEntity::GetModelKeyValues", "signature": "handle CBaseEntity::GetModelKeyValues()", "doc": "Returns access to the $keyvalues definition for this entity's model." },
-    { "method": "CBaseEntity::GetModelName", "signature": "string CBaseEntity::GetModelName()", "doc": "Returns the name of the model this entity is set to. For brush entities, this will be in the form "*123"." },
+    { "method": "CBaseEntity::GetModelName", "signature": "string CBaseEntity::GetModelName()", "doc": "Returns the name of the model this entity is set to. For brush entities, this will be in the form '*123'." },
     { "method": "CBaseEntity::GetMoveCollide", "signature": "int CBaseEntity::GetMoveCollide()", "doc": "Returns the current move collision mode, which will be a `MOVECOLLIDE_*` constant." },
     { "method": "CBaseEntity::GetMoveParent", "signature": "handle CBaseEntity::GetMoveParent()", "doc": "If in hierarchy, retrieves the entity's parent." },
     { "method": "CBaseEntity::GetMoveType", "signature": "int CBaseEntity::GetMoveType()", "doc": "Returns the current move type, which will be a `MOVETYPE_*` constant." },
