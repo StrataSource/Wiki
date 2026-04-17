@@ -27,8 +27,8 @@ wiki_dump_dir: str = f"{relative_dir}/dumps/"
 # Format: "( list of ConCommands/docdump.exe parameter, list of dumped file names, list of Wiki file names )"
 #! NOTE: Make sure Hammer reference dumps are last so if a Strata title doesn't have/support Hammer, it can be skipped without failing to find it.
 ref_dump_list: list[tuple] = [
-    # Must open a map in order for AngelScript and VScript to all dump.
-    ( ["+map sp_a2_triple_laser", "+cl_scriptsystem_dump_json", "+sv_scriptsystem_dump", "+scriptsystem_dump_json"], ["{}/data/client/api_reference.json", "{}/data/server/api_reference.json", "hammer/scripts/api_reference.json"], ["angelscript_client_{}.json", "angelscript_server_{}.json", "angelscript_hammer_{}.json"] ),
+    # Must open a map in order for AngelScript and VScript to all dump. First three ConCommands are for the game and the last is for Hammer.
+    ( ["+map sp_a2_triple_laser", "+cl_scriptsystem_dump_json", "+sv_scriptsystem_dump_json", "+scriptsystem_dump_json"], ["{}/data/client/api_reference.json", "{}/data/server/api_reference.json", "hammer/scripts/api_reference.json"], ["angelscript_client_{}.json", "angelscript_server_{}.json", "angelscript_hammer_{}.json"] ),
     ( ["+map sp_a2_triple_laser", "+sv_script_dump_docs"], ["{}/data/vscript_docs.server.json"], ["vscript.json"] ),
     ( ["sound_ops"], ["sound_operators.json"], ["sound_operators.json"] ), # Uses docdump.exe
     ( ["particle_ops"], ["particle_operators.json"], ["particle_operators.json"] ), # Uses docdump.exe
