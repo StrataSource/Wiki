@@ -25,8 +25,7 @@ must adhere to these guidelines
 
 - Embed images or videos that showcase what is being explained.
 - Add links wherever possible.
-- Use proper, rich.
-  [Markdown styling](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+- Use proper, rich [Markdown styling](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 - Use our modified Markdown syntax.
 
 ### Please Don't
