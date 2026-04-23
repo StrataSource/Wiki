@@ -21,13 +21,13 @@ The first step of using the Workshop Uploader is to launch it. You can find the 
 
 ![SDK Launcher](images/SDK_Launcher.png)
 
-Now that you have opened the sdk launcher, you will get this screen:
+Now that you have opened the SDK launcher, you will get this screen:
 
 ![Blank Workshop GUI](images/workshop_gui_blank.png)
 
 This is the Workshop Uploader GUI, where you will be able to manage most of how your addon will be uploaded to the workshop. From here, you can adjust the title, tags, description, and thumbnail of your addon. Here is an example of a fully filled out addon:
 
-![Filled WOrkshop GUI](images/workshop_gui_filled.png)
+![Filled Workshop GUI](images/workshop_gui_filled.png)
 
 Now, if you re-examine your addon folder, you should see some new files that have been added:
 
@@ -45,7 +45,7 @@ From here, click "Save" at the bottom of your addon. Now, launch Portal 2: Commu
 > [!TIP]
 > Disable your custom folder and `mounts.kv` file before opening the game, that way you can see if you properly packed all the necessary materials and models!
 
-After you have fully tested your addon to make sure all necesary components are there, open back up the uploader, reopen your addon if you closed out of it, then click "Upload". After your addon gets fully packed, it will show you a popup with the URL to your uploaded mod. Now, click the "View on Workshop" button to open the page for your addon in your default browser. Don't worry if you do not have all the info you would like on your page, it automatically is marked as "Hidden", so only you can see it!
+After you have fully tested your addon to make sure all necessary components are there, open back up the uploader, reopen your addon if you closed out of it, then click "Upload". After your addon gets fully packed, it will show you a popup with the URL to your uploaded mod. Now, click the "View on Workshop" button to open the page for your addon in your default browser. Don't worry if you do not have all the info you would like on your page, it automatically is marked as "Hidden", so only you can see it!
 
 ## Adjusting your addon from the workshop page
 From here, you can adjust the various aspects of your mod, including additional pictures, videos, contributers, etc. Here is an example of a barebones workshop page:

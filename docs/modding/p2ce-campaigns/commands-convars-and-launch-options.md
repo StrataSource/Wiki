@@ -1,75 +1,77 @@
 ---
-title: Useful Commands, Convars, and Launch Options
+title: Various ConCommands, ConVars, and Launch Options
 features:
     - USE_CAMPAIGNMANAGER
 ---
 
-# Useful Commands
+# Various ConCommands, ConVars, and Launch Options
 
-## `campaign_reload`
+## Useful Commands
+
+### `campaign_reload`
 
 Reloads the campaign list. New & change campaign scripts should appear in the UI. If you are on the campaign selection screen, re-enter that screen to see the new/update campaign.
 
-## `campaign_info`
+### `campaign_info`
 
 Spews information about the current campaign into the console.
 
-## `campaign_list`
+### `campaign_list`
 
 Lists all campaigns detected by P2:CE to the console.
 
-## `campaign_clear`
+### `campaign_clear`
 
 Clears the currently active campaign.
 
-## `campaign_continue`
+### `campaign_continue`
 
 Continue a campaign from the latest save. Usage: `campaign_continue [campaign_id]`.
 
-## `campaign_level_next`
+### `campaign_level_next`
 
 Changes the map to the next level in the campaign, if it exists.
 
-## `campaign_level_prev`
+### `campaign_level_prev`
 
 Changes the map to the previous level in the campaign, if it exists.
 
-## `campaign_savedata_reset`
+### `campaign_savedata_reset`
 
 Wipes all save data relating to campaign progression. Does not delete saved game files.
 
-## `campaign_savedata_show`
+### `campaign_savedata_show`
 
 Display save data relating to campaign progression.
 
-## `campaign_set_active`
+### `campaign_set_active`
 
 Set a specified campaign as active. Usage: `campaign_set_active [campaign_id]`
 
-## `campaign_start`
+### `campaign_start`
 
 Starts a specified campaign at a certain chapter. Usage: `campaign_start [campaign_id] [chapter_index]`
 
-## `startupmenu`
+### `startupmenu`
 
 Enters the appropriate background map as detailed by the campaign script.
 
-# Useful Cvars
+## Useful Cvars
 
-## `campaign_debug`
+### `campaign_debug`
 
 If value is 1, prints additional debugging information to the console in relation to the campaign system.
 
-## `campaign_default`
+### `campaign_default`
 
 Sets the default campaign to boot into on startup. The background map will be entered automatically without intervention by a script.
 
-# Useful Launch Options
+## Useful Launch Options
 
-## `-unlockchapters`
+### `-unlockchapters`
 
 Treats all campaigns as completely unlocked for testing. This does not make any changes to the progression save. Must be used in conjunction with the `-dev` launch option.
 
-## `-nochapterprogress`
+### `-nochapterprogress`
 
 Treats all campaigns as completely locked for testing. This does not make any changes to the progression save. Must be used in conjunction with the `-dev` launch option.
