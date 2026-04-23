@@ -30,7 +30,7 @@ More about setting up volumetrics for each entity in [Quick Start](/lighting/vol
 
 Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_projectedtexture`, as well as WebM videos from `env_projectedtexture` entity. The volumetrics casted by the lights that use light cookies and WebM videos will update and show up correctly.
 
-![WebM Volumetrics](images/ptex_vol.mp4)
+![WebM Volumetrics](images/ptex_vol.png)
 
 ## Volumetrical Fog
 

@@ -9,7 +9,7 @@ The Game tab is the fifth tab in the Developer UI menu. It contains windows that
 
 ![The Game tab](images/game.png)
 
-It consists of 5 windows - **Game Events Debugger**, **Server Anim Debug**, **Stick Cam Debug UI**, **Client Anim Debug** and **Sound Emitter System Debug**.
+It consists of 5 windows - **Game Events Debugger**, **Server Anim Debug**, **Stick Cam Debug UI**, **Caption Viewer**, **Client Anim Debug** and **Sound Emitter System Debug**.
 
 ****
 
@@ -103,15 +103,28 @@ Client Anim Debug is identical to the Server Anim Debug menu, except it hooks up
 
 ## Stick Cam Debug UI
 
-Stick Cam Debug UI is debugging window for the adhesion gel.
+Stick Cam Debug UI is a debugging window for the adhesion gel.
 
 There are 4 values in this menu:
-* `m_Up` is the up vector.
+* `m_Up` is the current up vector.
 * `m_vEyeOffset` is a vector showing the eye offset from the view.
 * `m_vecOrigin` is a vector showing the origin of player's eyes.
 * `m_qQuaternionPunch` is a vector showing the quaternion punch of the view.
 
 ![Stick Cam Debug](images/game_cam.png)
+
+****
+
+## Caption Viewer
+
+Caption Viewer is a debugging window that allows to preview Panorama captions.
+
+There are 3 menus:
+* **Caption Player**, which plays a specified caption for a specified duration;
+* **Caption List**, which lists all caption scripts with all caption token inside. Captions will be autofilled into Caption Player upon pressing;
+* **Selected Caption Properties**, which displays properties of the caption that is currently in the Caption Player.
+
+![Caption Viewer](images/game_cc.png)
 
 ****
 
