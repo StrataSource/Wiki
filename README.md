@@ -14,7 +14,7 @@ Before you begin, if you are wishing to contribute documentation changes to this
 
 Node.js is required to run the Strata Source Wiki. If you do not have it installed, please go to the Node.js download page here: https://nodejs.org/en/download/
 
-To start the Wiki, run the following:
+To build the Wiki locally, run the following:
 
 ```shell
 ./run.bat # Windows
@@ -22,7 +22,7 @@ To start the Wiki, run the following:
 ./run.sh # Linux
 ```
 
-On the first run, the `run` script will clone and initialize the Wiki software submodule. The script will then make sure all dependencies are installed to build the Wiki. Afterward, the site will be built and then run locally.
+On the first run, the `run` script will clone and initialize the Wiki software submodule. The script will then make sure all dependencies are installed to build the Wiki. Afterward, the site will be built and then run.
 
 > [!NOTE]
 > Every time `run` is executed, the script will perform a full-site build and index it for search. This will take a few minutes. The search data is cached and will be updated on every build.
