@@ -21,7 +21,7 @@ There are three pre-made themes avaliable.
 ![DevUI Theme 2](images/sets_theme2.png)
 ![DevUI Theme 3](images/sets_theme3.png)
 
-Additionally, you can make your own themes. See [the custom theme format for ImGui](/misc/devui/devui-themes)
+Additionally, you can make your own themes. See [the custom theme format for ImGui](/modding/devui/devui-themes)
 
 ****
 

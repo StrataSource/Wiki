@@ -7,7 +7,7 @@ features:
 
 # Portal Floor Button Triggers
 
-The entities [`prop_floor_button`](../reference/prop_floor_button), [`prop_floor_cube_button`](../reference/prop_floor_button), [`prop_floor_ball_button`](../reference/prop_floor_ball_button) and [`prop_under_floor_button`](../reference/prop_under_floor_button) spawn a trigger volume to detect players and cubes.
+The entities [`prop_floor_button`](../reference/prop_floor_button), [`prop_floor_cube_button`](../reference/prop_floor_cube_button), [`prop_floor_ball_button`](../reference/prop_floor_ball_button) and [`prop_under_floor_button`](../reference/prop_under_floor_button) spawn a trigger volume to detect players and cubes.
 Each entity uses a different bounding size to match the default model, but custom models may need their own size.
 To allow this, these entities look for a hitbox group named `trigger`, and match the size of this. For example, this is the equivalent QC section for a standard modern button:
 

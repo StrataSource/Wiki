@@ -3672,6 +3672,12 @@
         },
         {
             "namespace": "util",
+            "name": "TraceLine",
+            "declaration": "void util::TraceLine(const Vector&in start, const Vector&in end, uint mask, array<CBaseEntity@>@ arrayIgnore, int group, trace_t&out trace)",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
             "name": "TraceHull",
             "declaration": "void util::TraceHull(const Vector&in start, const Vector&in end, const Vector&in mins, const Vector&in maxs, uint mask, CBaseEntity@ ignore, int group, trace_t&out trace)",
             "documentation": null
@@ -3686,6 +3692,12 @@
             "namespace": "util",
             "name": "TracePortalLine",
             "declaration": "CBaseEntity@ util::TracePortalLine(const Vector&in start, const Vector&in end, uint mask, CBaseEntity@ ignore, int group, trace_t&out trace, bool bullet = false, bool transform = true)",
+            "documentation": null
+        },
+        {
+            "namespace": "util",
+            "name": "TracePortalLine",
+            "declaration": "CBaseEntity@ util::TracePortalLine(const Vector&in start, const Vector&in end, uint mask, array<CBaseEntity@>@ arrayIgnore, int group, trace_t&out trace, bool bullet = false, bool transform = true)",
             "documentation": null
         },
         {
@@ -10989,14 +11001,14 @@
                 },
                 {
                     "name": "Weapon_Drop",
-                    "declaration": "void Weapon_Drop(CBaseCombatWeapon@ wepon)",
+                    "declaration": "void Weapon_Drop(CBaseCombatWeapon@ weapon)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
                 },
                 {
                     "name": "Weapon_Drop",
-                    "declaration": "void Weapon_Drop(CBaseCombatWeapon@ wepon, const Vector&in target, const Vector&in velocity)",
+                    "declaration": "void Weapon_Drop(CBaseCombatWeapon@ weapon, const Vector&in target, const Vector&in velocity)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false

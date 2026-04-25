@@ -18,7 +18,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: `shadertest/lightmappedtexture`
 
-&ensp;Description: Blended texture for use with displacements
+&ensp;Description: Blended texture for use with displacements.
 
 ----
 ### Appearance
@@ -32,43 +32,43 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: `[1 1 1]`
 
-&ensp;Description: Adjusts the color of $basetexture
+&ensp;Description: Adjusts the color of $basetexture.
 
 #### `$color2` \<color\>
 
 &ensp;Default: `[1 1 1]`
 
-&ensp;Description: Adjusts the color of $basetexture2
+&ensp;Description: Adjusts the color of $basetexture2.
 
 #### `$frame` \<int\>
 
 &ensp;Default: `0`
 
-&ensp;Description: Sets what static frame to use if $basetexture is animated
+&ensp;Description: Sets what static frame to use if $basetexture is animated.
 
 #### `$frame2` \<int\>
 
 &ensp;Default: `0`
 
-&ensp;Description: Sets what static frame to use if $basetexture2 is animated
+&ensp;Description: Sets what static frame to use if $basetexture2 is animated.
 
 #### `$srgbtint` \<color\>
 
 &ensp;Default: `[1 1 1]`
 
-&ensp;Description: Tint value to be applied when running on new-style srgb parts
+&ensp;Description: Tint value to be applied when running on new-style srgb parts.
 
 #### `$hsv` \<color\>
 
 &ensp;Default: `[1 1 1]`
 
-&ensp;Description: HSV color to transform $basetexture texture with
+&ensp;Description: HSV color to transform $basetexture texture with.
 
 #### `$hsv_blend` \<bool\>
 
 &ensp;Default: `0`
 
-&ensp;Description: Blend untransformed color and HSV transformed color
+&ensp;Description: Blend untransformed color and HSV transformed color.
 
 ----
 ### Flashlight
@@ -76,13 +76,13 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: `effects/flashlight001`
 
-&ensp;Description: Flashlight spotlight shape texture
+&ensp;Description: Flashlight spotlight shape texture.
 
 #### `$flashlighttextureframe` \<int\>
 
 &ensp;Default: `0`
 
-&ensp;Description: Sets what static frame to use if $flashlighttexture is animated
+&ensp;Description: Sets what static frame to use if $flashlighttexture is animated.
 
 ----
 ### Physically Based Rendering
@@ -96,7 +96,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: ``
 
-&ensp;Description: Texture with metalness in R, roughness in G, ambient occlusion in B for $basetexture
+&ensp;Description: Texture with metalness in R, roughness in G, ambient occlusion in B for $basetexture.
 
 #### `$mraoframe` \<int\>
 
@@ -108,7 +108,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: ``
 
-&ensp;Description: Texture with metalness in R, roughness in G, ambient occlusion in B for $basetexture2
+&ensp;Description: Texture with metalness in R, roughness in G, ambient occlusion in B for $basetexture2.
 
 #### `$mraoframe2` \<int\>
 
@@ -120,13 +120,13 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: `[1 1 1]`
 
-&ensp;Description: Factors for metalness, roughness, and ambient occlusion for $mraotexture
+&ensp;Description: Factors for metalness, roughness, and ambient occlusion for $mraotexture.
 
 #### `$mraoscale2` \<color\>
 
 &ensp;Default: `[1 1 1]`
 
-&ensp;Description: Factors for metalness, roughness, and ambient occlusion for $mraotexture2
+&ensp;Description: Factors for metalness, roughness, and ambient occlusion for $mraotexture2.
 
 #### `$parallax` \<bool\>
 
@@ -150,7 +150,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: `0`
 
-&ensp;Description: Blend tint by the alpha channel in MRAO texture. Similar to $blendtintbybasealpha for [VLG](https://developer.valvesoftware.com/wiki/VertexLitGeneric)
+&ensp;Description: Blend tint by the alpha channel in MRAO texture. Similar to $blendtintbybasealpha for [VLG](https://developer.valvesoftware.com/wiki/VertexLitGeneric).
 
 ----
 ### Alpha
@@ -158,7 +158,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: `1.0`
 
-&ensp;Description: Scales the transparency of the whole image
+&ensp;Description: Scales the transparency of the whole image.
 
 #### `$alphatestreference` \<float\>
 
@@ -172,7 +172,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: ``
 
-&ensp;Description: Emission texture
+&ensp;Description: Emission texture.
 
 #### `$emissionframe` \<int\>
 
@@ -184,7 +184,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: ``
 
-&ensp;Description: Emission texture for $basetexture2
+&ensp;Description: Emission texture for $basetexture2.
 
 #### `$emissionframe2` \<int\>
 
@@ -196,13 +196,13 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: `[1 1 1]`
 
-&ensp;Description: Color to multiply $emissiontexture with
+&ensp;Description: Color to multiply $emissiontexture with.
 
 #### `$emissionscale2` \<color\>
 
 &ensp;Default: `[1 1 1]`
 
-&ensp;Description: Color to multiply $emissiontexture2 with
+&ensp;Description: Color to multiply $emissiontexture2 with.
 
 ----
 ### Reflection
@@ -224,13 +224,13 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: ``
 
-&ensp;Description: Normalmap texture (deprecated, use $bumpmap)
+&ensp;Description: Normalmap texture (deprecated, use $bumpmap).
 
 #### `$bumpmap` \<texture\>
 
 &ensp;Default: ``
 
-&ensp;Description: Bumpmap texture for $basetexture
+&ensp;Description: Bumpmap texture for $basetexture.
 
 #### `$bumpframe` \<int\>
 
@@ -242,7 +242,7 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: ``
 
-&ensp;Description: Bumpmap texture for $bsaetexture2
+&ensp;Description: Bumpmap texture for $basetexture2.
 
 #### `$bumpframe2` \<int\>
 
@@ -256,22 +256,22 @@ This page contains information about the parameters of the PBR shader.
 
 &ensp;Default: `paint/splatnormal_default`
 
-&ensp;Description: The paint splat normal map to use when paint is enabled on the surface
+&ensp;Description: The paint splat normal map to use when paint is enabled on the surface.
 
 #### `$paintsplatbubblelayout` \<texture\>
 
 &ensp;Default: `paint/bubblelayout`
 
-&ensp;Description: The layout texture which defines the distribution of bubbles in the paint
+&ensp;Description: The layout texture which defines the distribution of bubbles in the paint.
 
 #### `$paintsplatbubble` \<texture\>
 
 &ensp;Default: `paint/bubble`
 
-&ensp;Description: The normal mapped texture of a single bubble
+&ensp;Description: The normal mapped texture of a single bubble.
 
 #### `$paintenvmap` \<texture\>
 
 &ensp;Default: `paint/paint_envmap_hdr`
 
-&ensp;Description: Envmap that is consistent across all surfaces
+&ensp;Description: Envmap that is consistent across all surfaces.
