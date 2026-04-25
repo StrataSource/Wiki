@@ -23,7 +23,6 @@ of launch options, please see
 | -debug_dynamic_mounts    | Enables verbose debug printing for debugging dynamic mounts                                                |
 | -safemode                | Runs the game in safe mode, disabling additional configured mounts                                         |
 | -jolt                    | Runs the game with vphysics_jolt (EXPERIMENTAL!)                                                           |
-| -dedicated               | Launch the dedicated server                                                                                |
 | -tools                   | Launch the game in engine tools mode                                                                       |
 
 # Linux-only options
