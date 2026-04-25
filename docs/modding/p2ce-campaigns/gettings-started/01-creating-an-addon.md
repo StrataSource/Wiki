@@ -7,7 +7,7 @@ features:
 
 # Creating an Addon
 
-Campaigns in P2:CE are addons that ship with all required maps / custom resources and define a campaign. To create a new campaign focussed addon, open the P2:CE SDK Launcher and create a new addon.
+Campaigns in P2:CE are addons that ship with all required maps / custom resources and define a campaign. To create a new campaign focused addon, open the P2:CE SDK Launcher and create a new addon.
 
 |                                |                                             |
 |--------------------------------|---------------------------------------------|
