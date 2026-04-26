@@ -23,6 +23,10 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 * Volumetric lighting is shadow dependant, you need to make sure the `Shadowed` flag is checked when making shadowed volumetrics. If the flag is enabled but volumetrics are still leaking, then you might have too many dynamic shadows updating at once. See [clustered troubleshooting page](/lighting/clustered/troubleshooting) for more information related to the issue.
 
+### "The volumetrics are just a bright white sphere on the light!"
+
+* Volumetric lighting relies on the light's 50% and 0% cutoff distances to know how long and far to display the volumetric effect. Make sure that these are set. If you need example settings, check out the [clustered quick start guide](/lighting/clustered/quick_start).
+
 ### "My volumetrics are broken and corrupt!"
 
 * Certain AMD GPU models are known to have trouble running the clustered renderer, and since volumetrics are shadow dependant, this issue relates to them as well. **If you experience this, let us know what GPU brand/model, operating system and other hardware specs you're using.** Clustered lights may also act weird when running the game on Linux under DXVK, however the circumstances in which they break should not be possible in production.
