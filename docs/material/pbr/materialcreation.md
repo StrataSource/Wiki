@@ -41,7 +41,8 @@ Now, click OK and let GIMP compose the image. After it finishes, you should get 
 ![Mostly blue image](images/bwm004a_mrao.png)
 
 ***Note:** Your image could have a different balance of colors depending on the intensity of each map*
-The final step of making an MRAO texture is converting it to a VTF. This can be done with [VTFEdit](https://valvedev.info/tools/vtfedit/), or our [VTex2](/modding/util/vtex2) tool, which supports Strata's new VTF 7.6 version. 
+
+The final step of making an MRAO texture is converting it to a VTF. This can be done with [MareTF](https://github.com/craftablescience/MareTF), which supports Strata's new VTF 7.6 version, and also nativley runs on both Windows and Linux. 
 #### Manual VMT creation
 Create a new `.VMT` file and paste this text in:
 ```

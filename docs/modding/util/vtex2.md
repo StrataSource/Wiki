@@ -4,6 +4,9 @@ title: vtex2
 
 # vtex2
 
+>[!CAUTION]
+> VTex2 is deprecated in favor of [MareTF](https://github.com/craftablescience/MareTF)
+
 vtex2 is a Valve Texture Format conversion and creation tool. It has a CLI and a GUI component for viewing, packing and otherwise converting the files.
 
 The source code is available [here on GitHub](https://github.com/StrataSource/vtex2).

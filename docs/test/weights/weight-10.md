@@ -1,5 +1,5 @@
 ---
-title: c 10 weight
+title: B 10 weight
 weight: 10
 ---
 
