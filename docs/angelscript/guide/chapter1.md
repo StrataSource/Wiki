@@ -5,10 +5,12 @@ weight: 0
 
 # Chapter 1 - Introduction
 
-## What You Will Learn
+## What You Will Learn in This Chapter
+
 In this chapter you will learn about:
-- [AngelScript as a programming language](#angelscript)
-- [Purpose of AngelScript in Strata Source](#what-can-you-do-with-angelscript)
+
+- [AngelScript](#angelscript)
+- [What You Can Do With AngelScript](#what-you-can-do-with-angelscript)
 - [Client-Server model of the engine](#client---server-model)
 - [How to load code in the game](#loading-code)
 - [Writing your own Hello World program](#your-first-script)
@@ -29,6 +31,7 @@ In this chapter you will learn about:
 ---
 
 ## AngelScript
+
 [AngelScript's home page](https://www.angelcode.com/angelscript/) describes AngelScript as:
 > The AngelCode Scripting Library, or AngelScript as it is also known, is an extremely flexible cross-platform scripting library designed to allow applications to extend their functionality through external scripts.
 
@@ -38,9 +41,9 @@ Use cases for AngelScript vary heavily. It is much closer to pure engine code th
 
 AngelScript's official documentation can be found here: [AS Official Docs](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script.html).
 
+## What You Can Do With AngelScript
 
-## What Can You Do With AngelScript
-ngelScript allows for a closer connection to the internal engine code by having the engine provide various APIs to its internal classes. This allows you to do various things, such as creating custom entities, creating your own ConCommands and ConVars, making custom weapons - all things that aren't normally easy to do with VScript.
+AngelScript allows for a closer connection to the internal engine code by having the engine provide various APIs to its internal classes. This allows you to do various things, such as creating custom entities, creating your own ConCommands and ConVars, making custom weapons - all things that aren't normally easy to do with VScript.
 
 While VScript (mainly) sits between entities and handles the interactions between them, AngelScripts sits in a level above, being able to *create* entities and define their behavior.
 
@@ -49,12 +52,13 @@ While VScript (mainly) sits between entities and handles the interactions betwee
 ## AngelScript in Strata Source
 
 ### Client - Server Model
-Before you write your first script, there is one more thing you need to know. Most engines, including the Source engine, operate on the client-server model. This means that client code is separate from the server code, even in singleplayer. When starting a map in singleplayer, you essentially create a one-player server that runs beside the client. This is very important to remember as AS code can be loaded on both. Some functionality will only be available on the server (such as entities) and some functionality will only be available on the client (such as Panorama/UI).
 
+Before you write your first script, there is one more thing you need to know. Most engines, including the Source engine, operate on the client-server model. This means that client code is separate from the server code, even in single player. When starting a map in single player, you essentially create a one-player server that runs beside the client. This is very important to remember as AS code can be loaded on both. Some functionality will only be available on the server (such as entities) and some functionality will only be available on the client (such as Panorama/UI).
 
 ### Loading Code
+
 Where should you place the files containing your code?
-Each file that contains your code should end with the **.as** extension and be placed in the **code/** folder of your respective `Game` searchpath. Example locations would be `p2ce/custom/my-addon/code/<files>` or just `p2ce/code/<files>` (the latter is not recommended).
+Each file that contains your code should end with the **.as** extension and be placed in the **code/** folder of your respective `Game` search path. Example locations would be `p2ce/custom/my-addon/code/<files>` or just `p2ce/code/<files>` (the latter is not recommended).
 Code can also be placed inside the `code` folder of an addon created with the SDK Launcher.
 
 You may name your files however you'd like. You can create custom directories or you can place your files loosely - it all depends on what you're trying to achieve. In the long run, it's not important. What *is* important is where you place the "starting points". The engine will not attempt to load any files except for these 3 files placed **directly** in the **code/** folder:
@@ -64,10 +68,12 @@ You may name your files however you'd like. You can create custom directories or
 3. `cl_init.as` - Will only get loaded by the client.
 
 ### IDE and Testing Environment
+
 It is suggested to use Visual Studio Code with the [AngelScript Language Server (sashi0034.angel-lsp)](https://marketplace.visualstudio.com/items?itemName=sashi0034.angel-lsp) extension. From there, you can open the `code/` folder of your choice as a project and begin development.
 The engine compiles scripts on every map load (you can use the `reload` command to recompile the scripts).
 
 ### Your First Script
+
 You should now be ready to begin writing your very first program. For now, let's just print a Hello World message to the console. Though the code below may look foreign for now, don't be dissuaded! Place this code into `cl_init.as` as it is a client command.
 
 ```cpp
@@ -79,12 +85,14 @@ void MyCommand(const CommandArgs@ args) {
 
 Now, the only thing left to do now is launch the game, open the console, and execute the *HelloWorld* command.
 
-> ### TASK 1: 
+> ### TASK 1:
+>
 > Run the HelloWorld program mentioned above.
 
 ## How To Test Out Your Code in a Basic Way
 For now, you will need to know how to run your code so that you can complete the tasks given to you within this guide.
 In `sv_init.as` include:
+
 ```cpp
 [ServerCommand("CodeTest", "")]
 void CodeTest(const Command@ args) {
@@ -102,8 +110,8 @@ Remember to add `"\n"` to the input of Msg (or just call `Msg("\n");` after your
 > > In order to avoid this issue, you can append to an empty string. Just do `"" + a` and in most cases this will work: `Msg("" + a);`
 
 ### Compilation Errors
-Scripts will often report errors before they are ran, usually on map load. If you don't see your functionality (such as a command not being the console), scroll up and check the error. Additionally, you can use the first tip in the [tip section](#additional-tips) and then use `reload`.
 
+Scripts will often report errors before they are ran, usually on map load. If you don't see your functionality (such as a command not being the console), scroll up and check the error. Additionally, you can use the first tip in the [tip section](#additional-tips) and then use `reload`.
 
 ## Additional Tips
 
