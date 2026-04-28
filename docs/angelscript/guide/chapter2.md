@@ -5,13 +5,15 @@ weight: 1
 
 # Chapter 2 - Primitive Types, Declaration & Assignment
 
-## What will you learn in this chapter
+## What You Will Learn in This Chapter
+
 In this chapter you will learn about:
-- [Primitive Types](#primitive-types),
-- [Declaration and assignment of primitive types](#primitive-types),
-- [Auto keyword](#auto-keyword),
-- [Constants and the const keyword](#constants),
-- [Integer size reference table](#integer-size-reference-table).
+
+- [Primitive Types](#primitive-types)
+- [Declaration and assignment of primitive types](#primitive-types)
+- [Auto keyword](#auto-keyword)
+- [Constants and the const keyword](#constants)
+- [Integer size reference table](#integer-size-reference-table)
 
 > Unfortunately, in this chapter you won't learn anything really interesting, but this knowledge is crucial to continue further. Data types in general are a very extensive subject, but you don't need to know everything. This chapter is supposed to teach you how to handle primitive types in your script.
 
@@ -27,9 +29,11 @@ Primitive types are the more "simpler" types, and are only implemented in the ba
 > [!WARNING]
 > It is assumed you already know about these data types from other languages (mainly C++). This subsection will only provide information relevant to AngelScript itself.
 
-### Declaration and assignment
+### Declaration and Assignment
+
 Primitive types can easily get assigned and can be passed by primitive to functions (more on that later).
 To create a primitive type you usually perform a declaration and an assignment, or both at once:
+
 ```cpp
 int myInt; // Declaration
 myInt = 20; // Assignment
@@ -38,22 +42,27 @@ int myInt2 = 2; // Initialization
 ```
 
 You can declare multiple variables of the same type at once:
+
 ```cpp
 int myInt1, myInt2, myInt3;
 ```
 
 Once declared, variables cannot change their type without redeclaration. This is not allowed:
+
 ```cpp
 int myInt;
 myInt = 3.2; // myInt is of type int, not float/double!
 ```
 
 > ### TASK 1:
+>
 > 1. Create a program that will declare and assign variables of types `int`, `bool`, `double`, and then print them out to the console.
 > 2. Do the same but use variable initialization.
 
-### Auto keyword
+### Auto Keyword
+
 Although not recommended, the `auto` keyword will make the compiler automatically determine the data type of the variable:
+
 ```cpp
 auto i = 1; // Will set type of i to integer
 auto s = 3.14; // Will set type s to float
@@ -65,17 +74,20 @@ auto@ handle = @obj;
 
 The `auto` keyword is not recommended for several cases. The main one of them is that you cannot immediately see the data type of a returned object especially from functions, like the one above. We don't know what that function will return. Another reason is that sometimes the compiler might guess wrong, especially in cases like integers, where you have multiple ways that `1` could have been described (e.g. int8/int16, both can describe `1`, even `bool` can).
 
---- 
+---
 
 ### Constants
+
 Constant variables are variables that cannot change over the lifetime of the [variable scope](chapter3) they are created in.
 You can define a constant variable using the `const` keyword:
+
 ```cpp
 const int size = 31;
 const auto w = true; // const also works with the auto keyword
 ```
 
 Constants can be useful as a sort of configuration of the script itself. If you reuse a statically defined value you can instead define a global constant and then changing one value will change everything at once:
+
 ```cpp
 const int MAX_SIZE = 16;
 
@@ -85,6 +97,7 @@ my_func2(myint, MAX_SIZE) // Another function that does something else with myin
 ```
 
 Constants are also a way to optimize your code. If you know that a variable won't change (or shouldn't change) after it's initialization, always make it a constant.
+
 ```cpp
 bool function(int s, float i) {
     const float value = s - i;
@@ -93,24 +106,25 @@ bool function(int s, float i) {
 ```
 
 > ### TASK 2:
+>
 > Write a program that initializes a constant variable with the `auto` keyword, and then tries to change it after. Observe the compilation error in the console.
 
 ---
 
-### Integer size reference table
+### Integer Size Reference Table
+
 The table below shows the minimum and maximum values for each integer subtype (don't worry about remembering this, just remember that it exists here):
-|Type|Short description|Minimum Value|Maximum Value|
-|---|---|---|---|
-|int8| Signed, 8 bits |-128 | 127 |
-|int16| Signed, 16 bits |-32,768 | 32,767 |
-|int| Signed, 32 bits |-2,147,483,648 | 2,147,483,647 |
-|int64| Signed, 64 bits |-9,223,372,036,854,775,808 | 	9,223,372,036,854,775,807 |
-|uint8| Unsigned, 8 bits, also represents characters (char) | 0 | 255 |
-|uint16| Unsigned, 16 bits | 0 | 65,535 |
-|uint| Unsigned, 32 bits | 0 | 4,294,967,295 |
-|uint64| Unsigned, 64 bits | 0 | 18,446,744,073,709,551,615 |
+
+| Type   | Short description                                   | Minimum Value              | Maximum Value               |
+| ------ | --------------------------------------------------- | -------------------------- | --------------------------- |
+| int8   | Signed, 8 bits                                      | -128                       | 127                         |
+| int16  | Signed, 16 bits                                     | -32,768                    | 32,767                      |
+| int    | Signed, 32 bits                                     | -2,147,483,648             | 2,147,483,647               |
+| int64  | Signed, 64 bits                                     | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807   |
+| uint8  | Unsigned, 8 bits, also represents characters (char) | 0                          | 255                         |
+| uint16 | Unsigned, 16 bits                                   | 0                          | 65,535                      |
+| uint   | Unsigned, 32 bits                                   | 0                          | 4,294,967,295               |
+| uint64 | Unsigned, 64 bits                                   | 0                          | 18,446,744,073,709,551,615  |
 
 > [!TIP]
-> The official AngelScript documentation mentions that the scripting engine has been mostly optimized for 32 bit datatypes (int/uint). Using these is recommended for the most part (unless you are dealing with numbers that don't fit into int/uint).
-
-
+> The official AngelScript documentation mentions that the scripting engine has been mostly optimized for 32 bit data types (int/uint). Using these is recommended for the most part (unless you are dealing with numbers that don't fit into int/uint).
