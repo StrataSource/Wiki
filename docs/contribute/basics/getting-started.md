@@ -51,7 +51,7 @@ The source can be cloned from [StrataSource/Wiki](https://github.com/StrataSourc
 Please follow the README instructions in the `StrataSource/Wiki` repository to finish setting up the Wiki once it has been cloned.
 
 > [!WARNING]
-> ***If you plan to contribute to the WIki and plan to make a pull request with your changes, we require that you run `npm run cf-build` before hand to confirm that links, images, and other pieces of the Wiki documentation are setup correctly. These will take around 3 minutes to complete but will report any issues with the build.***
+> ***If you plan to contribute to the Wiki and plan to make a pull request with your changes, we require that you run `npm run cf-build` beforehand to confirm that links, images, and other pieces of the Wiki documentation are setup correctly. This will take around 3 minutes to complete but will report any issues with the build.***
 
 ## What's Next
 
