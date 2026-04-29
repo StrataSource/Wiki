@@ -1,9 +1,9 @@
 ---
-title: Chapter 5 - Functions
+title: Chapter 4 - Functions
 weight: 4
 ---
 
-# Chapter 5 - Functions
+# Chapter 4 - Functions
 
 ## What You Will Learn in This Chapter
 
@@ -88,7 +88,7 @@ string mystr = "ABC";
 mystr.length(); // Returns the length of this string (3)
 ```
 
-For a list of available methods per each type please refer to the [types section](../game/type) of this wiki.
+For a list of available methods per each type please refer to the [types section](../../game/type) of this wiki.
 > [!NOTE]
 > Primitive types (`int`, `float`, `bool`, etc.) don't implement any methods.
 

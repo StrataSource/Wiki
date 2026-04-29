@@ -1,9 +1,9 @@
 ---
-title: Chapter 1 - Introduction
+title: Introduction
 weight: 0
 ---
 
-# Chapter 1 - Introduction
+# Introduction
 
 ## What You Will Learn in This Chapter
 
@@ -46,6 +46,18 @@ AngelScript's official documentation can be found here: [AS Official Docs](https
 AngelScript allows for a closer connection to the internal engine code by having the engine provide various APIs to its internal classes. This allows you to do various things, such as creating custom entities, creating your own ConCommands and ConVars, making custom weapons - all things that aren't normally easy to do with VScript.
 
 While VScript (mainly) sits between entities and handles the interactions between them, AngelScripts sits in a level above, being able to *create* entities and define their behavior.
+
+---
+
+## This guide
+
+This guide is split into two parts:
+1. Language Basics - is supposed to teach you how to program in AngelScript, but it doesn't contain any information about on any Strata-specific feature, such as entity creation, command registering and so on. 
+
+2. Game Engine - contains tutorials on using AngelScript inside the game itself. This includes entity creation, custom command making, etc.
+
+3. Hammer World Editor - contains tutorials on various topics regarding the AngelScript implementation in the Hammer World Editor program.
+
 
 ---
 
