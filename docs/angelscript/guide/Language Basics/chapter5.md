@@ -1,9 +1,9 @@
 ---
-title: Chapter 6 - Value Types
+title: Chapter 5 - Value Types
 weight: 5
 ---
 
-# Chapter 6 - Value Types
+# Chapter 5 - Value Types
 
 ## What You Will Learn in This Chapter
 

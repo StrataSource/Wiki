@@ -1,9 +1,9 @@
 ---
-title: Chapter 2 - Primitive Types, Declaration & Assignment
+title: Chapter 1 - Primitive Types, Declaration & Assignment
 weight: 1
 ---
 
-# Chapter 2 - Primitive Types, Declaration & Assignment
+# Chapter 1 - Primitive Types, Declaration & Assignment
 
 ## What You Will Learn in This Chapter
 
@@ -18,7 +18,7 @@ In this chapter you will learn about:
 > Unfortunately, in this chapter you won't learn anything really interesting, but this knowledge is crucial to continue further. Data types in general are a very extensive subject, but you don't need to know everything. This chapter is supposed to teach you how to handle primitive types in your script.
 
 > [!NOTE]
-> This chapter won't cover every detail about any of data types, it is recommended you visit the [Data Types Section](../game/type) of the wiki for more information.
+> This chapter won't cover every detail about any of data types, it is recommended you visit the [Data Types Section](../../game/type) of the wiki for more information.
 > Alternatively, you can find references on the [AS Official Documentation](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_datatypes.html), however please note that Strata's wiki will be the most representative, some functionality might have been changed!
 
 ---
