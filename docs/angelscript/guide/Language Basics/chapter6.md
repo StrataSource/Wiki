@@ -1,9 +1,9 @@
 ---
-title: Chapter 7 - Object Handles
+title: Chapter 6 - Object Handles
 weight: 6
 ---
 
-# Chapter 7 - Object Handles
+# Chapter 6 - Object Handles
 
 ## What You Will Learn in This Chapter
 

@@ -1,9 +1,9 @@
 ---
-title: Chapter 4 - Loops
+title: Chapter 3 - Loops
 weight: 3
 ---
 
-# Chapter 4 - Loops
+# Chapter 3 - Loops
 
 ## What You Will Learn in This Chapter
 

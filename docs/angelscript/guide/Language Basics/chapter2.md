@@ -1,9 +1,9 @@
 ---
-title: Chapter 3 - Statements, Expressions, Conditions & Variable Scope
+title: Chapter 2 - Statements, Expressions, Conditions & Variable Scope
 weight: 2
 ---
 
-# Chapter 3 - Statements, Expressions, Conditions & Variable Scope
+# Chapter 2 - Statements, Expressions, Conditions & Variable Scope
 
 ## What You Will Learn in This Chapter
 
