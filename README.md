@@ -30,3 +30,6 @@ On the first run, the `run` script will clone and initialize the Wiki software s
 > All future executions of `run` will just build and run the server. If you wish to run the Wiki instead of waiting for it to build, run `npm run dev`.
 
 Site build output files are placed in `site/build`, which can be served using the HTTP server of choice.
+
+> [!NOTE]
+> `npm run cf-build` can be used to verify that links, files, and other aspects of the Wiki to ensure it will run correctly. ***If you are contributing to the Wiki and make a pull request with changes, require that you use this locally to enforce working Wiki documentation.***
