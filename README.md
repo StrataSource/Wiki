@@ -32,4 +32,4 @@ On the first run, the `run` script will clone and initialize the Wiki software s
 Site build output files are placed in `site/build`, which can be served using the HTTP server of choice.
 
 > [!NOTE]
-> `npm run cf-build` can be used to verify that links, files, and other aspects of the Wiki to ensure it will run correctly. ***If you are contributing to the Wiki and make a pull request with changes, require that you use this locally to enforce working Wiki documentation.***
+> `npm run cf-build` can be used to verify that links, files, and other aspects of the Wiki to ensure it will run correctly. ***If you are contributing to the Wiki and make a pull request with changes, we require you to use this to build locally to ensure that there are no errors in production builds***
