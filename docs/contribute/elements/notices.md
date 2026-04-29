@@ -1,10 +1,11 @@
 ---
 title: Notices
+weight: 0
 ---
 
 # Notices
 
-Notices can be used to call out important or useful info.
+Notices can be used to call out important or useful info. Notices use blockquotes which get turned into notices by the Wiki software.
 
 ## Default Notice
 
