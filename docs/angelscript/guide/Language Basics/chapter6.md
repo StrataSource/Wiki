@@ -151,3 +151,31 @@ void scale(Vector@ v1_handle, const int factor) {
 
 > [!NOTE]
 > Handles also support passing by reference, meaning that specifying e.g. `Vector@&out`, `Vector@&in` and `Vector@&` will be valid.
+
+---
+
+## Constant handles
+
+Handles can be declared as constant, declared read-only, or both. A constant handle is a handle that points to a constant object, but is not constant by itself, which is a bit counter-intuitive. A read-only handle however, is a handle that once initialized, cannot point to a different object.
+
+```cpp
+my_type a(...);
+
+my_type@ h1 = @a; // Read/write handle to a modifiable object
+
+const my_type@ h2 = @a; // Read/write handle to a constant object!
+// The syntax here is also a bit counter-intuitive
+
+// Alternatively, creating a handle whilst creating an object:
+const my_type@ h2_b = @my_type(...);
+
+
+my_type@ const h3 = @a; // Read only handle to a modifable object
+
+const my_type@ const h4 = @a; //  Constant, read only handle
+
+```
+
+Quoting AngelScript documentation:
+
+> A handle to a non-modifiable object can refer to both modifiable objects and non-modifiable objects, but the script will not allow the object to be modified through that handle, nor allow the handle to be passed to another handle that would allow modifications.
