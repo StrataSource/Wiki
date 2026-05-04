@@ -83,4 +83,4 @@ It should look something like this:
 ## Next steps
 We've successfully created a campaign in our addon. Next up, we need to setup Hammer for an easier development experience.
 
-Head over to [the Hammer setup page](/modding/p2ce-campaigns/gettings-started/03-setup-hammer) to continue.
+Head over to [the Hammer setup page](/modding/p2ce-campaigns/gettings-started/03-setting-up-hammer) to continue.
