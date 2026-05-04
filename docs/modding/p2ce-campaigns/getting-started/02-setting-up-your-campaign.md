@@ -12,7 +12,7 @@ Copy the following code into the file:
 > [!NOTE]
 > An example of a functioning campaign script is available [here](https://github.com/StrataSource/p2ce-addons/blob/main/portal2/scripts/campaigns.kv3).
 
-```
+```kv
 {
     meta = {
         // Meta keys on an addon level
@@ -83,4 +83,4 @@ It should look something like this:
 ## Next steps
 We've successfully created a campaign in our addon. Next up, we need to setup Hammer for an easier development experience.
 
-Head over to [the Hammer setup page](/modding/p2ce-campaigns/gettings-started/03-setting-up-hammer) to continue.
+Head over to [the Hammer setup page](/modding/p2ce-campaigns/getting-started/03-setting-up-hammer) to continue.
