@@ -13,11 +13,11 @@ We want to create a new game configuration for our campaign. Open the SDK Launch
 
 Click on `Edit` to open the list of game configurations and create a duplicate of the `P2:CE` configuration. Close the game configuration dialog and select your newly created game configuration.
 
-Now we can make some changes to our game configuration. Make sure to create a folder named `mapssrc` in your addons folder for this step.
+Now we can make some changes to our game configuration. Make sure to create a folder named `mapsrc` in your addons folder for this step.
 
-Under the setting `Hammer VMF directory`, enter the path to your `mapssrc` folder. In a default installation, this path will be `C:\Program Files (x86)\Steam\steamapps\common\Portal 2 Community Edition\bin\win64\..\..\p2ce\addons\yourmod\mapssrc` where `yourmod` is your addons folder name.
+Under the setting `Hammer VMF directory`, enter the path to your `mapsrc` folder. In a default installation, this path will be `C:\Program Files (x86)\Steam\steamapps\common\Portal 2 Community Edition\p2ce\addons\yourmod\mapsrc` where `yourmod` is your addons folder name.
 
-Under the setting `BSP final directory`, enter the path to your `maps` folder. In a default installation, this path will be `C:\Program Files (x86)\Steam\steamapps\common\Portal 2 Community Edition\bin\win64\..\..\p2ce\addons\yourmod\maps` where `yourmod` is your addons folder name.
+Under the setting `BSP final directory`, enter the path to your `maps` folder. In a default installation, this path will be `C:\Program Files (x86)\Steam\steamapps\common\Portal 2 Community Edition\p2ce\addons\yourmod\maps` where `yourmod` is your addons folder name.
 
 ![Game Configurations](./images/hammer-game-config.png)
 
@@ -34,7 +34,7 @@ Create a small sample map in Hammer and click on the "Run Map" button at the top
 Add the following to your configuration that starts with `$game_exe` to automatically load your campaign when running the map: `-campaign "yourcampaign"`.
 
 > [!NOTE]
-> You can also use the full identifier of your campaign `yourmod/yourcampaign` to prevent loading into the wrong campaign.
+> You can use the full identifier of your campaign `addon:yourmod/yourcampaign`, a simplified variant `yourmod/yourcampaign` or the smallest variant `yourcampaign`. To prevent loading into the wrong campaign, your campaign identifier should be unique. If more than one addon share the same campaign name, use the longer variants to prevent loading into the wrong campaign.
 
 ![](./images/hammer-run-dialog.png)
 

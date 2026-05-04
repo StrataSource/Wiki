@@ -56,6 +56,4 @@ A path to an asset in the addons `.assets` folder. The image will be displayed a
 **Recommended Size**: 1920x1080 (or aspect ratio equivalent)
 
 ### `background_music`
-This key's value is **not** a path to a raw asset file. Instead, it must be set to a valid soundscript entry.
-
-This image will be sized to cover the entire screen as the background.
+This key's value is **not** a path to a raw asset file. Instead, it must be set to a valid [soundscript](https://developer.valvesoftware.com/wiki/Soundscripts) entry.

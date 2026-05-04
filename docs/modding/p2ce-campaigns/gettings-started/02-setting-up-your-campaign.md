@@ -15,24 +15,40 @@ Copy the following code into the file:
 ```
 {
     meta = {
+        // Meta keys on an addon level
         author = "John P2CE"
         desc = "An example campaign"
         full_logo = "logo.png"
     }
     "campaigns" = {
-        "yourcampaign" = {  // "yourcampaign" is the ID of the campaign, it needs to be unique
+        "yourcampaign" = {  // "yourcampaign" is the ID of the campaign, it is required to be unique within your mod, chosing a unique identifier in general is preferred
             title = "Your Campaign"
             unlock_all = false
+            meta = {
+                // Meta keys on a campaign level
+            }
             chapters = [
                 {
                     title = "Your Chapter 1"
+                    meta = {
+                        // Meta keys on a chapter level
+                    }
                     maps = [
-                        {name = "sp_a1_intro1" meta={ title="Container Ride" }},
+                        {
+                            name = "sp_a1_intro1"
+                            meta = {
+                                // Meta keys on a map level
+                                title="Container Ride"
+                            }
+                        },
                         {name = "sp_a2_intro" meta={ title="Incinerator" }}
                     ]
                 },
                 {
                     title = "Your Chapter 2"
+                    meta = {
+                        // Meta keys on a chapter level
+                    }
                     maps = [
                         {name = "sp_a2_laser_intro" meta={ title="Laser Intro" }},
                         {name = "sp_a2_fizzler_intro" meta={ title="Fizzler Intro" }}
@@ -46,7 +62,7 @@ Copy the following code into the file:
 ```
 
 ### Explaination
-The campaigns file is split in two sections, the `meta` section and the `campaigns` section. The `meta` section holds information about the addon and the `campaigns` section holds general information about the campaign while the `chapters` section holds information about the chapters and maps.
+The campaigns file defines four nested levels of information. Addon, Campaign, Chapter and Map. Each level has its own properties that can be set and an additional "meta" block holding information for the P2:CE interface. While some meta keys are related to a specific level, most can be defined on each level and will be overriden by deeper levels (eg: An addon can define a background image and each chapter can define their own background image that will be used when the player is in that chapter). It makes sense to define keys on the highest level possible (eg: title/logo on the addon level) to prevent duplication or unwanted display. For more information, please refer to the [campaign.kv3 reference page](/modding/p2ce-campaigns/key-reference/00-general).
 
 Each chapter is a list of maps and unlocks with the last map of the previous chapter played. The `unlock_all` property determines if all maps in the chapter are unlocked at the start of the chapter or if they are unlocked as the player completes the previous map.
 
