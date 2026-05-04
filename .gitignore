@@ -5,3 +5,6 @@ generator/public
 
 .wrangler
 .DS_Store
+
+# WebStorm
+.idea
