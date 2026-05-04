@@ -34,7 +34,7 @@ Create a small sample map in Hammer and click on the "Run Map" button at the top
 Add the following to your configuration that starts with `$game_exe` to automatically load your campaign when running the map: `-campaign "yourcampaign"`.
 
 > [!NOTE]
-> You can use the full identifier of your campaign `addon:yourmod/yourcampaign`, a simplified variant `yourmod/yourcampaign` or the smallest variant `yourcampaign`. To prevent loading into the wrong campaign, your campaign identifier should be unique. If more than one addon share the same campaign name, use the longer variants to prevent loading into the wrong campaign.
+> You can use the full identifier of your campaign `addon:yourmod/yourcampaign`, a simplified variant `yourmod/yourcampaign` or the smallest variant `yourcampaign`. To prevent loading into the wrong campaign, your campaign identifier should be unique. If more than one addon share the same campaign name, use the longer variants.
 
 ![](./images/hammer-run-dialog.png)
 
