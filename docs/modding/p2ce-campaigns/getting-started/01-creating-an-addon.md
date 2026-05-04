@@ -20,4 +20,4 @@ Your addon will be created in the `addons` folder within the `p2ce` folder. On a
 ## Next steps
 Now that we have created our addon, we can start setting up our campaign.
 
-Head over to [the campaign setup page](/modding/p2ce-campaigns/gettings-started/02-setting-up-your-campaign) to continue.
+Head over to [the campaign setup page](/modding/p2ce-campaigns/getting-started/02-setting-up-your-campaign) to continue.
