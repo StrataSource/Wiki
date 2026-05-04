@@ -37,6 +37,7 @@ The following options are only available on Linux currently.
 
 # Hammer Options
 
-| Option      | Description                                                 |
-| ----------- | ----------------------------------------------------------- |
-| -winecompat | Enables the Qt file dialog in Hammer (on Linux)             |
+| Option           | Description                                                                                                         |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------- |
+| -winecompat      | Enables the Qt file dialog in Hammer and fixes 2D viewports in Wine 10 and below (on Linux)  (Deprecated)           |
+| -nowinerenderfix | Disables the 2D viewport fixes (on Linux)                                                                           |

@@ -50,12 +50,8 @@ Tools such as Hammer, HLMV and Faceposer can be run trivially using wine. Typica
 
 For Hammer:
 ```sh
-wine bin/win64/hammer.exe -winecompat
+wine bin/win64/hammer.exe
 ```
-
->[!NOTE]
-> `-winecompat` is completely optional for Hammer. It simply enables the Qt file browser dialog instead of using the native one provided by wine.
-> This flag does nothing in HLMV and Faceposer, as those tools have no Qt integration.
 
 Faceposer and HLMV both require the `-game` parameter to tell it which game to use. If running from the root of the game directory:
 ```sh
@@ -80,6 +76,8 @@ For HLMV/Faceposer or if you only have one config for Hammer, first try making s
 >[!NOTE]
 >Wine prefixes all paths with a fake drive letter, `Z:` for the root with each loaded partition having its own drive letter, to maintain compatibility with Windows filesystems. Make sure to add this to the beginning of all your paths for them to work correctly.
 
+If it still fails to find `gameinfo.txt`, you could also try moving the game's install to a different drive and trying again.
+
 ### My game looks washed out when ran from Hammer!
 
 Installing DXVK should fix this. The default DirectX 11 compatibility layer in wine called wined3d tends to cause this.
@@ -101,3 +99,11 @@ If you're still having issues, verify that `~/.steam/steam/steamapps/libraryfold
 You can adjust the default DPI of the applications using `winecfg`.
 
 Run `winecfg` in a terminal, navigate to "Graphics" and adjust the DPI as desired under the "Screen resolution" section.
+
+### Low Performance in Hammer
+
+If you're using Wine 11 you can disable winecompat by either removing `-winecompat` for Portal: Revolution or enabling `-nowinerenderfix` for P2:CE and Momentum Mod, which will resolve performance issues. 
+* Using these will introduce a single frame delay in the 3D viewport.
+* Forcing Wayland in Wine can fix the issue, however the model browser will be broken.
+
+Another option can be to minimize the amount of geometry visible in the 2D viewports. Disabling model rendering in the 2D viewports can help improve performance a little more as well.

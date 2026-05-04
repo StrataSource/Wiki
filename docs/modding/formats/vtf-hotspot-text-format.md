@@ -9,24 +9,24 @@ Alongside the embedded format, Strata Source supports the Hammer++ rect format, 
 ```kv :: example_rectmap.rect
 Rectangles
 {
-	rectangle
-	{
-		min		"0 0"
-		max		"512 32"
-	}
-	rectangle
-	{
-		min		"512 0"
-		max		"768 32"
-	}
+    rectangle
+    {
+        min "0 0"
+        max "512 32"
+    }
+    rectangle
+    {
+        min "512 0"
+        max "768 32"
+    }
 }
 ```
 
 ```kv :: example_material.vmt
 LightmappedGeneric
 {
-	$basetexture "example_material"
-	%rectanglemap "example_rectmap"
+    $basetexture "example_material"
+    %rectanglemap "example_rectmap"
 }
 ```
 
@@ -37,10 +37,10 @@ Regions with the `alt` flag are excluded from the selection set by default, unle
 ```kv
 rectangle
 {
-	min		"0 0"
-	max		"256 256"
-	rotate	1			// Should this region be randomly rotated?
-	reflect	1			// Should this region be randomly horizontally flipped?
-	alt		1			// If true, this region belongs to the alternate group.
+    min "0 0"
+    max "256 256"
+    rotate  1   // Should this region be randomly rotated?
+    reflect 1   // Should this region be randomly horizontally flipped?
+    alt 1       // If true, this region belongs to the alternate group.
 }
 ```
