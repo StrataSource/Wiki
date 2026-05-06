@@ -9,12 +9,11 @@ weight: 7
 
 In this chapter you will learn about:
 
-- [Object handles](#object-handles)
-- [Object handle declaration](#declaration)
-- [Object handle expressions](#expressions)
-- [The Initialization Problem](#the-initialization-problem)
-- [Handle reference counting](#reference-counting)
-- [Object handle usage in functions](#handles-and-functions)
+- [Classes](#classes)
+- [Methods and *this* keyword](#methods-and-this-keyword)
+- [Constant methods](#constant-methods)
+- [Constructors](#constructors)
+- [Operator overloads](#operator-overloads)
 
 > Object oriented programming is the second branch of programming you could say. Here you learn how to manipulate data in a more efficient way, by defining custom data types.
 
@@ -58,7 +57,7 @@ my_object.c = my_object.a == 1;
 
 ---
 
-## Methods and `this` keyword.
+## Methods and *this* keyword
 
 As mentioned previously, methods are a way to bind specific functions to a class type. Additionally, you can use the `this` keyword inside declared methods, to reference the object the method was called on.
 
@@ -326,25 +325,105 @@ class MyClass {
 
 
 Although operator overloads behave mostly the same, there are a couple of differences between different types of operators.
+Below is a short compilation of the most important things to know:
+
+> [!NOTE]
+> Whenever there is a mention of "us", it means the object the method is being called on.
 
 ### Unary operators
 
+1. Prefixed unary operators should return a modified object (by reference)
+2. Postfixed unary operators should return a copy of the object (make a copy, do modifications, return the copy). Alternatively, to avoid the overhead of copying a value when returning from a function, you can overload these operators based on handles (accept a handle as a parameter and return a handle).
+
+
 ### Comparison operators
+
+1. opEquals operators should return a boolean.
+2. In case of `opEquals` (`==` operator), the expression (`a == b`) is re-written as `a.opEquals(b)` or `b.opEquals(a)` depending on the available methods (best fit is used).
+3. Comparison operators (`>`, `<`, ...) - \[opCmp method] should return an integer. If the argument is larger than us, the return value should be negative, else positive. If objects are equal the return value should be 0. (`a < b => a - b < 0`...) 
 
 ### Assignment operators
 
+1. Assignment operators should return by reference, and in almost all cases, should return a reference to us, that is to allow operator chaining (e.g. `a = b = c`).
+2. It depends on the specific use case, however `opAssign (=)` should in most cases, copy the properties of argument object to us.
+3. The compiler will automatically generate an `opAssign` method if no is specified, that copies all properties. If this is not desired, you can explicitly disable this behaviour with `MyClass& opAssign(const MyClass &inout) delete;`.
+4. All other assignment operators should only modify the object, not make copies!
+
 ### Binary operators
+
+1. All binary operators have two methods that they can be overloaded on: `opX` and `opX_r`. This is because the compiler will try to rewrite the expression `a x b` as `a.opX(b)` or `o.opX_r(b)`, depending on the best fit. This can mean, that even if the class of `a` doesn't implement that operator, you can still perform `a x b` by using the `_r` method. This is especially useful for operations that are not alternating.
+
+2. These operators should return a copy of objects, thus returning by value. Whether you copy `a` or `b`, doesn't matter much, however make sure to apply appropriate changes onto that copy.
+
+3. In order to save on performance on returning a value, consider specifying the operators as handle based (meaning that they take a handle and return a handle). This way an object is not copied (besides the copy inside the method, that is done to not make changes on `a` or `b`). Additionally, you can specify two overloads, one for a handle input that returns a handle, and one that returns by value, example:
+    1. `MyClass@ opAdd(MyClass@ other) {...}`
+    2. `MyClass opAdd(const MyClass&in other) {...}`
 
 ### Index operator
 
+1. Expression `a[i]` gets rewritten to `a.opIndex(i)`.
+2. Multiple arguments are allowed, e.g. `a[i, j, k]` => `a.opIndex(i, j, k)`
+3. The index operator can also be written as a pair of property accessors, `get_opIndex(...)` and `set_opIndex(...)`. These are called on getting a value and setting a property respectively. `get_opIndex` should generally have a return type of the value you're retrieving, and `set_opIndex` should return void.
+
 ### Functor operator
+
+The expression `a(i, j, k, ...)` will get rewritten to `a.opCall(i, j, k, ...)`.
 
 ### Type conversion operators
 
+#### Value conversions
+1. Explicit conversions, e.g.: `type(a)` will make the compiler try:
+    1. Constructing object of type `type` using a constructor that can accept the type of `a`.
+    2. Try to call `opConv` on `a` that returns `type`.
+    3. Try to call `opImplConv` on `a` that returns `type`.
+
+2. Implicit conversions will try to also call the constructor first, then **skip** `opConv` and go to `opImplConv`
+3. `opConv` and `opImplConv` methods get differentiated based on the return type.
+4. The methods above are supposed to be used for value conversions, meaning that they should return a copy of the data with the appropriate type.
+
+#### Reference casts
+1. Reference casts are done on handles!
+2. Casts can be overloaded with the `opCast` or `opImplCast` methods, for explicit and implicit casting.
+3. On explicit casts the compiler will try to use `opCast` first, then `opImplCast`.
+4. Implicit casts only use `opImplCast`.
+
 ### Foreach loop operators
 
+You can override the behaviour of the `foreach` loop by overloading `opForBegin`, `opForEnd`, etc. It's best to look at the official documentation about this: 
+
+> | op	                     |   opfunc   |
+> |--------------------------|------------|
+> | begin *foreach*	         | opForBegin |
+> | end *foreach*	         | opForEnd   |
+> | next *foreach iteration* | 	opForNext |
+> | *foreach value*	         | opForValue, opForValue0, opForValue1, opForValue2...|
+> 
+> When the compiler tries to compile a foreach loop it will need a use a set of methods on the container type.
+> ```cpp
+>  foreach( auto val, auto key : expr )
+>  {
+>    ...
+>  }
+> ```
+>
+> The above will be compiled as if it was written as
+> ```cpp
+>  for( auto @container = expr, auto @it = container.opForBegin(); !container.opForEnd(it); @it = container.opForNext(it) )
+>  {
+>    auto val = container.opForValue0(it);
+>    auto key = container.opForValue1(it);
+>    ...
+>  }
+> ```
+> 
+> Where the types support handles the compiler will use handle assignments, otherwise it will use value assignments.
+> 
+> The iterator type returned by opForBegin, can be a simple integer for indexing, or an iterator class if more complex operations are needed for keeping track of the  iterations.
+>
+> If the container only supports a single value, then the operator opForValue can be used, otherwise multiple numbered opForValue# operators must be used.
 
 
+### Operator overloads - misc
 
 The list of function names and their corresponding operators can be found in the [AngelScript documentation](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script_class_ops.html), where `op` is the operator, and `opfunc` is the method name used.
 
@@ -359,7 +438,8 @@ class MyClass {
     MyClass() {...}
 
     // Operator overloads
-    MyClass& opAdd()
+    MyClass@ opAdd(MyClass@ other) {...} // Handle
+    MyClass opAdd(const MyClass&in other) {...} // Value
 
 
 }
