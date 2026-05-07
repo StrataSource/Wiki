@@ -16,7 +16,7 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 ### "I set the Shadowed spawn flag, but there are still no shadows / light leaks through walls"
 
-* You have too many dynamic shadows updating at once. Remember that **each shadow size level increases the shadow atlas usage by a factor of 4** (double the horizontal and vertical dimensions), and **the shadow size cannot have exceed a value of 7**, so if there are for example two `light_rt`s with a high shadow size, and the available space in the shadow atlas can only fit one of them (such that they would overlap), they will not produce any shadows. However, there is an unstable workaround, where by enabling `light_rt`s one by one they have a chance to keep their shadows – when trying to fit a single shadow into the atlas, the engine will downscale it to the next biggest available space.
+* You have too many dynamic shadows updating at once. Remember that **each shadow size level increases the shadow atlas usage by a factor of 4** (double the horizontal and vertical dimensions), and **the shadow size cannot exceed a value of 7**, so if there are for example two `light_rt`s with a high shadow size, and the available space in the shadow atlas can only fit one of them (such that they would overlap), they will not produce any shadows. However, there is an unstable workaround, where by enabling `light_rt`s one by one they have a chance to keep their shadows – when trying to fit a single shadow into the atlas, the engine will downscale it to the next biggest available space.
 
 ### "My dynamic shadows are blurry"
 
