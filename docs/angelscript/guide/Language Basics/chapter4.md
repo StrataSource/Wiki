@@ -24,7 +24,7 @@ In this chapter you will learn about:
 
 ### Syntax
 
-As you already know or not, functions are a way of implementing routines that operate on an input and produce a result. In Layman's terms, you give it some data, it processes the data and (may, but doesn't need to) give you an output.
+Functions are a way of implementing routines that operate on an input and produce a result. In simple terms, you give a function data, it processes the data, and gives an output (although having an output is not necessary).
 
 A function declaration consists of 3 main parts: *return value*, *function name*, and the *parameters*.
 These follow pretty much the same syntax as C++:
@@ -52,11 +52,11 @@ bool myFunction(int a, int b) {
 }
 ```
 
-Each function **must** have a return statement in each of its "paths". What that basically means, is that whatever you do in your function, it will always end with a return statement. The only exception is the `void` return type (which means return nothing), in which you can skip the `return` keyword entirely, or use the `return;` statement when you want to exit the function early.
+Each function **must** have a `return` statement in each of its "paths". Whatever you do in your function, it must always end with a `return` statement. The only exception is the `void` return type (which means return nothing), in which you can skip the `return` keyword entirely, or use the `return;` statement when you want to exit the function early.
 
 ### Calling Functions
 
-Calling functions in code is very simple, you use the **function call `()`** operator, `func(arguments)`. In it, you include every needed argument:
+Calling functions in code is very simple using the **function call `()`** operator, `func(arguments)`. In it, you include every needed argument:
 
 > [!NOTE]
 > ""Variables"" in a function declaration are called **parameters**, while ""variables"" in a function call are called **arguments**.
@@ -76,11 +76,11 @@ a = sum(a, just5()); // just5 will get evaluated first, then its result will get
 // a = 5
 ```
 
-Calling a function is a statement, which means it can be freely used in expressions in every combination. You can treat `func(p)` as a value that you do operations with.
+Calling a function is a statement, meaning it can be freely used in expressions in every combination. You can treat `func(p)` as a value that you do operations with.
 
 ### Calling Methods on Objects
 
-Some objects such as `string` or `array` implement methods. For now, you can think of methods as functions that sit inside the object (variable), and operate on that object. You can invoke them by using the `.` operator and then the function call.
+Some objects, such as `string` or `array`, implement **methods**. For now, you can think of methods as functions that sit inside the object, and operate on that object. You can invoke them by using the `.` operator and then the function call.
 
 ```cpp
 string mystr = "ABC";
@@ -88,13 +88,13 @@ string mystr = "ABC";
 mystr.length(); // Returns the length of this string (3)
 ```
 
-For a list of available methods per each type please refer to the [types section](../../game/type) of this wiki.
+For a list of available methods per each type, please refer to the [types section](../../game/type) of this wiki.
 > [!NOTE]
 > Primitive types (`int`, `float`, `bool`, etc.) don't implement any methods.
 
 ### Recursion
 
-Like in any other language, a function can call itself. This is function is then called a *recursive* function.
+In most, if not all, programming languages, a function can call itself. This function is called a *recursive* function.
 
 ### Calling template functions
 
@@ -119,7 +119,7 @@ Function parameters in AngelScript can be a bit confusing, since AS has custom k
 
 ### Default Parameters
 
-Sometimes you want to add additional functionality to your function, but for most cases you already know what it should do, although you still want to include a customizable option for fine-tuning. You can do that by default parameters.
+Default parameters are used to add optional arguments to your function. If you don't have an input for one of your arguments, it can default to a certain value, but can still be set to a different value later in the code.
 
 Each parameter can have a default value assigned to it, like so:
 
@@ -128,7 +128,7 @@ void myFunc(int a = 5, int b = 1) {...}
 ```
 
 This function can be called with *0*, *1*, and *2* arguments, and each call will be valid.
-Calling it with 0 arguments will mean that `a` will be set to `5`, and `b` to `1`. Calling it with one argument will set a to that arguments value and so on.
+Calling it with 0 arguments will mean that `a` will be set to `5`, and `b` to `1`. Calling it with one argument will set a to that argument's value, and so on.
 
 ```cpp
 myFunc(); // a = 5, b = 1
@@ -143,7 +143,7 @@ myFunc(2, 5); // a = 2, b = 5
 
 ### Constant parameters
 
-Constant parameters work just like constant variables. If declare a certain parameter constant, you won't be able to change it in any way.
+Constant parameters work just like constant variables. If you declare a certain parameter as constant, you won't be able to change it in any way after declaring it.
 
 ```cpp
 void myFunc(const int a, const bool y = true) // Default parameters can also be constants
@@ -155,9 +155,10 @@ void myFunc(const int a, const bool y = true) // Default parameters can also be 
 
 ### References - Short Intro
 
-Before we delve into the next subchapter, you need to know what *references* are. In each computer, variables are stored in memory. You can visualize computers memory as a some sort of a box with labels. Each label has some space that it describes, and there can be an item in each label. Such items are our variables, and these labels are memory addresses. In such way, the computer knows where to look for these variables when it needs to find them.
+<!-- This needs rephrasing. The metaphor as-is is kind of difficult to understand. -->
+Before we delve into the next subchapter, you need to know what *references* are. In every computer, variables are stored in its memory. You can visualize a computer's memory as a box with labels. Each label describes a space within the box, with room in each space for items. Such items are our variables, and these labels are memory addresses. Using these, the computer knows where to look for these variables when it needs to find them.
 
-References are just the labels we have been comparing to, they *are* the address of the variable they correspond to.
+References are just the labels we have been comparing to - the address of the variable they correspond to.
 
 They are denoted with the **&** symbol. Conceptually:
 
@@ -166,13 +167,13 @@ string mystring = "lorem ipsum";
 &mystring // Memory address of mystring
 ```
 
-In AngelScript you cannot directly manipulate references, but you can do many useful things when you combine functions and references. The AngelScript compiler will automatically manage referencing (getting a variables address) and dereferencing (looking up a variable from an address).
+In AngelScript, you cannot directly manipulate references, but you can do many useful things by combining functions and references. The AngelScript compiler will automatically manage referencing (getting a variable's address) and dereferencing (looking up a variable from an address).
 
 ### Reference Parameters
 
 Functions can be set to use references as parameters.
 
-In the examples shown above every argument was **copied**. Here's a better example:
+In the examples shown above, every argument was **copied**. Here's a better example:
 
 ```cpp
 void func(int c) {...}
@@ -181,11 +182,11 @@ int a = 1;
 func(a);
 ```
 
-In this example, before `c` gets assigned a value from `a`, the value of `a` gets copied first, and only after that the assignment occurs. This happens, so that doing any operations on `c` in `func` will not cause `a` outside the function to change in any way.
+In this example, before `c` gets assigned a value from `a`, the value of `a` gets copied first, and only after that will the assignment occur. This way, doing any operations on `c` in `func` will not cause the value of `a` to change in any way.
 
-However, passing by reference changes that mechanism. Since now, the thing that gets copied is the memory address, not the actual variable value. Meaning that if we were to pass by reference in `func` above, doing any operation such as `c = 5;` would cause `a` to change accordingly (a = 5).
+Using a pass by reference changes this mechanism by making the copied excerpt the memory address rather than the actual variable value. If we were to pass by reference the `func` above, doing any operation such as `c = 5;` would cause `a` to change accordingly (a = 5).
 
-Telling the compiler that you want to pass by reference gets done in the function parameters declaration, like so:
+Telling the compiler that you want to pass by reference is done in the function parameters declaration, like so:
 
 ```cpp
 void func(int& c) // This is a pass by reference
@@ -195,20 +196,21 @@ No special syntax for calling is needed:
 
 ```cpp
 int a = 1;
-func(a); // a gets passed by reference
+func(a); // a gets pass by referenced
 ```
 
-AngelScript implements more functionality to passing by reference, and that includes 2 options:
+AngelScript implements more functionality to pass by references, and that includes 2 options:
 
 #### &in
 
+?????????????????????????? second sentence
 This marks the parameter as an input to the function. This option provides little to no benefit as to just passing by value (copying), as the compiler still has to ensure the object won't get modified outside the function, and the only way to do that is to make a copy.
 
 > [!TIP]
-> **Combining `&in` with `const` can however, yield a way more optimized code. `&in` should almost always be used whenever you are using a `const` parameter. This actually disables the copying mechanism!**
+> **Combining `&in` with `const` can, however, yield more optimized code. `&in` should almost always be used whenever you are using a `const` parameter. This disables the copying mechanism.**
 
 > [!WARNING]
-> Primitive types should not be passed with `&in`, as the memory address still has to be copied over, resulting in the same hit of performance (or worse!) as just copying the value itself.
+> Primitive types should not be passed with `&in`, as the memory address still has to be copied over, resulting in the same hit on performance (or worse!) as just copying the value itself.
 
 #### &out
 
@@ -243,7 +245,7 @@ WholeDivision(10, 3, myresult, myrest); //This will set myresult and myrest to t
 
 #### &inout / &
 
-This option specifies that this parameter will be passed by reference in both directions. Meaning, the argument will not be copied, and also any changes made to this variable will result in a modified state of the argument outside the function.
+This option specifies that this parameter will be pass by referenced in both directions. This means that the argument will not be copied, and also that any changes made to this variable will result in a modified state of the argument outside the function.
 
 > [!NOTE]
 > `&inout` or `&` are **not** supported for primitive types.
@@ -252,7 +254,7 @@ This option specifies that this parameter will be passed by reference in both di
 
 ## Returning references
 
-Functions can also *return* references. Meaning that they return an address to an object, rather than the object itself. In previous examples we have discussed functions that return by value, meaning that the value of the variable that gets returned, gets copied to a temporary location and then gets "transferred" over to the variable outside the function:
+Functions can also *return* references. This means they can return an address to an object, rather than the object itself. In previous examples, we have discussed functions that return by value, meaning the value of the variable that gets returned gets copied to a temporary location and then gets "transferred" over to the variable outside the function:
 
 ```cpp
 int func(int a) {
@@ -265,9 +267,9 @@ b = func(2); // Result of func(2) gets stored in a temporary location and then c
 func(2) = 1; // This will not work.
 ```
 
-Returning references works in a different way, we return an address, that means the actual value of the variable never gets copied which saves on performance. Additionally, it allows you to do operations on the return value of a function. To declare a function that returns a reference, you append the `&` symbol at the end of the type name in the return type.
+Returning references works differently. Here, we return an address - meaning the actual value of the variable never gets copied, saving on performance. Additionally, it allows you to do operations on the return value of a function. To declare a function that returns a reference, you append the `&` symbol at the end of the type name in the return type.
 
-Before we overview examples, there is one more thing to discuss about returning references. Not every variable can get it's reference returned. In general, variables that don't exist outside the function will not be able to get returned by reference, because they will get erased once the code gets out of the function.
+Before we go over some examples, there is one more thing to discuss about returning references. Not every variable can get its reference returned. In general, variables that don't exist outside the function will not be able to get returned by reference, because they will get erased once the code gets out of the function.
 
 ### 1. References to global variables are allowed.
 
@@ -281,16 +283,16 @@ int& addToA(int b) {
     return a; // Like in reference parameters, no additional syntax is needed.
 }
 
-//This will allow us to do something like:
+// This will allow us to do something like:
 addToA(1) = 3; // We add 1 to a, but then we change a to be equal to 3.
 ```
 
 ### 2. References to class members and `this` are allowed.
 
 > [!NOTE]
-> This information will be useful once we get to custom classes and reference types, so if you don't know what these are you can skip this for now.
+> This information will be useful once we get to custom classes and reference types. If you don't know what those are, you can skip this for now.
 
-References to class members (properties) and to ourselves (`this`) are allowed to be returned by methods.
+References to class members (properties) and to ourselves (`this`) are allowed to be returned by methods:
 
 ```cpp
 class myclass {
@@ -306,9 +308,11 @@ class myclass {
 }
 ```
 
-### 3. Returning a reference to a local variable is not allowed.
+??????????????????????????? does underlining work
 
-Returning a reference to a local variable is not allowed, this is because the variable will not exist after the function returns.
+### 3. Returning a reference to a __local__ variable is **not** allowed.
+
+Returning a reference to a local variable is not allowed. This is because the variable will not exist after the function returns.
 
 ```cpp
 int& myFunc() {
@@ -317,7 +321,7 @@ int& myFunc() {
 }
 ```
 
-### 4. Returning a reference to a deferred parameter is not allowed.
+### 4. Returning a reference to a deferred parameter is **not** allowed.
 
 Values passed by reference into a function cannot be returned by reference. This is because AS does additional cleanup after the function returns, hence why there is no guarantee that an object passed by `&in`/`&out` will exist after the function returns.
 
@@ -329,13 +333,13 @@ int& func(int a&in ) {
 
 > ### TASK 2:
 >
-> Create a function that splits a string into two same-length parts. It should take a string and return a boolean if the string can be split (if the strings length is not divisible by two you cannot create two equal-length parts), and it should also return these two parts (use `&out`).
+> Create a function that splits a string into two same-length parts. It should take a string and return a boolean if the string can be split (if the string's length is not divisible by two, you cannot create two equal-length parts), and it should also return these two parts (use `&out`).
 
 ---
 
 ## Function Overloads
 
-Function overloading is a very powerful concept, as it allows you to declare a function multiple times, each time with a different set of parameters. The compiler will then attempt to choose the best "fit" for which exact function to call (the criteria of how it does so are available on the [official documentation](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script_func_overload.html)).
+Function overloading is a very powerful concept, as it allows you to declare a function multiple times, each time with a different set of parameters. The compiler will then attempt to choose the best "fit" for which exact function to call (the criteria of how it does so is available on the [official documentation](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script_func_overload.html)).
 
 This is mainly used for functions that can accept multiple combinations and types of parameters, but produce a similar result.
 
@@ -349,7 +353,7 @@ myFunc(10.5); // Will call the first option (but float will get converted to int
 myFunc(false); // Will cause an error since none of the options specify bool as a parameter
 ```
 
-Default parameters are also allowed to be used in overloading, but you have to be careful whilst doing so. If you define your function wrong, the compiler will not be able to decide whether it should use an overload or use a default parameter.
+Default parameters are also allowed to be used in overloading, but you have to be careful whilst doing so. If you define your function wrong, the compiler will not be able to decide whether it should use an overload or use a default parameter:
 
 ```cpp
 void myFunc(int a, int b = 2) {...}
@@ -367,11 +371,11 @@ myFunc(1, "A"); // Will work
 ```
 
 > [!WARNING]
-> Different return types are allowed for overloads, e.g. one function can return an int, whilst other can return a string (the auto keyword is useful here); however the compiler will not take the return type as a criteria for deciding which overload to use.
+> Different return types are allowed for overloads, e.g. one function can return an int, whilst another can return a string (the auto keyword is useful here). The compiler will not take the return type as a criteria for deciding which overload to use.
 
 > ### TASK 3:
 >
-> In the default parameters section there was a problem mentioned about how you cannot explicitly set custom parameters. Given a function:
+> In the default parameters section, there was a problem mentioned about how you cannot explicitly set custom parameters. Given a function:
 >
 >```cpp
 > int printXTimes(string msg, string end = "\n", int x = 1) {
@@ -381,7 +385,7 @@ myFunc(1, "A"); // Will work
 > }
 > ```
 >
-> Find a way to use it to print 10 times the message "CONSOLE SPAM!" **without specifying a value for the `end` parameter!**
+> Find a way to use it to print the message "CONSOLE SPAM!" ten times, **without specifying a value for the `end` parameter!**
 > > [!TIP]
 > > You can call an overload to a different function in an overloaded function:
 > >
