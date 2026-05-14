@@ -14,19 +14,19 @@ In this chapter you will learn about:
 - [Foreach](#foreach)
 - [Continue/Break keywords](#special-keywords)
 
-> Loops are a way to make the code repeat itself a certain amount of times, of which the amount of repetitions may vary depending on what is going on in the code.
+> Loops are a way to make the code repeat itself a certain amount of times. The amount of repetitions may vary depending on what is going on in the code.
 
 ---
 
 ### Arrays - Short Introduction
 
 > [!NOTE]
-> This subsection is supposed to teach you the very basics of arrays, because next you will learn about loops, and loops are mostly useful for array manipulation.
-> You won't learn in details what the array is and how to do operations on it, but you will learn how to create one and access its elements.
+> This subsection is supposed to teach you the very basics of arrays. This is because in the following section you will be learning about loops, and loops are mostly useful for array manipulation.
+> You won't learn in detail what an array is, nor how to do operations on them, but you will learn how to create one and access its elements.
 
 An array is an ordered group of elements, of which there is a starting element and an element at the end.
 
-Code-wise it's a template object, as you need to specify of which data type its values will be. To create an array you can use the **{element, element2, ...}** assignment:
+Code-wise, it acts a template object - you'll need to specify of which data type its values will be. To create an array, you can use the **{element, element2, ...}** assignment:
 
 ```cpp
 array<int>@ a = {0, 1, 2, 3, 4};
@@ -35,9 +35,9 @@ array<float>@ c = {.1, .3, .5};
 ```
 
 > [!NOTE]
-> Since `array` and `dictionary` are value types, you initialize them as an object handles (the @ symbol). For now, just remember that you add that symbol after the type name, it will get explained later on.
+> Since `array` and `dictionary` are value types, you initialize them as an object handle (the @ symbol). For now, just remember that you add that symbol after the type name - this will get explained later on.
 
-To access elements in an array you use the index operator **[]**, where `[i]` will access the i'th element of the array (counting from 0):
+To access elements in an array, you will use the index operator **[]**, where `[i]` will access the i'th element of the array (counting from 0):
 
 ```cpp
 a[3] // = 3
@@ -45,7 +45,7 @@ b[1] // = false
 b[0] // = .1
 ```
 
-More on the arrays will be talked about in later parts of this guide.
+More on arrays will be covered in later parts of this guide.
 
 ---
 
@@ -75,7 +75,7 @@ do {
 ```
 
 > [!WARNING]
-> It is possible to create a never ending loop, the easiest way is to do `while (true)`. Such loops are most of times an error in programming. However, these loops can be an intentional decision when **you are sure the loop will at some time stop executing**, either with the `break` statement (more on that in a bit) or other ways.
+> It is possible to create a never-ending loop. The easiest way to achieve this is with `while (true)`. Such loops are usually a programming error. However, these loops can be an intentional decision when **you are sure the loop will at some time stop executing**, either with the `break` statement (more on that in a bit) or through other ways.
 
 > ### TASK 1:
 > Write a program that will print out "Hello again!" to the console 10 times.
@@ -94,22 +94,22 @@ An example of a `for` loop can be a loop that cycles through every character in 
 array<int>@ numbers = {1, 1, 2, 3, 5, 8, 13};
 for (int i = 0; i < numbers.length(); i++) { // For every i until i is greater or equal to the array length (this will ensure i won't go out of bounds)
     numbers[i] // Represents the i'th number in the array
-    // After executing code do i++ (add one to i), so we can access the next element
+    // After executing code, do i++ (add one to i), so we can access the next element
 }
 ```
 
 > [!TIP]
-> Statements 1 and 3 in for loops can be skipped, as an example `for (;condition;)` is a valid form of a `for` loop, and so is `for (int a = 0;condition;)` etc.
+> Statements 1 and 3 in for loops can be skipped. As an example, `for (;condition;)` is a valid form of a `for` loop, and so is `for (int a = 0;condition;)` etc.
 
 > ### TASK 2:
 >
-> Given an array of integers, write a program that will add all of these integers and print out the result.
+> Given an array of integers, write a program that will add all of them together and print out the result.
 > > [!NOTE]
-> > Because of the [Variable Scope](chapter3/#variable-scope), you will need to define a variable to store the sum outside of the loop.
+> > Because of [variable scope](chapter3/#variable-scope), you will need to define a variable to store the sum outside of the loop.
 
 ## Foreach
 
-A `foreach` loop can be used to perform code for each item in a container objects. Container objects are objects that store values of other data types, such as the `array<T>` object or the `dictionary` object. Its structure `foreach (vars : container_object)` consists of two parts: where vars contains declarations of the variable names, such as `int val`, and the container object is the, well, container object. Some objects unpack more than one variable, such as the `dictionary` objects that unpacks the key and the appropriate value.
+A `foreach` loop can be used to perform code for each item in a container object. Container objects are objects that store values of other data types, such as the `array<T>` object or the `dictionary` object. Its structure (`foreach (vars : container_object)`) consists of two parts. `vars` contains declarations of the variable names, such as `int val`, and `container_object` acts as the container object. Some objects unpack more than one variable, such as `dictionary` objects, which unpack the key and the appropriate value.
 
 ```cpp
 array<int>@ integers = {1, 2, 3, 4};
@@ -122,7 +122,7 @@ dictionary@ mydict = {
     {"key2", value2},
     {"key3", value3}
 };
-foreach (auto value, auto key : mydict) {// NOTE: the order is flipped here, as compared to e.g. foreach in Squirrel (VScript), value goes first
+foreach (auto value, auto key : mydict) { // NOTE: the order is flipped here compared to e.g. foreach in Squirrel (VScript). Value comes first
     // Loop through mydict
 }
 
@@ -138,7 +138,7 @@ These are the special keywords that can be used inside loops.
 
 ### Break Statement
 
-The `break` statement is a way to exit a loop execution early. Calling it will cause the program to abort loop execution and continue executing code after the loop.
+The `break` statement is a way to exit a loop execution early. Calling it will cause the program to leave the loop early and continue executing code after the loop.
 
 ```cpp
 int a = 10;
@@ -147,12 +147,12 @@ while (a > 0) {
         break;
     }
 }
-// This loop will stop executing when a will be equal to 5
+// This loop will stop executing when a equals 5
 ```
 
 ### Continue Statement
 
-The `continue` statement will cause the loop to stop and go to the next element.
+The `continue` statement will skip the current iteration, causing the loop to stop and go to the next element.
 
 ```cpp
 int sum = 0;
@@ -176,11 +176,14 @@ while (condition) {
     for (int a = 5; a < 10; a++) {
 
         if (a > 5) {
-            break; // This will break of the for loop, not the while loop!
+            break;
         }
     }
 }
 ```
+
+The code will break of the `for` loop, but not the `while` loop.
+
 
 > ### TASK 4:
 >
