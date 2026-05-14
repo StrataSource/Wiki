@@ -122,7 +122,7 @@ You can control the size of the shadow map by changing the "Initial Shadow Size"
 ![Initial Shadow Size is 7](images/shadowsize7.png)
 
 > [!NOTE]
-> In the clustered renderer, shadowmaps for all lights are stored in a single, larger texture, called the 'Shadow Atlas', which has space for a limited amount of shadow data. Each time you increase the size of a shadow by 1, you increase the atlas' shadow size by a factor of 4. For example, a shadow of size 2 takes up only a quarter of the space that a shadow of size 3 takes up.
+> In the clustered renderer, shadowmaps for all lights are stored in a single, larger texture, called the 'Shadow Atlas', which has space for a limited amount of shadow data. Each time you increase the size of a shadow by 1, you increase the atlas' shadow size by a factor of 4 (double the horizontal and vertical dimensions). For example, a shadow of size 2 takes up only a quarter of the space that a shadow of size 3 takes up.
 > If shadows in your map stop appearing suddenly, consider reducing the shadow size of a few less important shadows.
 
 > [!WARNING]
