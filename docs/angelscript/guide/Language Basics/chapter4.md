@@ -207,7 +207,7 @@ AngelScript implements more functionality to pass by references, and that includ
 This marks the parameter as an input to the function. This option provides little to no benefit as to just passing by value (copying), as the compiler still has to ensure the object won't get modified outside the function, and the only way to do that is to make a copy.
 
 > [!TIP]
-> Combining `&in` with `const` can, however, yield more optimized code. `&in` should almost always be used whenever you are using a `const` parameter.
+> **Combining `&in` with `const` can, however, yield more optimized code. `&in` should almost always be used whenever you are using a `const` parameter. This disables the copying mechanism.**
 
 > [!WARNING]
 > Primitive types should not be passed with `&in`, as the memory address still has to be copied over, resulting in the same hit on performance (or worse!) as just copying the value itself.
