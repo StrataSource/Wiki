@@ -25,7 +25,7 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 ### "The volumetrics are just a bright white sphere on the light!"
 
-* Volumetric lighting relies on the light's 50% and 0% cutoff distances to know how long and far to display the volumetric effect. Make sure that these are set. If you need example settings, check out the [clustered quick start guide](/lighting/clustered/quick_start).
+* Volumetric lighting uses either the 50-0% distances or the Linear-Quadratic-Constant falloff to detrimine the length and size of volumetrics. Either of these needs to be set, but it's reccomnded you use the former for better control over the light. If you need some example settings, check out the [clustered quick start guide](/lighting/clustered/quick_start).
 
 ### "My volumetrics are broken and corrupt!"
 
