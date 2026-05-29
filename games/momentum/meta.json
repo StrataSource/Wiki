@@ -9,7 +9,8 @@
         "USE_PORTALS",
         "USE_BLOBULATOR",
         "NO_ECON",
-        "USE_CLUSTERED"
+        "USE_CLUSTERED",
+        "USE_ANGELSCRIPT_HAMMER"
     ],
     "color": "#1896D3"
 }
