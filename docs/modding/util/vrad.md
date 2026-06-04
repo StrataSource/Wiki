@@ -132,7 +132,7 @@ Other options:
   -aoscale <float>  : Sets the ambient occlusion scale. Can't be used with -aoradius
   -aoradius <float> : Sets the ambient occlusion radius
   -aosamples <int>  : Sets the number ambient occlusion samples. Default is 32
-  -noao                  : Disable baked ambient occlusion  
+  -noao             : Disable baked ambient occlusion  
   -ambient <vector> : Sets the ambient term. Can be used to tweak lightmap color
   -reflectivityscale <float> : Sets the reflectivity scale for all surfaces. Defaults to 1.0
   -disppatchradius <float> : Sets the maximum radius allowed for displacement patches
