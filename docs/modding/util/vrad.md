@@ -96,7 +96,7 @@ Other options:
                     (default 45).
   -dlightmap      : Force direct lighting into different lightmap than
                     radiosity.
-  -stoponexit      : Wait for a keypress on exit.
+  -stoponexit     : Wait for a keypress on exit.
   -mpi_pw <pw>    : Use a password to choose a specific set of VMPI workers.
   -nodetaillight  : Don't light detail props.
   -centersamples  : Move sample centers.
