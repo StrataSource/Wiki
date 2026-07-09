@@ -30,7 +30,9 @@
         "ALLOW_SINGLEPLAYER_CHEAT_VARS",
         "MOD_PORTAL2",
         "USE_CLUSTERED",
-        "USE_CAMPAIGNMANAGER"
+        "USE_CAMPAIGNMANAGER",
+        "USE_ANGELSCRIPT_GAME",
+        "USE_ANGELSCRIPT_HAMMER"
     ],
     "color": "#EC6726"
 }
