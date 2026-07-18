@@ -10,6 +10,10 @@ features:
     <td>craftablescience</td>
   </tr>
   <tr>
+    <td><b>Website</b></td>
+    <td><a href="https://sourcepp.org">sourcepp.org</a></td>
+  </tr>
+  <tr>
     <td><b>Source Code</b></td>
     <td><a href="github.com/craftablescience/sourcepp">GitHub</a></td>
   </tr>
