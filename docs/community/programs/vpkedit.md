@@ -15,7 +15,7 @@ features:
   </tr>
   <tr>
     <td><b>Source Code</b></td>
-    <td><a href="github.com/craftablescience/VPKEdit">GitHub</a></td>
+    <td><a href="https://github.com/craftablescience/VPKEdit">GitHub</a></td>
   </tr>
   <tr>
     <td><b>Description</b></td>
