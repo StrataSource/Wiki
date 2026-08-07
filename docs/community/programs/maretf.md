@@ -43,10 +43,10 @@ You can easily create new VTFs through two methods:
 ## Creating VTFs through the terminal
 Here is an example command to create a new VTF:
 ```bash
-maretf create input.png \ # Create a new VTF from `input.png`
-    --version 7.6       \ # ...with version 7.6
-    --format  DXT1      \ # ...using the DXT1 format
-    --filter  KAISER      # ...and resizing the texture using the Kaiser filter.
+> maretf create input.png \ # Create a new VTF from `input.png`
+    --version 7.6         \ # ...with version 7.6
+    --format  DXT1        \ # ...using the DXT1 format
+    --filter  KAISER        # ...and resizing the texture using the Kaiser filter.
 ```
 You can also get info about a VTF.
 ```bash
