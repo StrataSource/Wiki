@@ -14,6 +14,10 @@ features:
     <td><a href="https://github.com/LaVashikk/SourceRS">GitHub</a></td>
   </tr>
   <tr>
+    <td><b>License</b></td>
+    <td>MIT</td>
+  </tr>
+  <tr>
     <td><b>Description</b></td>
     <td>*No description.*</td>
   </tr>

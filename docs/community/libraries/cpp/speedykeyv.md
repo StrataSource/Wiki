@@ -14,6 +14,10 @@ features:
     <td><a href="https://github.com/OzxyBox/SpeedyKeyV">GitHub</a></td>
   </tr>
   <tr>
+    <td><b>License</b></td>
+    <td>BSD 0-Clause</td>
+  </tr>
+  <tr>
     <td><b>Description</b></td>
     <td>A decently fast KeyValue parser built for usability </td>
   </tr>

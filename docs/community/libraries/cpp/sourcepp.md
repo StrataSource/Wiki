@@ -18,6 +18,10 @@ features:
     <td><a href="https://github.com/craftablescience/sourcepp">GitHub</a></td>
   </tr>
   <tr>
+    <td><b>License</b></td>
+    <td>MIT</td>
+  </tr>
+  <tr>
     <td><b>Description</b></td>
     <td>Several modern C++20 libraries for sanely parsing Valve formats.</td>
   </tr>
