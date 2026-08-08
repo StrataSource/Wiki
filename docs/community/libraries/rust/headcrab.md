@@ -7,11 +7,11 @@ features:
 <table>
   <tr>
     <td><b>Author</b></td>
-    <td>Resonance Project</td>
+    <td>mike_sk8r</td>
   </tr>
   <tr>
     <td><b>Source Code</b></td>
-    <td><a href="https://github.com/ResonanceProject/headcrab">GitHub</a></td>
+    <td><a href="https://codeberg.org/mikesk8r/headcrab">Codeberg</a></td>
   </tr>
   <tr>
     <td><b>License</b></td>
