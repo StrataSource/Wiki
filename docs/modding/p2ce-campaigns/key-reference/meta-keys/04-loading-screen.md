@@ -23,11 +23,52 @@ A path to an asset in the addons `.assets` folder. This image will be used when 
 This image will be sized to cover the entire screen as the background.
 
 ## `transition_screen`
+
 A path to an asset in the addons `.assets` folder. This image will be used when the player is loading into a map from a previous map. If not specified, a black screen will be shown.
 
 **Recommended Size:** 1920x1080 (or aspect ratio equivalent)
 
 This image will be sized to cover the entire screen as the background.
+
+### `loading_screen_movie`
+
+**(OPTIONAL, DEFAULTS TO BLACK SCREEN IF NOT SPECIFIED)**
+
+Path to the movie/video to use, including the file extension. This path is relative to the addon's `.assets` directory.
+
+Resolution: 1920x1080 (or aspect ratio equivalent)
+
+The movie/video to use when the player is loading into a map from the main menu.
+
+This movie/video will be sized to cover the entire screen as the background.
+
+**NOTE: If `loading_screen`/`transition_screen` is specified for showing a image, they will not show as the movie/video will be displayed on top.**
+
+### `transition_screen_movie`
+
+**(OPTIONAL, DEFAULTS TO BLACK SCREEN IF NOT SPECIFIED)**
+
+Path to the movie/video to use, including the file extension. This path is relative to the addon's `.assets` directory.
+
+Resolution: 1920x1080 (or aspect ratio equivalent)
+
+The movie/video to use when the player is transitioning to a map from a previous one.
+
+This movie/video will be sized to cover the entire screen as the background.
+
+**NOTE: If `loading_screen`/`transition_screen` is specified for showing a image, they will not show as the movie/video will be displayed on top.**
+
+### `show_progress_bar`
+
+**(OPTIONAL, DEFAULTS TO TRUE IF NOT SPECIFIED)**
+
+Setting this to `false` will make the progress bar not show up at all on the loading screen.
+
+### `show_spinner`
+
+**(OPTIONAL, DEFAULTS TO TRUE IF NOT SPECIFIED)**
+
+Setting this to `false` will make the spinner at the top right not show up at all on the loading screen.
 
 ## Loading/Transition Screen fading
 
@@ -40,9 +81,10 @@ As with the loading screen used in Portal 2, P2:CE's loading screen is layouted 
 The loading screen of P2:CE supports two images with a fade happening at 50%. To fade between two images, an index will be added to the asset path.
 
 ### Example
-```
+
+```kv3
 meta = {
-	loading_screen="loading_screen.png"
+    loading_screen="loading_screen.png"
 }
 ```
 
