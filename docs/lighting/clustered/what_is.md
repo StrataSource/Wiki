@@ -98,7 +98,7 @@ With real time light and shadows, normal `light_rt` and `light_rt_spot` entities
 
 There are 2 entities that can produce real time shadows.
 
-* `light_rt` on the top, casting shadows in all 6 directions, and a directional `light_rt_spot` on the bottom, casting shadows in one direction.
+* `light_rt` on the bottom, casting shadows in all 6 directions, and a directional `light_rt_spot` on the top, casting shadows in one direction.
 
 ![lights in a scene](images/shadows1.png)
 
@@ -156,3 +156,4 @@ A few things are also affected by the new clustered renderer:
 
 * env_projectedtexture now uses the clustered renderer.
 * The flashlight now uses the clustered renderer.
+* `cl_player_render_in_shadows_view` console command was added, it toggles player shadow for clustered lighting.

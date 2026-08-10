@@ -72,7 +72,7 @@ CSM Config allows toggling and changing the rotation of the light casted by `env
 ![Graphics CSM DevUI Demonstration](https://youtu.be/VbazioxF5RY)
 
 The menu has the following values:
-* `CSM Enabled` toggles the CSM, if present;
+* `CSM Enabled` toggles the cascade shadow mapping, if present;
 * `Max Shadow Dist` changes the shadow distance, higher values are blurrier;
 * `Capture State` / `Clear State` captures and clears the state of each shadow produced;
 * `Rotation Override` toggles the ability to change the `env_cascade_light` entity's angles by using the `X`, `Y` and `Z` bars below.

@@ -5,9 +5,11 @@ weight: 0
 
 # The Brand-New Caption System
 
-The caption system has been reworked for Panorama. Now, it has 
+The caption system has been reworked for Panorama.
 
-![Captions](categories/images/prof_all.png)
+Now, it has 
 
-### How do I port my captions to the new system?
+<!-- ![Captions](/categories/images/prof_all.png) -->
+
+### Porting captions to the new system?
 

@@ -10,15 +10,13 @@ features:
 Volumetric Lighting is a rendering effect that simulates light rays scattering in the air.
 It allows light to produce a visual occlusion effect, meaning that any object blocking the light will cast realistic shadows and block any volumetrics from passing through.
 
-Shadows cast by the player model also interact with volumetric lighting.
+Since volumetric lighting is tied to clustered lighting (and CSM), it can interact with everything clustered lighting interacts with. Shadows cast by the player model also interact with volumetric lighting.
 
 ![Volumetrical Player Shadow](images/vol_playershadow.png)
 
-![Basic Volumetric Demonstration](https://youtu.be/FlTBgf5pzVY)
-
 ## The Setup
 
-There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Light Mode` **`Volumetric Density`** and **`Volumetric Light Scale`**:
+There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: **`Volumetric Light Mode`** **`Volumetric Density`** and **`Volumetric Light Scale`**:
 
 * `Volumetric Light Mode` toggles the volumetric lighting for this entity, can be set to either *None* or *Dynamic Only*.
 * `Volumetric Density` is a floating number between 0 and 1, where 1 is fully opaque and 0 is completely invisible.
@@ -36,12 +34,12 @@ Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_proj
 
 ## Volumetrical Fog
 
-In addition to individual volumetrics for the Clustered lights, there is a point entity called `obb_fogvolume`. It allows placing a visually simulated 3 dimensional fog volume constrained to its oriented bounding box. This fog volume can be altered through both pre-defined keyvalues user-defined 3d textures, allowing custom shapes, colors, and density. Most importantly, **it displays the light sources passing through the volume, giving them a visualized depth beyond just light projected onto adjacent surfaces**. Volumetrics can also be directly emitted from light sources independently of the entity, allowing a direct 3d visualization of the light in an area.
+In addition to individual volumetrics for the Clustered lights, there is a point entity called `obb_fogvolume`. It allows placing a visually simulated 3 dimensional fog volume constrained to its oriented bounding box. This fog volume can be altered through pre-defined keyvalues and user-defined 3d textures, allowing custom shapes, colors, and density. Most importantly, **it displays the light sources passing through the volume, giving them a visualized depth beyond just light projected onto adjacent surfaces**. Volumetrics can also be directly emitted from light sources independently of the entity, allowing a direct 3d visualization of the light in an area.
 
 #### KeyValues:
 * `Half-Width` of the fog on the Y axis;
-* `Half-Width` of the fog on the Z axis;
-* `Half-Width` of the fog on the X axis;
+* `Half-Height` of the fog on the Z axis;
+* `Half-Depth` of the fog on the X axis;
 * `Emissive Color`, which is the color of the fog;
 * `Scattering Color`, which is the color multiplier for the rays that pass through the fog;
 * `Phase` is the angular distribution of scattered light, more about it [here](https://en.wikipedia.org/wiki/Henyey–Greenstein_phase_function);
@@ -68,6 +66,8 @@ All `obb_fogvolume`'s KeyValues can be changed in realtime in-game using the Clu
 To set up the volumetric fog for the whole map, you can use the **Clustered Volumetrics Inspector** in the Developer UI menu. You can enable the Clustered Volumetrics Inspector UI using the  `devui_show vol_editor` console command, or by pressing `shift + f1` and selecting `Clustered Volumetrics Inspector` menu in the `Graphics` tab on the top left.
 
 Clustered Volumetrics Inspector allows setting the global volumetric properties (e.g. density) to be interacted with by volumetric lights, allowing to one to preview the volumetric lighting on maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the entire map, values of which are controlled by this menu.
+
+Changes made in Clustered Volumetrics Inspector are not persistent. 
 
 ![CVI](images/graphics_vol.png)
 

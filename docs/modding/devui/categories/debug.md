@@ -21,7 +21,7 @@ Metrics Window displays information about ImGUI, its usage and some other additi
 
 ## Demo Window
 
-This window is a default ImGUI debugging menu.
+This window is the default ImGUI debugging menu.
 
 ![Debug menu](images/debug_menu.png)
 

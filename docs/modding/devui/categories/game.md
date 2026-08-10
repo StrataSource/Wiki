@@ -26,7 +26,7 @@ Shows the list of all the events that exist in the engine, as well as additional
 The menu is a table of events, it has the following columns:
 * `Event Name` is the name of an event / group of events.
 * `Num Listeners` shows the amount of event listeners of this group.
-* `Reliable?` shows if this event is reliable to use. Should always be true.
+* `Reliable?` shows if this event is reliable to use.
 * `Event ID` shows the ID of the event. The events table shows events with low IDs higher up in the table.
 * `Local?` shows is the event local or global.
 * `Serialized Bits` shows serialized bits of the event.
