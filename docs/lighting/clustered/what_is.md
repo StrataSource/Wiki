@@ -122,38 +122,36 @@ You can control the size of the shadow map by changing the "Initial Shadow Size"
 ![Initial Shadow Size is 7](images/shadowsize7.png)
 
 > [!NOTE]
-> In the clustered renderer, shadowmaps for all lights are stored in a single, larger texture, called the 'Shadow Atlas', which has space for a limited amount of shadow data. Each time you increase the size of a shadow by 1, you increase the atlas' shadow size by a factor of 4 (double the horizontal and vertical dimensions). For example, a shadow of size 2 takes up only a quarter of the space that a shadow of size 3 takes up.
+> In the clustered renderer, shadowmaps for all lights are stored in a single, larger texture, called the 'Shadow Atlas', which has space for a limited amount of shadow data. Each time you increase the size of a shadow by 1, you increase the amount of space it takes in the atlas(double the horizontal and vertical dimensions). For example, a shadow of size 2 takes up only a quarter of the space that a shadow of size 3 takes up.
 > If shadows in your map stop appearing suddenly, consider reducing the shadow size of a few less important shadows.
+>
+> The size of the shadow atlas is 8192x8192 (equivalent to a non-existent shadow size of 8). It can have a maximum of 4 7-sized clustered lights, which is 16 6-sized lights, which is 64 5-sized shadows, and so on.
 
 > [!WARNING]
 > When increasing the outer angle of `light_rt_spot`, note that the edges of the spot will have sharper shadows than the center. This is important since setting up a `light_rt_spot` with a high shadow size and a high outer angle will produce low-quality shadows in the center while still taking up a huge piece of shadow atlas. Consider using `env_projectedtexture` or `env_cascade_light` (when imitating sunlight) in scenarios like these.
-
-## Light Cookies
-Light cookies, also known as cookie textures, are supported by clustered lights (`light_rt` and `light_rt_spot`). They can be used to apply a pattern to a light, controlling its shape and brightness. If you're not familiar with the concept of light cookies, imagine them like putting a piece of paper over a flashlight. If you were to cut out a shape from the paper, it would allow light to pass through, projecting a specific shape. Light cookies also have a similar effect to projected textures (`env_projectedtexture`).
-
-In Hammer, light cookies can be added to a light using the "Cookie Texture Name" and "Cookie Texture Frame" properties. When looking at lights through the Light Inspector, the texture can be set under "Pattern".
-
-Volumetric lighting also works with light cookies.
-
-![Volumetrics & light cookies](images/volumetrics.png)
 
 ## Console commands
 
 There are some clustered-related console commands that give a more precise control over clustered shadows.
 
-| Command                                   | Purpose                                                                                                                                                                 |
-|-------------------------------------------|-------------------                                                                                                                                                      |
-|`r_clustered_lighting_enable`              | Toggles clustered lights. Default is 1.                                                                                                                                 |
-|`r_clustered_shadowframebudget`            | Determines how many shadow faces can be rendered per frame. Default is 6. High values (like 50) may impact performance.                                                 |
-|`r_clustered_shadow_depthbias`             | Controls shadow once and peter panning. High values (like 0.1) break shadows completely, lower values make shadows appear on edges of shadowmaps. Default is 0.00005.   |
-|`r_clustered_shadow_slopescale`            | Similar to `r_clustered_shadow_depthbias`, but applied depending on how glancing the angle to the surface being rendered in the shadowmap, since more glancing angles will need higher depth bias. High values make shadows leak through world. Default is 5.                                                                                                                                                                                                                    |
-|`r_clustered_static_lightcull`             | Experimental. Allows more lights to be rendered on AMD GPUs, but makes it way slower to render on NVidia GPUs. It is recommended not to touch if you don't use AMD GPU. |
-|`r_clustered_static_shadow_exponent_scale` | Scales the atlas size of shadows so they take up more space, doesn't seem to be useful since increasing the atlas's size itself is almost always a better solution. Default is 1, higher values make some shadows appear sharper.                                                                                                                                                                                                              |
+| Command | Description |
+|---|---|
+|`create_cookie_light` | Spawns `light_rt_spot` with a texture specified in `debug_clustered_cookie` ConVar.  
+|`create_flashlight` | Spawns `light_rt_spot` with parameters identical to player flashlight.     
+|`create_volumetric` | Spawns `light_rt_spot` with a high volumetric intencity  
+|`debug_clustered_lights` | Draws debugging lines that represent parameters of clustered lights.
+|`debug_clustered_cookie` | Sets the cookie texture in use for lights spawned by `create_cookie_light` command.
+|`r_clustered_lighting_enable` | Toggles clustered lights. Default is 1. |
+|`r_clustered_shadowframebudget` | Determines how many shadow faces can be rendered per frame. Default is 6. High values (like 50) may impact performance. |
+|`r_clustered_shadow_depthbias`  | Controls shadow once and peter panning. High values (like 0.1) break shadows completely, lower values make shadows appear on edges of shadowmaps. Default is 0.00005.   |
+|`r_clustered_shadow_slopescale` | Similar to `r_clustered_shadow_depthbias`, but applied depending on how glancing the angle to the surface being rendered in the shadowmap, since more glancing angles will need higher depth bias. High values make shadows leak through world. Default is 5. |
+|`r_clustered_static_lightcull` | Experimental. Allows more lights to be rendered on AMD GPUs, but makes it way slower to render on NVidia GPUs. It is recommended not to touch if you don't use AMD GPU. |
+|`r_clustered_static_shadow_exponent_scale` | Scales the atlas size of shadows so they take up more space, doesn't seem to be useful since increasing the atlas's size itself is almost always a better solution. Default is 1, higher values make some shadows appear sharper.
 
 ## Other Clustered Changes
 
-A few things are also affected by the new clustered renderer:
+A few things are affected by the new clustered renderer:
 
 * env_projectedtexture now uses the clustered renderer.
-* The flashlight now uses the clustered renderer.
+* The flashlight now uses the clustered renderer, its light has shadow size of 5.
 * `cl_player_render_in_shadows_view` console command was added, it toggles player shadow for clustered lighting.

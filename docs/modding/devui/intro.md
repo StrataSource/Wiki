@@ -1,6 +1,8 @@
 ---
 title: Introduction
 weight: 0
+features:
+    - USE_DEVUI
 ---
 
 # Developer UI

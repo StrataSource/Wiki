@@ -1,6 +1,8 @@
 ---
 title: Game
 weight: 50
+features:
+    - USE_DEVUI
 ---
 
 # Game
@@ -115,14 +117,16 @@ There are 4 values in this menu:
 
 ****
 
-## Caption Viewer
+## Server / Client Caption Viewer
 
-Caption Viewer is a debugging window that allows to preview Panorama captions.
+Server Caption Viewer is a debugging window that allows to preview Panorama captions.
 
 There are 3 menus:
 * **Caption Player**, which plays a specified caption for a specified duration;
-* **Caption List**, which lists all caption scripts with all caption token inside. Captions will be autofilled into Caption Player upon pressing;
+* **Caption List**, which lists all caption scripts with all caption token inside. When a caption token is pressed, the Caption Player entry is filled with the name of the selected token.
 * **Selected Caption Properties**, which displays properties of the caption that is currently in the Caption Player.
+
+Client Caption Viewer is functionally identical to the Server Caption Viewer.
 
 ![Caption Viewer](images/game_cc.png)
 

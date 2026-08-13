@@ -1,6 +1,8 @@
 ---
 title: Debug
 weight: 80
+features:
+    - USE_DEVUI
 ---
 
 # Debug

@@ -1,15 +1,18 @@
 ---
 title: Getting Started
 weight: 0
+features:
+    - USE_NEWCAPTIONS
 ---
 
 # The Brand-New Caption System
 
 The caption system has been reworked for Panorama.
 
-Now, it has 
+The new system includes all the features from the original caption system with some quality-of-life changes, such as customizable fonts, text size, background opacity, multi-string captions, and many other features.
 
-<!-- ![Captions](/categories/images/prof_all.png) -->
+![Caption showcase](images/caption_showcase.png)
 
-### Porting captions to the new system?
+### Guide covering caption porting - [Porting Captions](cmds)
 
+### Options and commands - [Options & Commands](porting)

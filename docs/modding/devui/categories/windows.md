@@ -1,6 +1,8 @@
 ---
 title: Windows
 weight: 10
+features:
+    - USE_DEVUI
 ---
 
 # Windows

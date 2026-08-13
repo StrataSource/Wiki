@@ -11,6 +11,10 @@ Clustered Light Inspector is a menu where you can control `light_rt` entities in
 
 There are additional debugging and finding options. "Show Light Bounds" is relevant for `light_rt` and shows bounds of the light as a sphere. "Show Light Cone" is relevant for `light_rt_spot` and shows bounds of the light spot. "Show Only in Radius" will only display clustered lights in a specified radius. Additionally, you can toggle the specular reflection, the direct dynamic lighting, volumetrics coming from the light and this light's shadows.
 
+Additionally, it is possible to spawn `light_rt` and `light_rt_spot` entities with `Create @ Eye Pos` button. They will appear at player's eyes and will be directed to where the player is looking. The class can be selected with a separate dropdown.
+
+![Clustered Light Inspector](images/clustered_ui.png) TODO: crop the image
+
 ## Enabling The Inspector
 
 In P2:CE, you can enable the Clustered Lighting Inspector UI using the `devui_show light_editor` console command, or by pressing `shift + f1`, opening the Graphics tab in the top-left corner and selecting the `Clustered Light Inspector` menu.

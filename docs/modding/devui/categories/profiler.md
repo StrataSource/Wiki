@@ -1,6 +1,8 @@
 ---
 title: Profiler
 weight: 30
+features:
+    - USE_DEVUI
 ---
 
 # Profiler
