@@ -10,10 +10,6 @@ This page covers Strata's implementation of Parallax-Corrected Cubemaps. These c
 ## Overview
 This tutorial is from the [Momentum Mod Wiki](https://docs.momentum-mod.org/shaders/parallax_corrected_cubemaps/).
 
-> [!NOTE]
-> Thanks to Brian Charles for his work on this feature.
-> More technical information can be found on the [Valve Developer Wiki Page.](https://developer.valvesoftware.com/wiki/Parallax_Corrected_Cubemaps)
-
 ## Prerequisites 
 * Be proficient in using the Hammer Editor
 * Have the appropriate `.fgd` file for your game in your Hammer configuration
