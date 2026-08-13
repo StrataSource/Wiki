@@ -21,7 +21,7 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 ### "The volumetrics for a light source are everywhere, even behind walls!"
 
-* Volumetric lighting is shadow dependant, you need to make sure the `Shadowed` flag is checked when making shadowed volumetrics. If the flag is enabled but volumetrics are still leaking, then you might have too many dynamic shadows updating at once. See [clustered troubleshooting page](/Graphics/clustered/troubleshooting) for more information related to the issue.
+* Volumetric lighting is shadow dependant, you need to make sure the `Shadowed` flag is checked when making shadowed volumetrics. If the flag is enabled but volumetrics are still leaking, then you might have too many dynamic shadows updating at once. See [clustered troubleshooting page](/graphics/clustered/troubleshooting) for more information related to the issue.
 
 ### "My volumetrics are broken and corrupt!"
 
