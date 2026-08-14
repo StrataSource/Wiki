@@ -27,7 +27,7 @@ This is a small guide that covers creation of light cookies.
 
 #### Preparing the image
 
-As mentioned above, light cookies imitate shadows. Thus, the image must contain shapes that this specific light imitates. Two easy ways is to either take a screenshot when viewing from the light itself and then heavily edit the image, or to copy the depth texture from the [Clustered Light State](\modding\devui\categories\graphics#clustered-light-state) and grayscale it.
+As mentioned above, light cookies imitate shadows. Thus, the image must contain shapes that this specific light imitates. Two easy ways is to either take a screenshot when viewing from the light itself and then heavily edit the image, or to copy the depth texture from the [Clustered Light State](/modding/devui/categories/graphics#clustered-light-state) and grayscale it.
 
 Usually, light cookies are made for each light individually, but it is possible to make a commonly-shaped texture to use on multiple lights.
 
@@ -37,16 +37,16 @@ Usually, light cookies are made for each light individually, but it is possible 
 
 After the image is created, it needs to be converted to VTF format.
 
-> WIKI REWIEVERS PLEASE NOTE: I use VTFEdit Reloaded, but MareTF better suits this wiki. Unfortunately idk a shit about MareTF, so if you can, please help me fill this part...
+Portal 2: Community Edition comes with MareTF - an open-source VTF editor. It is located in `bin/win64`. To convert an image into VTF, double-click `maretf_gui.exe`, press `Create`, select the cookie image, and press `OK`. The texture will be generated next to the original image (or in the specified output path). Copy the generated texture into a desired folder in `materials` (i.e. `p2ce/materials/light_cookies/cookie.vtf`)
 
-> image showing the convertion
+![Cookie texture convertion](images/cookies_conv.png)
 
 #### Inserting into a clustered light
 
 The last step is to put the texture into the light. There are 2 KeyValues related to light cookies - `Cookie Texture Name`, which is the path to the texture, and `Cookie Texture Frame`, which is the frame of the texture if it is animated. Simply put the path to the cookie texture in `Cookie Texture Name`, then recompile the map to see the changes. The cookie texture will appear for that light.
 
 > [!NOTE]
-> TODO: .vtf extention is not needed. The path should look like this: `cookies_folder/cookie_name`
+> .vtf extention is not needed. The path should look like this: `cookies_folder/cookie_name`
 
 ![Cookie KeyValues](images/cookie_kv.png)
 

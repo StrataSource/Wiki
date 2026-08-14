@@ -113,7 +113,7 @@ There are some console commands related to volumetrics:
 |`r_volumetrics_default_emissive` | The emissive color of the global fog. *Defaut: "0.0 0.0 0.0"* |
 |`r_volumetrics_default_phase` | The phase of the global fog. *Defaut: 0.0* |
 |`r_volumetrics_default_scattering` | The scattering (light) color of the global fog. *Defaut: "1.0 1.0 1.0"* |
-|`r_volumetrics_extinction_scale` | TODO: what. *Default: 1.0*
+|`r_volumetrics_extinction_scale` | Scales the volumetric "extinction" zone. *Default: 1.0*
 |`r_volumetrics_reproject_amount` | Determines the amount of volumetrics to transist to the next frame. Fixes grid jiggling. *Default: 0.95*
 |`r_flashlightvolumetrics` | Enables / disables volumetrics for player flashlight. *Default: 1*
 |`volumetric_quality_level` | Resolution of volumetrics' froxel grid. Can be either 0 (64x64), 1 (128x128), 2 (256x256) or 3 (512x512). *Default: 1 or autodetect*
