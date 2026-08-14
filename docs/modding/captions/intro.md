@@ -11,8 +11,8 @@ The caption system has been reworked for Panorama.
 
 The new system includes all the features from the original caption system with some quality-of-life changes, such as customizable fonts, text size, background opacity, multi-string captions, and many other features.
 
-![Caption showcase](images/caption_showcase.png)
+![Caption showcase](images/showcase.png)
 
-### Guide covering caption porting - [Porting Captions](cmds)
+### Guide covering caption porting - [Porting Captions](porting)
 
-### Options and commands - [Options & Commands](porting)
+### Options and commands - [Options & Commands](cmds)

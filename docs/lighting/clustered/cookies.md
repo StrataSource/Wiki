@@ -19,31 +19,45 @@ Volumetric lighting also works with light cookies.
 
 Light cookies are grayscale textures that imitate shadows, and setting up cookie textures is as easy as setting up a texture for `env_projectedtexture` in vanilla Portal 2.
 
+There are two main usages of light cookies - changing the shape of the clustered light, or replacing the dynamic shadows with an identical static image to save space in the shadow atlas.
+
+## How to make
+
+This is a small guide that covers creation of light cookies.
+
 #### Preparing the image
 
-explanation
+As mentioned above, light cookies imitate shadows. Thus, the image must contain shapes that this specific light imitates. Two easy ways is to either take a screenshot when viewing from the light itself and then heavily edit the image, or to copy the depth texture from the [Clustered Light State](\modding\devui\categories\graphics#clustered-light-state) and grayscale it.
 
-> image showing the preps
+Usually, light cookies are made for each light individually, but it is possible to make a commonly-shaped texture to use on multiple lights.
+
+![Cookie texture creation](images/cookie_creation.png)
 
 #### Converting to VTF format
 
-explanation
+After the image is created, it needs to be converted to VTF format.
+
+> WIKI REWIEVERS PLEASE NOTE: I use VTFEdit Reloaded, but MareTF better suits this wiki. Unfortunately idk a shit about MareTF, so if you can, please help me fill this part...
 
 > image showing the convertion
 
 #### Inserting into a clustered light
 
-explanation
+The last step is to put the texture into the light. There are 2 KeyValues related to light cookies - `Cookie Texture Name`, which is the path to the texture, and `Cookie Texture Frame`, which is the frame of the texture if it is animated. Simply put the path to the cookie texture in `Cookie Texture Name`, then recompile the map to see the changes. The cookie texture will appear for that light.
 
 > [!NOTE]
-> TODO: in this note, mention if .vtf extention is needed
+> TODO: .vtf extention is not needed. The path should look like this: `cookies_folder/cookie_name`
 
-> image showing the KV
+![Cookie KeyValues](images/cookie_kv.png)
 
-## Where to find cookies
+> [!TIP]
+> `env_projectedtexture` entities can have .webm videos as "cookies"!
+> To convert .bik video format into a .wemb, simply use `convert_bik_to_webm.ps1` located in `sdk_tools/converter`.
+
+## Where to find
 
 Officially, there are no pre-made cookies.
 
-On the workshop, there is an [addon](https://steamcommunity.com/sharedfiles/filedetails/?id=3753568885) that includes ~150 ready-to-use light cookies made by Kenney.NL and ported to VTF by Mae.
+On the workshop, there is an [addon](https://steamcommunity.com/sharedfiles/filedetails/?id=3753568885) that includes ~150 ready-to-use light cookies made by Kenney.NL and ported by Mae.
 
-> image showing the addon
+![Addon with light cookies](images/cookies_addon.png)
