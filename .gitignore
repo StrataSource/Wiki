@@ -8,3 +8,4 @@ generator/public
 
 # WebStorm
 .idea
+package-lock.json

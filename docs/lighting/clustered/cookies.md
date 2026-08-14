@@ -15,6 +15,35 @@ Volumetric lighting also works with light cookies.
 
 ![Volumetrics & light cookies](images/volumetrics.png)
 
-## Setup
+## How to use
 
-TODO: texture setup -> converting into vtf -> using the KV
+Light cookies are grayscale textures that imitate shadows, and setting up cookie textures is as easy as setting up a texture for `env_projectedtexture` in vanilla Portal 2.
+
+#### Preparing the image
+
+explanation
+
+> image showing the preps
+
+#### Converting to VTF format
+
+explanation
+
+> image showing the convertion
+
+#### Inserting into a clustered light
+
+explanation
+
+> [!NOTE]
+> TODO: in this note, mention if .vtf extention is needed
+
+> image showing the KV
+
+## Where to find cookies
+
+Officially, there are no pre-made cookies.
+
+On the workshop, there is an [addon](https://steamcommunity.com/sharedfiles/filedetails/?id=3753568885) that includes ~150 ready-to-use light cookies made by Kenney.NL and ported to VTF by Mae.
+
+> image showing the addon

@@ -13,7 +13,7 @@ There are additional debugging and finding options. "Show Light Bounds" is relev
 
 Additionally, it is possible to spawn `light_rt` and `light_rt_spot` entities with `Create @ Eye Pos` button. They will appear at player's eyes and will be directed to where the player is looking. The class can be selected with a separate dropdown.
 
-![Clustered Light Inspector](images/clustered_ui.png) TODO: crop the image
+![Clustered Light Inspector](images/clustered_ui.png)
 
 ## Enabling The Inspector
 

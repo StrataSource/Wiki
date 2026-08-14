@@ -71,7 +71,8 @@ To set up the volumetric fog for the whole map, you can use the **Clustered Volu
 
 Clustered Volumetrics Inspector allows setting the global volumetric properties (e.g. density) to be interacted with by volumetric lights, allowing to one to preview the volumetric lighting on maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the entire map, values of which are controlled by this menu.
 
-Changes made in Clustered Volumetrics Inspector are not persistent. 
+> [!NOTE]
+> Changes made in Clustered Volumetrics Inspector are not persistent. 
 
 ![CVI](images/graphics_vol.png)
 
