@@ -64,13 +64,13 @@ This movie/video will be sized to cover the entire screen as the background.
 
 **(OPTIONAL, DEFAULTS TO TRUE IF NOT SPECIFIED)**
 
-Setting this to `"false"` will make the progress bar not show up at all on the loading screen. `"true"` or `"false"` should be surrounded with quotes so make sure they are parsed out correctly.
+Setting this to `false` will make the progress bar not show up at all on the loading screen. `true` or `false` should be surrounded with quotes to ensure they are parsed out correctly.
 
 ### `show_spinner`
 
 **(OPTIONAL, DEFAULTS TO TRUE IF NOT SPECIFIED)**
 
-Setting this to `false` will make the spinner at the top right not show up at all on the loading screen. `"true"` or `"false"` should be surrounded with quotes so make sure they are parsed out correctly.
+Setting this to `false` will make the spinner at the top right not show up at all on the loading screen. `true` or `false` should be surrounded with quotes to ensure they are parsed out correctly.
 
 ## Loading/Transition Screen fading
 
