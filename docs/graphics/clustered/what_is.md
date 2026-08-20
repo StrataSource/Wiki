@@ -125,7 +125,7 @@ You can control the size of the shadow map by changing the "Initial Shadow Size"
 > In the clustered renderer, shadowmaps for all lights are stored in a single, larger texture, called the 'Shadow Atlas', which has space for a limited amount of shadow data. Each time you increase the size of a shadow by 1, you increase the amount of space it takes in the atlas by a factor of 4 (double the horizontal and vertical dimensions). For example, a shadow of size 2 takes up only a quarter of the space that a shadow of size 3 takes up.
 > If shadows in your map stop appearing suddenly, consider reducing the shadow size of a few less important shadows.
 >
-> The size of the shadow atlas is 8192x8192 (equivalent to a non-existent shadow size of 8). It can have a maximum of 4 7-sized clustered lights, which is 16 6-sized lights, which is 64 5-sized shadows, and so on.
+> The size of the shadow atlas is 8192x8192 (equivalent to an arbitrary shadow size of 8). It can have a maximum of 4 7-sized clustered lights, which is 16 6-sized lights, which is 64 5-sized shadows, and so on.
 
 > [!WARNING]
 > When increasing the outer angle of `light_rt_spot`, note that the edges of the spot will have sharper shadows than the center. This is important since setting up a `light_rt_spot` with a high shadow size and a high outer angle will produce low-quality shadows in the center while still taking up a huge piece of shadow atlas. Consider using `env_projectedtexture` or `env_cascade_light` (when imitating sunlight) in scenarios like these.
@@ -138,7 +138,7 @@ There are some clustered-related console commands that give a more precise contr
 |---|---|
 |`create_cookie_light` | Spawns `light_rt_spot` with a texture specified in `debug_clustered_cookie` ConVar.  
 |`create_flashlight` | Spawns `light_rt_spot` with parameters identical to player flashlight.     
-|`create_volumetric` | Spawns `light_rt_spot` with a high volumetric intencity  
+|`create_volumetric` | Spawns `light_rt_spot` with a high volumetric intensity  
 |`debug_clustered_lights` | Draws debugging lines that represent parameters of clustered lights.
 |`debug_clustered_cookie` | Sets the cookie texture in use for lights spawned by `create_cookie_light` command.
 |`r_clustered_lighting_enable` | Toggles clustered lights. Default is 1. |
