@@ -9833,6 +9833,11 @@
             },
             "method": [
                 {
+                    "name": "CBaseAnimating",
+                    "declaration": "CBaseAnimating()",
+                    "documentation": null
+                },
+                {
                     "name": "LookupAttachment",
                     "declaration": "int LookupAttachment(const string&in attachmentName)",
                     "documentation": null,
@@ -10815,6 +10820,11 @@
             },
             "method": [
                 {
+                    "name": "CBaseCombatWeapon",
+                    "declaration": "CBaseCombatWeapon()",
+                    "documentation": null
+                },
+                {
                     "name": "PrimaryAttack",
                     "declaration": "void PrimaryAttack()",
                     "documentation": null,
@@ -11263,6 +11273,11 @@
                 "name": "CBaseEntity"
             },
             "method": [
+                {
+                    "name": "CLight",
+                    "declaration": "CLight()",
+                    "documentation": null
+                },
                 {
                     "name": "GetInnerAngle",
                     "declaration": "float GetInnerAngle() const",
