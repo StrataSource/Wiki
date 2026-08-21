@@ -96,7 +96,7 @@ Other options:
                     (default 45).
   -dlightmap      : Force direct lighting into different lightmap than
                     radiosity.
-  -stoponexit      : Wait for a keypress on exit.
+  -stoponexit     : Wait for a keypress on exit.
   -mpi_pw <pw>    : Use a password to choose a specific set of VMPI workers.
   -nodetaillight  : Don't light detail props.
   -centersamples  : Move sample centers.
@@ -122,7 +122,7 @@ Other options:
   -OnlyStaticProps   : Only perform direct static prop lighting (vrad debug option)
   -StaticPropNormals : when lighting static props, just show their normal vector
   -StaticPropBounce  : Enable static props to bounce light. Experimental option, doesn't work with VMPI right now.
-  -textureshadows : Allows models to cast shadows based on the alpha channel of their texture. Does not work with brushes, and in the case of skins, will use the first one.
+  -textureshadows : Allows models to cast shadows based on the alpha channel of their texture. Only works with brushes that have the flag CONTENTS_GRATE (such as by using %CompilePassBullets in the VMT), and in the case of skins, will use the first one.
   -noskyboxrecurse : Turn off recursion into 3d skybox (skybox shadows on world)
   -nossprops      : Globally disable self-shadowing on static props
 
@@ -132,7 +132,8 @@ Other options:
   -aoscale <float>  : Sets the ambient occlusion scale. Can't be used with -aoradius
   -aoradius <float> : Sets the ambient occlusion radius
   -aosamples <int>  : Sets the number ambient occlusion samples. Default is 32
-  -noao                  : Disable baked ambient occlusion  -ambient <vector> : Sets the ambient term. Can be used to tweak lightmap color
+  -noao             : Disable baked ambient occlusion  
+  -ambient <vector> : Sets the ambient term. Can be used to tweak lightmap color
   -reflectivityscale <float> : Sets the reflectivity scale for all surfaces. Defaults to 1.0
   -disppatchradius <float> : Sets the maximum radius allowed for displacement patches
   -dispchop <float> : Number of luxel widths for a patch. Default is 8
