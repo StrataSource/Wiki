@@ -3,7 +3,7 @@ title: P2:CE Mod Template
 ---
 
 # P2:CE Mod Template
-The P2:CE Mod Template is a basic skeleton that can be used to create mods building upon the Portal 2: Community Edition feature set. It has one sample campaign with a single test chamber that can be played through to completion.  
+The P2:CE Mod Template is a basic skeleton that can be used to create mods building upon the Portal 2: Community Edition feature set. It has one sample campaign with a single test chamber that can be played through to completion.
 You can find its contents at https://github.com/StrataSource/p2ce-mod-template
 
 ![Mod Template Main Menu](images/mod_template_main_menu.png)
@@ -55,19 +55,19 @@ Launching your mod can also be done programmatically via the P2:CE executable. P
 To launch on Windows:
 
 ```sh
-"X:\path\to\steam_library\SteamApps\common\Portal 2 Community Edition\bin\win64\p2ce.exe" -game "X:\path\to\mod"
+"..\..\common\Portal 2 Community Edition\bin\win64\p2ce.exe" -game "%cd%"
 ```
 
 To launch on Linux:
 ```sh
-"path/to/steam_library/SteamApps/common/Portal 2 Community Edition/p2ce.sh" -game "path/to/mod"
+"../../common/Portal 2 Community Edition/p2ce.sh" -game "$PWD"
 ```
 
 ## Contents
 The template includes a few files and folders that you can use for easy customization of P2:CE. This section will go over the most important ones, or ones that are different from a typical sourcemod.
 
 ### `gameinfo.txt`
-This file contains information about your mod and tells Steam which game it's based off of. The only thing you need to edit is the `game` property that sets the name. If you need to mount content from other games, you can specify this in the `mounts` block. 
+This file contains information about your mod and tells Steam which game it's based off of. The only thing you need to edit is the `game` property that sets the name. If you need to mount content from other games, you can specify this in the `mounts` block.
 
 ### `cfg` folder
 `cfg` contains important configuration files for your mod.
@@ -85,4 +85,3 @@ This folder contains resource files, configurations, and notably, your mod's ico
 
 ### `scripts` folder
 The `scripts` folder contains some useful configurations for UI elements as well as VScripts.
-
