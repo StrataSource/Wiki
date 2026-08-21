@@ -15,7 +15,7 @@ It consists of two windows: **Demo Window** and **Metrics Window**
 
 ## Metrics Window
 
-Metrics Windowm is an advanced debugging window for ImGui itself. It displays information about ImGUI, its usage and some other debugging information.
+Metrics Window is an advanced debugging window for ImGui itself. It displays information about ImGUI, its usage and some other debugging information.
 
 ![Metrics window](images/debug_metr.png)
 
