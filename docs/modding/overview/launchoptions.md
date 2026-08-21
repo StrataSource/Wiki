@@ -14,7 +14,7 @@ of launch options, please see
 | -nogamemount             | Do not mount any games/mods specified in the gameinfo mounts block or mounts.kv                            |
 | -nousermount             | Do not mount any games/mods specified in the mounts.kv                                                     |
 | -nocustommount           | Do not mount any folders specified in gameinfo which contain wildcards (\* or ?), usually "custom" folders |
-| -legacyui                | Launches the game with the old VGUI GameUI                                                                 |
+| -legacyui                | Launches the game with the old unsupported VGUI GameUI                                                     |
 | -dev                     | Developer mode                                                                                             |
 | -multirun/-allowmultiple | Disables the creation of the source engine mutex, and allows the game to start even if one already exists  |
 | -dedicated               | Launches the game as a dedicated server                                                                    |
