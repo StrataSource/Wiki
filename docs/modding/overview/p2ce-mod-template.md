@@ -3,30 +3,64 @@ title: P2:CE Mod Template
 ---
 
 # P2:CE Mod Template
-For Portal 2: Community Edition, you can download a free template for sourcemods that includes a basic structure for your mod.
+The P2:CE Mod Template is a basic skeleton that can be used to create mods building upon the Portal 2: Community Edition feature set. It has one sample campaign with a single test chamber that can be played through to completion.  
+You can find its contents at https://github.com/StrataSource/p2ce-mod-template
 
-### Using the SDK Launcher
-The easiest way to make a mod for P2:CE is to use the SDK Launcher.
-Simply open the launcher, choose Utilities, and then New Mod. Through the dialog, you can choose the install location, the name, and also whether or not to create a shortcut on your desktop.
+![Mod Template Main Menu](images/mod_template_main_menu.png)
 
-### Manually
-Another way to make a content-based mod, simply download the template [here](https://github.com/StrataSource/p2ce-mod-template) and extract its contents to `<your Steam installation>/steamapps/sourcemods`.
+![Mod Template Mechanics Sample](images/mod_template_mechanics_sample.png)
 
-Note that even if your Steam library is in a different location, you **must** place your mod in your Steam installation or else it will not show up. You also must restart Steam for your mod to show up once everything's copied over.
+## Setup Instructions
 
-## Launching
-If your mod's files are placed within your `sourcemods` folder, you can simply launch your mod from Steam itself.
+### SDK Launcher
+From the P2:CE SDK launcher, select the Utilties drop-down and click on "Create New Mod":
 
-Alternatively, your mod can be launched from the command line.
-To launch on Windows: 
-```sh
-"..\..\common\Portal 2 Community Edition\bin\win64\p2ce.exe" -legacyui -game "%cd%"
+![SDK Launcher: Create New Mod](images/setup_sdk_newmod_dropdown.png)
+
+The SDK launcher will prompt for an install location and a mod ID (your mod's internal name). A desktop shortcut to your mod's working directory can also be optionally specified.
+
+![SDK Launcher: New Mod Dialog](images/setup_sdk_newmod_dialog.png)
+
+Your newly-created mod will be downloaded and placed in the appropriate directory, depending on the install location you have selected:
+
+![New Mod directory structure](images/setup_sdk_newmod_dir.png)
+
+### Git
+
+Clone the Mod Template repository into a new working tree directory using the following commands:
+
+```bash
+mkdir p2ce-mod-work
+cd p2ce-mod-work
+git clone https://github.com/StrataSource/p2ce-mod-template.git my-new-mod-name --recurse
 ```
-###### Note: on some older versions of P2:CE, you may need to replace `p2ce.exe` with `chaos.exe`.
+
+Then, rename `p2ce-mod-template_english.txt` in the `resources` directory to `[mod-name]_english.txt` to enable mod-specific localization.
+
+## Launch Options
+
+### Steam Client
+
+Mods can be launched directly from the Steam client if placed in the `steamapps/sourcemods` folder:
+
+![Mod Launcher on Steam](images/launch_steam.png)
+
+> [!NOTE]
+> You must quit and relaunch Steam for your mod to show up when you first create it.
+
+### Command Line
+
+Launching your mod can also be done programmatically via the P2:CE executable. Pass `-game "path\to\mod"` along with any additional command-line arguments to the P2:CE game executable in your game install.
+
+To launch on Windows:
+
+```sh
+"X:\path\to\steam_library\SteamApps\common\Portal 2 Community Edition\bin\win64\p2ce.exe" -game "X:\path\to\mod"
+```
 
 To launch on Linux:
 ```sh
-"../../common/Portal 2 Community Edition/p2ce.sh" -legacyui -game "$PWD"
+"path/to/steam_library/SteamApps/common/Portal 2 Community Edition/p2ce.sh" -game "path/to/mod"
 ```
 
 ## Contents
