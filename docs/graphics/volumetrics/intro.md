@@ -14,7 +14,7 @@ Since volumetric lighting is tied to clustered lighting (and CSM), it can intera
 
 ![Volumetrical Player Shadow](images/vol_playershadow.png)
 
-Volumetric Lighting is implemented as a screenspace effect with its own resolution. You can change the resolution - and therefore the quality of volumetrics - in settings, or by using the `volumetric_quality_level` command.
+Volumetric Lighting uses a 3d texture to store information. The size of that texture can be changed in settings, or by using the `volumetric_quality_level` command. 
 
 ![Volumetric Quality Settings](images/settings.png)
 

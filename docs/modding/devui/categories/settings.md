@@ -1,8 +1,6 @@
 ---
 title: Settings
 weight: 70
-features:
-    - USE_DEVUI
 ---
 
 # Settings

@@ -1,8 +1,6 @@
 ---
 title: Map
 weight: 40
-features:
-    - USE_DEVUI
 ---
 
 # Map

@@ -1,7 +1,6 @@
 ---
 title: DevUI Custom Theme Format
-features:
-    - USE_DEVUI
+
 ---
 
 # DevUI Custom Theme Format

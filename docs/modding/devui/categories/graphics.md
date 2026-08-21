@@ -1,8 +1,6 @@
 ---
 title: Graphics
 weight: 20
-features:
-    - USE_DEVUI
 ---
 
 # Graphics
@@ -38,17 +36,23 @@ There are 3 values that are duplicated for the regular fog and the skybox fog:
 
 ****
 
-## Clustered Light State
+## Clustered Light Stats
 
-Clustered Light Scale shows the shadow atlas - a single depth texture for all clustered lights in the map. When a `light_rt`, `light_rt_spot` or `env_projectedtexture` entity is spawned, it fills the shadow atlas, and it is possible to see the exact amount of space taken by clustered lights using this menu. Additionally, there is a shadow update buffer counter. This menu is extremely useful for debugging clustered lighting.
+Clustered Light Scale shows the shadow atlas - a single depth texture for all shadowed clustered lights in the map. When a `light_rt`, `light_rt_spot` or `env_projectedtexture` entity is spawned, it fills the shadow atlas, and it is possible to see the exact amount of space taken by clustered lights using this menu. Additionally, there is a shadow update buffer counter. This menu is extremely useful for debugging clustered lighting.
 
-**Clustered Light State has the following list of values:**
+> [!NOTE]
+> Not all of the new clustered lights contribute to the shadow atlas, as some can be statically compiled, some can be set to influence lighting without being shadowed either, some volumetrics lights don't contribute or just not have shadows at all. These kinds of non-shadowed lights don't show up in Clustered Light Stats.
+
+**Clustered Light Stats has the following list of values:**
 
 * `Shadow Atlas` is the texture itself.
-* `Shadow Built` shows how many shadows are getting updated at once. As soon as the limit is reached, the shadows take up an additional frame(s) to update their shadows.
-* `Show shadows update` is a checkbox that, if checked, shows the atlas updates each frame.
+* `Shadows Built` shows how many shadows are getting updated at once. As soon as the limit is reached, the shadows take up an additional frame(s) to update their shadows.
+* `Show shadow updates` is a checkbox that, if checked, shows the atlas updates each frame.
 
-![Clustered Light State Menu](images/graphics_clustate-menu.png)
+> [!NOTE]
+> Similarly to the Clustered Lighting Inspector, the debug shown only appears when the lights update, in this case when the lights update the shadow alias.
+
+![Clustered Light Stats Menu](images/graphics_clustate-menu.png)
 
 ****
 
@@ -88,13 +92,13 @@ CSM Config allows toggling and changing the rotation of the light casted by `env
 ![Graphics CSM DevUI Demonstration](https://youtu.be/VbazioxF5RY)
 
 The menu has the following values:
-* `CSM Enabled` toggles the cascade shadow mapping, if present;
-* `Max Shadow Dist` changes the shadow distance, higher values are blurrier;
-* `Capture State` / `Clear State` captures and clears the state of each shadow produced;
+* `CSM Enabled` toggles the cascade shadow mapping, if present.
+* `Max Shadow Dist` changes the shadow distance, higher values are blurrier.
+* `Capture State` / `Clear State` captures and clears the state of each shadow produced.
 * `Rotation Override` toggles the ability to change the `env_cascade_light` entity's angles by using the `X`, `Y` and `Z` bars below.
 
 ![CSM Config Menu](images/graphics_csm.png)
-
+s
 ****
 
 ## Post Processing

@@ -1,8 +1,6 @@
 ---
 title: Scripting
 weight: 60
-features:
-    - USE_DEVUI
 ---
 
 # Scripting
