@@ -20,7 +20,7 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 ### "My dynamic shadows are blurry"
 
-* Set the "Initial Shadow Size" keyvalue of your light to something around 6. But remember - the higher the shadow size, the bigger piece of shadow atlas it will take.
+* Set the "Initial Shadow Size" keyvalue of your light to something around 6. But remember, the higher the shadow size, the bigger piece of shadow atlas it will take.
 
 ### "My dynamic shadows are 'frozen' or don't update" / "Some entities like rockets don't cast shadows"
 

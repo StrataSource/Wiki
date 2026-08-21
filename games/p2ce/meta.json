@@ -23,7 +23,6 @@
         "USE_BLOBULATOR",
         "USE_GAMESCRIPTING",
         "USE_UGC",
-        "USE_DEVUI",
         "USE_NEWCAPTIONS",
         "NO_ECON",
         "USE_ACHIEVEMENTS",

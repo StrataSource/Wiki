@@ -9,7 +9,7 @@ features:
 
 Light cookies, also known as cookie textures, are supported by clustered lights (`light_rt` and `light_rt_spot`). They can be used to apply a pattern to a light, controlling its shape and brightness. If you're not familiar with the concept of light cookies, imagine them like putting a piece of paper over a flashlight. If you were to cut out a shape from the paper, it would allow light to pass through, projecting a specific shape. Light cookies also have a similar effect to projected textures (`env_projectedtexture`).
 
-In Hammer, light cookies can be added to a light using the "Cookie Texture Name" and "Cookie Texture Frame" properties. When looking at lights through the Light Inspector, the texture can be set under "Pattern".
+In Hammer, light cookies can be added to a light using the "Cookie Texture Name" and "Cookie Texture Frame" properties. When looking at lights through the Light Inspector, the texture can be set under "Pattern". For `env_projectedtexture`, the KeyValue is "Texture Name".
 
 Volumetric lighting also works with light cookies.
 
@@ -17,7 +17,7 @@ Volumetric lighting also works with light cookies.
 
 ## How to use
 
-Light cookies are grayscale textures that imitate shadows, and setting up cookie textures is as easy as setting up a texture for `env_projectedtexture` in vanilla Portal 2.
+Light cookies are textures that imitate shadows, and setting up cookie textures is as easy as setting up a texture for `env_projectedtexture` in vanilla Portal 2.
 
 There are two main usages of light cookies - changing the shape of the clustered light, or replacing the dynamic shadows with an identical static image to save space in the shadow atlas.
 
@@ -27,7 +27,7 @@ This is a small guide that covers creation of light cookies.
 
 #### Preparing the image
 
-As mentioned above, light cookies imitate shadows. Thus, the image must contain shapes that this specific light imitates. Two easy ways to create images for light cookies are to either take a screenshot when viewing from the light itself and then heavily edit the image, or to copy the depth texture from the [Clustered Light State](/modding/devui/categories/graphics#clustered-light-state) and grayscale it.
+As mentioned above, light cookies imitate shadows. Thus, the image must contain shapes that this specific light imitates. Two easy ways to create images for light cookies are to either take a screenshot when viewing from the light itself and then heavily edit the image, or to copy the depth texture from the [Clustered Light Stats](/modding/devui/categories/graphics#clustered-light-state) and convert it to `.vtf` format.
 
 Usually, light cookies are made for each light individually, but it is possible to make a commonly-shaped texture to use on multiple lights.
 

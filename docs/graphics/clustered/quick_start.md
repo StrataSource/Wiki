@@ -5,7 +5,7 @@ features:
     - USE_CLUSTERED
 ---
 
-# Quick Setup Guide
+# Quick Start Guide
 
 ## "I want an expensive light that has fancy shadows and isn't supposed to move"
 
