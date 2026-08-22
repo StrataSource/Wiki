@@ -28,7 +28,7 @@ Each tab is a dropdown menu containing buttons, each button opens up a window.
 
 ## Implementation
 
-In Strata Source, Developer UI is implemented using Dear ImGUI - a bloat-free graphical user interface library for C++. More about ImGUI in [here](https://github.com/ocornut/imgui).
+In Strata Source, Developer UI is implemented using Dear ImGUI, a bloat-free graphical user interface library for C++. More about ImGUI in [here](https://github.com/ocornut/imgui).
 
 ## Misc
 

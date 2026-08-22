@@ -38,7 +38,7 @@ There are 3 values that are duplicated for the regular fog and the skybox fog:
 
 ## Clustered Light Stats
 
-Clustered Light Scale shows the shadow atlas - a single depth texture for all shadowed clustered lights in the map. When a `light_rt`, `light_rt_spot` or `env_projectedtexture` entity is spawned, it fills the shadow atlas, and it is possible to see the exact amount of space taken by clustered lights using this menu. Additionally, there is a shadow update buffer counter. This menu is extremely useful for debugging clustered lighting.
+Clustered Light Scale shows the shadow atlas, which is a single depth texture for all shadowed clustered lights in the map. When a `light_rt`, `light_rt_spot` or `env_projectedtexture` entity is spawned, it fills the shadow atlas, and it is possible to see the exact amount of space taken by clustered lights using this menu. Additionally, there is a shadow update buffer counter. This menu is extremely useful for debugging clustered lighting.
 
 > [!NOTE]
 > Not all of the new clustered lights contribute to the shadow atlas, as some can be statically compiled, some can be set to influence lighting without being shadowed either, some volumetrics lights don't contribute or just not have shadows at all. These kinds of non-shadowed lights don't show up in Clustered Light Stats.
@@ -98,7 +98,7 @@ The menu has the following values:
 * `Rotation Override` toggles the ability to change the `env_cascade_light` entity's angles by using the `X`, `Y` and `Z` bars below.
 
 ![CSM Config Menu](images/graphics_csm.png)
-s
+
 ****
 
 ## Post Processing

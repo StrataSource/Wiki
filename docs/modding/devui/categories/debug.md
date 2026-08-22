@@ -21,7 +21,7 @@ Metrics Window is an advanced debugging window for ImGui itself. It displays inf
 
 ## Demo Window
 
-This window is the default ImGUI debugging menu that ImGui provides for understanding the various UI elements within itself.
+This is the debugging menu that ImGui provides for understanding the various UI elements within itself.
 
 ![Debug menu](images/debug_menu.png)
 
