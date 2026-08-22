@@ -27,7 +27,7 @@ This is a small guide that covers creation of light cookies.
 
 #### Preparing the image
 
-As mentioned above, light cookies imitate shadows. Thus, the image must contain shapes that this specific light imitates. Two easy ways to create images for light cookies are to either take a screenshot when viewing from the light itself and then heavily edit the image, or to copy the depth texture from the [Clustered Light Stats](/modding/devui/categories/graphics#clustered-light-state) and convert it to `.vtf` format.
+As mentioned above, light cookies imitate shadows. Thus, the image must contain shapes that this specific light imitates. Two easy ways to create images for light cookies are to either take a screenshot when viewing from the light itself and then heavily edit the image, or to copy the depth texture from the [Clustered Light Stats](/modding/devui/categories/graphics#clustered-light-stats) and convert it to `.vtf` format.
 
 Usually, light cookies are made for each light individually, but it is possible to make a commonly-shaped texture to use on multiple lights.
 
