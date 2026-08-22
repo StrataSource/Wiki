@@ -7,15 +7,15 @@ features:
 
 # Quick Setup
 
-You can set up volumetrics in 3 different ways:
-1. By using the corresponding KeyValues in `light_rt`, `light_rt_spot` and `env_projectedtexture`;
-2. By using `obb_fogvolume` that defines volumetric rays specifically for the fog volume it produces;
+You can set up volumetrics in 3 ways:
+1. By using the corresponding KeyValues in `light_rt`, `light_rt_spot` and `env_projectedtexture` entities;
+2. By using `obb_fogvolume`;
 3. Through the [Clustered Volumetric Inspector](/modding/devui/categories/graphics#clustered-volumetrics-inspector) in the Developer UI menu.
 
 ## Using KeyValues:
 
 **For light_rt and light_rt_spot**
-1. Add a light_rt or light_rt_spot entity
+1. Add a `light_rt` or `light_rt_spot` entity
 2. Set the `Volumetric Light Scale` KeyValue to some value between 0.1 and 1.0
 3. Set the `Volumetric Density` KeyValue to some value between 0.1 and 1.0
 4. Make sure the `Shadowed` flag is **checked**
@@ -28,7 +28,7 @@ You can set up volumetrics in 3 different ways:
 
 **For env_projectexture**
 
-1. Add an env_projectexture entity
+1. Add an `env_projectexture` entity
 2. Set the `Enable Volumetrics` KeyValue to Yes
 3. Set the `Volumetric Intensity` KeyValue to some value between 0.1 and 1.0
 4. Compile the map. The volumetrics should appear.

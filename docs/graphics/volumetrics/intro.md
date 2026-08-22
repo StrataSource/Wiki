@@ -10,15 +10,17 @@ features:
 Volumetric Lighting is a rendering effect that simulates light rays scattering in the air.
 It allows light to produce a visual occlusion effect, meaning that any object blocking the light will cast realistic shadows and block any volumetrics from passing through.
 
-Shadows cast by the player model also interact with volumetric lighting.
+Since volumetric lighting is tied to clustered lighting (and CSM), it can interact with everything clustered lighting interacts with. Shadows cast by the player model also interact with volumetric lighting.
 
 ![Volumetrical Player Shadow](images/vol_playershadow.png)
 
-![Basic Volumetric Demonstration](https://youtu.be/FlTBgf5pzVY)
+Volumetric Lighting uses a 3d texture to store information. The size of that texture can be changed in settings, or by using the `volumetric_quality_level` command. 
 
-## The Setup
+![Volumetric Quality Settings](images/settings.png)
 
-There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: `Volumetric Light Mode` **`Volumetric Density`** and **`Volumetric Light Scale`**:
+## Hammer Setup
+
+There are 3 KeyValues in `light_rt` and `light_rt_spot` entities: **`Volumetric Light Mode`** **`Volumetric Density`** and **`Volumetric Light Scale`**:
 
 * `Volumetric Light Mode` toggles the volumetric lighting for this entity, can be set to either *None* or *Dynamic Only*.
 * `Volumetric Density` is a floating number between 0 and 1, where 1 is fully opaque and 0 is completely invisible.
@@ -36,12 +38,12 @@ Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_proj
 
 ## Volumetrical Fog
 
-In addition to individual volumetrics for the Clustered lights, there is a point entity called `obb_fogvolume`. It allows placing a visually simulated 3 dimensional fog volume constrained to its oriented bounding box. This fog volume can be altered through both pre-defined keyvalues user-defined 3d textures, allowing custom shapes, colors, and density. Most importantly, **it displays the light sources passing through the volume, giving them a visualized depth beyond just light projected onto adjacent surfaces**. Volumetrics can also be directly emitted from light sources independently of the entity, allowing a direct 3d visualization of the light in an area.
+In addition to individual volumetrics for the Clustered lights, there is a new point entity called `obb_fogvolume`. It allows placing a visually simulated 3 dimensional fog volume constrained to its oriented bounding box. This fog volume can be altered through pre-defined keyvalues and user-defined 3d textures, allowing custom shapes, colors, and density. Most importantly, **it displays the light sources passing through the volume, giving them a visualized depth beyond just light projected onto adjacent surfaces**. Volumetrics can also be directly emitted from light sources independently of the entity, allowing a direct 3d visualization of the light in an area.
 
 #### KeyValues:
 * `Half-Width` of the fog on the Y axis;
-* `Half-Width` of the fog on the Z axis;
-* `Half-Width` of the fog on the X axis;
+* `Half-Height` of the fog on the Z axis;
+* `Half-Depth` of the fog on the X axis;
 * `Emissive Color`, which is the color of the fog;
 * `Scattering Color`, which is the color multiplier for the rays that pass through the fog;
 * `Phase` is the angular distribution of scattered light, more about it [here](https://en.wikipedia.org/wiki/Henyey–Greenstein_phase_function);
@@ -69,6 +71,9 @@ To set up the volumetric fog for the whole map, you can use the **Clustered Volu
 
 Clustered Volumetrics Inspector allows setting the global volumetric properties (e.g. density) to be interacted with by volumetric lights, allowing to one to preview the volumetric lighting on maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the entire map, values of which are controlled by this menu.
 
+> [!NOTE]
+> Changes made in Clustered Volumetrics Inspector are not persistent. 
+
 ![CVI](images/graphics_vol.png)
 
 **Clustered Volumetrics Inspector has the following list of values:**
@@ -93,3 +98,22 @@ If you specify an `obb_fogvolume` entity in the fogvolume list, the following pr
 * `Fog Phase`, which is similar to the `Default Fog Phase` except it is applied individually to this `obb_fogvolume`.
 
 ![Clustered Volumetric Inspector](images/fog_inspector.png)
+
+## Commands
+
+There are some console commands related to volumetrics:
+
+| Command | Purpose |
+|---|---|
+|`create_volumetric` | Spawns `light_rt_spot` with a high volumetric intencity. |
+|`cl_volumetric_light_max_falloff` | Description. *Default: 1.0* |
+|`sv_enable_volumetric_legacy_lights` | Enables volumetric lighting for legacy `env_projectedtexture`s. *Default: 0* |
+|`r_volumetrics_enable` | Master toggle for volumetric lighting. *Default: 1* |
+|`r_volumetrics_default_density` | The density of the global fog. *Defaut: 0.0* |
+|`r_volumetrics_default_emissive` | The emissive color of the global fog. *Defaut: "0.0 0.0 0.0"* |
+|`r_volumetrics_default_phase` | The phase of the global fog. *Defaut: 0.0* |
+|`r_volumetrics_default_scattering` | The scattering (light) color of the global fog. *Defaut: "1.0 1.0 1.0"* |
+|`r_volumetrics_extinction_scale` | Scales the volumetric "extinction" zone. *Default: 1.0*
+|`r_volumetrics_reproject_amount` | Determines the amount of volumetrics to transist to the next frame. Fixes grid jiggling. *Default: 0.95*
+|`r_flashlightvolumetrics` | Enables / disables volumetrics for player flashlight. *Default: 1*
+|`volumetric_quality_level` | Resolution of volumetrics' froxel grid. Can be either 0 (64x64), 1 (128x128), 2 (256x256) or 3 (512x512). *Default: 1 or autodetect*

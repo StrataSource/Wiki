@@ -26,7 +26,7 @@ Shows the list of all the events that exist in the engine, as well as additional
 The menu is a table of events, it has the following columns:
 * `Event Name` is the name of an event / group of events.
 * `Num Listeners` shows the amount of event listeners of this group.
-* `Reliable?` shows if this event is reliable to use. Should always be true.
+* `Reliable?` shows if this event is reliable to use.
 * `Event ID` shows the ID of the event. The events table shows events with low IDs higher up in the table.
 * `Local?` shows is the event local or global.
 * `Serialized Bits` shows serialized bits of the event.
@@ -121,7 +121,7 @@ Caption Viewer is a debugging window that allows to preview Panorama captions.
 
 There are 3 menus:
 * **Caption Player**, which plays a specified caption for a specified duration;
-* **Caption List**, which lists all caption scripts with all caption token inside. Captions will be autofilled into Caption Player upon pressing;
+* **Caption List**, which lists all caption scripts with all caption token inside. When a caption token is pressed, the Caption Player entry is filled with the name of the selected token.
 * **Selected Caption Properties**, which displays properties of the caption that is currently in the Caption Player.
 
 ![Caption Viewer](images/game_cc.png)
