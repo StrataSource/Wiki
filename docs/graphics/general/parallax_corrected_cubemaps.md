@@ -8,12 +8,19 @@ title: Parallax Corrected Cubemaps
 This page covers Strata's implementation of Parallax-Corrected Cubemaps. These cubemaps are created with a combination of the `env_cubemap` point entity and the `parallax_obb` brush entity.
 
 ## Overview
+
 This tutorial is from the [Momentum Mod Wiki](https://docs.momentum-mod.org/shaders/parallax_corrected_cubemaps/).
 
-## Prerequisites 
+> [!NOTE]
+> Thanks to Brian Charles for his work on this feature.
+> More technical information can be found on the [Valve Developer Wiki Page.](https://developer.valvesoftware.com/wiki/Parallax_Corrected_Cubemaps)
+
+## Prerequisites
+
 * Be proficient in using the Hammer Editor
 * Have the appropriate `.fgd` file for your game in your Hammer configuration
 * Know how to use the developer console
+
 ## Components of a Parallax-Corrected Cubemap
 
 In Hammer, Parallax-Corrected Cubemaps need two entities to function correctly:
@@ -32,6 +39,7 @@ Any regular LightmappedGeneric materials will still be able to use the cubemap a
 
 > [!TIP]
 > There are some important things to take note of:
+
 > * The parallax_obb entity must be a single box brush
 > * The Parallax-Corrected cubemap is still built the same way regular cubemaps are. This means that you may have distortion in the reflections depending on where you place the env_cubemap and the shape of the parallax_obb brush.
 >
@@ -39,7 +47,8 @@ Any regular LightmappedGeneric materials will still be able to use the cubemap a
 
 ![Click on the hand holding a mask](images/cube_4.jpg)
 
-## Hammer 
+## Hammer
+
 Here is the process of creating the necessary entities in Hammer for this feature to work in a room you’ve already made.
 
 The first thing you should do is to create the “bounding box” of the cubemap with a trigger brush. Make it so that it fits the room as closely as possible.
@@ -58,5 +67,3 @@ When creating an env_cubemap you should see an extra option called “Cubemap Bo
 This should be all the setup that is required in Hammer.
 
 You should be able to compile your map as normal and build the cubemaps in game to see the effects if you have any supported materials in the map.
-
-
