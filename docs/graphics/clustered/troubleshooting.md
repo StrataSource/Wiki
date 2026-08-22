@@ -1,6 +1,6 @@
 ---
 title: "Known Issues"
-weight: 40
+weight: 50
 features:
     - USE_CLUSTERED
 ---
@@ -16,11 +16,11 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 ### "I set the Shadowed spawn flag, but there are still no shadows / light leaks through walls"
 
-* You have too many dynamic shadows updating at once. Remember that **each shadow size level increases the shadow atlas usage by a factor of 4** (double the horizontal and vertical dimensions), and **the shadow size cannot exceed a value of 7**, so if there are for example two `light_rt`s with a high shadow size, and the available space in the shadow atlas can only fit one of them (such that they would overlap), they will not produce any shadows. However, there is an unstable workaround, where by enabling `light_rt`s one by one they have a chance to keep their shadows – when trying to fit a single shadow into the atlas, the engine will downscale it to the next biggest available space.
+* You have too many dynamic shadows updating at once. **Each shadow size level increases the shadow atlas usage by a factor of 4** (double the horizontal and vertical dimensions), and **the shadow size cannot exceed a value of 7**, so if there are for example two `light_rt`s with a high shadow size, and the available space in the shadow atlas can only fit one of them (such that they would overlap), they will not produce any shadows. However, there is a workaround, where by enabling `light_rt`s one by one they have a chance to keep their shadows – when trying to fit a single shadow into the atlas, the engine will downscale it to the next biggest available space.
 
 ### "My dynamic shadows are blurry"
 
-* Set the "Initial Shadow Size" keyvalue of your light to something around 6. Remember that the higher the shadow size, the bigger piece of shadow atlas it will take.
+* Set the "Initial Shadow Size" keyvalue of your light to something around 6. But remember, the higher the shadow size, the bigger piece of shadow atlas it will take.
 
 ### "My dynamic shadows are 'frozen' or don't update" / "Some entities like rockets don't cast shadows"
 
@@ -38,4 +38,4 @@ This is a list of currently known issues and some troubleshooting tips for any i
 
 * Certain GPU models may have trouble running the clustered renderer. **If you experience this, let us know what GPU brand/model, operating system and other hardware specs you're using.** Clustered lights may act weird when running the game on Linux under DXVK on AMD platforms. However, the circumstances in which they break should not be possible in production.
 
-## If you have any issues that are not addressed in this article, make sure to report it to us on the [Strata issue tracker.](https://github.com/StrataSource/Engine/issues)
+## If you encounter any issues that are not addressed in this article, make sure to report them to us on the [Strata issue tracker.](https://github.com/StrataSource/Engine/issues)

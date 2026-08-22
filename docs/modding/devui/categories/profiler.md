@@ -5,7 +5,7 @@ weight: 30
 
 # Profiler
 
-The Profiler tab is the third tab in the Developer UI menu. Its main purpose is dynamically debugging different aspects of the map and the engine, showing the exact budget and usage. Additionally, a `.txt` report can be generated, containing every event that happened in a specified period of time. The menus of this tab are useful for optimizing maps, game events and material usage.
+The Profiler tab is the third tab in the Developer UI menu. Its main purpose is to dynamically debug different aspects of the map and the engine, showing the exact budget and usages. Additionally, a `.txt` report can be generated, containing every event that happened in a specified period of time. The menus of this tab are useful for optimizing maps, game events and material usage.
 
 ![All the menus of the Profiler tab](images/prof_all.png)
 
@@ -38,7 +38,7 @@ There is a total of 27 graphs:
 * `Decal textures` shows the memory usage taken by decals and overlays.
 * `Unaccounted textures` shows memory usage taken by missing textures.
 * `World textures` shows the memory usage taken by textures used on world geometry.
-* `StatisProp textures` shows the memory usage taken by textures used on static models.
+* `StaticProp textures` shows the memory usage taken by textures used on static models.
 * `Model Verts` shows memory usage taken by model verticles.
 * `Model textures` shows the memory usage taken by textures used on dynamic and physics models.
 * `Precached` shows the memory amount taken by precached textures.
