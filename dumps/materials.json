@@ -3030,6 +3030,91 @@
 		]
 	},
 	{
+		"name": "Fog",
+		"fallbacks": [
+		],
+		"params": [
+			{
+				"name": "$flags",
+				"desc": "flags",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "$flags_defined",
+				"desc": "flags_defined",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "$flags2",
+				"desc": "flags2",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "$flags_defined2",
+				"desc": "flags2_defined",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "$color",
+				"desc": "color",
+				"type": "color",
+				"default": "[1 1 1]"
+			},
+			{
+				"name": "$alpha",
+				"desc": "alpha",
+				"type": "float",
+				"default": "1.0"
+			},
+			{
+				"name": "$basetexture",
+				"desc": "Base Texture with lighting built in",
+				"type": "texture",
+				"default": "shadertest/BaseTexture"
+			},
+			{
+				"name": "$frame",
+				"desc": "Animation Frame",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "$basetexturetransform",
+				"desc": "Base Texture Texcoord Transform",
+				"type": "matrix",
+				"default": "center .5 .5 scale 1 1 rotate 0 translate 0 0"
+			},
+			{
+				"name": "$color2",
+				"desc": "color2",
+				"type": "color",
+				"default": "[1 1 1]"
+			},
+			{
+				"name": "$srgbtint",
+				"desc": "tint value to be applied when running on new-style srgb parts",
+				"type": "color",
+				"default": "[1 1 1]"
+			},
+			{
+				"name": "$FOGCOLOR",
+				"desc": "Fog color (read off this material by the engine's fog-volume gather)",
+				"type": "color",
+				"default": "[1 1 1]"
+			},
+			{
+				"name": "$FOGDEPTHFOROPAQUE",
+				"desc": "Distance fog: ray distance through the fog at which it becomes fully opaque",
+				"type": "float",
+				"default": "512"
+			}
+		]
+	},
+	{
 		"name": "IntroScreenSpaceEffect",
 		"fallbacks": [
 		],
@@ -3692,6 +3777,12 @@
 				"default": "4"
 			},
 			{
+				"name": "$DETAILTEXTURETRANSFORM",
+				"desc": "$detail texcoord transform",
+				"type": "matrix",
+				"default": "center .5 .5 scale 1 1 rotate 0 translate 0 0"
+			},
+			{
 				"name": "$DETAILBLENDMODE",
 				"desc": "mode for combining detail texture with base. 0=normal, 1= additive, 2=alpha blend detail over base, 3=crossfade",
 				"type": "int",
@@ -4122,6 +4213,24 @@
 				"desc": "The world space position of the env_cubemap being corrected",
 				"type": "vec3",
 				"default": "[0 0 0]"
+			},
+			{
+				"name": "$SPHEREMAP",
+				"desc": "spheremap texture for environment map",
+				"type": "texture",
+				"default": ""
+			},
+			{
+				"name": "$SPHEREMAPFRAME",
+				"desc": "frame number for $spheremap",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "$SPHEREMAPSCALE",
+				"desc": "scale applied to spheremap texcoords (scales/tiles the reflection)",
+				"type": "vec2",
+				"default": "[1 1]"
 			}
 		]
 	},
@@ -5830,6 +5939,42 @@
 				"desc": "envmap tint",
 				"type": "color",
 				"default": "[1 1 1]"
+			},
+			{
+				"name": "$DECALTEXTURE",
+				"desc": "Decal texture",
+				"type": "texture",
+				"default": ""
+			},
+			{
+				"name": "$DECALMRAO",
+				"desc": "Decal MRAO",
+				"type": "texture",
+				"default": ""
+			},
+			{
+				"name": "$DECALBUMP",
+				"desc": "Decal bumpmap",
+				"type": "texture",
+				"default": ""
+			},
+			{
+				"name": "$DECALTINT",
+				"desc": "Decal Tint",
+				"type": "vec4",
+				"default": "[1 1 1 1]"
+			},
+			{
+				"name": "$DECALMRAOINTENSITY",
+				"desc": "Decal MRAO Intensity",
+				"type": "vec3",
+				"default": "[1 1 1]"
+			},
+			{
+				"name": "$DECALBUMPINTENSITY",
+				"desc": "Decal Bump Intensity",
+				"type": "float",
+				"default": "1.0"
 			},
 			{
 				"name": "$TREESWAY",
@@ -9252,6 +9397,24 @@
 				"desc": "",
 				"type": "bool",
 				"default": "0"
+			},
+			{
+				"name": "$SPHEREMAP",
+				"desc": "spheremap texture for environment map",
+				"type": "texture",
+				"default": ""
+			},
+			{
+				"name": "$SPHEREMAPFRAME",
+				"desc": "frame number for $spheremap",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "$SPHEREMAPSCALE",
+				"desc": "scale applied to spheremap texcoords (scales/tiles the reflection)",
+				"type": "vec2",
+				"default": "[1 1]"
 			}
 		]
 	},
@@ -10311,6 +10474,24 @@
 				"desc": "When enabled, blend mode 4 turns into a special blend mode for layering damage, with the detail texture being the lower strata with no spec or env, and the base texture being the upper strata which casts a drop shadow.  The blend is a thresholded value based on the detail alpha, allowing for what looks like chipped off paint or cracks.",
 				"type": "bool",
 				"default": "0"
+			},
+			{
+				"name": "$SPHEREMAP",
+				"desc": "spheremap texture for environment map",
+				"type": "texture",
+				"default": ""
+			},
+			{
+				"name": "$SPHEREMAPFRAME",
+				"desc": "frame number for $spheremap",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "$SPHEREMAPSCALE",
+				"desc": "scale applied to spheremap texcoords (scales/tiles the reflection)",
+				"type": "vec2",
+				"default": "[1 1]"
 			}
 		]
 	},
@@ -10386,10 +10567,10 @@
 				"default": "[1 1 1]"
 			},
 			{
-				"name": "$BASETEXTURE",
-				"desc": "Base Texture",
-				"type": "texture",
-				"default": "shadertest/BaseTexture"
+				"name": "$HAS_ALPHA",
+				"desc": "",
+				"type": "bool",
+				"default": ""
 			}
 		]
 	},
@@ -12168,6 +12349,24 @@
 				"desc": "V Texture",
 				"type": "texture",
 				"default": "shadertest/BaseTexture"
+			},
+			{
+				"name": "$ATEXTURE",
+				"desc": "A Texture",
+				"type": "texture",
+				"default": "shadertest/BaseTexture"
+			},
+			{
+				"name": "$CONVERSION_MATRIX",
+				"desc": "",
+				"type": "matrix",
+				"default": ""
+			},
+			{
+				"name": "$CHROMA_OFFSET",
+				"desc": "",
+				"type": "vec2",
+				"default": ""
 			}
 		]
 	}
