@@ -1364,8 +1364,20 @@
         },
         {
             "namespace": null,
-            "name": "AngleVectors",
-            "declaration": "void AngleVectors(const QAngle&in angle, Vector&out forward)",
+            "name": "GetForward",
+            "declaration": "void GetForward(const QAngle&in angle, Vector&out forward)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "GetRight",
+            "declaration": "void GetRight(const QAngle&in angle, Vector&out right)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "GetUp",
+            "declaration": "void GetUp(const QAngle&in angle, Vector&out up)",
             "documentation": null
         },
         {
