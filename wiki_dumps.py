@@ -349,7 +349,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         "wiki_dumps",
         formatter_class = argparse.RawTextHelpFormatter,
-        description = """The Strata Source Wiki reference dumper! Currently supports Portal 2: Community Edition, Momentum Mod, and Portal: Revolution.
+        description = """The Strata Source Wiki reference dumper! Currently supports Portal 2: Community Edition and Momentum Mod.
 NOTE: This tool was designed with Portal 2: Community Edition in mind so not all options will work correctly if using another Strata Source title.
 WARNING: Portal: Revolution dumping is not available at all as the wiki should have everything on it already, there will be no more game updates that add things, and Linux support overall was dropped. Portal: Revolution 2 will be supported in the future.""",
 epilog="""
