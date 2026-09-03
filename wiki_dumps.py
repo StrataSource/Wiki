@@ -1,11 +1,11 @@
 # A script to gather all the available engine dumps to update the ones on the Wiki.
-# Requires for you to input the installation path for Portal 2: Community Edition.
-#! While programmed to work with other Strata Source titles, only P2:CE has all the commands and tools available for dumping.
-#! Only use other Strata Source titles if you know what you are doing.
+# Requires for you to input the installation path for the Strata Source title to dump from.
+#! This was created with Portal 2: Community Edition in mind even if this supports Momentum Mod. Everything might not work correctly!
+#! Portal: Revolution is not supported as overall as there will be no new changes to the game in terms of reference, the wiki should have everything on it already, and Linux support was dropped overall.
 
-import os, sys, argparse
+import os, sys, argparse, subprocess
 
-# "Enums" meant to be used to put array positions to names for ref_dump_list
+# "Enums" used to give names to the array positions of ref_dump_list.
 ANGELSCRIPT: int = 0
 VSCRIPT: int = 1
 SOUND_OPERATORS: int = 2
@@ -13,47 +13,48 @@ PARTICLE_OPERATORS: int = 3
 CVARS: int = 4
 MATERIAL_SHADERS: int = 5
 
+# "Enums" used to give a name for the position values in each element of ref_dump_list.
 COMMANDS: int = 0
-DUMPED_FILES: int = 1
+DUMPED_FILES: int = 1 #
 WIKI_FILES: int = 2
 
 is_windows: bool = sys.platform == "win32"
+exe_extension: str = ".exe" if is_windows else ""
 binary_dir: str = "bin/win64" if is_windows else "bin/linux64"
 relative_dir: str = os.path.dirname(os.path.abspath(__file__))
 wiki_dump_dir: str = f"{relative_dir}/dumps/"
 
 # This dictionary acts as a easy way to update the ConCommands and file names for files that should be dumped and added to the Wiki.
 # New options will have to be added manually through out the program and some dumps do specific things with their options.
-# Format: "( list of ConCommands/docdump.exe parameter, list of dumped file names, list of Wiki file names )"
+# Formatting is used to allow having a directory that uses a game directory like "p2ce". Most if not all these paths are relative to the base game directory.
+# Format: "( list of ConCommands/docdump.exe parameter, list of dumped file names, list of file names that will be used for the final dump )"
 #! NOTE: Make sure Hammer reference dumps are last so if a Strata title doesn't have/support Hammer, it can be skipped without failing to find it.
 ref_dump_list: list[tuple] = [
     # Must open a map in order for AngelScript and VScript to all dump. First three ConCommands are for the game and the last is for Hammer.
     ( ["+map sp_a2_triple_laser", "+cl_scriptsystem_dump_json", "+sv_scriptsystem_dump_json", "+scriptsystem_dump_json"], ["{}/data/client/api_reference.json", "{}/data/server/api_reference.json", "hammer/scripts/api_reference.json"], ["angelscript_client_{}.json", "angelscript_server_{}.json", "angelscript_hammer_{}.json"] ),
     ( ["+map sp_a2_triple_laser", "+sv_script_dump_docs"], ["{}/data/vscript_docs.server.json"], ["vscript.json"] ),
-    ( ["sound_ops"], ["sound_operators.json"], ["sound_operators.json"] ), # Uses docdump.exe
-    ( ["particle_ops"], ["particle_operators.json"], ["particle_operators.json"] ), # Uses docdump.exe
+    ( ["sound_ops"], ["{}/data/sound_operators.json"], ["sound_operators.json"] ), # Uses docdump.exe
+    ( ["particle_ops"], ["{}/data/particle_operators.json"], ["particle_operators.json"] ), # Uses docdump.exe
     ( ["+cvar_dump"], ["{}/data/cvars.json"], ["commands_{}.json"] ),
-    ( ["shaders"], ["materials.json"], ["materials.json"] ) # Uses docdump.exe
+    ( ["shaders"], ["{}/data/materials.json"], ["materials.json"] ) # Uses docdump.exe
 ]
 
 # List of Strata Source titles that exist and that the tool supports.
 # Format: (Inner game directory, game executable, Hammer executable (use None if Hammer is not available or not supported), docdump executable (None if doesn't exist for the title))
 strata_candidates: list[tuple] = [
-    ("p2ce", "p2ce.exe" if is_windows else "p2ce", "hammer.exe" if is_windows else "hammer", "docdump.exe" if is_windows else "docdump"),
-    ("momentum", "momentum.exe" if is_windows else "momentum", "hammer.exe" if is_windows else "hammer", "docdump.exe" if is_windows else "docdump"),
-    ("revolution", "revolution.exe", "hammer.exe", None), #! Linux support was removed from Revolution :(
+    ("p2ce", f"p2ce{exe_extension}", f"hammer{exe_extension}", f"docdump{exe_extension}"),
+    ("momentum", f"momentum{exe_extension}", f"hammer{exe_extension}", f"docdump{exe_extension}"),
 ]
 
 def Find(target: str, directory: str) -> str | None:
-    """
-    Searches a directory for a target file.
+    """Searches a directory for a target file.
 
-    :param target: File to search for.
-    :type target: str
-    :param directory: Directory to search.
-    :type directory: str
-    :return: Full path to file if found, else None.
-    :rtype: str | None
+    Args:
+        target (str): File to search for.
+        directory (str): Directory to search.
+
+    Returns:
+        str | None: Full path to file if found, else None.
     """
 
     if (target == None or directory == None):
@@ -64,84 +65,83 @@ def Find(target: str, directory: str) -> str | None:
             return os.path.join(root, target)
     return None
 
-def GetGameDir(game_path: str) -> str | None:
-    """
-    Get a game's inner game directory used by the game. This assumes that each Strata title has a different inner game directory name. Ex. "p2ce", "momentum", "revolution".
+def GetGameDir(basegame_dir: str) -> str | None:
+    """Get a game's inner game directory used by the game. This assumes that each Strata title has a different inner game directory name. Ex. "p2ce", "momentum", "revolution".
 
-    :param game_path: Full game path.
-    :type game_path: str
-    :return: Inner game directory name, if not found then None.
-    :rtype: str | None
+    Args:
+        basegame_dir (str): Full game path.
+
+    Returns:
+        str | None: Inner game directory name, if not found then None.
     """
 
     for game_dir, exe, hammer, docdump in strata_candidates:
-        if os.path.isdir(f"{game_path}/{game_dir}"):
+        if os.path.isdir(f"{basegame_dir}/{game_dir}"):
             return game_dir
     return None
 
-def GetGameExe(game_path: str) -> str | None:
-    """
-    Get a game's executable. This assumes that each Strata title has a different executable name. Ex. "p2ce.exe", "momentum.exe", "revolution.exe".
+def GetGameExe(basegame_dir: str) -> str | None:
+    """Get a game's executable. This assumes that each Strata title has a different executable name. Ex. "p2ce.exe", "momentum.exe", "revolution.exe".
 
-    :param game_path: Full game path.
-    :type game_path: str
-    :return: Game executable file name, if not found then None.
-    :rtype: str | None
+    Args:
+        basegame_dir (str): Full game path.
+
+    Returns:
+        str | None: Game executable file name, if not found then None.
     """
 
     for game_dir, exe, hammer, docdump in strata_candidates:
-        if Find(exe, f"{game_path}/{binary_dir}"):
+        if Find(exe, f"{basegame_dir}/{binary_dir}"):
             return exe
     return None
 
-def GetGameHammer(game_path: str) -> str | None:
-    """
-    Get a game's Hammer executable. Ex. "hammer.exe".
+def GetGameHammer(basegame_dir: str) -> str | None:
+    """Get a game's Hammer executable. Ex. "hammer.exe".
 
-    :param game_path: Full game path.
-    :type game_path: str
-    :return: Hammer executable file name, if not found then None.
-    :rtype: str | None
+    Args:
+        basegame_dir (str): Full game path.
+
+    Returns:
+        str | None: Hammer executable file name, if not found then None.
     """
 
-    game_dir: str = GetGameDir(game_path)
+    game_dir: str = GetGameDir(basegame_dir)
     for cur_game_dir, exe, hammer, docdump in strata_candidates:
         if (cur_game_dir != game_dir):
             continue
         # Make sure it actually exists on disk.
-        if Find(hammer, f"{game_path}/{binary_dir}"):
+        if Find(hammer, f"{basegame_dir}/{binary_dir}"):
             return hammer
     return None
 
-def GetGameDocDump(game_path: str) -> str | None:
-    """
-    Get a game's docdump executable. Ex. "docdump.exe".
+def GetGameDocDump(basegame_dir: str) -> str | None:
+    """Get a game's docdump executable. Ex. "docdump.exe".
 
-    :param game_path: Full game path.
-    :type game_path: str
-    :return: docdump executable file name, if not found then None.
-    :rtype: str | None
+    Args:
+        basegame_dir (str): Full game path.
+
+    Returns:
+        str | None: docdump executable file name, if not found then None.
     """
 
-    game_dir: str = GetGameDir(game_path)
+    game_dir: str = GetGameDir(basegame_dir)
     for cur_game_dir, exe, hammer, docdump in strata_candidates:
         if (cur_game_dir != game_dir):
             continue
         # Make sure it actually exists on disk.
-        if Find(docdump, f"{game_path}/{binary_dir}"):
+        if Find(docdump, f"{basegame_dir}/{binary_dir}"):
             return docdump
     return None
 
 def ProgramStr(hammer: bool = False, docdump: bool = False) -> str:
-    """
-    Return the current program that will be run based on the passed in bools.
+    """Return the current program that will be run based on the passed in bools.
 
-    :param hammer: If it's Hammer being run return "Hammer".
-    :type hammer: bool
-    :param docdump: If it's docdump being run return "docdump".
-    :type docdump: bool
-    :return: Will return "engine" if neither Hammer or docdump are being run.
-    :rtype: str
+    Args:
+        hammer (bool, optional): If it's Hammer being run return "Hammer". Defaults to False.
+        docdump (bool, optional): If it's docdump being run return "docdump". Defaults to False.
+
+    Returns:
+        str: Will return "engine" if neither Hammer or docdump are being run.
     """
 
     if (hammer):
@@ -150,64 +150,56 @@ def ProgramStr(hammer: bool = False, docdump: bool = False) -> str:
         return "docdump"
     return "engine"
 
-def StartProgram(game_path: str, args: str, hammer: bool = False, docdump: bool = False) -> None:
-    """
-    Starts up one of the three programs the script uses to acquire dumps. By default, if Hammer and docdump are false, the engine is run.
+def StartProgram(basegame_dir: str, args: str, hammer: bool = False, docdump: bool = False) -> None:
+    """Starts up one of the three programs the script uses to acquire dumps. By default, if Hammer and docdump are false, the engine is run.
 
-    :param game_path: Path to the game.
-    :type game_path: str
-    :param args: Arguments that will passed to the program.
-    :type args: list[str]
-    :param hammer: If true, will run Hammer.
-    :type hammer: bool
-    :param docdump: If true, will run docdump.
-    :type docdump: bool
+    Args:
+        basegame_dir (str): Path to the game.
+        args (str): Arguments that will passed to the program.
+        hammer (bool, optional): If true, will run Hammer. Defaults to False.
+        docdump (bool, optional): If true, will run docdump. Defaults to False.
     """
 
     print(f'Launching {ProgramStr(hammer, docdump)} with arguments: "{args}"')
 
-    return_code: int
+    completedProcess = 0
     if (hammer):
-        hammer_exe: str = GetGameHammer(game_path)
+        hammer_exe: str = GetGameHammer(basegame_dir)
         if (hammer_exe == None):
             print("Hammer is either not supported or couldn't be found for the Strata Source title, skipping!")
             return
 
         print(f'Dumping from Hammer is not supported right now, for now manually dump what comes from Hammer using: "{args.replace("+", "")}"')
         return
-        return_code = os.system(f'"{game_path}/{binary_dir}/{hammer_exe}" {args}')
+        completedProcess = subprocess.run(f'"{basegame_dir}/{binary_dir}/{hammer_exe}" {args}', shell=True)
     elif (docdump):
-        docdump_exe: str = GetGameDocDump(game_path)
+        docdump_exe: str = GetGameDocDump(basegame_dir)
         if (docdump_exe == None):
             print("docdump is either not supported or couldn't be found for the Strata Source title, skipping!")
             return
 
-        print("YES, docdump CRASHING is NORMAL, ignore it, it will be fixed.")
-        return_code = os.system(f'"{game_path}/{binary_dir}/{docdump_exe}" {args}')
+        print("YES, docdump CRASHING is NORMAL, ignore it, it will be fixed!")
+        completedProcess = subprocess.run(f'"{basegame_dir}/{binary_dir}/{docdump_exe}" {args}', shell=True)
     else: # engine
-        return_code = os.system(f'"{game_path}/{binary_dir}/{GetGameDir(game_path)}" {args}')
+        completedProcess = subprocess.run(f'"{basegame_dir}/{binary_dir}/{GetGameDir(basegame_dir)}" {args}', shell=True)
 
-    # TODO: The "and not docdump" is needed for docdump for the moment because the program is currently crashed. REMOVE WHEN ITS FIXED!
-    if (return_code != 0 and not docdump):
-        print(f'Something went wrong when running {ProgramStr(hammer, docdump)}! Return code: "{return_code}"')
+    # TODO: The "and not docdump" is needed for docdump for the moment because the program currently crashes even when it successfully dumps. REMOVE WHEN ITS FIXED!
+    if (completedProcess.returncode != 0 and not docdump):
+        print(f'Something went wrong when running {ProgramStr(hammer, docdump)}! Return code: "{completedProcess.returncode}"')
         print("Please check your game path and please report in the P2:CE Discord if issues still occur!")
         sys.exit(1)
 
-def ApplyDumps(dump_path: str, dump_group: int, game_path: str = "") -> None:
-    """
-    Find, rename, and apply the new dumps to the Wiki's dumps folder.
+def ApplyDumps(basegame_dir: str, dump_group: int) -> None:
+    """Find, rename, and apply the new dumps to the Wiki's dumps folder.
 
-    :param dump_path: Directory where the dumps should be looked for.
-    :type dump_path: str
-    :param dump_group: The specific type of dumps that are being updated. (Ex. ANGELSCRIPT, SOUND_OPERATORS)
-    :type dump_group: int
+    Args:
+        basegame_dir (str): Path to the game.
+        dump_group (int): The specific type of dumps that are being updated. (Ex. ANGELSCRIPT, SOUND_OPERATORS)
     """
 
-    game_dir: str = GetGameDir(dump_path)
-    if (game_dir == None):
-        game_dir = GetGameDir(game_path)
-    hammer_exe: str = GetGameHammer(game_path)
-    docdump_exe: str = GetGameDocDump(game_path)
+    game_dir: str = GetGameDir(basegame_dir)
+    hammer_exe: str = GetGameHammer(basegame_dir)
+    docdump_exe: str = GetGameDocDump(basegame_dir)
 
     for index, dump_file in enumerate(ref_dump_list[dump_group][DUMPED_FILES]):
         dump_file = dump_file.format(game_dir)
@@ -219,26 +211,29 @@ def ApplyDumps(dump_path: str, dump_group: int, game_path: str = "") -> None:
         if ((dump_group in (SOUND_OPERATORS, PARTICLE_OPERATORS, MATERIAL_SHADERS)) and docdump_exe == None):
             continue;
 
-        print(f'Gathering and applying dump "{os.path.basename(dump_file)}" to Wiki located in: "{dump_path}/{os.path.dirname(dump_file)}"')
-        if (not Find(os.path.basename(dump_file), f"{dump_path}/{os.path.dirname(dump_file)}")):
+        dump_src: str = f"{basegame_dir}/{os.path.dirname(dump_file)}" # Src folder of dumped files.
+
+        print(f'Gathering and applying dump "{os.path.basename(dump_file)}" to Wiki located in: "{dump_src}"')
+        if (not Find(os.path.basename(dump_file), dump_src)):
             print(f'Failed to find the dumped file: "{dump_file}"!')
             print("Please report on the P2:CE Discord!")
             sys.exit(1)
 
         # Fix line endings, some dumps are dumped with CRLF line endings.
         # Keeping it with LF won't cause git to track changes simply because line endings changed.
-        with open(f"{dump_path}/{dump_file}", 'rb+') as dumped_file:
+        with open(f"{basegame_dir}/{dump_file}", 'rb+') as dumped_file:
             data = dumped_file.read().replace(b'\r\n', b'\n')
             dumped_file.seek(0)
             dumped_file.write(data)
             dumped_file.truncate()
+            dumped_file.close()
 
-        os.replace(f"{dump_path}/{dump_file}", wiki_dump_dir + ref_dump_list[dump_group][WIKI_FILES][index].format(game_dir))
+        os.replace(f"{basegame_dir}/{dump_file}", wiki_dump_dir + ref_dump_list[dump_group][WIKI_FILES][index].format(game_dir))
 
 # ---------------------------
 
-def DumpAS(game_path: str) -> int:
-    print("Currently, AngelScript reference dumping is not working right now. This will be fixed later by engine updates.")
+def DumpAS(basegame_dir: str) -> int:
+    print("Currently, AngelScript reference dumping is not available right now.")
     print(f'For now manually dump what comes from the engine using: "{" ".join(ref_dump_list[ANGELSCRIPT][COMMANDS][:-1]).replace("+", "")}"')
     print(f'For Hammer use: "{"".join(ref_dump_list[ANGELSCRIPT][COMMANDS][-1]).replace("+", "")}"')
     return
@@ -246,103 +241,103 @@ def DumpAS(game_path: str) -> int:
 
     # Run the engine.
     args: str = " ".join(["-novid", " ".join(ref_dump_list[ANGELSCRIPT][COMMANDS][:-1]), "+exit"])
-    StartProgram(game_path, args)
+    StartProgram(basegame_dir, args)
 
     # Run Hammer.
     args = "".join(ref_dump_list[ANGELSCRIPT][COMMANDS][-1])
-    StartProgram(game_path, args, True)
+    StartProgram(basegame_dir, args, True)
 
     # Find the dumps and apply them to the Wiki.
-    ApplyDumps(game_path, ANGELSCRIPT)
+    ApplyDumps(basegame_dir, ANGELSCRIPT)
 
     print("Finished dumping and applying new AngelScript reference to Wiki!")
     return 0;
 
-def DumpVScript(game_path: str) -> int:
-    print("Currently, VScript reference dumping is not working right now. This will be fixed later by engine updates.")
+def DumpVScript(basegame_dir: str) -> int:
+    print("Currently, VScript reference dumping is not available right now.")
     print(f'For now manually dump what comes from the engine using: "{" ".join(ref_dump_list[VSCRIPT][COMMANDS]).replace("+", "")}"')
     return
     print("Dumping new VScript reference....")
 
     # Run the engine.
     args: str = " ".join(["-novid", " ".join(ref_dump_list[VSCRIPT][COMMANDS]), "+exit"])
-    StartProgram(game_path, args)
+    StartProgram(basegame_dir, args)
 
     # Find the dumps and apply them to the Wiki.
-    ApplyDumps(game_path, VSCRIPT)
+    ApplyDumps(basegame_dir, VSCRIPT)
 
     print("Finished dumping and applying new VScript reference to Wiki!")
     return 0;
 
-def DumpSoundOperators(game_path: str) -> int:
+def DumpSoundOperators(basegame_dir: str) -> int:
     print("Dumping new Sound Operators reference....")
 
     # Run docdump.
-    args: str = " ".join([" ".join(ref_dump_list[SOUND_OPERATORS][COMMANDS]), " ".join(ref_dump_list[SOUND_OPERATORS][WIKI_FILES])])
-    StartProgram(game_path, args, False, True)
+    args: str = " ".join([" ".join(ref_dump_list[SOUND_OPERATORS][COMMANDS]), f'"{basegame_dir}/{"".join(ref_dump_list[SOUND_OPERATORS][DUMPED_FILES]).format(GetGameDir(basegame_dir))}"'])
+    StartProgram(basegame_dir, args, False, True)
 
     # Find the dumps and apply them to the Wiki.
-    ApplyDumps(relative_dir, SOUND_OPERATORS, game_path)
+    ApplyDumps(basegame_dir, SOUND_OPERATORS)
 
     print("Finished dumping and applying new Sound Operators reference to Wiki!")
     return 0;
 
-def DumpParticles(game_path: str) -> int:
+def DumpParticles(basegame_dir: str) -> int:
     print("Dumping new Particle Operators reference....")
 
     # Run docdump.
-    args: str = " ".join([" ".join(ref_dump_list[PARTICLE_OPERATORS][COMMANDS]), " ".join(ref_dump_list[PARTICLE_OPERATORS][WIKI_FILES])])
-    StartProgram(game_path, args, False, True)
+    args: str = " ".join([" ".join(ref_dump_list[PARTICLE_OPERATORS][COMMANDS]), f'"{basegame_dir}/{"".join(ref_dump_list[PARTICLE_OPERATORS][DUMPED_FILES]).format(GetGameDir(basegame_dir))}"'])
+    StartProgram(basegame_dir, args, False, True)
 
     # Find the dumps and apply them to the Wiki.
-    ApplyDumps(relative_dir, PARTICLE_OPERATORS, game_path)
+    ApplyDumps(basegame_dir, PARTICLE_OPERATORS)
 
     print("Finished dumping and applying new Particle Operators reference to Wiki!")
     return 0;
 
-def DumpCVars(game_path: str) -> int:
+def DumpCVars(basegame_dir: str) -> int:
     print("Dumping new ConCommand & ConVar reference....")
 
     # Run the engine.
     args: str = " ".join(["-novid", " ".join(ref_dump_list[CVARS][COMMANDS]), "+exit"])
-    StartProgram(game_path, args)
+    StartProgram(basegame_dir, args)
 
     # Find the dumps and apply them to the Wiki.
-    ApplyDumps(game_path, CVARS)
+    ApplyDumps(basegame_dir, CVARS)
 
     print("Finished dumping and applying new ConCommand & ConVar reference to Wiki!")
     return 0;
 
-def DumpShaders(game_path: str) -> int:
+def DumpShaders(basegame_dir: str) -> int:
     print("Dumping new Material Shader reference....")
 
     # Run docdump.
-    args: str = " ".join([" ".join(ref_dump_list[MATERIAL_SHADERS][COMMANDS]), " ".join(ref_dump_list[MATERIAL_SHADERS][WIKI_FILES])])
-    StartProgram(game_path, args, False, True)
+    args: str = " ".join([" ".join(ref_dump_list[MATERIAL_SHADERS][COMMANDS]), f'"{basegame_dir}/{"".join(ref_dump_list[MATERIAL_SHADERS][DUMPED_FILES]).format(GetGameDir(basegame_dir))}"'])
+    StartProgram(basegame_dir, args, False, True)
 
     # Find the dumps and apply them to the Wiki.
-    ApplyDumps(relative_dir, MATERIAL_SHADERS, game_path)
+    ApplyDumps(basegame_dir, MATERIAL_SHADERS)
 
     print("Finished dumping and applying new Material Shader reference to Wiki!")
     return 0;
 
 # ---------------------------
 
-def DumpALL(game_path: str) -> int:
+def DumpALL(basegame_dir: str) -> int:
     print("Dumping all engine references!")
 
     # TODO: Uncomment out when it is possible to get the AngelScript and VScript docs automatically.
-    # DumpAS(game_path)
+    # DumpAS(basegame_dir)
     # print("\n")
-    # DumpVScript(game_path)
+    # DumpVScript(basegame_dir)
     # print("\n")
-    DumpSoundOperators(game_path)
+    DumpSoundOperators(basegame_dir)
     print("\n")
-    DumpParticles(game_path)
+    DumpParticles(basegame_dir)
     print("\n")
-    DumpCVars(game_path)
+    DumpCVars(basegame_dir)
     print("\n")
-    DumpShaders(game_path)
+    DumpShaders(basegame_dir)
     print("\n")
 
     print("Dumped and applied all references to Wiki!")
@@ -354,7 +349,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         "wiki_dumps",
         formatter_class = argparse.RawTextHelpFormatter,
-        description = "The Strata Source Wiki reference dumper! Currently supports Portal 2: Community Edition, Momentum Mod, and Portal: Revolution.",
+        description = """The Strata Source Wiki reference dumper! Currently supports Portal 2: Community Edition, Momentum Mod, and Portal: Revolution.
+NOTE: This tool was designed with Portal 2: Community Edition in mind so not all options will work correctly if using another Strata Source title.
+WARNING: Portal: Revolution dumping is not available at all as the wiki should have everything on it already, there will be no more game updates that add things, and Linux support overall was dropped. Portal: Revolution 2 will be supported in the future.""",
 epilog="""
      ^_/ffjjjjf)l
    ^_/jjjjjjjjjjj1!.
@@ -384,48 +381,54 @@ epilog="""
     conflict_group.add_argument(
         "-d", "--dump",
         dest = "dump_option",
-        type=int,
+        type = int,
         choices = [0, 1, 2, 3, 4, 5],
-        # TODO: Update when fixed.
-        help = 'Specify a specific reference to dump if "-a/-all" is not specified.\n(CURRENTLY NOT WORKING) AngelScript = 0\n(CURRENTLY NOT WORKING) VScript = 1\nSound Operators = 2\nParticle Operators = 3\nConCommands & ConVars = 4\nMaterial Shaders = 5'
+        # TODO: Update when AS and VScript dumping is fixed.
+        help = """Specify a specific reference to dump if "-a/-all" is not specified.
+(CURRENTLY NOT WORKING) AngelScript = 0
+(CURRENTLY NOT WORKING) VScript = 1
+Sound Operators = 2
+Particle Operators = 3
+ConCommands & ConVars = 4
+Material Shaders = 5"""
     )
     parser.add_argument(
         "--debug",
         dest = "debug_input",
         action = "store_true",
-        help = "Debug testing path inputs for the program, will not dump, please ignore! Need valid game_path to test!"
+        help = "Debug testing path inputs for the program. This will not dump at all. Need valid basegame_dir to test."
     )
     parser.add_argument(
-        "game_path",
-        type=str,
+        "basegame_dir",
+        type = str,
         help = 'Full path to your Strata Source game installation for Steam. Ex. "Steam/steamapps/common/Portal 2 Community Edition"'
     )
 
     args = parser.parse_args();
 
-    if (args.game_path):
-        game_executable: str = GetGameExe(args.game_path)
-        game_dir: str = GetGameDir(args.game_path)
+    if (args.basegame_dir):
+        game_executable: str = GetGameExe(args.basegame_dir)
+        game_dir: str = GetGameDir(args.basegame_dir)
         if (not game_executable or not game_dir):
             print("Game executable or inner game directory could not be located! Are you sure you've entered the path correctly? Make sure to use quotes!")
             print('Is this a supported game? Check program help using "-h/--help".')
-            print(f'game_path: "{args.game_path}"')
+            print(f'basegame_dir: "{args.basegame_dir}"')
             sys.exit(1)
 
-        #! Linux support was removed from Revolution, Linux users will have to dump it manually.
-        if (not is_windows and game_executable == "revolution.exe"):
-            print("Portal: Revolution's Linux support has been removed. If you are on Linux and want to dump it's references, you will need to do it manually.")
+        #! Overall, Portal: Revolution is not supported as you can't dump much from it anyways, there is no Linux support, and nothing new will be added anyways until Revo 2.
+        if (game_executable == "revolution.exe"):
+            print("Portal: Revolution is not supported by this tool as 'docdump' is missing, Linux support has been dropped, and overall there will be no new changes and what is on the wiki should be what is on the current public build. If you want to dump it's references, you will need to do it manually.")
             sys.exit(1)
 
     # Debug with inputs
     if (args.debug_input):
-        print(f'game_path: "{args.game_path}"')
+        print(f'basegame_dir: "{args.basegame_dir}"')
         print(f'dump_all: "{args.dump_all}"')
         print(f'dump_option: "{args.dump_option}"')
-        print(f'game_executable: "{GetGameExe(args.game_path)}"')
-        print(f'hammer_executable: "{GetGameHammer(args.game_path)}"')
-        print(f'docdump_executable: "{GetGameDocDump(args.game_path)}"')
-        print(f'game_dir: "{GetGameDir(args.game_path)}"')
+        print(f'game_executable: "{GetGameExe(args.basegame_dir)}"')
+        print(f'hammer_executable: "{GetGameHammer(args.basegame_dir)}"')
+        print(f'docdump_executable: "{GetGameDocDump(args.basegame_dir)}"')
+        print(f'game_dir: "{GetGameDir(args.basegame_dir)}"')
         print(f'is_windows: "{is_windows}"')
         print(f'binary_dir: "{binary_dir}"')
         print(f'relative_dir: "{relative_dir}"')
@@ -469,22 +472,22 @@ epilog="""
 
     # Dump all references.
     if (args.dump_all):
-        sys.exit(DumpALL(args.game_path))
+        sys.exit(DumpALL(args.basegame_dir))
 
     # Dump specific reference.
     match (args.dump_option):
         case (0):
-            sys.exit(DumpAS(args.game_path))
+            sys.exit(DumpAS(args.basegame_dir))
         case (1):
-            sys.exit(DumpVScript(args.game_path))
+            sys.exit(DumpVScript(args.basegame_dir))
         case (2):
-            sys.exit(DumpSoundOperators(args.game_path))
+            sys.exit(DumpSoundOperators(args.basegame_dir))
         case (3):
-            sys.exit(DumpParticles(args.game_path))
+            sys.exit(DumpParticles(args.basegame_dir))
         case (4):
-            sys.exit(DumpCVars(args.game_path))
+            sys.exit(DumpCVars(args.basegame_dir))
         case (5):
-            sys.exit(DumpShaders(args.game_path))
+            sys.exit(DumpShaders(args.basegame_dir))
 
     # If no arguments have been passed. This technically shouldn't be reached, but just in case.
     parser.print_help()
