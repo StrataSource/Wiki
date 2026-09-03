@@ -19,12 +19,12 @@ In this chapter you will learn about:
 
 > [!TIP]
 > In each chapter, you can easily navigate the page by clicking the links in the "What You Will Learn" section.
-
+---
 > [!CAUTION]
-> This guide assumes you have basic programming skills in languages such as Python, C, C++, Squirrel (VScript), etc.
+> This guide assumes you have basic programming skills in languages such as C/C++, C#, Squirrel (VScript), etc.
 > It is recommended you already have *some* experience in programming, although this guide aims to be as beginner-friendly as possible.
 > Basic concepts will **not** be taught.
-
+---
 > [!NOTE]
 > It is recommended to try out what you learn in this guide as you go through it. This guide will include example tasks for you to attempt as practice.
 
@@ -52,12 +52,12 @@ While VScript (mainly) sits between entities and handles the interactions betwee
 ## This guide
 
 This guide is split into two parts:
-1. Language Basics - is supposed to teach you how to program in AngelScript, but it doesn't contain any information about on any Strata-specific feature, such as entity creation, command registering and so on. 
+
+1. Language Basics - is supposed to teach you how to program in AngelScript, but it doesn't contain any information about on any Strata-specific feature, such as entity creation, command registering and so on.
 
 2. Game Engine - contains tutorials on using AngelScript inside the game itself. This includes entity creation, custom command making, etc.
 
 3. Hammer World Editor - contains tutorials on various topics regarding the AngelScript implementation in the Hammer World Editor program.
-
 
 ---
 
@@ -97,11 +97,8 @@ void MyCommand(const CommandArgs@ args) {
 
 Now, the only thing left to do now is launch the game, open the console, and execute the *HelloWorld* command.
 
-> ### TASK 1:
->
-> Run the HelloWorld program mentioned above.
-
 ## How To Test Out Your Code in a Basic Way
+
 For now, you will need to know how to run your code so that you can complete the tasks given to you within this guide.
 In `sv_init.as` include:
 
@@ -115,11 +112,6 @@ void CodeTest(const Command@ args) {
 The code in this function will run whenever you run the `CodeTest` command in game. Remember to `reload` to see the changes!
 The `Msg(string)` function will serve as a way to view your variables (like print or cout). Just type `Msg(a)` where *a* is your variable, and *a* will be printed to the console.
 Remember to add `"\n"` to the input of Msg (or just call `Msg("\n");` after your message), otherwise everything will print in one line. To avoid having to do this, you can use the `Msgl(string)` which will automatically append an `"\n"` to the end of each message.
-
-> [!BUG]
-> Some types such as `int` cannot be directly converted to string, and as such, you won't be able to put them directly into Msg().
-> > [!TIP]
-> > In order to avoid this issue, you can append to an empty string. Just do `"" + a` and in most cases this will work: `Msg("" + a);`
 
 ### Compilation Errors
 
