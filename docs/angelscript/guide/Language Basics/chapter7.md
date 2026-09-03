@@ -82,7 +82,7 @@ class MyClass() {
     int GetAB() {
         return this.a * this.b;
     }
-} 
+}
 
 // Example usage:
 MyClass obj(1, 5);
@@ -91,6 +91,7 @@ obj.Mult(3);
 int k = obj.GetAB(); // k = 45
 
 ```
+
 > [!NOTE]
 > `this` keyword is technically not needed in most cases. However, for code readability, it's most often recommended, so that the reader knows that you are referencing something that's been declared inside this object.
 
@@ -154,6 +155,7 @@ void CoolFunction(MyClass&in val) {
     */
 }
 ```
+
 ---
 
 ## Constructors
@@ -222,7 +224,7 @@ MyClass obj2 = obj1; // Implicit call of the copy constructor in the form of an 
 
 Type conversion constructors are used to perform, well, type conversions to the given type. They will be used by the compiler whenever it needs to perform such conversions, given an appropriate constructor is specified.
 
-It is also possible to flag such a constructor with the `explicit` keyword, which will dissallow the compiler from using that constructor implicitly to perform type conversion. Then the constructor will only be called when initializing an object directly.
+It is also possible to flag such a constructor with the `explicit` keyword, which will disallow the compiler from using that constructor implicitly to perform type conversion. Then the constructor will only be called when initializing an object directly.
 
 ```cpp
 class MyClass {
@@ -257,6 +259,7 @@ MyFunc(5.5); // Will initialize MyClass using the 'float' constructor.
 ```
 
 ### Other Constructors
+
 Besides the types specified above, constructors can accept any amount of parameters of any type. You can easily combine and overload constructors to your desire.
 
 ---
@@ -290,6 +293,7 @@ In classes, you can overwrite the given operators and change their behaviour. Fo
 The list of function names and their corresponding operators can be found in the [AngelScript documentation](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script_class_ops.html), where `op` is the operator, and `opfunc` is the method name used.
 
 Here's an example of a class using operator overloads:
+
 ```cpp
 class MyClass {
 
@@ -323,7 +327,6 @@ class MyClass {
 }
 ```
 
-
 Although operator overloads behave mostly the same, there are a couple of differences between different types of operators.
 Below is a short compilation of the most important things to know:
 
@@ -340,7 +343,7 @@ Below is a short compilation of the most important things to know:
 
 1. opEquals operators should return a boolean.
 2. In case of `opEquals` (`==` operator), the expression (`a == b`) is re-written as `a.opEquals(b)` or `b.opEquals(a)` depending on the available methods (best fit is used).
-3. Comparison operators (`>`, `<`, ...) - \[opCmp method] should return an integer. If the argument is larger than us, the return value should be negative, else positive. If objects are equal the return value should be 0. (`a < b => a - b < 0`...) 
+3. Comparison operators (`>`, `<`, ...) - \[opCmp method] should return an integer. If the argument is larger than us, the return value should be negative, else positive. If objects are equal the return value should be 0. (`a < b => a - b < 0`...)
 
 ### Assignment operators
 
@@ -372,6 +375,7 @@ The expression `a(i, j, k, ...)` will get rewritten to `a.opCall(i, j, k, ...)`.
 ### Type conversion operators
 
 #### Value conversions
+
 1. Explicit conversions, e.g.: `type(a)` will make the compiler try:
     1. Constructing object of type `type` using a constructor that can accept the type of `a`.
     2. Try to call `opConv` on `a` that returns `type`.
@@ -382,6 +386,7 @@ The expression `a(i, j, k, ...)` will get rewritten to `a.opCall(i, j, k, ...)`.
 4. The methods above are supposed to be used for value conversions, meaning that they should return a copy of the data with the appropriate type.
 
 #### Reference casts
+
 1. Reference casts are done on handles!
 2. Casts can be overloaded with the `opCast` or `opImplCast` methods, for explicit and implicit casting.
 3. On explicit casts the compiler will try to use `opCast` first, then `opImplCast`.
@@ -389,16 +394,17 @@ The expression `a(i, j, k, ...)` will get rewritten to `a.opCall(i, j, k, ...)`.
 
 ### Foreach loop operators
 
-You can override the behaviour of the `foreach` loop by overloading `opForBegin`, `opForEnd`, etc. It's best to look at the official documentation about this: 
+You can override the behaviour of the `foreach` loop by overloading `opForBegin`, `opForEnd`, etc. It's best to look at the official documentation about this:
 
-> | op	                     |   opfunc   |
+> | op                       |   opfunc   |
 > |--------------------------|------------|
-> | begin *foreach*	         | opForBegin |
-> | end *foreach*	         | opForEnd   |
-> | next *foreach iteration* | 	opForNext |
-> | *foreach value*	         | opForValue, opForValue0, opForValue1, opForValue2...|
-> 
+> | begin *foreach*          | opForBegin |
+> | end *foreach*            | opForEnd   |
+> | next *foreach iteration* |  opForNext |
+> | *foreach value*          | opForValue, opForValue0, opForValue1, opForValue2...|
+>
 > When the compiler tries to compile a foreach loop it will need a use a set of methods on the container type.
+>
 > ```cpp
 >  foreach( auto val, auto key : expr )
 >  {
@@ -407,6 +413,7 @@ You can override the behaviour of the `foreach` loop by overloading `opForBegin`
 > ```
 >
 > The above will be compiled as if it was written as
+>
 > ```cpp
 >  for( auto @container = expr, auto @it = container.opForBegin(); !container.opForEnd(it); @it = container.opForNext(it) )
 >  {
@@ -415,19 +422,19 @@ You can override the behaviour of the `foreach` loop by overloading `opForBegin`
 >    ...
 >  }
 > ```
-> 
+>
 > Where the types support handles the compiler will use handle assignments, otherwise it will use value assignments.
-> 
+>
 > The iterator type returned by opForBegin, can be a simple integer for indexing, or an iterator class if more complex operations are needed for keeping track of the  iterations.
 >
 > If the container only supports a single value, then the operator opForValue can be used, otherwise multiple numbered opForValue# operators must be used.
-
 
 ### Operator overloads - misc
 
 The list of function names and their corresponding operators can be found in the [AngelScript documentation](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script_class_ops.html), where `op` is the operator, and `opfunc` is the method name used.
 
 Here's an example of overloading operators:
+
 ```cpp
 class MyClass {
 
