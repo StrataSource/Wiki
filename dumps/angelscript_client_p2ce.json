@@ -1,6 +1,7 @@
 {
     "namespace": [
-        "util"
+        "util",
+        "debug"
     ],
     "enum": [
         {
@@ -87,6 +88,138 @@
             }
         },
         {
+            "namespace": "util",
+            "name": "ContentsFlags",
+            "value": {
+                "CONTENTS_EMPTY": 0,
+                "CONTENTS_SOLID": 1,
+                "CONTENTS_WINDOW": 2,
+                "CONTENTS_AUX": 4,
+                "CONTENTS_GRATE": 8,
+                "CONTENTS_SLIME": 16,
+                "CONTENTS_WATER": 32,
+                "CONTENTS_BLOCKLOS": 64,
+                "CONTENTS_OPAQUE": 128,
+                "LAST_VISIBLE_CONTENTS": 128,
+                "ALL_VISIBLE_CONTENTS": 255,
+                "CONTENTS_TESTFOGVOLUME": 256,
+                "CONTENTS_SLIDE": 512,
+                "CONTENTS_BLOCKLIGHT": 1024,
+                "CONTENTS_TEAM1": 2048,
+                "CONTENTS_TEAM2": 4096,
+                "CONTENTS_IGNORE_NODRAW_OPAQUE": 8192,
+                "CONTENTS_MOVEABLE": 16384,
+                "CONTENTS_AREAPORTAL": 32768,
+                "CONTENTS_PLAYERCLIP": 65536,
+                "CONTENTS_MONSTERCLIP": 131072,
+                "CONTENTS_BRUSH_PAINT": 262144,
+                "CONTENTS_GRENADECLIP": 524288,
+                "CONTENTS_DRONECLIP": 1048576,
+                "CONTENTS_FOG": 2097152,
+                "CONTENTS_UNUSED4": 4194304,
+                "CONTENTS_UNUSED5": 8388608,
+                "CONTENTS_ORIGIN": 16777216,
+                "CONTENTS_MONSTER": 33554432,
+                "CONTENTS_DEBRIS": 67108864,
+                "CONTENTS_DETAIL": 134217728,
+                "CONTENTS_TRANSLUCENT": 268435456,
+                "CONTENTS_LADDER": 536870912,
+                "CONTENTS_HITBOX": 1073741824
+            }
+        },
+        {
+            "namespace": "util",
+            "name": "SurfaceFlags",
+            "value": {
+                "SURF_LIGHT": 1,
+                "SURF_SKY2D": 2,
+                "SURF_SKY": 4,
+                "SURF_WARP": 8,
+                "SURF_TRANS": 16,
+                "SURF_NOPORTAL": 32,
+                "SURF_TRIGGER": 64,
+                "SURF_NODRAW": 128,
+                "SURF_HINT": 256,
+                "SURF_SKIP": 512,
+                "SURF_NOLIGHT": 1024,
+                "SURF_BUMPLIGHT": 2048,
+                "SURF_NOSHADOWS": 4096,
+                "SURF_NODECALS": 8192,
+                "SURF_NOPAINT": 8192,
+                "SURF_NOCHOP": 16384,
+                "SURF_HITBOX": 32768,
+                "SURF_SKYNOEMIT": 65536,
+                "SURF_SKYOCCLUSION": 131072,
+                "SURF_SLICK": 262144,
+                "SURF_NOIMPACT": 524288
+            }
+        },
+        {
+            "namespace": "util",
+            "name": "InputButtons",
+            "value": {
+                "IN_ATTACK": 1,
+                "IN_JUMP": 2,
+                "IN_DUCK": 4,
+                "IN_FORWARD": 8,
+                "IN_BACK": 16,
+                "IN_USE": 32,
+                "IN_CANCEL": 64,
+                "IN_LEFT": 128,
+                "IN_RIGHT": 256,
+                "IN_MOVELEFT": 512,
+                "IN_MOVERIGHT": 1024,
+                "IN_ATTACK2": 2048,
+                "IN_RUN": 4096,
+                "IN_RELOAD": 8192,
+                "IN_ALT1": 16384,
+                "IN_ALT2": 32768,
+                "IN_SCORE": 65536,
+                "IN_SPEED": 131072,
+                "IN_WALK": 262144,
+                "IN_ZOOM": 524288,
+                "IN_WEAPON1": 1048576,
+                "IN_WEAPON2": 2097152,
+                "IN_GRENADE1": 8388608,
+                "IN_GRENADE2": 16777216,
+                "IN_LOOKSPIN": 33554432,
+                "IN_USEORRELOAD": 67108864,
+                "IN_COOP_PING": 134217728,
+                "IN_REMOTE_VIEW": 268435456
+            }
+        },
+        {
+            "namespace": "util",
+            "name": "TraceMask",
+            "value": {
+                "MASK_ALL": 4294967295,
+                "MASK_SOLID": 33570827,
+                "MASK_PLAYERSOLID": 33636363,
+                "MASK_NPCSOLID": 33701899,
+                "MASK_NPCFLUID": 33701891,
+                "MASK_WATER": 16432,
+                "MASK_OPAQUE": 16513,
+                "MASK_OPAQUE_AND_NPCS": 33570945,
+                "MASK_BLOCKLOS": 16449,
+                "MASK_BLOCKLOS_AND_NPCS": 33570881,
+                "MASK_VISIBLE": 24705,
+                "MASK_VISIBLE_AND_NPCS": 33579137,
+                "MASK_SHOT": 1174421507,
+                "MASK_FLOORTRACE": 67125251,
+                "MASK_WEAPONCLIPPING": 100679683,
+                "MASK_SHOT_BRUSHONLY": 67125251,
+                "MASK_SHOT_HULL": 100679691,
+                "MASK_SHOT_PORTAL": 33570819,
+                "MASK_SOLID_BRUSHONLY": 16395,
+                "MASK_PLAYERSOLID_BRUSHONLY": 81931,
+                "MASK_NPCSOLID_BRUSHONLY": 147467,
+                "MASK_NPCWORLDSTATIC": 131083,
+                "MASK_NPCWORLDSTATIC_FLUID": 131075,
+                "MASK_SPLITAREAPORTAL": 48,
+                "MASK_DEADSOLID": 65547
+            }
+        },
+        {
             "namespace": null,
             "name": "EFireBulletsFlags",
             "value": {
@@ -143,6 +276,90 @@
                 "FIELD_MODELINDEX": 30,
                 "FIELD_MATERIALINDEX": 31,
                 "FIELD_TYPECOUNT": 32
+            }
+        },
+        {
+            "namespace": null,
+            "name": "EntityFlags",
+            "value": {
+                "EFL_KILLME": 1,
+                "EFL_DORMANT": 2,
+                "EFL_NOCLIP_ACTIVE": 4,
+                "EFL_SETTING_UP_BONES": 8,
+                "EFL_KEEP_ON_RECREATE_ENTITIES": 16,
+                "EFL_DIRTY_SHADOWUPDATE": 32,
+                "EFL_NOTIFY": 64,
+                "EFL_FORCE_CHECK_TRANSMIT": 128
+            }
+        },
+        {
+            "namespace": null,
+            "name": "EffectFlags",
+            "value": {
+                "EF_BONEMERGE": 1,
+                "EF_BRIGHTLIGHT": 2,
+                "EF_DIMLIGHT": 4,
+                "EF_NOINTERP": 8,
+                "EF_MAX_BITS": 15,
+                "EF_NOSHADOW": 16,
+                "EF_NODRAW": 32,
+                "EF_NORECEIVESHADOW": 64,
+                "EF_BONEMERGE_FASTCULL": 128
+            }
+        },
+        {
+            "namespace": null,
+            "name": "CollisionGroups",
+            "value": {
+                "COLLISION_GROUP_NONE": 0,
+                "COLLISION_GROUP_DEBRIS": 1,
+                "COLLISION_GROUP_DEBRIS_TRIGGER": 2,
+                "COLLISION_GROUP_INTERACTIVE_DEBRIS": 3,
+                "COLLISION_GROUP_INTERACTIVE": 4,
+                "COLLISION_GROUP_PLAYER": 5,
+                "COLLISION_GROUP_BREAKABLE_GLASS": 6,
+                "COLLISION_GROUP_VEHICLE": 7,
+                "COLLISION_GROUP_PLAYER_MOVEMENT": 8,
+                "COLLISION_GROUP_NPC": 9,
+                "COLLISION_GROUP_IN_VEHICLE": 10,
+                "COLLISION_GROUP_WEAPON": 11,
+                "COLLISION_GROUP_VEHICLE_CLIP": 12,
+                "COLLISION_GROUP_PROJECTILE": 13,
+                "COLLISION_GROUP_DOOR_BLOCKER": 14,
+                "COLLISION_GROUP_PASSABLE_DOOR": 15,
+                "COLLISION_GROUP_DISSOLVING": 16,
+                "COLLISION_GROUP_PUSHAWAY": 17,
+                "COLLISION_GROUP_NPC_ACTOR": 18,
+                "COLLISION_GROUP_NPC_SCRIPTED": 19,
+                "COLLISION_GROUP_PZ_CLIP": 20,
+                "COLLISION_GROUP_CAMERA_SOLID": 21,
+                "COLLISION_GROUP_PLACEMENT_SOLID": 22,
+                "COLLISION_GROUP_PLAYER_HELD": 23,
+                "COLLISION_GROUP_WEIGHTED_CUBE": 24,
+                "COLLISION_GROUP_DEBRIS_BLOCK_PROJECTILE": 25,
+                "LAST_SHARED_COLLISION_GROUP": 26
+            }
+        },
+        {
+            "namespace": null,
+            "name": "SolidType",
+            "value": {
+                "SOLID_NONE": 0,
+                "SOLID_BSP": 1,
+                "SOLID_BBOX": 2,
+                "SOLID_OBB": 3,
+                "SOLID_OBB_YAW": 4,
+                "SOLID_CUSTOM": 5,
+                "SOLID_VPHYSICS": 6,
+                "SOLID_LAST": 7
+            }
+        },
+        {
+            "namespace": null,
+            "name": "ModelScaleType",
+            "value": {
+                "HIERARCHICAL_MODEL_SCALE": 0,
+                "NONHIERARCHICAL_MODEL_SCALE": 1
             }
         },
         {
@@ -1110,10 +1327,67 @@
         },
         {
             "namespace": null,
+            "name": "WeightedCubeBehavior",
+            "value": {
+                "AUTO": 0,
+                "REGULAR": 1,
+                "REFLECTIVE": 2,
+                "SCHRODINGER": 3
+            }
+        },
+        {
+            "namespace": null,
+            "name": "WeightedCubeShape",
+            "value": {
+                "CUBE_SHAPE_AUTO": 0,
+                "CUBE_SHAPE_CUBIC": 1,
+                "CUBE_SHAPE_SPHERICAL": 2
+            }
+        },
+        {
+            "namespace": null,
+            "name": "PaintPowerType",
+            "value": {
+                "BOUNCE_POWER": 0,
+                "REFLECT_POWER": 1,
+                "SPEED_POWER": 2,
+                "PORTAL_POWER": 3,
+                "NO_POWER": 4,
+                "STICK_POWER": 5,
+                "PAINT_POWER_TYPE_COUNT": 6,
+                "INVALID_PAINT_POWER": 7
+            }
+        },
+        {
+            "namespace": null,
             "name": "LocalFlexController",
             "value": {
                 "DUMMY_INVALID_FLEX_CONTROLLER": -1,
                 "DUMMY_NULL_FLEX_CONTROLLER": 0
+            }
+        },
+        {
+            "namespace": null,
+            "name": "TriggerSpawnFlags",
+            "value": {
+                "SF_TRIGGER_ALLOW_CLIENTS": 1,
+                "SF_TRIGGER_ALLOW_NPCS": 2,
+                "SF_TRIGGER_ALLOW_PUSHABLES": 4,
+                "SF_TRIGGER_ALLOW_PHYSICS": 8,
+                "SF_TRIGGER_ONLY_PLAYER_ALLY_NPCS": 16,
+                "SF_TRIGGER_ONLY_CLIENTS_IN_VEHICLES": 32,
+                "SF_TRIGGER_ALLOW_ALL": 64,
+                "SF_TRIG_PUSH_ONCE": 128
+            }
+        },
+        {
+            "namespace": null,
+            "name": "ExactVelocityChoice",
+            "value": {
+                "EXACT_VEL_CHOICE_BEST": 0,
+                "EXACT_VEL_CHOICE_SOL1": 1,
+                "EXACT_VEL_CHOICE_SOL2": 2,
+                "EXACT_VEL_CHOICE_COUNT": 3
             }
         }
     ],
@@ -2394,8 +2668,20 @@
         },
         {
             "namespace": null,
-            "name": "AngleVectors",
-            "declaration": "void AngleVectors(const QAngle&in angle, Vector&out forward)",
+            "name": "GetForward",
+            "declaration": "void GetForward(const QAngle&in angle, Vector&out forward)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "GetRight",
+            "declaration": "void GetRight(const QAngle&in angle, Vector&out right)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "GetUp",
+            "declaration": "void GetUp(const QAngle&in angle, Vector&out up)",
             "documentation": null
         },
         {
@@ -3648,6 +3934,12 @@
         },
         {
             "namespace": null,
+            "name": "GetPlayerFromUserID",
+            "declaration": "CBasePlayer@ GetPlayerFromUserID(int userid)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
             "name": "EntityList",
             "declaration": "CGlobalEntityList@ EntityList()",
             "documentation": null
@@ -3723,6 +4015,216 @@
             "name": "Remove",
             "declaration": "void util::Remove(CBaseEntity@ entity)",
             "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Box",
+            "declaration": "void debug::Box(const Vector&in origin, const Vector&in mins, const Vector&in maxs, int r, int g, int b, int a = 255, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "BoxDirection",
+            "declaration": "void debug::BoxDirection(const Vector&in origin, const Vector&in mins, const Vector&in maxs, const Vector&in forward, int r, int g, int b, int a = 255, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "BoxAngles",
+            "declaration": "void debug::BoxAngles(const Vector&in origin, const Vector&in mins, const Vector&in maxs, const QAngle&in angles, int r, int g, int b, int a = 255, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "SweptBox",
+            "declaration": "void debug::SweptBox(const Vector&in start, const Vector&in end, const Vector&in mins, const Vector&in maxs, const QAngle&in angles, int r, int g, int b, int a = 255, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "EntityBounds",
+            "declaration": "void debug::EntityBounds(const CBaseEntity@ entity, int r, int g, int b, int a = 255, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Line",
+            "declaration": "void debug::Line(const Vector&in origin, const Vector&in target, int r, int g, int b, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Triangle",
+            "declaration": "void debug::Triangle(const Vector&in p1, const Vector&in p2, const Vector&in p3, int r, int g, int b, int a = 255, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "EntityText",
+            "declaration": "void debug::EntityText(int entityId, int offset, const string&in text, float duration = oneFrame, int r = 255, int g = 255, int b = 255, int a = 255)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "EntityTextAtPosition",
+            "declaration": "void debug::EntityTextAtPosition(const Vector&in origin, int offset, const string&in text, float duration = oneFrame, int r = 255, int g = 255, int b = 255, int a = 255)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Grid",
+            "declaration": "void debug::Grid(const Vector&in position)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Text",
+            "declaration": "void debug::Text(const Vector&in origin, const string&in text, bool viewCheck = true, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "ScreenText",
+            "declaration": "void debug::ScreenText(float x, float y, const string&in text, int r, int g, int b, int a = 255, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Cross3D",
+            "declaration": "void debug::Cross3D(const Vector&in position, const Vector&in mins, const Vector&in maxs, int r, int g, int b, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Cross3D",
+            "declaration": "void debug::Cross3D(const Vector&in position, float size, int r, int g, int b, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Cross3DOriented",
+            "declaration": "void debug::Cross3DOriented(const Vector&in position, const QAngle&in angles, float size, int r, int g, int b, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Cross3DOriented",
+            "declaration": "void debug::Cross3DOriented(const matrix3x4_t&in m, float size, int c, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "DrawTickMarkedLine",
+            "declaration": "void debug::DrawTickMarkedLine(const Vector&in start, const Vector&in end, float tickDist, int tickTextDist, int r, int g, int b, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "DrawGroundCrossHairOverlay",
+            "declaration": "void debug::DrawGroundCrossHairOverlay()",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "HorzArrow",
+            "declaration": "void debug::HorzArrow(const Vector&in start, const Vector&in end, float width, int r, int g, int b, int a = 255, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "YawArrow",
+            "declaration": "void debug::YawArrow(const Vector&in start, float yaw, float length, float width, int r, int g, int b, int a = 255, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "VertArrow",
+            "declaration": "void debug::VertArrow(const Vector&in start, const Vector&in end, float width, int r, int g, int b, int a = 255, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Axis",
+            "declaration": "void debug::Axis(const Vector&in position, const QAngle&in angles, float size, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Sphere",
+            "declaration": "void debug::Sphere(const Vector&in center, const QAngle&in angles, float radius, int r, int g, int b, int a = 255, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Sphere",
+            "declaration": "void debug::Sphere(const Vector&in center, float radius, int r, int g, int b, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Circle",
+            "declaration": "void debug::Circle(const Vector&in position, float radius, int r, int g, int b, int a = 255, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Circle",
+            "declaration": "void debug::Circle(const Vector&in position, const QAngle&in angles, float radius, int r, int g, int b, int a = 255, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Circle",
+            "declaration": "void debug::Circle(const Vector&in position, const Vector&in xAxis, const Vector&in yAxis, float radius, int r, int g, int b, int a = 255, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Cone",
+            "declaration": "void debug::Cone(const Vector&in position, const Vector&in axis, float radAngle, float length, int r, int g, int b, int a = 255, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Cross",
+            "declaration": "void debug::Cross(const Vector&in position, float radius, int r, int g, int b, bool ignoreZ = false, float duration = oneFrame)",
+            "documentation": null
+        },
+        {
+            "namespace": "debug",
+            "name": "Capsule",
+            "declaration": "void debug::Capsule(const Vector&in start, const Vector&in end, const float&in radius, int r, int g, int b, int a = 255, float duration = oneFrame, bool wireframe = true, bool ignoreZ = false)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "GetVectorInScreenSpace",
+            "declaration": "bool GetVectorInScreenSpace(const Vector&in, Vector2D&out)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "GetFullscreenMousePos",
+            "declaration": "void GetFullscreenMousePos(int&out, int&out)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "CreatePickingRay",
+            "declaration": "void CreatePickingRay(int, int, Vector&out, Vector&out)",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "GetLocalPlayerUserID",
+            "declaration": "int GetLocalPlayerUserID()",
+            "documentation": null
+        },
+        {
+            "namespace": null,
+            "name": "CreateInputContext",
+            "declaration": "ScriptInputContext@ CreateInputContext(const string&in debugname)",
+            "documentation": null
         }
     ],
     "property": [
@@ -3778,6 +4280,12 @@
             "namespace": null,
             "name": "vec4_invalid",
             "type": "Vector4D",
+            "is_const": true
+        },
+        {
+            "namespace": "debug",
+            "name": "oneFrame",
+            "type": "float",
             "is_const": true
         }
     ],
@@ -8701,10 +9209,17 @@
             "method": [
                 {
                     "name": "opCast",
-                    "declaration": "void opCast(?&out)",
+                    "declaration": "void opCast(?&out) const",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
+                },
+                {
+                    "name": "Activate",
+                    "declaration": "void Activate()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": true
                 },
                 {
                     "name": "Spawn",
@@ -9135,7 +9650,7 @@
                 },
                 {
                     "name": "GetDebugName",
-                    "declaration": "string GetDebugName()",
+                    "declaration": "string GetDebugName() const",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -9337,6 +9852,48 @@
                     "virtual": true
                 },
                 {
+                    "name": "GetEffects",
+                    "declaration": "int GetEffects() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "AddEffects",
+                    "declaration": "void AddEffects(int nEffects)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "RemoveEffects",
+                    "declaration": "void RemoveEffects(int nEffects)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ClearEffects",
+                    "declaration": "void ClearEffects()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetEffects",
+                    "declaration": "void SetEffects(int nEffects)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsEffectActive",
+                    "declaration": "bool IsEffectActive(int nEffects) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
                     "name": "GetSpawnFlags",
                     "declaration": "int GetSpawnFlags() const",
                     "documentation": null,
@@ -9372,6 +9929,69 @@
                     "virtual": false
                 },
                 {
+                    "name": "AddFlag",
+                    "declaration": "void AddFlag(uint64 flags)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "RemoveFlag",
+                    "declaration": "void RemoveFlag(uint64 flagsToRemove)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ToggleFlag",
+                    "declaration": "void ToggleFlag(uint64 flagToToggle)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetFlags",
+                    "declaration": "uint64 GetFlags() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ClearFlags",
+                    "declaration": "void ClearFlags()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetWaterLevel",
+                    "declaration": "int GetWaterLevel() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetWaterLevel",
+                    "declaration": "void SetWaterLevel(int nLevel)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetWaterType",
+                    "declaration": "int GetWaterType() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetWaterType",
+                    "declaration": "void SetWaterType(int nType)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
                     "name": "IsTrigger",
                     "declaration": "bool IsTrigger() const",
                     "documentation": null,
@@ -9388,6 +10008,403 @@
                 {
                     "name": "IsBaseCombatWeapon",
                     "declaration": "bool IsBaseCombatWeapon() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "CreateVPhysics",
+                    "declaration": "bool CreateVPhysics()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": true
+                },
+                {
+                    "name": "VPhysicsInitStatic",
+                    "declaration": "IPhysicsObject@ VPhysicsInitStatic()",
+                    "documentation": null,
+                    "visibility": "protected",
+                    "virtual": false
+                },
+                {
+                    "name": "VPhysicsInitNormal",
+                    "declaration": "IPhysicsObject@ VPhysicsInitNormal(ESolidType solidType, int nSolidFlags, bool createAsleep)",
+                    "documentation": null,
+                    "visibility": "protected",
+                    "virtual": false
+                },
+                {
+                    "name": "VPhysicsInitShadow",
+                    "declaration": "IPhysicsObject@ VPhysicsInitShadow(bool allowPhysicsMovement, bool allowPhysicsRotation)",
+                    "documentation": null,
+                    "visibility": "protected",
+                    "virtual": false
+                },
+                {
+                    "name": "VPhysicsSetObject",
+                    "declaration": "void VPhysicsSetObject(IPhysicsObject@ object)",
+                    "documentation": null,
+                    "visibility": "protected",
+                    "virtual": false
+                },
+                {
+                    "name": "VPhysicsDestroyObject",
+                    "declaration": "void VPhysicsDestroyObject()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "UpdateOnRemove",
+                    "declaration": "void UpdateOnRemove()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": true
+                },
+                {
+                    "name": "TakeDamage",
+                    "declaration": "void TakeDamage(const CTakeDamageInfo&in info)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "PassesDamageFilter",
+                    "declaration": "bool PassesDamageFilter(const CTakeDamageInfo&in info)",
+                    "documentation": null,
+                    "visibility": "protected",
+                    "virtual": true
+                },
+                {
+                    "name": "OnTakeDamage",
+                    "declaration": "int OnTakeDamage(const CTakeDamageInfo&in info)",
+                    "documentation": null,
+                    "visibility": "protected",
+                    "virtual": true
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "CTakeDamageInfo",
+            "type": "value",
+            "script_can_inherit": false,
+            "method": [
+                {
+                    "name": "CTakeDamageInfo",
+                    "declaration": "CTakeDamageInfo()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "CTakeDamageInfo",
+                    "declaration": "CTakeDamageInfo(CBaseEntity@ inflictor, CBaseEntity@ attacker, float damage, int damageType, int killType = 0, int objectsPenetrated = 0)",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "CTakeDamageInfo",
+                    "declaration": "CTakeDamageInfo(CBaseEntity@ inflictor, CBaseEntity@ attacker, CBaseEntity@ weapon, float damage, int damageType, int killType = 0, int objectsPenetrated = 0)",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "get_inflictor",
+                    "declaration": "CBaseEntity@ get_inflictor()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_inflictor",
+                    "declaration": "void set_inflictor(CBaseEntity@)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_weapon",
+                    "declaration": "CBaseEntity@ get_weapon()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_weapon",
+                    "declaration": "void set_weapon(CBaseEntity@)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_attacker",
+                    "declaration": "CBaseEntity@ get_attacker()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_attacker",
+                    "declaration": "void set_attacker(CBaseEntity@)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_damage",
+                    "declaration": "float get_damage()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_damage",
+                    "declaration": "void set_damage(float)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_maxDamage",
+                    "declaration": "float get_maxDamage()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_maxDamage",
+                    "declaration": "void set_maxDamage(float)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ScaleDamage",
+                    "declaration": "void ScaleDamage(float flScaleAmount)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "AddDamage",
+                    "declaration": "void AddDamage(float flAddAmount)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SubtractDamage",
+                    "declaration": "void SubtractDamage(float flSubtractAmount)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_baseDamage",
+                    "declaration": "float get_baseDamage()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "BaseDamageIsValid",
+                    "declaration": "bool BaseDamageIsValid() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_damageForce",
+                    "declaration": "Vector get_damageForce()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_damageForce",
+                    "declaration": "void set_damageForce(const Vector&in)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ScaleDamageForce",
+                    "declaration": "void ScaleDamageForce(float flScaleAmount)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_damagePosition",
+                    "declaration": "Vector get_damagePosition()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_damagePosition",
+                    "declaration": "void set_damagePosition(const Vector&in)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_reportedPosition",
+                    "declaration": "Vector get_reportedPosition()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_reportedPosition",
+                    "declaration": "void set_reportedPosition(const Vector&in)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_damageType",
+                    "declaration": "int get_damageType()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_damageType",
+                    "declaration": "void set_damageType(int)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "AddDamageType",
+                    "declaration": "void AddDamageType(int damageType)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_damageCustom",
+                    "declaration": "int get_damageCustom()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_damageCustom",
+                    "declaration": "void set_damageCustom(int)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_damageStats",
+                    "declaration": "int get_damageStats()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_damageStats",
+                    "declaration": "void set_damageStats(int)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_ammoType",
+                    "declaration": "int get_ammoType()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_ammoType",
+                    "declaration": "void set_ammoType(int)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_radius",
+                    "declaration": "float get_radius()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_radius",
+                    "declaration": "void set_radius(float)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_objectsPenetrated",
+                    "declaration": "int get_objectsPenetrated()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_objectsPenetrated",
+                    "declaration": "void set_objectsPenetrated(int)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_damagedOtherPlayers",
+                    "declaration": "int get_damagedOtherPlayers()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_damagedOtherPlayers",
+                    "declaration": "void set_damagedOtherPlayers(int)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Set",
+                    "declaration": "void Set(CBaseEntity@ inflictor, CBaseEntity@ attacker, float damage, int damageType, int killType = 0, int objectsPenetrated = 0)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Set",
+                    "declaration": "void Set(CBaseEntity@ inflictor, CBaseEntity@ attacker, CBaseEntity@ weapon, float damage, int damageType, int killType = 0, int objectsPenetrated = 0)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Set",
+                    "declaration": "void Set(CBaseEntity@ inflictor, CBaseEntity@ attacker, const Vector&in damageForce, const Vector&in damagePosition, float damage, int damageType, int killType = 0, const Vector&in reportedPosition = vec3_origin, int objectsPenetrated = 0)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Set",
+                    "declaration": "void Set(CBaseEntity@ inflictor, CBaseEntity@ attacker, CBaseEntity@ weapon, const Vector&in damageForce, const Vector&in damagePosition, float damage, int damageType, int killType = 0, const Vector&in reportedPosition = vec3_origin, int objectsPenetrated = 0)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "AdjustPlayerDamageInflictedForSkillLevel",
+                    "declaration": "void AdjustPlayerDamageInflictedForSkillLevel()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "AdjustPlayerDamageTakenForSkillLevel",
+                    "declaration": "void AdjustPlayerDamageTakenForSkillLevel()",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -10056,6 +11073,139 @@
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
+                },
+                {
+                    "name": "Ignite",
+                    "declaration": "void Ignite(float flameLifetime, bool npcOnly = true, float size = 0.0, bool byLevelDesigner = false)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IgniteLifetime",
+                    "declaration": "void IgniteLifetime(float flameLifetime)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IgniteUseCheapEffect",
+                    "declaration": "void IgniteUseCheapEffect(bool cheap)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Extinguish",
+                    "declaration": "void Extinguish()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Scorch",
+                    "declaration": "void Scorch(int rate, int floor)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsDissolving",
+                    "declaration": "bool IsDissolving() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Dissolve",
+                    "declaration": "bool Dissolve(const string&in materialName, float startTime, bool npcOnly = true, int dissolveType = 0, Vector dissolveOrigin = vec3_origin, int magnitude = 0)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetModelScaleType",
+                    "declaration": "ModelScaleType GetModelScaleType() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetModelScaleType",
+                    "declaration": "void SetModelScaleType(ModelScaleType)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetModelScale",
+                    "declaration": "float GetModelScale() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetModelHierarchyScale",
+                    "declaration": "float GetModelHierarchyScale() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetModelScale",
+                    "declaration": "void SetModelScale(float scale, float changeDuration = 0.0, ModelScaleType scaleType = HIERARCHICAL_MODEL_SCALE)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetPlaybackRate",
+                    "declaration": "float GetPlaybackRate() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "DispatchAnimEvents",
+                    "declaration": "void DispatchAnimEvents(CBaseAnimating@ eventHandler)",
+                    "documentation": null,
+                    "visibility": "protected",
+                    "virtual": false
+                },
+                {
+                    "name": "StudioFrameAdvance",
+                    "declaration": "void StudioFrameAdvance()",
+                    "documentation": null,
+                    "visibility": "protected",
+                    "virtual": false
+                },
+                {
+                    "name": "PopulatePoseParameters",
+                    "declaration": "void PopulatePoseParameters()",
+                    "documentation": null,
+                    "visibility": "protected",
+                    "virtual": true
+                },
+                {
+                    "name": "ResetSequence",
+                    "declaration": "void ResetSequence(int)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetCycle",
+                    "declaration": "void SetCycle(float)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SelectWeightedSequence",
+                    "declaration": "int SelectWeightedSequence(Activity activity, int curSequence)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
                 }
             ]
         },
@@ -10175,6 +11325,20 @@
                 {
                     "name": "PointIsWithin",
                     "declaration": "bool PointIsWithin(const Vector&in point) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Enable",
+                    "declaration": "void Enable()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Disable",
+                    "declaration": "void Disable()",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -11162,6 +12326,13 @@
                     "virtual": false
                 },
                 {
+                    "name": "GetHeldObject",
+                    "declaration": "CBaseEntity@ GetHeldObject()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
                     "name": "GetAutoaimVector",
                     "declaration": "Vector GetAutoaimVector(float scale) const",
                     "documentation": null,
@@ -11241,6 +12412,320 @@
                 {
                     "name": "GetFinalAimAngle",
                     "declaration": "QAngle GetFinalAimAngle() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetButtons",
+                    "declaration": "int GetButtons() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "DisableButtons",
+                    "declaration": "void DisableButtons(int nButtons)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "EnableButtons",
+                    "declaration": "void EnableButtons(int nButtons)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ForceButtons",
+                    "declaration": "void ForceButtons(int nButtons)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "UnforceButtons",
+                    "declaration": "void UnforceButtons(int nButtons)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetFOV",
+                    "declaration": "int GetFOV() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetUserID",
+                    "declaration": "int GetUserID() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "CPropWeightedCube",
+            "type": "ref",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseAnimating"
+            },
+            "method": [
+                {
+                    "name": "GetCubeBehavior",
+                    "declaration": "WeightedCubeBehavior GetCubeBehavior() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetCubeShape",
+                    "declaration": "uint GetCubeShape() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetPartner",
+                    "declaration": "CPropWeightedCube@ GetPartner()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetLaser",
+                    "declaration": "CBaseEntity@ GetLaser()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsEmissionLocked",
+                    "declaration": "bool IsEmissionLocked()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsPressingButton",
+                    "declaration": "bool IsPressingButton()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetPaint",
+                    "declaration": "PaintPowerType GetPaint() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "CPortalLaser",
+            "type": "ref",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseAnimating"
+            },
+            "method": [
+                {
+                    "name": "TurnOn",
+                    "declaration": "void TurnOn()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "TurnOff",
+                    "declaration": "void TurnOff()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsOn",
+                    "declaration": "bool IsOn()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Toggle",
+                    "declaration": "void Toggle()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetBeamColor",
+                    "declaration": "Color GetBeamColor()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetBeamColor",
+                    "declaration": "void SetBeamColor(Color beamcolor)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetStartPos",
+                    "declaration": "const Vector& GetStartPos() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetEndPos",
+                    "declaration": "const Vector& GetEndPos() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "CLaserCatcher",
+            "type": "ref",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseAnimating"
+            },
+            "method": [
+                {
+                    "name": "IsPowered",
+                    "declaration": "bool IsPowered()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetLaser",
+                    "declaration": "CBaseEntity@ GetLaser()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetBeamColor",
+                    "declaration": "Color GetBeamColor()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ForcePowered",
+                    "declaration": "void ForcePowered(Color beamcolor)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "ForceUnpowered",
+                    "declaration": "void ForceUnpowered()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsLocked",
+                    "declaration": "bool IsLocked()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Lock",
+                    "declaration": "void Lock()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Unlock",
+                    "declaration": "void Unlock()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "CPropPortal",
+            "type": "ref",
+            "script_can_inherit": false,
+            "base_type": {
+                "namespace": null,
+                "name": "CBaseAnimating"
+            },
+            "method": [
+                {
+                    "name": "SetActivatedState",
+                    "declaration": "void SetActivatedState(bool activatedstate)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetActivatedState",
+                    "declaration": "bool GetActivatedState() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Resize",
+                    "declaration": "void Resize(float width, float height)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Fizzle",
+                    "declaration": "void Fizzle()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "NewLocation",
+                    "declaration": "void NewLocation(const Vector&in origin, const QAngle&in angles)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "SetLinkageGroupID",
+                    "declaration": "void SetLinkageGroupID(int id)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetLinkageGroupID",
+                    "declaration": "int GetLinkageGroupID() const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "GetFiredByPlayer",
+                    "declaration": "CBasePlayer@ GetFiredByPlayer() const",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -11443,6 +12928,71 @@
         },
         {
             "namespace": null,
+            "name": "TrajectoryCalculator",
+            "type": "value",
+            "script_can_inherit": false,
+            "method": [
+                {
+                    "name": "~TrajectoryCalculator",
+                    "declaration": "~TrajectoryCalculator()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "TrajectoryCalculator",
+                    "declaration": "TrajectoryCalculator()",
+                    "documentation": null,
+                    "virtual": false
+                },
+                {
+                    "name": "Calculate",
+                    "declaration": "Vector Calculate(CBaseEntity@ victim, Vector target, bool warn = true)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "Simulate",
+                    "declaration": "array<Vector>@ Simulate(Vector startPos, Vector targetPos, bool isPlayer, ExactVelocityChoice choiceFilter, int maxPoints = 20, float stepTime = 0)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "get_exactVelocityChoice",
+                    "declaration": "ExactVelocityChoice get_exactVelocityChoice()",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "set_exactVelocityChoice",
+                    "declaration": "void set_exactVelocityChoice(ExactVelocityChoice choice)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ],
+            "property": [
+                {
+                    "name": "playerSpeed",
+                    "visibility": "public",
+                    "declaration": "float playerSpeed"
+                },
+                {
+                    "name": "physicsSpeed",
+                    "visibility": "public",
+                    "declaration": "float physicsSpeed"
+                },
+                {
+                    "name": "useExactVelocity",
+                    "visibility": "public",
+                    "declaration": "bool useExactVelocity"
+                }
+            ]
+        },
+        {
+            "namespace": null,
             "name": "CGlobalEntityList",
             "type": "ref",
             "script_can_inherit": false,
@@ -11450,6 +13000,13 @@
                 {
                     "name": "FindByClassname",
                     "declaration": "CBaseEntity@ FindByClassname(CBaseEntity@ start, const string&in className)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "FindByClassnameT",
+                    "declaration": "T@ FindByClassnameT<T>(T@ start, const string&in className)",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
@@ -11525,8 +13082,37 @@
                     "virtual": false
                 },
                 {
+                    "name": "FindByClassnameWithin",
+                    "declaration": "CBaseEntity@ FindByClassnameWithin(CBaseEntity@ start, const string&in name, const Vector&in mins, const Vector&in maxs)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
                     "name": "GetByIndex",
                     "declaration": "CBaseEntity@ GetByIndex(int index)",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                }
+            ]
+        },
+        {
+            "namespace": null,
+            "name": "ScriptInputContext",
+            "type": "ref",
+            "script_can_inherit": false,
+            "method": [
+                {
+                    "name": "SetEnabled",
+                    "declaration": "void SetEnabled(bool) const",
+                    "documentation": null,
+                    "visibility": "public",
+                    "virtual": false
+                },
+                {
+                    "name": "IsEnabled",
+                    "declaration": "bool IsEnabled() const",
                     "documentation": null,
                     "visibility": "public",
                     "virtual": false
