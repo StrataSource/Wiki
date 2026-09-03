@@ -18,6 +18,7 @@ Sections in this article:
 - [ConVar & ConCommand Flags](#convar--concommand-flags)
 - [ConCommands](#concommands)
   - [Setting Up ConCommands](#setting-up-concommands)
+  - [ConCommand Arguments](#concommand-arguments)
 
 ## Introduction
 
@@ -38,7 +39,7 @@ If you wish to instead of reading, but watch a tutorial on working with AngelScr
 
 ### ConVar Basics
 
-ConVars are really easy to setup and get working. For making ConVars, it is a single line of code done in the global scope of your script file.
+ConVars are easy to setup and get working. For making ConVars, it is a single line of code done in the global scope of your script file.
 
 ```c++
 ConVar the_convar("the_convar", "1", FCVAR_NONE);
@@ -52,12 +53,14 @@ Last parameter is the flags for the ConVar. By default this is `FCVAR_NONE`, whi
 
 ConVars can be created with various flags for the engine to perform various actions based on ConVar changes or make the ConVar behave in certain ways. These flags also work for ConCommands. All the available flags for ConVars and ConCommands are defined in the `EConVarFlag` enum. `FCVAR_NONE` is one of these enums and is a stand in for `0` which means that ConVar will behave without any special behavior and simply store values. Note, that once flags are set, they can not be changed later. Flags in ConVars can only be retrieved with `ConVarRef::GetFlags()`. For more information on flags, please read [ConVar & ConCommand Flags](#convar--concommand-flags).
 
+ConVars are able to be made in both Server and Client contexts without any difference, only issue being that each context can only directly access a ConVar in their respective context. If a Server side ConVar must be accessed by the Client and vise-versa, then [ConVarRef](#referencing-convars-with-convarref) should be used.
+
 ### Reading and Writing To ConVars
 
 Once you have created you ConVar, you would want to be able to read the value and change its value. The ConVar class comes with getter and setter functions that can be used to read and write to and from ConVars. Note that even though the initial value of the ConVar is set as a string, it can be set later using more direct values and can be retrieved as various types. You can also see below how `ConVar::Reset()` can be used to reset the ConVar back to its initial value.
 
 ```c++
-void func()
+void Func()
 {
     Msgl(the_convar.GetString()); // Prints "1"
 
@@ -71,6 +74,14 @@ void func()
     Msgl(the_convar.GetDefault()); // Prints "1"
     the_convar.Reset();
     Msgl(the_convar.GetString()); // Prints "1"
+
+    tho_convar.SetValue("some_characters");
+    Msgl(the_convar.GetString()); // Prints "some_Characters"
+    Msgl(the_convar.GetInt()); // Prints nothing, there is no valid number to pull from string
+    tho_convar.SetValue("some_characters_20");
+    Msgl(the_convar.GetString()); // Prints "some_Characters_20"
+    Msgl(the_convar.GetInt()); // Prints "20"
+
 }
 ```
 
@@ -83,7 +94,7 @@ For the former, you could include the script file in your current script file to
 `ConVarRef` comes to the rescue as it allows you to reference ConVars without needing access to the original ConVar definition.
 
 ```c++
-void func()
+void Func()
 {
     // Engine ConVar
     ConVarRef sv_cheats("sv_cheats");
@@ -122,7 +133,7 @@ funcdef void ChangeCallback(ConVar&in, const string&in prevStr, float prevVal);
 void MyConVarCallback(ConVar&in cv, const string&in prevStr, float prevVal)
 {
     Msgl("ConVar previous value, string: {}".format(prevStr));
-    // This line won't work if characters are used instead of numerical values.
+    // This line won't work properly if characters are used instead of numerical values.
     Msgl("ConVar previous value, float: {}".format(prevVal));
 
     Msgl("ConVar current value: {}".format(cv.GetFloat()));
@@ -164,4 +175,60 @@ Below are some flags that can be useful with AngelScript with a small descriptio
 
 ## ConCommands
 
-<!-- ### Setting Up ConCommands -->
+### Setting Up ConCommands
+
+ConCommands behave differently from ConVars in how they are defined. They follow the [Server-Client](server-client) structure more strictly than ConVars. ConVars have the benefit of being able be access Server or Client side freely using [ConVarRef](#referencing-convars-with-convarref), ConCommands do not have this benefit.
+
+ConCommands are defined using attribute tags applied to functions that declare which type of ConCommand should be created. For Server side code, they are defined with `ServerCommand` while Client is defined with `ClientCommand`. A required piece for either ConCommand type is having the `const CommandArgs@ args` parameter for the engine to pass the arguments inputted into the console to the ConCommand. Without the parameter, the script will not compile. Look below for more information on [ConCommand arguements](#concommand-arguments).
+
+```c++
+#if SERVER
+
+[ServerCommand("sv_my_server_command", "A fun and awesome server command!")]
+void MyCommand( const CommandArgs@ args )
+{
+    Msgl("This is my server command, called from the server!");
+}
+
+#endif
+
+#if CLIENT
+
+[ClientCommand("cl_my_client_command", "A fun and awesome cheat client command", FCVAR_CHEAT)]
+void MyClientCommand(const CommandArgs@ args)
+{
+    // The arguments are made up by the whole command, so when a command is inputted by itself with no arguments, there will always be at least one argument.
+    if (args.ArgC() < 2)
+    {
+        Msg("Woah there! You gotta pass more args than that buddy!");
+    }
+    else
+    {
+        // CommandArgs has a operator overload for [] to allow getting arguments without using the `Arg(int idx)` function.
+        Msg("Arg0 " + args.Arg(0) + ", Arg1 " + args[1]);
+    }
+}
+
+#endif
+```
+
+Whether it's in the Server or Client context, the ConCommands themselves operate the same, just that any Client ConCommands will only be registered for the client the code executed for. This is useful in multiplayer situations where there should be commands that only the client can execute on itself.
+
+### ConCommand Arguments
+
+The `const CommandArgs@ args` parameter is required on all ConCommand definitions in order for the engine to pass parameters inputted into the console to the ConCommand. The script will not compile without it.
+
+`CommandArgs` is a class object that is passed in that can be accessed to read inputted parameters, know how many arguments were passed, and get the full string that was passed into the console. You can
+
+```c++
+class CommandArgs
+{
+    int ArgC() const;
+    string GetCommandString() const;
+    string Arg(int idx) const;
+    string opIndex(int idx) const;
+}
+```
+
+> [!NOTE]
+> The arguments come from a zero indexed array, meaning that the 0th argument is the ConCommand itself that has been entered. The arguments are made up by the whole command, so when a command is inputted by itself with no arguments, there will always be at least one argument which is the ConCommand itself.
