@@ -13,7 +13,7 @@ Sections in this article:
 - [ConVars](#convars)
   - [ConVar Basics](#convar-basics)
   - [Reading and Writing To ConVars](#reading-and-writing-to-convars)
-  - [Referencing ConVars With `ConVarRef`](#referencing-convars-with-convarref)
+  - [Referencing ConVars With ConVarRef](#referencing-convars-with-convarref)
   - [ConVar Callbacks](#convar-callbacks)
 - [ConVar & ConCommand Flags](#convar--concommand-flags)
 - [ConCommands](#concommands)
@@ -85,7 +85,7 @@ void Func()
 }
 ```
 
-### Referencing ConVars With `ConVarRef`
+### Referencing ConVars With ConVarRef
 
 While it is easy to access any created ConVars in the global scope of your script file, what if you wanted to access other ConVars in other script files you have? Or what if you wanted to read and write to ConVars that are part of the engine already?
 
