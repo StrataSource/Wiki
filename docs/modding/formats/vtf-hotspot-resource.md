@@ -52,8 +52,10 @@ Regions with the `alt_group` flag should be excluded from random selection by de
 
 ```cpp
 enum class HotspotRectFlags_t : unsigned char {
-	enable_rotation   = 0x1, // Should this region be randomly rotated?
-	enable_reflection = 0x2, // Should this region be randomly horizontally flipped?
-	alt_group         = 0x4, // If true, this region belongs to the alternate group.
+	enable_rotation   = 0x1,  // Should this region be randomly rotated?
+	enable_reflection = 0x2,  // Should this region be randomly horizontally flipped?
+	alt_group         = 0x4,  // If true, this region belongs to the alternate group.
+	tile_x            = 0x8,  // Can this texture tile horizontally?
+	tile_y            = 0x10, // Can this texture tile vertically?
 };
 ```
