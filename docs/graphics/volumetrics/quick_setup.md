@@ -9,7 +9,7 @@ features:
 
 You can set up volumetrics in 3 ways:
 1. By using the corresponding KeyValues in `light_rt`, `light_rt_spot` and `env_projectedtexture` entities;
-2. By using `obb_fogvolume`;
+2. By using `obb_volumefog`;
 3. Through the [Clustered Volumetric Inspector](/modding/devui/categories/graphics#clustered-volumetrics-inspector) in the Developer UI menu.
 
 ## Using KeyValues:
@@ -35,9 +35,9 @@ You can set up volumetrics in 3 ways:
 
 ![env_projectedtexture KV](images/ptex_kv.png)
 
-## Using `obb_fogvolume`:
+## Using `obb_volumefog`:
 
-1. Add an `obb_fogvolume` entity
+1. Add an `obb_volumefog` entity
 2. Set the `Emissive Color` KeyValue to `1 1 1 1`
 3. Set the `Scattering Color` KeyValue to `255 255 255 255` or a similar value.
 3. Set the `Density` KeyValue to something around 0.7
@@ -46,8 +46,11 @@ You can set up volumetrics in 3 ways:
 3. For better results, add obstacles between the light entity and the fog
 3. Compile the map. The volumetric cloud should appear and interact with volumetric lighting
 
-![obb_fogvolume interaction with lighting](images/obb_volume_interact.png)
-![obb_fogvolume KeyValues](images/obb_volumefog_kv.png)
+> [!NOTE]
+> When clustered light with volumetric density higher than zero intersepts obb_volumefog, their density gets combined, so it is recommended to set the obb_volumefog density depending on the brightness of the light source falling on it.
+
+![obb_volumefog interaction with lighting](images/obb_volume_interact.png)
+![obb_volumefog KeyValues](images/obb_volumefog_kv.png)
 
 ## Using Clustered Volumetric Inspector:
 
@@ -62,6 +65,6 @@ There are 4 volumetrics-related options:
 
 # Volumetrics for Cascade Shadow Mapping
 
-Currently, there are no KeyValues that enable the volumetric fog for `env_cascade_light` entity. However, there are two ways to make them appear - through the [Clustered Volumetric Inspector](/modding/devui/categories/graphics#clustered-volumetrics-inspector), or by using `obb_fogvolume` entity, since cascade shadows are marked as volumetric.
+Currently, there are no KeyValues that enable the volumetric fog for `env_cascade_light` entity. However, there are two ways to make them appear - through the [Clustered Volumetric Inspector](/modding/devui/categories/graphics#clustered-volumetrics-inspector), or by using `obb_volumefog` entity, since cascade shadows are marked as volumetric.
 
 ![Volumetric effect of the Cascade Shadow Mapping](images/obb_volumefog_csm_interact_workaround.jpg)
