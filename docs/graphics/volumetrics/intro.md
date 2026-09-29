@@ -38,7 +38,7 @@ Volumetrics support light cookies from `light_rt`, `light_rt_spot` and `env_proj
 
 ## Volumetrical Fog
 
-In addition to individual volumetrics for the Clustered lights, there is a new point entity called `obb_fogvolume`. It allows placing a visually simulated 3 dimensional fog volume constrained to its oriented bounding box. This fog volume can be altered through pre-defined keyvalues and user-defined 3d textures, allowing custom shapes, colors, and density. Most importantly, **it displays the light sources passing through the volume, giving them a visualized depth beyond just light projected onto adjacent surfaces**. Volumetrics can also be directly emitted from light sources independently of the entity, allowing a direct 3d visualization of the light in an area.
+In addition to individual volumetrics for the Clustered lights, there is a new point entity called `obb_volumefog`. It allows placing a visually simulated 3 dimensional fog volume constrained to its oriented bounding box. This fog volume can be altered through pre-defined keyvalues and user-defined 3d textures, allowing custom shapes, colors, and density. Most importantly, **it displays the light sources passing through the volume, giving them a visualized depth beyond just light projected onto adjacent surfaces**. Volumetrics can also be directly emitted from light sources independently of the entity, allowing a direct 3d visualization of the light in an area.
 
 #### KeyValues:
 * `Half-Width` of the fog on the Y axis;
@@ -61,7 +61,7 @@ In addition to individual volumetrics for the Clustered lights, there is a new p
 
 ![OBB_VolumeFog with a custom texture](images/obb_volume_changetexture.jpg)
 
-All `obb_fogvolume`'s KeyValues can be changed in realtime in-game using the Clustered Volumetrics Inspector.
+All `obb_volumefog`'s KeyValues can be changed in realtime in-game using the Clustered Volumetrics Inspector.
 
 ![Clustered Volumetric Inspector](images/fog_inspector.png)
 
@@ -69,7 +69,7 @@ All `obb_fogvolume`'s KeyValues can be changed in realtime in-game using the Clu
 
 To set up the volumetric fog for the whole map, you can use the **Clustered Volumetrics Inspector** in the Developer UI menu. You can enable the Clustered Volumetrics Inspector UI using the  `devui_show vol_editor` console command, or by pressing `shift + f1` and selecting `Clustered Volumetrics Inspector` menu in the `Graphics` tab on the top left.
 
-Clustered Volumetrics Inspector allows setting the global volumetric properties (e.g. density) to be interacted with by volumetric lights, allowing to one to preview the volumetric lighting on maps that were compiled before the update. It does that by applying a pseudo-`obb_fogvolume` that covers the entire map, values of which are controlled by this menu.
+Clustered Volumetrics Inspector allows setting the global volumetric properties (e.g. density) to be interacted with by volumetric lights, allowing to one to preview the volumetric lighting on maps that were compiled before the update. It does that by applying a pseudo-`obb_volumefog` that covers the entire map, values of which are controlled by this menu.
 
 > [!NOTE]
 > Changes made in Clustered Volumetrics Inspector are not persistent. 
@@ -78,8 +78,8 @@ Clustered Volumetrics Inspector allows setting the global volumetric properties 
 
 **Clustered Volumetrics Inspector has the following list of values:**
 
-* `Show Volume Bounds` - if an `obb_fogvolume` entity is present, it will show its bounds as a white box.
-* `Show Only in Radius` will only show `obb_fogvolume` entities in a specified radius. This only affects the `obb_fogvolume` list below.
+* `Show Volume Bounds` - if an `obb_volumefog` entity is present, it will show its bounds as a white box.
+* `Show Only in Radius` will only show `obb_volumefog` entities in a specified radius. This only affects the `obb_volumefog` list below.
 * `Default Fog Emissive Color` sets the emissive fog color for the whole map. Appears on top of the regular fog created by `env_fog_controller`, works similarly.
 * `Default Fog Density` sets the density of the fog for the whole map, similarly to the `env_fog_controller`'s fog density.
 * `Default Fog Scattering Color` sets the color for the volumetric rays that are casted by CSM and Clustered lighting. Useful only in maps that were compiled before the update.
@@ -87,7 +87,7 @@ Clustered Volumetrics Inspector allows setting the global volumetric properties 
 
 ![CVI Menu](images/graphics_vol-menu.png)
 
-If you specify an `obb_fogvolume` entity in the fogvolume list, the following properties will be able to be changed:
+If you specify an `obb_volumefog` entity in the fogvolume list, the following properties will be able to be changed:
 * `Position` of the fog entity, with the value being the center of the fog;
 * `Angles` of the fog entity;
 * `Half Size` of the fog, which is split into width, length and height;
@@ -95,7 +95,7 @@ If you specify an `obb_fogvolume` entity in the fogvolume list, the following pr
 * `Fog Density`;
 * `Emissive Color`, which is the color of the fog itself;
 * `Scattering color`, which is the color of the volumetric rays that go through the fog's volume;
-* `Fog Phase`, which is similar to the `Default Fog Phase` except it is applied individually to this `obb_fogvolume`.
+* `Fog Phase`, which is similar to the `Default Fog Phase` except it is applied individually to this `obb_volumefog`.
 
 ![Clustered Volumetric Inspector](images/fog_inspector.png)
 
