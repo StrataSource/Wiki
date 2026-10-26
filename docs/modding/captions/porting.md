@@ -7,7 +7,7 @@ features:
 
 ## Porting captions
 
-The new caption system does not read the old caption files. Instead, it requires a new caption file with a custom structure - `subtitles_*language*.kv3`.
+The new caption system introduces the new caption structure, which can be found in `resource/subtitles_*language*.kv3`.
 
 ![KV3 caption file](images/kv3_file.png)
 
@@ -20,4 +20,8 @@ If the script fails (i.e. syntax error in the original captions), it will show t
 
 ![Converter drag-n-drop support](images/converter.png)
 
-Then copy the converted caption file to `resources`. Done!
+Then copy the converted caption file to `resources`.
+
+### .dat support
+
+There is a convar that allows switching between the new caption files and the old .dat ones - `cc_prefer_dat_captions`. If set to 1, .dat files will override .kv3 files.
