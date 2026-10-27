@@ -30,16 +30,16 @@ Typically used for `trigger_catapult`. Provides a preview of the launch arc of t
 * Green: When `useExactVelocity` is `No`/`0` and `playerspeed` does not equal `physicsspeed` the green line will represent the predicted arc of the player as defined by `playerspeed`. When `useExactVelocity` is enabled, the green line represents the more exact launch arc. Another green line will go with this from the entity to the end of the arc.
 * Yellow: The yellow line represents the predicted arc of physics objects as defined by `physicsspeed` as long as it doesn't equal `playerspeed`.
 
-![Catapult Preview](../images/catapult_preview.png)
+![Catapult Preview](../images/fgd-helpers/catapult_preview2.png)
 
 Preview when `useExactVelocity` is set to `Yes`/`1`.
-![Catapult Preview Use Exact Velocity](../images/catapult_preview2.png)
+![Catapult Preview Use Exact Velocity](../images/fgd-helpers/catapult_preview1.png)
 
 ## direction(angle/vector)
 
 The `direction` helpers allows for adding a arrow which protrudes from the entities origin to visually show a direction based on a KV input. `angle` and `vector` KV types work for a parameter for `direction` but it's recommended to use `angle` so the arrow can be more easily set.
 
-![Direction Preview](../images/direction_preview.png)
+![Direction Preview](../images/fgd-helpers/direction_preview.png)
 
 ## orientedboundingbox(width, height, depth)
 
@@ -51,7 +51,7 @@ Parameters:
 * depth: Defines the depth size of the bounding box along the y-axis/green axis.
 * height: Defines the height size of the bounding box along the z-axis/blue axis.
 
-![Oriented Bounding Box Preview](../images/obb_preview.png)
+![Oriented Bounding Box Preview](../images/fgd-helpers/obb_preview.png)
 
 ## orientedboundingboxhalf(width, height, depth)
 
@@ -72,10 +72,10 @@ Parameters:
 * width: Defines the depth size of the bounding box along the y-axis/green axis.
 * height: Defines the height size of the bounding box along the z-axis/blue axis.
 
-![Quad Preview](../images/quad_preview.png)
+![Quad Preview](../images/fgd-helpers/quad_preview.png)
 
 ## worldtext()
 
 `worldtext` is used to display visible text within Hammer's 3D viewport. Originally this was used for `point_worldtext` to display text in Hammer to get a visual on how it looks in game, but has also been used for `hammer_notes` to provide visible text in Hammer only. `worldtext` relies on the `message` KV to know what text to display in Hammer.
 
-![World Text Preview](../images/worldtext_preview.png)
+![World Text Preview](../images/fgd-helpers/worldtext_preview.png)
