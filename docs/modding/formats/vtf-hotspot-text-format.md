@@ -42,5 +42,6 @@ rectangle
     rotate  1   // Should this region be randomly rotated?
     reflect 1   // Should this region be randomly horizontally flipped?
     alt 1       // If true, this region belongs to the alternate group.
+    tile xy     // If present, allows this rect to tile on the given axes. (x|y|xy)
 }
 ```
