@@ -26,8 +26,8 @@ While the Strata Source Wiki will provide basic details on how to add a FGD to S
 
 * Custom Entity Flags: The `flags` KV type can now be used on other KVs besides `spawnflags`. This is a good alternative to `choices` if there are various choices but also want to have multiple to be selected.
 
-![Custom Flags FGD Implementation](../images/custom_flags_preview1.png)
-![Custom Flags In Object Properties](../images/custom_flags_preview2.png)
+![Custom Flags FGD Implementation](../images/fgd-helpers/custom_flags_preview1.png)
+![Custom Flags In Object Properties](../images/fgd-helpers/custom_flags_preview2.png)
 
 * `soundscape` KV type: A new KV type similar to `sound` or `studio` that will give the option to open the **Soundscape Browser** for choosing soundscapes. This is generally used with `env_soundscape`.
 
